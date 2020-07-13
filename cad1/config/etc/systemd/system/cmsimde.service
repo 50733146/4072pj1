@@ -1,0 +1,12 @@
+[Unit]
+Description=uWSGI to serve CMSiMDE 
+After=network.target
+ 
+[Service]
+User=yen
+Group=yen
+WorkingDirectory=/home/yen/uwsgi_ini
+ExecStart=/usr/bin/uwsgi --emperor /home/yen/uwsgi_ini
+ 
+[Install]
+WantedBy=multi-user.target

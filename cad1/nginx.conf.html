@@ -1,0 +1,127 @@
+
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>CMSiMDE</title> <link rel="stylesheet" type="text/css" href="http://mde.tw/eng/cmsimde/static/cmsimply.css">
+<link rel="shortcut icon" href="/static/favicons.png">
+
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="http://mde.tw/eng/cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+<script src="http://mde.tw/eng/cmsimde/static/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+</script>
+
+</head><header><h1>nginx.conf</h1> <confmenu>
+
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+worker_connections 768;
+# multi_accept on;
+}
+
+http {
+
+##
+# Basic Settings
+##
+
+sendfile on;
+tcp_nopush on;
+tcp_nodelay on;
+keepalive_timeout 65;
+types_hash_max_size 2048;
+# server_tokens off;
+
+# server_names_hash_bucket_size 64;
+# server_name_in_redirect off;
+
+include /etc/nginx/mime.types;
+default_type application/octet-stream;
+
+##
+# SSL Settings
+##
+
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+ssl_prefer_server_ciphers on;
+
+##
+# Logging Settings
+##
+
+access_log /var/log/nginx/access.log;
+error_log /var/log/nginx/error.log;
+
+##
+# Gzip Settings
+##
+
+gzip on;
+
+# gzip_vary on;
+# gzip_proxied any;
+# gzip_comp_level 6;
+# gzip_buffers 16 8k;
+# gzip_http_version 1.1;
+# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+##
+# Virtual Host Configs
+##
+
+include /etc/nginx/conf.d/*.conf;
+include /etc/nginx/sites-enabled/*;
+}
+
+
+#mail {
+# # See sample authentication script at:
+# # http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+#
+# # auth_http localhost/auth.php;
+# # pop3_capabilities "TOP" "USER";
+# # imap_capabilities "IMAP4rev1" "UIDPLUS";
+#
+# server {
+# listen localhost:110;
+# protocol pop3;
+# proxy on;
+# }
+#
+# server {
+# listen localhost:143;
+# protocol imap;
+# proxy on;
+# }
+#}</pre>
+<p></p><br /></body></html>

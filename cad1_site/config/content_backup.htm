@@ -1,0 +1,203 @@
+<h1>About</h1>
+<p>專題題目: </p>
+<p>強化學習在機電系統設計與控制中之應用 </p>
+<p>Application of reinforcement learning in design and control of mechatronic systems</p>
+<p>組員:</p>
+<p style="padding-left: 30px;">40723110</p>
+<p style="padding-left: 30px;">40723115</p>
+<p style="padding-left: 30px;">40723138</p>
+<p style="padding-left: 30px;">40723148</p>
+<p style="padding-left: 30px;">40723150</p>
+<hr/>
+<p>靜態網站: <a href="http://cad1.kmol.info">http://cad1.kmol.info</a></p>
+<p>這是最原始的 nginx 設定:</p>
+<p style="padding-left: 30px;"><a href="/nginx.conf.html">nginx.config.html</a></p>
+<p style="padding-left: 30px;"><a href="/default.html">default.html</a></p>
+<p>以下測試能否正常從 downloads 目錄直接擷取 pdf 檔案:</p>
+<p style="padding-left: 30px;"><a href="/downloads/Deep Learning with Python.pdf">deep learning with python.pdf</a></p>
+<p>以下則是將 root 只到 /home/yen/cad1_site 目錄的設定:</p>
+<p style="padding-left: 30px;"><a href="/default_for_cmsimde.html">default_for_cmsimde.html</a></p>
+<h2>參考資料</h2>
+<ol>
+<li><a href="https://easyai.tech/en/blog/reinforcement-learning-with-python/">https://easyai.tech/en/blog/reinforcement-learning-with-python/</a></li>
+<li><a href="https://github.com/openai/gym">https://github.com/openai/gym</a></li>
+<li><a href="https://github.com/bhyang/gym-vrep">https://github.com/bhyang/gym-vrep</a></li>
+<li><a href="https://arxiv.org/pdf/1608.05742.pdf">https://arxiv.org/pdf/1608.05742.pdf</a></li>
+<li><a href="https://github.com/stepjam/PyRep">https://github.com/stepjam/PyRep</a></li>
+<li><a href="https://arxiv.org/abs/1906.11176">https://arxiv.org/abs/1906.11176</a></li>
+<li><a href="https://github.com/ycps/vrep-env">https://github.com/ycps/vrep-env</a></li>
+<li><a href="https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4">https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4</a></li>
+<li><a href="https://github.com/araffin/learning-to-drive-in-5-minutes">https://github.com/araffin/learning-to-drive-in-5-minutes</a></li>
+<li><a href="https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/">https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/</a></li>
+<li><a href="https://upcommons.upc.edu/bitstream/handle/2117/133279/tfm-alex-cabaneros.pdf">https://upcommons.upc.edu/bitstream/handle/2117/133279/tfm-alex-cabaneros.pdf</a></li>
+</ol><h1>動態網站</h1>
+<p>設定步驟請參考:</p>
+<p><a href="https://github.com/mdecourse/project2020-1/issues/4">https://github.com/mdecourse/project2020-1/issues/4</a></p>
+<h4>CMSiMDE 執行所需模組</h4>
+<p style="padding-left: 30px;"><span>sudo pip3 install flask flask_cors bs4 lxml</span></p>
+<h4>uwsgi 所需模組</h4>
+<pre style="padding-left: 30px;"><code>sudo apt install uwsgi uwsgi-plugin-python3<br/><br/></code></pre>
+<pre style="padding-left: 30px;"><code>sudo pip3 install uwsgi</code></pre>
+<pre><code><br/></code>/etc/nginx/sites-available/default 附加 server 設定 <br/><br/></pre>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">server {
+ 
+    listen 9443 ssl;
+    listen [::]:9443 ssl;
+ 
+    # 指定 static 所在位置
+    location /static {
+	alias /home/yen/cad1_site/cmsimde/static/;
+    }
+ 
+    location / {
+	# 導入 uwsgi_params 設定參數
+	include uwsgi_params;
+	# 根目錄設為近端的 8080 port 
+	uwsgi_pass  127.0.0.1:8080;
+    }
+ 
+    ssl_certificate /home/yen/localhost.crt;
+    ssl_certificate_key /home/yen/localhost.key;
+    #ssl_certificate /etc/letsencrypt/live/cad1.kmol.info/fullchain.pem;
+    #ssl_certificate_key /etc/letsencrypt/live/cad1.kmol.info/privkey.pem;
+    ssl_session_timeout 5m;
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+    ssl_prefer_server_ciphers on;
+    try_files $uri $uri/ =404;
+}</pre>
+<h4><br/>建立 self-signed key<br/><br/><span>sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout localhost.key -out localhost.crt</span><br/><br/>/home/yen/uwsgi_ini/uwsgi.ini<br/><br/></h4>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[uwsgi]
+socket = :8080
+uid = yen
+gid = yen
+plugins-dir = /usr/lib/uwsgi/plugins/
+plugin = python3
+master = true
+process = 4
+threads = 2
+chdir = /home/yen/cad1_site/cmsimde
+wsgi-file = /home/yen/cad1_site/cmsimde/wsgi.py</pre>
+<h4><br/>uwsgi emperor 手動測試</h4>
+<h4><code>/usr/bin/uwsgi --emperor /home/yen/uwsgi_ini<br/><br/>防火牆設定<br/></code></h4>
+<p>先暫時關閉 ufw</p>
+<p>ufw disable</p>
+<p>允許設計系 IP v6 網段連線 9443 port</p>
+<p>ufw allow from 2001:288:6004:17::/32 to any port 9443</p>
+<p>其他網段主機一律]不准連線</p>
+<p>ufw deny 9443</p>
+<p>重新開啟 ufw 防火牆</p>
+<p>ufw enable</p>
+<pre><code><span>/etc/systemd/system 目錄中建立 cmsimde.service 檔案</span></code></pre>
+<pre></pre>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[Unit]
+Description=uWSGI to serve CMSiMDE 
+After=network.target
+ 
+[Service]
+User=yen
+Group=yen
+WorkingDirectory=/home/yen/uwsgi_ini
+ExecStart=/usr/bin/uwsgi --emperor /home/yen/uwsgi_ini
+ 
+[Install]
+WantedBy=multi-user.target</pre>
+<pre></pre>
+<p>接著將 cmsimde 服務設為隨系統開機啟動:</p>
+<pre><code>sudo systemctl enable cmsimde
+</code></pre>
+<p>若要取消 cmsimde 服務隨系統開機啟動:</p>
+<pre><code>sudo systemctl disable cmsimde
+</code></pre>
+<p>手動啟動 cmsimde.service 服務</p>
+<pre><code>sudo systemctl start cmsimde
+</code></pre>
+<p>手動停止 cmsimde.service 服務</p>
+<pre><code>sudo systemctl stop cmsimde</code></pre>
+<pre><br/><br/></pre><h2>數位簽章</h2>
+<p><a href="https://letsencrypt.org/">https://letsencrypt.org/</a></p>
+<p><a href="https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx">https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx</a> </p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository universe
+sudo apt-get update
+
+sudo apt-get install certbot python3-certbot-nginx
+
+sudo certbot certonly --nginx
+
+sudo certbot renew --dry-run</pre>
+<p></p><h1>機電控制</h1>
+<p>Mechatronic system control</p>
+<h4>控制卡:</h4>
+<p style="padding-left: 30px;">Arduino</p>
+<p style="padding-left: 30px;">Raspberry Pi</p>
+<h4>機電系統:</h4>
+<p style="padding-left: 30px;">iRobot Create</p>
+<h2>iRobot Create</h2>
+<p><a href="/downloads/CreateManual_Final.pdf">iRobot Create Manual.pdf</a></p>
+<p><a href="/downloads/iRobot Create Robot - Cookbook _ Mbed.pdf">iRobot Create cookbook.pdf</a></p>
+<p><a href="/downloads/CommandModuleManual_v2.pdf">iRobot Create Command Module manual v2.pdf</a></p>
+<p><a href="/downloads/CreateOpenInterface_v2.pdf">iRobot Create Open Interface v2.pdf</a></p>
+<p><a href="/downloads/AD41700_Arduino_iRobot_workshop.pdf">Use Arduino to control iRobot Create.pdf</a></p><h1>深度學習</h1>
+<p><a href="https://wcm.kmol.info:8443">https://wcm.kmol.info:8443</a> (KMOLer only)</p>
+<p><a href="https://github.com/mdecourse/cd2020pj1">https://github.com/mdecourse/cd2020pj1</a></p>
+<p><a href="https://cs.stanford.edu/people/karpathy/convnetjs/">https://cs.stanford.edu/people/karpathy/convnetjs/ </a></p>
+<p><a href="http://neuralnetworksanddeeplearning.com/chap1.html">http://neuralnetworksanddeeplearning.com/chap1.html</a> </p>
+<p><a href="https://cs.stanford.edu/people/karpathy/convnetjs/demo/rldemo.html">https://cs.stanford.edu/people/karpathy/convnetjs/demo/rldemo.html</a></p>
+<p><a href="http://deeplearning.net/">http://deeplearning.net/</a></p>
+<p><a href="/downloads/Playing Atari with Deep Reinforcement Learning.pdf">Playing Atari with Deep Reinforcement Learning.pdf</a></p>
+<p><a href="/downloads/robust_auto_parking_reinforcement_learning_based_real_time_planning_approach_with_domain_template.pdf">Robust Auto-parking: Reinforcement Learning based Real-time Planning Approach with Domain Template.pdf</a></p>
+<p><a href="/downloads/AutomaticCarParkingAReinforcem.pdf">Automatic Car Parking: A Reinforcement Learning Approach.pdf</a></p>
+<p><a href="/downloads/Real-time image-based parking occupancy detection.pdf">Real-time image-based parking occupancy detection using deep learning.pdf</a></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/VMp6pq6_QjI" width="560"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/MlFZjLkEIEw" width="560"></iframe></p>
+<p>以下為 convnet javascript 應用</p>
+<!-- import convnetjs library -->
+<script src="/downloads/convnet-min.js"></script>
+<!-- javascript goes here -->
+<script type="text/javascript">
+function periodic() {
+  var d = document.getElementById('egdiv');
+  d.innerHTML = 'Random number: ' + Math.random()
+}
+ 
+var net; // declared outside -> global variable in window scope
+function start() {
+  // this gets executed on startup
+  //... 
+  net = new convnetjs.Net();
+  // ...
+ 
+  // example of running something every 1 second
+  setInterval(periodic, 1000);
+}
+</script>
+<script>
+window.onload=start();
+</script>
+<div id="egdiv"></div><h1>強化學習</h1>
+<h4>Artificial Intelligence ( <a href="https://www.youtube.com/watch?v=J8Eh7RqggsU&amp;list=PLoROMvodv4rO1NB9TD4iUZ3qghGEGtqNX">人工智慧系列課程</a>)</h4>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/J8Eh7RqggsU" width="560"></iframe></p>
+<h4>Machine Learning (<a href="https://www.youtube.com/watch?v=jGwO_UgTS7I&amp;list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU">機器學習系列課程</a>)</h4>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/jGwO_UgTS7I" width="560"></iframe></p>
+<h4>Reinforcement Learning (<a href="https://www.youtube.com/watch?v=FgzM3zpZ55o&amp;list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u">強化學習系列課程</a>)</h4>
+<p style="padding-left: 30px;">Learn to make good sequences of decision.</p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/FgzM3zpZ55o" width="560"></iframe></p>
+<p><a href="https://github.com/keras-rl/keras-rl">https://github.com/keras-rl/keras-rl</a></p>
+<p><a href="https://towardsdatascience.com/learning-reinforcement-learning-reinforce-with-pytorch-5e8ad7fc7da0">https://towardsdatascience.com/learning-reinforcement-learning-reinforce-with-pytorch-5e8ad7fc7da0</a></p>
+<p><a href="https://github.com/astooke/rlpyt">https://github.com/astooke/rlpyt</a> (<a href="https://rlpyt.readthedocs.io/en/latest/">Document</a>) (<a href="https://bair.berkeley.edu/blog/2019/09/24/rlpyt/">Blog</a>)</p>
+<p><a href="https://github.com/p-christ/Deep-Reinforcement-Learning-Algorithms-with-PyTorch">https://github.com/p-christ/Deep-Reinforcement-Learning-Algorithms-with-PyTorch</a></p>
+<p><a href="https://openai.com/blog/openai-baselines-ppo/">https://openai.com/blog/openai-baselines-ppo/</a> </p>
+<p>Deep Q Learning</p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/UlJzzLYgYoE" width="560"></iframe></p>
+<p>Vanilla Policy Gradient Method</p>
+<p>Trust Region / Natural Policy Gradient Methods</p>
+<p><a href="/downloads/Proximal Policy Optimization Algorithms.pdf">Proximal Policy Optimization Algorithms.pdf</a> ( 近端策略優化原理)</p>
+<p><a href="https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html">https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html</a></p>
+<p><a href="https://www.mlq.ai/deep-reinforcement-learning-pytorch-implementation/">https://www.mlq.ai/deep-reinforcement-learning-pytorch-implementation/</a></p><h1>CMSiMDE</h1>
+<p><a href="https://websitesetup.org/bootstrap-tutorial-for-beginners/">https://websitesetup.org/bootstrap-tutorial-for-beginners/</a></p>
+<p><a href="https://colorlib.com/wp/themes/travelify/">https://colorlib.com/wp/themes/travelify/</a> </p>
+<p><a href="https://github.com/puikinsh/travelify">https://github.com/puikinsh/travelify</a></p>
+<p></p>
+<p></p>
