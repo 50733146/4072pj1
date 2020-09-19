@@ -135,11 +135,17 @@ sudo certbot renew --dry-run</pre>
 <h4>機電系統:</h4>
 <p style="padding-left: 30px;">iRobot Create</p>
 <h2>iRobot Create</h2>
+<p><a href="https://www.cyberbotics.com/doc/guide/create">https://www.cyberbotics.com/doc/guide/create</a></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/dEgLYioQycA" width="560"></iframe></p>
+<p><a href="https://github.com/mgobryan/pycreate">https://github.com/mgobryan/pycreate</a> </p>
+<p><a href="https://github.com/mdecourse/create_autonomy">https://github.com/mdecourse/create_autonomy</a> </p>
 <p><a href="/downloads/CreateManual_Final.pdf">iRobot Create Manual.pdf</a></p>
 <p><a href="/downloads/iRobot Create Robot - Cookbook _ Mbed.pdf">iRobot Create cookbook.pdf</a></p>
 <p><a href="/downloads/CommandModuleManual_v2.pdf">iRobot Create Command Module manual v2.pdf</a></p>
 <p><a href="/downloads/CreateOpenInterface_v2.pdf">iRobot Create Open Interface v2.pdf</a></p>
-<p><a href="/downloads/AD41700_Arduino_iRobot_workshop.pdf">Use Arduino to control iRobot Create.pdf</a></p><h1>深度學習</h1>
+<p><a href="/downloads/AD41700_Arduino_iRobot_workshop.pdf">Use Arduino to control iRobot Create.pdf</a></p>
+<p><a href="/downloads/AD61600_Arduino_iRobot.pdf">Use Arduino to control iRobot Create_2.pdf</a></p><h1>深度學習</h1>
+<p><a href="https://cloud4scieng.org/">https://cloud4scieng.org/</a> 雲端運算</p>
 <p><a href="https://wcm.kmol.info:8443">https://wcm.kmol.info:8443</a> (KMOLer only)</p>
 <p><a href="https://github.com/mdecourse/cd2020pj1">https://github.com/mdecourse/cd2020pj1</a></p>
 <p><a href="https://cs.stanford.edu/people/karpathy/convnetjs/">https://cs.stanford.edu/people/karpathy/convnetjs/ </a></p>
@@ -175,8 +181,267 @@ function start() {
 </script>
 <script>
 window.onload=start();
-</script>
-<div id="egdiv"></div><h1>強化學習</h1>
+</script><h2>電腦</h2>
+<p><a href="https://drive.google.com/file/d/1AaOdJdZPNiD3YE5kgNcIrLK7ic0qsme1/view?usp=sharing">專題可攜 22GB.7z</a></p>
+<p>電腦輔助設計室 2016 更換的<a href="http://project.mde.tw/blog/yen-dian-nao-fu-zhu-she-ji-shi-dian-nao-pei-zhi.html">電腦硬體</a>:</p>
+<p>2016-2 協同設計室 6 台電腦</p>
+<p>Intel Core i7-6700 3.4 GHz Ram 16GB</p>
+<p>顯示卡 NVIDIA GeForce GTX 950 2GB 768 CUDA cores version 10.1</p>
+<p><a href="https://pytorch.org/get-started/locally/">安裝 Pytorch 指令</a>:</p>
+<pre>pip install torch==1.5.1+cu101 torchvision==0.6.1+cu101 -f <a href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a><br/><br/><a href="https://github.com/pytorch/examples">https://github.com/pytorch/examples</a><br/><a href="https://drive.google.com/file/d/1ke4bwuKZYeGArfQHwPfwTQSLTL3c-g-i/view?usp=sharing"><br/>Deep learning with python.pdf<br/><br/></a><a href="https://drive.google.com/file/d/1tofwQZBpb-cApownNTREDLgF-nd7WgoU/view?usp=sharing">Deep Learning with Pytorch.pdf</a> (<a href="https://pytorch.org/assets/deep-learning/Deep-Learning-with-PyTorch.pdf">來源</a>)</pre><h2>Flask</h2>
+<p>Flutter 前端與後端 Flask + Keras 結合應用</p>
+<div style="padding-left: 30px;"><a href="https://medium.com/analytics-vidhya/deploy-deep-learning-models-as-rest-apis-using-keras-and-access-from-a-flutter-app-9a6752f0d907">https://medium.com/analytics-vidhya/deploy-deep-learning-models-as-rest-apis-using-keras-and-access-from-a-flutter-app-9a6752f0d907</a></div>
+<div></div>
+<div>Flutter send image file to backend:</div>
+<div>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
+import 'package:mime/mime.dart';
+import 'dart:convert';
+import 'package:http_parser/http_parser.dart';
+import 'package:toast/toast.dart';
+
+void main() =&gt; runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Image Upload Demo',
+        theme: ThemeData(primarySwatch: Colors.pink),
+        home: ImageInput());
+  }
+}
+
+class ImageInput extends StatefulWidget {
+  @override
+  State&lt;StatefulWidget&gt; createState() {
+    return _ImageInput();
+  }
+}
+
+class _ImageInput extends State&lt;ImageInput&gt; {
+  // To store the file provided by the image_picker
+  File _imageFile;
+
+  // To track the file uploading state
+  bool _isUploading = false;
+
+  String baseUrl = 'http://YOUR_IPV4_ADDRESS/flutterdemoapi/api.php';
+
+  void _getImage(BuildContext context, ImageSource source) async {
+    File image = await ImagePicker.pickImage(source: source);
+
+    setState(() {
+      _imageFile = image;
+    });
+
+    // Closes the bottom sheet
+    Navigator.pop(context);
+  }
+
+  Future&lt;Map&lt;String, dynamic&gt;&gt; _uploadImage(File image) async {
+    setState(() {
+      _isUploading = true;
+    });
+
+    // Find the mime type of the selected file by looking at the header bytes of the file
+    final mimeTypeData =
+        lookupMimeType(image.path, headerBytes: [0xFF, 0xD8]).split('/');
+
+    // Intilize the multipart request
+    final imageUploadRequest =
+        http.MultipartRequest('POST', Uri.parse(baseUrl));
+
+    // Attach the file in the request
+    final file = await http.MultipartFile.fromPath('image', image.path,
+        contentType: MediaType(mimeTypeData[0], mimeTypeData[1]));
+
+    // Explicitly pass the extension of the image with request body
+    // Since image_picker has some bugs due which it mixes up
+    // image extension with file name like this filenamejpge
+    // Which creates some problem at the server side to manage
+    // or verify the file extension
+    imageUploadRequest.fields['ext'] = mimeTypeData[1];
+
+    imageUploadRequest.files.add(file);
+
+    try {
+      final streamedResponse = await imageUploadRequest.send();
+
+      final response = await http.Response.fromStream(streamedResponse);
+
+      if (response.statusCode != 200) {
+        return null;
+      }
+
+      final Map&lt;String, dynamic&gt; responseData = json.decode(response.body);
+
+      _resetState();
+
+      return responseData;
+    } catch (e) {
+      print(e);
+      return null;
+    }
+  }
+
+  void _startUploading() async {
+    final Map&lt;String, dynamic&gt; response = await _uploadImage(_imageFile);
+    print(response);
+    // Check if any error occured
+    if (response == null || response.containsKey("error")) {
+      Toast.show("Image Upload Failed!!!", context,
+          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+    } else {
+      Toast.show("Image Uploaded Successfully!!!", context,
+          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+    }
+  }
+
+  void _resetState() {
+    setState(() {
+      _isUploading = false;
+      _imageFile = null;
+    });
+  }
+
+  void _openImagePickerModal(BuildContext context) {
+    final flatButtonColor = Theme.of(context).primaryColor;
+    print('Image Picker Modal Called');
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            height: 150.0,
+            padding: EdgeInsets.all(10.0),
+            child: Column(
+              children: &lt;Widget&gt;[
+                Text(
+                  'Pick an image',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                FlatButton(
+                  textColor: flatButtonColor,
+                  child: Text('Use Camera'),
+                  onPressed: () {
+                    _getImage(context, ImageSource.camera);
+                  },
+                ),
+                FlatButton(
+                  textColor: flatButtonColor,
+                  child: Text('Use Gallery'),
+                  onPressed: () {
+                    _getImage(context, ImageSource.gallery);
+                  },
+                ),
+              ],
+            ),
+          );
+        });
+  }
+
+  Widget _buildUploadBtn() {
+    Widget btnWidget = Container();
+
+    if (_isUploading) {
+      // File is being uploaded then show a progress indicator
+      btnWidget = Container(
+          margin: EdgeInsets.only(top: 10.0),
+          child: CircularProgressIndicator());
+    } else if (!_isUploading &amp;&amp; _imageFile != null) {
+      // If image is picked by the user then show a upload btn
+
+      btnWidget = Container(
+        margin: EdgeInsets.only(top: 10.0),
+        child: RaisedButton(
+          child: Text('Upload'),
+          onPressed: () {
+            _startUploading();
+          },
+          color: Colors.pinkAccent,
+          textColor: Colors.white,
+        ),
+      );
+    }
+
+    return btnWidget;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Image Upload Demo'),
+      ),
+      body: Column(
+        children: &lt;Widget&gt;[
+          Padding(
+            padding: const EdgeInsets.only(top: 40.0, left: 10.0, right: 10.0),
+            child: OutlineButton(
+              onPressed: () =&gt; _openImagePickerModal(context),
+              borderSide:
+                  BorderSide(color: Theme.of(context).accentColor, width: 1.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: &lt;Widget&gt;[
+                  Icon(Icons.camera_alt),
+                  SizedBox(
+                    width: 5.0,
+                  ),
+                  Text('Add Image'),
+                ],
+              ),
+            ),
+          ),
+          _imageFile == null
+              ? Text('Please pick an image')
+              : Image.file(
+                  _imageFile,
+                  fit: BoxFit.cover,
+                  height: 300.0,
+                  alignment: Alignment.topCenter,
+                  width: MediaQuery.of(context).size.width,
+                ),
+          _buildUploadBtn(),
+        ],
+      ),
+    );
+  }
+}</pre>
+<p>Server 端, 必須將 php 改為 Flask:</p>
+<pre class="brush:php;auto-links:false;toolbar:false" contenteditable="false">    &lt;?php
+    if(isset($_FILES["image"]["name"])) {
+      
+        // Make sure you have created this directory already
+        $target_dir = "uploads/";
+      
+        // Generate a random name 
+        $target_file = $target_dir . md5(time()) . '.' . $_POST['ext'];
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if($check !== false) {
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+          echo json_encode(['response' =&gt; "The image has been uploaded."]);
+           }else {
+          echo json_encode(["error" =&gt; "Sorry, there was an error uploading your file."]); 
+        }
+        } else {
+            echo json_encode(["error" =&gt; "File is not an image."]);
+           
+        }
+    }
+     else {
+         echo json_encode(["error" =&gt; "Please provide a image to upload"]);
+    }
+    ?&gt;</pre>
+<p></p>
+</div><h1>強化學習</h1>
 <h4>Artificial Intelligence ( <a href="https://www.youtube.com/watch?v=J8Eh7RqggsU&amp;list=PLoROMvodv4rO1NB9TD4iUZ3qghGEGtqNX">人工智慧系列課程</a>)</h4>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/J8Eh7RqggsU" width="560"></iframe></p>
 <h4>Machine Learning (<a href="https://www.youtube.com/watch?v=jGwO_UgTS7I&amp;list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU">機器學習系列課程</a>)</h4>
