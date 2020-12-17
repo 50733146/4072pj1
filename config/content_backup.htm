@@ -28,7 +28,120 @@
 <p><a href="https://drive.google.com/file/d/19irJA4Qchyew6XpucZPLYy5Nkyd7qQcF/view?usp=sharing">2019_Learning to Walk via Deep Reinforcement Learning</a></p>
 <p><a href="https://drive.google.com/file/d/1a6o4GEwX7YJAuqf4PisMJzUn0g_l21O4/view?usp=sharing">2016_3d_simulated_robot_manipulation_using_deep_reinforcement_learning.pdf</a></p>
 <p><a href="https://drive.google.com/file/d/11NfePzREpTGWD9aBGtjsrVWmRNma85hC/view?usp=sharing">2002_Book_HandbookOfMarkovDecisionProces.pdf</a></p>
-<p><a href="https://link.springer.com/chapter/10.1007/978-3-030-49186-4_6">Deepbots: A Webots-Based Deep Reinforcement Learning Framework for Robotics</a></p><h2>參考資料</h2>
+<p><a href="https://link.springer.com/chapter/10.1007/978-3-030-49186-4_6">Deepbots: A Webots-Based Deep Reinforcement Learning Framework for Robotics</a></p>
+<h2>LaTeX</h2>
+<p><a href="https://github.com/sppmg/TW_Thesis_Template/wiki/%E7%84%A1%E8%85%A6%E6%89%8B%E5%86%8A">https://github.com/sppmg/TW_Thesis_Template/wiki/無腦手冊</a> </p>
+<p><a href="https://github.com/wengan-li/ncku-thesis-template-latex">https://github.com/wengan-li/ncku-thesis-template-latex</a> </p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">    Features &amp; Benefits
+    Templates
+    Plans &amp; Pricing
+    Help
+    Register
+    Log In
+
+NTUST Thesis template 1.7.1 (Chinese Version)
+Author
+Ding-Jie Huang, Chien-Chun Ni
+License
+Creative Commons CC BY 4.0
+Abstract
+
+This is the Chinese Version of NTUST thesis template v1.7.1, please check "NTUST Thesis template Overleaf English Version" if you need the English one.
+
+本範本是為台灣科技大學同學們所編寫的碩博士論文Latex模板， 主要由元智大學碩博士論文latex範本改編而來， 期望加快各位同學撰寫論文的速度。
+
+P.S 原始陳念波老師的元智大學論文範本為 http://exciton.eo.yzu.edu.tw/~lab/latex/latex_note.html
+
+Support 14pt font for this version
+Tags
+Find More Templates
+NTUST Thesis template 1.7.1 (Chinese Version)
+
+    © 2020 OverleafPrivacy and TermsSecurityContact UsAboutBlog
+
+    Overleaf on TwitterOverleaf on FacebookOverleaf on LinkedIn
+
+Source
+
+% this file is encoded in utf-8
+% v1.7
+
+\documentclass[12pt, a4paper]{ntust_report} 
+
+\usepackage{fontspec}   %加這個就可以設定字體 
+\usepackage{xeCJK}       %讓中英文字體分開設置 
+
+%設定主要字型，也就是英文字型
+\setmainfont[Mapping=tex-text]{Times New Roman}            
+
+%設定中文字型
+%參考 https://www.overleaf.com/learn/latex/Questions/What_OTF/TTF_fonts_are_supported_via_fontspec%3F#Chinese
+\setCJKmainfont{cwTeXKai}      
+
+\XeTeXlinebreaklocale "zh"                %這兩行一定要加，中文才能自動換行 
+\XeTeXlinebreakskip = 0pt plus 1pt       %這兩行一定要加，中文才能自動換行
+
+\input{common_env}  %基本的環境設定  無需改變  
+
+\begin{document}
+
+
+	\input{chinese_trans} %在此檔案處定義文章中的中文名詞
+
+	%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	%%% 以下是載入前頁、本文、後頁
+	% 此行請勿更動
+
+	%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	% front matter 前頁
+	% 包括封面、書名頁、中文摘要、英文摘要、誌謝、目錄、表目錄、圖目錄、符號說明
+	% 在撰寫各章草稿時，可以把此部份「關掉」，以節省無謂的編譯時間。
+	% 實際內容由
+	%    my_names.tex, my_cabstract.tex, my_eabstract.tex, my_ackn.tex, my_symbols.tex
+	% 決定
+	% ntust_frontpages.tex 此檔只提供整體架構的定義，不需更動
+	% 在撰寫各章草稿時，可以把此部份「關掉」，以節省無謂的編譯時間。
+	
+	\input{frontpages/ntust_frontpages.tex} 
+
+
+
+
+	%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	% main body 論文主體。建議以「章」為檔案分割的依據。
+	% 以下為建議的命名分類
+	%   introduction.tex   related_work.tex  protocol.tex  evaluation.tex  conclusion.tex
+	% 做為這幾個「章」的檔案名稱，並將檔案存放於資料夾 sections/ 下
+	% 實際命名方式可以隨你意
+	% 在撰寫各章草稿時，可以把其他章節關掉 (行首加百分號)
+	%\input{example/example_body.tex}  % 所附的範例
+
+	\input{sections/introduction.tex}
+	\input{sections/relative-work.tex}
+	\input{sections/method.tex}
+	\input{sections/Design.tex}
+	\input{sections/evaluation.tex}
+	\input{sections/Conclusion.tex}
+
+	%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	% back pages 後頁
+	% 包括參考文獻、附錄、自傳
+	% 實際內容由
+	%    my_bib.bib, my_appendix.tex, my_vita.tex
+	% 決定
+	% ntust_backpages.tex 此檔只提供整體架構的定義，不需更動
+	% 在撰寫各章草稿時，可以把此部份「關掉」，以節省無謂的編譯時間。
+	%\bibliographystyle{unsrt} 
+	\input{backpages/ntust_backpages.tex}
+	%\bibliographystyle{unsrt} 
+
+
+
+\end{document} 
+ 
+
+</pre>
+<p></p><h2>參考資料</h2>
 <ol>
 <li><a href="https://easyai.tech/en/blog/reinforcement-learning-with-python/">https://easyai.tech/en/blog/reinforcement-learning-with-python/</a></li>
 <li><a href="https://github.com/openai/gym">https://github.com/openai/gym</a></li>
@@ -41,7 +154,8 @@
 <li><a href="https://github.com/araffin/learning-to-drive-in-5-minutes">https://github.com/araffin/learning-to-drive-in-5-minutes</a></li>
 <li><a href="https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/">https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/</a></li>
 <li><a href="https://upcommons.upc.edu/bitstream/handle/2117/133279/tfm-alex-cabaneros.pdf">https://upcommons.upc.edu/bitstream/handle/2117/133279/tfm-alex-cabaneros.pdf</a></li>
-</ol><h1>動態網站</h1>
+</ol><h2>研究生考試</h2>
+<p>csme 研究生考試科目與題型: <a href="http://csme.org.tw/Certification/College.aspx?AwardID=62">考試內容</a>及<a href="http://csme.org.tw/Certification/Prepare.aspx?NewsType=2">考古題</a></p><h1>動態網站</h1>
 <p>設定步驟請參考:</p>
 <p><a href="https://github.com/mdecourse/project2020-1/issues/4">https://github.com/mdecourse/project2020-1/issues/4</a></p>
 <h4>CMSiMDE 執行所需模組</h4>
@@ -138,7 +252,8 @@ sudo apt-get install certbot python3-certbot-nginx
 sudo certbot certonly --nginx
 
 sudo certbot renew --dry-run</pre>
-<p></p><h1>機電控制</h1>
+<p></p>
+<h1>機電控制</h1>
 <p>Mechatronic system control</p>
 <h4>控制卡:</h4>
 <p style="padding-left: 30px;">Arduino</p>
@@ -155,9 +270,10 @@ sudo certbot renew --dry-run</pre>
 <p><a href="/downloads/CommandModuleManual_v2.pdf">iRobot Create Command Module manual v2.pdf</a></p>
 <p><a href="/downloads/CreateOpenInterface_v2.pdf">iRobot Create Open Interface v2.pdf</a></p>
 <p><a href="/downloads/AD41700_Arduino_iRobot_workshop.pdf">Use Arduino to control iRobot Create.pdf</a></p>
-<p><a href="/downloads/AD61600_Arduino_iRobot.pdf">Use Arduino to control iRobot Create_2.pdf</a></p><h1>深度學習</h1>
+<p><a href="/downloads/AD61600_Arduino_iRobot.pdf">Use Arduino to control iRobot Create_2.pdf</a></p>
+<h1>深度學習</h1>
 <p><a href="/downloads/Solving Nonlinear andHigh-Dimensional PartialDifferential Equations viaDeep Learning.pdf">Solving Nonlinear andHigh-Dimensional PartialDifferential Equations viaDeep Learning.pdf</a></p>
-<p style="padding-left: 30px;"><a href="https://github.com/alialaradi/DeepGalerkinMethod">https://github.com/alialaradi/DeepGalerkinMethod</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/alialaradi/DeepGalerkinMethod">https://github.com/alialaradi/DeepGalerkinMethod</a></p>
 <p><a href="/downloads/DGM A deep learning algorithm for solving partial differentialequations.pdf">DGM A deep learning algorithm for solving partial differentialequations.pdf</a></p>
 <p></p>
 <p><a href="https://cloud4scieng.org/">https://cloud4scieng.org/</a> 雲端運算</p>
@@ -197,14 +313,16 @@ function start() {
 </script>
 <script>
 window.onload=start();
-</script><h2>電腦</h2>
+</script>
+<h2>電腦</h2>
 <p><a href="https://drive.google.com/file/d/1AaOdJdZPNiD3YE5kgNcIrLK7ic0qsme1/view?usp=sharing">專題可攜 22GB.7z</a></p>
 <p>電腦輔助設計室 2016 更換的<a href="http://project.mde.tw/blog/yen-dian-nao-fu-zhu-she-ji-shi-dian-nao-pei-zhi.html">電腦硬體</a>:</p>
 <p>2016-2 協同設計室 6 台電腦</p>
 <p>Intel Core i7-6700 3.4 GHz Ram 16GB</p>
 <p>顯示卡 NVIDIA GeForce GTX 950 2GB 768 CUDA cores version 10.1</p>
 <p><a href="https://pytorch.org/get-started/locally/">安裝 Pytorch 指令</a>:</p>
-<pre>pip install torch==1.5.1+cu101 torchvision==0.6.1+cu101 -f <a href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a><br/><br/><a href="https://github.com/pytorch/examples">https://github.com/pytorch/examples</a><br/><a href="https://drive.google.com/file/d/1ke4bwuKZYeGArfQHwPfwTQSLTL3c-g-i/view?usp=sharing"><br/>Deep learning with python.pdf<br/><br/></a><a href="https://drive.google.com/file/d/1tofwQZBpb-cApownNTREDLgF-nd7WgoU/view?usp=sharing">Deep Learning with Pytorch.pdf</a> (<a href="https://pytorch.org/assets/deep-learning/Deep-Learning-with-PyTorch.pdf">來源</a>)</pre><h2>Flask</h2>
+<pre>pip install torch==1.5.1+cu101 torchvision==0.6.1+cu101 -f <a href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a><br/><br/><a href="https://github.com/pytorch/examples">https://github.com/pytorch/examples</a><br/><a href="https://drive.google.com/file/d/1ke4bwuKZYeGArfQHwPfwTQSLTL3c-g-i/view?usp=sharing"><br/>Deep learning with python.pdf<br/><br/></a><a href="https://drive.google.com/file/d/1tofwQZBpb-cApownNTREDLgF-nd7WgoU/view?usp=sharing">Deep Learning with Pytorch.pdf</a> (<a href="https://pytorch.org/assets/deep-learning/Deep-Learning-with-PyTorch.pdf">來源</a>)</pre>
+<h2>Flask</h2>
 <p>Flutter 前端與後端 Flask + Keras 結合應用</p>
 <div style="padding-left: 30px;"><a href="https://medium.com/analytics-vidhya/deploy-deep-learning-models-as-rest-apis-using-keras-and-access-from-a-flutter-app-9a6752f0d907">https://medium.com/analytics-vidhya/deploy-deep-learning-models-as-rest-apis-using-keras-and-access-from-a-flutter-app-9a6752f0d907</a></div>
 <div></div>
@@ -457,7 +575,10 @@ class _ImageInput extends State&lt;ImageInput&gt; {
     }
     ?&gt;</pre>
 <p></p>
-</div><h1>強化學習</h1>
+</div>
+<h1>強化學習</h1>
+<p><a href="https://github.com/dennybritz/reinforcement-learning">https://github.com/dennybritz/reinforcement-learning</a> </p>
+<p><a href="http://incompleteideas.net/book/RLbook2018.pdf">http://incompleteideas.net/book/RLbook2018.pdf</a> </p>
 <h4>Artificial Intelligence ( <a href="https://www.youtube.com/watch?v=J8Eh7RqggsU&amp;list=PLoROMvodv4rO1NB9TD4iUZ3qghGEGtqNX">人工智慧系列課程</a>)</h4>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/J8Eh7RqggsU" width="560"></iframe></p>
 <h4>Machine Learning (<a href="https://www.youtube.com/watch?v=jGwO_UgTS7I&amp;list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU">機器學習系列課程</a>)</h4>
@@ -483,13 +604,208 @@ class _ImageInput extends State&lt;ImageInput&gt; {
 <p><a href="/downloads/2018_Curved Path Following with Deep Reinforcement Learning-Results from Three Vessel Models.pdf">2018_Curved Path Following with Deep Reinforcement Learning-Results from Three Vessel Models.pdf</a></p>
 <p><a href="/downloads/2019_Application of deep reinforcement learning for control problems.pdf">2019_Application of deep reinforcement learning for control problems.pdf</a></p>
 <p><a href="/downloads/2018_Path Following in Simulated Environments using the A3C Reinforcement Learning Method.pdf">2018_Path Following in Simulated Environments using the A3C Reinforcement Learning Method.pdf</a></p>
-<p><a href="/downloads/FlashRL_A Reinforcement Learning Platform.pdf">FlashRL_A Reinforcement Learning Platform.pdf</a></p><h1>Flutter</h1>
+<p><a href="/downloads/FlashRL_A Reinforcement Learning Platform.pdf">FlashRL_A Reinforcement Learning Platform.pdf</a></p>
+<h1>類神經網路學習</h1>
+<p><a href="https://drive.google.com/file/d/1yc0WjEN33IKjgmZZlxO5LcT--qkDRZXu/view">nn_and_air_hockey.7z</a></p>
+<p>將 <a href="https://github.com/Purusharth07/Ping-Pong-Neural-Game-">https://github.com/Purusharth07/Ping-Pong-Neural-Game-</a>  改為 <a href="https://drive.google.com/file/d/1ZfkzhZBLRQSuKYsaKO2UPOC3ZvV9KaiC/view">tensorflow 2.0</a> 版本, 使用 Pygame 模擬.</p><h2>neural_network_in_python.pdf</h2>
+<p>說明前三章的程式碼</p>
+<h4>2LayerNeuralNetwork.py</h4>
+<p><span>origin </span>codes:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 2 Layer Neural Network in NumPy
+import numpy as np
+# X = input of our 3 input XOR gate
+# set up the inputs of the neural network (right from the table)
+X = np.array(([0,0,0],[0,0,1],[0,1,0], [0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1]), dtype=float)
+# y = our output of our neural network
+y = np.array(([1], [0], [0], [0], [0], [0], [0], [1]), dtype=float)
+# what value we want to predict
+xPredicted = np.array(([0,0,1]), dtype=float)
+X = X/np.amax(X, axis=0) # maximum of X input array
+# maximum of xPredicted (our input data for the prediction)
+xPredicted = xPredicted/np.amax(xPredicted, axis=0)
+# set up our Loss file for graphing
+lossFile = open("SumSquaredLossList.csv", "w")
+class Neural_Network (object):
+    def __init__(self):
+        #parameters
+        self.inputLayerSize = 3 # X1,X2,X3
+        self.outputLayerSize = 1 # Y1
+        self.hiddenLayerSize = 4 # Size of the hidden layer
+        # build weights of each layer
+        # set to random values
+        # look at the interconnection diagram to make sense of this
+        # 3x4 matrix for input to hidden
+        self.W1 = np.random.randn(self.inputLayerSize, self.hiddenLayerSize)
+        # 4x1 matrix for hidden layer to output
+        self.W2 = np.random.randn(self.hiddenLayerSize, self.outputLayerSize)
+    def feedForward(self, X):
+        # feedForward propagation through our network
+        # dot product of X (input) and first set of 3x4 weights
+        self.z = np.dot(X, self.W1)
+        # the activationSigmoid activation function - neural magic
+        self.z2 = self.activationSigmoid(self.z)
+        # dot product of hidden layer (z2) and second set of 4x1 weights
+        self.z3 = np.dot(self.z2, self.W2)
+        # final activation function - more neural magic
+        o = self.activationSigmoid(self.z3)
+        return o
+     def backwardPropagate(self, X, y, o):
+        # backward propagate through the network
+        # calculate the error in output
+        self.o_error = y - o
+        # apply derivative of activationSigmoid to error
+        self.o_delta = self.o_error*self.activationSigmoidPrime(o)
+        # z2 error: how much our hidden layer weights contributed to output
+        # error
+        self.z2_error = self.o_delta.dot(self.W2.T)
+        # applying derivative of activationSigmoid to z2 error
+        self.z2_delta = self.z2_error*self.activationSigmoidPrime(self.z2)
+        # adjusting first set (inputLayer --&gt; hiddenLayer) weights
+        self.W1 += X.T.dot(self.z2_delta)
+        # adjusting second set (hiddenLayer --&gt; outputLayer) weights
+        self.W2 += self.z2.T.dot(self.o_delta)
+    def trainNetwork(self, X, y):
+        # feed forward the loop
+        o = self.feedForward(X)
+        # and then back propagate the values (feedback)
+        self.backwardPropagate(X, y, o)
+    def activationSigmoid(self, s):
+        # activation function
+        # simple activationSigmoid curve as in the book
+        return 1/(1+np.exp(-s))
+    def activationSigmoidPrime(self, s):
+        # First derivative of activationSigmoid
+        # calculus time!
+        return s * (1 - s)
+    def saveSumSquaredLossList(self,i,error):
+        lossFile.write(str(i)+","+str(error.tolist())+'\n')
+    def saveWeights(self):
+        # save this in order to reproduce our cool network
+        np.savetxt("weightsLayer1.txt", self.W1, fmt="%s")
+        np.savetxt("weightsLayer2.txt", self.W2, fmt="%s")
+    def predictOutput(self):
+        print ("Predicted XOR output data based on trained weights: ")
+        print ("Expected (X1-X3): \n" + str(xPredicted))
+        print ("Output (Y1): \n" + str(self.feedForward(xPredicted)))
+
+myNeuralNetwork = Neural_Network()
+trainingEpochs = 1000
+#trainingEpochs = 100000
+
+for i in range(trainingEpochs): # train myNeuralNetwork 1,000 times
+    print ("Epoch # " + str(i) + "\n")
+    print ("Network Input : \n" + str(X))
+    print ("Expected Output of XOR Gate Neural Network: \n" + str(y))
+    print ("Actual Output from XOR Gate Neural Network: \n" + \
+    str(myNeuralNetwork.feedForward(X)))
+    # mean sum squared loss
+    Loss = np.mean(np.square(y - myNeuralNetwork.feedForward(X)))
+    myNeuralNetwork.saveSumSquaredLossList(i,Loss)
+    print ("Sum Squared Loss: \n" + str(Loss))
+    print ("\n")
+    myNeuralNetwork.trainNetwork(X, y)
+
+myNeuralNetwork.saveWeights()
+myNeuralNetwork.predictOutput()p</pre>
+<p>定義input(X)和output(Y)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">X = np.array(([0,0,0],[0,0,1],[0,1,0], [0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1]), dtype=float)
+y = np.array(([1], [0], [0], [0], [0], [0], [0], [1]), dtype=float)</pre>
+<p>設定神經元及權重</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">```python
+ def __init__(self):
+        # X1,X2,X3(自訂義input的神經元數量)
+        self.inputLayerSize = 3
+        # Y1(自訂義output的神經元數量)   
+        self.outputLayerSize = 1
+        # Size of the hidden layer(自訂義hiddenLayer的神經元數量)          
+        self.hiddenLayerSize = 4 
+        
+        # 設定第一層權重為隨機數值，input---&gt;hidden
+        self.W1 = np.random.randn(self.inputLayerSize, self.hiddenLayerSize)
+        
+        # 設定第二層權重為隨機數值，hidden---&gt;output
+        self.W2 = np.random.randn(self.hiddenLayerSize, self.outputLayerSize)
+```</pre>
+<p>feedForward(前饋)</p>
+<p><img caption="false" height="376" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/76aee636-df11-4c30-83df-80e1cd7f778a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201209%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20201209T152202Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=5ce85c219cfcab541678d69d64438bcd32cb1ef3c89d33f172b3bcc904253bb9&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" width="520"/></p>
+<p><a href="https://medium.com/ai-academy-taiwan/back-propagation-3946e8ed8c55">(圖片來源)</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> def feedForward(self, X):
+        # 第一層的動態方程式(activation function)輸入(z)
+        # z(activation function) = 第一層所有神經元的 input * weights 總和輸入到第二層的其中一個神經元
+        self.z = np.dot(X, self.W1)
+
+        # 第一層的動態方程式(activation function)輸出(a)
+        # z2(a) = 動態方程式(activation function)用Sigmoid function算法
+        self.z2 = self.activationSigmoid(self.z)
+
+        # 第二層的動態方程式(activation function)輸入(z)
+        # z3(activation function) = 第二層所有神經元的 input * weights 總和輸入到輸出層的(其中一個)神經元
+        self.z3 = np.dot(self.z2, self.W2)
+
+        # 第二層的動態方程式(activation function)輸出(a)
+        # o(a) = 動態方程式(activation function)用Sigmoid function算法
+        o = self.activationSigmoid(self.z3)
+
+        # 回傳出前饋結果
+        return o</pre>
+<p>backwardPropagate(反向傳播)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def backwardPropagate(self, X, y, o):
+        # 計算輸出誤差
+        self.o_error = y - o
+
+        # 將Sigmoid function算法用在輸出誤差(錯誤、error)
+        self.o_delta = self.o_error*self.activationSigmoidPrime(o)
+
+        # 隱藏層的輸出誤差*權重
+        self.z2_error = self.o_delta.dot(self.W2.T)
+
+        # 將Sigmoid function算法用在隱藏層輸出誤差(錯誤、error)
+        self.z2_delta = self.z2_error*self.activationSigmoidPrime(self.z2)
+
+        # 糾正第一層權重數值，input---&gt;hidden
+        self.W1 += X.T.dot(self.z2_delta)
+        # 糾正第二層權重數值，hidden---&gt;output
+        self.W2 += self.z2.T.dot(self.o_delta)</pre>
+<p>trainNetwork(訓練流程)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def trainNetwork(self, X, y):
+        # 前饋循環 
+        o = self.feedForward(X)
+        # 反向傳播值
+        self.backwardPropagate(X, y, o)</pre>
+<p>activationSigmoid</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def activationSigmoid(self, s):
+        # activation function
+        # 使用Sigmoid function算法(S-curve)
+        return 1/(1+np.exp(-s))</pre>
+<p>activationSigmoidPrime</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def activationSigmoidPrime(self, s):
+        # First derivative of activationSigmoid
+        # calculus time!
+        return s * (1 - s)</pre>
+<p>saveSumSquaredLossList(儲存損失函數值)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> def saveSumSquaredLossList(self,i,error):
+        lossFile.write(str(i)+","+str(error.tolist())+'\n')</pre>
+<p>saveWeights(儲存權重值)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> def saveWeights(self):
+        np.savetxt("weightsLayer1.txt", self.W1, fmt="%s")
+        np.savetxt("weightsLayer2.txt", self.W2, fmt="%s")</pre>
+<p>predictOutput(結果輸出)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def predictOutput(self):
+        print ("Predicted XOR output data based on trained weights: ")
+        print ("Expected (X1-X3): \n" + str(xPredicted))
+        print ("Output (Y1): \n" + str(self.feedForward(xPredicted)))</pre>
+<p>Epochs(疊代次數，feedForward+backprogation運算完算一次疊代)</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># 訓練疊代次數
+trainingEpochs = 1000</pre>
+<p></p><h1>Flutter</h1>
+<p>Flutter 與 Android sdk 版本差異問題解決: <a href="https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se/61613986#61613986">https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se/61613986#61613986</a></p>
 <p>Flask 與 ML 系統在後端, Flutter 作為前端</p>
-<p><a href="https://medium.com/analytics-vidhya/deploy-ml-models-using-flask-as-rest-api-and-access-via-flutter-app-7ce63d5c1f3b">https://medium.com/analytics-vidhya/deploy-ml-models-using-flask-as-rest-api-and-access-via-flutter-app-7ce63d5c1f3b</a> </p>
-<p><a href="https://medium.com/@pyzimos/flutter-chatbot-with-python-flask-backend-heroku-deployment-706baafbb8f1">https://medium.com/@pyzimos/flutter-chatbot-with-python-flask-backend-heroku-deployment-706baafbb8f1</a> </p>
-<p><a href="https://github.com/SHARONZACHARIA/Deploy-ML-model">https://github.com/SHARONZACHARIA/Deploy-ML-model</a> </p>
-<p><a href="https://github.com/tonynguyen72/Flask_API_Flutter">https://github.com/tonynguyen72/Flask_API_Flutter</a> </p>
-<p><a href="https://github.com/mohammedhashim44/Flutter-Flask-Login">https://github.com/mohammedhashim44/Flutter-Flask-Login</a> </p><h1>CMSiMDE</h1>
+<p><a href="https://medium.com/analytics-vidhya/deploy-ml-models-using-flask-as-rest-api-and-access-via-flutter-app-7ce63d5c1f3b">https://medium.com/analytics-vidhya/deploy-ml-models-using-flask-as-rest-api-and-access-via-flutter-app-7ce63d5c1f3b</a></p>
+<p><a href="https://medium.com/@pyzimos/flutter-chatbot-with-python-flask-backend-heroku-deployment-706baafbb8f1">https://medium.com/@pyzimos/flutter-chatbot-with-python-flask-backend-heroku-deployment-706baafbb8f1</a></p>
+<p><a href="https://github.com/SHARONZACHARIA/Deploy-ML-model">https://github.com/SHARONZACHARIA/Deploy-ML-model</a></p>
+<p><a href="https://github.com/tonynguyen72/Flask_API_Flutter">https://github.com/tonynguyen72/Flask_API_Flutter</a></p>
+<p><a href="https://github.com/mohammedhashim44/Flutter-Flask-Login">https://github.com/mohammedhashim44/Flutter-Flask-Login</a></p>
+<h1>CMSiMDE</h1>
 <p><a href="https://websitesetup.org/bootstrap-tutorial-for-beginners/">https://websitesetup.org/bootstrap-tutorial-for-beginners/</a></p>
 <p><a href="https://colorlib.com/wp/themes/travelify/">https://colorlib.com/wp/themes/travelify/</a> </p>
 <p><a href="https://github.com/puikinsh/travelify">https://github.com/puikinsh/travelify</a></p>
