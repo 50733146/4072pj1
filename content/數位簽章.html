@@ -68,25 +68,6 @@
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
 <link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
-
-<!-- 啟用 LaTeX equations 編輯 -->
-<script>
-  (function () {
-  var body = document.body.textContent;
-  if (body.match(/(?:\$|\\(|\\[|\begin\{.*?})/)) {
-    if (!window.MathJax) {
-      window.MathJax = {
-        tex: {
-          inlineMath: {'[+]': [['$', '$']]}
-        }
-      };
-    }
-    var script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
-    document.head.appendChild(script);
-  }
-})();
-</script>
 <!-- 暫時不用
 <script src="./../cmsimde/static/fengari-web.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
@@ -103,9 +84,8 @@ img.add_border {
 }
 </style>
 
-<script type="text/javascript">
-if ((location.href.search(/http:/) != -1) && (location.href.search(/login/) != -1)) window.location= 'https://' + location.host + location.pathname + location.search;
-</script></head><body>
+</head>
+<body>
 <div class='container'><nav>
         
     <div class="site-wrap">
@@ -142,7 +122,7 @@ if ((location.href.search(/http:/) != -1) && (location.href.search(/login/) != -
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='專題定位.html'>專題定位</a><li><a href='LaTeX.html'>LaTeX</a><li><a href='參考資料.html'>參考資料</a><li><a href='研究生考試.html'>研究生考試</a></li></ul><li class='has-children'><a href='動態網站.html'>動態網站</a><ul class='dropdown'><li><a href='數位簽章.html'>數位簽章</a></li></ul><li class='has-children'><a href='機電控制.html'>機電控制</a><ul class='dropdown'><li><a href='iRobot Create.html'>iRobot Create</a></li></ul><li class='has-children'><a href='深度學習.html'>深度學習</a><ul class='dropdown'><li><a href='電腦.html'>電腦</a><li><a href='Flask.html'>Flask</a></li></ul><li class='has-children'><a href='強化學習.html'>強化學習</a><ul class='dropdown'><li><a href='2021.html'>2021</a><li><a href='Reference.html'>Reference</a></li></ul><li class='has-children'><a href='類神經網路學習.html'>類神經網路學習</a><ul class='dropdown'><li><a href='neural_network_in_python.pdf.html'>neural_network_in_python.pdf</a></li></ul><li><a href='Flutter.html'>Flutter</a><li><a href='CMSiMDE.html'>CMSiMDE</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='專題定位.html'>專題定位</a><li><a href='LaTeX.html'>LaTeX</a><li><a href='參考資料.html'>參考資料</a><li><a href='研究生考試.html'>研究生考試</a></li></ul><li class='has-children'><a href='動態網站.html'>動態網站</a><ul class='dropdown'><li><a href='數位簽章.html'>數位簽章</a><li><a href='機電控制.html'>機電控制</a><li><a href='iRobot Create.html'>iRobot Create</a></li></ul><li class='has-children'><a href='深度學習.html'>深度學習</a><ul class='dropdown'><li><a href='電腦.html'>電腦</a><li><a href='Flask.html'>Flask</a></li></ul><li class='has-children'><a href='強化學習.html'>強化學習</a><ul class='dropdown'><li><a href='2021.html'>2021</a><li><a href='Reference-1.html'>Reference-1</a><li class='has-children'><a href='類神經網路學習.html'>類神經網路學習</a><ul class='dropdown'><li><a href='neural_network_in_python.pdf.html'>neural_network_in_python.pdf</a></li></li></ul></ul><li class='has-children'><a href='Reference-2.html'>Reference-2</a><ul class='dropdown'><li><a href='Flutter.html'>Flutter</a><li><a href='CMSiMDE.html'>CMSiMDE</a></li>
                       </ul>
                 </nav>
               </div>
@@ -210,11 +190,11 @@ sudo certbot renew --dry-run</pre>
             <script src="../cmsimde/static/chimper/js/main.js"></script>
         
 <!-- 啟用 LaTeX equations 編輯 -->
-  <script>
+  <!-- <script>
   MathJax = {
     tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
   };
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
     </body></html>
         
