@@ -917,13 +917,20 @@ print (result)
 #印出結果</pre>
 <p><a href="/downloads/整理資料/neural_network_in_python_summary.pdf">整理好的PDF檔</a><br/><br/></p>
 <h1>優化器</h1>
-<p><strong>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surfaceg上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</strong></p>
-<p><strong></strong></p>
+<p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p>
+<h4><strong>Gradient Descent</strong></h4>
+<p>利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。</p>
+<h4><strong>Batch gradient descent</strong></h4>
+<p>用批次的方式計算訓練資料，整個資料集計算梯度只更新一次，因此計算和更新時會占用大量記憶體。整體效率較差、速度較緩慢。由 Gradient Descent 延伸出來的算法。其收斂行為與<span> Gradient Descent 相同。</span></p>
+<h4><strong>Stochastic gradient descent</strong></h4>
+<p>每次執行時會更新並消除誤差，有頻繁更新和變化大的特性，較不容易困在特定區域。<span>由 Gradient Descent 延伸出來的算法。其收斂行為與</span><span> Gradient Descent 相同。</span></p>
+<h4><strong>Mini-batch gradient descent</strong></h4>
+<p>結合 Batch gradient descent 和 Stochastic gradient descent 的特點：批量計算和頻繁更新，所衍伸的算法。利用小批量的方式頻繁更新，並使收斂更穩定。其缺點：學習率挑選不易、預定義 threshold 無法適應數據集的特徵、對很少發生的特徵無法執行較大的更新、<span>非凸面error surface要避免被困在次優的局部最小值等。</span></p>
 <p><strong><a href="/downloads/整理資料神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p><h2>Gradient Descent Optimizer</h2>
 <p>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">資料來源</a>)</p>
 <p style="text-align: center;"><strong><img alt="Error_surface" caption="false" height="200" src="/images/Error_surface.png" width="231"/></strong></p>
 <p style="text-align: center;"><strong>圖1. Error_surface<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></p>
-<p>藉由梯度下降將目標函數值最小化，目標函數以loss function L(θ)為例，θ為weight(w) 和 bias(b) 的向量函數，為了找到error surface(圖1)上的最小值，因此加上∆θ 將θ的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數η(學習率)縮放<span>∆θ的修正量(圖2)，修正後方程式為：</span></p>
+<p>藉由梯度下降將目標函數值最小化，目標函數以loss function L(θ)為例，θ為weight(w) 和 bias(b) 的向量函數，為了找到error surface[圖1]上的最小值，因此加上∆θ 將θ的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數η(學習率)縮放<span>∆θ的修正量[圖2]，修正後方程式為：</span></p>
 <p style="text-align: center;"><span>θ = θ + η·∆θ</span></p>
 <p style="text-align: center;"><span><img alt="theta_vector" caption="false" height="193" src="/images/theta_vector.png" width="297"/></span></p>
 <p style="text-align: center;"><span><strong>圖2. Theta_vector<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></span></p>
@@ -941,7 +948,51 @@ print (result)
 <p style="text-align: center;"><span>w<sub>t=1</sub> = <span>w</span><sub>t</sub> − η▽w<sub>t</sub></span></p>
 <p style="text-align: center;"><span>b<sub>t=1</sub> = <span>b</span><sub>t</sub> − η▽b<sub>t</sub></span></p>
 <p style="text-align: center;"><span>where at w = w<sub>t</sub>, b = <span>b</span><sub>t</sub> </span></p>
-<p style="text-align: center;"><span>w<sub>t</sub> = ∂L(θ)/∂w；▽b<sub>t</sub> = ∂L(θ)/∂b </span></p><h1>Ref</h1>
+<p style="text-align: center;"><span>w<sub>t</sub> = ∂L(θ)/∂w；▽b<sub>t</sub> = ∂L(θ)/∂b</span></p><h2>Stochastic gradient descent</h2>
+<p>(<a href="https://ruder.io/optimizing-gradient-descent/">資料來源</a>)</p>
+<h4><span>Batch gradient descrnt</span></h4>
+<p><span>Vanilla gradient descent 又稱 Batch gradient descent(批次梯度下降法)，計算目標函數的梯度，參數 θ 對於整個 訓練資料：</span></p>
+<p style="text-align: center;"><span> θ = θ − η · ▽θL(θ)</span></p>
+<p>目標函數以為例 loss function L(θ)，參數 θ 為 weight (w) 和 bias (b) 的函數，η 為學習率。由於計算整個資料集計算梯度只更新一次，Bath gradient descent 可能非常慢並且對於資料集無法符合及記憶體來說棘手 (一次需要儲存整個資料集的資料，當更新和計算時會占用大量記憶體)。<span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(nb_epochs) :
+params_grad = evaluate_gradient (loss_function, data, params)
+params = params − learning_rate ∗ params_grad
+</pre>
+<p style="text-align: center;">程式1. Batch gradient descrnt <sub><span>(</span><a href="https://ruder.io/optimizing-gradient-descent/">程式來源</a><span>)</span></sub></p>
+<p>預定義每次 epoch，先計算 loss function 梯度向量對於整個資料集參數向量。如果梯度值來自於先前計算出的梯度值，就會檢查梯度，並以梯度相反的方向更新參數 <span>θ</span>，學習率 <span>η </span>決定多大的更新量。Batch gradient descent 對於凸面誤差可以保證收斂到廣域最小值，對於非面凸誤差可以收斂到局部最小值。</p>
+<h4>Stochastic gradient descent</h4>
+<p>Stochastic gradient descent(SGD) 隨機梯度下降法，這裡的目標函數為 J<span>(θ, x</span><sup><sub>i</sub></sup><span>, y</span><sup><sub>i</sub></sup><span>)</span>(變數 θ 為 w(weight) 和 b(bias) 的函數，也可以寫成 J(w, b, x<sup>i</sup>, y<sup>i</sup>))。</p>
+<p style="text-align: center;">θ = θ − η · ▽θJ(θ, x<sup><sub>i</sub></sup>, y<sup><span>i</span></sup>)</p>
+<p>批量梯度下降他會在每個參數更新前重新計算相似梯度。SGD 每次次執行會更新來消除多餘 (誤差)，因此通常速度 很快。SGD 頻繁更新並變化很大，因為目標方程式波動很大 [圖1]。</p>
+<p style="text-align: center;"><img alt="" height="300" src="/images/sgd_fluctuation.png" width="382"/></p>
+<p style="text-align: center;">圖1.SGD fluctuation <sub>(<a href="https://ruder.io/optimizing-gradient-descent/">圖片來源</a>)</sub></p>
+<p>SGD 的方程式一方面會跳到新的值和潛在局部最小值，另一方面 SGD 會持續超調 (誤差超過預期) 最後收斂到廣域最小值。無論如何他被顯示當學習率下降緩慢，SGD 顯示與 Batch gradient descent 同樣收斂行為，幾乎可以肯定地，對於凸面或非凸面優化，會收斂到絕對或是局部最小值。這程式碼片段 [程式.2] 在訓練樣本上加入一個迴圈來對每個樣本評估梯度。每個 epoch(訓練循環) 會打亂訓練數據。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(nb_epochs) :
+np.random.shuffle(data)
+for example in data :
+params_grad = evaluate_gradient (loss_function, example, params)
+params = params − learning_rate ∗ params_grad</pre>
+<p style="text-align: center;"><span>程式2. Stochastic gradient descrnt <sub>(<a href="https://ruder.io/optimizing-gradient-descent/">程式來源</a><span>)</span></sub></span></p>
+<h4>Mini-batch gradient descent</h4>
+<p>Mini-batch gradient descent(小批量梯度下降) 各取前兩者的優點，將資料集分割成小區塊，每個小區塊大小稱作 batch size，每次跑完 batch size 算迭代 (iteration)一次，算完一次資料集即完成一次 epoch。舉例: 資料集大小為 1000，若 batch size 為 50，iteration 為 datasets 的 batch_size = 1000÷50 = 20，當 iteration 跑完 20 次算完成一次 epoch。</p>
+<p>這方式可以減少參數更新的方差，並且可以穩定收斂；可利用深度學習庫所共有的高度優化的矩陣優化，從而由一個小批量計算出梯度非常有效。通常 batch sizes 的範圍介於 50 ~256，會因為應用而有所差異。訓練神經網絡時，通常選擇 Mini-batch gradient descent 算法，而當使用這算法時，通常也使用術語 SGD。</p>
+<p>θ = θ − η · ▽θJ(θ,x<sup><sub>(i:i+n)</sub></sup>,y<sup><sub>(i:i+n)</sub></sup>)</p>
+<p>下面程式碼 [程式.3] 為迭代範例，batch size 大小為 50：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(nb_epochs ) :
+np.random.shuffle(data)
+for batch in get_batches (data, batch_size = 50):
+params_grad = evaluate_gradient (loss_function, batch, params)
+params = params − learning_rate ∗ params_grad
+</pre>
+<p style="text-align: center;"><span>程式3. <span>Mini-batch</span> gradient descrnt <sub>(<a href="https://ruder.io/optimizing-gradient-descent/">程式來源</a><span>)</span></sub></span></p>
+<h4>Challenges</h4>
+<p>Mini-batch gradient descent 無論如何還是無法確保收斂的很好，存在一些需要解決的挑戰：</p>
+<ol>
+<li>選擇適當的學習率是有難度的。如果學習率太小會導致收斂困難或緩慢，學習率太大則會阻礙收斂導致 loss function 來回波動或發生偏離。</li>
+<li> 學習率清單嘗試在訓練的時候調整學習率，即根據預定義清單或當目標下降於閾值 (threshold) 時降低學習率。 但清單和閾值須預先定義，因此無法適應數據集的特徵。</li>
+<li> 另外相同學習率適用全部參數更新。如果資料稀疏而且外型有很特別的頻率，我們可能不希望將所有特徵更新 到相同的程度，而是對很少發生的特徵執行較大的更新。</li>
+<li> 最小化神經網路常見的高度非凸面誤差方程式 (error function) 的另一關鍵挑戰則是要避免被困在大量次優的局 部最小值區域中。認為困難實際上不是由局部最小值引起的，而是由鞍點引起的，即一維向上傾斜而另一維向下 傾斜的點。這些鞍點通常被相同誤差的平穩段包圍，這使得 SGD 很難逃脫，因為在所有維度上梯度都接近於零。</li>
+</ol><h1>Ref</h1>
 <h2>Flutter</h2>
 <p>Flutter 與 Android sdk 版本差異問題解決: <a href="https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se/61613986#61613986">https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se/61613986#61613986</a></p>
 <p>Flask 與 ML 系統在後端, Flutter 作為前端</p>
