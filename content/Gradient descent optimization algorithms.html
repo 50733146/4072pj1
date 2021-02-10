@@ -150,7 +150,7 @@ img.add_border {
 </tbody>
 </table>
 <p style="text-align: left;">這麼做會增加一個係數 γ (gamma) 來更新上次的向量到正確向量 (修正偏差)，γ 通常設為 0.9 左右。</p>
-<p style="text-align: center;">v<sub>t</sub> = γv<sub>t−1</sub> + η·▽θJ(θ) θ = θ − v<sub>t</sub></p>
+<p style="text-align: center;">v<sub>t</sub> = γv<sub>t−1</sub> + η·▽θJ(θ) <br/>θ = θ − v<sub>t</sub></p>
 <p style="text-align: left;">實際上，使用動量的時候，就像將球推下山坡。球在下坡時滾動時會累積動量，在途中速度會越來越快（如果存在空氣阻力，直到達到極限速度，也就是 γ &lt; 1) 參數更新也發生了同樣的事情：動量 (momentum) 對於梯度指向相同方向的維度增加，而對於梯度改變方向的維減少動量。結果，我們獲得了更快的收斂並減少了振盪。</p>
 <h4 style="text-align: left;">Nesterov accelerated gradient</h4>
 <p>Nesterov accelerated gradient（NAG）是一種使動量具有一個去向的概念，以便在山坡再次變高之前知道它會減速。我們知道使用動量 γv<sub>t−1</sub> 來移動參數。計算 θ − γv<sub>t−1</sub> 這樣就給了參數的下一個位置的近似值（完整更新缺少的梯度），這是參數將要存在的大致概念。現在，通過計算與當前參數無關的梯度來有效地看到目前的參數 θ 將會移動到的位置：</p>
@@ -158,10 +158,10 @@ img.add_border {
 <p style="text-align: center;">θ = θ − v<sub>t</sub></p>
 <p style="text-align: center;"><sub><img alt="" height="100" src="./../images/NAG.jpg" width="345"/></sub></p>
 <p style="text-align: center;">圖.2 NAG <sub>(<a href="http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf">圖片來源</a>)</sub></p>
-<p>同樣，我們設置動量 γ 約為 0.9。動量首先計算當前梯度（[圖.2] 中的藍色小向量），然後在更新的累積梯度（藍 色向量）的方向上發生較大的跳躍，而 NAG 首先在先前的累積梯度的方向上進行較大的跳躍（棕色向量），測量梯度， 然後進行校正（紅色向量），從而完成 NAG 更新（綠色向量）。這種預期的更新可防止我們過快地進行，並導致響應 速度增加，從而顯著提高了 RNN 在許多任務上的性能。有關 NAG 背後另一解釋，請<a href="https://cs231n.github.io/neural-networks-3/">參見此處</a>，而 Ilya Sutskever 在其博士論文中給出了更詳細的概述。</p>
+<p>同樣，我們設置動量 γ 約為 0.9。動量首先計算當前梯度（[圖.2] 中的藍色小向量），然後在更新的累積梯度（藍 色向量）的方向上發生較大的跳躍，而 NAG 首先在先前的累積梯度的方向上進行較大的跳躍（棕色向量），測量梯度，然後進行校正（紅色向量），從而完成 NAG 更新（綠色向量）。這種預期的更新可防止我們過快地進行，並導致響應速度增加，從而顯著提高了 RNN 在許多任務上的性能。有關 NAG 背後另一解釋，請<a href="https://cs231n.github.io/neural-networks-3/">參見此處</a>，而 Ilya Sutskever 在其博士論文中給出了更詳細的概述。</p>
 <h4>Adagrad</h4>
-<p>Adagrad 是一個梯度優化的算法，它可以做到：學習率適應參數，對於頻繁出現的特徵相關參數執行較小的更新 (較低的學習率)，以及對不經常出現的特徵相關參數進行較大更新（即學習率較高）。Adagrad 可以提高 SGD 的強度， 用於訓練大型神經網絡。</p>
-<p>先前，在同一次 θ 參數 (更新後就算另一次)，每個 θ 都使用相同的 η(學習率)。Adagrad 則是對每個 θ 參數使用 不同的 η，t 代表 time step。先將 Adagrad 的更新參數向量化。用 g<sub>t</sub> 表示 time step 的梯度，g<sub>t,i</sub> 表示目標函數 (參數 θ 在 time step t) 對參數做偏微分計算。</p>
+<p>Adagrad 是一個梯度優化的算法，它可以做到：學習率適應參數，對於頻繁出現的特徵相關參數執行較小的更新(較低的學習率)，以及對不經常出現的特徵相關參數進行較大更新（即學習率較高）。Adagrad 可以提高 SGD 的強度，用於訓練大型神經網絡。</p>
+<p>先前，在同一次 θ 參數(更新後就算另一次)，每個 θ 都使用相同的 η (學習率)。Adagrad 則是對每個 θ 參數使用 不同的 η，t 代表 time step。先將 Adagrad 的更新參數向量化。用 g<sub>t</sub> 表示 time step 的梯度，g<sub>t,i</sub> 表示目標函數 (參數 θ 在 time step t) 對參數做偏微分計算。</p>
 <p style="text-align: center;">g<sub>t,i</sub> = ▽θJ(θ<sub>t,i </sub>)</p>
 <p>當 SGD 更新每個參數 θ<sub>i</sub>，在每個 time step t，因此變成：</p>
 <p style="text-align: center;">θ<sub>t+1,i</sub> = θ<sub>t,i</sub> − η · g<sub>t,i </sub></p>
@@ -185,37 +185,64 @@ img.add_border {
 <p style="text-align: center;">E[<span>△θ<sup>2</sup></span>]<sub>t</sub> = γE[△θ<sup>2</sup>]<sub>t−1</sub> + (1 − γ) △ θ<sup>2</sup><sub>t</sub></p>
 <p>RMS 參數更新:</p>
 <p style="text-align: center;">RMS[△θ<span>]</span><sub>t</sub> = (E<span>[△θ</span><sup>2</sup><span>]</span><sub>t</sub> + ϵ<span>)</span><sup>½</sup></p>
-<p>RMS[△θ<span>]</span><sub>t</sub> 是未知的，更新參數的 RMS 取近似直到上個 time step。用 RMS<span>[△θ</span><span>]</span><sub>t-1</sub> 取代學習率 η，最後產生新 的規則：</p>
-<p style="text-align: center;"><span>△</span><span>θ</span><sub>t</sub> = − (RMS[△θ<span>]</span><sub>t-1</sub> / RMS[g<span>]</span><sub>t</sub> )<span>·g</span><sub>t</sub></p>
-<p style="text-align: center;"><span>θ</span><sub>t-1</sub>= θ<sub>t</sub> + △<span>θ</span><sub>t</sub></p>
+<p>RMS[△θ<span>]</span><sub>t</sub> 是未知的，更新參數的 RMS 取近似值到上個 time step。用 RMS<span>[△θ</span><span>]</span><sub>t-1</sub> 取代學習率 η，最後產生新 的規則：</p>
+<p style="text-align: center;"><span>△</span><span>θ</span><sub>t</sub> = − (RMS[△θ<span>]</span><sub>t-1</sub> / RMS[g<span>]</span><sub>t</sub> )<span>·g</span><sub>t<br/></sub><span>θ</span><sub>t-1</sub>= θ<sub>t</sub> + △<span>θ</span><sub>t</sub></p>
 <p>使用 Adadelta，甚至不需要設定預設學習率，因為它已從更新規則淘汰。</p>
 <h4>RMSprop</h4>
 <p>RMSprop 是 Geoffrey Hinton 在他的課程中提出的未公開自適應學習率的方法。</p>
 <p>RMSprop 和 Adadelta 都是為了解決 Adagrad 的學習率急劇下降的問題個別獨立開發出來的解決方式。RMSprop 實際上與 Adadelta 得出的第一個更新向量相同：</p>
-<p><span>E[g</span><sup><sub>2</sub></sup><span>]</span><sub>t </sub>= 0.9<span>E[g</span><sup><sub>2</sub></sup><span>]</span><sub>t </sub> + 0.1<span>g</span><sup>2</sup><sub>t</sub></p>
-<p><span>θ</span><sub>t+1 </sub>= <span>θ</span><sub>t</sub> <span>−</span><span><span> </span></span><span>[η / (E[g<sup><sub>2</sub></sup><span>]</span><sub>t </sub></span><span>+ ϵ)</span><sup>½</sup><span>]</span><span>·g</span><sub>t</sub></p>
+<p style="text-align: center;"><span>E[g</span><sup><sub>2</sub></sup><span>]</span><sub>t </sub>= 0.9<span>E[g</span><sup><sub>2</sub></sup><span>]</span><sub>t </sub> + 0.1<span>g</span><sup>2</sup><sub>t<br/></sub><span>θ</span><sub>t+1 </sub>= <span>θ</span><sub>t</sub> <span>−</span><span><span> </span></span><span>[η / (E[g<sup><sub>2</sub></sup><span>]</span><sub>t </sub></span><span>+ ϵ)</span><sup>½</sup><span>]</span><span>·g</span><sub>t</sub></p>
 <p>RMSprop 也將學習率除以梯度平方的指數衰減平均值。Hinton 建議 γ 設為 0.9，好的預設學習率 η 數值為 0.001。</p>
 <h4>Adam</h4>
-<p>Adaptive Moment Estimation 自適應矩評估 (Adam) 是另一種計算每個評估學習率的方法。出了儲存過去梯度平 方的指數衰減平均值 <span>v</span><sub>t</sub>，就像 Adadelta 和 RMSprop 一樣，Adam 還保留過去梯度的指數衰減平均值 <span>m</span><sub>t</sub>，類似動量 (Momentum)。如果 Momentum 被視為順著斜坡下滑的球，而 Adam 則是像一個帶有摩擦的沉重的球，因此更適合 待在 error face 平坦的最小值區域。計算過去梯度平方的衰減平均值 <span>m</span><sub>t</sub> 和 <span>v</span><sub>t</sub> 分別如下：</p>
-<p style="text-align: center;">m<sub>t</sub> = <span>β</span><sub>1</sub><span>m</span><sub>t-1</sub> + (1 − <span>β</span><sub>1</sub>)<span>·g</span><sub>t</sub></p>
-<p style="text-align: center;"><span>v</span><sub>t</sub> = <span>β</span><sub>2</sub><span>v</span><sub>t-1</sub> + (1 − <span>β</span><sub>2</sub>)<span>·</span><span>g</span><sup>2</sup><sub>t</sub></p>
+<p>Adaptive Moment Estimation 自適應矩評估 (Adam) 是另一種計算每個評估學習率的方法。出了儲存過去梯度平 方的指數衰減平均值 <span>v</span><sub>t</sub>，就像 Adadelta 和 RMSprop 一樣，Adam 還保留過去梯度的指數衰減平均值 <span>m</span><sub>t</sub>，類似動量 (Momentum)。如果 Momentum 被視為順著斜坡下滑的球，而 Adam 則是像一個帶有摩擦的沉重的球，因此更適合待在 error face 平坦的最小值區域。計算過去梯度平方的衰減平均值 <span>m</span><sub>t</sub> 和 <span>v</span><sub>t</sub> 分別如下：</p>
+<p style="text-align: center;">m<sub>t</sub> = <span>β</span><sub>1</sub><span>m</span><sub>t-1</sub> + (1 − <span>β</span><sub>1</sub>)<span>·g</span><sub>t<br/></sub><span>v</span><sub>t</sub> = <span>β</span><sub>2</sub><span>v</span><sub>t-1</sub> + (1 − <span>β</span><sub>2</sub>)<span>·</span><span>g</span><sup>2</sup><sub>t</sub></p>
 <p><span>m</span><sub>t</sub> 和 <span>v</span><sub>t</sub> 分別是第一階矩平均估計值和第二階矩無中心方差估計值，因此是方法的名稱。像 <span>m</span><sub>t</sub> 和 <span>v</span><sub>t </sub>被初始化為向量 o，Adam 的作者觀察到它們偏向零，特別是在初始 time step，尤其是在衰減率較小的時候 (也就是說 <span>β</span><sub>1</sub><span><span> </span></span>和 <span>β</span><sub>2</sub><span><span> </span></span>趨近於 1) 藉由計算校正偏差第一矩 <em class="ph i">m̂</em><sub>t </sub>和第二矩 <em class="ph i">v̂<sub>t </sub></em>抵消偏差：</p>
-<p style="text-align: center;"><em class="ph i">m̂</em><sub>t</sub> = <span>m</span><sub>t</sub><span><span> </span></span>/(1 − <span>β<sup>t</sup></span><sub>1</sub>)</p>
-<p style="text-align: center;"><em class="ph i">v̂<sub>t</sub></em> = <span>v</span><sub>t</sub><span><span> </span></span>/(1 − <span>β<sup>t</sup></span><sub>2</sub>)</p>
+<p style="text-align: center;"><em class="ph i">m̂</em><sub>t</sub> = <span>m</span><sub>t</sub><span><span> </span></span>/(1 − <span>β<sup>t</sup></span><sub>1</sub>)<br/><em class="ph i">v̂<sub>t</sub></em> = <span>v</span><sub>t</sub><span><span> </span></span>/(1 − <span>β<sup>t</sup></span><sub>2</sub>)</p>
 <p>使用他們去更新參數，就像 Adadelta 和 RMSprop 中所看到的那樣，這將產生 Adam 更新規則：</p>
 <p style="text-align: center;"><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t</sub> − [η (<em class="ph i">v̂<sub>t </sub></em><span><span><span>)</span><sup>½ </sup></span></span>+ ϵ] <em class="ph i">m̂</em><span></span><sub>t</sub><span><span> </span></span></p>
-<p>β<sub>1</sub> 預設值建議為 0.9，β<sub>2</sub> 預設值建議為 0.999，ϵ 預設值建議為 <span>10</span><sup>−8</sup>。根據經驗證明 Adam 表現良好，並且與其 他自適應學習算法相比具有優勢。</p>
+<p>β<sub>1</sub> 預設值建議為 0.9，β<sub>2</sub> 預設值建議為 0.999，ϵ 預設值建議為 <span>10</span><sup>−8</sup>。根據經驗證明 Adam 表現良好，並且與其他自適應學習算法相比具有優勢。</p>
 <h4>AdaMax</h4>
 <p>在 Adam 更新規則中的 <span>v</span><sub>t</sub> 係數是與梯度成反比地縮放過去梯度的範數 (通過 <span>v</span><sub>t-1</sub> 項) 和當前梯度 <span>|</span><span>g</span><sub>t</sub><span>|</span><sup>2 </sup>：</p>
-<p><span>v</span><sub>t</sub><span><span> </span></span>= <span>β</span><sub>2</sub><span>v</span><sub>t-1</sub> + (1 − <span>β</span><sub>2</sub>)|<span>g</span><sub>t</sub>|<sup>2 </sup></p>
+<p style="text-align: center;"><span>v</span><sub>t</sub><span><span> </span></span>= <span>β</span><sub>2</sub><span>v</span><sub>t-1</sub> + (1 − <span>β</span><sub>2</sub>)|<span>g</span><sub>t</sub>|<sup>2 </sup></p>
 <p>我們轉換這個更新到 ℓp。注意 <span>β</span><sub>2</sub> 參數化為 <span>β<sup>p</sup></span><sub>2</sub>：</p>
-<p><span>v</span><sub>t</sub><span><span> </span></span>= <span>β<sup>p</sup></span><sub>2</sub><span>v</span><sub>t-1</sub> + (1 − <span>β<sup>p</sup></span><sub>2</sub>)<span>|</span><span>g</span><sub>t</sub><span>|</span><sup>p</sup></p>
-<p>大規範 p 值使數值上變得不穩定，這就是為什麼 ℓ1 和 ℓ2 規範在實踐中是最常見的。然而，ℓ∞ 通常也表現出穩定 的行為。作者 (Kingma and Ba, 2015) 提出了 AdaMax 並證明了和 ℓ∞ 收斂到更穩定的值。為了避免與 Adam 混用， 所以使用 u<sub>t</sub><span><span> </span></span>來表示無窮範數約束 <span>v</span><sub>t</sub><span><span> </span></span>：</p>
-<p><span>u</span><sub>t</sub> = <span>β<sup>∞</sup></span><sub>2</sub><span>v</span><sub>t-1</sub> + (1 − <span>β<sup>∞</sup></span><sub>2</sub>)|<span>g</span><sub>t</sub>|<sup>∞</sup> </p>
-<p>= max(<span>β</span><sub>2</sub><span> </span> · <span>v</span><sub>t-1</sub>, |gt|)</p>
+<p style="text-align: center;"><span>v</span><sub>t</sub><span><span> </span></span>= <span>β<sup>p</sup></span><sub>2</sub><span>v</span><sub>t-1</sub> + (1 − <span>β<sup>p</sup></span><sub>2</sub>)<span>|</span><span>g</span><sub>t</sub><span>|</span><sup>p</sup></p>
+<p>大規範 p 值使數值上變得不穩定，這就是為什麼 ℓ1 和 ℓ2 規範在實踐中是最常見的。然而，ℓ∞ 通常也表現出穩定 的行為。作者 (Kingma and Ba, 2015) 提出了 AdaMax 並證明了和 ℓ∞ 收斂到更穩定的值。為了避免與 Adam 混用，所以使用 u<sub>t</sub><span><span> </span></span>來表示無窮範數約束 <span>v</span><sub>t</sub><span><span> </span></span>：</p>
+<p style="text-align: center;"><span>u</span><sub>t</sub> = <span>β<sup>∞</sup></span><sub>2</sub><span>v</span><sub>t-1</sub> + (1 − <span>β<sup>∞</sup></span><sub>2</sub>)|<span>g</span><sub>t</sub>|<sup>∞</sup> <br/>= max(<span>β</span><sub>2</sub> · <span>v</span><sub>t-1</sub>, |gt|)</p>
 <p>替換為 Adam 更新公式 <span>(</span><em class="ph i">v̂<sub>t </sub></em><span><span><span>)</span><sup>½ </sup></span></span><span>+ ϵ </span>和 <span>u</span><sub>t</sub> 得出 AdaMax 更新規則：</p>
-<p><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t</sub> − η<span>·</span><span>u</span><sub>t</sub><span>·</span><em class="ph i">m̂</em><sub>t</sub><span><span> </span></span></p>
-<p>注意 ut 依靠最大運算，不建議 Adam 中的 <span>m</span><sub>t</sub><span><span> </span></span>和 <span>v</span><sub>t</sub><span><span> </span></span>偏向零，這就是為什麼不需要針對 <span>u</span><sub>t</sub> 計算偏差。好的預設值 η = 0.002，<span>β</span><sub>1 </sub>= 0.9 和 <span>β</span><sub>2</sub> = 0.999。</p><br />Stochastic gradient descent << <a href='Stochastic gradient descent.html'>Previous</a> <a href='Ref.html'>Next</a> >> Ref</div>
+<p style="text-align: center;"><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t</sub> − η<span>·</span><span>u</span><sub>t</sub><span>·</span><em class="ph i">m̂</em><sub>t</sub><span><span> </span></span></p>
+<p>注意 u<sub>t</sub> 依靠最大運算，不建議 Adam 中的 <span>m</span><sub>t</sub><span><span> </span></span>和 <span>v</span><sub>t</sub><span><span> </span></span>偏向零，這就是為什麼不需要針對 <span>u</span><sub>t</sub> 計算偏差。好的預設值 η = 0.002，<span>β</span><sub>1 </sub>= 0.9 和 <span>β</span><sub>2</sub> = 0.999。</p>
+<h4>Nadam</h4>
+<p>Nadam (Nesterov-accelerated Adaptive Moment Estimation，Nesterov 加速的自適應矩估計)，結合 Adam 和 NAG。為了將 NAG 納入 Adam，需要修改動量項 <span>m</span><sub>t</sub>。使用先前符號回顧動量更新規則：</p>
+<p style="text-align: center;"><span>g</span><sub>t</sub> = ∇<span>θ</span><sub>t </sub>J(<span>θ</span><sub>t</sub>) <br/><span>m</span><sub>t</sub><span><span> </span></span>= γ<span>m</span><sub>t-1</sub><span><span> </span></span> + η<span>g</span><sub>t</sub><br/><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t </sub>− <span>m</span><sub>t</sub></p>
+<p>J是目標函數，γ 是動量衰減項，η 是 step size(學習率)，上面的第三個方程式擴展為：</p>
+<p style="text-align: center;"><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t</sub> − (γ<span>m</span><sub>t-1</sub> + η<span>g</span><sub>t</sub>)</p>
+<p>再次證明了動量涉及在前一個動量向量的方向上往前一步和在當前梯度的方向上邁出一步。NAG 然後允許計算梯度之前透過更新動量步長參數使梯度方向上執行更精確的步長。因此，我們只需要修改梯度 <span>g</span><sub>t</sub> 到達 NAG：</p>
+<p style="text-align: center;"><span>g</span><sub>t</sub> = ∇<span>θ</span><sub>t</sub> J(<span>θ</span><sub>t</sub> − γ<span>m</span><sub>t-1</sub>) <br/><span>m</span><sub>t</sub><span><span> </span></span>= γ<span>m</span><sub>t-1</sub> + η<span>g</span><sub>t</sub><br/><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t</sub> − <span>m</span><sub>t</sub><span><span> </span></span></p>
+<p>Dozat 建議修改 NAG：一次用於更新梯度 <span>g</span><sub>t</sub> 第二次更新參數 <span>θ</span><sub>t+1</sub>，直接應用先前的動量向量來更新當前參數：</p>
+<p style="text-align: center;"><span>g</span><sub>t</sub> = ∇<span>θ</span><sub>t</sub> J(<span>θ</span><sub>t</sub>) <br/><span>m</span><sub>t</sub><span><span> </span></span>= γ<span>m</span><sub>t-1</sub> + η<span>g</span><sub>t</sub><br/><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t</sub> − (γ<span>m</span><sub>t</sub> + η<span>g</span><sub>t</sub>)</p>
+<p>為了將 Nesterov 動量添加到 Adam，可以類似地用當前動量向量替換以前的動量向量。回想一下 Adam 更新規則 如下：</p>
+<p style="text-align: center;"><span>m</span><sub>t</sub><span><span> </span></span>= <span>β</span><sub>1</sub><span>m</span><sub>t-1</sub> + (1 − <span>β</span><sub>1</sub>)<span>g</span><sub>t</sub><br/><em class="ph i">m̂</em><sub>t</sub><span><span> </span></span> = <span>m</span><sub>t</sub><span><span> / (</span></span>1 − <span>β<sup>t</sup></span><sub>1</sub>)<br/><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t</sub> − { η / [<span>(</span><em class="ph i">v̂<sub>t </sub></em><span><span><span>)</span><sup>½</sup></span></span> + ϵ ]} <em class="ph i">m̂</em><sub>t</sub><span><span> </span></span></p>
+<p>用定義拓展第二個方程式：</p>
+<p style="text-align: center;"><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t</sub>  − <span>{ η</span><span> / [</span><span>(</span><em class="ph i">v̂<sub>t </sub></em><span><span><span>)</span><sup>½</sup></span></span><span><span> </span>+ ϵ ]}</span>{( <span>β</span><sub>1</sub><span>m</span><sub>t-1</sub>) / (1 − <span>β<sup>t</sup></span><sub>1</sub><span> )</span> + [(1 − <span>β</span><sub>1</sub>)<span>g</span><sub>t</sub>]/(1 − <span>β<sup>t</sup></span><sub>1</sub> )}</p>
+<p>注意 (<span>β</span><sub>1</sub><span>m</span><sub>t-1</sub>) / (1−<span>β<sup>t</sup></span><sub>1</sub>)只是前一個的 time step 的動量向量的偏差來校正評估。因此，可以將其替換為 <em class="ph i">m̂</em><sub>t-1</sub>：</p>
+<p style="text-align: center;"><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t </sub>− <span>{ η</span><span> / [</span><span>(</span><em class="ph i">v̂<sub>t </sub></em><span><span><span>)</span><sup>½</sup></span></span><span><span> </span>+ ϵ ]}[</span><span>β</span><sub>1<em class="ph i">m̂</em><sub>t-1</sub><span><span> </span></span></sub> + (1 − <span>β</span><sub>1</sub>)<span>g</span><sub>t</sub> / (1 − <span>β<sup>t</sup></span><sub>1</sub> )]</p>
+<p>為簡化，因為無論如何將在下一步中替換分母，所以忽略了分母 1 − <span>β<sup>t</sup></span><sub>1</sub>。該方程式再次看起來和上面擴展的動量更 新規則非常相似。可以像以前一樣添加 Nesterov 動量，方法是用當前動量向量偏差校正後的評估值替換前一時間步 長的動量向量偏差校正後的評估值，這為我們提供了 Nadam 更新規則：</p>
+<p style="text-align: center;"><span>θ</span><sub>t+1</sub> = <span>θ</span><sub>t</sub> − <span> </span><span>{ η</span><span> / [</span><span>(</span><em class="ph i">v̂<sub>t </sub></em><span><span><span>)</span><sup>½</sup></span></span><span><span> </span>+ ϵ ]}</span>[(<span>β</span><sub>1<em class="ph i">m̂</em><sub>t</sub><span><span> </span></span></sub> + (1 − <span>β</span><sub>1</sub>)<span>g</span><sub>t</sub> / (1 − <span>β<sup>t</sup></span><sub>1</sub> )]</p>
+<h4>AMSGrad</h4>
+<p>Reddi 等（2018）。正式化了這個問題，並指出了泛化行為不佳的原因：將過去梯度平方的指數移動平均值作為自適應學習率方法。雖然引入指數平均值的動機很充分：應防止學習率隨著訓練的進行而變得無限小；但這也是 Adagrad 算法的關鍵缺陷。在其他情況下，短期記憶的梯度成為障礙。</p>
+<p>在 Adam 收斂到次優解的環境中，已經觀察到一些小型批次提供了較大且信息豐富的梯度，但是這些小型批次很少出現，因此指數平均會減小其影響，從而導致收斂性較差。作者 (資料來源的作者) 提供了一個簡單的凸型優化問題的例子，其中 Adam 可以觀察到相同的行為。AMSGrad算法是為了解決此問題，這算法使用了過去梯度平方的最大值 <span>v</span><sub>t </sub>而不是指數平均值來更新參數。<span>v</span><sub>t </sub>的定義與先前的 Adam 相同：</p>
+<p style="text-align: center;"><span>v</span><sub>t </sub>= <span>β</span><sub>2</sub><span>v</span><sub>t-1 </sub>+ (1 − <span>β</span><sub>2</sub>)<span>g</span><sup>2</sup><sub>t</sub></p>
+<p>而不是直接使用 vt(或其偏差更正的版本 vˆt），如果現在使用以前值的大於現在的值：</p>
+<p style="text-align: center;"><em class="ph i">v̂<sub>t</sub></em> = max(<em class="ph i">v̂<sub>t-1 </sub></em>, <span>v</span><sub>t</sub>)</p>
+<p>這方式 AMSGrad 不會增加步長 (step size)，從而避免了 Adam 遇到的問題。為了簡化，AMSGrad 去除了 Adam 的去偏差 (debias) 步驟。可以看到完整的 AMSGrad 更新，沒有經過偏差校正的估計：</p>
+<p style="text-align: center;"><span>m</span><sub>t</sub><span><span> </span></span>= <span>β</span><sub>1</sub><span>m</span><sub>t-1</sub><span><span> </span></span>+ (1 − <span>β</span><sub>1</sub>)<span>g</span><sub>t</sub><br/><span>v</span><sub>t </sub>= <span>β</span><sub>2</sub><span>v</span><sub>t-1</sub> + (1 − <span>β</span><sub>2</sub>)<span>g</span><sup>2</sup><sub>t</sub><br/>vˆt = max(<em class="ph i">v̂<sub>t-1 </sub></em>, <span>v</span><sub>t </sub>) <br/><span>θ</span><sub>t+1</sub> = θt − <span>{ η / [</span><span>(</span><em class="ph i">v̂<sub>t </sub></em><span><span><span>)</span><sup>½</sup></span></span><span><span> </span>+ ϵ ]}</span> <span>m</span><sub>t</sub><span><span> </span></span></p>
+<p>在小型數據集和 CIFAR-10 上，與 Adam 相比，性能有所提高。但是，其他實驗顯示其性能與 Adam 相近或更 差。在實際運用，AMSGrad 是否能勝過 Adam，還有待觀察。</p>
+<h4>Gradient noise</h4>
+<p>增加 noise 跟隨高斯分布 N(0, σ<sup>2</sup><sub>t</sub> ) 對每個梯度更新：</p>
+<p style="text-align: center;">g<sub>t,i</sub> = <span>g</span><sub>t,i</sub> + N(0,<span> σ</span><sup>2</sup><span></span><sub>t</sub> )</p>
+<p>根據排定時間對差異計算：</p>
+<p style="text-align: center;"><span><span> </span>σ</span><sup>2</sup><span></span><sub>t</sub> = η /(1 + t)<sup>γ</sup></p>
+<p>添加這種 noise 對不良初始化的網絡可使其強化，並有助於訓練特別深且復雜的網絡。他們懷疑增加的噪聲使模型 有更多的機會逃脫並找到新的局部極小值，這對於更深的模型而言更常見。</p><br />Stochastic gradient descent << <a href='Stochastic gradient descent.html'>Previous</a> <a href='Ref.html'>Next</a> >> Ref</div>
         
     <!-- footer -->
       <div class="container">
