@@ -133,21 +133,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">動態網站 << <a href='動態網站.html'>Previous</a> <a href='機電控制.html'>Next</a> >> 機電控制<br /><h1>數位簽章</h1>
-<p><a href="https://letsencrypt.org/">https://letsencrypt.org/</a></p>
-<p><a href="https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx">https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx</a> </p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">sudo apt-get update
-sudo apt-get install software-properties-common
-sudo add-apt-repository universe
-sudo apt-get update
-
-sudo apt-get install certbot python3-certbot-nginx
-
-sudo certbot certonly --nginx
-
-sudo certbot renew --dry-run</pre>
-<p></p>
-<br />動態網站 << <a href='動態網站.html'>Previous</a> <a href='機電控制.html'>Next</a> >> 機電控制</div>
+    <div id="tipue_search_content">neural_network_in_python.pdf << <a href='neural_network_in_python.pdf.html'>Previous</a> <a href='Gradient Descent Optimizer.html'>Next</a> >> Gradient Descent Optimizer<br /><h1>優化器</h1><p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p><h4><strong>Gradient Descent</strong></h4><p>利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。</p><h4><strong>Batch gradient descent</strong></h4><p>用批次的方式計算訓練資料，整個資料集計算梯度只更新一次，因此計算和更新時會占用大量記憶體。整體效率較差、速度較緩慢。由 Gradient Descent 延伸出來的算法。其收斂行為與<span> Gradient Descent 相同。</span></p><h4><strong>Stochastic gradient descent</strong></h4><p>每次執行時會更新並消除誤差，有頻繁更新和變化大的特性，較不容易困在特定區域。<span>由 Gradient Descent 延伸出來的算法。其收斂行為與</span><span> Gradient Descent 相同。</span></p><h4><strong>Mini-batch gradient descent</strong></h4><p>結合 Batch gradient descent 和 Stochastic gradient descent 的特點：批量計算和頻繁更新，所衍伸的算法。利用小批量的方式頻繁更新，並使收斂更穩定。其缺點：學習率挑選不易、預定義 threshold 無法適應數據集的特徵、對很少發生的特徵無法執行較大的更新、<span>非凸面error surface要避免被困在次優的局部最小值等。</span></p><h4>Gradient descent optimization algorithms</h4><p>為了改善前面幾種算法而發展出來的優化算法。以下將列出數種優化算法。</p><h4>Momentum</h4><p>在梯度下降法加上動量的概念，會加速收斂到最小值並減少震盪。</p><h4>Nesterov accelerated gradient</h4><p>NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最小值所造成的震盪(為了修正到最小值，來回修正而產生的震盪)</p><h4>Adagrad</h4><p>其學習率能適應參數：<span>頻繁出現的特徵用較低的學習率，不經常出現的特徵則用較高的學習率，且無須手動調整學習率。其缺點是，學習率會急遽下降，最後會無限小，這算法就不再獲得知識。</span></p><h4><span>Adadelta</span></h4><p><span>為 Adagrad 的延伸，下降激進程度，學習率從更新規則中淘汰，不需設定預設學習率。</span></p><h4>RMSprop</h4><p><span>為了解決 Adagrad 學習率急劇下降的問題，學習率除以梯度平方的RMS，解決學習率無限小的情形。</span></p><h4>Adam</h4><p><span>類似 Momentum，更加穩定快速的收斂。</span></p><h4>AdaMax</h4><p><span><span>與 Adam 相似，依靠 u<sub>t</sub><span><span> </span></span>最大運算</span></span></p><h4>Nadam</h4><p><span>結合 Adam 和 NAG ，應用先前參數執行兩次更新，一次更新參數一次更新梯度。</span></p><h4>AMSGrad</h4><p>改善 Adam 算法所導致收斂較差的情況(用指數平均會減少其影響)，換用梯度平方最大值來做計算，並移除去偏差的步驟。是否有比 <span>Adam 算法好仍有待觀察。</span></p><h4>Gradient noise</h4><p><span>有助於訓練特別深且復雜的網絡，noise 可改善不良初始化的網路。</span></p><p><strong><a href="./../downloads/整理資料神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p><br />neural_network_in_python.pdf << <a href='neural_network_in_python.pdf.html'>Previous</a> <a href='Gradient Descent Optimizer.html'>Next</a> >> Gradient Descent Optimizer</div>
         
     <!-- footer -->
       <div class="container">
