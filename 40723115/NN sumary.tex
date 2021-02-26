@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper]{article}
+%加這個就可以設定字體
+\usepackage{fontspec}
+%使用xeCJK，其他的還有CJK或是xCJK
+\usepackage{xeCJK}
+
+%設定英文字型，不設的話就會使用預設的字型
+\setmainfont{Times New Roman}
+
+%設定中英文的字型
+%字型的設定可以使用系統內的字型，而不用像以前一樣另外安裝
+\setCJKmainfont{標楷體}
+
+%中文自動換行
+\XeTeXlinebreaklocale "zh"
+
+%文字的彈性間距
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+%設定段落之間的距離
+\setlength{\parskip}{0.3cm}
+\title{Neural Network Sunmary}
+\author{虎尾科技大學\\40723115\\ 林于哲}
+\date{January 16 2021}
+\begin{document}
+\maketitle
+\section{Introduction}
+activation function : Sigmoid Function,Relu\\
+optimizer:Adam,Sigmoidprime\\
+Loss function:$\frac{[y_{pred}-feedforward(x)]^2}{2}$\\
+\section{Sigmoid Function}
+An activation function.It is a key part of Nerual Network and it can be differentiable.It can make the Nenual Network unliner.\\
+\section{SigmoidPrime Function}
+It is an differential Sigmoid Funtion. It can reduce  error of gradient so it is some kind of loss function and Let's take a look the proof of SigmoidPrime\\
+$$\sigma(x)=\frac{1}{1+e^{-x}}$$  
+$$\sigma^{'}(x)=\frac{d}{dx}\sigma(x)=\frac{d}{dx}\frac{1}{1+e^{-x}}=\frac{d}{dx}(1+e^{-x})^{-1}$$\\[6pt]
+$$-------------skip-------------$$\\[6pt]
+Tip: find $f^{'}(x)$ if $f(x)=\frac{A}{B+Ce^{x}}$\\
+Answer:\\
+$$\frac{d}{dx}[\frac{1}{g(x)}]=\frac{1^{'}g(x)-1g^{'}(x)}{g(x)^2}=\frac{g^{'}(x)}{[g(x)]^2}$$\\
+if $g(x)$=constant\\
+$$\frac{d}{dx}[\frac{g(x)}{h(x)}]=\frac{g^{'}(x)h(x)-g(x)h^{'}(x)}{h(x)^2}= \frac{-kh^{'}(x)}{[h(x)]^2}$$\\
+$$f^{'}(x)=\frac{-A[\frac{d}{dx}(B+Ce^x)]}{(B+Ce^x)^2}=\frac{-A(0+Ce^x)}{(B+Ce^x)^2}=\frac{-ACe^x}{(B+Ce^x)^2}$$\\[6pt]
+$$-------------skip-------------$$\\[6pt]
+Hence:\\
+$$=-(1+e^{-x})^{-2}\frac{d}{dx}(1+e^{-x})=-(1+e^{-x})^{-2}[\frac{d}{dx}(1)+\frac{d}{dx}(e^{-x})]$$\\
+$$=-(1+e^{-x})^{-2}[0+\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[e^{-x}\frac{d}{dx}(-x)]$$\\
+$$-(1+e^{-x})^{-2}[e^{-x}(-1)]=-(1+e^{-x})^{-2}(-e^{-x})=\frac{e^{-x}}{(1+e^{-x})^2}=\frac{1(e^{-x})}{(1+e^{-x})(1+e^{-x})}$$\\
+$$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}{1+e^{-x}}=\frac{1}{1+e^{-x}}(\frac{1+e^{-x}}{1+e^{-x}}-\frac{1}{1+e^{-x}})$$\\[6pt]
+$$=\sigma(x)[1-\sigma(x)]$$
+\section{Relu Function}
+\section{Adam Function}
+\section{Loss Function}
+
+
+
+
+
+
+
+
+\end{document}  
