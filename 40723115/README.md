@@ -21,4 +21,6 @@ EPG-pong1py : PG pong 範例
 
 PG-pong.py : 最新版本 Policy Gradient pong game訓練 需修改
 
+TCNN-pong.py ： 為可執行程式
 
+TCNN-pong_restart ：為TCNN-pong.py修改版 ，需繼續修改
