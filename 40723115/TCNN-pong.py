@@ -1,193 +1,107 @@
-
-import sys
 import pygame
+import random , sys
 from pygame.locals import *
-import random
-import tensorflow as tf
-import cv2
 import numpy as np
 from collections import deque
+import tensorflow as tf  # http://blog.topspeedsnail.com/archives/10116
+import cv2  # http://blog.topspeedsnail.com/archives/4755
+
 tf.compat.v1.disable_eager_execution()
+
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+
+SCREEN_SIZE = [320, 400]
+BAR_SIZE = [50, 5]
+BAR2_SIZE = [50,5]
+BALL_SIZE = [15, 15]
 
 # 神經網絡的輸出
 MOVE_STAY = [1, 0, 0]
-MOVE_UP = [0, 1, 0]
-MOVE_DOWN = [0, 0, 1]
+MOVE_LEFT = [0, 1, 0]
+MOVE_RIGHT = [0, 0, 1]
+
 
 class Game(object):
-   def bouncing_rect(self):
-       global dx , dy ,player_x,player_y,player_score,player2_score,goal1_x,goal1_y
+    def __init__(self):
+        pygame.init()
+        self.clock = pygame.time.Clock()
+        self.screen = pygame.display.set_mode(SCREEN_SIZE)
+        pygame.display.set_caption('Simple Game')
 
-       blue.x += dx
-       blue.y += dy
+        self.ball_pos_x = SCREEN_SIZE[0] // 2 - BALL_SIZE[0] / 2
+        self.ball_pos_y = SCREEN_SIZE[1] // 2 - BALL_SIZE[1] / 2
 
-       if blue.top <= 0 or blue.bottom >=340:
-           dy *= -1
-       if blue.left <= 0 or blue.right >= 480:
-           dx *= -1
-       if blue.colliderect(player) or blue.colliderect(player2):
-           dx *= -1
-        # Player Score
-        # Player Score
-       if blue.left <= 0 and blue.right <= 480:
-           if blue.top >= 150 and blue.bottom >=230:
-               self.blue_start()
-               player_score += 1
-       if blue.right >=480 and blue.left >= 0:
-           if blue.top >= 150 and blue.bottom <=230:
-               self.blue_start()
-               player2_score += 1
-        # Opponent Score
+        self.ball_dir_x = -1  # -1 = left 1 = right
+        self.ball_dir_y = -1  # -1 = up   1 = down
+        self.ball_pos = pygame.Rect(self.ball_pos_x, self.ball_pos_y, BALL_SIZE[0], BALL_SIZE[1])
 
-   def blue_start(self):
-	   global dx, dy
+        self.bar_pos_x = SCREEN_SIZE[0] // 2 - BAR_SIZE[0] // 2
+        self.bar_pos = pygame.Rect(self.bar_pos_x, SCREEN_SIZE[1] - BAR_SIZE[1]-5, BAR_SIZE[0], BAR_SIZE[1])
 
-	   blue.center = (screen_width/2, screen_height/2)
-	   dy *= random.choice((1,-1))
-	   dx *= random.choice((1,-1))
-
-   def player_animation(self):
-
-       player.y += player_speed
-
-       if player.top <= 0:
-           player.top = 0
-       if player.bottom >= screen_height:
-           player.bottom = screen_height
-       if player.left <= 260:
-           player.left = 260
-       if player.right >= screen_width:
-           player.right = screen_width
+        self.bar2_pos_x = SCREEN_SIZE[0] // 2 - BAR_SIZE[0] // 2
+        self.bar2_pos = pygame.Rect(self.bar_pos_x, 5, BAR_SIZE[0], BAR_SIZE[1])
+        self.bar2_speed = 7
 
 
-   def player2_ai(self):
-
-       if player2.top < blue.y:
-           player2.y += opponent_speed
-       if player2.bottom > blue.y:
-           player2.y -= opponent_speed
-
-       if player2.top <= 0:
-           player2.top = 0
-       if player2.bottom >= screen_height:
-           player2.bottom = screen_height
-
-
-'''
-def player2_animation():
-
-    player2.y += player2_speed
-   # player.x += player_speed
-    if player2.top <= 0:
-        player2.top = 0
-    if player2.bottom >= screen_height:
-        player2.bottom = screen_height
-    if player2.left <= 260:
-        player2.left = 260
-    if player2.right >= 20:
-        player2.right = 20
-'''
-
-# action是MOVE_STAY、MOVE_LEFT、MOVE_RIGHT
+    # action是MOVE_STAY、MOVE_LEFT、MOVE_RIGHT
     # ai控制棒子左右移動；返回遊戲界面像素數和對應的獎勵。(像素->獎勵->強化棒子往獎勵高的方向移動)
-def step(self, action):
 
-    #if action == MOVE_UP:
-        self.player_pos_x = self.player_pos_x - 2
-    #elif action == MOVE_DOWN:
-        self.player_pos_x = self.player_pos_x + 2
-    else:
-        pass
-    if self.player_pos_y < 0:
-        self.player_pos_y = 0
-    #if self.player_pos_y > screen_SIZE[0] - BAR_SIZE[0]:
-       #self.player_pos_y = SCREEN_SIZE[0] - BAR_SIZE[0]
 
-       #self.screen.fill(BLACK)
-       #self.player_pos.left = self.player_pos_x
-       #pygame.draw.rect(self.screen, WHITE, self.player_pos)
+    def step(self, action):
 
-        self.blue_pos.left += self.blue_dir_x * 2
-        self.blue_pos.bottom += self.blue_dir_y * 3
-       #pygame.draw.rect(self.screen, WHITE, self.ball_pos)
+        if action == MOVE_LEFT:
+            self.bar_pos_x = self.bar_pos_x - 2
+        elif action == MOVE_RIGHT:
+            self.bar_pos_x = self.bar_pos_x + 2
+        else:
+            pass
+        if self.bar_pos_x < 0:
+            self.bar_pos_x = 0
+        if self.bar_pos_x > SCREEN_SIZE[0] - BAR_SIZE[0]:
+            self.bar_pos_x = SCREEN_SIZE[0] - BAR_SIZE[0]
 
-       #if self.ball_pos.top <= 0 or self.ball_pos.bottom >= (SCREEN_SIZE[1] - BAR_SIZE[1] + 1):
-           #self.ball_dir_y = self.ball_dir_y * -1
-       #if self.ball_pos.left <= 0 or self.ball_pos.right >= (SCREEN_SIZE[0]):
-           #self.ball_dir_x = self.ball_dir_x * -1
+        if  self.bar2_pos.left < self.ball_pos.x:
+            self.bar2_pos.x += self.bar2_speed
+        if  self.bar2_pos.right > self.ball_pos.x:
+            self.bar2_pos.x -= self.bar2_speed
 
-    reward = 0
-    if self.bar_pos.top <= self.ball_pos.bottom and (
-            self.bar_pos.left < self.ball_pos.right and self.bar_pos.right > self.ball_pos.left):
-           reward = 1  # 擊中獎勵
-    elif self.bar_pos.top <= self.ball_pos.bottom and (
-            self.bar_pos.left > self.ball_pos.right or self.bar_pos.right < self.ball_pos.left):
-     reward = -1  # 沒擊中懲罰
+        if  self.bar2_pos.left <= 0:
+            self.bar2_pos.left = 0
+        if  self.bar2_pos.right >= SCREEN_SIZE[0]:
+            self.bar2_pos.right = SCREEN_SIZE[0]
+
+        self.screen.fill(BLACK)
+        self.bar_pos.left = self.bar_pos_x
+        pygame.draw.rect(self.screen, WHITE, self.bar_pos)
+        pygame.draw.rect(self.screen, WHITE, self.bar2_pos)
+        pygame.draw.rect(self.screen, (255, 0, 0), Rect((5, 5), (310, 390)), 2)
+        pygame.draw.line(self.screen, (255, 0, 0), (7, 195), (313, 195), 2)
+        pygame.draw.circle(self.screen, (255, 0, 0), (160, 195), 50, 2)
+
+        self.ball_pos.left += self.ball_dir_x * 2
+        self.ball_pos.bottom += self.ball_dir_y * 3
+        pygame.draw.rect(self.screen, WHITE, self.ball_pos)
+
+        if self.ball_pos.top <= 0 or self.ball_pos.bottom >= (SCREEN_SIZE[1] - BAR_SIZE[1] + 1):
+            self.ball_dir_y = self.ball_dir_y * -1
+        if self.ball_pos.left <= 0 or self.ball_pos.right >= (SCREEN_SIZE[0]):
+            self.ball_dir_x = self.ball_dir_x * -1
+
+        reward = 0
+        if self.bar_pos.top <= self.ball_pos.bottom and (
+                self.bar_pos.left < self.ball_pos.right and self.bar_pos.right > self.ball_pos.left):
+            reward = 1  # 擊中獎勵
+        elif self.bar_pos.top <= self.ball_pos.bottom and (
+                self.bar_pos.left > self.ball_pos.right or self.bar_pos.right < self.ball_pos.left):
+            reward = -1  # 沒擊中懲罰
 
         # 獲得遊戲界面像素
-    screen_image = pygame.surfarray.array3d(pygame.display.get_surface())
-    pygame.display.update()
-    # 返回遊戲界面像素和對應的獎勵
-    return reward, screen_image
+        screen_image = pygame.surfarray.array3d(pygame.display.get_surface())
+        pygame.display.update()
+        # 返回遊戲界面像素和對應的獎勵
+        return reward, screen_image
 
-
-
-
-
-pygame.init()
-player_speed = 0
-opponent_speed = 7
-
-circle_x , circle_y = 300,200
-
-screen_width = 480
-screen_height = 340
-
-player_score = 0
-player2_score = 0
-font = pygame.font.SysFont("calibri", 40)
-
-screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("air hockey")
-
-clock = pygame.time.Clock()
-
-background = pygame.Surface((640, 480))#畫布
-background = background.convert()#筆記
-background.fill((255, 255, 255))
-
-goal = pygame.Surface((5, 100))
-goal1 = goal.convert()
-goal2 = goal.convert()
-goal1.fill((0, 255, 0))#球門綠色
-goal2.fill((0, 255, 0))
-goal1_y, goal2_y = 130., 130.
-goal1_x, goal2_x = 5., 470.#球門位置
-
-
-player = pygame.Rect(480 - 20, 340 / 2 - 70, 10, 70)
-blue = pygame.Rect(480 / 2 - 15, 340 / 2 - 15, 30, 30)
-player2 = pygame.Rect(20, screen_height / 2 - 70, 10, 70)
-
-
-
-RED = pygame.Color(255,0,0)
-radius = 50
-pygame.draw.line(background,(0,0,0),(240,5),(240,332),10)
-pygame.draw.circle(background,(0,0,0),(240,170),radius,10)
-
-# 創建藍色小球(它也有自己的畫布，移動球即等於移動它的畫布)
-ball = pygame.Surface((30, 30))  # 建立球矩形繪圖區
-ball.fill((255, 255, 255))  # 這邊我故意將球的背景色設為黃色，以清楚看到球的畫布
-blue = pygame.draw.circle(ball, (0, 0, 255), (15, 15), 15, 0)  # 畫藍色球
-rect1 = ball.get_rect()  # 取得球矩形區塊
-rect1.center = (320, 170)  # 球起始中心位置
-x, y = rect1.topleft  # 球左上角坐標
-dx = 4 * random.choice((1, -1))
-dy = 4 * random.choice((1, -1))# 球運動速度
-white = (255,255,255)
-
-wall = pygame.draw.rect(background, (0, 0, 0), Rect((5, 5), (470, 330)), 10)
 
 # learning_rate
 LEARNING_RATE = 0.99
@@ -236,7 +150,7 @@ def convolutional_neural_network(input_image):
 
 # 深度強化學習入門: https://www.nervanasys.com/demystifying-deep-reinforcement-learning/
 # 訓練神經網絡
-def train_neural_network(input_image, circle_x=dx, circle_y=dy):
+def train_neural_network(input_image):
     predict_action = convolutional_neural_network(input_image)
 
     argmax = tf.compat.v1.placeholder("float", [None, output])
@@ -263,12 +177,13 @@ def train_neural_network(input_image, circle_x=dx, circle_y=dy):
 
         n = 0
         epsilon = INITIAL_EPSILON
-
         while True:
             for event in pygame.event.get():
              if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+                 pygame.quit()
+                 sys.exit()
+
+
             action_t = predict_action.eval(feed_dict={input_image: [input_image_data]})[0]
 
             argmax_t = np.zeros([output], dtype=np.int)
@@ -278,12 +193,12 @@ def train_neural_network(input_image, circle_x=dx, circle_y=dy):
                 maxIndex = np.argmax(action_t)
             argmax_t[maxIndex] = 1
             if epsilon > FINAL_EPSILON:
-                 epsilon -= (INITIAL_EPSILON - FINAL_EPSILON) / EXPLORE
+                epsilon -= (INITIAL_EPSILON - FINAL_EPSILON) / EXPLORE
 
-    # for event in pygame.event.get():  macOS需要事件循環，否則白屏
-    #	if event.type == QUIT:
-    #		pygame.quit()
-    #		sys.exit()
+            # for event in pygame.event.get():  macOS需要事件循環，否則白屏
+            #	if event.type == QUIT:
+            #		pygame.quit()
+            #		sys.exit()
             reward, image = game.step(list(argmax_t))
 
             image = cv2.cvtColor(cv2.resize(image, (100, 80)), cv2.COLOR_BGR2GRAY)
@@ -294,7 +209,7 @@ def train_neural_network(input_image, circle_x=dx, circle_y=dy):
             D.append((input_image_data, argmax_t, reward, input_image_data1))
 
             if len(D) > REPLAY_MEMORY:
-               D.popleft()
+                D.popleft()
 
             if n > OBSERVE:
                 minibatch = random.sample(D, BATCH)
@@ -320,34 +235,5 @@ def train_neural_network(input_image, circle_x=dx, circle_y=dy):
 
             print(n, "epsilon:", epsilon, " ", "action:", maxIndex, " ", "reward:", reward)
 
-            score1 = font.render(str(player_score), True, (255, 0, 255))
-            score2 = font.render(str(player2_score), True, (255, 0, 255))
 
-            screen.blit(background, (0, 0))  # 重繪視窗
-            screen.blit(goal1, (goal1_x, goal1_y))
-            screen.blit(goal2, (goal2_x, goal2_y))
-            screen.blit(score1, (255., 155))
-            screen.blit(score2, (205., 155.))
-            background.fill((255, 255, 255))
-
-            pygame.draw.line(background, (0, 0, 0), (240, 5), (240, 332), 10)
-            pygame.draw.circle(background, (0, 0, 0), (240, 170), radius, 10)
-            pygame.draw.rect(background, (0, 0, 0), Rect((5, 5), (470, 330)), 10)
-            pygame.draw.rect(background, (255,0,0), player)
-            pygame.draw.rect(background, (255,0,0), player2)
-            pygame.draw.ellipse(background, (0,0,255), blue)
-
-
-
-            circle_x += dx
-            circle_y += dy
-
-    #bouncing_rect()
-    #player_animation()
-    #player2_animation()
-
-            #pygame.display.update()
-            #clock.tick(60)
-            train_neural_network(input_image)
-#pygame.quit()
-#quit()
+train_neural_network(input_image)
