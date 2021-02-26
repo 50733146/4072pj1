@@ -9,11 +9,14 @@ PG ： Policy Gradient
 
 2 ： GPU
 
+eg： e.g
+
 pygame_practice : pygame practiced program 
 
 pygame_resource : pygame reference
 
-egRL-catching ball.py : RL 接球範例
+ERL-catching ball.py : RL 接球範例
 
-egPG-pong1py : PG pong 範例
+EPG-pong1py : PG pong 範例
+
 
