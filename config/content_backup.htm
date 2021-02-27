@@ -793,13 +793,13 @@ y = np.array(([1], [0], [0], [0], [0], [0], [0], [1]), dtype=float)</pre>
         # activation function
         # 使用Sigmoid function算法(S-curve)
         return 1/(1+np.exp(-s))</pre>
-<p><img caption="false" height="100" src="/images/Sigmoid_Function.jpg" width="222"/></p>
+<p><img caption="false" height="70" src="/images/Sigmoid_Function.png" width="166"/></p>
 <p><strong>activationSigmoidPrime</strong></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def activationSigmoidPrime(self, s):
         # First derivative of activationSigmoid
         # calculus time!
         return s * (1 - s)</pre>
-<p><strong><img caption="false" height="100" src="/images/Sigmoid_Function.jpg" width="222"/></strong></p>
+<p><strong><img caption="false" height="50" src="/images/Sigmoid_function_prime.jpg" width="257"/></strong></p>
 <p><strong>saveSumSquaredLossList(儲存損失函數值)</strong></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> def saveSumSquaredLossList(self,i,error):
         lossFile.write(str(i)+","+str(error.tolist())+'\n')</pre>
@@ -915,7 +915,73 @@ result = model.predict(X ).round()
 #替輸入樣本產生輸出預測
 print (result)
 #印出結果</pre>
-<p><a href="/downloads/整理資料/neural_network_in_python_summary.pdf">整理好的PDF檔</a><br/><br/></p><h1>優化器</h1>
+<p><a href="/downloads/整理資料/neural_network_in_python_summary.pdf">整理好的PDF檔</a></p><h2>參考範例</h2>
+<p>參考範例 <br/><a href="https://github.com/mdecourse/4072pj1/blob/master/40723150/example/pong2.py">https://github.com/mdecourse/4072pj1/blob/master/40723150/example/pong2.py</a></p>
+<h4>GPU運算</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with cp.cuda.Device(0):#用GPU0做計算
+    if resume:
+        model = pickle.load(open('save.p', 'rb'))
+        '''以 Binary 的方式讀取 save.p'''
+        print('resuming')
+    else:
+        model = {}
+        model['W1'] = np.random.randn(D,H) / np.sqrt(D) 
+	'''W1檢測遊戲場景'''
+        model['W2'] = np.random.randn(H,A) / np.sqrt(H)
+	'''W2決定擊錘向上或向下移動'''
+    grad_buffer = { k : np.zeros_like(v) for k, v in model.items() }
+    # update buffers that add up gradients over a batch
+    rmsprop_cache = { k : np.zeros_like(v) for k, v in model.items() }
+    # rmsprop memory
+</pre>
+<p></p>
+<p><span> python open()[來源：<a href="https://www.w3schools.com/python/ref_func_open.asp">w3schools</a>]</span></p>
+<h4><span>sigmoid </span></h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def sigmoid(x): 
+    return 1.0 / (1.0 + np.exp(-x))</pre>
+<p><img alt="" height="70" src="/images/Sigmoid_Function.png" width="165"/></p>
+<h4>softmax</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def softmax(x):
+    probs = np.exp(x - np.max(x, axis=1, keepdims=True))
+    probs /= np.sum(probs, axis=1, keepdims=True)
+    return probs</pre>
+<p><img alt="" height="100" src="/images/Softmax Formula.png" width="285"/>[來源：<a href="https://deepai.org/machine-learning-glossary-and-terms/softmax-layer">softmax</a>資料]</p>
+<h4>prepro</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def prepro(I):
+    """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
+    I = I[35:195] # crop，取第35項到195項
+    I = I[::2,::2,0] # downsample by factor of 2
+    I[I == 144] = 0 # erase background (background type 1)
+    I[I == 109] = 0 # erase background (background type 2)
+    I[I != 0] = 1 # everything else (paddles, ball) just set to 1
+    return I.astype(np.float).ravel()</pre>
+<h4>discount rewards</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def discount_rewards(r):
+    """ take 1D float array of rewards and compute discounted reward """
+    discounted_r = np.zeros_like(r) #和r矩陣相同維度大小的0矩陣
+    running_add = 0
+    for t in reversed(range(0, r.size)):
+        if r[t] != 0: running_add = 0 # reset the sum, since this was a game boundary (pong specific!)
+				'''如果第r項不為0，running_add = 0'''
+        running_add = running_add * gamma + r[t]
+        discounted_r[t] = running_add
+		    '''加入第t項折扣'''
+    return discounted_r</pre>
+<h4>policy forward</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def policy_forward(x):
+    if(len(x.shape)==1):
+        x = x[np.newaxis,...]
+
+    h = x.dot(model['W1'])
+    h[h&lt;0] = 0 # ReLU nonlinearity
+    logp = h.dot(model['W2'])
+    #p = sigmoid(logp)
+    p = softmax(logp)
+
+    return p, h # return probability of taking action 2, and hidden state
+</pre>
+<p></p>
+<p></p><h1>優化器</h1>
 <p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p>
 <h4>Gradient Descent</h4>
 <p>利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。</p>
@@ -947,7 +1013,8 @@ print (result)
 <p>改善 Adam 算法所導致收斂較差的情況(用指數平均會減少其影響)，換用梯度平方最大值來做計算，並移除去偏差的步驟。是否有比 <span>Adam 算法好仍有待觀察。</span></p>
 <h4>Gradient noise</h4>
 <p><span>有助於訓練特別深且復雜的網絡，noise 可改善不良初始化的網路。</span></p>
-<p><strong><a href="/downloads/整理資料/神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p><h2>Gradient Descent Optimizer</h2>
+<p><strong><a href="/downloads/整理資料/神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p>
+<h2>Gradient Descent Optimizer</h2>
 <p>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">資料來源</a>)</p>
 <p style="text-align: center;"><strong><img alt="Error_surface" caption="false" height="200" src="/images/Error_surface.png" width="231"/></strong></p>
 <p style="text-align: center;"><strong>圖1. Error_surface<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></p>
@@ -969,7 +1036,8 @@ print (result)
 <p style="text-align: center;"><span>w<sub>t=1</sub> = <span>w</span><sub>t</sub> − η▽w<sub>t</sub></span></p>
 <p style="text-align: center;"><span>b<sub>t=1</sub> = <span>b</span><sub>t</sub> − η▽b<sub>t</sub></span></p>
 <p style="text-align: center;"><span>where at w = w<sub>t</sub>, b = <span>b</span><sub>t</sub> </span></p>
-<p style="text-align: center;"><span>w<sub>t</sub> = ∂L(θ)/∂w；▽b<sub>t</sub> = ∂L(θ)/∂b</span></p><h2>Stochastic gradient descent</h2>
+<p style="text-align: center;"><span>w<sub>t</sub> = ∂L(θ)/∂w；▽b<sub>t</sub> = ∂L(θ)/∂b</span></p>
+<h2>Stochastic gradient descent</h2>
 <p>(<a href="https://ruder.io/optimizing-gradient-descent/">資料來源</a>)</p>
 <h4><span>Batch gradient descrnt</span></h4>
 <p><span>Vanilla gradient descent 又稱 Batch gradient descent(批次梯度下降法)，計算目標函數的梯度，參數 θ 對於整個 訓練資料：</span></p>
@@ -1013,7 +1081,8 @@ params = params − learning_rate ∗ params_grad
 <li> 學習率清單嘗試在訓練的時候調整學習率，即根據預定義清單或當目標下降於閾值 (threshold) 時降低學習率。 但清單和閾值須預先定義，因此無法適應數據集的特徵。</li>
 <li> 另外相同學習率適用全部參數更新。如果資料稀疏而且外型有很特別的頻率，我們可能不希望將所有特徵更新 到相同的程度，而是對很少發生的特徵執行較大的更新。</li>
 <li> 最小化神經網路常見的高度非凸面誤差方程式 (error function) 的另一關鍵挑戰則是要避免被困在大量次優的局 部最小值區域中。認為困難實際上不是由局部最小值引起的，而是由鞍點引起的，即一維向上傾斜而另一維向下 傾斜的點。這些鞍點通常被相同誤差的平穩段包圍，這使得 SGD 很難逃脫，因為在所有維度上梯度都接近於零。</li>
-</ol><h2>Gradient descent optimization algorithms</h2>
+</ol>
+<h2>Gradient descent optimization algorithms</h2>
 <p><span>(</span><a href="https://ruder.io/optimizing-gradient-descent/">資料來源</a><span>)</span></p>
 <h4>Momentum</h4>
 <p>SGD 難以在陡峭的往正確的方向，那就是說在一個維度上，曲面的彎曲比另一個維度要陡得多，這在局部最優情況下很常見。下圖[圖.1]的同心圓代表中心下凹的曲面。在這些情況下，SGD 會在陡峭的地方振盪，而僅沿著底部朝著局部最優方向猶豫前進，如 [圖.1.a] 所 示。 Momentun(動量) 是一個幫助加速 SGD 在正確方向和抑制震盪的方法，在 [圖.1.b]。</p>
@@ -1122,12 +1191,14 @@ params = params − learning_rate ∗ params_grad
 <p style="text-align: center;">g<sub>t,i</sub> = <span>g</span><sub>t,i</sub> + N(0,<span> σ</span><sup>2</sup><span></span><sub>t</sub> )</p>
 <p>根據排定時間對差異計算：</p>
 <p style="text-align: center;"><span><span> </span>σ</span><sup>2</sup><span></span><sub>t</sub> = η /(1 + t)<sup>γ</sup></p>
-<p>添加這種 noise 對不良初始化的網絡可使其強化，並有助於訓練特別深且復雜的網絡。他們懷疑增加的噪聲使模型 有更多的機會逃脫並找到新的局部極小值，這對於更深的模型而言更常見。</p><h1>程式</h1>
+<p>添加這種 noise 對不良初始化的網絡可使其強化，並有助於訓練特別深且復雜的網絡。他們懷疑增加的噪聲使模型 有更多的機會逃脫並找到新的局部極小值，這對於更深的模型而言更常見。</p>
+<h1>程式</h1>
 <h4>pygame</h4>
 <p>訓練用的Pygame程式：</p>
 <p><a href="https://github.com/s40723150/pygame_airhockey">https://github.com/s40723150/pygame_airhockey</a></p>
-<p><a href="https://github.com/mdecourse/4072pj1/tree/master/40723150/pygame_test">https://github.com/mdecourse/4072pj1/tree/master/40723150/pygame_test</a></p>
-<p></p><h2>RL-Pong Game</h2>
+<p><a href="https://github.com/mdecourse/4072pj1/tree/master/40723150/pygame">https://github.com/mdecourse/4072pj1/tree/master/40723150/pygame</a></p>
+<p></p>
+<h2>RL-Pong Game</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import pygame
 import random , sys
 from pygame.locals import *
@@ -1367,7 +1438,8 @@ def train_neural_network(input_image):
 
 
 train_neural_network(input_image)</pre>
-<p></p><h1>Ref</h1>
+<p></p>
+<h1>Ref</h1>
 <h2>Flutter</h2>
 <p>Flutter 與 Android sdk 版本差異問題解決: <a href="https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se/61613986#61613986">https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se/61613986#61613986</a></p>
 <p>Flask 與 ML 系統在後端, Flutter 作為前端</p>
