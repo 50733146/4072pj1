@@ -73,8 +73,8 @@ def policy_forward(x):
     h = x.dot(model['W1'])
     h[h<0] = 0 # ReLU nonlinearity
     logp = h.dot(model['W2'])
-    p = sigmoid(logp)
-    #p = softmax(logp)
+    #p = sigmoid(logp)
+    p = softmax(logp)
     return p, h # return probability of taking action 2, and hidden state
 
 def policy_backward(eph, epdlogp):

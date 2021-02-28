@@ -961,8 +961,8 @@ print (result)
     discounted_r = np.zeros_like(r) #和r矩陣相同維度大小的0矩陣
     running_add = 0
     for t in reversed(range(0, r.size)):
-        if r[t] != 0: running_add = 0 # reset the sum, since this was a game boundary (pong specific!)
-				'''如果第r項不為0，running_add = 0'''
+        if r[t] != 0: running_add = 0 
+        # 當球到邊界的時候重設總和
         running_add = running_add * gamma + r[t]
         discounted_r[t] = running_add
 		    '''加入第t項折扣'''
@@ -978,10 +978,129 @@ print (result)
     #p = sigmoid(logp)
     p = softmax(logp)
 
-    return p, h # return probability of taking action 2, and hidden state
+    return p, h 
+    # return probability of taking action 2, and hidden state
+    # h 是球在環境上的狀態，p 是移動的決策
 </pre>
-<p></p>
-<p></p><h1>優化器</h1>
+<h4>policy backward</h4>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">def policy_backward(eph, epdlogp):
+    """ backward pass. (eph is array of intermediate hidden states) """
+    dW2 = eph.T.dot(epdlogp)  
+    dh = epdlogp.dot(model['W2'].T)
+    dh[eph &lt;= 0] = 0 # backpro prelu
+
+    t = time.time()
+    # problem: https://github.com/chainer/chainer/issues/8582
+    if(be == cp): #將參數複製到GPU或CPU
+        dh_gpu = cuda.to_gpu(dh, device=0)
+        epx_gpu = cuda.to_gpu(epx.T, device=0)
+        dW1 = cuda.to_cpu( epx_gpu.dot(dh_gpu) )
+        # 將GPU的矩陣複製到CPU
+    else:
+        dW1 = epx.T.dot(dh) 
+    
+
+    print((time.time()-t0)*1000, ' ms, @final bprop')
+
+    return {'W1':dW1, 'W2':dW2}</pre>
+<h4>訓練過程</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">while True:
+    t0  = time.time()
+    #render = True
+    if render: 
+        t  = time.time()
+        env.render()# 顯示訓練中狀況(影像)
+        print((time.time()-t)*1000, ' ms, @rendering')
+        # 計算每幀時間差
+
+    t  = time.time()
+    # preprocess the observation, set input to network to be difference image
+    cur_x = prepro(observation)
+    x = cur_x - prev_x if prev_x is not None else np.zeros(D)
+    prev_x = cur_x
+  
+    # forward the policy network and sample an action from the returned probability
+    t  = time.time()
+    aprob, h = policy_forward(x)
+    # roll the dice, in the softmax loss
+    u = np.random.uniform()
+    aprob_cum = np.cumsum(aprob)
+    a = np.where(u &lt;= aprob_cum)[0][0]
+    action = a+2
+    #print(u, a, aprob_cum)
+  
+    # record various intermediates (needed later for backprop)
+    t = time.time()
+    xs.append(x) # observation
+    hs.append(h) # hidden state
+
+    #softmax loss gradient
+    dlogsoftmax = aprob.copy()
+    dlogsoftmax[0,a] -= 1 #-discounted reward 
+    dlogps.append(dlogsoftmax)
+
+
+    # step the environment and get new measurements
+    t  = time.time()
+    observation, reward, done, info = env.step(action)
+    reward_sum += reward 
+
+    drs.append(reward) # record reward (has to be done after we call step() to get reward for previous action)
+
+
+    if done: # an episode finished
+        episode_number += 1
+
+        t  = time.time()
+
+        # stack together all inputs, hidden states, action gradients, and rewards for this episode
+        epx = np.vstack(xs)
+        eph = np.vstack(hs)
+        epdlogp = np.vstack(dlogps)
+        epr = np.vstack(drs)
+        xs,hs,dlogps,drs = [],[],[],[] # reset array memory
+
+        print(epdlogp.shape)
+
+        # compute the discounted reward backwards through time
+        discounted_epr = discount_rewards(epr)
+        # standardize the rewards to be unit normal (helps control the gradient estimator variance)
+        discounted_epr -= np.mean(discounted_epr)
+        discounted_epr /= np.std(discounted_epr)
+
+        epdlogp *= discounted_epr # modulate the gradient with advantage (PG magic happens right here.)
+        grad = policy_backward(eph, epdlogp)
+        for k in model: grad_buffer[k] += grad[k] # accumulate grad over batch
+
+        # perform rmsprop parameter update every batch_size episodes
+        if episode_number % update_freq == 0: #update_freq used to be batch_size
+            for k,v in model.items():
+                g = grad_buffer[k] # gradient
+                rmsprop_cache[k] = decay_rate * rmsprop_cache[k] + (1 - decay_rate) * g**2
+                model[k] -= learning_rate * g / (np.sqrt(rmsprop_cache[k]) + 1e-5)
+                grad_buffer[k] = np.zeros_like(v) # reset batch gradient buffer
+
+        # boring book-keeping
+        running_reward = reward_sum if running_reward is None else running_reward * 0.99 + reward_sum * 0.01
+        print('resetting env. episode reward total was %f. running mean: %f' % (reward_sum, running_reward))
+        if episode_number % 100 == 0: pickle.dump(model, open('save.p', 'wb'))
+        reward_sum = 0
+        observation = env.reset() # reset env
+        prev_x = None
+        
+        print((time.time()-t)*1000, ' ms, @backprop')
+
+
+    outstring =""
+
+    if reward != 0: # Pong has either +1 or -1 reward exactly when game ends.
+        if reward == -1:
+            outstring = ''
+        else:
+            outstring = '!!!!!!!'
+        
+        print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre>
+<p><br/><br/></p><h1>優化器</h1>
 <p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p>
 <h4>Gradient Descent</h4>
 <p>利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。</p>
