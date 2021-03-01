@@ -1018,15 +1018,10 @@ print (result)
     cur_x = prepro(observation)
     x = cur_x - prev_x if prev_x is not None else np.zeros(D)
     prev_x = cur_x
-    #print((time.time()-t)*1000, ' ms, @prepo')
-  
   
     # forward the policy network and sample an action from the returned probability
     t  = time.time()
     aprob, h = policy_forward(x)
-    #action = 2 if np.random.uniform() &lt; aprob else 3 # roll the dice!
-    #print((time.time()-t)*1000, ' ms, @forward')
-
     # roll the dice, in the softmax loss
     u = np.random.uniform()
     aprob_cum = np.cumsum(aprob)
@@ -1034,12 +1029,10 @@ print (result)
     action = a+2
     #print(u, a, aprob_cum)
   
-
     # record various intermediates (needed later for backprop)
     t = time.time()
     xs.append(x) # observation
     hs.append(h) # hidden state
-
 
     #softmax loss gradient
     dlogsoftmax = aprob.copy()
@@ -1051,19 +1044,14 @@ print (result)
     t  = time.time()
     observation, reward, done, info = env.step(action)
     reward_sum += reward 
-    #print((time.time()-t)*1000, ' ms, @env.step')
-
 
     drs.append(reward) # record reward (has to be done after we call step() to get reward for previous action)
 
-
-    #print((time.time()-t0)*1000, ' ms, @whole.step')
 
     if done: # an episode finished
         episode_number += 1
 
         t  = time.time()
-
 
         # stack together all inputs, hidden states, action gradients, and rewards for this episode
         epx = np.vstack(xs)
@@ -1112,7 +1100,24 @@ print (result)
             outstring = '!!!!!!!'
         
         print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre>
-<p><br/><br/></p><h1>優化器</h1>
+<h2>Markov Decision Process</h2>
+<h4>Markov Chain</h4>
+<p>當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。</p>
+<h4>Markov Reward Process</h4>
+<p>action 到指定狀態會獲得獎勵。</p>
+<p style="text-align: center;">R(s<sub>t</sub>=s) = 𝔼[r<sub>t</sub>|s<sub>t</sub> = s]</p>
+<p style="text-align: center;">γ<span>∈[0, 1]</span></p>
+<ul style="list-style-type: disc;">
+<li><span>Horizon：<br/>在無限的狀態以有限的狀態表示</span></li>
+<li><span>Return：<br/></span><span>G<sub>t</sub> = R<sub>t+1</sub>+ γR<sub>t+2</sub> + <span>γ<sup>2</sup></span><span>R</span><sub>t+3</sub> <span>+ </span><span>γ<sup>3</sup></span><span>R</span><sub>t+4</sub> + ... <span>+ </span><span>γ<sup>T-t-1</sup></span><span>R</span><sub>T<br/></sub>越早做出正確決策獎勵越高</span></li>
+<li><span>State value function：<br/></span>V<sub>t</sub>(S) = <span>𝔼[G</span><sub>t</sub><span>|s</span><sub>t</sub><span><span> </span>= s]<br/>決策價值</span></li>
+</ul>
+<h4><span>Discount Factor (γ)</span></h4>
+<ol>
+<li>越早做出有獎勵的決策，獎勵越高</li>
+<li>做出有價值的決策<span>γ = 1，不分決策順序先後</span></li>
+<li><span>無用的決策γ = 0，不會得到獎勵</span></li>
+</ol><h1>優化器</h1>
 <p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p>
 <h4>Gradient Descent</h4>
 <p>利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。</p>
