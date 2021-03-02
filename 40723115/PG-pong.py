@@ -39,15 +39,14 @@ class Game(object):
         self.bar2_pos_x = SCREEN_SIZE[0] // 2 - BAR_SIZE[0] // 2
         self.bar2_pos = pygame.Rect(self.bar_pos_x, 5, BAR_SIZE[0], BAR_SIZE[1])
         self.bar2_speed = 7
-#puipui
+
     def restart(self):
         # global  self.ball_dir_x, ball_pos_y
 
         self.ball_pos.x = SCREEN_SIZE[0]/2
         self.ball_pos.y = SCREEN_SIZE[1]/2
 
-        #print("reset", self.ball_pos.x, self.ball_pos.y)
-#puipui
+
     # action是MOVE_STAY、MOVE_LEFT、MOVE_RIGHT
     # ai控制棒子左右移動；返回遊戲界面像素數和對應的獎勵。(像素->獎勵->強化棒子往獎勵高的方向移動)
 
@@ -165,7 +164,7 @@ game = Game()
 
 while True:
 
-    _, image = game.restart(observation)
+    _, image = game.step(observation)
     print(type(image))
     # 轉換爲灰度值
     image = cv2.cvtColor(cv2.resize(image, (100, 80)), cv2.COLOR_BGR2GRAY)
