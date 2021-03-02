@@ -85,7 +85,7 @@ while True:
   action = 2 if np.random.uniform() < aprob else 3 # roll the dice!
 
   # record various intermediates (needed later for backprop)
-  xs.append(x) # observation
+  xs.append(x) # observation #用於在列表末尾添加新的對象也就是x
   hs.append(h) # hidden state
   y = 1 if action == 2 else 0 # a "fake label"
   dlogps.append(y - aprob) # grad that encourages the action that was taken to be taken (see http://cs231n.github.io/neural-networks-2/#losses if confused)
@@ -99,22 +99,24 @@ while True:
   if done: # an episode finished
     episode_number += 1
 
-    # stack together all inputs, hidden states, action gradients, and rewards for this episode
+    # 將episode的所有輸入，隱藏狀態，動作梯度和獎勵堆疊在一起
+    # 沿著豎直方向將矩陣堆疊起來，除了第一維外，被堆疊的矩陣個維度要一致
     epx = np.vstack(xs)
     eph = np.vstack(hs)
     epdlogp = np.vstack(dlogps)
     epr = np.vstack(drs)
     xs,hs,dlogps,drs = [],[],[],[] # reset array memory
 
-    # compute the discounted reward backwards through time
+    # 向後計算折價獎勵
     discounted_epr = discount_rewards(epr)
     # standardize the rewards to be unit normal (helps control the gradient estimator variance)
+    #將獎勵標準化為單位法線（幫助控制梯度估計量方差）
     discounted_epr -= np.mean(discounted_epr)
-    discounted_epr /= np.std(discounted_epr)
+    discounted_epr /= np.std(discounted_epr) #計算標準差
 
-    epdlogp *= discounted_epr # modulate the gradient with advantage (PG magic happens right here.)
+    epdlogp *= discounted_epr # 靠著優勢調節梯度 (PG magic happens right here.)
     grad = policy_backward(eph, epdlogp)
-    for k in model: grad_buffer[k] += grad[k] # accumulate grad over batch
+    for k in model: grad_buffer[k] += grad[k] # 累積 grad over batch
 
     # perform rmsprop parameter update every batch_size episodes
     if episode_number % batch_size == 0:
@@ -122,7 +124,7 @@ while True:
         g = grad_buffer[k] # gradient
         rmsprop_cache[k] = decay_rate * rmsprop_cache[k] + (1 - decay_rate) * g**2
         model[k] += learning_rate * g / (np.sqrt(rmsprop_cache[k]) + 1e-5)
-        grad_buffer[k] = np.zeros_like(v) # reset batch gradient buffer
+        grad_buffer[k] = np.zeros_like(v) # 重置批次梯度buffer
         #print(grad_buffer['W1'])
 
     # boring book-keeping
