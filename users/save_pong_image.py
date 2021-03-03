@@ -4,6 +4,12 @@ import matplotlib.image as mpimg
 import numpy as np
 import cv2
 
+# ball colour = (236,236,236)
+# enenmy colour = (213,130,74)
+# own colour = (92,186,92)
+# background = (144,72,17) or
+# backgroun = (109,118,43)
+
 def prepro(I):
     """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
     I = I[35:195] # crop

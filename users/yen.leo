@@ -572,6 +572,7 @@ import gym
 
 from chainer import cuda
 import cupy as cp
+
 import time, threading
 
 #backend
@@ -824,6 +825,11 @@ rmsprop_cache = { k : np.zeros_like(v) for k,v in model.items() } # rmsprop memo
 <t tx="leo.20210302203753.5">def sigmoid(x): 
     return 1.0 / (1.0 + np.exp(-x)) # sigmoid "squashing" function to interval [0,1]
 
+# ball colour = (236,236,236)
+# enenmy colour = (213,130,74)
+# own colour = (92,186,92)
+# background = (144,72,17)
+
 </t>
 <t tx="leo.20210302203753.6">def prepro(I):
     """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
@@ -941,6 +947,17 @@ while True:
 </t>
 <t tx="leo.20210302204105.1">https://gym.openai.com/envs/Pong-v0/
 
+Pong-v0 
+
+background color 
+
+# background = (144,72,17) 
+https://convertingcolors.com/rgb-color-144_72_17.html?search=RGB(144,%2072,%2017)
+or
+
+# backgroun = (109,118,43)
+https://convertingcolors.com/rgb-color-109_118_43.html?search=RGB(109,%20118,%2043)
+
 Maximize your score in the Atari 2600 game Pong. In this environment, the observation is an RGB image of the screen, which is an array of shape (210, 160, 3) Each action is repeatedly performed for a duration of k frames, where k is uniformly sampled from {2,3,4}.
 
 https://gym.openai.com/docs/
@@ -953,6 +970,10 @@ https://nextjournal.com/a/C6oRegv5kUcSvcaZ7MM8ff
 https://medium.com/gradientcrescent/fundamentals-of-reinforcement-learning-automating-pong-in-using-a-policy-model-an-implementation-b71f64c158ff
 https://stackoverflow.com/questions/29810128/opencv-python-set-background-colour/38516242
 
-https://towardsdatascience.com/deep-q-network-dqn-i-bce08bdf2af</t>
+https://towardsdatascience.com/deep-q-network-dqn-i-bce08bdf2af
+
+https://www.youtube.com/watch?v=tqrcjHuNdmQ
+
+https://colab.research.google.com/github/DJCordhose/ai/blob/master/notebooks/rl/pg-from-scratch.ipynb</t>
 </tnodes>
 </leo_file>

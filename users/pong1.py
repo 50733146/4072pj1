@@ -27,6 +27,11 @@ rmsprop_cache = { k : np.zeros_like(v) for k,v in model.items() } # rmsprop memo
 def sigmoid(x): 
     return 1.0 / (1.0 + np.exp(-x)) # sigmoid "squashing" function to interval [0,1]
 
+# ball colour = (236,236,236)
+# enenmy colour = (213,130,74)
+# own colour = (92,186,92)
+# background = (144,72,17)
+
 def prepro(I):
     """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
     I = I[35:195] # crop
