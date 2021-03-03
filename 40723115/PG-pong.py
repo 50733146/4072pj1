@@ -5,6 +5,7 @@ import gym
 import pygame
 from pygame.locals import *
 import random
+import cv2
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -38,15 +39,14 @@ class Game(object):
         self.bar2_pos_x = SCREEN_SIZE[0] // 2 - BAR_SIZE[0] // 2
         self.bar2_pos = pygame.Rect(self.bar_pos_x, 5, BAR_SIZE[0], BAR_SIZE[1])
         self.bar2_speed = 7
-#puipui
+
     def restart(self):
         # global  self.ball_dir_x, ball_pos_y
 
         self.ball_pos.x = SCREEN_SIZE[0]/2
         self.ball_pos.y = SCREEN_SIZE[1]/2
 
-        #print("reset", self.ball_pos.x, self.ball_pos.y)
-#puipui
+
     # action是MOVE_STAY、MOVE_LEFT、MOVE_RIGHT
     # ai控制棒子左右移動；返回遊戲界面像素數和對應的獎勵。(像素->獎勵->強化棒子往獎勵高的方向移動)
 
@@ -95,6 +95,8 @@ class Game(object):
         if self.ball_pos.colliderect(self.bar2_pos) or self.ball_pos.colliderect(self.bar_pos):
             self.ball_dir_y *= -1
 
+        screen_image = pygame.surfarray.array3d(pygame.display.get_surface())
+        pygame.display.update()
 
 # hyperparameters
 H = 200  # number of hidden layer neurons
@@ -121,16 +123,9 @@ rmsprop_cache = {k: np.zeros_like(v) for k, v in model.items()}  # rmsprop memor
 def sigmoid(x):
     return 1.0 / (1.0 + np.exp(-x))  # sigmoid "squashing" function to interval [0,1]
 
-
-def prepro(I):
-    """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
-    I = I[35:195]  # crop
-    I = I[::2, ::2, 0]  # downsample by factor of 2
-    I[I == 144] = 0  # erase background (background type 1)
-    I[I == 109] = 0  # erase background (background type 2)
-    I[I != 0] = 1  # everything else (paddles, ball) just set to 1
-    return I.astype(np.float).ravel()
-
+'''
+def prepro(screen_image):
+'''
 
 def discount_rewards(r):
     """ take 1D float array of rewards and compute discounted reward """
@@ -159,21 +154,30 @@ def policy_backward(eph, epdlogp):
     dW1 = np.dot(dh.T, epx)
     return {'W1': dW1, 'W2': dW2}
 
-
-#env = gym.make("Game")
 observation = Game.restart
 prev_x = None  # used in computing the difference frame
 xs, hs, dlogps, drs = [], [], [], []
 running_reward = None
 reward_sum = 0
 episode_number = 0
+game = Game()
+
 while True:
+
+    _, image = game.step(observation)
+    print(type(image))
+    # 轉換爲灰度值
+    image = cv2.cvtColor(cv2.resize(image, (100, 80)), cv2.COLOR_BGR2GRAY)
+    # 轉換爲二值
+    ret, image = cv2.threshold(image, 1, 255, cv2.THRESH_BINARY)
+    input_image_data = np.stack((image, image, image, image), axis=2)
+
     if render: pygame.render()
 
     # preprocess the observation, set input to network to be difference image
-    cur_x = prepro(observation)
-    x = cur_x - prev_x if prev_x is not None else np.zeros(D)
-    prev_x = cur_x
+    #cur_x = prepro(observation)
+    x = input_image_data - prev_x if prev_x is not None else np.zeros(D)
+    prev_x = input_image_data
 
     # forward the policy network and sample an action from the returned probability
     aprob, h = policy_forward(x)
@@ -225,7 +229,7 @@ while True:
         print('resetting env. episode reward total was %f. running mean: %f' % (reward_sum, running_reward))
         if episode_number % 100 == 0: pickle.dump(model, open('save.p', 'wb'))
         reward_sum = 0
-        observation = pygame.reset()  # reset env
+        observation =  Game.restart  # reset env
         prev_x = None
 
     outstring = ""
