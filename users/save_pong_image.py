@@ -22,7 +22,7 @@ def prepro(I):
 
 env = gym.make('Pong-v0')
 env.reset()
-img = env.env.render(mode='rgb_array')
+img = env.render(mode='rgb_array')
 orig_img = img
 print("image type", type(img))
 print("image shape:", img.shape)
