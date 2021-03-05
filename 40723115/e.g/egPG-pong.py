@@ -142,6 +142,6 @@ while True:
     reward_sum = 0
     observation = env.reset() # reset env
     prev_x = None
-
+#%d格式化十進位 #%f預設保留浮點數 #%格式化字串的方法
   if reward != 0: # Pong has either +1 or -1 reward exactly when game ends.#檢查兩個操作數的值是否相等，如果值不相等，則條件變為真
     print ('ep %d: game finished, reward: %f' % (episode_number, reward) + ('' if reward == -1 else ' !!!!!!!!'))
