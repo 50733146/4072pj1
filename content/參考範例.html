@@ -167,11 +167,11 @@ img.add_border {
 <h4>prepro</h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def prepro(I):
     """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
-    I = I[35:195] # crop，取第35項到195項
-    I = I[::2,::2,0] # downsample by factor of 2
-    I[I == 144] = 0 # erase background (background type 1)
-    I[I == 109] = 0 # erase background (background type 2)
-    I[I != 0] = 1 # everything else (paddles, ball) just set to 1
+    I = I[35:195] # 裁掉頂部的計分和底部空白，剩下160x160
+    I = I[::2,::2,0] # 從160x160縮減到80x80，取出第一個顏色channel
+    I[I == 144] = 0 # 將背景顏色變成黑色
+    I[I == 109] = 0 # 將背景顏色變成黑色
+    I[I != 0] = 1 # 球和擊錘變成白色
     return I.astype(np.float).ravel()</pre>
 <h4>discount rewards</h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def discount_rewards(r):
@@ -317,8 +317,7 @@ img.add_border {
         else:
             outstring = '!!!!!!!'
         
-        print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre>
-<br />neural_network_in_python.pdf << <a href='neural_network_in_python.pdf.html'>Previous</a> <a href='Markov Decision Process.html'>Next</a> >> Markov Decision Process</div>
+        print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre><br />neural_network_in_python.pdf << <a href='neural_network_in_python.pdf.html'>Previous</a> <a href='Markov Decision Process.html'>Next</a> >> Markov Decision Process</div>
         
     <!-- footer -->
       <div class="container">

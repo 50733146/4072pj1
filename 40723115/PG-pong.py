@@ -42,7 +42,7 @@ def prepro(I):
   return I.astype(np.float).ravel() #對資料型別進行轉換 #ravel():将多维数组转换为一维数组的功能,如果没有必要，不会产生源数据的副本
 
 # 根據一個episode的每個step的reward列表，計算每一個Step的Gt
-def calc_reward_to_go(reward_list, gamma=0.99):
+def discount_rewards(reward_list, gamma=0.99):
     """calculate discounted reward"""
     reward_arr = np.array(reward_list)
     for i in range(len(reward_arr) - 2, -1, -1):
