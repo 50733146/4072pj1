@@ -149,8 +149,14 @@ img.add_border {
 <ol>
 <li>越早做出有獎勵的決策，獎勵越高</li>
 <li>做出有價值的決策<span>γ = 1，不分決策順序先後</span></li>
-<li><span>無用的決策γ = 0，不會得到獎勵</span></li>
-</ol><br />參考範例 << <a href='參考範例.html'>Previous</a> <a href='優化器.html'>Next</a> >> 優化器</div>
+<li><span>無用的決策C= 0，不會得到獎勵</span><span></span></li>
+</ol>
+<p><span>Bellman equation：描述互動關係狀態</span></p>
+<p style="text-align: center;">V(s) = R(s)+<span>γ∑<sub>s'∈S </sub>P(s'|s)V(s')<br/>R(s)：立即獎勵<br/>γ∑<sub>s'∈S </sub><span>P(s'|s)V(s') ：未來獎勵衰減總和</span><br/></span></p>
+<p style="text-align: left;"><span><span>Anaytic solution ：分析性解法<br/>MRP的分析性解法：</span></span></p>
+<p style="text-align: center;"><span><span>V = (1-γP)<sup>-1</sup>R</span></span></p>
+<p style="text-align: left;"><span><span>只適合小的MRP(個數比較少的)：</span></span></p>
+<p style="text-align: center;"><span><span>V= (1-γp)<sup>-1</sup>R</span></span></p><br />參考範例 << <a href='參考範例.html'>Previous</a> <a href='優化器.html'>Next</a> >> 優化器</div>
         
     <!-- footer -->
       <div class="container">

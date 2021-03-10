@@ -1115,8 +1115,14 @@ print (result)
 <ol>
 <li>越早做出有獎勵的決策，獎勵越高</li>
 <li>做出有價值的決策<span>γ = 1，不分決策順序先後</span></li>
-<li><span>無用的決策γ = 0，不會得到獎勵</span></li>
-</ol><h1>優化器</h1>
+<li><span>無用的決策C= 0，不會得到獎勵</span><span></span></li>
+</ol>
+<p><span>Bellman equation：描述互動關係狀態</span></p>
+<p style="text-align: center;">V(s) = R(s)+<span>γ∑<sub>s'∈S </sub>P(s'|s)V(s')<br/>R(s)：立即獎勵<br/>γ∑<sub>s'∈S </sub><span>P(s'|s)V(s') ：未來獎勵衰減總和</span><br/></span></p>
+<p style="text-align: left;"><span><span>Anaytic solution ：分析性解法<br/>MRP的分析性解法：</span></span></p>
+<p style="text-align: center;"><span><span>V = (1-γP)<sup>-1</sup>R</span></span></p>
+<p style="text-align: left;"><span><span>只適合小的MRP(個數比較少的)：</span></span></p>
+<p style="text-align: center;"><span><span>V= (1-γp)<sup>-1</sup>R</span></span></p><h1>優化器</h1>
 <p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p>
 <h4>Gradient Descent</h4>
 <p>利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。</p>
