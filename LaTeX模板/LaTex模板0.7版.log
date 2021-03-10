@@ -1,12 +1,12 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2020.3.24)  10 MAR 2021 21:35
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2020.3.25)  10 MAR 2021 22:54
 entering extended mode
-**"./119 N.tex"
-("119 N.tex"
+**./LaTex模板0.7版.tex
+(LaTex模板0.7版.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06>
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/base\article.cls
+(Y:\miktex-portable\texmfs\install\tex/latex/base\article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/base\size10.clo
+(Y:\miktex-portable\texmfs\install\tex/latex/base\size10.clo
 File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count163
@@ -21,12 +21,11 @@ File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.sty
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/l3kernel\expl3.sty
+(Y:\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.sty
+(Y:\miktex-portable\texmfs\install\tex/latex/l3kernel\expl3.sty
 Package: expl3 2020-03-06 L3 programming layer (loader) 
 
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/l3backend\l3backend-
-xdvipdfmx.def
+(Y:\miktex-portable\texmfs\install\tex/latex/l3backend\l3backend-xdvipdfmx.def
 File: l3backend-xdvipdfmx.def 2020-03-12 L3 backend support: xdvipdfmx
 \g__graphics_track_int=\count171
 \l__pdf_internal_box=\box45
@@ -34,21 +33,16 @@ File: l3backend-xdvipdfmx.def 2020-03-12 L3 backend support: xdvipdfmx
 \g__pdf_backend_annotation_int=\count173
 ))
 Package: xeCJK 2020/02/18 v3.8.2 Typesetting CJK scripts with XeLaTeX
-
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/l3packages/l3keys2e\
-l3keys2e.sty
+ (Y:\miktex-portable\texmfs\install\tex/latex/l3packages/l3keys2e\l3keys2e.sty
 Package: l3keys2e 2020-03-06 LaTeX2e option processing using LaTeX3 keys
 )
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/l3packages/xtemplate
-\xtemplate.sty
+(Y:\miktex-portable\texmfs\install\tex/latex/l3packages/xtemplate\xtemplate.sty
 Package: xtemplate 2020-03-06 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen135
 \l__xtemplate_tmp_int=\count174
 \l__xtemplate_tmp_muskip=\muskip16
 \l__xtemplate_tmp_skip=\skip49
-)
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/l3packages/xparse\xp
-arse.sty
+) (Y:\miktex-portable\texmfs\install\tex/latex/l3packages/xparse\xparse.sty
 Package: xparse 2020-03-06 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count175
 \g__xparse_grabber_int=\count176
@@ -114,12 +108,10 @@ Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 \l__xeCJK_verb_case_int=\count189
 \l__xeCJK_verb_exspace_skip=\skip55
 
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec.st
-y
+(Y:\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec-xe
-tex.sty
+(Y:\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
 \l__fontspec_script_int=\count190
@@ -137,12 +129,11 @@ X
 \l__fontspec_tmpb_dim=\dimen165
 \l__fontspec_tmpc_dim=\dimen166
 
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/base\fontenc.sty
+(Y:\miktex-portable\texmfs\install\tex/latex/base\fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 )
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec.cf
-g)))
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.cfg
+(Y:\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec.cfg)))
+(Y:\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.cfg
 File: xeCJK.cfg 2020/02/18 v3.8.2 Configuration file for xeCJK package
 ))
 
@@ -169,17 +160,17 @@ Package fontspec Info: Font family '標楷體(0)' created for font '標楷體' w
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/geometry\geometry.st
-y
+(Y:\miktex-portable\texmfs\install\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/graphics\keyval.sty
+(Y:\miktex-portable\texmfs\install\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
-) (D:\kmol2021\data\miktex-portable\texmfs\install\tex/generic/iftex\ifvtex.sty
+)
+(Y:\miktex-portable\texmfs\install\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/generic/iftex\iftex.sty
+(Y:\miktex-portable\texmfs\install\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 \Gm@cnth=\count267
@@ -195,10 +186,8 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutvoffset=\dimen174
 \Gm@dimlist=\toks16
 
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/xelatex/xetexconfig\geomet
-ry.cfg))
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/titlesec\titlesec.st
-y
+(Y:\miktex-portable\texmfs\install\tex/xelatex/xetexconfig\geometry.cfg))
+(Y:\miktex-portable\texmfs\install\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box47
 \beforetitleunit=\skip56
@@ -210,11 +199,11 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidthlast=\dimen178
 \titlewidthfirst=\dimen179
 )
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/titlesec\titletoc.st
-y
+(Y:\miktex-portable\texmfs\install\tex/latex/titlesec\titletoc.sty
 Package: titletoc 2019/10/16 v2.13 TOC entries
 \ttl@leftsep=\dimen180
-) (D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/cjk\CJKnumb.sty
+)
+(Y:\miktex-portable\texmfs\install\tex/latex/cjk\CJKnumb.sty
 Package: CJKnumb 2015/04/18 4.8.4
 \CJK@q=\count270
 \CJK@r=\count271
@@ -223,8 +212,8 @@ Package: CJKnumb 2015/04/18 4.8.4
 LaTeX Warning: Unused global option(s):
     [14pt].
 
-("119 N.aux")
-\openout1 = `"119 N.aux"'.
+(LaTex模板0.7版.aux)
+\openout1 = `LaTex模板0.7版.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
@@ -237,8 +226,7 @@ LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
 3.
-
-(D:\kmol2021\data\miktex-portable\texmfs\install\tex/latex/base\ts1cmr.fd
+ (Y:\miktex-portable\texmfs\install\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 53.
@@ -400,31 +388,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--97
 ||
  []
 
-("119 N.toc")
+(LaTex模板0.7版.toc)
 \tf@toc=\write3
-\openout3 = `"119 N.toc"'.
+\openout3 = `LaTex模板0.7版.toc'.
 
  [2]
 Underfull \hbox (badness 10000) in paragraph at lines 100--100
 ||
  []
 
-("119 N.lof")
+(LaTex模板0.7版.lof)
 \tf@lof=\write4
-\openout4 = `"119 N.lof"'.
+\openout4 = `LaTex模板0.7版.lof'.
 
- [3] [1] ("119 N.aux")
+ [3] [1] (LaTex模板0.7版.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
  5585 strings out of 414221
- 157265 string characters out of 2901377
- 461420 words of memory out of 3000000
+ 157053 string characters out of 2901377
+ 462428 words of memory out of 3000000
  23077 multiletter control sequences out of 15000+200000
  532482 words of font info for 42 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 44i,4n,60p,295b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,4n,60p,299b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 119 N.pdf (5 pages).
+Output written on LaTex模板0.7版.pdf (5 pages).
