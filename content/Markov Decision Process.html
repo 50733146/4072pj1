@@ -156,7 +156,23 @@ img.add_border {
 <p style="text-align: left;"><span><span>Anaytic solution ：分析性解法<br/>MRP的分析性解法：</span></span></p>
 <p style="text-align: center;"><span><span>V = (1-γP)<sup>-1</sup>R</span></span></p>
 <p style="text-align: left;"><span><span>只適合小的MRP(個數比較少的)：</span></span></p>
-<p style="text-align: center;"><span><span>V= (1-γp)<sup>-1</sup>R</span></span></p><br />參考範例 << <a href='參考範例.html'>Previous</a> <a href='優化器.html'>Next</a> >> 優化器</div>
+<p style="text-align: center;"><span><span>V= (1-γp)<sup>-1</sup>R</span></span></p>
+<p style="text-align: left;"><span><span>矩陣複雜度為O(N<sup>3</sup>)，N為狀態個數</span></span></p>
+<p style="text-align: left;"><span><span>計算大型MRP會使用疊代法：</span></span></p>
+<ol>
+<li style="text-align: left;"><span><span>動態規劃(Dynamic programming)</span></span></li>
+<li style="text-align: left;"><span><span>Mote-Carlo evaluation<br/>以評估採樣的方式</span></span><span><span><span><br/>g = ∑<sub>i=t</sub><sup>H-1</sup><sub> </sub><span>γ<sup>1-t</sup>r<sub>i</sub></span></span></span></span>
+<p><span>G</span><sub>t</sub>←G<sub>t</sub>+g, i←i+1<br/>V<sub>t</sub>(s)←G<sub>t</sub>/N</p>
+</li>
+<li style="text-align: left;">Temporal-Difference learning</li>
+</ol>
+<h4>Markov Decision Process</h4>
+<p>在MRP中加入決策(decision)和動作(action)</p>
+<ul>
+<li>S：state 狀態</li>
+<li>A：action 動作</li>
+<li>P：狀態轉換<br/>P(s<sub>t+1</sub>=s'|<span>s</span><sub>t</sub><span>=s</span>,a<sub>t</sub>=a)</li>
+</ul><br />參考範例 << <a href='參考範例.html'>Previous</a> <a href='優化器.html'>Next</a> >> 優化器</div>
         
     <!-- footer -->
       <div class="container">
