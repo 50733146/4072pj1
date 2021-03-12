@@ -158,15 +158,14 @@ img.add_border {
 <h4>Adam</h4>
 <p><span>類似 Momentum，更加穩定快速的收斂。</span></p>
 <h4>AdaMax</h4>
-<p><span><span>與 Adam 相似，依靠 u<sub>t</sub><span><span> </span></span>最大運算</span></span></p>
+<p><span><span>與 Adam 相似，依靠 (u_t)<span><span> </span></span>最大運算</span></span></p>
 <h4>Nadam</h4>
 <p><span>結合 Adam 和 NAG ，應用先前參數執行兩次更新，一次更新參數一次更新梯度。</span></p>
 <h4>AMSGrad</h4>
 <p>改善 Adam 算法所導致收斂較差的情況(用指數平均會減少其影響)，換用梯度平方最大值來做計算，並移除去偏差的步驟。是否有比 <span>Adam 算法好仍有待觀察。</span></p>
 <h4>Gradient noise</h4>
 <p><span>有助於訓練特別深且復雜的網絡，noise 可改善不良初始化的網路。</span></p>
-<p><strong><a href="./../downloads/整理資料/神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p>
-<br />Markov Decision Process << <a href='Markov Decision Process.html'>Previous</a> <a href='Gradient Descent Optimizer.html'>Next</a> >> Gradient Descent Optimizer</div>
+<p><strong><a href="./../downloads/整理資料/神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p><br />Markov Decision Process << <a href='Markov Decision Process.html'>Previous</a> <a href='Gradient Descent Optimizer.html'>Next</a> >> Gradient Descent Optimizer</div>
         
     <!-- footer -->
       <div class="container">
@@ -209,11 +208,13 @@ img.add_border {
             <script src="../cmsimde/static/chimper/js/main.js"></script>
         
 <!-- 啟用 LaTeX equations 編輯 -->
-  <!-- <script>
+<!--<script>
   MathJax = {
     tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
   };
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>    -->
+   <!-- https://oysz2016.github.io/post/8611e6fb.html -->
+   </script><script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
     </body></html>
         

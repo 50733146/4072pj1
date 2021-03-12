@@ -1163,52 +1163,46 @@ print (result)
 <h4>Adam</h4>
 <p><span>類似 Momentum，更加穩定快速的收斂。</span></p>
 <h4>AdaMax</h4>
-<p><span><span>與 Adam 相似，依靠 u<sub>t</sub><span><span> </span></span>最大運算</span></span></p>
+<p><span><span>與 Adam 相似，依靠 (u_t)<span><span> </span></span>最大運算</span></span></p>
 <h4>Nadam</h4>
 <p><span>結合 Adam 和 NAG ，應用先前參數執行兩次更新，一次更新參數一次更新梯度。</span></p>
 <h4>AMSGrad</h4>
 <p>改善 Adam 算法所導致收斂較差的情況(用指數平均會減少其影響)，換用梯度平方最大值來做計算，並移除去偏差的步驟。是否有比 <span>Adam 算法好仍有待觀察。</span></p>
 <h4>Gradient noise</h4>
 <p><span>有助於訓練特別深且復雜的網絡，noise 可改善不良初始化的網路。</span></p>
-<p><strong><a href="/downloads/整理資料/神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p>
-<h2>Gradient Descent Optimizer</h2>
+<p><strong><a href="/downloads/整理資料/神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p><h2>Gradient Descent Optimizer</h2>
 <p>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">資料來源</a>)</p>
 <p style="text-align: center;"><strong><img alt="Error_surface" caption="false" height="200" src="/images/Error_surface.png" width="231"/></strong></p>
 <p style="text-align: center;"><strong>圖1. Error_surface<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></p>
-<p>藉由梯度下降將目標函數值最小化，目標函數以loss function L(θ)為例，θ為weight(w) 和 bias(b) 的向量函數，為了找到error surface[圖1]上的最小值，因此加上∆θ 將θ的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數η(學習率)縮放<span>∆θ的修正量[圖2]，修正後方程式為：</span></p>
-<p style="text-align: center;"><span>θ = θ + η·∆θ</span></p>
+<p>藉由梯度下降將目標函數值最小化，目標函數以loss function $L(\theta)$為例，$\theta$為weight $(w)$ 和 bias $(b)$ 的向量函數，為了找到error surface[圖1]上的最小值，因此加上$\Delta\theta$ 將$\theta$的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數$\eta$(學習率)縮放<span>$\Delta\theta$的修正量[圖2]，修正後方程式為：</span></p>
+<p style="text-align: center;">$$\theta=\theta+\eta\cdot\Delta\theta$$</p>
 <p style="text-align: center;"><span><img alt="theta_vector" caption="false" height="193" src="/images/theta_vector.png" width="297"/></span></p>
 <p style="text-align: center;"><span><strong>圖2. Theta_vector<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></span></p>
-<p><span></span>將<span>θ以<a href="https://youtu.be/3d6DsjIBzJ4">泰勒展開式</a>表示，假設並∆θ為u:</span></p>
-<p style="text-align: center;"><span>▽L(θ) = [∂L(θ)/∂w , ∂L(θ)/∂b]</span></p>
-<p style="text-align: center;"><span>L(θ+ηu) = L(θ) + ηu<sup>T</sup>·▽θL(θ) + (η<sup>2</sup>/2!)u<sup>T</sup>·▽2L(θ)u + (η<sup>3</sup>/3!) ... + (η<sup>4</sup>/4!) ... + (η<sup>n</sup>/n!)...</span></p>
-<p style="text-align: left;"><span>以泰勒展開式的型式表示的好處是： θ 些微的更動產生新值。η 值通常小於一，當 η<sup>2</sup> &lt;&lt; 1，因此可以忽略高階項 </span></p>
-<p style="text-align: center;"><span>L(θ+ηu) = L(θ) + ηu<sup>T</sup> · ▽θL(θ) [η is typically small, so η<sup>2</sup> , η<sup>3</sup> , · · · → 0]</span></p>
-<p style="text-align: left;"><span>新的 L(θ + ηu) 輸出的值會小於 L(θ) L(θ+ηu) − L(θ) &lt; 0，同理可證 u<sup>T</sup>·▽θL(θ) &lt; 0，符合u這條件：當新的值小於舊的值，u就是一個好的值。假設u和▽θL(θ) 的夾角為<a href="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/vector-dot-product-and-vector-length">β</a></span></p>
-<p style="text-align: center;"><span>cos(β) = u<sup>T</sup>·▽θL(θ)|u<sup>T</sup>||▽θL(θ)| </span></p>
-<p style="text-align: left;"><span>因為 cos(θ) 的值介於 1 和-1 之間</span></p>
-<p style="text-align: center;"><span> −1 &lt; cos(β) = u<sup>T</sup>·▽θL(θ) |u<sup>T</sup>||▽θ L(θ)| ≤ 1 </span></p>
-<p style="text-align: center;"><span>k = |u<sup>T</sup>||▽θ L(θ)| </span><span>−k ≤ k cos(β) = <span>u</span><sup>T</sup>·▽θL(θ) ≤ k</span><span> </span></p>
-<p style="text-align: left;"><span>所以盡可能的讓新值小於舊值 (L(θ+ηu) − L(θ) &lt; 0)，loss 值就會減少得越多。因此 u T · ▽θL(θ) 應該為負，在 這情況下 cos(β) 等於 −1，β 的角度為 180<sup>◦</sup>，這就是θ移動的方向與梯度方向相反的原因。 梯度下降法告訴我們：當 θ 在特定值，並想減少新的 θ 值，使 loss 值逐漸減少就應該與梯度相反的方向找 (若梯度為正值，找最小值就需往負的方向找) </span></p>
-<p style="text-align: center;"><span>w<sub>t=1</sub> = <span>w</span><sub>t</sub> − η▽w<sub>t</sub></span></p>
-<p style="text-align: center;"><span>b<sub>t=1</sub> = <span>b</span><sub>t</sub> − η▽b<sub>t</sub></span></p>
-<p style="text-align: center;"><span>where at w = w<sub>t</sub>, b = <span>b</span><sub>t</sub> </span></p>
-<p style="text-align: center;"><span>w<sub>t</sub> = ∂L(θ)/∂w；▽b<sub>t</sub> = ∂L(θ)/∂b</span></p>
-<h2>Stochastic gradient descent</h2>
+<p><span></span>將<span>$\theta$以<a href="https://youtu.be/3d6DsjIBzJ4">泰勒展開式</a>表示，假設並$\Delta\theta$為u:</span></p>
+<p style="text-align: center;">$$L_{(\theta+\eta u)}=L_{(\theta)}+\eta u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}+\frac{\eta^2}{2!}u^T\cdot\bigtriangledown^2 L_{(\theta)}u+\frac{\eta^3}{3!}...+\frac{\eta^4}{4!}...+\frac{\eta^n}{n!}...$$</p>
+<p style="text-align: left;">以泰勒展開式的型式表示的好處是： $\theta$ 些微的更動產生新值。$\eta$ 值通常小於一，當 $\eta^2 &lt;&lt; 1$，因此可以忽略高階項 </p>
+<p style="text-align: center;">$$L_{(\theta+\eta u)}=L_{(\theta)}+\eta u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)} [\eta\ is\ typically\ small, so\ \eta^2, \eta^3,\cdots \rightarrow 0]$$</p>
+<p style="text-align: left;"><span>新的$ L(\theta + \eta u)$ 輸出的值會小於$ L(\theta) L(\theta+\eta u) − L(\theta) &lt; 0$，同理可證 $u^T\cdot\bigtriangledown\theta L(\theta)$ &lt; 0，符合u這條件：當新的值小於舊的值，u就是一個好的值。假設u和$\bigtriangledown\theta L(\theta)$ 的夾角為$\href{https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/vector-dot-product-and-vector-length}{\beta}$ </span></p>
+<p style="text-align: center;">$$\cos(\beta)=\frac{u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}}{\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert}$$</p>
+<p style="text-align: left;"><span>因為 $\cos(\theta)$ 的值介於 1 和-1 之間</span></p>
+<p>$$-1&lt;\cos(\beta)=\frac{u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}}{\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert}\leq 1$$</p>
+<p>$$k=\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert $$<br/>$$-k \leq k\cos(\beta)=u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}\leq k$$</p>
+<p style="text-align: left;"><span>所以盡可能的讓新值小於舊值 $(L(\theta+\eta u) − L(\theta) &lt; 0)$，loss 值就會減少得越多。因此 $u T \cdot \bigtriangledown\theta L(\theta)$ 應該為負，在 這情況下 $\cos(\beta)$ 等於 −1，$\beta$ 的角度為 180<sup>◦</sup>，這就是$\theta$移動的方向與梯度方向相反的原因。 梯度下降法告訴我們：當 $\theta$ 在特定值，並想減少新的 $\theta$ 值，使 loss 值逐漸減少就應該與梯度相反的方向找 (若梯度為正值，找最小值就需往負的方向找) </span></p>
+<p style="text-align: center;">$w_{t=1}=w_t-\eta\bigtriangledown w_t$<br/>$b_{t=1}=b_t-\eta\bigtriangledown b_t$<br/>$where\ at\ w=w_t,b=b_t$<br/>$<br/> \begin{cases}<br/> \bigtriangledown w_t=\frac{\partial L_{_{(\theta)}}}{\partial w}\\<br/> \bigtriangledown b_t=\frac{\partial L_{_{(\theta)}}}{\partial b}<br/> \end{cases}<br/>$</p><h2>Stochastic gradient descent</h2>
 <p>(<a href="https://ruder.io/optimizing-gradient-descent/">資料來源</a>)</p>
 <h4><span>Batch gradient descrnt</span></h4>
 <p><span>Vanilla gradient descent 又稱 Batch gradient descent(批次梯度下降法)，計算目標函數的梯度，參數 θ 對於整個 訓練資料：</span></p>
-<p style="text-align: center;"><span> θ = θ − η · ▽θL(θ)</span></p>
-<p>目標函數以為例 loss function L(θ)，參數 θ 為 weight (w) 和 bias (b) 的函數，η 為學習率。由於計算整個資料集計算梯度只更新一次，Bath gradient descent 可能非常慢並且對於資料集無法符合及記憶體來說棘手 (一次需要儲存整個資料集的資料，當更新和計算時會占用大量記憶體)。<span></span></p>
+<p>$$\theta=\theta-\eta\cdot\bigtriangledown_{\theta}L_{(\theta)}$$</p>
+<p>目標函數以為例 loss function L(θ)，參數 $\theta$為 weight (w) 和 bias (b) 的函數，$\eta$為學習率。由於計算整個資料集計算梯度只更新一次，Bath gradient descent 可能非常慢並且對於資料集無法符合及記憶體來說棘手 (一次需要儲存整個資料集的資料，當更新和計算時會占用大量記憶體)。<span></span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(nb_epochs) :
 params_grad = evaluate_gradient (loss_function, data, params)
 params = params − learning_rate ∗ params_grad
 </pre>
 <p style="text-align: center;">程式1. Batch gradient descrnt <sub><span>(</span><a href="https://ruder.io/optimizing-gradient-descent/">程式來源</a><span>)</span></sub></p>
-<p>預定義每次 epoch，先計算 loss function 梯度向量對於整個資料集參數向量。如果梯度值來自於先前計算出的梯度值，就會檢查梯度，並以梯度相反的方向更新參數 <span>θ</span>，學習率 <span>η </span>決定多大的更新量。Batch gradient descent 對於凸面誤差可以保證收斂到廣域最小值，對於非面凸誤差可以收斂到局部最小值。</p>
+<p>預定義每次 epoch，先計算 loss function 梯度向量對於整個資料集參數向量。如果梯度值來自於先前計算出的梯度值，就會檢查梯度，並以梯度相反的方向更新參數$\theta$，學習率$\eta$決定多大的更新量。Batch gradient descent 對於凸面誤差可以保證收斂到廣域最小值，對於非面凸誤差可以收斂到局部最小值。</p>
 <h4>Stochastic gradient descent</h4>
-<p>Stochastic gradient descent(SGD) 隨機梯度下降法，這裡的目標函數為 J<span>(θ, x</span><sup><span>i</span></sup><span>, y</span><sup><span>i</span></sup><span>)</span>(變數 θ 為 w(weight) 和 b(bias) 的函數，也可以寫成 J<span>(w, b, x</span><sup><span>i</span></sup><span>, y</span><sup><span>i</span></sup><span>)</span>)。</p>
-<p style="text-align: center;">θ = θ − η · ▽θJ(θ, x<sup><span>i</span></sup>, y<sup><span>i</span></sup>)</p>
+<p>Stochastic gradient descent((SGD)) 隨機梯度下降法，這裡的目標函數為 $J(\theta, x^i, y^i)$(變數 $\theta$ 為 w(weight) 和 b(bias) 的函數，也可以寫成 $ J(w,b,\theta, x^i, y^i)$<span>)</span>。</p>
+<p>$$\theta=\theta-\eta\cdot\bigtriangledown_{\theta}J_{(\theta, x^i, y^i)}$$</p>
 <p>批量梯度下降他會在每個參數更新前重新計算相似梯度。SGD 每次次執行會更新來消除多餘 (誤差)，因此通常速度 很快。SGD 頻繁更新並變化很大，因為目標方程式波動很大 [圖1]。</p>
 <p style="text-align: center;"><img alt="" height="300" src="/images/sgd_fluctuation.png" width="382"/></p>
 <p style="text-align: center;">圖1.SGD fluctuation <sub>(<a href="https://ruder.io/optimizing-gradient-descent/">圖片來源</a>)</sub></p>
@@ -1222,7 +1216,7 @@ params = params − learning_rate ∗ params_grad</pre>
 <h4>Mini-batch gradient descent</h4>
 <p>Mini-batch gradient descent(小批量梯度下降) 各取前兩者的優點，將資料集分割成小區塊，每個小區塊大小稱作 batch size，每次跑完 batch size 算迭代 (iteration)一次，算完一次資料集即完成一次 epoch。舉例: 資料集大小為 1000，若 batch size 為 50，iteration 為 datasets 的 batch_size = 1000÷50 = 20，當 iteration 跑完 20 次算完成一次 epoch。</p>
 <p>這方式可以減少參數更新的方差，並且可以穩定收斂；可利用深度學習庫所共有的高度優化的矩陣優化，從而由一個小批量計算出梯度非常有效。通常 batch sizes 的範圍介於 50 ~256，會因為應用而有所差異。訓練神經網絡時，通常選擇 Mini-batch gradient descent 算法，而當使用這算法時，通常也用 SGD 稱呼。</p>
-<p>θ = θ − η·▽θJ(θ, x<sup><sub>( i : i + n)</sub></sup>, y<sup><sub>( i : i + n)</sub></sup>)</p>
+<p><span>$$\theta=\theta-\eta\cdot\bigtriangledown_{\theta}J_{(\theta, x^{(i:i+n)}, y^{(i:i+n)})}$$</span></p>
 <p>下面程式碼 [程式.3] 為迭代範例，batch size 大小為 50：</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(nb_epochs ) :
 np.random.shuffle(data)
@@ -1237,9 +1231,8 @@ params = params − learning_rate ∗ params_grad
 <li>選擇適當的學習率是有難度的。如果學習率太小會導致收斂困難或緩慢，學習率太大則會阻礙收斂導致 loss function 來回波動或發生偏離。</li>
 <li> 學習率清單嘗試在訓練的時候調整學習率，即根據預定義清單或當目標下降於閾值 (threshold) 時降低學習率。 但清單和閾值須預先定義，因此無法適應數據集的特徵。</li>
 <li> 另外相同學習率適用全部參數更新。如果資料稀疏而且外型有很特別的頻率，我們可能不希望將所有特徵更新 到相同的程度，而是對很少發生的特徵執行較大的更新。</li>
-<li> 最小化神經網路常見的高度非凸面誤差方程式 (error function) 的另一關鍵挑戰則是要避免被困在大量次優的局 部最小值區域中。認為困難實際上不是由局部最小值引起的，而是由鞍點引起的，即一維向上傾斜而另一維向下 傾斜的點。這些鞍點通常被相同誤差的平穩段包圍，這使得 SGD 很難逃脫，因為在所有維度上梯度都接近於零。</li>
-</ol>
-<h2>Gradient descent optimization algorithms</h2>
+<li> 最小化神經網路常見的高度非凸面誤差方程式<span> (error function) </span>的另一關鍵挑戰則是要避免被困在大量次優的局 部最小值區域中。認為困難實際上不是由局部最小值引起的，而是由鞍點引起的，即一維向上傾斜而另一維向下 傾斜的點。這些鞍點通常被相同誤差的平穩段包圍，這使得 SGD 很難逃脫，因為在所有維度上梯度都接近於零。</li>
+</ol><h2>Gradient descent optimization algorithms</h2>
 <p><span>(</span><a href="https://ruder.io/optimizing-gradient-descent/">資料來源</a><span>)</span></p>
 <h4>Momentum</h4>
 <p>SGD 難以在陡峭的往正確的方向，那就是說在一個維度上，曲面的彎曲比另一個維度要陡得多，這在局部最優情況下很常見。下圖[圖.1]的同心圓代表中心下凹的曲面。在這些情況下，SGD 會在陡峭的地方振盪，而僅沿著底部朝著局部最優方向猶豫前進，如 [圖.1.a] 所 示。 Momentun(動量) 是一個幫助加速 SGD 在正確方向和抑制震盪的方法，在 [圖.1.b]。</p>

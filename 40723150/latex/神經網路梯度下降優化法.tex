@@ -38,13 +38,13 @@
 \end{figure}
 Gradient descent (梯度下降)將目標函數$J_{(\theta)}$(下面是以loss function $L_{(\theta)}$當作目標函數)最小值化，藉由模型參數(model's parameters) $\theta \in \mathbb{R}^d$。\\
 假設$\theta$是weight(w)和bias(b)的函數，是一個向量(matrix)，隨機產生weight和bias的起始值
-$$\overrightarrow{\theta_{(w, b)}}=(w, b)$$
+$$\theta_{(w, b)}=(w, b)$$
 
 假設$\overrightarrow{\Delta\theta}$是$\Delta w$(權重差值)和$\Delta b$(偏差差值)的函數，當loss值減少並落在error較小的地方，$\Delta\theta$就是在降低loss值，$\overrightarrow{\Delta\theta}$的向量參數就會像$\Delta\theta \in \mathbb{R}^d$，找到loss值最小的地方只需要$\theta$朝$\theta+\Delta\theta$方向移動就會找到。
-$$\overrightarrow{\Delta\theta_{(w, b)}}=(\Delta w, \Delta b)$$
+$$\Delta\theta_{(w, b)}=(\Delta w, \Delta b)$$
 
 如果將$\overrightarrow{\Delta\theta}$和$\overrightarrow{\theta}$相加合成成$\overrightarrow{\theta_{R}}$(即[圖.\ref{Fig.theta_vector}]上的$\overrightarrow{\theta_{new}}$)。但要注意$\overrightarrow{\Delta\theta}$的值有可能過大就錯過廣域最小值的地方，所以係數$\eta$用來縮放$\overrightarrow{\Delta\theta}$的值，$\eta$是純量，通常是小於1(縮小)。因此
-$$\overrightarrow{\theta_{R}}=\overrightarrow{\theta}+\eta\cdot\overrightarrow{\Delta\theta}$$
+$$\theta_{R}=\theta+\eta\cdot\Delta\theta$$
 
 \begin{figure}[hbt!]
 \center
