@@ -1201,7 +1201,7 @@ params = params − learning_rate ∗ params_grad
 <p style="text-align: center;">程式1. Batch gradient descrnt <sub><span>(</span><a href="https://ruder.io/optimizing-gradient-descent/">程式來源</a><span>)</span></sub></p>
 <p>預定義每次 epoch，先計算 loss function 梯度向量對於整個資料集參數向量。如果梯度值來自於先前計算出的梯度值，就會檢查梯度，並以梯度相反的方向更新參數$\theta$，學習率$\eta$決定多大的更新量。Batch gradient descent 對於凸面誤差可以保證收斂到廣域最小值，對於非面凸誤差可以收斂到局部最小值。</p>
 <h4>Stochastic gradient descent</h4>
-<p>Stochastic gradient descent((SGD)) 隨機梯度下降法，這裡的目標函數為 $J(\theta, x^i, y^i)$(變數 $\theta$ 為 w(weight) 和 b(bias) 的函數，也可以寫成 $ J(w,b,\theta, x^i, y^i)$<span>)</span>。</p>
+<p>Stochastic gradient descent(SGD) 隨機梯度下降法，這裡的目標函數為 $J(\theta, x^i, y^i)$(變數 \theta 為 w(weight) 和 b(bias) 的函數，也可以寫成 $ J(w,b,\theta, x^i, y^i)$<span>)</span>。</p>
 <p>$$\theta=\theta-\eta\cdot\bigtriangledown_{\theta}J_{(\theta, x^i, y^i)}$$</p>
 <p>批量梯度下降他會在每個參數更新前重新計算相似梯度。SGD 每次次執行會更新來消除多餘 (誤差)，因此通常速度 很快。SGD 頻繁更新並變化很大，因為目標方程式波動很大 [圖1]。</p>
 <p style="text-align: center;"><img alt="" height="300" src="/images/sgd_fluctuation.png" width="382"/></p>
