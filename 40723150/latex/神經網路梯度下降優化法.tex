@@ -189,7 +189,7 @@ $$\theta = \theta-v_t$$
 \section{Nesterov accelerated gradient}
 然而，Momentun的做法就像，一個球從山上滾下來，盲目地跟隨斜坡。我們希望有一個更聰明的球，這個球有一個去向的概念，以便在山坡再次變高之前知道它會減速。
 
-Nesterov accelerated gradient（NAG）是一種使動量具有這種先見之明的方式。我們知道使用動量$\gamma v_{t-1}$來移動參數θ。計算$\theta - \gamma v_{t-1}$這樣就給了參數的下一個位置的近似值（完整更新缺少的梯度），這是參數將要存在的大致概念。現在，通過計算與當前參數無關的梯度來有效地看到目前的參數$\theta$將會移動到的位置：
+Nesterov accelerated gradient（NAG）是一種使動量具有這種先見之明的方式。我們知道使用動量$\gamma v_{t-1}$來移動參數$\theta$。計算$\theta - \gamma v_{t-1}$這樣就給了參數的下一個位置的近似值（完整更新缺少的梯度），這是參數將要存在的大致概念。現在，通過計算與當前參數無關的梯度來有效地看到目前的參數$\theta$將會移動到的位置：
 $$v_t = \gamma v_{t-1}+\eta\cdot\bigtriangledown_{\theta}J_{(\theta-\gamma v_{t-1})}$$
 $$\theta = \theta - v_t$$
 

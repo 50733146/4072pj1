@@ -138,32 +138,31 @@ img.add_border {
 <p>當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。</p>
 <h4>Markov Reward Process</h4>
 <p>action 到指定狀態會獲得獎勵。</p>
-<p style="text-align: center;">R(s<sub>t</sub>=s) = 𝔼[r<sub>t</sub>|s<sub>t</sub> = s]</p>
-<p style="text-align: center;">γ<span>∈[0, 1]</span></p>
+<p>$$R(s_t=s) = \mathbb{E}[r_t|s_t = s]$$</p>
+<p>$$\gamma \in [0, 1]$$</p>
+<p style="text-align: center;"></p>
 <ul style="list-style-type: disc;">
 <li><span>Horizon：<br/>在無限的狀態以有限的狀態表示</span></li>
-<li><span>Return：<br/></span><span>G<sub>t</sub> = R<sub>t+1</sub>+ γR<sub>t+2</sub> + <span>γ<sup>2</sup></span><span>R</span><sub>t+3</sub> <span>+ </span><span>γ<sup>3</sup></span><span>R</span><sub>t+4</sub> + ... <span>+ </span><span>γ<sup>T-t-1</sup></span><span>R</span><sub>T<br/></sub>越早做出正確決策獎勵越高</span></li>
-<li><span>State value function：<br/></span>V<sub>t</sub>(S) = <span>𝔼[G</span><sub>t</sub><span>|s</span><sub>t</sub><span><span> </span>= s]<br/>決策價值</span></li>
+<li><span>Return：<br/>越早做出正確決策獎勵越高</span><span></span><span><br/>$$G_t = R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\gamma^3 R_{t+4}+...+\gamma^{T-t-1} R_{T}$$</span><span><br/></span></li>
+<li><span>State value function：<br/>決策價值</span><span><br/>$$V_t(S) = \mathbb{E}[G_t|s_t = s]$$</span><span><br/></span></li>
 </ul>
 <h4><span>Discount Factor (γ)</span></h4>
 <ol>
 <li>越早做出有獎勵的決策，獎勵越高</li>
-<li>做出有價值的決策<span>γ = 1，不分決策順序先後</span></li>
+<li>做出有價值的決策 $\gamma = 1$，不分決策順序先後</li>
 <li><span>無用的決策C= 0，不會得到獎勵</span><span></span></li>
 </ol>
 <p><span>Bellman equation：描述互動關係狀態</span></p>
-<p style="text-align: center;">V(s) = R(s)+<span>γ∑<sub>s'∈S </sub>P(s'|s)V(s')<br/>R(s)：立即獎勵<br/>γ∑<sub>s'∈S </sub><span>P(s'|s)V(s') ：未來獎勵衰減總和</span><br/></span></p>
+<p><span>$$V(s) = R(s)+\gamma\sum_{s'\in S}P(s'|s)V(s')$$</span></p>
+<p><span>$$R(s):立即獎勵$$</span></p>
+<p><span>$$\gamma\sum_{s'\in S}P(s'|s)V(s')：未來獎勵衰減總和$$<br/></span></p>
 <p style="text-align: left;"><span><span>Anaytic solution ：分析性解法<br/>MRP的分析性解法：</span></span></p>
-<p style="text-align: center;"><span><span>V = (1-γP)<sup>-1</sup>R</span></span></p>
-<p style="text-align: left;"><span><span>只適合小的MRP(個數比較少的)：</span></span></p>
-<p style="text-align: center;"><span><span>V= (1-γp)<sup>-1</sup>R</span></span></p>
-<p style="text-align: left;"><span><span>矩陣複雜度為O(N<sup>3</sup>)，N為狀態個數</span></span></p>
+<p style="text-align: left;"><span><span>$$V = (1-\gamma P)^{-1}R$$</span></span></p>
+<p style="text-align: left;"><span><span>只適合小的MRP(個數比較少的)，</span></span><span><span>矩陣複雜度為$O(N^3)$，N為狀態個數</span></span></p>
 <p style="text-align: left;"><span><span>計算大型MRP會使用疊代法：</span></span></p>
 <ol>
 <li style="text-align: left;"><span><span>動態規劃(Dynamic programming)</span></span></li>
-<li style="text-align: left;"><span><span>Mote-Carlo evaluation<br/>以評估採樣的方式</span></span><span><span><span><br/>g = ∑<sub>i=t</sub><sup>H-1</sup><sub> </sub><span>γ<sup>1-t</sup>r<sub>i</sub></span></span></span></span>
-<p><span>G</span><sub>t</sub>←G<sub>t</sub>+g, i←i+1<br/>V<sub>t</sub>(s)←G<sub>t</sub>/N</p>
-</li>
+<li style="text-align: left;">Mote-Carlo evaluation<br/>以評估採樣的方式<br/>$$g = \sum_{i=t}^{H-1}\gamma^{1-t}r_i$$<br/>$$G_t \leftarrow G_t+g,  i \leftarrow i+1$$<br/>$$V_t(s) \leftarrow \frac{G_t}{N}$$</li>
 <li style="text-align: left;">Temporal-Difference learning</li>
 </ol>
 <h4>Markov Decision Process</h4>
@@ -171,7 +170,7 @@ img.add_border {
 <ul>
 <li>S：state 狀態</li>
 <li>A：action 動作</li>
-<li>P：狀態轉換<br/>P(s<sub>t+1</sub>=s'|<span>s</span><sub>t</sub><span>=s</span>,a<sub>t</sub>=a)</li>
+<li>P：狀態轉換<br/>$$P(s_{s+1}=s'|s_t=s,a_t=a)$$</li>
 </ul><br />參考範例 << <a href='參考範例.html'>Previous</a> <a href='優化器.html'>Next</a> >> 優化器</div>
         
     <!-- footer -->
@@ -222,7 +221,5 @@ img.add_border {
   };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>    
-   <!-- https://oysz2016.github.io/post/8611e6fb.html -->
-   <!--</script><script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>-->
     </body></html>
         
