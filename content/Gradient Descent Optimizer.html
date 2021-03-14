@@ -137,7 +137,7 @@ img.add_border {
 <p>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">資料來源</a>)</p>
 <p style="text-align: center;"><strong><img alt="Error_surface" caption="false" height="200" src="./../images/Error_surface.png" width="231"/></strong></p>
 <p style="text-align: center;"><strong>圖1. Error_surface<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></p>
-<p>藉由梯度下降將目標函數值最小化，目標函數以loss function $L(\theta)$為例，$\theta$為weight $(w)$ 和 bias $(b)$ 的向量函數，為了找到error surface[圖1]上的最小值，因此加上$\Delta\theta$ 將$\theta$的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數$\eta$(學習率)縮放<span>$\Delta\theta$的修正量[圖2]，修正後方程式為：</span></p>
+<p>藉由梯度下降將目標函數值最小化，目標函數以loss function $L(\theta)$為例，$\theta$為weight $(w)$ 和 bias $(b)$ 的向量函數，為了找到error surface(圖1)上的最小值，因此加上$\Delta\theta$ 將$\theta$的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數$\eta$(學習率)縮放<span>$\Delta\theta$的修正量(圖2)，修正後方程式為：</span></p>
 <p style="text-align: center;">$$\theta=\theta+\eta\cdot\Delta\theta$$</p>
 <p style="text-align: center;"><span><img alt="theta_vector" caption="false" height="193" src="./../images/theta_vector.png" width="297"/></span></p>
 <p style="text-align: center;"><span><strong>圖2. Theta_vector<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></span></p>
@@ -145,7 +145,7 @@ img.add_border {
 <p style="text-align: center;">$$L_{(\theta+\eta u)}=L_{(\theta)}+\eta u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}+\frac{\eta^2}{2!}u^T\cdot\bigtriangledown^2 L_{(\theta)}u+\frac{\eta^3}{3!}...+\frac{\eta^4}{4!}...+\frac{\eta^n}{n!}...$$</p>
 <p style="text-align: left;">以泰勒展開式的型式表示的好處是： $\theta$ 些微的更動產生新值。$\eta$ 值通常小於一，當 $\eta^2 &lt;&lt; 1$，因此可以忽略高階項 </p>
 <p style="text-align: center;">$$L_{(\theta+\eta u)}=L_{(\theta)}+\eta u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)} [\eta\ is\ typically\ small, so\ \eta^2, \eta^3,\cdots \rightarrow 0]$$</p>
-<p style="text-align: left;"><span>新的$ L(\theta + \eta u)$ 輸出的值會小於$ L(\theta) L(\theta+\eta u) − L(\theta) &lt; 0$，同理可證 $u^T\cdot\bigtriangledown\theta L(\theta)$ &lt; 0，符合u這條件：當新的值小於舊的值，u就是一個好的值。假設u和$\bigtriangledown\theta L(\theta)$ 的夾角為$\href{https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/vector-dot-product-and-vector-length}{\beta}$ </span></p>
+<p style="text-align: left;"><span>新的$ L(\theta + \eta u)$ 輸出的值會小於$ L(\theta) L(\theta+\eta u) − L(\theta) &lt; 0$，同理可證 $u^T\cdot\bigtriangledown\theta L(\theta)$ &lt; 0，符合u這條件：當新的值小於舊的值，u就是一個好的值。假設u和$\bigtriangledown\theta L(\theta)$ 的夾角為$\href{https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/vector-dot-product-and-vector-length}{\underline{\beta}}$ </span></p>
 <p style="text-align: center;">$$\cos(\beta)=\frac{u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}}{\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert}$$</p>
 <p style="text-align: left;"><span>因為 $\cos(\theta)$ 的值介於 1 和-1 之間</span></p>
 <p>$$-1&lt;\cos(\beta)=\frac{u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}}{\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert}\leq 1$$</p>
@@ -201,7 +201,5 @@ img.add_border {
   };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>    
-   <!-- https://oysz2016.github.io/post/8611e6fb.html -->
-   <!--</script><script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>-->
     </body></html>
         
