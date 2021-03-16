@@ -1099,14 +1099,13 @@ print (result)
         else:
             outstring = '!!!!!!!'
         
-        print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre><h2>Markov Decision Process</h2>
+        print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre><h2>Markov</h2>
 <h4>Markov Chain</h4>
 <p>當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。</p>
 <h4>Markov Reward Process</h4>
 <p>action 到指定狀態會獲得獎勵。</p>
 <p>$$R(s_t=s) = \mathbb{E}[r_t|s_t = s]$$</p>
 <p>$$\gamma \in [0, 1]$$</p>
-<p style="text-align: center;"></p>
 <ul style="list-style-type: disc;">
 <li><span>Horizon：<br/>在無限的狀態以有限的狀態表示</span></li>
 <li><span>Return：<br/>越早做出正確決策獎勵越高</span><span></span><span><br/>$$G_t = R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\gamma^3 R_{t+4}+...+\gamma^{T-t-1} R_{T}$$</span><span><br/></span></li>
@@ -1131,13 +1130,55 @@ print (result)
 <li style="text-align: left;">Mote-Carlo evaluation<br/>以評估採樣的方式<br/>$$g = \sum_{i=t}^{H-1}\gamma^{1-t}r_i$$<br/>$$G_t \leftarrow G_t+g,  i \leftarrow i+1$$<br/>$$V_t(s) \leftarrow \frac{G_t}{N}$$</li>
 <li style="text-align: left;">Temporal-Difference learning</li>
 </ol>
-<h4>Markov Decision Process</h4>
+<div id="gtx-trans" style="position: absolute; left: 297px; top: 34.6875px;">
+<div class="gtx-trans-icon"></div>
+</div><h3>Markov Decision Process</h3>
 <p>在MRP中加入決策(decision)和動作(action)</p>
 <ul>
 <li>S：state 狀態</li>
 <li>A：action 動作</li>
 <li>P：狀態轉換<br/>$$P(s_{s+1}=s'|s_t=s,a_t=a)$$</li>
-</ul><h1>優化器</h1>
+<li>R：獎勵，取決於當前狀態和動作會得到相對應的講勵<br/>$$ R(s_t=s, a_t=a) = \mathbb{E}[r_t|s_t, a_t=a] $$</li>
+<li>D：折扣因子(discount factor)<br/>$$\gamma \in [0,1]$$</li>
+</ul>
+<p>MDP is a tuple：(S, A, P, R, $\gamma$)</p>
+<p>policy (決策)：可以是一個決策行為機率或確定行為</p>
+<p>$$\pi (a|s) = P(a_t=a|s_t=s)$$</p>
+<p>MRP 和 MDP 轉換</p>
+<table style="margin-left: auto; margin-right: auto; width: 477px;">
+<tbody>
+<tr style="height: 42px;">
+<td style="width: 202.667px; text-align: center; height: 42px;">MRP</td>
+<td style="width: 29.3333px; text-align: center; height: 42px;">↔</td>
+<td style="width: 223.333px; text-align: center; height: 42px;">MDP</td>
+</tr>
+<tr style="height: 40px;">
+<td colspan="3" style="width: 467.333px; text-align: center; height: 40px;">$P^{\pi}(s's) = \sum_{a\in A}\pi (a|s)P(s'|s, a)$</td>
+</tr>
+<tr style="height: 43px;">
+<td colspan="3" style="width: 467.333px; text-align: center; height: 43px;">$P^{\pi}(s) = \sum_{a\in A}\pi (a|s)P(s, a)$</td>
+</tr>
+<tr style="height: 98.7292px;">
+<td style="width: 202.667px; text-align: center; height: 98.7292px;"><img caption="false" height="150" src="/images/MRP.jpg" width="251"/></td>
+<td style="width: 29.3333px; text-align: center; height: 98.7292px;"></td>
+<td style="width: 223.333px; text-align: center; height: 98.7292px;"><img alt="" height="150" src="/images/MDP.jpg" width="218"/></td>
+</tr>
+</tbody>
+</table>
+<h4>state value function(狀態值方程式) $v^{\pi}(s)$</h4>
+<p>$$v^{\pi}(s) = \mathbb{E}[G_t|s_t=s]$$</p>
+<p>$$= \mathbb{E}[R_{t+1}+\gamma v^{\pi}(s_{t+1})|s_t=s]$$</p>
+<p>$$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$</p>
+<p style="text-align: center;"><img alt="" height="200" src="/images/s_to _s.jpg" width="315"/></p>
+<p style="text-align: left;"><span>$$v^{\pi}(s) = \sum_{a\in A}\pi (a|s)(R(s, a)+\gamma \sum_{s'\in s}P(s'|s, a)v^{\pi}(s'))$$</span></p>
+<h4>action value function(行為方程式)$q^{\pi}(s, a)$</h4>
+<p>$$q^{\pi}(s, a) = \mathbb{E}[G_t|s_t=s, A_t=a]$$</p>
+<p>$$= \mathbb{E}[R_{t+1}+\gamma q^{\pi}(s_{t+1}, A_{t+1})|s_t=s, A_t=a]$$</p>
+<p>$$= R^a_s+\gamma \sum_{s'\in s}P(s'|s)v^{\pi}(s')$$</p>
+<p><span>$$= R(s, a)+\gamma \sum_{s'\in s}P(s'|s) \sum_{a'\in A}\pi (a'|s')q^{\pi}(s', a')$$</span></p>
+<div id="gtx-trans" style="position: absolute; left: 237px; top: 419.729px;">
+<div class="gtx-trans-icon"></div>
+</div><h1>優化器</h1>
 <p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p>
 <h4>Gradient Descent</h4>
 <p>利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。</p>
