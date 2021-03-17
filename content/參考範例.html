@@ -157,13 +157,14 @@ img.add_border {
 <h4><span>sigmoid </span></h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def sigmoid(x): 
     return 1.0 / (1.0 + np.exp(-x))</pre>
-<p><img alt="" height="70" src="./../images/Sigmoid_Function.png" width="165"/></p>
+<p>$$\sigma(x) = \frac{1}{1+e^{-x}}$$</p>
 <h4>softmax</h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def softmax(x):
     probs = np.exp(x - np.max(x, axis=1, keepdims=True))
     probs /= np.sum(probs, axis=1, keepdims=True)
     return probs</pre>
-<p><img alt="" height="100" src="./../images/Softmax Formula.png" width="285"/>[來源：<a href="https://deepai.org/machine-learning-glossary-and-terms/softmax-layer">softmax</a>資料]</p>
+<p>$$\sigma(\overrightarrow{z})_i = \frac{e^{z_i}}{\sum^K_{j=1}e^{z_j}}$$</p>
+<p style="text-align: right;">[來源：<a href="https://deepai.org/machine-learning-glossary-and-terms/softmax-layer">softmax</a>資料]</p>
 <h4>prepro</h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def prepro(I):
     """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
@@ -317,7 +318,10 @@ img.add_border {
         else:
             outstring = '!!!!!!!'
         
-        print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre><br />neural_network_in_python.pdf << <a href='neural_network_in_python.pdf.html'>Previous</a> <a href='Markov.html'>Next</a> >> Markov</div>
+        print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre>
+<h4>訓練結果</h4>
+<p>紅點是每局的獎勵總和，藍色是累積獎勵平均值。橫軸：訓練局數；縱軸獎勵分數。</p>
+<p><img caption="false" height="500" src="./../images/pong2_41k.png" width="667"/></p><br />neural_network_in_python.pdf << <a href='neural_network_in_python.pdf.html'>Previous</a> <a href='Markov.html'>Next</a> >> Markov</div>
         
     <!-- footer -->
       <div class="container">
