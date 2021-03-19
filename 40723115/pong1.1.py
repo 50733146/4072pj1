@@ -87,7 +87,9 @@ def backward(eph, epx, epd, modelType):
     #eph是中間隱藏狀態的數組
     #對序列進行求和計算
     db2 = sum(epd)[0]
+    #.T為轉置矩陣#.ravel():將多維數組降位為一維
     dW2 = np.dot(eph.T, epd).ravel()
+#計算兩個向量的外積
     dh = np.outer(epd, model['W2_' + modelType])
     dh[eph <= 0] = 0  # backpro prelu
     db1 = sum(dh)
@@ -96,13 +98,14 @@ def backward(eph, epx, epd, modelType):
 
 
 env = gym.make("Pong-v0")
-observation = env.reset()
+observation = env.reset()#刷新遊戲回合
 prev_x = None  # used in computing the difference frame
 xs, h_ps, h_vs, dlogps, vs, tvs, dvs = [], [], [], [], [], [], []
 running_reward = None
 reward_sum = 0
 round_number = 0
 while True:
+    #視覺化呈現，它只會回應出呼叫那一刻的畫面給你，要它持續出現，需要寫個迴圈。
     if render: env.render()
 
     # preprocess the observation, set input to network to be difference image
@@ -112,11 +115,14 @@ while True:
 
     # forward the policy network and sample an action from the returned probability
     aprob, h_p = forward(x, 'policy')
+    #np.random.uniform():從一個均勻分布[low,high)中隨機採用，定義域為左閉右開,即包含low不包含high
     action = 2 if np.random.uniform() < aprob else 3  # roll the dice!
 
     v, h_v = forward(x, 'value')
     tv, _ = forward(x, 'value', model_target)
     # record various intermediates (needed later for backprop)
+    #記錄各種中間值
+    #.append(x):元素(數字、字串、另外一個串列)會被放到串列最後面的位置。
     xs.append(x)  # observation
     h_ps.append(h_p)  # hidden state
     h_vs.append(h_v)
@@ -172,7 +178,8 @@ while True:
 
                 if 'value' in k:
                     model_target[k] = mom_rate * model_target[k] + (1 - mom_rate) * model[k]
-
+#%f:將浮點 數以10進位方式輸出
+#%d:以10 進位整數方式輸出
         print(('round %d game finished, reward: %f' % (round_number, reward)) + ('' if reward == -1 else ' !!!!!!!!'))
         if round_number % 3000 == 0: pickle.dump((model, model_target), open('save.ac', 'wb'))
     # boring book-keeping
