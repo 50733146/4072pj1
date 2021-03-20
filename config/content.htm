@@ -1103,9 +1103,10 @@ print (result)
         
         print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre>
 <h4>訓練結果</h4>
-<p>紅點是每局的獎勵總和，藍色是累積獎勵平均值。橫軸：訓練局數；縱軸獎勵分數。</p>
-<p><img caption="false" height="500" src="/images/pong2_41k.png" width="667"/></p>
-<h2>Markov</h2>
+<p>點是每局的獎勵總和，曲線是累積獎勵平均值。橫軸：訓練局數；縱軸獎勵分數。紅點是pong1.2，綠點是pong2。(圖1.)</p>
+<p style="text-align: center;"><img alt="" height="450" src="/images/pong2_vs_pong1.2.png" style="display: block; margin-left: auto; margin-right: auto;" width="600"/>圖1. pong2 v.s. pong1.2</p>
+<p style="text-align: right;">[<a href="/downloads/pong2_vs_pong1.2.pdf">pong2_vs_pong1.2.pdf</a>]</p>
+<p></p><h2>Markov</h2>
 <h4>Markov Chain</h4>
 <p>當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。</p>
 <h4>Markov Reward Process</h4>
