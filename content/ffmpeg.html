@@ -133,26 +133,24 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">優化器 << <a href='優化器.html'>Previous</a> <a href='Stochastic gradient descent.html'>Next</a> >> Stochastic gradient descent<br /><h1>Gradient Descent Optimizer</h1>
-<p>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">資料來源</a>)</p>
-<p style="text-align: center;"><strong><img alt="Error_surface" caption="false" height="200" src="./../images/Error_surface.png" width="231"/></strong></p>
-<p style="text-align: center;"><strong>圖1. Error_surface<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></p>
-<p>藉由梯度下降將目標函數值最小化，目標函數以loss function $L(\theta)$為例，$\theta$為weight $(w)$ 和 bias $(b)$ 的向量函數，為了找到error surface(圖1)上的最小值，因此加上$\Delta\theta$ 將$\theta$的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數$\eta$(學習率)縮放<span>$\Delta\theta$的修正量(圖2)，修正後方程式為：</span></p>
-<p style="text-align: center;">$$\theta=\theta+\eta\cdot\Delta\theta$$</p>
-<p style="text-align: center;"><span><img alt="theta_vector" caption="false" height="193" src="./../images/theta_vector.png" width="297"/></span></p>
-<p style="text-align: center;"><span><strong>圖2. Theta_vector<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></span></p>
-<p><span></span>將<span>$\theta$以<a href="https://youtu.be/3d6DsjIBzJ4">泰勒展開式</a>表示，假設並$\Delta\theta$為u:</span></p>
-<p style="text-align: center;">$$L_{(\theta+\eta u)}=L_{(\theta)}+\eta u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}+\frac{\eta^2}{2!}u^T\cdot\bigtriangledown^2 L_{(\theta)}u+\frac{\eta^3}{3!}...+\frac{\eta^4}{4!}...+\frac{\eta^n}{n!}...$$</p>
-<p style="text-align: left;">以泰勒展開式的型式表示的好處是： $\theta$ 些微的更動產生新值。$\eta$ 值通常小於一，當 $\eta^2 &lt;&lt; 1$，因此可以忽略高階項 </p>
-<p style="text-align: center;">$$L_{(\theta+\eta u)}=L_{(\theta)}+\eta u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)} [\eta\ is\ typically\ small, so\ \eta^2, \eta^3,\cdots \rightarrow 0]$$</p>
-<p style="text-align: left;"><span>新的$ L(\theta + \eta u)$ 輸出的值會小於$ L(\theta) L(\theta+\eta u) − L(\theta) &lt; 0$，同理可證 $u^T\cdot\bigtriangledown\theta L(\theta)$ &lt; 0，符合u這條件：當新的值小於舊的值，u就是一個好的值。假設u和$\bigtriangledown\theta L(\theta)$ 的夾角為$\href{https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/vector-dot-product-and-vector-length}{\underline{\beta}}$ </span></p>
-<p style="text-align: center;">$$\cos(\beta)=\frac{u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}}{\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert}$$</p>
-<p style="text-align: left;"><span>因為 $\cos(\theta)$ 的值介於 1 和-1 之間</span></p>
-<p>$$-1&lt;\cos(\beta)=\frac{u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}}{\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert}\leq 1$$</p>
-<p>$$k=\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert $$<br/>$$-k \leq k\cos(\beta)=u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}\leq k$$</p>
-<p style="text-align: left;"><span>所以盡可能的讓新值小於舊值 $(L(\theta+\eta u) − L(\theta) &lt; 0)$，loss 值就會減少得越多。因此 $u T \cdot \bigtriangledown\theta L(\theta)$ 應該為負，在 這情況下 $\cos(\beta)$ 等於 −1，$\beta$ 的角度為 180<sup>◦</sup>，這就是$\theta$移動的方向與梯度方向相反的原因。 梯度下降法告訴我們：當 $\theta$ 在特定值，並想減少新的 $\theta$ 值，使 loss 值逐漸減少就應該與梯度相反的方向找 (若梯度為正值，找最小值就需往負的方向找) </span></p>
-<p style="text-align: center;">$w_{t=1}=w_t-\eta\bigtriangledown w_t$<br/>$b_{t=1}=b_t-\eta\bigtriangledown b_t$<br/>$where\ at\ w=w_t,b=b_t$<br/>$<br/> \begin{cases}<br/> \bigtriangledown w_t=\frac{\partial L_{_{(\theta)}}}{\partial w}\\<br/> \bigtriangledown b_t=\frac{\partial L_{_{(\theta)}}}{\partial b}<br/> \end{cases}<br/>$</p>
-<br />優化器 << <a href='優化器.html'>Previous</a> <a href='Stochastic gradient descent.html'>Next</a> >> Stochastic gradient descent</div>
+    <div id="tipue_search_content">cmsimde << <a href='cmsimde.html'>Previous</a> <br /><h1>ffmpeg</h1>
+<p>Q：錄製訓練過程的程式讀不到ffmpeg。</p>
+<p><img alt="" height="200" src="./../images/Q_ffmpeg.png" width="696"/></p>
+<p style="text-align: center;">圖1.程式讀不到ffmpeg</p>
+<p>A：需要在作業系統中安裝ffmpeg</p>
+<ol>
+<li>下載、解壓縮<br/>先到官網 <a href="https://ffmpeg.org/download.html">https://ffmpeg.org/download.html</a> 下載 "<a href="https://www.gyan.dev/ffmpeg/builds/">Windows builds from gyan.dev</a>"，下載<a href="https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z">https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z</a>，解壓縮重新命名成"ffmpeg"並放到C槽目錄下(C:\ffmpeg)。</li>
+<li>環境設定(windows10 20H2 及 2004版本)<br/>開啟"設定"→"系統"→左方"關於"選項→右側"進階系統設定"→"環境變數"(圖2.)→選取"Path"，編輯(圖3.)→"新增"，增加一個環境變數，給定內容為:"C:\ffmpeg\bin"，"確定"(圖4.)→"確定"→"確定</li>
+</ol>
+<p style="text-align: center;"><img alt="圖2.進階系統設定" caption="false" height="300" src="./../images/Q_ffmpeg-2.png" width="278"/><br/>圖2.進階系統設定<br/><img caption="false" height="300" src="./../images/Q_ffmpeg-3.png" style="display: block; margin-left: auto; margin-right: auto;" width="326"/>圖3.環境變數<br/><img caption="false" height="300" src="./../images/Q_ffmpeg-4.png" style="display: block; margin-left: auto; margin-right: auto;" width="324"/>圖4.編輯環境變數</p>
+<ul>
+<li>測試<br/>開啟命令字元(win+R，輸入"cmd")，執行"ffmpeg"(圖5.)</li>
+</ul>
+<p><img alt="" height="300" src="./../images/Q_ffmpeg-5.png" style="display: block; margin-left: auto; margin-right: auto;" width="575"/></p>
+<p style="text-align: center;">圖5.ffmpeg成功執行</p>
+<div id="gtx-trans" style="position: absolute; left: -2px; top: 1776.38px;">
+<div class="gtx-trans-icon"></div>
+</div><br />cmsimde << <a href='cmsimde.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

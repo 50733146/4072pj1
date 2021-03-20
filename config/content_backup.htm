@@ -1679,7 +1679,8 @@ train_neural_network(input_image)</pre>
 <p><a href="https://github.com/puikinsh/travelify">https://github.com/puikinsh/travelify</a></p>
 <p></p>
 <h1>Q&amp;A</h1>
-<p><a href="/content/CMSiMDE.html">cmsimde</a></p><h2>Cmsimde</h2>
+<p><a href="/content/CMSiMDE.html">cmsimde</a></p>
+<p><a href="/content/FFMPEG.html">ffmpeg</a></p><h2>cmsimde</h2>
 <p>Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。</p>
 <p>A：格式轉換原始定義成"("和")"，所以出現誤換的問題</p>
 <p>原程式：</p>
@@ -1697,7 +1698,20 @@ train_neural_network(input_image)</pre>
   };
   &lt;/script&gt;
   &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"&gt;&lt;/script&gt; </pre>
-<p></p>
-<div id="gtx-trans" style="position: absolute; left: 274px; top: 119.65px;">
+<h2>ffmpeg</h2>
+<p>Q：錄製訓練過程的程式讀不到ffmpeg。</p>
+<p><img alt="" height="200" src="/images/Q_ffmpeg.png" width="696"/></p>
+<p style="text-align: center;">圖1.程式讀不到ffmpeg</p>
+<p>A：需要在作業系統中安裝ffmpeg</p>
+<ol>
+<li>下載、解壓縮<br/>先到官網 <a href="https://ffmpeg.org/download.html">https://ffmpeg.org/download.html</a> 下載 "<a href="https://www.gyan.dev/ffmpeg/builds/">Windows builds from gyan.dev</a>"，下載<a href="https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z">https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z</a>，解壓縮重新命名成"ffmpeg"並放到C槽目錄下(C:\ffmpeg)。</li>
+<li>環境設定(windows10 20H2 及 2004版本)<br/>開啟"設定"→"系統"→左方"關於"選項→右側"進階系統設定"→"環境變數"(圖2.)→選取"Path"，編輯(圖3.)→"新增"，增加一個環境變數，給定內容為:"C:\ffmpeg\bin"，"確定"(圖4.)→"確定"→"確定</li>
+</ol>
+<p style="text-align: center;"><img alt="圖2.進階系統設定" caption="false" height="300" src="/images/Q_ffmpeg-2.png" width="278"/><br/>圖2.進階系統設定<br/><img caption="false" height="300" src="/images/Q_ffmpeg-3.png" style="display: block; margin-left: auto; margin-right: auto;" width="326"/>圖3.環境變數<br/><img caption="false" height="300" src="/images/Q_ffmpeg-4.png" style="display: block; margin-left: auto; margin-right: auto;" width="324"/>圖4.編輯環境變數</p>
+<ul>
+<li style="text-align: left;">測試<br/>開啟命令字元(win+R，輸入"cmd")，執行"ffmpeg"(圖5.)<br/><img alt="" height="300" src="/images/Q_ffmpeg-5.png" width="575"/></li>
+</ul>
+<p style="text-align: center;">圖5.ffmpeg成功執行</p>
+<div id="gtx-trans" style="position: absolute; left: 39px; top: 1750.38px;">
 <div class="gtx-trans-icon"></div>
 </div>
