@@ -915,7 +915,8 @@ result = model.predict(X ).round()
 #替輸入樣本產生輸出預測
 print (result)
 #印出結果</pre>
-<p><a href="/downloads/整理資料/neural_network_in_python_summary.pdf">整理好的PDF檔</a></p><h2>參考範例</h2>
+<p><a href="/downloads/整理資料/neural_network_in_python_summary.pdf">整理好的PDF檔</a></p>
+<h2>參考範例</h2>
 <p>參考範例 <br/><a href="https://github.com/mdecourse/4072pj1/blob/master/40723150/example/pong2.py">https://github.com/mdecourse/4072pj1/blob/master/40723150/example/pong2.py</a></p>
 <h4>GPU運算</h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with cp.cuda.Device(0):#用GPU0做計算
@@ -1103,7 +1104,8 @@ print (result)
         print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre>
 <h4>訓練結果</h4>
 <p>紅點是每局的獎勵總和，藍色是累積獎勵平均值。橫軸：訓練局數；縱軸獎勵分數。</p>
-<p><img caption="false" height="500" src="/images/pong2_41k.png" width="667"/></p><h2>Markov</h2>
+<p><img caption="false" height="500" src="/images/pong2_41k.png" width="667"/></p>
+<h2>Markov</h2>
 <h4>Markov Chain</h4>
 <p>當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。</p>
 <h4>Markov Reward Process</h4>
@@ -1134,9 +1136,7 @@ print (result)
 <li style="text-align: left;">Mote-Carlo evaluation<br/>以評估採樣的方式<br/>$$g = \sum_{i=t}^{H-1}\gamma^{1-t}r_i$$<br/>$$G_t \leftarrow G_t+g,  i \leftarrow i+1$$<br/>$$V_t(s) \leftarrow \frac{G_t}{N}$$</li>
 <li style="text-align: left;">Temporal-Difference learning</li>
 </ol>
-<div id="gtx-trans" style="position: absolute; left: 297px; top: 34.6875px;">
-<div class="gtx-trans-icon"></div>
-</div><h3>Markov Decision Process</h3>
+<h3>Markov Decision Process</h3>
 <p>在MRP中加入決策(decision)和動作(action)</p>
 <ul>
 <li>S：state 狀態</li>
@@ -1189,7 +1189,8 @@ print (result)
 <p><span>$$= R(s, a)+\gamma \sum_{s'\in s}P(s'|s) \sum_{a'\in A}\pi (a'|s')q^{\pi}(s', a')$$</span></p>
 <p style="text-align: center;"><span><img alt="" height="200" src="/images/Q_pi function.jpg" width="291"/></span></p>
 <p style="text-align: center;"><span>圖4.Backup Diagram For $Q^{\pi}$</span></p>
-<p><span>$$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$</span></p><h1>優化器</h1>
+<p><span>$$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$</span></p>
+<h1>優化器</h1>
 <p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p>
 <h4>Gradient Descent</h4>
 <p>利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。</p>
@@ -1221,7 +1222,8 @@ print (result)
 <p>改善 Adam 算法所導致收斂較差的情況(用指數平均會減少其影響)，換用梯度平方最大值來做計算，並移除去偏差的步驟。是否有比 <span>Adam 算法好仍有待觀察。</span></p>
 <h4>Gradient noise</h4>
 <p><span>有助於訓練特別深且復雜的網絡，noise 可改善不良初始化的網路。</span></p>
-<p><strong><a href="/downloads/整理資料/神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p><h2>Gradient Descent Optimizer</h2>
+<p><strong><a href="/downloads/整理資料/神經網路梯度下降優化法.pdf">神經網路優化器算法整理</a></strong></p>
+<h2>Gradient Descent Optimizer</h2>
 <p>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">資料來源</a>)</p>
 <p style="text-align: center;"><strong><img alt="Error_surface" caption="false" height="200" src="/images/Error_surface.png" width="231"/></strong></p>
 <p style="text-align: center;"><strong>圖1. Error_surface<sub>(<a href="https://hackernoon.com/the-reason-behind-moving-in-the-direction-opposite-to-the-gradient-f9566b95370b">圖片來源</a>)</sub></strong></p>
@@ -1239,7 +1241,8 @@ print (result)
 <p>$$-1&lt;\cos(\beta)=\frac{u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}}{\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert}\leq 1$$</p>
 <p>$$k=\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert $$<br/>$$-k \leq k\cos(\beta)=u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}\leq k$$</p>
 <p style="text-align: left;"><span>所以盡可能的讓新值小於舊值 $(L(\theta+\eta u) − L(\theta) &lt; 0)$，loss 值就會減少得越多。因此 $u T \cdot \bigtriangledown\theta L(\theta)$ 應該為負，在 這情況下 $\cos(\beta)$ 等於 −1，$\beta$ 的角度為 180<sup>◦</sup>，這就是$\theta$移動的方向與梯度方向相反的原因。 梯度下降法告訴我們：當 $\theta$ 在特定值，並想減少新的 $\theta$ 值，使 loss 值逐漸減少就應該與梯度相反的方向找 (若梯度為正值，找最小值就需往負的方向找) </span></p>
-<p style="text-align: center;">$w_{t=1}=w_t-\eta\bigtriangledown w_t$<br/>$b_{t=1}=b_t-\eta\bigtriangledown b_t$<br/>$where\ at\ w=w_t,b=b_t$<br/>$<br/> \begin{cases}<br/> \bigtriangledown w_t=\frac{\partial L_{_{(\theta)}}}{\partial w}\\<br/> \bigtriangledown b_t=\frac{\partial L_{_{(\theta)}}}{\partial b}<br/> \end{cases}<br/>$</p><h2>Stochastic gradient descent</h2>
+<p style="text-align: center;">$w_{t=1}=w_t-\eta\bigtriangledown w_t$<br/>$b_{t=1}=b_t-\eta\bigtriangledown b_t$<br/>$where\ at\ w=w_t,b=b_t$<br/>$<br/> \begin{cases}<br/> \bigtriangledown w_t=\frac{\partial L_{_{(\theta)}}}{\partial w}\\<br/> \bigtriangledown b_t=\frac{\partial L_{_{(\theta)}}}{\partial b}<br/> \end{cases}<br/>$</p>
+<h2>Stochastic gradient descent</h2>
 <p>(<a href="https://ruder.io/optimizing-gradient-descent/">資料來源</a>)</p>
 <h4><span>Batch gradient descrnt</span></h4>
 <p><span>Vanilla gradient descent 又稱 Batch gradient descent(批次梯度下降法)，計算目標函數的梯度，參數 θ 對於整個 訓練資料：</span></p>
@@ -1283,7 +1286,8 @@ params = params − learning_rate ∗ params_grad
 <li> 學習率清單嘗試在訓練的時候調整學習率，即根據預定義清單或當目標下降於閾值 (threshold) 時降低學習率。 但清單和閾值須預先定義，因此無法適應數據集的特徵。</li>
 <li> 另外相同學習率適用全部參數更新。如果資料稀疏而且外型有很特別的頻率，我們可能不希望將所有特徵更新 到相同的程度，而是對很少發生的特徵執行較大的更新。</li>
 <li> 最小化神經網路常見的高度非凸面誤差方程式<span> (error function) </span>的另一關鍵挑戰則是要避免被困在大量次優的局 部最小值區域中。認為困難實際上不是由局部最小值引起的，而是由鞍點引起的，即一維向上傾斜而另一維向下 傾斜的點。這些鞍點通常被相同誤差的平穩段包圍，這使得 SGD 很難逃脫，因為在所有維度上梯度都接近於零。</li>
-</ol><h2>Gradient descent optimization algorithms</h2>
+</ol>
+<h2>Gradient descent optimization algorithms</h2>
 <p><span>(</span><a href="https://ruder.io/optimizing-gradient-descent/">資料來源</a><span>)</span></p>
 <h4>Momentum</h4>
 <p>SGD 難以在陡峭的往正確的方向，那就是說在一個維度上，曲面的彎曲比另一個維度要陡得多，這在局部最優情況下很常見。下圖(圖.1)的同心圓代表中心下凹的曲面。在這些情況下，SGD 會在陡峭的地方振盪，而僅沿著底部朝著局部最優方向猶豫前進，如 (圖.1.a) 所 示。 Momentun(動量) 是一個幫助加速 SGD 在正確方向和抑制震盪的方法，在 (圖.1.b)。</p>
@@ -1412,7 +1416,8 @@ params = params − learning_rate ∗ params_grad
 <p>$$g_{t, i} = g_{t, i} + N(0, \sigma^2_t)$$</p>
 <p>根據排定時間對差異計算：</p>
 <p>$$\sigma^2_t = \frac{\eta}{(1 + t)^\gamma}$$</p>
-<p>添加這種 noise 對不良初始化的網絡可使其強化，並有助於訓練特別深且復雜的網絡。他們懷疑增加的噪聲使模型 有更多的機會逃脫並找到新的局部極小值，這對於更深的模型而言更常見。</p><h1>程式</h1>
+<p>添加這種 noise 對不良初始化的網絡可使其強化，並有助於訓練特別深且復雜的網絡。他們懷疑增加的噪聲使模型 有更多的機會逃脫並找到新的局部極小值，這對於更深的模型而言更常見。</p>
+<h1>程式</h1>
 <h4>pygame</h4>
 <p>訓練用的Pygame程式：</p>
 <p><a href="https://github.com/s40723150/pygame_airhockey">https://github.com/s40723150/pygame_airhockey</a></p>
@@ -1673,4 +1678,26 @@ train_neural_network(input_image)</pre>
 <p><a href="https://colorlib.com/wp/themes/travelify/">https://colorlib.com/wp/themes/travelify/</a> </p>
 <p><a href="https://github.com/puikinsh/travelify">https://github.com/puikinsh/travelify</a></p>
 <p></p>
+<h1>Q&amp;A</h1>
+<p><a href="/content/CMSiMDE.html">cmsimde</a></p><h2>cmsimde</h2>
+<p>Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。</p>
+<p>A：格式轉換原始定義成"("和")"，所以出現誤換的問題</p>
+<p>原程式：</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">&lt;script&gt;
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  &lt;/script&gt;
+  &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"&gt;&lt;/script&gt;</pre>
+<p>修正後將<span>"("和")"換成"$"，就解決誤換問題</span></p>
+<p>修正後：</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">&lt;script&gt;
+  MathJax = {
+    tex: {inlineMath : [ ['$','$'], ["\\$","\\$"] ]}
+  };
+  &lt;/script&gt;
+  &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"&gt;&lt;/script&gt; </pre>
 <p></p>
+<div id="gtx-trans" style="position: absolute; left: -3px; top: -14.3083px;">
+<div class="gtx-trans-icon"></div>
+</div>
