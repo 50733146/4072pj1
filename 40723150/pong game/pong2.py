@@ -23,12 +23,12 @@ resume = 0 # resume from previous checkpoint?
 render = 0
 device = 1
 reward_list = np.array(())
-sum_reward_list = np.array(())
+sum_reward_list= np.array(())
 running_reward = None
 reward_sum = 0
 episode_number = 0
 #resume = False
-resume = True
+resume = False
 # model initialization
 D = 80 * 80 # input dimensionality: 80x80 grid
 with cp.cuda.Device(0):

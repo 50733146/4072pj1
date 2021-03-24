@@ -1024,10 +1024,17 @@ print (result)
     # forward the policy network and sample an action from the returned probability
     t  = time.time()
     aprob, h = policy_forward(x)
+
     # roll the dice, in the softmax loss
-    u = np.random.uniform()
-    aprob_cum = np.cumsum(aprob)
+    u = np.random.uniform() # 隨機取出一個數(擲骰子)
+    aprob_cum = np.cumsum(aprob) # 三個動作的機率
     a = np.where(u &lt;= aprob_cum)[0][0]
+    '''
+    骰子的點數落在哪個行為的區間，舉例:
+    u = 0.5826051448555892
+    aprob_cum  = [0.99999548 0.99999872 1. ]
+    u &lt;  aprob_cum[0]，則執行aprob_cum[0]的行為
+    '''
     action = a+2
     #print(u, a, aprob_cum)
   
@@ -1103,11 +1110,12 @@ print (result)
         
         print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre>
 <h4>訓練結果</h4>
-<p>點是每局的獎勵總和，曲線是累積獎勵平均值。橫軸：訓練局數；縱軸獎勵分數。紅點是pong1.2，綠點是pong2。(圖1.)</p>
-<p style="text-align: center;"><img alt="" height="450" src="/images/pong2_vs_pong1.2.png" style="display: block; margin-left: auto; margin-right: auto;" width="600"/>圖1. pong2 v.s. pong1.2</p>
+<p>點是每局的獎勵總和，曲線是累積獎勵平均值。橫軸：訓練局數；縱軸獎勵分數。紅點是pong1.2，綠點是pong2。(圖1.)pong2的activation function為softmax，<span>pong1.2則是sigmoid。</span></p>
+<p style="text-align: center;"><img alt="" height="500" src="/images/pong2_vs_pong1.2_reward.png" width="667"/></p>
+<p style="text-align: center;">圖1. pong2 v.s. pong1.2</p>
 <p style="text-align: right;">[<a href="/downloads/pong2_vs_pong1.2.pdf">pong2_vs_pong1.2.pdf</a>]</p>
-<p></p>
-<h2>Markov</h2>
+<p style="text-align: left;"></p>
+<p></p><h2>Markov</h2>
 <h4>Markov Chain</h4>
 <p>當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。</p>
 <h4>Markov Reward Process</h4>

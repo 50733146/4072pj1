@@ -22,7 +22,7 @@ reward_sum = 0
 episode_number = 0
 reward_list = np.array(())
 sum_reward_list = np.array(())
-resume = 1
+resume = 0
 render = False # render video output?
 
 # model initialization

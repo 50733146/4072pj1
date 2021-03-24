@@ -88,7 +88,6 @@ def play(env, transpose=True, fps=30, zoom=None, callback=None, keys_to_action=N
             assert False, env.spec.id + " does not have explicit key to action mapping, " + \
                           "please specify one manually"
     relevant_keys = set(sum(map(list, keys_to_action.keys()),[]))
-    
     video_size=[rendered.shape[1],rendered.shape[0]]
     if zoom is not None:
         video_size = int(video_size[0] * zoom), int(video_size[1] * zoom)
@@ -175,7 +174,7 @@ def main():
     parser.add_argument('--env', type=str, default='Pong-v4', help='Define Environment')
     args = parser.parse_args()
     env = gym.make(args.env)
-    play(env, zoom=4, fps=60)
+    play(env, zoom=3, fps=60)
 
 
 if __name__ == '__main__':
