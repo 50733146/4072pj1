@@ -13,10 +13,11 @@ try:
 except ImportError as e:
     logger.warn('failed to set matplotlib backend, plotting will not work: %s' % str(e))
     plt = None
+    print(plt)
 #collections:容器資料型態
 #一個類似 list 的容器，可以快速的在頭尾加入元素與取出元素
 from collections import deque
-#from pygame.locals import VIDEORESIZE #!
+from pygame.locals import VIDEORESIZE #!
 
 
 def display_arr(screen, arr, video_size, transpose):
@@ -25,8 +26,10 @@ def display_arr(screen, arr, video_size, transpose):
     #pygame.surfarray.make_surface:Copy an array to a new surface
     #.swapaxes:互換數組的兩個軸。
     pyg_img = pygame.surfarray.make_surface(arr.swapaxes(0, 1) if transpose else arr)
+    print(pyg_img)
     #pygame.transform.scale:resize to new resolution(解析度)
     pyg_img = pygame.transform.scale(pyg_img, video_size)
+    print(pyg_img)
     #.blit(背景變數, 繪製位置)
     screen.blit(pyg_img, (0, 0))
 
@@ -89,16 +92,18 @@ def play(env, transpose=True, fps=30, zoom=None, callback=None, keys_to_action=N
     """
     env.reset()
     rendered = env.render(mode='rgb_array')
-
+    print(rendered)
     if keys_to_action is None:
         #hasattr()用於判斷對象是否包含的屬性;對象有該屬性返回True,否則返回False
         if hasattr(env, 'get_keys_to_action'):
         #指定自定義鍵以進行動作映射
             keys_to_action = env.get_keys_to_action()
-        #env.unwrapped:環境變量
+            print(keys_to_action)
+        #env.unwrapped:可看環境變量
         elif hasattr(env.unwrapped, 'get_keys_to_action'):
         #keys_to_action等於環境中可用的action
             keys_to_action = env.unwrapped.get_keys_to_action()
+            print( keys_to_action)
         #assert:用來進行簡單的條件 (condition) 判斷，如果條件為真，程式 (program) 繼續執行，
         #反之條件為假的話，就會發起 Assertion 例外 (exception) ，中斷程式執行。
         #逗號後面則是 Assertion 例外的提示訊息，假如是Ture就不會觸發例外
@@ -111,6 +116,7 @@ def play(env, transpose=True, fps=30, zoom=None, callback=None, keys_to_action=N
             #map:會根據提供的函數，對指定序列做映射
             #list:儲存一連串有順序性的元素
     relevant_keys = set(sum(map(list, keys_to_action.keys()), []))
+    print(relevant_keys)
    #.shape:功能是查看矩阵或者数组的维数
     video_size = [rendered.shape[1], rendered.shape[0]]
 #int()(interger):將傳入之參數轉為整數，若參數為浮點數則將小數捨去
@@ -135,6 +141,7 @@ def play(env, transpose=True, fps=30, zoom=None, callback=None, keys_to_action=N
             #sorted:對所有可迭代的對象進行排序(小到大)操作
         else:
             action = keys_to_action.get(tuple(sorted(pressed_keys)), 0)
+            print(action)
             prev_obs = obs
             obs, rew, env_done, info = env.step(action)
             if callback is not None:
@@ -148,9 +155,9 @@ def play(env, transpose=True, fps=30, zoom=None, callback=None, keys_to_action=N
             # test events, set key states
             if event.type == pygame.KEYDOWN:
                 if event.key in relevant_keys:
-
+#append()方法追加傳遞obj到現有的列表
                     pressed_keys.append(event.key)
-                elif event.key == 27:
+                elif event.key == 10:
                     running = False
             elif event.type == pygame.KEYUP:
                 if event.key in relevant_keys:
@@ -158,10 +165,10 @@ def play(env, transpose=True, fps=30, zoom=None, callback=None, keys_to_action=N
             elif event.type == pygame.QUIT:
                 running = False
 
-            '''elif event.type == VIDEORESIZE:
+            elif event.type == VIDEORESIZE:
                 video_size = event.size
                 screen = pygame.display.set_mode(video_size)
-                print(video_size)'''
+                print(video_size)
 
 
         pygame.display.flip()
@@ -216,7 +223,8 @@ def main():
     # ArgumentParser:对象包含将命令行解析成 Python 数据类型所需的全部信息
     parser = argparse.ArgumentParser()
 # add_argument():利用這個方法可以指名讓我們的程式接受哪些命令列參數
-    parser.add_argument('--env', type=str, default='MontezumaRevengeNoFrameskip-v4', help='Define Environment')
+    #'MontezumaRevengeNoFrameskip-v4'
+    parser.add_argument('--env', type=str, default='Pong-v0', help='Define Environment')
     args = parser.parse_args()#返回具有env屬性的對象
     env = gym.make(args.env)
     play(env, zoom=4, fps=60)
