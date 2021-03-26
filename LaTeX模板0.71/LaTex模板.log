@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2020.3.25)  10 MAR 2021 22:54
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2020.3.25)  26 MAR 2021 23:27
 entering extended mode
-**./LaTex模板0.7版.tex
-(LaTex模板0.7版.tex
+**./LaTex模板.tex
+(LaTex模板.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06>
 (Y:\miktex-portable\texmfs\install\tex/latex/base\article.cls
@@ -212,8 +212,8 @@ Package: CJKnumb 2015/04/18 4.8.4
 LaTeX Warning: Unused global option(s):
     [14pt].
 
-(LaTex模板0.7版.aux)
-\openout1 = `LaTex模板0.7版.aux'.
+(LaTex模板.aux)
+\openout1 = `LaTex模板.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
@@ -388,31 +388,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--97
 ||
  []
 
-(LaTex模板0.7版.toc)
+(LaTex模板.toc)
 \tf@toc=\write3
-\openout3 = `LaTex模板0.7版.toc'.
+\openout3 = `LaTex模板.toc'.
 
  [2]
 Underfull \hbox (badness 10000) in paragraph at lines 100--100
 ||
  []
 
-(LaTex模板0.7版.lof)
+(LaTex模板.lof)
 \tf@lof=\write4
-\openout4 = `LaTex模板0.7版.lof'.
+\openout4 = `LaTex模板.lof'.
 
- [3] [1] (LaTex模板0.7版.aux)
+ [3] [1] (LaTex模板.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
  5585 strings out of 414221
- 157053 string characters out of 2901377
- 462428 words of memory out of 3000000
+ 156985 string characters out of 2901377
+ 462420 words of memory out of 3000000
  23077 multiletter control sequences out of 15000+200000
  532482 words of font info for 42 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 44i,4n,60p,299b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,4n,60p,295b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on LaTex模板0.7版.pdf (5 pages).
+Output written on LaTex模板.pdf (5 pages).
