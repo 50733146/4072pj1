@@ -50,18 +50,18 @@
               {第\CJKnumber{\thecontentslabel}小節}}{}
               {\titlerule*[0.7pc]{.}\contentspage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%標題%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%              
-\begin{document}                   %文件
-\begin{titlepage}                  %開頭
-\begin{center}                     %標題  
-\begin{LARGE}
+\begin{document} %文件
+\begin{titlepage}%開頭
+\begin{center}   %標題  
+\begin{huge}
 \makebox[1.5\width][s]{國立虎尾科技大學}\\[18pt]
 \makebox[1.5\width][s]{機械設計工程系}\\[18pt]
 \makebox[1.5\width][s]{專題製作報告}\\[18pt]
 %設定文字盒子 [方框寬度的1.5倍寬][對其方式為文字平均分分布於方框中]\\距離下方18pt
-\end{LARGE}
+\end{huge}
 \vspace{1.5cm}
 %下移1.5cm
-\huge\textbf{強化學習在機電系統中之應用}
+\Huge\textbf{強化學習在機電系統設計與控制中之應用}
 %字體等級Huge\加粗
 \vfill
 %垂直向增加空白行
@@ -85,12 +85,16 @@
 \begin{center}
 
 \LARGE\textbf{摘要}\\
-\begin{Large}
+\begin{LARGE}
 \begin{flushleft}
 \hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，但不能以實體一直測試不同方法，成本與時間不允許，便可以利用許多感測器觀測數值，以類神經網路運算，在虛擬環境架設結構，遠端控制、更改數值。\\
- \hspace{12pt} 本專題透過Reinforcement Learning訓練冰球對打AI，利用調整不同訓練參數，並比較不同訓練方式及其優劣勢。利用模擬軟體Webots設置對應模擬環境，將訓練結果與機電系統整合。來達到製作實體前先發現設計缺陷並解決，並評估其發展應用價值。
+
+ \hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。
 \end{flushleft}
-\end{Large}
+\begin{center}
+關鍵字:Policy gradient、虛擬環境架設結構、Reinforcement Learning
+\end{center}
+\end{LARGE}
 \newpage
 \renewcommand{\contentsname}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{目\quad 錄}}}
 \addcontentsline{toc}{section}{摘\quad 要}
@@ -101,6 +105,19 @@
 \newpage
 \end{center}
 \newpage
-\section{主題一}
+\section{前言}
 \setcounter{page}{1}
+\newpage
+\begin{center}
+\addcontentsline{toc}{section}{參考文獻 }
+\LARGE\textbf 參考文獻\\
+\end{center}
+\begin{flushleft}
+\begin{Large}
+[1]\quad https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e\\
+
+[2]\quad https://towardsdatascience.com/adam-latest-trends-in-deep-learning-optimization-6be9a291375c\\
+\end{Large}
+\end{flushleft}
+
 \end{document}
