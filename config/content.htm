@@ -1115,7 +1115,8 @@ print (result)
 <p style="text-align: center;">圖1. pong2 v.s. pong1.2</p>
 <p style="text-align: right;">[<a href="/downloads/pong2_vs_pong1.2.pdf">pong2_vs_pong1.2.pdf</a>]</p>
 <p style="text-align: left;"></p>
-<p></p><h2>Markov</h2>
+<p></p>
+<h2>Markov</h2>
 <h4>Markov Chain</h4>
 <p>當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。</p>
 <h4>Markov Reward Process</h4>
@@ -1200,6 +1201,8 @@ print (result)
 <p style="text-align: center;"><span><img alt="" height="200" src="/images/Q_pi function.jpg" width="291"/></span></p>
 <p style="text-align: center;"><span>圖4.Backup Diagram For $Q^{\pi}$</span></p>
 <p><span>$$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$</span></p>
+<h2><span>Reinforcement Learning Basics</span></h2>
+<p><span></span></p>
 <h1>優化器</h1>
 <p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p>
 <h4>Gradient Descent</h4>
@@ -1691,7 +1694,8 @@ train_neural_network(input_image)</pre>
 <h1>Q&amp;A</h1>
 <p><a href="http://mde.tw/4072pj1/content/MathJax.html">MathJax</a></p>
 <p><a href="http://mde.tw/4072pj1/content/ffmpeg.html">ffmpeg</a></p>
-<p><a href="http://mde.tw/4072pj1/content/%E5%8B%95%E6%85%8B%E9%80%A3%E7%B5%90%E5%BA%AB.html">dll</a></p><h2>MathJax</h2>
+<p><a href="http://mde.tw/4072pj1/content/%E5%8B%95%E6%85%8B%E9%80%A3%E7%B5%90%E5%BA%AB.html">dll</a></p>
+<h2>MathJax</h2>
 <p>Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。</p>
 <p>A：格式轉換原始定義成"("和")"，所以出現誤換的問題</p>
 <p>原程式：</p>
