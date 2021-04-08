@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2020.3.25)  26 MAR 2021 23:27
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2020.3.25)  4 APR 2021 22:26
 entering extended mode
 **./LaTex模板.tex
 (LaTex模板.tex
@@ -384,7 +384,7 @@ Overfull \hbox (98.05315pt too wide) detected at line 77
 [1
 
 ] [1]
-Underfull \hbox (badness 10000) in paragraph at lines 97--97
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
 ||
  []
 
@@ -393,7 +393,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--97
 \openout3 = `LaTex模板.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 ||
  []
 
@@ -401,7 +401,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--100
 \tf@lof=\write4
 \openout4 = `LaTex模板.lof'.
 
- [3] [1] (LaTex模板.aux)
+ [3] [1] [2] [3] [4] (LaTex模板.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -415,4 +415,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  44i,4n,60p,295b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on LaTex模板.pdf (5 pages).
+Output written on LaTex模板.pdf (8 pages).
