@@ -133,92 +133,9 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">研究生考試 << <a href='研究生考試.html'>Previous</a> <a href='數位簽章.html'>Next</a> >> 數位簽章<br /><h1>動態網站</h1>
-<p>設定步驟請參考:</p>
-<p><a href="https://github.com/mdecourse/project2020-1/issues/4">https://github.com/mdecourse/project2020-1/issues/4</a></p>
-<h4>CMSiMDE 執行所需模組</h4>
-<p style="padding-left: 30px;"><span>sudo pip3 install flask flask_cors bs4 lxml</span></p>
-<h4>uwsgi 所需模組</h4>
-<pre style="padding-left: 30px;"><code>sudo apt install uwsgi uwsgi-plugin-python3<br/><br/></code></pre>
-<pre style="padding-left: 30px;"><code>sudo pip3 install uwsgi</code></pre>
-<pre><code><br/></code>/etc/nginx/sites-available/default 附加 server 設定 <br/><br/></pre>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">server {
- 
-    listen 9443 ssl;
-    listen [::]:9443 ssl;
- 
-    # 指定 static 所在位置
-    location /static {
-	alias /home/yen/cad1_site/cmsimde/static/;
-    }
- 
-    location / {
-	# 導入 uwsgi_params 設定參數
-	include uwsgi_params;
-	# 根目錄設為近端的 8080 port 
-	uwsgi_pass  127.0.0.1:8080;
-    }
- 
-    ssl_certificate /home/yen/localhost.crt;
-    ssl_certificate_key /home/yen/localhost.key;
-    #ssl_certificate /etc/letsencrypt/live/cad1.kmol.info/fullchain.pem;
-    #ssl_certificate_key /etc/letsencrypt/live/cad1.kmol.info/privkey.pem;
-    ssl_session_timeout 5m;
-    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
-    ssl_prefer_server_ciphers on;
-    try_files $uri $uri/ =404;
-}</pre>
-<h4><br/>建立 self-signed key<br/><br/><span>sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout localhost.key -out localhost.crt</span><br/><br/>/home/yen/uwsgi_ini/uwsgi.ini<br/><br/></h4>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[uwsgi]
-socket = :8080
-uid = yen
-gid = yen
-plugins-dir = /usr/lib/uwsgi/plugins/
-plugin = python3
-master = true
-process = 4
-threads = 2
-chdir = /home/yen/cad1_site/cmsimde
-wsgi-file = /home/yen/cad1_site/cmsimde/wsgi.py</pre>
-<h4><br/>uwsgi emperor 手動測試</h4>
-<h4><code>/usr/bin/uwsgi --emperor /home/yen/uwsgi_ini<br/><br/>防火牆設定<br/></code></h4>
-<p>先暫時關閉 ufw</p>
-<p>ufw disable</p>
-<p>允許設計系 IP v6 網段連線 9443 port</p>
-<p>ufw allow from 2001:288:6004:17::/32 to any port 9443</p>
-<p>其他網段主機一律]不准連線</p>
-<p>ufw deny 9443</p>
-<p>重新開啟 ufw 防火牆</p>
-<p>ufw enable</p>
-<pre><code><span>/etc/systemd/system 目錄中建立 cmsimde.service 檔案</span></code></pre>
-<pre></pre>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[Unit]
-Description=uWSGI to serve CMSiMDE 
-After=network.target
- 
-[Service]
-User=yen
-Group=yen
-WorkingDirectory=/home/yen/uwsgi_ini
-ExecStart=/usr/bin/uwsgi --emperor /home/yen/uwsgi_ini
- 
-[Install]
-WantedBy=multi-user.target</pre>
-<pre></pre>
-<p>接著將 cmsimde 服務設為隨系統開機啟動:</p>
-<pre><code>sudo systemctl enable cmsimde
-</code></pre>
-<p>若要取消 cmsimde 服務隨系統開機啟動:</p>
-<pre><code>sudo systemctl disable cmsimde
-</code></pre>
-<p>手動啟動 cmsimde.service 服務</p>
-<pre><code>sudo systemctl start cmsimde
-</code></pre>
-<p>手動停止 cmsimde.service 服務</p>
-<pre><code>sudo systemctl stop cmsimde</code></pre>
-<pre><br/><br/></pre>
-<br />研究生考試 << <a href='研究生考試.html'>Previous</a> <a href='數位簽章.html'>Next</a> >> 數位簽章</div>
+    <div id="tipue_search_content">Markov Decision Process << <a href='Markov Decision Process.html'>Previous</a> <a href='優化器.html'>Next</a> >> 優化器<br /><h1>Reinforcement Learning Basics</h1>
+<p><span></span></p>
+<br />Markov Decision Process << <a href='Markov Decision Process.html'>Previous</a> <a href='優化器.html'>Next</a> >> 優化器</div>
         
     <!-- footer -->
       <div class="container">
