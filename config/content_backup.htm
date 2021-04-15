@@ -1114,6 +1114,7 @@ print (result)
 <p style="text-align: center;"><img alt="" height="500" src="/images/pong2_vs_pong1.2_reward.png" width="667"/></p>
 <p style="text-align: center;">圖1. pong2 v.s. pong1.2</p>
 <p style="text-align: right;">[<a href="/downloads/pong2_vs_pong1.2.pdf">pong2_vs_pong1.2.pdf</a>]</p>
+<p style="text-align: left;"><img caption="false" height="500" src="/images/pong1_vs_pong1.2_reward.png" width="667"/></p>
 <p style="text-align: left;"></p>
 <p></p><h2>Markov</h2>
 <h4>Markov Chain</h4>
@@ -1200,6 +1201,8 @@ print (result)
 <p style="text-align: center;"><span><img alt="" height="200" src="/images/Q_pi function.jpg" width="291"/></span></p>
 <p style="text-align: center;"><span>圖4.Backup Diagram For $Q^{\pi}$</span></p>
 <p><span>$$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$</span></p>
+<h2>Reinforcement Learning Basics</h2>
+<p><span></span></p>
 <h1>優化器</h1>
 <p>為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：</p>
 <h4>Gradient Descent</h4>
@@ -1432,8 +1435,9 @@ params = params − learning_rate ∗ params_grad
 <p>訓練用的Pygame程式：</p>
 <p><a href="https://github.com/s40723150/pygame_airhockey">https://github.com/s40723150/pygame_airhockey</a></p>
 <p><a href="https://github.com/mdecourse/4072pj1/tree/master/40723150/pygame">https://github.com/mdecourse/4072pj1/tree/master/40723150/pygame</a></p>
-<p></p>
-<h2>RL-Pong Game</h2>
+<p>Pong control</p>
+<p>將pong1.2訓練好的模型丟回到gym，讓訓練好的模型和gmy內建AI對打。</p>
+<p></p><h2>RL-Pong Game</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import pygame
 import random , sys
 from pygame.locals import *
@@ -1673,8 +1677,92 @@ def train_neural_network(input_image):
 
 
 train_neural_network(input_image)</pre>
+<h2>Pong control</h2>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">""" Majority of this code was copied directly from Andrej Karpathy's gist:
+https://gist.github.com/karpathy/a4166c7fe253700972fcbc77e4ea32c5
+# https://raw.githubusercontent.com/omkarv/pong-from-pixels/master/pong-from-pixels.py
+
+ Trains an agent with (stochastic) Policy Gradients on Pong. Uses OpenAI Gym. """
+import numpy as np
+import pickle
+import gym
+import time as t
+from gym import wrappers
+
+H = 200 # number of hidden layer neurons
+batch_size = 10 # used to perform a RMS prop param update every batch_size steps
+learning_rate = 1e-3 # learning rate used in RMS prop
+gamma = 0.99 # discount factor for reward
+decay_rate = 0.99 # decay factor for RMSProp leaky sum of grad^2
+
+resume = 1
+render = 1 # render video output
+
+# model initialization
+D = 75 * 80 # input dimensionality: 75x80 grid
+if resume:
+  model = pickle.load(open('pong1.2_save.p', 'rb'))
+else:
+  print("Resume Error!!")
+
+def sigmoid(x):
+  return 1.0 / (1.0 + np.exp(-x)) # sigmoid "squashing" function to interval [0,1]
+
+def prepro(I):
+  """ prepro 210x160x3 uint8 frame into 6000 (75x80) 1D float vector """
+  I = I[35:185] # crop - remove 35px from start &amp; 25px from end of image in x, to reduce redundant parts of image (i.e. after ball passes paddle)
+  I = I[::2,::2,0] # downsample by factor of 2.
+  I[I == 144] = 0 # erase background (background type 1)
+  I[I == 109] = 0 # erase background (background type 2)
+  I[I != 0] = 1 # everything else (paddles, ball) just set to 1. this makes the image grayscale effectively
+  return I.astype(np.float).ravel() # ravel flattens an array and collapses it into a column vector
+
+def policy_forward(x):
+  """This is a manual implementation of a forward prop"""
+  h = np.dot(model['W1'], x) # (H x D) . (D x 1) = (H x 1) (200 x 1)
+  h[h&lt;0] = 0 # ReLU introduces non-linearity
+  logp = np.dot(model['W2'], h) # This is a logits function and outputs a decimal.   (1 x H) . (H x 1) = 1 (scalar)
+  p = sigmoid(logp)  # squashes output to  between 0 &amp; 1 range
+  return p, h # return probability of taking action 2 (UP), and hidden state
+
+env = gym.make("Pong-v0")
+
+observation = env.reset()
+
+prev_x = None # used in computing the difference frame
+xs,hs,dlogps,drs = [],[],[],[]
+running_reward = None
+reward_sum = 0
+episode_number = 0
+while True:
+  if render: env.render()
+  cur_x = prepro(observation) #丟入畫面
+  x = cur_x - prev_x if prev_x is not None else np.zeros(D)#兩張畫面相減
+  prev_x = cur_x
+  aprob, h = policy_forward(x)
+  action = 2 if 0.5 &lt; aprob else 3
+  xs.append(x) # observation
+  hs.append(h) # hidden state
+  y = 1 if action == 2 else 0
+  dlogps.append(y - aprob)
+  observation, reward, done, info = env.step(action)
+  reward_sum += reward
+  drs.append(reward)
+
+  if done:
+    episode_number += 1
+
+    running_reward = reward_sum if running_reward is None else running_reward * 0.99 + reward_sum * 0.01
+    print ('resetting env. episode reward total was ' + str(reward_sum) + ' running mean: '+ str(running_reward))
+
+    reward_sum = 0
+    observation = env.reset() # reset env
+    prev_x = None
+
+  if reward != 0:
+    print (('round %d game finished, reward: %f' % (episode_number, reward)) + ('' if reward == -1 else ' !!!!!!!!'))</pre>
 <p></p>
-<h1>Ref</h1>
+<p></p><h1>Ref</h1>
 <h2>Flutter</h2>
 <p>Flutter 與 Android sdk 版本差異問題解決: <a href="https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se/61613986#61613986">https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se/61613986#61613986</a></p>
 <p>Flask 與 ML 系統在後端, Flutter 作為前端</p>
@@ -1691,7 +1779,8 @@ train_neural_network(input_image)</pre>
 <h1>Q&amp;A</h1>
 <p><a href="http://mde.tw/4072pj1/content/MathJax.html">MathJax</a></p>
 <p><a href="http://mde.tw/4072pj1/content/ffmpeg.html">ffmpeg</a></p>
-<p><a href="http://mde.tw/4072pj1/content/%E5%8B%95%E6%85%8B%E9%80%A3%E7%B5%90%E5%BA%AB.html">dll</a></p><h2>MathJax</h2>
+<p><a href="http://mde.tw/4072pj1/content/%E5%8B%95%E6%85%8B%E9%80%A3%E7%B5%90%E5%BA%AB.html">dll</a></p>
+<h2>MathJax</h2>
 <p>Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。</p>
 <p>A：格式轉換原始定義成"("和")"，所以出現誤換的問題</p>
 <p>原程式：</p>
