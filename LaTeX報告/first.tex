@@ -211,7 +211,6 @@ $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$
 \section{深度學習}
 %=----------deep learning 會在此時崛起?----------------=%
 \begin{itemize}
-
 \item Deep learning 會在此時崛起?\\
 \qquad Four major trends in scientific computing have become increasingly important for deep learning.\\
 
@@ -495,6 +494,28 @@ To put this in English, we have some distribution $p(x;\theta)$ (I used shorthan
 \section{比較個方法的特色}
 \newpage
 \chapter{優化器算法}
+
+\section{Markov Chain}
+\quad 當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。
+\section{Markov Reward Process}
+\quad action 到指定狀態會獲得獎勵。
+$$R(s_t=s) = \mathbb{E}[r_t|s_t = s]$$
+$$\gamma \in [0, 1]$$
+\begin{itemize}
+\item Horizon：\\
+在無限的狀態以有限的狀態表示\\
+\item Return：\\
+越早做出正確決策獎勵越高\\
+$$G_t = R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\gamma^3 R_{t+4}+...+\gamma^{T-t-1} R_{T}$$
+
+\item State value function：\\
+決策價值\\
+$$V_t(S) = \mathbb{E}[G_t|s_t = s]$$
+\begin{center}
+\hspace{-4em}\makebox[\width][s]{$P(s_{s+1}=s'|s_t=s,a_t=a)$}
+\end{center}
+\end{itemize}
+
 \section{Markov Decision Process}
 \quad 在MRP中加入決策(decision)和動作(action)\\
 \begin{itemize}
