@@ -146,7 +146,7 @@ from: \href{https://towardsdatascience.com/derivative-of-the-sigmoid-function-53
 \qquad It is an differential Sigmoid Funtion. It can reduce  error of gradient so it is some kind of loss function and Let's take a look the proof of SigmoidPrime\\
 \begin{Large}$$\sigma(x)=\frac{1}{1+e^{-x}}$$ \end{Large}\\[6pt]
 $$\sigma^{'}(x)=\frac{d}{dx}\sigma(x)=\frac{d}{dx}\frac{1}{1+e^{-x}}=\frac{d}{dx}(1+e^{-x})^{-1}$$\\[6pt]
-$$-------------skip-------------$$\\[6pt]
+%$$-------------skip-------------$$\\[6pt]
 Tip: find $f^{'}(x)$ if $f(x)=\frac{A}{B+Ce^{x}}$\\
 Answer:\\
 $$\frac{d}{dx}[\frac{1}{g(x)}]=\frac{1^{'}g(x)-1g^{'}(x)}{g(x)^2}=\frac{g^{'}(x)}{[g(x)]^2}$$\\
@@ -209,8 +209,6 @@ $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$
 \newpage
 \end{itemize}
 \section{深度學習}
-\newpage
-\section{強化學習}
 %=----------deep learning 會在此時崛起?----------------=%
 \begin{itemize}
 
@@ -226,6 +224,8 @@ Separately, libraries such as NumPy, Torch, Eigen and Lush made array-based prog
 Moreover, the openness, interoperability, and flexibility of free software fostered the development of vibrant communities that could quickly address new or changing needs by extending the existing functionality of a library or if needed by developing and releasing brand new ones. While there is a rich offering of open-source software for neural networks in languages other than Python, starting with Lush in Lisp, Torch in C++, Objective-C and Lua, EBLearn in C++, Caffe in C++, the network effects of a large ecosystem such as Python made it an essential skill to jumpstart one’s research. Hence, since 2014,most deep learning frameworks converged on a Python interface as an essential feature.\\
 
 (4)\quad 多核 GPU 運算的發展 \\ Finally, the availability and commoditization of general-purpose massively parallel hardware such as GPUs provided the computing power required by deep learning methods. Specialized librariessuch as cuDNN, along with a body of academic work (such as Andrew Lavin. maxdnn: An efficient convolution kernel for deep learning with maxwell gpus,January 2015 and Andrew Lavin and Scott Gray. Fast algorithms for convolutional neural networks.2016 IEEEConference on Computer Vision and Pattern Recognition (CVPR), pages 4013–4021, 2016), produced aset of high-performance reusable deep learning kernels that enabled frameworks such as Caffe,Torch7, or TensorFlow to take advantage of these hardware accelerators.\\
+\newpage
+\section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
 \item What is Reinforcement Learning?\\
 強化學習是通過agent與已知或未知的環境持互動，不斷適應與學習，得到的回饋可能是正面，也就是reward，如果得到負面，那就是punishments。考慮到agent與環境互動，我們就能決定要執行哪個動作。簡而言之，強化學習是建立在reward與punishments上。\\[6pt]
