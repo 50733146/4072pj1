@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  30 APR 2021 17:24
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  1 MAY 2021 16:29
 entering extended mode
 **./first.tex
 (first.tex
@@ -825,12 +825,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--113
 
 (first.toc
 Overfull \hbox (0.363pt too wide) detected at line 8
- \TU/lmr/m/n/17.28 10
+ \TU/lmr/m/n/17.28 11
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 9
- \TU/lmr/m/n/17.28 10
+ \TU/lmr/m/n/17.28 11
  []
 
 
@@ -840,17 +840,17 @@ Overfull \hbox (0.363pt too wide) detected at line 10
 
 
 Overfull \hbox (0.363pt too wide) detected at line 11
- \TU/lmr/m/n/17.28 11
+ \TU/lmr/m/n/17.28 12
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 12
- \TU/lmr/m/n/17.28 11
+ \TU/lmr/m/n/17.28 12
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 13
- \TU/lmr/m/n/17.28 12
+ \TU/lmr/m/n/17.28 13
  []
 
 
@@ -946,22 +946,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--117
 
 (first.lof
 Overfull \hbox (0.363pt too wide) detected at line 10
- []\TU/lmr/m/n/17.28 10
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 11
- []\TU/lmr/m/n/17.28 10
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 12
  []\TU/lmr/m/n/17.28 11
  []
 
 
-Overfull \hbox (0.363pt too wide) detected at line 13
- []\TU/lmr/m/n/17.28 13
+Overfull \hbox (0.363pt too wide) detected at line 11
+ []\TU/lmr/m/n/17.28 11
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 12
+ []\TU/lmr/m/n/17.28 14
  []
 
 )
@@ -1171,40 +1166,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 273--283
 
 File: ./圖片/The_entire_interaction_process.png Graphic file (type bmp)
 <./圖片/The_entire_interaction_process.png>
-File: ./圖片/Scenario_of_state_changes.png Graphic file (type bmp)
-<./圖片/Scenario_of_state_changes.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--331
+Underfull \hbox (badness 10000) in paragraph at lines 309--324
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 339--346
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--333
 
  []
 
-[7]
-File: ./圖片/Reinforcement_Learning_interactions.png Graphic file (type bmp)
-<./圖片/Reinforcement_Learning_interactions.png>
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 341--348
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--362
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--356
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--374
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 362--367
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 367--371
-
- []
-
 File: ./圖片/agent.png Graphic file (type bmp)
 <./圖片/agent.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--396
+Underfull \hbox (badness 10000) in paragraph at lines 393--399
 
  []
 
@@ -1212,105 +1213,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 390--396
 File: ./圖片/network.png Graphic file (type bmp)
 <./圖片/network.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
 
  []
 
-[10]
 File: ./圖片/supervising_learning.png Graphic file (type bmp)
 <./圖片/supervising_learning.png>
 
-Overfull \hbox (17.78455pt too wide) in paragraph at lines 427--428
+Overfull \hbox (17.78455pt too wide) in paragraph at lines 430--431
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 431--433
+Underfull \hbox (badness 10000) in paragraph at lines 434--436
 
  []
 
-
-Overfull \hbox (8.23099pt too wide) in paragraph at lines 435--436
+[10]
+Overfull \hbox (8.23099pt too wide) in paragraph at lines 438--439
  \TU/標楷體(0)/m/n/14 機 器 學 習 涉 及 操 縱 機 率。|  這 個 機 率 通 常 包 含 \TU/TimesNewRoman(0)/
 m/n/14 normalised-probabilities \TU/標楷體(0)/m/n/14 或
  []
 
 
-Overfull \hbox (1.24692pt too wide) in paragraph at lines 435--436
+Overfull \hbox (1.24692pt too wide) in paragraph at lines 438--439
 \TU/TimesNewRoman(0)/m/n/14 log-probabilities\TU/標楷體(0)/m/n/14 。|  能 加 強 解 決 現 
 代 機 器 學 習 問 題 的 關 鍵 點，|  是 能 夠 巧 妙 的
  []
 
 
-Overfull \hbox (6.98227pt too wide) in paragraph at lines 435--436
+Overfull \hbox (6.98227pt too wide) in paragraph at lines 438--439
 \TU/標楷體(0)/m/n/14 在 這 兩 種 型 式 間 交 替 使 用，|  而 對 數 導 數 技 巧 就 能 夠 幫 助 我 們 做 到 這 點，
 |  也
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--436
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--440
+Underfull \hbox (badness 10000) in paragraph at lines 441--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 448--449
+Underfull \hbox (badness 10000) in paragraph at lines 462--463
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--455
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 464--465
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 468--469
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
 
  []
 
 File: ./圖片/gradient_change.png Graphic file (type bmp)
 <./圖片/gradient_change.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--478
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 478--479
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 480--481
+Underfull \hbox (badness 10000) in paragraph at lines 472--481
 
  []
 
@@ -1319,8 +1304,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 481--482
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 482--484
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--487
 
  []
 
@@ -1329,120 +1329,120 @@ Missing character: There is no θ in font cmmi12!
 File: ./圖片/figure.png Graphic file (type bmp)
 <./圖片/figure.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--493
+Underfull \hbox (badness 10000) in paragraph at lines 488--496
 
  []
 
-[14] [15] [16]
+[13] [14] [15]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 505--507
+Underfull \hbox (badness 10000) in paragraph at lines 508--510
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--509
+Underfull \hbox (badness 10000) in paragraph at lines 510--512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--513
+Underfull \hbox (badness 10000) in paragraph at lines 514--516
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 520--521
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 524--525
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
 
-[17
+[16
 
 ]
 Chapter 3.
 
-Overfull \hbox (6.70883pt too wide) in paragraph at lines 533--534
+Overfull \hbox (6.70883pt too wide) in paragraph at lines 536--537
 \TU/標楷體(0)/m/n/14 的 算 法。|  這 個 環 境 具 有 共 享 的 介 面，|  使 我 們 能 用 來 編 寫 常 規 算 法，|  
 也 就 能
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 533--534
+Underfull \hbox (badness 10000) in paragraph at lines 536--537
 
  []
 
 
-Overfull \hbox (6.98227pt too wide) in paragraph at lines 537--538
+Overfull \hbox (6.98227pt too wide) in paragraph at lines 540--541
 \TU/TimesNewRoman(0)/m/n/14 Gym\TU/標楷體(0)/m/n/14 ，|  這 是 一 個 橫 向 的 乒 乓 遊 戲，|  左
  方 是 遊 玩 者，|  右 邊 是 馬 可 夫 決 策 的 特
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--544
+Underfull \hbox (badness 10000) in paragraph at lines 545--547
 
  []
 
-[18
+[17
 
-] [19]
+] [18]
 Chapter 4.
-[20
+[19
 
 ]
 Chapter 5.
 
-Overfull \hbox (3.98227pt too wide) in paragraph at lines 554--555
+Overfull \hbox (3.98227pt too wide) in paragraph at lines 557--558
 \TU/標楷體(0)/m/n/14 身 重 新 關 機，|  當 然 開 啟 多 個 作 業 系 統 之 間 也 有 共 通 性，|  可 直 接 從 視 窗
 
  []
 
 
-Overfull \hbox (24.15604pt too wide) in paragraph at lines 555--556
+Overfull \hbox (24.15604pt too wide) in paragraph at lines 558--559
 []\TU/標楷體(0)/m/n/14 除 了 作 業 系 統 裡 面 的 執 行，|  還 可 在 其 中 練 習 磁 碟 分 割、|  格 式 化 以 及
  \TU/TimesNewRoman(0)/m/n/14 BIOS
  []
 
 
-Overfull \hbox (3.98227pt too wide) in paragraph at lines 556--558
+Overfull \hbox (3.98227pt too wide) in paragraph at lines 559--561
 \TU/標楷體(0)/m/n/14 腦 的 記 憶 體 大 小 與 硬 碟 空 間 是 實 時 依 據 操 作 者 決 定，|  但 終 究 還 是 佔 掉
  []
 
-[21
+[20
 
 ]
 Chapter 6.
-[22
+[21
 
 ]
 Chapter 7.
-[23
+[22
 
-] [24]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 585.
- [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 585.
+] [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 588.
+ [24]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 588.
  (first.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 585.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 585.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 588.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 588.
 Package rerunfilecheck Info: File `first.out' has not changed.
 (rerunfilecheck)             Checksum: A3FFFB0F64F5ABF28798D7111C71FDC1;1807.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 585.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 588.
  ) 
 Here is how much of TeX's memory you used:
- 19584 strings out of 414221
- 364618 string characters out of 2901377
- 753893 words of memory out of 3000000
- 36830 multiletter control sequences out of 15000+200000
+ 19564 strings out of 414221
+ 363878 string characters out of 2901377
+ 754893 words of memory out of 3000000
+ 36810 multiletter control sequences out of 15000+200000
  541893 words of font info for 111 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 48i,7n,81p,1529b,593s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,7n,81p,1529b,600s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on first.pdf (31 pages).
+Output written on first.pdf (30 pages).
