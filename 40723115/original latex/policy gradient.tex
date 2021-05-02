@@ -1,0 +1,188 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+%加這個就可以設定字體
+\usepackage{fontspec}
+%使用xeCJK，其他的還有CJK或是xCJK
+\usepackage{xeCJK}
+\usepackage{enumerate}
+%設定英文字型，不設的話就會使用預設的字型
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+\setmainfont{Times New Roman}
+\usepackage{listings}
+\usepackage{amsfonts} %數學簍空的英文字
+\lstset{language=python}
+%設定中英文的字型
+%字型的設定可以使用系統內的字型，而不用像以前一樣另外安裝
+\setCJKmainfont{標楷體}
+%以下是新增的自定义格式更改
+\usepackage[]{caption2} %新增调用的宏包
+\renewcommand{\figurename}{fig} %重定义编号前缀词
+%中文自動換行
+\XeTeXlinebreaklocale "zh"
+
+%文字的彈性間距
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+%設定段落之間的距離
+\setlength{\parskip}{0.3cm}
+\title{Policy Gradient}
+\author{虎尾科技大學\\40723115\\ 林于哲}
+\date{January 16 2021}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\section{Definition}
+$\pi$ : policy\\[5pt]
+s : States\\[5pt]
+a : Actions\\[5pt]
+r : Rewards\\[5pt]
+$S_t,A_t,R_t$ : State,Action and Reward at time step 't' of one trajectory\\[5pt]
+$\gamma$ : Discount Factor;懲罰不確定的未來reward\\[5pt]
+$G_t$ : Return;Discounted future reward$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$\\[5pt]
+$P(s', r \vert s, a)$ : 伴隨著現在的a和r的state前往下一個state's'的轉移機率矩陣(單階)\\[5pt]
+$\pi(a \vert s)$ : 隨機策略(agent的行為策略)\\[5pt]
+$\pi_\theta(.)$ : 被$\theta$參數化的策略\\[5pt]
+$\mu(s)$ : 確定的策略;we also lable this as $\pi(s)$ using a different letter gives better distinction so thst we can easily tell when the policy is stochastic or deterministic}\\[5pt]
+$V(s)$ : '狀態值函數'測量state的預期收益(報酬率)\\[5pt]
+$V^\pi(s)$ : 根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\[5pt]
+$Q(s, a)$ : '行為值函數'評估一對state and action 的預期收益\\[5pt]
+$Q_w(.)$ : 被w參數化的行為值函數\\[5pt]
+$Q^\pi(s, a)$ : 根據policy的行為值函數$Q^\pi(s, a) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s, A_t = a]$\\[5pt]
+$A(s, a)$ : Advantage Function,$A(s, a) = Q(s, a) - V(s)$;像是另一種版本的Q-value;由狀態值為基準降低方差\\[5pt]
+參數化 : 待軟體建置於一給定環境時，再依該環境的實際需求填選參數，即可成為適合該環境的軟體。\\[5pt]
+The goal of reinforcement learning : Find an optimal behavior strategy for the agent to obtain optimal reward\\[5pt]
+The goal of policy gradient : Modeling and optimizing the policy directly\\[5pt]
+The value of reward function : 取決於策略，克應用各種算法optimize$\theta$，已獲得最佳reward\\[5pt]
+defined as:\\[5pt]
+$$J(\theta) 
+= \sum_{s \in \mathcal{S}} d^\pi(s) V^\pi(s) 
+= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a)$$
+
+\section{Mokov chain}
+stochastic process : 將隨著時間變化的狀態，以數學模式表示\\[5pt]
+$+$\\[5pt]
+Mokov property : 在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關
+$d^\pi(s)$ : $\pi_\theta$的Mokov chain 的平穩分布(在$\pi$下的策略狀態分佈) $d^\pi(s) = \lim_{t \to \infty} P(s_t = s \vert s_0, \pi_\theta)$\\[5pt]
+$\ast$ 當策略在其他函數的下標時，將省略 $\pi_\theta$的$\theta$  e.g. $d^\pi(s)$ and $Q^\pi$ should be 
+$d^\pi^\theta(s)$、$Q^\pi^\theta$\\[5pt]
+stationary probability for $\pi_\theta$ : 隨著時間進展，結束一個狀態保持不變的機率分布\\
+\section{為什麼不用value-base而是policy-base}
+因為要估計其值得動作和狀態數不勝數，因此在連續空間計算成本太高，$\theta$向$\nabla_\theta J(\theta)$建議方向移動，已找到$\pi\theta$的最佳$\theta$，從而產生最高回報。
+\section{Proof Policy Gradient Theorem}
+計算$\nabla_\theta J(\theta)$depends on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\[5pt]
+Policy gradient theorem : 為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\[5pt]
+\begin{aligned}
+$$\nabla_\theta J(\theta) 
+&= \nabla_\theta \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \pi_\theta(a \vert s) \\
+&\propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s)$$ 
+\end{aligned}
+$$\nabla_\theta J(\theta)
+&= \nabla_\theta V^\pi(s_0)&= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a) \frac{\nabla_\theta \pi_\theta(a \vert s)}{\pi_\theta(a \vert s)}$$
+$$&=\mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)] & \scriptstyle{\text{; Because } (\ln x)' = 1/x}$$
+$\ast$ 當狀態和動作分布都遵循策略$\pi_\theta$時$\mathbb{E}_\pi$表示$\mathbb{E}_\pi_\sim_d_\pi_,_a_\sim_{\pi_\theta}$\\[5pt]
+Proof $\nabla_\theta J(\theta
+&= \nabla_\theta V^\pi(s_0)$ }
+\begin{aligned}
+$& \nabla_\theta V^\pi(s) $\\[5pt]
+=&$ \nabla_\theta \Big(\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a) \Big) & $\\
+$=& \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) \color{red}{\nabla_\theta Q^\pi(s, a)} \Big) & \scriptstyle{\text{; Derivative product rule.}} $\\
+$=& \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) \color{red}{\nabla_\theta \sum_{s', r} P(s',r \vert s,a)(r + V^\pi(s'))} \Big) & \scriptstyle{\text{; Extend } Q^\pi \text{ with future state value.}} \\$
+=& \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) \color{red}{\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big) & \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ is not a func of }\theta}$\\[6pt]
+$=& \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) \color{red}{\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big) & \scriptstyle{\text{; Because }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
+\end{aligned}\\[6pt]
+Let $\phi(s) = \sum_{a \in \mathcal{A}} \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)$ ; 當
+K &= 1，我們把所有可能動作總結到目標狀態的轉移機率$\rho^\pi(s \to x, k+1) = \sum_{s'} \rho^\pi(s \to s', k) \rho^\pi(s' \to x, 1)$\\[5pt]
+\begin{aligned}
+$& \color{red}{\nabla_\theta V^\pi(s)} $\\[5pt]
+$=& \phi(s) + \sum_a \pi_\theta(a \vert s) \sum_{s'} P(s' \vert s,a) \color{red}{\nabla_\theta V^\pi(s')}$ \\[5pt]
+$=& \phi(s) + \sum_{s'} \sum_a \pi_\theta(a \vert s) P(s' \vert s,a) \color{red}{\nabla_\theta V^\pi(s')}$ \\[5pt]
+$=& \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \color{red}{\nabla_\theta V^\pi(s')}$ \\[5pt]
+$=& \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \color{red}{\nabla_\theta V^\pi(s')}$ \\[5pt]
+$=& \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \color{red}{[ \phi(s') + \sum_{s''} \rho^\pi(s' \to s'', 1) \nabla_\theta V^\pi(s'')]}$ \\[5pt]
+$=& \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2)\color{red}{\nabla_\theta V^\pi(s'')} \scriptstyle{\text{ ; Consider }s'\text{ as the middle point for }s \to s''}$\\[5pt]
+$=& \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2)\phi(s'') + \sum_{s'''} \rho^\pi(s \to s''', 3)\color{red}{\nabla_\theta V^\pi(s''')}$ \\[5pt]
+$=& \dots \scriptstyle{\text{; Repeatedly unrolling the part of }\nabla_\theta V^\pi(.)}$ \\[5pt]
+$=& \sum_{x\in\mathcal{S}}\sum_{k=0}^\infty \rho^\pi(s \to x, k) \phi(x)$
+\end{aligned}\\[5pt]
+
+\begin{aligned}
+$\nabla_\theta J(\theta)
+&= \nabla_\theta V^\pi(s_0) & \scriptstyle{\text{; Starting from a random state } s_0} $\\[5pt]
+$&= \sum_{s}\color{blue}{\sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)} \phi(s) &\scriptstyle{\text{; Let }\color{blue}{\eta(s) = \sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)}} $\\[5pt]
+$&= \sum_{s}\eta(s) \phi(s) & 
+&= \Big( {\sum_s \eta(s)} \Big)\sum_{s}\frac{\eta(s)}{\sum_s \eta(s)} \phi(s) & \scriptstyle{\text{; Normalize } \eta(s), s\in\mathcal{S} \text{ to be a probability distribution.}}$\\[5pt]
+$&\propto \sum_s \frac{\eta(s)}{\sum_s \eta(s)} \phi(s) & \scriptstyle{\sum_s \eta(s)\text{  is a constant}}$ \\[5pt]
+$&= \sum_s d^\pi(s) \sum_a \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) & \scriptstyle{d^\pi(s) = \frac{\eta(s)}{\sum_s \eta(s)}\text{ is stationary distribution.}}$
+\end{aligned}\\[5pt]
+
+\begin{aligned}
+$\nabla_\theta J(\theta)
+&\propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s) &$\\[5pt]
+$&= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a) \frac{\nabla_\theta \pi_\theta(a \vert s)}{\pi_\theta(a \vert s)} &$\\[5pt]
+$&= \mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)] & \scriptstyle{\text{; Because } (\ln x)' = 1/x}$
+\end{aligned}\\[5pt]
+\section{Policy Gradient Theorem}
+Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
+$g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$\\[5pt]
+\begin{mini}{$\psi_t$ may be one of following:}\end{mini}
+\begin{itemize}
+\item $\sum_{t=0}^\infty r$ : total reward of trajectory
+\end{itemize}
+\begin{itemize}
+\item $\sum_{t^{'}=t}^\infty r^{'}$: reward following action $a_t$
+\end{itemize}
+\begin{itemize}
+\item $\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$: baseline version of previous formula
+\end{itemize}
+\begin{itemize}
+\item $Q^\pi(s_t,a_t)$ : state-action value function
+\end{itemize}
+\begin{itemize}
+\item $A^\pi(s_t,a_t)$ : Advantage Function
+\end{itemize}
+\begin{itemize}
+\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$ : TD residual
+\end{itemize}\\[5pt]
+The letter formulas use the definitions\\[5pt]
+$V^\pi(s_t) = \mathbb{E}_s_t_+_1_:_\infty_,_a_t_:_\infty[\sum_{l=0}^\infty r_t+l]$\\[5pt]
+$Q^\pi(s_t,a_t) = \mathbb{E}_s_t_+_1_:_\infty_,_a_t_+_1_:_\infty[\sum_{l=0}^\infty r_t+l]$\\[5pt]
+$A^\pi(s_t,a_t) = Q^\pi(s_t,a_t)-V^\pi(s_t)(Advantage Function)$\\[5pt]
+\section{Actor Crtic}
+原始的policy gradient 沒有bias，但方差大;Many following algorithms were proposed to reduce variance while keeping thebias unchanged\\[5pt]
+$$g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$$\\[5pt]
+
+Actor-Critic : reduce gradient variance in vanilla policy consist of two models\\[5pt]
+Critic : updates the value function parameter w and depending on the algorithm it could be action-value $Q_w(a \vert s) $or state-value $V_w(s)$\\[5pt]
+Actor : update the policy parameters $\theta$ for $\pi_\theta(a \vert s)$,in direction suggested by critic\\[5pt]
+\begin{mini}{How it work in a simple action-value actor-critic:}\end{mini}
+\begin{itemize}
+\item Initialize s,$\theta$,w at random;sample a $\sim
+\pi_\theta(a \vert s)$
+\end{itemize}
+\begin{itemize}
+\item For $t =1 \sim T:$ 
+\begin{enumerate}[1]
+      \item Sample reward r_t $\sim$ $R(s,a)$ and next state $s^'$ $\sim$ $P(s^{'}\vert s,a)$ 
+      \item The sample the next action $a^'$ $\sim$ $\pi_\theta(a^{'}\vert s^{'})$
+    
+       \item Update the policy parameters $\theta$ :\\
+       $$\theta\leftarrow\theta+\alpha_\theta Q_w(s,a)\nabla_\theta ln\pi_\theta(a\vert s)$$
+       \item Compute the correction (TD error) for action-value at time t:\\
+       $$\delta = r_t + \gamma Q_w(s^{'},a^{'})-Q_w(s,a)$$ and use it to update the parameters of action - value function:\\
+       $$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
+       \item Update $a\leftarrow a^{'} and s \leftarrow s^{'}$ ; learning rate : $a_\theta$ and $a_w$
+    \end{enumerate}   
+\end{itemize}
+
+
+
+
+
+
+\end{document}
