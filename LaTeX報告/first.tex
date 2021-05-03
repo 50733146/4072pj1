@@ -26,6 +26,8 @@ left=3truecm,right=2.5truecm]{geometry}
 		label={lst:example} %設定label
 }
 \graphicspath{{./圖片/}} %圖片預設讀取路徑
+\renewcommand{\figurename}{圖.} %設定圖片標示名稱
+\renewcommand{\lstlistingname}{程式.} %設定程式標示名稱
  %=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\sectionef\fontsize{20pt}{2.5pt}\bfseries}{\Large 第\CJKnumber{\thechapter}章}{1em}{}[]
 \titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{1em}{}[]
@@ -119,16 +121,35 @@ Application of reinforcement
 \end{center}
 %=-------------------------內容----------------------=%
 
-\chapter{機器學習的訓練方法}
+\chapter{前言}
 \pagenumbering{arabic} %設定頁號阿拉伯數字
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
+\section{研究動機}
+\qquad 機器學習與機電系統結合的運用越來廣泛，我們將其運用在桌球機上，使完成訓練的機電系統能獨自與玩家對打。\\
+\section{研究目的與方法}
+\qquad 本研究分兩大部分，第一運用Open AI Gym的Pong-v0來訓練機器學習，第二利用CoppilaSim模擬環境並訓練出能與人對打的機電系統。\\[12pt]
+\qquad 利用Gym的訓練環境來側試不同的算法所得到的訓練結果，比較不同算法、參數間的差異，並找出較適合Pong game的算法、參數，循序漸進提高環境的真實程度，來減少一開始就是以實體的方式測試所帶來硬體、程式、時間和金錢等成本。\\[12pt]
+
+\qquad 將Gym的訓練環境轉換到CoppilaSim模擬環境，利用貼近真實的模擬環境來修正在純程式的架構與真實環境間的誤差，雖然CoppilaSim模擬環境與真實環境仍有些微的落差，但與Gym相比CoppilaSim的環境已非常貼近真實了，拉近了虛擬與現實間的距離，提高了實用性的價值。\\
+
+\section{未來展望}
+\qquad 
+\section{規則說明}
+\qquad Pong game 的遊戲規則簡單，透過擊錘將球打入對方球門即得一分，只要其中一方得21分就結束該局。擊錘只能沿單方向來回移動來進行防守和進攻。\\[12pt]
+
+遊戲規則如下：
+\begin{enumerate}
+\item 球打入敵方即得一分。
+\item 擊錘只單一方向移動。
+\item 最快贏得21分者獲勝，並結束該局遊戲。
+\end{enumerate}
+
+\chapter{機器學習的訓練方法}
 \section{類神經網絡}
-\qquad 類神經網路的概念來源是觀察人類的中樞神經系統而啟發的，類神經網路主要由多個節點組成，每個節點稱為神經元（neurons），神經元與神經元連結而形成的網路稱為神經網路。神經元主要又分成三層：輸入層（input layer）、隱藏層（hidden layer）和輸出層（output layer）。神經元會接收上一層的訊號，並經過啟動函數（activation function）計算並輸出至下一層神經元。神經網路輸入層的神經元負責接收訊號，透過隱藏層來運算，再傳遞到輸出層執行動作。由於每個神經元經過啟動函數的非線性計算，所以神經元傳出的數值也是非線性。神經元與神經元間連線在生物學稱為突觸（Synapse），在數學模型裡每個突觸都有權重（weights）。在既定框架下，調配權重值和啟動函數會使結果更接近預期。神經網路的架構指標為以下幾項：階層數、每層神經元個數、神經元連接方式、啟動函數的類型等。
+\qquad 類神經網路的概念來源是觀察人類的中樞神經系統而啟發的，類神經網路主要由多個節點組成，每個節點稱為神經元（neurons），神經元與神經元連結而形成的網路稱為神經網路。神經元主要又分成三層：輸入層（input layer）、隱藏層（hidden layer）和輸出層（output layer）。神經元會接收上一層的訊號，並經過啟動函數（activation function）計算並輸出至下一層神經元。神經網路輸入層的神經元負責接收訊號，透過隱藏層來運算，再傳遞到輸出層執行動作。由於每個神經元經過啟動函數的非線性計算，所以神經元傳出的數值也是非線性。神經元與神經元間連線在生物學稱為突觸（Synapse），在數學模型裡每個突觸都有權重（weights）。在既定框架下，調配權重值和啟動函數會使結果更接近預期。神經網路的架構指標為以下幾項：階層數、每層神經元個數、神經元連接方式、啟動函數的類型等。\\[12pt]
 
-神經訊號傳遞分為前饋（feed-forward）和回饋（backpropagation）。
-
-前饋為傳遞經過啟動函數計算的數值。回饋則是修正權重和偏差（biases），以提高下次前饋計算的準確度。
+\qquad 神經訊號傳遞分為前饋（feed-forward）和回饋（backpropagation）。前饋為傳遞經過啟動函數計算的數值。回饋則是修正權重和偏差（biases），以提高下次前饋計算的準確度。
 \subsection{啟動函數}
 \begin{itemize}
 \item Sigmoid Function\\
