@@ -8,17 +8,17 @@
 \usepackage{type1cm} %調整字體絕對大小
 \usepackage{textpos} %設定文字絕對位置
 \usepackage[top=2.5truecm,bottom=2.5truecm,
-left=3truecm,right=2.5truecm]{geometry}
+left=2.5truecm,right=2.5truecm]{geometry}
 \usepackage{titlesec} %目錄標題設定模組
 \usepackage{titletoc} %目錄內容設定模組
 \usepackage{CJK} %中文模組
 \usepackage{CJKnumb} %中文數字模組
 \usepackage{wallpaper} %浮水印
 \usepackage{listings} %能加入程式碼
-\lstset{language=python}
 \usepackage{hyperref} %引用url連結
 \usepackage{graphicx} %插入圖片
 \usepackage{fontawesome5} %引用icon
+\linespread{1.5} %設定行距
 \lstset{language=Python, %設定語言
 		basicstyle=\footnotesize, 
 		frame=lines,
@@ -33,7 +33,7 @@ left=3truecm,right=2.5truecm]{geometry}
 \titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{1em}{}[]
 \titleformat{\subsection}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesubsection}}{1em}{}[]
 %=------------------更改目錄內容-----------------------=%
-\titlecontents{chapter}[11mm]{}{\sectionef\fontsize{18pt}{2.5pt}\bfseries\makebox[3.5em][l]
+\titlecontents{chapter}[0.25em]{}{\sectionef\fontsize{18pt}{2.5pt}\bfseries\makebox[3.5em][l]
 {第\CJKnumber{\thecontentslabel}章}}{}{\titlerule*[0.7pc]{.}\contentspage}
 \titlecontents{section}[18mm]{}{\sectionef\LARGE\makebox[1.5em][l]
 {\thecontentslabel}}{}{\titlerule*[0.7pc]{.}\contentspage}
@@ -97,7 +97,7 @@ Application of reinforcement
 \begin{flushleft}
 \fontsize{14pt}{2.5pt}\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，但不能以實體一直測試不同方法，成本與時間不允許，便可以利用許多感測器觀測數值，以類神經網路運算，在虛擬環境架設結構，遠端控制、更改數值。\\
 \vspace{1em}
-\sectionef\hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的 Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。
+\sectionef\fontsize{14pt}{2.5pt}\hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的 Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。\\
 \end{flushleft}
 \begin{center}
 \fontsize{14pt}{2.5pt}關鍵字:\sectionef Policy gradient、虛擬環境架設結構、Reinforcement Learning
@@ -120,6 +120,7 @@ Application of reinforcement
 \newpage
 \end{center}
 %=-------------------------內容----------------------=%
+
 
 \chapter{前言}
 \pagenumbering{arabic} %設定頁號阿拉伯數字
@@ -153,7 +154,7 @@ Application of reinforcement
 \subsection{啟動函數}
 \begin{itemize}
 \item Sigmoid Function\\
-\qquad An activation function.It is a key part of Nerual Network and it can be differentiable.It can make the Nenual Network unliner.\\
+\qquad 一種啟動函數，是類神經網路的關鍵部分之一 ，且可以微分，並可以讓類神經網路為非線性。\\
 \begin{Large}$$\sigma(x)=\frac{1}{1+e^{-x}}$$ \end{Large}\\[6pt]
 \begin{figure}[hbt!]
 \begin{center}
@@ -164,7 +165,7 @@ from: \href{https://towardsdatascience.com/derivative-of-the-sigmoid-function-53
 \end{figure}
 %=----------SigmoidPrime Function----------=%
 \item SigmoidPrime Function\\
-\qquad It is an differential Sigmoid Funtion. It can reduce  error of gradient so it is some kind of loss function and Let's take a look the proof of SigmoidPrime\\
+\qquad 這是從Sigmoid Function微分得來，可以減少梯度誤差，因此他是 loss function 的其中一種， 以下為 SigmoidPrime的證明:\\
 \begin{Large}$$\sigma(x)=\frac{1}{1+e^{-x}}$$ \end{Large}\\[6pt]
 $$\sigma^{'}(x)=\frac{d}{dx}\sigma(x)=\frac{d}{dx}\frac{1}{1+e^{-x}}=\frac{d}{dx}(1+e^{-x})^{-1}$$\\[6pt]
 %$$-------------skip-------------$$\\[6pt]
@@ -189,7 +190,7 @@ $$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}
 \end{figure}
 %=----------Relu Function----------=%
 \item Relu Function\\
-\qquad This is the most commly used activation function in nerual network.It also can solve the Gradient Descent problem.
+\qquad 這是類神經網路最普遍拿來使用的啟動函數，因為可以解決梯度消散的問題。
 \begin{Large}$$f(x)=max(0,x)$$\end{Large}
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$\\
@@ -202,7 +203,7 @@ $$else f(x)=x$$\\
 %\end{figure}
 %=----------Adam Function----------=%
 \item Adam Function\\
-\qquad Combine the advantage of Adagrad and RMSprop.The paper contained some very promising diagrams, showing huge performance gains in terms of speed of training but in some cases Adam actually finds worse solution than stochastic gradient descent. Let's take a look caculation prosess \\[6pt]
+\qquad  結合了 Adagrad 和 RMSprop的優勢.有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程: \\[6pt]
 $$g_t=\delta_{\theta}f(\theta)$$\\
 First moment exponentially moving averages : $m_t =\beta(m_{t-1})+(1-\beta_1)(\nabla{w_t})$\\[6pt]
 $\hat m_t=\frac{m_t}{1-\beta_1^t}$\\[6pt]
@@ -212,7 +213,7 @@ Hence,Adam Function:\\[6pt]
 \begin{Large}$$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$\end{Large}
 %=----------Mean Squared Error----------=%
 \item Mean Squared Error\\
-\qquad It tells you how close a regression lines to a set of points.It does this by taking the distances from the points to the regression line (these distances are the “errors”) and squaring them.The squaring is necessary to remove any negative signs. It also gives more weight to larger differences.
+\qquad  他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。
 (\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\[6pt]
 \begin{figure}
 \center
@@ -220,10 +221,10 @@ Hence,Adam Function:\\[6pt]
 \caption{regression line}
 \end{figure}
 
-regression line :It is a line of the minimize distance of data points. \\
-n : number of data points\\
-$y_i$ :  observed values\\
-$\hat{y_i}$ : predicted values\\
+回歸線 :數據點間最小距離的一條線。 \\
+n : 數據點的數量\\
+$y_i$ :  觀測值\\
+$\hat{y_i}$ : 預測值\\
 \begin{Large}
 $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$
 \end{Large}\\[6pt]
@@ -233,57 +234,50 @@ $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$
 %=----------deep learning 會在此時崛起?----------------=%
 \begin{itemize}
 \item Deep learning 會在此時崛起?\\
-\qquad Four major trends in scientific computing have become increasingly important for deep learning.\\
+\qquad 電腦科學對於深度學習電的依賴越來越重要的四個主要趨勢。\\
 
-(1)\quad 支援張量運算程式語言與程式庫的崛起\\ First, starting in the 1960s, the development of domain specific languages such as APL, MATLAB, R and Julia, turned multidimensional arrays (often referred to as tensors) into first-class objects supported by a comprehensive set of mathematical primitives (or operators) to manipulate them.\\
-Separately, libraries such as NumPy, Torch, Eigen and Lush made array-based programming productive in general purpose languages such as Python, Lisp, C++ and Lua.\\
+(1)\quad 支援張量運算程式語言與程式庫的崛起\\ 首先，自從1960年代開始，諸如APL、MATLAB、R和Julia
+等領域的特定語言的發展轉變為多為數組(通常稱為張量) 進入一組由全為數學語(或運算符)支援的第一類物件以對其進行操作\\
+此外，基於數組的編程能夠以通用語言(如 Python、Lisp、C++和Lua)高校運作，諸如NumPy、Torch、Eigen和Lush等\\
 
-(2)\quad 自動求導數套件的開發\\ Second, the development of automatic differentiation made it possible to fully automate the daunting labor of computing derivatives. This made it significantly easier to experiment with different machine learning approaches while still allowing for efficient gradient based optimization. The autograd package popularized the use of this technique for NumPy arrays, and similar approaches are used in frameworks such as Chainer, DyNet, Lush, Torch, Jax and Flux.jl.\\
+(2)\quad 自動求導數套件的開發\\ 其次，自動微分的發展使得完全自動化計算導數的艱鉅工作成為了可能， 這使的運用不同的機器學習方法進行實驗變得非常容易，同時仍然允許基於梯度的優化。 因為autograd軟件包的普及，並將該技術用於NumPy數組，並且類似的方法也用於框架中，例如: Chainer, DyNet, Lush, Torch, Jax and Flux.jl.\\
 
-(3)\quad 自由開源軟體的普及\\ Third, with the advent of the free software movement, the scientific community moved away from closed proprietary software such as Matlab, and towards the open-source Python ecosystem with packages like NumPy, SciPy, and Pandas. This fulfilled most of the numerical analysis needs of researchers while allowing them to take advantage of a vast repository of librariesto handle dataset preprocessing, statistical analysis, plotting, and more.\\
-Moreover, the openness, interoperability, and flexibility of free software fostered the development of vibrant communities that could quickly address new or changing needs by extending the existing functionality of a library or if needed by developing and releasing brand new ones. While there is a rich offering of open-source software for neural networks in languages other than Python, starting with Lush in Lisp, Torch in C++, Objective-C and Lua, EBLearn in C++, Caffe in C++, the network effects of a large ecosystem such as Python made it an essential skill to jumpstart one’s research. Hence, since 2014,most deep learning frameworks converged on a Python interface as an essential feature.\\
+(3)\quad 自由開源軟體的普及\\第三隨著自由軟件的到來，科學界從封閉的專用軟件(例如Matlab)轉向開源， Python的生態系統，帶有NumPy、SciPy和Pandas等軟件包，滿足了大多數研究人員對數值分析需求，同時讓他們能夠利用龐大的程式庫來處理數據集的預處理，例如:統計分析、繪圖等。\\
+此外，自由軟體的開放性、互相操作性和靈活性，促進了充滿活力的社會發展，這樣社會可以通過擴展程式庫現有的功能，或著在需要時通過開發和發布全新的程式庫功能，來迅速滿足新的或不斷變化的需求。 儘管有豐富的非Python語言支持的神經網路開源軟件，從Lish中的Lush、C++中的Torch、Objective-C和Lua、C++中的EBLearn、C++中的Caffe開始，大型生態系統(諸如Python)的網路效應，促使研究快速發展成為一項必不可少的技能。因此，自2014年以來，大多數深度學習的框架都將Python介面作為一項基本功能進行融合。\\
 
-(4)\quad 多核 GPU 運算的發展 \\ Finally, the availability and commoditization of general-purpose massively parallel hardware such as GPUs provided the computing power required by deep learning methods. Specialized librariessuch as cuDNN, along with a body of academic work (such as Andrew Lavin. maxdnn: An efficient convolution kernel for deep learning with maxwell gpus,January 2015 and Andrew Lavin and Scott Gray. Fast algorithms for convolutional neural networks.2016 IEEEConference on Computer Vision and Pattern Recognition (CVPR), pages 4013–4021, 2016), produced aset of high-performance reusable deep learning kernels that enabled frameworks such as Caffe,Torch7, or TensorFlow to take advantage of these hardware accelerators.\\
+(4)\quad 多核 GPU 運算的發展 \\ 最後，利用大規模通用硬體(例如GPU)的可能性，提供深度學習方法所需的計算能力、專用的程式庫(例如:cuDNN)以及大量學術著作(例如Andrew Lavin、maxdnn:使用maxwell gpus進行深度學習的高效卷積內核、2015年1月以及Andrew Lavin和Scott Gray用於卷積神經網路的快速算法、2016年IEEE電腦視覺和圖形識別(CVPR)，第4013-4021頁，2016), 產生了一系列高性能可重用的深度學習內核，這些內核使諸如Caffe,Torch7, or TensorFlow 的框架能夠利用這些硬體加速器。\\
 \newpage
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
-\item What is Reinforcement Learning?\\
+\item 什麼是強化學習??\\
 強化學習是通過agent與已知或未知的環境持互動，不斷適應與學習，得到的回饋可能是正面，也就是reward，如果得到負面，那就是punishments。考慮到agent與環境互動，我們就能決定要執行哪個動作。簡而言之，強化學習是建立在reward與punishments上。\\[6pt]
 \\
 \begin{large}
-\textbf{The key point of Reinforcement Learning:}
+\textbf{強化學習的重點:}
 \end{large}\\
 \begin{itemize}
-\item It differs from normal Machine Learning, as we do not look at
-training datasets. 
+\item 與其他機器學習不同，因為我們不需要在意訓練數據集。
 \end{itemize}
 \begin{itemize}
-\item Interaction happens not with data but with environments,
-through which we depict real-world scenarios
+\item 互動不是發生在數據上，而是在環境下發生，通過互動描繪出真實的場景。
 \end{itemize}
 \begin{itemize}
-\item As Reinforcement Learning is based on environments, many
-parameters come in to play. It takes lots of information to learn
-and act accordingly.
+\item 由於強化學習是建立在環境的，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。
 \end{itemize}
 \begin{itemize}
-\item Environments in Reinforcement Learning are real-world
-scenarios that might be 2D or 3D simulated worlds or gamebased scenarios.
+\item 強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。
 \end{itemize}
 \begin{itemize}
-\item Reinforcement Learning is broader in a sense because the
-environments can be large in scale and there might be a lot of
-factors associated with them.
+\item 從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。
 \end{itemize}
 \begin{itemize}
-\item The objective of Reinforcement Learning is to reach a goal.
+\item  強化學習的目的是達到目標。
 \end{itemize}
 \begin{itemize}
-\item Rewards in Reinforcement Learning are obtained from the
-environment.
+\item 強化學習的獎勵是來自環境
 \end{itemize}
 %=----------Faces of Reinforcement Learning---------------=%
-\item Faces of Reinforcement Learning\\
+\item 強化學習涵蓋範圍\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{Faces_of_Reinforcement_Learning}
@@ -291,7 +285,7 @@ environment.
 \end{center}
 \end{figure}
 %=--------The Flow of Reinforcement Learning------------=%
-\item The Flow of Reinforcement Learning\\
+\item  強化學習的流程\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=10cm]{The_Flow_of_Reinforcement_Learning}
@@ -299,26 +293,25 @@ environment.
 \end{center}
 \end{figure}
 \begin{large}
-\textbf{The key points of consideration:}
+\textbf{需要考慮的重點:}
 \end{large}\\
 \begin{itemize}
-\item The Reinforcement Learning cycle works in an interconnected. 
+\item 強化學習的週期是互相聯繫的 
 \end{itemize}
 
 \begin{itemize}
-\item The distinct communication happens with rewards in mind.
+\item 分明的溝通是在考慮獎勵的情況下發生的
 \end{itemize}
 \begin{itemize}
-\item There is distinct communication between the agent and the 
-environment. 
+\item  agent與環境之間存在著獨特的溝通。
  
 \end{itemize}
 \begin{itemize}
-\item The object or robot moves from one state to another. 
+\item 目標或機器人從一狀態移動到另一狀態。
  
 \end{itemize}
 \begin{itemize}
-\item An action is taken to move from one state to another 
+\item 從一狀態轉移到另一種狀態採取動作。
 \end{itemize}
 
 \begin{figure}[hbt!]
@@ -327,14 +320,9 @@ environment.
 \caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
-The agent is also a decision maker because it tries to take an action that will get it the 
-maximum reward.\\
-When the agent starts interacting with the environment, it can choose an action and 
-respond accordingly.
-From then on, new scenes are created. When the agent changes from one place to 
-another in an environment, every change results in some kind of modification. These 
-changes are depicted as scenes. The transition that happens in each step helps the agent 
-solve the Reinforcement Learning problem more effectively\\
+agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。\\
+當agent開始與環境互動時，他可以選擇一個操作並做出相應的回應，從這時起，將會創建新的場景，當agent從一個環境變為另一個環境中，每項更改都會導致某種修改，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\
+
 %------------------圖片可共用----------------------%
 %\begin{figure}[hbt!]
 %\begin{center}
@@ -344,29 +332,21 @@ solve the Reinforcement Learning problem more effectively\\
 %\end{figure}
 
 %=----Different Terms in Reinforcement Learning----------=%
-\item Different Terms in Reinforcement Learning\\
-There are two constants that are important in this case—gamma (γ) and lambda (λ)\\[10pt]
-Gamma is used in each state transition and is a constant value at each state change. 
-Gamma allows you to give information about the type of reward you will be getting in 
-every state. 
-Gamma (γ) is called a discount 
-factor and it determines what future reward types we get:\\
+\item 強化學習中各種術語\\
+在此情況下，有兩個很重要的常數-$\gamma$、$\lambda$\\[10pt]
+$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值， 
+$\gamma$ 會從你將在每個狀態獲得的獎勵類型中，告訴你訊息。$\gamma$又叫衰減因子，他決定了我們未來可獲得的獎勵類型:\\
 \begin{itemize}
-\item A gamma value of 0 means the reward is associated with the 
-current state only.
+\item  $\gamma$值為0表示獎勵僅與當前狀態有關係。
 \end{itemize}
 
 \begin{itemize}
-\item A gamma value of 1 means that the reward is long-term.
+\item$\gamma$值為1時，代表獎勵是長期的。
 \end{itemize}
-Lambda is generally used when we are dealing with temporal difference problems. It is 
-more involved with predictions in successive states.
-Increasing values of lambda in each state shows that our algorithm is learning fast. 
-The faster algorithm yields better results when using Reinforcement Learning techniques.
-As you’ll learn later, temporal differences can be generalized to what we call 
-TD(Lambda).\\
+當我們處理時間問題時，通常使用$\lambda$，這是涉及更多的連續狀態的預測，
+每種狀態下的$\lambda$值增加，代表我們的算法學習速度很快，適用強化學習技術時，更快的算法會產生更好的結果。\\
 %=----Interactions with Reinforcement Learning------------=%
-\item Interactions with Reinforcement Learning\\
+\item 與強化學習的互動\\
 %------------------圖片可共用----------------------%
 %\begin{figure}[hbt!]
 %\begin{center}
@@ -375,33 +355,23 @@ TD(Lambda).\\
 %\end{center}
 %\end{figure}
 
-The interactions between the agent and the environment occur with a reward. 
-We need to take an action to move from one state to another.\\
-Reinforcement Learning is a way of implementing how to map situations to actions 
-so as to maximize and find a way to get the highest rewards.
-The machine or robot is not told which actions to take, as with other forms of 
-Machine Learning, but instead the machine must discover which actions yield the 
-maximum reward by trying them.\\
+agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態\\
+強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法
+，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
 %=----How Reward Works------------=%
-\item How Reward Works\\
-A reward is some motivator we receive when we transition from one state to another. It 
-can be points, as in a video game. The more we train, the more accurate we become, and 
-the greater our reward.\\
+\item 獎勵如何運作\\
+獎勵是我們從一狀態過渡到另一狀態時所獲得的動力，它可以是分數，例如在遊戲中。我們訓練的次數越多，我們就變得越精準，且我們的回報越大。\\
 %=----Agents------------=%
 \item Agents\\
-In terms of Reinforcement Learning, agents are the software programs that make
-intelligent decisions. Agents should be able to perceive what is happening in the
-environment. Here are the basic steps of the agents:\\
+在強化學習方面，agent是一個軟體程式，能做出明智的選擇，應能購感知到正在環境發生的事情，以下是agent基本步驟:\\
 \begin{itemize}
-\item When the agent can perceive the environment, it can make
-better decisions.
+\item 當agent可以感知環境時，它可以做出比以往更好的決定。
 \end{itemize}
 \begin{itemize}
-\item The decision the agents take results in an action.
+\item agent採取的決定就會產生行動。
 \end{itemize}
 \begin{itemize}
-\item The action that the agents perform must be the best, the
-optimal, one.
+\item agent執行的行動必須是最好最佳的。
 \end{itemize}
 
 \begin{figure}[hbt!]
@@ -411,25 +381,23 @@ optimal, one.
 \end{center}
 \end{figure}
 %=----Agents------------=%
-\item RL Environments\\
-The environments in the Reinforcement Learning space are comprised of certain factors
-that determine the impact on the Reinforcement Learning agent. The agent must adapt
-accordingly to the environment. These environments can be 2D worlds or grids or even a 3D world.\\
+\item 強化學習的環境\\
+強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應其各種因素，並做出最佳決策，這些環境可以是2D世界或是網格，甚至是3D世界。\\
 \begin{large}
-\textbf{Here are some important features of environments:}\end{large}\\
+\textbf{以下是環境的一些重要功能:}\end{large}\\
 \begin{itemize}
-\item Deterministic
+\item 具有確定性。
 \end{itemize}
 
 \begin{itemize}
-\item Observable
+\item 可觀察性。
 \end{itemize}
 \begin{itemize}
-\item Discrete or continuous
+\item  是離散或是連續的狀態。
  
 \end{itemize}
 \begin{itemize}
-\item Single or multiagent.
+\item 單個agent或是多個agent。
 \end{itemize}
 \end{itemize}
 \newpage
@@ -442,7 +410,8 @@ accordingly to the environment. These environments can be 2D worlds or grids or 
 \end{center}
 \end{figure}\textbf{}
 
-\qquad we're going to define a policy network that implements our player (or “agent”). This network will take the state of the game and decide what we should do (move UP or DOWN). As our favorite simple block of compute we'll use a 2-layer neural network that takes the raw image pixels (100,800 numbers total (210*160*3)), and produces a single number indicating the probability of going UP. Note that it is standard to use a stochastic policy, meaning that we only produce a probability of moving UP. Every iteration we will sample from this distribution (i.e. toss a biased coin) to get the actual move. The reason for this will become more clear once we talk about training.\\
+\qquad 我們將定義一個可以執行我們的玩家(agent)的類神經網路，該網路將獲取遊戲狀態並決定我們應該做什麼(向上移動或向下移動
+) 我們使用一個2層神經網路，該網路獲取原始圖像像素(100,800個數字(210*160*3))，並生成一個表示上升概率的數字。 使用隨機策略是標準做法，這意味著我們只會產生向上移動的可能性，每次迭代時，我們都會從該分布中採樣(即扔一枚有偏見的硬幣)已獲得實際移動。\\
 
 
 \subsection{Supervised Learning}
@@ -451,11 +420,13 @@ accordingly to the environment. These environments can be 2D worlds or grids or 
 \includegraphics[scale=0.74]{supervising_learning}
 \caption{supervising learning }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
-\end{figure}
-\textbf{}
-Before we dive into the Policy Gradients solution I'd like to remind you briefly about supervised learning because, as we'll see, RL is very similar. Refer to the diagram below. In ordinary supervised learning we would feed an image to the network and get some probabilities, e.g. for two classes UP and DOWN. I'm showing log probabilities (-1.2, -0.36) for UP and DOWN instead of the raw probabilities (30 persent and 70 persent in this case) because we always optimize the log probability of the correct label (this makes math nicer, and is equivalent to optimizing the raw probability because log is monotonic). Now, in supervised learning we would have access to a label. For example, we might be told that the correct thing to do right now is to go UP (label 0). In an implementation we would enter gradient of 1.0 on the log probability of UP and run backprop to compute the gradient vector $Wlogp(y=UP|x)$. This gradient would tell us how we should change every one of our million parameters to make the network slightly more likely to predict UP. For example, one of the million parameters in the network might have a gradient of -2.1, which means that if we were to increase that parameter by a small positive amount (e.g. 0.001), the log probability of UP would decrease by 2.1 * 0.001 (decrease due to the negative sign). If we then did a parameter update then, our network would now be slightly more likely to predict UP when it sees a very similar image in the future.\\
+\end{figure}\textbf{}
 
-\subsection{Log Derivative Trick}
+\qquad 在我們滲入探討 Score Function 解決方案之前，需要簡短介紹有關監督學習的知識，因為正如我們看到的，與我們架構類似，在普通通的監督學習中，我們會將圖像送到網路，並獲得伊些概率，例如對於兩個類別的上和下。 這裡顯示的是向上和向下對數概率(-1.2,-0.36)，而不是原始機率(在這個情況下，是30$\%$和70$\%$)，因為我們總是優化正確標籤的對數概率(這使我們的演算法更好，病等效於優化原始概率，因為對數是單調的)，而在監督學習中，我們將可以獲取標籤，例如:\\
+
+我們可能被告知現在正確的做法是向上運動(標籤0)，在執行過程中，我們將以上的對數機率輸入1.0的梯度，然後運行backprop來計算梯度向量$Wlogp(y=UP|x)$這個梯度將告訴我們應如何更改百萬個參數中的每個參數，使網路預測往上的可能性更高，例如:網路中的百萬個參數之一可能具有-2.1的梯度，這意味著如果我們將該參數增加一個小的正值(例如0.001)，則往上的對數機率將因2.1*0.001而降低(由於負號而減少)，如果我們隨後更新了參數，當之後遇到非常相似的圖像時(也就是環境狀況)，我們的網路現在更有可能預測往上。\\
+
+\subsection{對數導數技巧}
 \qquad 機器學習涉及操縱機率。這個機率通常包含normalised-probabilities或 log-probabilities。能加強解決現代機器學習問題的關鍵點，是能夠巧妙的在這兩種型式間交替使用，而對數導數技巧就能夠幫助我們做到這點，也就是運用對數導數的性質。\\
 \subsection{Score Functions}
 \qquad 對數導數技巧的應用規則是基於參數$\theta$梯度的對數函數$p(x:\theta)$，如下:\\
@@ -463,62 +434,90 @@ $$\nabla_\theta logp(x:\theta)=\frac{\nabla_\theta p(x:\theta)}{p(x:\theta)}$$\\
 $p(x:\theta)$是likelihood ; function參數$\theta$的函數，它提供隨機變量x的概率。在此特例中，$\nabla_\theta logp(x:\theta)$被稱為Score Function，而上述方程式右邊為score ratio(得分比)。\\[6pt]
 
 \begin{large}
-{The score function has a number of useful properties:}
+{score function具有許多有用的屬性:}
 \end{large}
 \begin{itemize}
-\item The central computation for maximum likelihood estimation. Maximum likelihood is one of the dominant learning principles used in machine learning, used in generalised linear regression, deep learning, kernel machines, dimensionality reduction, and tensor decompositions, amongst many others, and the score appears in all these problems. 
+\item 最大概似估計的中央計算。最大概似是機器學習中使用的學習原理之一，用於廣義線性回歸、深度學習、kernel machines、降維和張量分解等，而score出現在這些所有問題中。
 \end{itemize}
 \begin{itemize}
-\item The expected value of the score is zero. Our first use of the log-derivative trick will be to show this.\\
+\item  score的期望值為零。對數導數技巧的第一個用途就是證明這一點。\\
 $$\mathbb{E}_{p(x; \theta)}[\nabla_\theta \log p(\mathbf{x}; \theta)] =\mathbb{E}_{p(x; \theta)}\left[\frac{\nabla_\theta p(\mathbf {x}; \theta)}{p(\mathbf{x}; \theta)} \right]$$
 $$= \int p(\mathbf {x}; \theta) \frac{\nabla_\theta p(\mathbf {x}; \theta)}{p(\mathbf{x}; \theta)} dx= \nabla_\theta \int p(\mathbf{x}; \theta) dx=\nabla_\theta 1 = 0$$\\
-\qquad In the first line we applied the log derivative trick and in the second line we exchanged the order of differentiation and integration. This identity is the type of probabilistic flexibility we seek: it allows us to subtract any term from the score that has zero expectation, and this modification will leave the expected score unaffected (see control variates later).
+\qquad 在第一行中，我們應用了對數導數技巧，在第二行中，我們交換了差異化和積分的順序，這種特性是我們尋求概率靈活性的類型:  它允許我們從期望值為零的分數中減去任何一項，且此修改不會影響預期得分(控制變量)。
 \end{itemize}
 \begin{itemize}
-\item The variance of the score is the Fisher information and is used to determine the Cramer-Rao lower bound.\\
+\item 得分的方差是Fisher信息，用於確定Cramer-Rao下限。\\
 $$\mathbb{V}[\nabla_\theta \log p(\mathbf{x}; \theta)] = \mathcal{I}(\theta) =\mathbb{E}_{p(x; \theta)}[\nabla_\theta \log p(\mathbf{x}; \theta)\nabla_\theta \log p(\mathbf{x}; \theta)^\top]$$\\
-We can now leap in a single bound from gradients of a log-probability to gradients of a probability, and back. But the villain of today's post is the troublesome expectation-gradient of Trick 4, re-emerged. We can use our new-found power—the score function—to develop yet another clever estimator for this class of problems.
+我們現在可以從對數概率的梯度躍升為概率的梯度，然後返回，但是真正要解決的其實是計算困難的期望梯度，所以我們可以利用新發現的功能:score function為此問題開發另一個聰明的估計器。
 \end{itemize}
 \subsection{Score Function Estimators}
-Our problem is to compute the gradient of an expectation of a function f:\\
+我們的問題是計算函數f的期望值的梯度：\\
 $$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] =\nabla_\theta \int p(z; \theta)f(z) dz$$\\
 
-This is a recurring task in machine learning, needed for posterior computation in variational inference, value function and policy learning in reinforcement learning, derivative pricing in computational finance, and inventory control in operations research, amongst many others.
-
-This gradient is difficult to compute because the integral is typically unknown and the parameters θ, with respect to which we are computing the gradient, are of the distribution p(z;θ). Furthermore, we might want to compute this gradient when the function f is not differentiable. Using the log derivative trick and the properties of the score function, we can compute this gradient in a more amenable way:\\
+這是機器學習中的一項常態性任務，在變數推理中進行後驗計算，在強化學習中進行價值函數和策略學習，在計算金融中進行衍生產品定價以及在運籌學中進行庫存控制等。該梯度很難計算，因為積分通常是未知的，我們計算梯度所依據的參數θ的分佈為p（z;θ)，此外，當函數f不可微時，我們可能想計算該梯度，使用對數導數技巧和得分函數的屬性，我們可以更方便地計算此梯度：\\
 $$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$\\
-This is a recurring task in machine learning, needed for posterior computation in variational inference, value function and policy learning in reinforcement learning, derivative pricing in computational finance, and inventory control in operations research, amongst many others.
 
-\qquad This gradient is difficult to compute because the integral is typically unknown and the parameters θ, with respect to which we are computing the gradient, are of the distribution p(z;θ). Furthermore, we might want to compute this gradient when the function f is not differentiable. Using the log derivative trick and the properties of the score function, we can compute this gradient in a more amenable way:\\
-$$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.5]{gradient_change}
 \caption{gradient change}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
-\qquad Let's derive this expression and explore the implications of it for our optimisation problem.\\
-\qquad To do this, we are will use one other ubiquitous trick, a probabilistic identity trick, where we multiply our expressions by 1—a one formed by the division of a probability density by itself.  Combining the identity trick with the log-derivative trick, we obtain a score function estimator for the gradient:\\
+\qquad 讓我們導出該表達式，並探討它對我們的優化問題的影響。\\
+\qquad 為此，我們將使用另一種普遍存在的技巧，一種概率恆等的技巧，在該技巧中，我們將表達式乘以1，該表達式由概率密度除以自身而形成。將特性技巧與對數導數技巧相結合，我們獲得了梯度的得分函數估計量:\\
 $$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)]=\int\nabla_\theta p(z;\theta)f(z) dz$$\\[6pt]
 $$= \int \frac{p(z;\theta)}{p(z;\theta)}\nabla_\theta p(z;\theta)f(z) dz$$\\[6pt]
 $$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$\\[6pt]
 $$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$\\[6pt]
 $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\theta) \quad z^{(s)}\sim p(z)$$\\[6pt]
-A lot has happened in these four lines. In the first line we exchanged the derivative and the integral. In the second line, we applied our probabilistic identity trick, which allowed us to form the score ratio. Using the log-derivative trick, we then replaced this ratio with the gradient of the log-probability in the third line. This gives us our desired stochastic estimator in the fourth line, which we computed by Monte Carlo by first drawing samples from p(z) and then computing the weighted gradient term.\\
+在這四行中發生了很多事情。在第一行中，我們交換了導數和積分。在第二行中，我們應用了概率身份技巧，這使我們能夠形成得分比， 然後使用對數導數技巧，用第三行中對數概率的梯度替換該比率。這在第四行給出了我們所需的隨機估計量，這是由蒙特卡洛計算的，方法是首先從p（z）提取樣本，然後計算加權梯度項。.\\
 
-To put this in English, we have some distribution $p(x;\theta)$ (I used shorthand $p(x)$ to reduce clutter) that we can sample from (e.g. this could be a gaussian). For each sample we can also evaluate the score function f which takes the sample and gives us some scalar-valued score. This equation is telling us how we should shift the distribution (through its parameters θ) if we wanted its samples to achieve higher scores, as judged by f. In particular, it says that look: draw some samples x, evaluate their scores f(x), and for each x also evaluate the second term $\nabla_\theta logp(x;θ)$. What is this second term? It’s a vector - the gradient that’s giving us the direction in the parameter space that would lead to increase of the probability assigned to an x. In other words if we were to nudge θ in the direction of $\nabla_\theta logp(x;θ)$ we would see the new probability assigned to some x slightly increase. If you look back at the formula, it’s telling us that we should take this direction and multiply onto it the scalar-valued score $f(x)$. This will make it so that samples that have a higher score will “tug” on the probability density stronger than the samples that have lower score, so if we were to do an update based on several samples from p the probability density would shift around in the direction of higher scores, making highly-scoring samples more likely.
+更簡單的描述，我們有一些分佈 $p(x;\theta)$（我使用了速記$ p（x）$來減少混亂），我們可以從中採樣（例如，這可能是高斯）。對於每個樣本，我們還可以評估分數函數f，該函數將樣本作為樣本並給出標量值。該方程式告訴我們，如果我們希望其樣本達到較高的分數（由f判斷），應該如何改變分佈（通過其參數θ)，特別是，它看起來像：畫出一些樣本x，評估其分數f（x），並且對於每個x也評估第二項 $\nabla_\theta logp(x;θ)$，那第二項是什麼，它是一個向量-漸變為我們提供了參數空間中的方向，這將導致分配給x的概率增加。換句話說，如果我們要在的方向上微移θ，$\nabla_\theta logp(x;θ)$，我們會看到分配給x的新概率略有增加。如果回顧一下公式，它告訴我們應該朝這個方向發展，並將標量值加到上面$f(x)$。這樣一來，得分較高的樣本將比那些得分較低的樣本“拖拉”更強的概率密度，因此，如果我們要根據p上的幾個樣本進行更新，則概率密度將朝著較高分數的方向移動，從而使得分較高的樣本更有可能出現。\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.4]{figure}
 %\caption{gradient change}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
-\qquad A visualization of the score function gradient estimator. Left: A gaussian distribution and a few samples from it (blue dots). On each blue dot we also plot the gradient of the log probability with respect to the gaussian's mean parameter. The arrow indicates the direction in which the mean of the distribution should be nudged to increase the probability of that sample. Middle: Overlay of some score function giving -1 everywhere except +1 in some small regions (note this can be an arbitrary and not necessarily differentiable scalar-valued function). The arrows are now color coded because due to the multiplication in the update we are going to average up all the green arrows, and the negative of the red arrows. Right: after parameter update, the green arrows and the reversed red arrows nudge us to left and towards the bottom. Samples from this distribution will now have a higher expected score, as desired.\\
+\qquad score function gradient estimator的可視化，左：高斯分佈及其中的一些樣本（藍點)，在每個藍點上，我們還繪製了相對於高斯平均參數的對數概率的梯度，箭頭指示應微調分佈平均值以增加該樣本概率的方向。中間：某些得分函數的疊加，在某些小區域中除了+1之外，其他所有地方都給出-1（請注意，這可以是任意的，不一定是可微分的標量值函數)，箭頭現在採用了顏色區別，因為由於更新中的乘法運算，我們將平均所有綠色箭頭和紅色箭頭的負數。右：更新參數後，綠色箭頭和反向紅色箭頭將我們向左移至底部。現在，根據需要，該分佈中的樣本將具有更高的預期分數。\\
 \newpage
 \section{比較個方法的特色}
 \newpage
-\chapter{優化器算法}
-
+\chapter{優化器及馬可夫決策}
+\section{優化器}
+為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：
+\begin{itemize}
+\item Gradient Descent\\
+利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。\\
+\item Batch gradient descent\\
+用批次的方式計算訓練資料，整個資料集計算梯度只更新一次，因此計算和更新時會占用大量記憶體。整體效率較差、速度較緩慢。由 Gradient Descent 延伸出來的算法。其收斂行為與 Gradient Descent 相同。\\
+\item Stochastic gradient descent\\
+每次執行時會更新並消除誤差，有頻繁更新和變化大的特性，較不容易困在特定區域。由 Gradient Descent 延伸出來的算法。其收斂行為與 Gradient Descent 相同。\\
+\item Mini-batch gradient descent\\
+結合 Batch gradient descent 和 Stochastic gradient descent 的特點：批量計算和頻繁更新，所衍伸的算法。利用小批量的方式頻繁更新，並使收斂更穩定。其缺點：學習率挑選不易、預定義 threshold 無法適應數據集的特徵、對很少發生的特徵無法執行較大的更新、非凸面error surface要避免被困在次優的局部最小值等。\\
+\item Gradient descent optimization algorithms\\
+為了改善前面幾種算法而發展出來的優化算法。以下將列出數種優化算法。\\
+\item Momentum\\
+在梯度下降法加上動量的概念，會加速收斂到最小值並減少震盪。\\
+\item Nesterov accelerated gradient\\
+NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最小值所造成的震盪(為了修正到最小值，來回修正而產生的震盪)\\
+\item Adagrad\\
+其學習率能適應參數：頻繁出現的特徵用較低的學習率，不經常出現的特徵則用較高的學習率，且無須手動調整學習率。其缺點是，學習率會急遽下降，最後會無限小，這算法就不再獲得知識。\\
+\item Adadelta\\
+為 Adagrad 的延伸，下降激進程度，學習率從更新規則中淘汰，不需設定預設學習率。\\
+\item RMSprop\\
+為了解決 Adagrad 學習率急劇下降的問題，學習率除以梯度平方的RMS，解決學習率無限小的情形。\\
+\item Adam\\
+類似 Momentum，更加穩定快速的收斂。\\
+\item AdaMax\\
+與 Adam 相似，依靠$(u_t)$ 最大運算\\
+\item Nadam\\
+結合 Adam 和 NAG ，應用先前參數執行兩次更新，一次更新參數一次更新梯度。\\
+\item AMSGrad\\
+改善 Adam 算法所導致收斂較差的情況(用指數平均會減少其影響)，換用梯度平方最大值來做計算，並移除去偏差的步驟。是否有比 Adam 算法好仍有待觀察。\\
+\item Gradient noise\\
+有助於訓練特別深且復雜的網絡，noise 可改善不良初始化的網路。\\
+\end{itemize}
 \section{Markov Chain}
 \quad 當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。
 \section{Markov Reward Process}
@@ -559,12 +558,13 @@ $$V_t(S) = \mathbb{E}[G_t|s_t = s]$$
 
 \section{Pong}
 \qquad 取自 1977年發行的一款家用遊戲機ATARI 2600中的遊戲，內建於Gym，這是一個橫向的乒乓遊戲，左方是遊玩者，右邊是馬可夫決策的特例，每個邊緣都會給予reward(figue1)，目標就是計算再任意階段動作最佳路徑，已獲得rewardd最大值。
-\section{Abstract}
-\qquad I'd like to walk you through Policy Gradients (PG), our favorite default choice for attacking RL problems at the moment. If you’re from outside of RL you might be curious why I’m not presenting DQN instead, which is an alternative and better-known RL algorithm, widely popularized by the ATARI game playing paper. It turns out that Q-Learning is not a great algorithm (you could say that DQN is so 2013 . In fact most people prefer to use Policy Gradients, including the authors of the original DQN paper who have shown Policy Gradients to work better than Q Learning when tuned well. PG is preferred because it is end-to-end: there's an explicit policy and a principled approach that directly optimizes the expected reward. Anyway, as a running example we'll learn to play an ATARI game (Pong!) with PG, from scratch, from pixels, with a deep neural network, and the whole thing is 130 lines of Python only using numpy as a dependency (Gist link). Lets get to it.
+\section{為什麼選擇score function 算法}
+\qquad 多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調優後顯示Policy Gradients比Q 首選PG，因為它是端到端的：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過深度神經網絡使用ATARI遊戲（Pong），並在整個過程結合numpy，作為訓練工具。
+
 
 \section{Pong from pixels}
-\qquad Left: The game of Pong. Right: Pong is a special case of a Markov Decision Process (MDP): A graph where each node is a particular game state and each edge is a possible (in general probabilistic) transition. Each edge also gives a reward, and the goal is to compute the optimal way of acting in any state to maximize rewards.\\ 
-The game of Pong is an excellent example of a simple RL task. In the ATARI 2600 version we’ll use you play as one of the paddles (the other is controlled by a decent AI) and you have to bounce the ball past the other player (I don’t really have to explain Pong, right?). On the low level the game works as follows: we receive an image frame (a 210x160x3 byte array (integers from 0 to 255 giving pixel values)) and we get to decide if we want to move the paddle UP or DOWN (i.e. a binary choice). After every single choice the game simulator executes the action and gives us a reward: Either a +1 reward if the ball went past the opponent, a -1 reward if we missed the ball, or 0 otherwise. And of course, our goal is to move the paddle so that we get lots of reward.\\
+\qquad 左：乒乓球遊戲。右：Pong是Markov決策過程（MDP）的特例：圖，其中每個節點都是特定的遊戲狀態，每個邊緣都是可能的（通常是概率性的)改變，每條邊界都給與獎勵，目標是計算在任何狀態下發揮作用的最佳方式，以最大限度地提高獎勵。\\ 
+Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本中，我們會控制右邊邊的操縱板(左邊由不錯的AI控制)。在較低級別上，遊戲的運行方式如下：我們收到一個圖像幀（一個210x160x3 byte數組（從0到255的整數給出像素值）)，然後決定是否要向上或向下移動操縱板（即二進制選擇）。每次選擇之後，遊戲模擬器就會執行動作並給予我們獎勵:如果球超過了對手，則為+1獎勵；如果我們錯過球，則為-1獎勵；否則為0。當然，我們的目標是移動球拍，以便獲得很多獎勵。\\
 
 \newpage
 \chapter{模擬環境}
