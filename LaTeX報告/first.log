@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  5 MAY 2021 23:59
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  6 MAY 2021 01:51
 entering extended mode
 **./first.tex
 (first.tex
@@ -1408,19 +1408,6 @@ n/14 (reward)\TU/標楷體(0)/m/n/14 ，|  如 果 得 到 負 面，|  那 就 
 
 
 Overfull \hbox (6.48245pt too wide) in paragraph at lines 306--310
-\TU/標楷體(0)/m/n/14 源。|  由 於 強 化 學 習 是 建 立 在 環 境 上，|  因 此 許 多 參 數 進 行 運 算，|  需 要 
-大 量 信 息
- []
-
-
-Overfull \hbox (5.70319pt too wide) in paragraph at lines 306--310
-\TU/標楷體(0)/m/n/14 來 學 習，|  並 根 據 此 採 取 行 動。|  強 化 學 習 的 環 境 是 真 實 世 界，|  可 能 是 
-\TU/TimesNewRoman(0)/m/n/14 2D \TU/標楷體(0)/m/n/14 或 \TU/TimesNewRoman(0)/m/n/14 
-3D
- []
-
-
-Overfull \hbox (6.48245pt too wide) in paragraph at lines 306--310
 \TU/標楷體(0)/m/n/14 模 擬 世 界 的 場 景，|  也 可 能 是 建 立 於 遊 戲 的 場 景。|  從 某 種 意 義 上 來 說，|
   強 化 學
  []
@@ -1457,102 +1444,98 @@ Underfull \hbox (badness 10000) in paragraph at lines 322--324
 
 File: ./圖片/The_Flow_of_Reinforcement_Learning.png Graphic file (type bmp)
 <./圖片/The_Flow_of_Reinforcement_Learning.png>
+
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 331--333
+\TU/標楷體(0)/m/n/14 強 化 學 習 的 週 期 是 互 相 聯 繫 的，|  分 明 的 溝 通 是 在 考 慮 獎 勵 的 情 況 下 發 
+生
+ []
+
+
+Overfull \hbox (3.53714pt too wide) in paragraph at lines 331--333
+\TU/標楷體(0)/m/n/14 互 相 影 響 著 彼 此：|  目 標 或 機 器 人 會 因 動 作 而 造 成 狀 態 轉 移，|  狀 態 的 移
+ 轉
+ []
+
 [7]
 File: ./圖片/The_entire_interaction_process.png Graphic file (type bmp)
 <./圖片/The_entire_interaction_process.png>
 
-Overfull \hbox (4.66965pt too wide) in paragraph at lines 344--346
-\TU/標楷體(0)/b/n/14 從 這 時 起，|  將 會 創 建 新 的 場 景，|  當 \TU/TimesNewRoman(0)/m/n/14 a
-gent \TU/標楷體(0)/b/n/14 從 一 個 環 境 變 為 另 一 個 環 境 中，|
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 340--351
+\TU/標楷體(0)/m/n/14 始 與 環 境 互 動 時，|  他 會 做 出 決 策，|  決 策 所 執 行 的 動 作 會 使 場 景 進 入 下
+ 一
  []
 
 
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 344--346
-\TU/標楷體(0)/b/n/14 每 項 更 改 都 會 導 致 某 種 修 改，|  這 些 變 化 被 描 述 為 場 景，|  每 個 步 驟 中 發
- 生
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 340--351
+\TU/標楷體(0)/m/n/14 個 狀 態，|  當 環 境 轉 變，|  環 境 裡 的 項 目 也 會 跟 著 變 動，|  這 些 變 化 被 描 
+述 為
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--346
+Underfull \hbox (badness 10000) in paragraph at lines 340--351
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--361
+Overfull \hbox (8.055pt too wide) in paragraph at lines 352--369
+\TU/標楷體(0)/m/n/14 獎 勵 類 型 中，|  得 到 資 訊。| $\OML/cmm/m/it/14 ^^M$ \TU/標楷體(0)/m/n/
+14 又 叫 衰 減 因 子，|  決 定 未 來 可 獲 得 的 獎 勵 類 型。|
+ []
+
+
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 352--369
+\TU/標楷體(0)/m/n/14 到 另 一 種 狀 態 強 化 學 習 是 一 種 實 現 如 何 將 情 況 映 設 為 行 動 的 方 法，|  從 
+而
+ []
+
+
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 352--369
+\TU/標楷體(0)/m/n/14 最 大 化 並 找 到 獲 得 最 高 獎 勵 的 方 法，|  機 器 或 機 器 人 不 會 像 其 他 機 器 學 
+習
+ []
+
+
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 352--369
+\TU/標楷體(0)/m/n/14 形 式 的 機 器 人 那 樣 被 告 知 要 採 取 哪 些 行 動，|  但 機 器 必 須 發 現 哪 些 動 作 
+會
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--369
 
  []
 
 [8]
-Overfull \hbox (1.61397pt too wide) in paragraph at lines 362--366
-[]$\OML/cmm/m/it/14 ^^M$ \TU/標楷體(0)/b/n/14 值 為 \TU/TimesNewRoman(0)/m/n/14 1 \T
-U/標楷體(0)/b/n/14 時，|  代 表 獎 勵 是 長 期 的。|  當 我 們 處 理 時 間 問 題 時，|  通 常 使 用 $\OML/cm
-m/m/it/14 ^^U$\TU/標楷體(0)/b/n/14 ，|
- []
-
-
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 362--366
-\TU/標楷體(0)/b/n/14 的 算 法 學 習 速 度 很 快，|  適 用 強 化 學 習 技 術 時，|  更 快 的 算 法 會 產 生 更 好
- 的
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--366
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--374
+Overfull \hbox (3.48245pt too wide) in paragraph at lines 372--373
+[] \TU/標楷體(0)/m/n/14 以 獎 勵 的 方 式 誘 導 機 器 採 取 我 們 所 期 望 的 動 作 或 是 特 定 結 果。|  機 器
 
  []
 
 
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 375--379
-\TU/標楷體(0)/b/n/14 強 化 學 習 是 一 種 實 現 如 何 將 情 況 映 設 為 行 動 的 方 法，|  從 而 最 大 化 並 找 
-到
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 372--373
+\TU/標楷體(0)/m/n/14 會 採 取 最 大 化 獎 勵 的 方 式，|  因 此 可 將 目 的 定 為 最 大 獎 勵，|  以 吸 引 機 器
+ 執
  []
 
 
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 375--379
-\TU/標楷體(0)/b/n/14 獲 得 最 高 獎 勵 的 方 法，|  機 器 或 機 器 人 不 會 像 其 他 機 器 學 習 形 式 的 機 器 
-人
- []
-
-
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 375--379
-\TU/標楷體(0)/b/n/14 那 樣 被 告 知 要 採 取 哪 些 行 動，|  但 機 器 必 須 發 現 哪 些 動 作 會 產 生 最 大 的 
-獎
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 375--379
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
-
- []
-
-
-Overfull \hbox (3.48245pt too wide) in paragraph at lines 382--384
-\TU/標楷體(0)/b/n/14 例 如 在 遊 戲 中。|  我 們 訓 練 的 次 數 越 多，|  我 們 就 變 得 越 精 準，|  且 我 們 
-的 回
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 382--384
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+Underfull \hbox (badness 10000) in paragraph at lines 375--377
 
  []
 
 File: ./圖片/agent.png Graphic file (type bmp)
 <./圖片/agent.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--399
+Underfull \hbox (badness 10000) in paragraph at lines 387--389
 
  []
 
@@ -1560,46 +1543,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 396--399
 File: ./圖片/network.png Graphic file (type bmp)
 <./圖片/network.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--417
+Underfull \hbox (badness 10000) in paragraph at lines 399--401
 
  []
 
 File: ./圖片/supervising_learning.png Graphic file (type bmp)
 <./圖片/supervising_learning.png>
 
-Overfull \hbox (3.55817pt too wide) in paragraph at lines 422--423
+Overfull \hbox (3.55817pt too wide) in paragraph at lines 406--407
  [] 
  []
 
 
-Overfull \hbox (6.75589pt too wide) in paragraph at lines 427--428
-\TU/標楷體(0)/b/n/14 督 學 習 的 知 識，|  因 為 正 如 我 們 看 到 的，|  與 我 們 架 構 類 似，|  在 普 通 通 
+Overfull \hbox (6.75589pt too wide) in paragraph at lines 411--412
+\TU/標楷體(0)/m/n/14 督 學 習 的 知 識，|  因 為 正 如 我 們 看 到 的，|  與 我 們 架 構 類 似，|  在 普 通 通 
 的 監 督 學
  []
 
 
-Overfull \hbox (6.75589pt too wide) in paragraph at lines 427--428
-\TU/標楷體(0)/b/n/14 習 中，|  我 們 會 將 圖 像 送 到 網 路，|  並 獲 得 伊 些 概 率，|  例 如 對 於 兩 個 類 
+Overfull \hbox (6.75589pt too wide) in paragraph at lines 411--412
+\TU/標楷體(0)/m/n/14 習 中，|  我 們 會 將 圖 像 送 到 網 路，|  並 獲 得 伊 些 概 率，|  例 如 對 於 兩 個 類 
 別 的 上 和
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
 
-Overfull \hbox (0.7468pt too wide) in paragraph at lines 429--430
-[]\TU/標楷體(0)/b/n/14 我 們 可 能 被 告 知 現 在 正 確 的 做 法 是 向 上 運 動 \TU/TimesNewRoman(0)/
-m/n/14 (\TU/標楷體(0)/b/n/14 標 籤 \TU/TimesNewRoman(0)/m/n/14 0)\TU/標楷體(0)/b/n/14 ，
+Overfull \hbox (0.7468pt too wide) in paragraph at lines 413--414
+[]\TU/標楷體(0)/m/n/14 我 們 可 能 被 告 知 現 在 正 確 的 做 法 是 向 上 運 動 \TU/TimesNewRoman(0)/
+m/n/14 (\TU/標楷體(0)/m/n/14 標 籤 \TU/TimesNewRoman(0)/m/n/14 0)\TU/標楷體(0)/m/n/14 ，
 |  在 執 行 過 程 中，|  我
  []
 
 
-Overfull \hbox (0.67194pt too wide) in paragraph at lines 429--430
-\TU/標楷體(0)/b/n/14 有\TU/TimesNewRoman(0)/m/n/14 -2.1 \TU/標楷體(0)/b/n/14 的 梯 度，|  
+Overfull \hbox (0.67194pt too wide) in paragraph at lines 413--414
+\TU/標楷體(0)/m/n/14 有\TU/TimesNewRoman(0)/m/n/14 -2.1 \TU/標楷體(0)/m/n/14 的 梯 度，|  
 這 意 味 著 如 果 我 們 將 該 參 數 增 加 一 個 小 的 正 值 \TU/TimesNewRoman(0)/m/n/14 (\TU/標楷體(0)
-/b/n/14 例 如 \TU/TimesNewRoman(0)/m/n/14 0.001)\TU/標楷體(0)/b/n/14 ，|
+/m/n/14 例 如 \TU/TimesNewRoman(0)/m/n/14 0.001)\TU/標楷體(0)/m/n/14 ，|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
+
+ []
+
+[11]
+Overfull \hbox (1.02054pt too wide) in paragraph at lines 416--417
+\TU/TimesNewRoman(0)/m/n/14 log-probabilities\TU/標楷體(0)/m/n/14 。|  能 加 強 解 決 現 
+代 機 器 學 習 問 題 的 關 鍵 點，|  是 能 夠 巧 妙 的 在
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
+
+ []
+
+
+Overfull \hbox (11.41214pt too wide) in paragraph at lines 426--427
+[]\TU/標楷體(0)/m/n/14 最 大 概 似 估 計 的 中 央 計 算。|  最 大 概 似 是 機 器 學 習 中 使 用 的 學 習 原 理 
+之 一，|
+ []
+
+
+Overfull \hbox (9.7738pt too wide) in paragraph at lines 426--427
+\TU/標楷體(0)/m/n/14 用 於 廣 義 線 性 回 歸、|  深 度 學 習、| \TU/TimesNewRoman(0)/m/n/14 kern
+el machines\TU/標楷體(0)/m/n/14 、|  降 維 和 張 量 分 解 等，|  而
  []
 
 
@@ -1607,65 +1628,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 429--430
 
  []
 
-[11]
-Overfull \hbox (1.02054pt too wide) in paragraph at lines 432--433
-\TU/TimesNewRoman(0)/m/n/14 log-probabilities\TU/標楷體(0)/b/n/14 。|  能 加 強 解 決 現 
-代 機 器 學 習 問 題 的 關 鍵 點，|  是 能 夠 巧 妙 的 在
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 434--435
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--437
-
- []
-
-
-Overfull \hbox (11.41214pt too wide) in paragraph at lines 442--443
-[]\TU/標楷體(0)/b/n/14 最 大 概 似 估 計 的 中 央 計 算。|  最 大 概 似 是 機 器 學 習 中 使 用 的 學 習 原 理 
-之 一，|
- []
-
-
-Overfull \hbox (9.7738pt too wide) in paragraph at lines 442--443
-\TU/標楷體(0)/b/n/14 用 於 廣 義 線 性 回 歸、|  深 度 學 習、| \TU/TimesNewRoman(0)/m/n/14 kern
-el machines\TU/標楷體(0)/b/n/14 、|  降 維 和 張 量 分 解 等，|  而
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--446
-
- []
-
-
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 447--449
-\TU/標楷體(0)/b/n/14 在 第 一 行 中，|  我 們 應 用 了 對 數 導 數 技 巧，|  在 第 二 行 中，|  我 們 交 換 了 
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 431--433
+\TU/標楷體(0)/m/n/14 在 第 一 行 中，|  我 們 應 用 了 對 數 導 數 技 巧，|  在 第 二 行 中，|  我 們 交 換 了 
 差 異
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
 
  []
 
 
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 452--454
-\TU/標楷體(0)/b/n/14 我 們 現 在 可 以 從 對 數 概 率 的 梯 度 躍 升 為 概 率 的 梯 度，|  然 後 返 回，|  但 是
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 436--438
+\TU/標楷體(0)/m/n/14 我 們 現 在 可 以 從 對 數 概 率 的 梯 度 躍 升 為 概 率 的 梯 度，|  然 後 返 回，|  但 是
  真
  []
 
 
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 452--454
-\TU/標楷體(0)/b/n/14 正 要 解 決 的 其 實 是 計 算 困 難 的 期 望 梯 度，|  所 以 我 們 可 以 利 用 新 發 現 的 
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 436--438
+\TU/標楷體(0)/m/n/14 正 要 解 決 的 其 實 是 計 算 困 難 的 期 望 梯 度，|  所 以 我 們 可 以 利 用 新 發 現 的 
 功
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+
+Overfull \hbox (6.48245pt too wide) in paragraph at lines 443--444
+\TU/標楷體(0)/m/n/14 在 運 籌 學 中 進 行 庫 存 控 制 等。|  該 梯 度 很 難 計 算，|  因 為 積 分 通 常 是 未 知
+ 的，|  我
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
+
+ []
+
+File: ./圖片/gradient_change.png Graphic file (type bmp)
+<./圖片/gradient_change.png>
+
+Overfull \hbox (6.75589pt too wide) in paragraph at lines 452--454
+\TU/標楷體(0)/m/n/14 為 此，|  我 們 將 使 用 另 一 種 普 遍 存 在 的 技 巧，|  一 種 概 率 恆 等 的 技 巧，|  
+在 該 技 巧
+ []
+
+
+Overfull \hbox (1.8158pt too wide) in paragraph at lines 452--454
+\TU/標楷體(0)/m/n/14 中，|  我 們 將 表 達 式 乘 以 \TU/TimesNewRoman(0)/m/n/14 1\TU/標楷體(0)/
+m/n/14 ，|  該 表 達 式 由 概 率 密 度 除 以 自 身 而 形 成。|  將 特 性 技
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 452--454
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
+
  []
 
 
@@ -1679,74 +1717,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 457--458
  []
 
 
-Overfull \hbox (6.48245pt too wide) in paragraph at lines 459--460
-\TU/標楷體(0)/b/n/14 在 運 籌 學 中 進 行 庫 存 控 制 等。|  該 梯 度 很 難 計 算，|  因 為 積 分 通 常 是 未 知
- 的，|  我
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
-
- []
-
-File: ./圖片/gradient_change.png Graphic file (type bmp)
-<./圖片/gradient_change.png>
-
-Overfull \hbox (6.75589pt too wide) in paragraph at lines 468--470
-\TU/標楷體(0)/b/n/14 為 此，|  我 們 將 使 用 另 一 種 普 遍 存 在 的 技 巧，|  一 種 概 率 恆 等 的 技 巧，|  
-在 該 技 巧
- []
-
-
-Overfull \hbox (1.8158pt too wide) in paragraph at lines 468--470
-\TU/標楷體(0)/b/n/14 中，|  我 們 將 表 達 式 乘 以 \TU/TimesNewRoman(0)/m/n/14 1\TU/標楷體(0)/
-b/n/14 ，|  該 表 達 式 由 概 率 密 度 除 以 自 身 而 形 成。|  將 特 性 技
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--470
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 472--473
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 473--474
-
- []
-
-
-Overfull \hbox (6.20901pt too wide) in paragraph at lines 474--476
-\TU/標楷體(0)/b/n/14 在 這 四 行 中 發 生 了 很 多 事 情。|  在 第 一 行 中，|  我 們 交 換 了 導 數 和 積 分。|
+Overfull \hbox (6.20901pt too wide) in paragraph at lines 458--460
+\TU/標楷體(0)/m/n/14 在 這 四 行 中 發 生 了 很 多 事 情。|  在 第 一 行 中，|  我 們 交 換 了 導 數 和 積 分。|
   在 第 二
  []
 
 
-Overfull \hbox (6.75589pt too wide) in paragraph at lines 474--476
-\TU/標楷體(0)/b/n/14 行 中，|  我 們 應 用 了 概 率 身 份 技 巧，|  這 使 我 們 能 夠 形 成 得 分 比，|  然 後 
+Overfull \hbox (6.75589pt too wide) in paragraph at lines 458--460
+\TU/標楷體(0)/m/n/14 行 中，|  我 們 應 用 了 概 率 身 份 技 巧，|  這 使 我 們 能 夠 形 成 得 分 比，|  然 後 
 使 用 對 數
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--476
+Underfull \hbox (badness 10000) in paragraph at lines 458--460
 
  []
 
@@ -1758,66 +1741,66 @@ Missing character: There is no θ in font cmmi12!
 File: ./圖片/figure.png Graphic file (type bmp)
 <./圖片/figure.png>
 
-Overfull \hbox (2.17188pt too wide) in paragraph at lines 477--485
-[]\TU/標楷體(0)/b/n/14 更 簡 單 的 描 述，|  我 們 有 一 些 分 佈 $\OML/cmm/m/it/14 p\OT1/cmr/m/
+Overfull \hbox (2.17188pt too wide) in paragraph at lines 461--469
+[]\TU/標楷體(0)/m/n/14 更 簡 單 的 描 述，|  我 們 有 一 些 分 佈 $\OML/cmm/m/it/14 p\OT1/cmr/m/
 n/14 (\OML/cmm/m/it/14 x\OT1/cmr/m/n/14 ; \OML/cmm/m/it/14 ^^R\OT1/cmr/m/n/14 )
-$ |\TU/標楷體(0)/b/n/14 （我 使 用 了 速 記 $\OML/cmm/m/it/14 p[]x[]$ \TU/標楷體(0)/b/n/14 來
+$ |\TU/標楷體(0)/m/n/14 （我 使 用 了 速 記 $\OML/cmm/m/it/14 p[]x[]$ \TU/標楷體(0)/m/n/14 來
  減 少 混 亂） ，|
  []
 
 
-Overfull \hbox (9.74548pt too wide) in paragraph at lines 477--485
-\TU/TimesNewRoman(0)/m/n/14 x \TU/標楷體(0)/b/n/14 的 新 概 率 略 有 增 加。|  如 果 回 顧 一 下 
+Overfull \hbox (9.74548pt too wide) in paragraph at lines 461--469
+\TU/TimesNewRoman(0)/m/n/14 x \TU/標楷體(0)/m/n/14 的 新 概 率 略 有 增 加。|  如 果 回 顧 一 下 
 公 式，|  它 告 訴 我 們 應 該 朝 這 個 方 向 發 展，|
  []
 
 
-Overfull \hbox (6.2637pt too wide) in paragraph at lines 477--485
-\TU/標楷體(0)/b/n/14 率 的 梯 度，|  箭 頭 指 示 應 微 調 分 佈 平 均 值 以 增 加 該 樣 本 概 率 的 方 向。|  中
+Overfull \hbox (6.2637pt too wide) in paragraph at lines 461--469
+\TU/標楷體(0)/m/n/14 率 的 梯 度，|  箭 頭 指 示 應 微 調 分 佈 平 均 值 以 增 加 該 樣 本 概 率 的 方 向。|  中
  間：|  某
  []
 
 
-Overfull \hbox (4.418pt too wide) in paragraph at lines 477--485
-|\TU/標楷體(0)/b/n/14 （請 注 意，|  這 可 以 是 任 意 的，|  不 一 定 是 可 微 分 的 標 量 值 函 數\TU/Time
-sNewRoman(0)/m/n/14 )\TU/標楷體(0)/b/n/14 ，|  箭 頭 現 在 採 用
+Overfull \hbox (4.418pt too wide) in paragraph at lines 461--469
+|\TU/標楷體(0)/m/n/14 （請 注 意，|  這 可 以 是 任 意 的，|  不 一 定 是 可 微 分 的 標 量 值 函 數\TU/Time
+sNewRoman(0)/m/n/14 )\TU/標楷體(0)/m/n/14 ，|  箭 頭 現 在 採 用
  []
 
 
-Overfull \hbox (6.2637pt too wide) in paragraph at lines 477--485
-\TU/標楷體(0)/b/n/14 色 箭 頭 的 負 數。|  右：|  更 新 參 數 後，|  綠 色 箭 頭 和 反 向 紅 色 箭 頭 將 我 們 
+Overfull \hbox (6.2637pt too wide) in paragraph at lines 461--469
+\TU/標楷體(0)/m/n/14 色 箭 頭 的 負 數。|  右：|  更 新 參 數 後，|  綠 色 箭 頭 和 反 向 紅 色 箭 頭 將 我 們 
 向 左 移 至
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--485
+Underfull \hbox (badness 10000) in paragraph at lines 461--469
 
  []
 
 [14] [15]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 481--483
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--501
+Underfull \hbox (badness 10000) in paragraph at lines 483--485
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 503--505
+Underfull \hbox (badness 10000) in paragraph at lines 487--489
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--517
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
@@ -1826,45 +1809,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 516--517
 ]
 Chapter 4.
 
-Overfull \hbox (30.58142pt too wide) in paragraph at lines 525--526
-\TU/標楷體(0)/b/n/14 法。|  這 個 環 境 具 有 共 享 的 介 面，|  使 我 們 能 用 來 編 寫 常 規 算 法，|  也 就 
+Overfull \hbox (30.58142pt too wide) in paragraph at lines 509--510
+\TU/標楷體(0)/m/n/14 法。|  這 個 環 境 具 有 共 享 的 介 面，|  使 我 們 能 用 來 編 寫 常 規 算 法，|  也 就 
 能 教 導 \TU/TimesNewRoman(0)/m/n/14 agents
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--526
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
 
  []
 
 
-Overfull \hbox (12.78177pt too wide) in paragraph at lines 529--530
- \TU/標楷體(0)/b/n/14 取 自 \TU/TimesNewRoman(0)/m/n/14 1977 \TU/標楷體(0)/b/n/14 年 發 行
- 的 一 款 家 用 遊 戲 機 \TU/TimesNewRoman(0)/m/n/14 ATARI 2600 \TU/標楷體(0)/b/n/14 中 的 遊
- 戲，|  內 建 於 \TU/TimesNewRoman(0)/m/n/14 Gym\TU/標楷體(0)/b/n/14 ，|
+Overfull \hbox (12.78177pt too wide) in paragraph at lines 513--514
+ \TU/標楷體(0)/m/n/14 取 自 \TU/TimesNewRoman(0)/m/n/14 1977 \TU/標楷體(0)/m/n/14 年 發 行
+ 的 一 款 家 用 遊 戲 機 \TU/TimesNewRoman(0)/m/n/14 ATARI 2600 \TU/標楷體(0)/m/n/14 中 的 遊
+ 戲，|  內 建 於 \TU/TimesNewRoman(0)/m/n/14 Gym\TU/標楷體(0)/m/n/14 ，|
  []
 
 
-Overfull \hbox (6.75589pt too wide) in paragraph at lines 529--530
-\TU/標楷體(0)/b/n/14 這 是 一 個 橫 向 的 乒 乓 遊 戲，|  左 方 是 遊 玩 者，|  右 邊 是 馬 可 夫 決 策 的 特 例
+Overfull \hbox (6.75589pt too wide) in paragraph at lines 513--514
+\TU/標楷體(0)/m/n/14 這 是 一 個 橫 向 的 乒 乓 遊 戲，|  左 方 是 遊 玩 者，|  右 邊 是 馬 可 夫 決 策 的 特 例
 ，|  每 個
  []
 
 
-Overfull \hbox (10.23993pt too wide) in paragraph at lines 531--532
-\TU/TimesNewRoman(0)/m/n/14 estimator(\TU/標楷體(0)/b/n/14 取 用 \TU/TimesNewRoman(0
-)/m/n/14 Andrej Karpathy)\TU/標楷體(0)/b/n/14 ，|  從 像 素 開 始，|  通 過 深 度 神 經 網 絡 使 用
+Overfull \hbox (10.23993pt too wide) in paragraph at lines 515--516
+\TU/TimesNewRoman(0)/m/n/14 estimator(\TU/標楷體(0)/m/n/14 取 用 \TU/TimesNewRoman(0
+)/m/n/14 Andrej Karpathy)\TU/標楷體(0)/m/n/14 ，|  從 像 素 開 始，|  通 過 深 度 神 經 網 絡 使 用
  \TU/TimesNewRoman(0)/m/n/14 ATARI
  []
 
 
-Overfull \hbox (0.97269pt too wide) in paragraph at lines 535--537
-\TU/TimesNewRoman(0)/m/n/14 Pong \TU/標楷體(0)/b/n/14 的 遊 戲 是 簡 單 的 強 化 學 習 中，|  很
- 好 的 例 子，|  在 \TU/TimesNewRoman(0)/m/n/14 ATARI 2600 \TU/標楷體(0)/b/n/14 版 本 中，| 
+Overfull \hbox (0.97269pt too wide) in paragraph at lines 519--521
+\TU/TimesNewRoman(0)/m/n/14 Pong \TU/標楷體(0)/m/n/14 的 遊 戲 是 簡 單 的 強 化 學 習 中，|  很
+ 好 的 例 子，|  在 \TU/TimesNewRoman(0)/m/n/14 ATARI 2600 \TU/標楷體(0)/m/n/14 版 本 中，| 
  我
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 535--537
+Underfull \hbox (badness 10000) in paragraph at lines 519--521
 
  []
 
@@ -1873,8 +1856,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 535--537
 ]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
+Underfull \hbox (badness 10000) in paragraph at lines 525--526
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 535--536
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
+
+ []
+
+
+Overfull \hbox (15.28693pt too wide) in paragraph at lines 543--544
+ \TU/標楷體(0)/m/n/14 在 影 像 處 理 中 我 們 主 要 使 用 了 \TU/TimesNewRoman(0)/m/n/14 Python
+ \TU/標楷體(0)/m/n/14 套 件 中 的 \TU/TimesNewRoman(0)/m/n/14 OpenCV(\TU/標楷體(0)/m/n/14
+ 全 稱\TU/TimesNewRoman(0)/m/n/14 :Open Source
  []
 
 
@@ -1888,82 +1903,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 545--546
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 549--550
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 551--552
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 553--554
-
- []
-
-
-Overfull \hbox (15.28693pt too wide) in paragraph at lines 559--560
- \TU/標楷體(0)/b/n/14 在 影 像 處 理 中 我 們 主 要 使 用 了 \TU/TimesNewRoman(0)/m/n/14 Python
- \TU/標楷體(0)/b/n/14 套 件 中 的 \TU/TimesNewRoman(0)/m/n/14 OpenCV(\TU/標楷體(0)/b/n/14
- 全 稱\TU/TimesNewRoman(0)/m/n/14 :Open Source
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 565--566
 
  []
 
 [18
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
 
  []
 
 
-Overfull \hbox (0.2468pt too wide) in paragraph at lines 571--572
-\TU/標楷體(0)/b/n/14 下 限 或 高 於 上 限 的 值 會 變 成 \TU/TimesNewRoman(0)/m/n/14 0(\TU/標楷體
-(0)/b/n/14 即 黑 色\TU/TimesNewRoman(0)/m/n/14 ), \TU/標楷體(0)/b/n/14 而 介 於 上 下 限 範 
+Overfull \hbox (0.2468pt too wide) in paragraph at lines 555--556
+\TU/標楷體(0)/m/n/14 下 限 或 高 於 上 限 的 值 會 變 成 \TU/TimesNewRoman(0)/m/n/14 0(\TU/標楷體
+(0)/m/n/14 即 黑 色\TU/TimesNewRoman(0)/m/n/14 ), \TU/標楷體(0)/m/n/14 而 介 於 上 下 限 範 
 圍 間 的 值 會 變 成
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 573--574
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
 
  []
 
 [19]
 Chapter 6.
 
-Overfull \hbox (9.92966pt too wide) in paragraph at lines 585--586
-[]\TU/標楷體(0)/b/n/14 除 了 作 業 系 統 裡 面 的 執 行，|  還 可 在 其 中 練 習 磁 碟 分 割、|  格 式 化 以 及
+Overfull \hbox (9.92966pt too wide) in paragraph at lines 569--570
+[]\TU/標楷體(0)/m/n/14 除 了 作 業 系 統 裡 面 的 執 行，|  還 可 在 其 中 練 習 磁 碟 分 割、|  格 式 化 以 及
  \TU/TimesNewRoman(0)/m/n/14 BIOS
  []
 
 
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 586--588
-\TU/標楷體(0)/b/n/14 記 憶 體 大 小 與 硬 碟 空 間 是 實 時 依 據 操 作 者 決 定，|  但 終 究 還 是 佔 掉 電 腦 
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 570--572
+\TU/標楷體(0)/m/n/14 記 憶 體 大 小 與 硬 碟 空 間 是 實 時 依 據 操 作 者 決 定，|  但 終 究 還 是 佔 掉 電 腦 
 效
  []
 
@@ -1972,29 +1955,29 @@ Overfull \hbox (3.75589pt too wide) in paragraph at lines 586--588
 ]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 591--592
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
  []
 
 
-Overfull \hbox (6.75589pt too wide) in paragraph at lines 593--594
-\TU/標楷體(0)/b/n/14 時 的 計 算 速 度，|  減 少 運 算 時 的 負 擔，|  過 濾 顏 色 只 保 留 球 與 擊 錘，|  並 
+Overfull \hbox (6.75589pt too wide) in paragraph at lines 577--578
+\TU/標楷體(0)/m/n/14 時 的 計 算 速 度，|  減 少 運 算 時 的 負 擔，|  過 濾 顏 色 只 保 留 球 與 擊 錘，|  並 
 把 取 到 的
  []
 
 
-Overfull \hbox (6.53714pt too wide) in paragraph at lines 593--594
-\TU/標楷體(0)/b/n/14 較，|  隨 機 值 若 落 在 決 策 向 上 移 動 的 區 間，|  擊 錘 就 會 向 上 移 動；|  落 在 
+Overfull \hbox (6.53714pt too wide) in paragraph at lines 577--578
+\TU/標楷體(0)/m/n/14 較，|  隨 機 值 若 落 在 決 策 向 上 移 動 的 區 間，|  擊 錘 就 會 向 上 移 動；|  落 在 
 決 策 向 下
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 593--594
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 595--596
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
 
  []
 
@@ -2003,17 +1986,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 595--596
 ]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
 
  []
 
 
-Overfull \hbox (58.36111pt too wide) in paragraph at lines 607--608
+Overfull \hbox (58.36111pt too wide) in paragraph at lines 591--592
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][] 
  []
@@ -2021,26 +2004,26 @@ Overfull \hbox (58.36111pt too wide) in paragraph at lines 607--608
 [22
 
 ] [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 631.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 615.
  [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 631.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 615.
  (first.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 631.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 631.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 615.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 615.
 Package rerunfilecheck Info: File `first.out' has not changed.
 (rerunfilecheck)             Checksum: 4FD3C8648CF542F90FDC50B005B4F362;2641.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 631.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 615.
  ) 
 Here is how much of TeX's memory you used:
- 19729 strings out of 414221
- 365173 string characters out of 2901377
+ 19725 strings out of 414221
+ 365062 string characters out of 2901377
  890323 words of memory out of 3000000
- 36956 multiletter control sequences out of 15000+200000
- 545707 words of font info for 134 fonts, out of 3000000 for 9000
+ 36953 multiletter control sequences out of 15000+200000
+ 545699 words of font info for 133 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  48i,7n,81p,545b,1174s stack positions out of 5000i,500n,10000p,200000b,50000s
 

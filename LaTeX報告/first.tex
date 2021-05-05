@@ -304,7 +304,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
 強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\[6pt]
-強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。
+強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\[6pt]
 由於強化學習是建立在環境上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
 %=----------Faces of Reinforcement Learning---------------=%
 \begin{itemize}
@@ -328,12 +328,8 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \caption{RL structur}
 \end{center}
 \end{figure}
-\textbf{需要考慮的重點:}
-\item 強化學習的週期是互相聯繫的
-\item 分明的溝通是在考慮獎勵的情況下發生的
-\item agent與環境之間存在著獨特的溝通。
-\item 目標或機器人從一狀態移動到另一狀態。
-\item 從一狀態轉移到另一種狀態採取動作。
+需要考慮的重點:\\[6pt]
+\qquad 強化學習的週期是互相聯繫的，分明的溝通是在考慮獎勵的情況下發生的，agent與環境之間存在著獨特的溝通。狀態和動作互相關聯著，並互相影響著彼此：目標或機器人會因動作而造成狀態轉移，狀態的移轉也會影響目標或機器人做出的決策。
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -341,45 +337,40 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
-agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。\\
-當agent開始與環境互動時，他可以選擇一個操作並做出相應的回應，從這時起，將會創建新的場景，當agent從一個環境變為另一個環境中，每項更改都會導致某種修改，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\
-
+\qquad agent是決策者，會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他會做出決策，決策所執行的動作會使場景進入下一個狀態，當環境轉變，環境裡的項目也會跟著變動，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\[12pt]
+\iffalse
 %------------------圖片可共用----------------------%
-%\begin{figure}[hbt!]
-%\begin{center}
-%\includegraphics[scale=0.74]{Scenario_of_state_changes}
-%\caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
-%\end{center}
-%\end{figure}
-
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[scale=0.74]{Scenario_of_state_changes}
+\caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\end{center}
+\end{figure}
+\fi
 %=----Different Terms in Reinforcement Learning----------=%
 
-\item 強化學習中各種術語\\
-在此情況下，有兩個很重要的常數-$\gamma$、$\lambda$\\[10pt]
-$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值， 
-$\gamma$ 會從你將在每個狀態獲得的獎勵類型中，告訴你訊息。$\gamma$又叫衰減因子，他決定了我們未來可獲得的獎勵類型:\\
-\item  $\gamma$值為0表示獎勵僅與當前狀態有關係。
-\item$\gamma$值為1時，代表獎勵是長期的。
-當我們處理時間問題時，通常使用$\lambda$，這是涉及更多的連續狀態的預測，
-每種狀態下的$\lambda$值增加，代表我們的算法學習速度很快，適用強化學習技術時，更快的算法會產生更好的結果。\\
-%=----Interactions with Reinforcement Learning------------=%
-\item 與強化學習的互動\\
+\qquad 強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值， 
+$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為時常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因得到的先後順序而有所衰減)。\\[6pt]
+\qquad 當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，
+每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\[12pt]
 %------------------圖片可共用----------------------%
-%\begin{figure}[hbt!]
-%\begin{center}
-%\includegraphics[scale=0.74]{ Reinforcement_Learning_interactions}
-%\caption{Reinforcement Learning interactions; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
-%\end{center}
-%\end{figure}
-
-agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態\\
-強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法
-，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
+\iffalse
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[scale=0.74]{ Reinforcement_Learning_interactions}
+\caption{Reinforcement Learning interactions; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\end{center}
+\end{figure}
+\fi
+%=----Interactions with Reinforcement Learning------------=%
+強化學習的互動：\\
+\qquad agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
 %=----How Reward Works------------=%
 
-\item 獎勵如何運作\\
+獎勵的目的與運作：\\
 
-獎勵是我們從一狀態過渡到另一狀態時所獲得的動力，它可以是分數，例如在遊戲中。我們訓練的次數越多，我們就變得越精準，且我們的回報越大。\\
+\qquad 以獎勵的方式誘導機器採取我們所期望的動作或是特定結果。機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\
+
 %=----Agents------------=%
 \item Agents\\
 在強化學習方面，agent是一個軟體程式，能做出明智的選擇，應能購感知到正在環境發生的事情，以下是agent基本步驟:\\
@@ -394,15 +385,8 @@ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀
 \end{figure}
 %=----Agents------------=%
 \item 強化學習的環境\\
-強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應其各種因素，並做出最佳決策，這些環境可以是2D世界或是網格，甚至是3D世界。\\
-\begin{large}textbf{以下是環境的一些重要功能:}\end{large}\\
-\item 具有確定性。
-\item 可觀察性。
-\item 是離散或是連續的狀態。
-\item 單個agent或是多個agent。
-\end{itemize}
-
-\newpage
+強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應其各種因素，並做出最佳決策，這些環境可以是2D世界或是網格，甚至是3D世界。強化學習的環境具有確定性、可觀察性，可以是離散或是連續的狀態、單個agent或是多個agent\\
+\end{itemize}\newpage
 \section{深度強化學習}
 \subsection{Deep Reinforcement Learning}
 \begin{figure}[hbt!]
@@ -410,7 +394,7 @@ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀
 \includegraphics[scale=0.74]{ network}
 \caption{Our network is a 2-layer fully-connected net. }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
-\end{figure}\textbf{}
+\end{figure}
 
 \qquad 我們將定義一個可以執行我們的玩家(agent)的類神經網路，該網路將獲取遊戲狀態並決定我們應該做什麼(向上移動或向下移動
 ) 我們使用一個2層神經網路，該網路獲取原始圖像像素(100,800個數字(210*160*3))，並生成一個表示上升概率的數字。 使用隨機策略是標準做法，這意味著我們只會產生向上移動的可能性，每次迭代時，我們都會從該分布中採樣(即扔一枚有偏見的硬幣)已獲得實際移動。\\
@@ -422,9 +406,9 @@ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀
 \includegraphics[scale=0.74]{supervising_learning}
 \caption{supervising learning }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
-\end{figure}\textbf{}
+\end{figure}
 
-\qquad 在我們滲入探討 Score Function 解決方案之前，需要簡短介紹有關監督學習的知識，因為正如我們看到的，與我們架構類似，在普通通的監督學習中，我們會將圖像送到網路，並獲得伊些概率，例如對於兩個類別的上和下。 這裡顯示的是向上和向下對數概率(-1.2,-0.36)，而不是原始機率(在這個情況下，是30$\%$和70$\%$)，因為我們總是優化正確標籤的對數概率(這使我們的演算法更好，病等效於優化原始概率，因為對數是單調的)，而在監督學習中，我們將可以獲取標籤，例如:\\
+\qquad 在我們滲入探討 Score Function 解決方案之前，需要簡短介紹有關監督學習的知識，因為正如我們看到的，與我們架構類似，在普通通的監督學習中，我們會將圖像送到網路，並獲得伊些概率，例如對於兩個類別的上和下。 這裡顯示的是向上和向下對數概率(-1.2,-0.36)，而不是原始機率(在這個情況下，是30$\%$和70$\%$)，因為我們總是優化正確標籤的對數概率(這使我們的演算法更好，並等效於優化原始概率，因為對數是單調的)，而在監督學習中，我們將可以獲取標籤，例如:\\
 
 我們可能被告知現在正確的做法是向上運動(標籤0)，在執行過程中，我們將以上的對數機率輸入1.0的梯度，然後運行backprop來計算梯度向量$Wlogp(y=UP|x)$這個梯度將告訴我們應如何更改百萬個參數中的每個參數，使網路預測往上的可能性更高，例如:網路中的百萬個參數之一可能具有-2.1的梯度，這意味著如果我們將該參數增加一個小的正值(例如0.001)，則往上的對數機率將因2.1*0.001而降低(由於負號而減少)，如果我們隨後更新了參數，當之後遇到非常相似的圖像時(也就是環境狀況)，我們的網路現在更有可能預測往上。\\
 
