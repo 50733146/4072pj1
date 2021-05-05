@@ -25,6 +25,7 @@ left=2.5truecm,right=2.5truecm]{geometry}
 		caption={Python code}, %設定capion
 		label={lst:example} %設定label
 }
+
 \graphicspath{{./圖片/}} %圖片預設讀取路徑
 \renewcommand{\figurename}{圖.} %設定圖片標示名稱
 \renewcommand{\lstlistingname}{程式.} %設定程式標示名稱
@@ -594,7 +595,18 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
 \qquad 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、\\
 \newpage
 \chapter{問題與討論}
+Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
 
+A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
+\begin{lstlisting}
+<script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+\end{lstlisting}
+修正後將"("和")"換成"\$"，就解決誤換問題
 %=---------------------參考文獻----------------------=%
 \newpage
 \begin{center}
