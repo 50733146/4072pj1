@@ -28,9 +28,16 @@
 \contentsline {section}{\numberline {4.3}為什麼選擇score function 算法}{17}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Pong from pixels}{17}{section.4.4}%
 \contentsline {chapter}{\numberline {5}模擬環境}{18}{chapter.5}%
-\contentsline {chapter}{\numberline {6}伺服器}{19}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Oracle VM VirtualBox 介紹}{19}{section.6.1}%
-\contentsline {chapter}{\numberline {7}深度強化學習的訓練與控制}{20}{chapter.7}%
-\contentsline {chapter}{\numberline {8}問題與討論}{21}{chapter.8}%
-\contentsline {chapter}{參考文獻 }{22}{chapter.8}%
+\contentsline {section}{\numberline {5.1}模擬模型}{18}{section.5.1}%
+\contentsline {section}{\numberline {5.2}CoppeliaSim模擬}{18}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}使用原因}{18}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}模擬}{18}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}CoppeliaSim中的Vision sensor}{18}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}影像處理}{18}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}影像辨識}{18}{subsection.5.3.1}%
+\contentsline {chapter}{\numberline {6}伺服器}{20}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Oracle VM VirtualBox 介紹}{20}{section.6.1}%
+\contentsline {chapter}{\numberline {7}深度強化學習的訓練與控制}{21}{chapter.7}%
+\contentsline {chapter}{\numberline {8}問題與討論}{22}{chapter.8}%
+\contentsline {chapter}{參考文獻 }{23}{chapter.8}%
 \contentsfinish 

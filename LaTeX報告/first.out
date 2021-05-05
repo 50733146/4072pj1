@@ -28,8 +28,15 @@
 \BOOKMARK [1][-]{section.4.3}{為什麼選擇score function 算法}{chapter.4}% 28
 \BOOKMARK [1][-]{section.4.4}{Pong\040from\040pixels}{chapter.4}% 29
 \BOOKMARK [0][-]{chapter.5}{模擬環境}{}% 30
-\BOOKMARK [0][-]{chapter.6}{伺服器}{}% 31
-\BOOKMARK [1][-]{section.6.1}{Oracle VM VirtualBox 介紹}{chapter.6}% 32
-\BOOKMARK [0][-]{chapter.7}{深度強化學習的訓練與控制}{}% 33
-\BOOKMARK [0][-]{chapter.8}{問題與討論}{}% 34
-\BOOKMARK [0][-]{chapter.8}{參考文獻 }{}% 35
+\BOOKMARK [1][-]{section.5.1}{模擬模型}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.2}{CoppeliaSim模擬}{chapter.5}% 32
+\BOOKMARK [2][-]{subsection.5.2.1}{使用原因}{section.5.2}% 33
+\BOOKMARK [2][-]{subsection.5.2.2}{模擬}{section.5.2}% 34
+\BOOKMARK [2][-]{subsection.5.2.3}{CoppeliaSim中的Vision sensor}{section.5.2}% 35
+\BOOKMARK [1][-]{section.5.3}{影像處理}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.3.1}{影像辨識}{section.5.3}% 37
+\BOOKMARK [0][-]{chapter.6}{伺服器}{}% 38
+\BOOKMARK [1][-]{section.6.1}{Oracle VM VirtualBox 介紹}{chapter.6}% 39
+\BOOKMARK [0][-]{chapter.7}{深度強化學習的訓練與控制}{}% 40
+\BOOKMARK [0][-]{chapter.8}{問題與討論}{}% 41
+\BOOKMARK [0][-]{chapter.8}{參考文獻 }{}% 42

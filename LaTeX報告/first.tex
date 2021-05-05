@@ -168,32 +168,33 @@ from: \href{https://towardsdatascience.com/derivative-of-the-sigmoid-function-53
 \end{figure}
 \fi
 %=----------SigmoidPrime Function----------=%
-\item SigmoidPrime Function：\\
-\qquad 這是從Sigmoid Function微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\[12pt]
+SigmoidPrime Function是從Sigmoid Function微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\[12pt]
 $$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$\\[3pt]
 %=----------Softmax Function----------=%
 \item Softmax：\\
-\qquad Softmax會計算每個事件分布的機率，適用多項目分類、其機率總合為1。以此專案為例，假設擊錘移動有向上移動、向下移動及不移動這三個決策選項，則這三個決策機率值總和為1。\\[12pt]
+Softmax會計算每個事件分布的機率，適用多項目分類、其機率總合為1。以此專案為例，假設擊錘移動有向上移動、向下移動及不移動這三個決策選項，則這三個決策機率值總和為1。\\[12pt]
 $$S(x)=\frac{e^{x_i}}{\sum^k_{j=1}e^{x_i}}$$
 %=----------Relu Function----------=%
 \item ReLU Function：\\
-\qquad ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入值為正值，輸出則維持該輸入數值。ReLU計算方式簡單、收斂速度快，這是類神經網路最普遍拿來使用的啟動函數，因為可以解決梯度消散的問題，但須注意：起始值若設定到不易被激活範圍或是權重過度所導致權重梯度為0就會造成神經元難以被激活。
+ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入值為正值，輸出則維持該輸入數值。ReLU計算方式簡單、收斂速度快，這是類神經網路最普遍拿來使用的啟動函數，因為可以解決梯度消散的問題，但須注意：起始值若設定到不易被激活範圍或是權重過度所導致權重梯度為0就會造成神經元難以被激活。
 $$f(x)=max(0,x)$$
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$\\
 %=----------Adam Function----------=%
 \item Adam Function\\
-\qquad  結合了 Adagrad 和 RMSprop的優勢.有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程: \\[6pt]
+結合了 Adagrad 和 RMSprop的優勢，有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程: \\[6pt]
 $$g_t=\delta_{\theta}f(\theta)$$\\
-First moment exponentially moving averages : $m_t =\beta(m_{t-1})+(1-\beta_1)(\nabla{w_t})$\\[6pt]
-$\hat m_t=\frac{m_t}{1-\beta_1^t}$\\[6pt]
-Second moment exponentially moving averages :$v_t=\beta_2(v_t-1)+(1-\beta_2)(\nabla{w_t})^2$\\[6pt]
-$\hat{v_t}=\frac{v_t}{1-\beta_2^t}$\\[6pt]
-Hence,Adam Function:\\[6pt]
+一次矩指數移動均線 :\\[6pt]
+ $$m_t =\beta(m_{t-1})+(1-\beta_1)(\nabla{w_t})$$\\
+$$\hat m_t=\frac{m_t}{1-\beta_1^t}$$\\[6pt]
+二次矩指數移動均線 :\\[6pt]
+$$v_t=\beta_2(v_t-1)+(1-\beta_2)(\nabla{w_t})^2$$\\
+$$\hat{v_t}=\frac{v_t}{1-\beta_2^t}$$\\
+因此,Adam Function:\\[6pt]
 \begin{Large}$$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$\end{Large}
 %=----------Mean Squared Error----------=%
 \item Mean Squared Error\\
-\qquad  他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。
+他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。
 (\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\[6pt]
 \begin{figure}
 \center
@@ -246,7 +247,7 @@ $$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}
 \end{itemize}
 \fi %整段註解(結尾)
 \subsection{優化器}
-\qquad 為了讓機器學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：
+\qquad 為了讓機器學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。也可以改善啟動函數梯度消失的問題，以下將介紹幾種優化的方法：
 \begin{itemize}
 \item Gradient Descent\\[6pt]
 利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。\\
@@ -271,7 +272,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \item Adam\\[6pt]
 類似 Momentum，更加穩定快速的收斂。\\
 \item AdaMax\\[6pt]
-與 Adam 相似，依靠$(u_t)$ 最大運算\\
+與 Adam 相似，依靠$(u_t)$ 最大運算。\\
 \item Nadam\\[6pt]
 結合 Adam 和 NAG ，應用先前參數執行兩次更新，一次更新參數一次更新梯度。\\
 \item AMSGrad\\[6pt]
@@ -561,6 +562,43 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 
 \newpage
 \chapter{模擬環境}
+\section{模擬模型}
+\qquad 在模擬的模型上,延用了學長設計的冰球機,並進行了部分的設計變更,將原本的人機對打更改為機器對打,且因為搭配神經網路的訓練,所以將兩邊的擊球器都僅保留X軸向(左右)移動,而冰球則是使用原本設計。多虧了學長們所設計的冰球機模型,讓我們在運作上有問題時可以直接發問,設計變更的地方也可以快速完成。\\
+\section{CoppeliaSim模擬}
+\qquad CoppeliaSim是具有集成開發環境的機器人模擬器,基於分佈式控制體系架構,可以通過嵌入式腳本，插件，ROS或BlueZero節點，RemoteAPI客戶端或自定義解決方案進行模型控制。\\
+\subsection{使用原因}
+\qquad 本專題之最終目標是希望可以將訓練完成的AI可以在虛擬環境中進行模擬測試,通過虛擬環境中的模擬後,可以更直接地看到神經網路訓練的狀況,且因為在虛擬環境中不會有金費的支出,所以可以不斷的重複模擬直到模擬達到最佳的狀態,基於以上原因,所以使用了CoppeliaSim協助開發。\\
+\subsection{模擬}
+\begin{enumerate}
+
+\item 功能說明\\
+
+ 以下為簡易功能說明:\\
+ 
+\item 模擬執行\\
+
+\end{enumerate}
+\subsection{CoppeliaSim中的Vision sensor}
+
+\section{影像處理}
+\qquad 在影像處理中我們主要使用了Python套件中的OpenCV(全稱:Open Source Computer Vision Library),並搭配其他套件或模組進行了影像處裡,藉此來取得訓練神經網路訓練時所需的資訊。\\
+\subsection{影像辨識}
+\qquad 透過CoppeliaSim中的Vision sensor接收場景影像並輸出後,便可以開始進行影像辨識的處裡\\
+\begin{enumerate}
+\item RGB與HSV的轉換\\
+
+RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模型中的點在圓柱坐標系中的表示法,HSV分別表示Hue(色相)、Saturation(飽和度)、Value(明度)\\
+
+
+
+\item 顏色過濾\\
+
+進行顏色過濾時,需要先定義出過濾顏色的上下限,在開始過濾後低於下限或高於上限的值會變成0(即黑色),而介於上下限範圍間的值會變成255(即白色)\\
+
+\item 雜訊去除\\
+
+為了避免環境因素干擾,使影像產生雜訊並影響了影像辨識度,所以在雜訊的去除也是很重要的,
+\end{enumerate}
 \newpage
 \chapter{伺服器}
 \begin{itemize}
