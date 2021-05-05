@@ -282,28 +282,34 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \end{itemize}
 \section{深度學習}
 %=----------deep learning 會在此時崛起?----------------=%
-\begin{itemize}
-\item Deep learning 會在此時崛起?\\
-\qquad 電腦科學對於深度學習電的依賴越來越重要的四個主要趨勢。\\
 
-(1)\quad 支援張量運算程式語言與程式庫的崛起\\ 首先，自從1960年代開始，諸如APL、MATLAB、R和Julia
-等領域的特定語言的發展轉變為多為數組(通常稱為張量) 進入一組由全為數學語(或運算符)支援的第一類物件以對其進行操作\\
-此外，基於數組的編程能夠以通用語言(如 Python、Lisp、C++和Lua)高校運作，諸如NumPy、Torch、Eigen和Lush等\\
+\qquad 深度學習的崛起與電腦科學有著密切的關係，四個主要趨勢為:\\
+\begin{enumerate}
+\item 支援張量運算程式語言與程式庫的崛起\\[6pt]
+首先，自從1960年代開始，諸如APL、MATLAB、R和Julia等領域的特定語言的發展轉變為多為數組(通常稱為張量) 進入一組由全為數學語(或運算符)支援的第一類物件以對其進行操作此外，基於數組的編程能夠以通用語言(如 Python、Lisp、C++和Lua)高校運作，諸如NumPy、Torch、Eigen和Lush等。\\
 
-(2)\quad 自動求導數套件的開發\\ 其次，自動微分的發展使得完全自動化計算導數的艱鉅工作成為了可能， 這使的運用不同的機器學習方法進行實驗變得非常容易，同時仍然允許基於梯度的優化。 因為autograd軟件包的普及，並將該技術用於NumPy數組，並且類似的方法也用於框架中，例如: Chainer, DyNet, Lush, Torch, Jax and Flux.jl.\\
+\item 自動求導數套件的開發\\[6pt]
+其次，自動微分的發展使得完全自動化計算導數的艱鉅工作成為了可能， 這使的運用不同的機器學習方法進行實驗變得非常容易，同時仍然允許基於梯度的優化。 因為autograd軟件包的普及，並將該技術用於NumPy數組，並且類似的方法也用於框架中，例如: Chainer, DyNet, Lush, Torch, Jax and Flux.jl。\\
 
-(3)\quad 自由開源軟體的普及\\第三隨著自由軟件的到來，科學界從封閉的專用軟件(例如Matlab)轉向開源， Python的生態系統，帶有NumPy、SciPy和Pandas等軟件包，滿足了大多數研究人員對數值分析需求，同時讓他們能夠利用龐大的程式庫來處理數據集的預處理，例如:統計分析、繪圖等。\\
+\item 自由開源軟體的普及\\[6pt]
+第三隨著自由軟件的到來，科學界從封閉的專用軟件(例如Matlab)轉向開源， Python的生態系統，帶有NumPy、SciPy和Pandas等軟件包，滿足了大多數研究人員對數值分析需求，同時讓他們能夠利用龐大的程式庫來處理數據集的預處理，例如:統計分析、繪圖等。\\
 此外，自由軟體的開放性、互相操作性和靈活性，促進了充滿活力的社會發展，這樣社會可以通過擴展程式庫現有的功能，或著在需要時通過開發和發布全新的程式庫功能，來迅速滿足新的或不斷變化的需求。 儘管有豐富的非Python語言支持的神經網路開源軟件，從Lish中的Lush、C++中的Torch、Objective-C和Lua、C++中的EBLearn、C++中的Caffe開始，大型生態系統(諸如Python)的網路效應，促使研究快速發展成為一項必不可少的技能。因此，自2014年以來，大多數深度學習的框架都將Python介面作為一項基本功能進行融合。\\
 
-(4)\quad 多核 GPU 運算的發展 \\ 最後，利用大規模通用硬體(例如GPU)的可能性，提供深度學習方法所需的計算能力、專用的程式庫(例如:cuDNN)以及大量學術著作(例如Andrew Lavin、maxdnn:使用maxwell gpus進行深度學習的高效卷積內核、2015年1月以及Andrew Lavin和Scott Gray用於卷積神經網路的快速算法、2016年IEEE電腦視覺和圖形識別(CVPR)，第4013-4021頁，2016), 產生了一系列高性能可重用的深度學習內核，這些內核使諸如Caffe,Torch7, or TensorFlow 的框架能夠利用這些硬體加速器。\\
+\item 多核 GPU 運算的發展 \\[6pt]
+最後，利用大規模通用硬體(例如GPU)的可能性，提供深度學習方法所需的計算能力、專用的程式庫(例如:cuDNN)以及大量學術著作(例如Andrew Lavin、maxdnn:使用maxwell gpus進行深度學習的高效卷積內核、2015年1月以及Andrew Lavin和Scott Gray用於卷積神經網路的快速算法、2016年IEEE電腦視覺和圖形識別(CVPR)，第4013-4021頁，2016), 產生了一系列高性能可重用的深度學習內核，這些內核使諸如Caffe,Torch7, or TensorFlow 的框架能夠利用這些硬體加速器。\\
+\end{enumerate}
+
 \newpage
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
-強化學習是通過agent與已知或未知的環境持互動，不斷適應與學習，得到的回饋可能是正面，也就是reward，如果得到負面，那就是punishments。考慮到agent與環境互動，我們就能決定要執行哪個動作。簡而言之，強化學習是建立在reward與punishments上。\\[6pt]
+強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\[6pt]
 %====================須修改====================%
+強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。
 與其他機器學習不同，因為我們不需要在意訓練數據集。互動不是發生在數據上，而是在環境下發生，通過互動描繪出真實的場景。由於強化學習是建立在環境的，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習的目的是達到目標。強化學習的獎勵是來自環境。
 %=----------Faces of Reinforcement Learning---------------=%
+\begin{itemize}
 \item 強化學習涵蓋範圍\\
+
 %======需文字補充========%
 \begin{figure}[hbt!]
 \begin{center}
@@ -311,35 +317,22 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \caption{Venn diagram; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
-%=--------The Flow of Reinforcement Learning------------=%
+%=--------The Flow of Reinforcement Learning------------=%.
+
 \item  強化學習的流程\\
+
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=10cm]{The_Flow_of_Reinforcement_Learning}
 \caption{RL structur}
 \end{center}
 \end{figure}
-\begin{large}
 \textbf{需要考慮的重點:}
-\end{large}\\
-\begin{itemize}
-\item 強化學習的週期是互相聯繫的 
-\end{itemize}
-
-\begin{itemize}
+\item 強化學習的週期是互相聯繫的
 \item 分明的溝通是在考慮獎勵的情況下發生的
-\end{itemize}
-\begin{itemize}
-\item  agent與環境之間存在著獨特的溝通。
- 
-\end{itemize}
-\begin{itemize}
+\item agent與環境之間存在著獨特的溝通。
 \item 目標或機器人從一狀態移動到另一狀態。
- 
-\end{itemize}
-\begin{itemize}
 \item 從一狀態轉移到另一種狀態採取動作。
-\end{itemize}
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -359,17 +352,13 @@ agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。\\
 %\end{figure}
 
 %=----Different Terms in Reinforcement Learning----------=%
+
 \item 強化學習中各種術語\\
 在此情況下，有兩個很重要的常數-$\gamma$、$\lambda$\\[10pt]
 $\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值， 
 $\gamma$ 會從你將在每個狀態獲得的獎勵類型中，告訴你訊息。$\gamma$又叫衰減因子，他決定了我們未來可獲得的獎勵類型:\\
-\begin{itemize}
 \item  $\gamma$值為0表示獎勵僅與當前狀態有關係。
-\end{itemize}
-
-\begin{itemize}
 \item$\gamma$值為1時，代表獎勵是長期的。
-\end{itemize}
 當我們處理時間問題時，通常使用$\lambda$，這是涉及更多的連續狀態的預測，
 每種狀態下的$\lambda$值增加，代表我們的算法學習速度很快，適用強化學習技術時，更快的算法會產生更好的結果。\\
 %=----Interactions with Reinforcement Learning------------=%
@@ -386,21 +375,16 @@ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀
 強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法
 ，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
 %=----How Reward Works------------=%
+
 \item 獎勵如何運作\\
+
 獎勵是我們從一狀態過渡到另一狀態時所獲得的動力，它可以是分數，例如在遊戲中。我們訓練的次數越多，我們就變得越精準，且我們的回報越大。\\
 %=----Agents------------=%
 \item Agents\\
 在強化學習方面，agent是一個軟體程式，能做出明智的選擇，應能購感知到正在環境發生的事情，以下是agent基本步驟:\\
-\begin{itemize}
 \item 當agent可以感知環境時，它可以做出比以往更好的決定。
-\end{itemize}
-\begin{itemize}
 \item agent採取的決定就會產生行動。
-\end{itemize}
-\begin{itemize}
 \item agent執行的行動必須是最好最佳的。
-\end{itemize}
-
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{agent}
@@ -410,23 +394,13 @@ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀
 %=----Agents------------=%
 \item 強化學習的環境\\
 強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應其各種因素，並做出最佳決策，這些環境可以是2D世界或是網格，甚至是3D世界。\\
-\begin{large}
-\textbf{以下是環境的一些重要功能:}\end{large}\\
-\begin{itemize}
+\begin{large}textbf{以下是環境的一些重要功能:}\end{large}\\
 \item 具有確定性。
-\end{itemize}
-
-\begin{itemize}
 \item 可觀察性。
-\end{itemize}
-\begin{itemize}
-\item  是離散或是連續的狀態。
- 
-\end{itemize}
-\begin{itemize}
+\item 是離散或是連續的狀態。
 \item 單個agent或是多個agent。
 \end{itemize}
-\end{itemize}
+
 \newpage
 \section{深度強化學習}
 \subsection{Deep Reinforcement Learning}
