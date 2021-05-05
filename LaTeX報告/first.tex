@@ -152,11 +152,13 @@ Application of reinforcement
 
 \qquad 神經訊號傳遞分為前饋（feed-forward）和回饋（backpropagation）。前饋為傳遞經過啟動函數計算的數值。回饋則是修正權重和偏差（biases），以提高下次前饋計算的準確度。
 \subsection{啟動函數}
-\iffalse %整段註解(開頭)
+以下介紹幾種較為常見的啟動函數及其特性：
 \begin{itemize}
+%=----------Sigmoid      Function----------=%
 \item Sigmoid Function：\\
-\qquad 一種啟動函數，是類神經網路的關鍵部分之一 ，且可以微分，並可以讓類神經網路為非線性。\\
+輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、並具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
 $$\sigma(x)=\frac{1}{1+e^{-x}}$$ \\[6pt]
+\iffalse
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{sigmoid_function}
@@ -164,46 +166,21 @@ $$\sigma(x)=\frac{1}{1+e^{-x}}$$ \\[6pt]
 from: \href{https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e}{Toward Data Science}}
 \end{center}
 \end{figure}
+\fi
 %=----------SigmoidPrime Function----------=%
 \item SigmoidPrime Function：\\
-\qquad 這是從Sigmoid Function微分得來，可以減少梯度誤差，因此他是 loss function 的其中一種:\\[12pt]
+\qquad 這是從Sigmoid Function微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\[12pt]
 $$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$\\[3pt]
-
-以下為 SigmoidPrime的證明
-%$$-------------skip-------------$$
-Tip: find $f^{'}(x)$ if $f(x)=\frac{A}{B+Ce^{x}}$\\
-Answer:\\
-$$\frac{d}{dx}[\frac{1}{g(x)}]=\frac{1^{'}g(x)-1g^{'}(x)}{g(x)^2}=\frac{g^{'}(x)}{[g(x)]^2}$$\\
-if $g(x)$=constant\\
-$$\frac{d}{dx}[\frac{g(x)}{h(x)}]=\frac{g^{'}(x)h(x)-g(x)h^{'}(x)}{h(x)^2}= \frac{-kh^{'}(x)}{[h(x)]^2}$$\\
-$$f^{'}(x)=\frac{-A[\frac{d}{dx}(B+Ce^x)]}{(B+Ce^x)^2}=\frac{-A(0+Ce^x)}{(B+Ce^x)^2}=\frac{-ACe^x}{(B+Ce^x)^2}$$\\[6pt]
-$$-------------skip-------------$$\\[6pt]
-Hence:\\
-$$=-(1+e^{-x})^{-2}\frac{d}{dx}(1+e^{-x})=-(1+e^{-x})^{-2}[\frac{d}{dx}(1)+\frac{d}{dx}(e^{-x})]$$\\
-$$=-(1+e^{-x})^{-2}[0+\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[e^{-x}\frac{d}{dx}(-x)]$$\\
-$$-(1+e^{-x})^{-2}[e^{-x}(-1)]=-(1+e^{-x})^{-2}(-e^{-x})=\frac{e^{-x}}{(1+e^{-x})^2}=\frac{1(e^{-x})}{(1+e^{-x})(1+e^{-x})}$$\\
-$$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}{1+e^{-x}}=\frac{1}{1+e^{-x}}(\frac{1+e^{-x}}{1+e^{-x}}-\frac{1}{1+e^{-x}})$$\\[6pt]
-
-
-\begin{figure}[hbt!]
-\begin{center}
-\includegraphics[scale=0.80]{sigmoidprime}
-\caption{SigmoidPrime; from: \href{https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e}{Toward Data Science}}
-\end{center}
-\end{figure}
+%=----------Softmax Function----------=%
+\item Softmax：\\
+\qquad Softmax會計算每個事件分布的機率，適用多項目分類、其機率總合為1。以此專案為例，假設擊錘移動有向上移動、向下移動及不移動這三個決策選項，則這三個決策機率值總和為1。\\[12pt]
+$$S(x)=\frac{e^{x_i}}{\sum^k_{j=1}e^{x_i}}$$
 %=----------Relu Function----------=%
-\item Relu Function\\
-\qquad 這是類神經網路最普遍拿來使用的啟動函數，因為可以解決梯度消散的問題。
-\begin{Large}$$f(x)=max(0,x)$$\end{Large}
+\item ReLU Function：\\
+\qquad ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入值為正值，輸出則維持該輸入數值。ReLU計算方式簡單、收斂速度快，這是類神經網路最普遍拿來使用的啟動函數，因為可以解決梯度消散的問題，但須注意：起始值若設定到不易被激活範圍或是權重過度所導致權重梯度為0就會造成神經元難以被激活。
+$$f(x)=max(0,x)$$
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$\\
-
-%\begin{figure}[hbt!]
-%\begin{center}
-%\includegraphics[height=4.5cm]{relu}\\
-%\caption{Relu; from : \href{https://www.kaggle.com/dansbecker/rectified-linear-units-relu-in-deep-learning}{\underline{kaggle}} }
-%\end{center} 
-%\end{figure}
 %=----------Adam Function----------=%
 \item Adam Function\\
 \qquad  結合了 Adagrad 和 RMSprop的優勢.有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程: \\[6pt]
@@ -231,11 +208,45 @@ $\hat{y_i}$ : 預測值\\
 \begin{Large}
 $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$
 \end{Large}\\[6pt]
+\end{itemize}
+
+\iffalse %整段註解(開頭)
+% 以下為 SigmoidPrime的證明
+%$$-------------skip-------------$$
+Tip: find $f^{'}(x)$ if $f(x)=\frac{A}{B+Ce^{x}}$\\
+Answer:\\
+$$\frac{d}{dx}[\frac{1}{g(x)}]=\frac{1^{'}g(x)-1g^{'}(x)}{g(x)^2}=\frac{g^{'}(x)}{[g(x)]^2}$$\\
+if $g(x)$=constant\\
+$$\frac{d}{dx}[\frac{g(x)}{h(x)}]=\frac{g^{'}(x)h(x)-g(x)h^{'}(x)}{h(x)^2}= \frac{-kh^{'}(x)}{[h(x)]^2}$$\\
+$$f^{'}(x)=\frac{-A[\frac{d}{dx}(B+Ce^x)]}{(B+Ce^x)^2}=\frac{-A(0+Ce^x)}{(B+Ce^x)^2}=\frac{-ACe^x}{(B+Ce^x)^2}$$\\[6pt]
+$$-------------skip-------------$$\\[6pt]
+Hence:\\
+$$=-(1+e^{-x})^{-2}\frac{d}{dx}(1+e^{-x})=-(1+e^{-x})^{-2}[\frac{d}{dx}(1)+\frac{d}{dx}(e^{-x})]$$\\
+$$=-(1+e^{-x})^{-2}[0+\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[e^{-x}\frac{d}{dx}(-x)]$$\\
+$$-(1+e^{-x})^{-2}[e^{-x}(-1)]=-(1+e^{-x})^{-2}(-e^{-x})=\frac{e^{-x}}{(1+e^{-x})^2}=\frac{1(e^{-x})}{(1+e^{-x})(1+e^{-x})}$$\\
+$$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}{1+e^{-x}}=\frac{1}{1+e^{-x}}(\frac{1+e^{-x}}{1+e^{-x}}-\frac{1}{1+e^{-x}})$$\\[6pt]
+
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[scale=0.80]{sigmoidprime}
+\caption{SigmoidPrime; from: \href{https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e}{Toward Data Science}}
+\end{center}
+\end{figure}
+
+
+%\begin{figure}[hbt!]
+%\begin{center}
+%\includegraphics[height=4.5cm]{relu}\\
+%\caption{Relu; from : \href{https://www.kaggle.com/dansbecker/rectified-linear-units-relu-in-deep-learning}{\underline{kaggle}} }
+%\end{center} 
+%\end{figure}
+
 \newpage
 \end{itemize}
 \fi %整段註解(結尾)
 \subsection{優化器}
-為了讓AI學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：
+\qquad 為了讓機器學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。以下將介紹幾種優化的方法：
 \begin{itemize}
 \item Gradient Descent\\[6pt]
 利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。\\

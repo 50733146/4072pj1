@@ -8,29 +8,29 @@
 \contentsline {chapter}{\numberline {2}機器學習的訓練方法}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}類神經網絡}{2}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}啟動函數}{2}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}優化器}{2}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}深度學習}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}強化學習}{5}{section.2.3}%
-\contentsline {section}{\numberline {2.4}深度強化學習}{9}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Deep Reinforcement Learning}{9}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Supervised Learning}{9}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}對數導數技巧}{10}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Score Functions}{10}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Score Function Estimators}{10}{subsection.2.4.5}%
-\contentsline {section}{\numberline {2.5}比較個方法的特色}{13}{section.2.5}%
-\contentsline {chapter}{\numberline {3}馬可夫決策}{14}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Markov Chain}{14}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Markov Reward Process}{14}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Markov Decision Process}{14}{section.3.3}%
-\contentsline {chapter}{\numberline {4}訓練環境}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}openAI Gym}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Pong}{15}{section.4.2}%
-\contentsline {section}{\numberline {4.3}為什麼選擇score function 算法}{15}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Pong from pixels}{15}{section.4.4}%
-\contentsline {chapter}{\numberline {5}模擬環境}{16}{chapter.5}%
-\contentsline {chapter}{\numberline {6}伺服器}{17}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Oracle VM VirtualBox 介紹}{17}{section.6.1}%
-\contentsline {chapter}{\numberline {7}深度強化學習的訓練與控制}{18}{chapter.7}%
-\contentsline {chapter}{\numberline {8}問題與討論}{19}{chapter.8}%
-\contentsline {chapter}{參考文獻 }{20}{chapter.8}%
+\contentsline {subsection}{\numberline {2.1.2}優化器}{4}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}深度學習}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}強化學習}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}深度強化學習}{11}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Deep Reinforcement Learning}{11}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Supervised Learning}{11}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}對數導數技巧}{12}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Score Functions}{12}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Score Function Estimators}{12}{subsection.2.4.5}%
+\contentsline {section}{\numberline {2.5}比較個方法的特色}{15}{section.2.5}%
+\contentsline {chapter}{\numberline {3}馬可夫決策}{16}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Markov Chain}{16}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Markov Reward Process}{16}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Markov Decision Process}{16}{section.3.3}%
+\contentsline {chapter}{\numberline {4}訓練環境}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}openAI Gym}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Pong}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.3}為什麼選擇score function 算法}{17}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Pong from pixels}{17}{section.4.4}%
+\contentsline {chapter}{\numberline {5}模擬環境}{18}{chapter.5}%
+\contentsline {chapter}{\numberline {6}伺服器}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Oracle VM VirtualBox 介紹}{19}{section.6.1}%
+\contentsline {chapter}{\numberline {7}深度強化學習的訓練與控制}{20}{chapter.7}%
+\contentsline {chapter}{\numberline {8}問題與討論}{21}{chapter.8}%
+\contentsline {chapter}{參考文獻 }{22}{chapter.8}%
 \contentsfinish 
