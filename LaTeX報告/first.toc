@@ -39,5 +39,5 @@
 \contentsline {section}{\numberline {6.1}Oracle VM VirtualBox 介紹}{20}{section.6.1}%
 \contentsline {chapter}{\numberline {7}深度強化學習的訓練與控制}{21}{chapter.7}%
 \contentsline {chapter}{\numberline {8}問題與討論}{22}{chapter.8}%
-\contentsline {chapter}{參考文獻 }{23}{chapter.8}%
+\contentsline {chapter}{參考文獻 }{23}{lstnumber.8.1.6}%
 \contentsfinish 
