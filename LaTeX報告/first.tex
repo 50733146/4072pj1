@@ -378,7 +378,52 @@ Agents：\\[6pt]
 %=----Agents------------=%
 強化學習的環境\\
 \qquad 強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應其各種因素，並做出最佳決策，這些環境可以是2D世界或是網格，甚至是3D世界。強化學習的環境具有確定性、可觀察性，可以是離散或是連續的狀態、單個agent或是多個agent\\
-\newpage
+\subsection{馬可夫決策}
+\begin{itemize}
+\item Markov Chain\\
+當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。
+\item Markov Reward Process\\
+action 到指定狀態會獲得獎勵。
+$$R(s_t=s) = \mathbb{E}[r_t|s_t = s]$$
+$$\gamma \in [0, 1]$$
+\begin{itemize}
+\item Horizon：\\
+在無限的狀態以有限的狀態表示。\\
+\item Return：\\
+越早做出正確決策獎勵越高。\\
+$$G_t = R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\gamma^3 R_{t+4}+...+\gamma^{T-t-1} R_{T}$$
+\item State value function(決策價值)：\\
+$$V_t(S) = \mathbb{E}[G_t|s_t = s]$$
+$$P(s_{s+1}=s'|s_t=s,a_t=a)$$
+\end{itemize}
+\item Discount Factor ($\gamma$)\\
+獎勵衰減有幾種作法：第一種，越早做出有獎勵的決策，獎勵越高：第二種，做出有價值的決策$\gamma = 1$，不分決策順序先後；第三種，無用的決策$C = 0$，不會得到獎勵。\\
+以Bellman equation的方式描述互動關係狀態：\\
+$$V(s) = R(s)+\gamma\sum_{s'\in S}P(s'|s)V(s')$$
+$$R(s):立即獎勵$$
+$$\gamma\sum_{s'\in S}P(s'|s)V(s')：未來獎勵衰減總和$$
+Anaytic solution(分析性解法)，MRP的分析性解法：\\
+$$V = (1-\gamma P)^{-1}R$$
+Bellman equation及Anaytic solution的方式只適合小的MRP(個數比較少的)，矩陣複雜度為$O(N^3)$，N為狀態個數。若要計算大型的MRP會使用疊代法：動態規劃(Dynamic programming)、Temporal-Difference learning和Mote-Carlo evaluation以評估採樣的方式：
+$$g = \sum_{i=t}^{H-1}\gamma^{1-t}r_i$$
+$$G_t \leftarrow G_t+g,  i \leftarrow i+1$$
+$$V_t(s) \leftarrow \frac{G_t}{N}$$
+\item Markov Decision Process\\
+\quad 在MRP中加入決策(decision)和動作(action)\\
+\begin{itemize}
+\item S：state 狀態
+\item A：action 動作
+\item P：狀態轉換\\[6pt]
+$P(s_{s+1}=s'|s_t=s,a_t=a)$
+\item R：獎勵，取決於當前狀態和動作會得到相對應的講勵
+$$R(s_t=s, a_t=a) = \mathbb{E}[r_t|s_t, a_t=a]$$
+\item D：折扣因子(discount factor)
+$$\gamma \in [0,1]$$
+MDP 是 tuple的格式：(S, A, P, R, $\gamma$)
+\end{itemize}
+
+
+\end{itemize}
 \section{深度強化學習}
 \subsection{Deep Reinforcement Learning}
 \begin{figure}[hbt!]
@@ -411,9 +456,9 @@ Agents：\\[6pt]
 $$\nabla_\theta logp(x:\theta)=\frac{\nabla_\theta p(x:\theta)}{p(x:\theta)}$$\\
 $p(x:\theta)$是likelihood ; function參數$\theta$的函數，它提供隨機變量x的概率。在此特例中，$\nabla_\theta logp(x:\theta)$被稱為Score Function，而上述方程式右邊為score ratio(得分比)。\\[6pt]
 
-\begin{large}
-{score function具有許多有用的屬性:}
-\end{large}
+
+score function具有許多有用的屬性:\\
+
 \begin{itemize}
 \item 最大概似估計的中央計算。最大概似是機器學習中使用的學習原理之一，用於廣義線性回歸、深度學習、kernel machines、降維和張量分解等，而score出現在這些所有問題中。
 \end{itemize}
@@ -461,40 +506,7 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 \newpage
 \section{比較個方法的特色}
 \newpage
-\chapter{馬可夫決策}
 
-\section{Markov Chain}
-\quad 當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。
-\section{Markov Reward Process}
-\quad action 到指定狀態會獲得獎勵。
-$$R(s_t=s) = \mathbb{E}[r_t|s_t = s]$$
-$$\gamma \in [0, 1]$$
-\begin{itemize}
-\item Horizon：\\
-在無限的狀態以有限的狀態表示\\
-\item Return：\\
-越早做出正確決策獎勵越高\\
-$$G_t = R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\gamma^3 R_{t+4}+...+\gamma^{T-t-1} R_{T}$$
-
-\item State value function：\\
-決策價值\\
-$$V_t(S) = \mathbb{E}[G_t|s_t = s]$$
-\begin{center}
-\hspace{-4em}\makebox[\width][s]{$P(s_{s+1}=s'|s_t=s,a_t=a)$}
-\end{center}
-\end{itemize}
-
-\section{Markov Decision Process}
-\quad 在MRP中加入決策(decision)和動作(action)\\
-\begin{itemize}
-\item S：state 狀態
-\item A：action 動作
-\item P：狀態轉換\\[6pt]
-\begin{center}
-\hspace{-4em}\makebox[\width][s]{$P(s_{s+1}=s'|s_t=s,a_t=a)$}
-\end{center}
-
-\end{itemize}
 \newpage
 \chapter{訓練環境}
 \section{openAI Gym}
@@ -586,14 +598,19 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
 \item gateway： 即為該電腦之閘道器。
 \item nameservers： 該電腦之CNS服務器。
 \end{enumerate}
-
+\section{Web server}
+\qquad Nginx 是提供 web 相關服務的伺服器 ( Web server )，除了是高效能的 HTTP ( HTTPS ) 服務器外，還可處理靜態資源 , 負載平衡 , 代理等工作。代理工作為根據不同域名轉發到 Application Server 的不同 port 上去處理 ，其中又分正向和反向，正向代理為 clinet 端發送 request 經由 porxy server 再到目標網站，反向則反之。正向代理操作中 server 只知道 proxy server  給他 request , 不知道 client 是誰，而相同地反向代理則是 client 只知道 proxy server 給他 responses , 不知道 server 是誰。正向代理隐藏真實 Client，反向代理隱藏真實 Server。另外在高流量的狀況下，需要多個 Application Server 來分擔流量，負載平衡就是負責 request 的分發，決定 request 要被分到哪一個 Application Server 處理 。而關於處理靜態資源 ，Nginx 與 Apache 等 Web Server 處理靜態資源的能力是遠遠高於 Application Server 的。\\
+%======圖片 clientProxy======%
+\qquad WSGI ( Python Web Server GateWay Interface ) 為一種用在 Python 語言上的規範，用來規範 Web Server 與 Web Application 之間如何溝通。而 uWSGI 同為實現了 WSGI ,uwsgi , http 協議等的 Web server , 通常用於接收前端伺服器轉發的動態請求並轉發給 Web Application 。前者可以使用 Nginx 提供的 https 協定，且同上表述中 Nginx 的靜態資源處理能力較佳所以也能將靜態資源轉給其處理。\\
 \newpage
 \chapter{深度強化學習的訓練與模擬控制結果}
-程式訓練流程：\\
+\qquad 在python環境下，結合numpy和gym的模擬環境編寫程式，選擇numpy作為運算工具是因為它比Tensorflow之類的程式庫更具彈性，編寫公式較為方便，而gym的設計讓我們能方便的控制右邊的擊錘板。首先擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，讓agent判斷是要往上還是下，經過Score Function計算出的對數機率當作輸入，第二透過前饋：計算W1權重與W2權重的互動結果及擊錘移動的機率，W1權重是計算畫面差異下環境的狀態，W2權重則是經過啟動函數(activation function)得出擊錘移動向下或上的機率。第三得到機率後，agent會透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，也就是採取機率較大的方向移動。第四決定行動後會產生獎懲，獎懲機制是，如果agent碰到球並越過敵方就會得到好的獎勵，沒有打到球的agent會得到懲罰，最後產生的獎懲會送往反饋機制，取樣採取行動的機率，讓獎勵變為1，懲罰變為0，返回原輸入，達到學習效果，隨著agent經驗的增加，會越打越聰明，贏的機率就越高，由此訓練出聰明的AI，經過數萬次的訓練，計算discount reward及獎勵的加總，得出的數值會越來越大，我們小組的測試，往後不管狀況是如何，基本上都會贏過敵方拿下分數。\\[12pt]
 
+程式訓練流程：\\
 \qquad 擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
 
 \qquad 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、\\
+
 \newpage
 \chapter{問題與討論}
 Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
