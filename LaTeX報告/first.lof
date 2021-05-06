@@ -1,5 +1,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+<<<<<<< HEAD
+\contentsline {figure}{\numberline {2.1}{\ignorespaces regression line\relax }}{6}{figure.caption.3}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Venn diagram; \relax }}{13}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces RL structur\relax }}{13}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces The entire interaction process; \relax }}{14}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces agent\relax }}{15}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Our network is a 2-layer fully-connected net. \relax }}{16}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces supervising learning \relax }}{16}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces gradient change\relax }}{19}{figure.caption.10}%
+\addvspace {10\p@ }
+=======
 \contentsline {figure}{\numberline {2.1}{\ignorespaces regression line\relax }}{4}{figure.caption.3}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Venn diagram; \relax }}{7}{figure.caption.4}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces RL structur\relax }}{8}{figure.caption.5}%
@@ -8,6 +19,7 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Our network is a 2-layer fully-connected net. \relax }}{11}{figure.caption.8}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces supervising learning \relax }}{11}{figure.caption.9}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces gradient change\relax }}{13}{figure.caption.10}%
+>>>>>>> 7b27b15c8db347e4b6f8baeb50aafebf8c21b536
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

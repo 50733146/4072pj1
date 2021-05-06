@@ -8,39 +8,47 @@
 \usepackage{type1cm} %調整字體絕對大小
 \usepackage{textpos} %設定文字絕對位置
 \usepackage[top=2.5truecm,bottom=2.5truecm,
-left=2.5truecm,right=2.5truecm]{geometry}
+left=3truecm,right=2.5truecm]{geometry}
 \usepackage{titlesec} %目錄標題設定模組
 \usepackage{titletoc} %目錄內容設定模組
 \usepackage{CJK} %中文模組
 \usepackage{CJKnumb} %中文數字模組
 \usepackage{wallpaper} %浮水印
 \usepackage{listings} %能加入程式碼
+\lstset{language=python}
 \usepackage{hyperref} %引用url連結
 \usepackage{graphicx} %插入圖片
 \usepackage{fontawesome5} %引用icon
-%\linespread{1.5} %設定行距
+\usepackage{setspace}
 \lstset{language=Python, %設定語言
 		basicstyle=\footnotesize, 
 		frame=lines,
 		caption={Python code}, %設定capion
 		label={lst:example} %設定label
 }
-
 \graphicspath{{./圖片/}} %圖片預設讀取路徑
-\renewcommand{\figurename}{圖.} %設定圖片標示名稱
-\renewcommand{\lstlistingname}{程式.} %設定程式標示名稱
+\usepackage{indentfirst} %設定開頭縮排模組
+\captionsetup[figure]{name=圖} %更改圖片標題名稱
+\hoffset=-5mm %調整左右邊界
+\voffset=-10mm %調整上下邊界
+\setlength{\parindent}{2em}%設定首行行距縮排
  %=------------------更改標題內容----------------------=%
-\titleformat{\chapter}[hang]{\sectionef\fontsize{20pt}{2.5pt}\bfseries}{\Large 第\CJKnumber{\thechapter}章}{1em}{}[]
-\titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{1em}{}[]
+\titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
+\titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{0.5em}{}[]
 \titleformat{\subsection}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesubsection}}{1em}{}[]
 %=------------------更改目錄內容-----------------------=%
-\titlecontents{chapter}[0.25em]{}{\sectionef\fontsize{18pt}{2.5pt}\bfseries\makebox[3.5em][l]
+\titlecontents{chapter}[11mm]{}{\sectionef\fontsize{18pt}{2.5pt}\bfseries\makebox[3.5em][l]
 {第\CJKnumber{\thecontentslabel}章}}{}{\titlerule*[0.7pc]{.}\contentspage}
 \titlecontents{section}[18mm]{}{\sectionef\LARGE\makebox[1.5em][l]
 {\thecontentslabel}}{}{\titlerule*[0.7pc]{.}\contentspage}
 \titlecontents{subsection}[4em]{}{\sectionef\Large\makebox[2em][l]{{\thecontentslabel}}}{}{\titlerule*[0.7pc]{.}\contentspage}
+%=----------------------章節間距----------------------=%
+\titlespacing*{\chapter} {0pt}{0pt}{18pt}
+\titlespacing*{\section} {0pt}{12pt}{6pt}
+\titlespacing*{\subsection} {0pt}{6pt}{6pt}
 %=----------------------標題-------------------------=%             
 \begin{document} %文件
+\sectionef %設定英文字體啟用
 \begin{titlepage}%開頭
 \begin{center}   %標題  
 \makebox[1.5\width][s]
@@ -51,15 +59,15 @@ left=2.5truecm,right=2.5truecm]{geometry}
 {\fontsize{24pt}{2.5pt}專題製作報告}\\[18pt]
 %設定文字盒子 [方框寬度的1.5倍寬][對其方式為文字平均分分布於方框中]\\距離下方18pt
 \vspace{3em} %下移
-\fontsize{30pt}{1pt}\textbf{強化學習在機電系統中之應用}\\
-
+\fontsize{30pt}{1pt}\textbf{強化學習在機電系統設計與控制\\
+\vspace{1em}中之應用}\\
 \vspace{4em}
 \sectionef\fontsize{30pt}{1em}\textbf
 {
 \vspace{0.5em}
 Application of reinforcement
  \vspace{0.5em} 
- learning in mechatronic systems}
+ learning in design and control of mechatronic systems}
  \vspace{2em}
 %=---------------------參與人員-----------------------=%             
 \end{center}
@@ -90,15 +98,16 @@ Application of reinforcement
 \end{titlepage}
 \newpage
 %=------------------------摘要-----------------------=%
-\pagenumbering{roman}
-\clearpage
+\renewcommand{\baselinestretch}{1.5} %設定行距
+\pagenumbering{roman} %設定頁數為羅馬數字
+\clearpage  %設定頁數開始編譯
+\sectionef
 \addcontentsline{toc}{chapter}{摘\quad 要} %將摘要加入目錄
 \begin{center}
 \LARGE\textbf{摘要}\\
 \begin{flushleft}
 \fontsize{14pt}{2.5pt}\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，但不能以實體一直測試不同方法，成本與時間不允許，便可以利用許多感測器觀測數值，以類神經網路運算，在虛擬環境架設結構，遠端控制、更改數值。\\
-\vspace{1em}
-\sectionef\fontsize{14pt}{2.5pt}\hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的 Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。\\
+\hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的 \sectionef Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。
 \end{flushleft}
 \begin{center}
 \fontsize{14pt}{2.5pt}關鍵字:\sectionef Policy gradient、虛擬環境架設結構、Reinforcement Learning
@@ -108,7 +117,13 @@ Application of reinforcement
 \addcontentsline{toc}{chapter}{誌\quad 謝}
 \centerline\LARGE\textbf{誌謝}\\
 \begin{flushleft}
-\fontsize{14pt}{2.5pt}\hspace{12pt}在此鄭重感謝製作以及協助本專題完成的所有人員，首先向大四學長致謝，他們不辭辛勞解決我們所提問的任何問題，甚至從來沒有任何不耐煩，總是貼心的為我們找出最佳解答。再來是我們的指導教授嚴家銘教授，他給了我們全方位的支援，每次開會時也會向我們提出建議以及未來走向，同時也給了我們能自由摸索的空間及時間，最後是由本專題組員同心協力才得以完成本題目，特此感謝。
+\fontsize{14pt}{2.5pt}\hspace{12pt}在此鄭重感謝製作以及協助本專題完成的所有人員，首先向大
+四學長致謝，他們不辭辛勞解決我們的提問，甚至從來
+沒有不耐煩，總是貼心為我們找出最佳解答。再來是我們的
+指導教授嚴家銘教授，他給了我們全方位的支援，開會時也時不時
+向我們提出建議以及未來走向，同時也給了我們能自由摸索的空間
+及時間，最後是由本專題組員同心協力才得以完成本題目，特此感
+謝。
 \end{flushleft}
 \newpage
 %=------------------------目錄----------------------=%
@@ -118,12 +133,13 @@ Application of reinforcement
 %=------------------圖表目錄產生----------------------=%
 \renewcommand{\listfigurename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{圖\quad 表\quad 目\quad 錄 }}}
 \listoffigures
+%\renewcommand{\numberline}[1]{{\loflabel~#1\hspace*{1em}}}
+%\newcommand{\loflabel}{圖}
 \newpage
 \end{center}
 %=-------------------------內容----------------------=%
-
-
 \chapter{前言}
+\renewcommand{\baselinestretch}{10.0} %設定行距
 \pagenumbering{arabic} %設定頁號阿拉伯數字
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
@@ -148,6 +164,7 @@ Application of reinforcement
 \end{enumerate}
 
 \chapter{機器學習的訓練方法}
+\renewcommand{\baselinestretch}{1.0} %設定行距
 \section{類神經網絡}
 \qquad 類神經網路的概念來源是觀察人類的中樞神經系統而啟發的，類神經網路主要由多個節點組成，每個節點稱為神經元（neurons），神經元與神經元連結而形成的網路稱為神經網路。神經元主要又分成三層：輸入層（input layer）、隱藏層（hidden layer）和輸出層（output layer）。神經元會接收上一層的訊號，並經過啟動函數（activation function）計算並輸出至下一層神經元。神經網路輸入層的神經元負責接收訊號，透過隱藏層來運算，再傳遞到輸出層執行動作。由於每個神經元經過啟動函數的非線性計算，所以神經元傳出的數值也是非線性。神經元與神經元間連線在生物學稱為突觸（Synapse），在數學模型裡每個突觸都有權重（weights）。在既定框架下，調配權重值和啟動函數會使結果更接近預期。神經網路的架構指標為以下幾項：階層數、每層神經元個數、神經元連接方式、啟動函數的類型等。\\[12pt]
 
@@ -506,38 +523,62 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 \newpage
 \section{比較個方法的特色}
 \newpage
+<<<<<<< HEAD
+\chapter{馬可夫決策}
+\renewcommand{\baselinestretch}{1.0} %設定行距
+\section{Markov Chain}
+\quad 當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。
+\section{Markov Reward Process}
+\quad action 到指定狀態會獲得獎勵。
+$$R(s_t=s) = \mathbb{E}[r_t|s_t = s]$$
+$$\gamma \in [0, 1]$$
+\begin{itemize}
+\item Horizon：\\
+在無限的狀態以有限的狀態表示\\
+\item Return：\\
+越早做出正確決策獎勵越高\\
+$$G_t = R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\gamma^3 R_{t+4}+...+\gamma^{T-t-1} R_{T}$$
+
+\item State value function：\\
+決策價值\\
+$$V_t(S) = \mathbb{E}[G_t|s_t = s]$$
+\begin{center}
+\hspace{-4em}\makebox[\width][s]{$P(s_{s+1}=s'|s_t=s,a_t=a)$}
+\end{center}
+\end{itemize}
+=======
+>>>>>>> 7b27b15c8db347e4b6f8baeb50aafebf8c21b536
 
 \newpage
 \chapter{訓練環境}
 \section{openAI Gym}
-\qquad Gym 是用於開發和比較強化學習算法的工具包，他不對agent的結構做任何假設，並且與任何數據計算庫兼容，而可以用來制定強化學習的算法。這個環境具有共享的介面，使我們能用來編寫常規算法，也就能教導agents如何步行到玩遊戲。\\[6pt]
+ Gym 是用於開發和比較強化學習算法的工具包，他不對agent的結構做任何假設，並且與任何數據計算庫兼容，而可以用來制定強化學習的算法。這個環境具有共享的介面，使我們能用來編寫常規算法，也就能教導agents如何步行到玩遊戲。\\[6pt]
 
 
 \section{Pong}
-\qquad 取自 1977年發行的一款家用遊戲機ATARI 2600中的遊戲，內建於Gym，這是一個橫向的乒乓遊戲，左方是遊玩者，右邊是馬可夫決策的特例，每個邊緣都會給予reward(figue1)，目標就是計算再任意階段動作最佳路徑，已獲得rewardd最大值。
+ 取自 1977年發行的一款家用遊戲機ATARI 2600中的遊戲，內建於Gym，這是一個橫向的乒乓遊戲，左方是遊玩者，右邊是馬可夫決策的特例，每個邊緣都會給予reward(figue1)，目標就是計算再任意階段動作最佳路徑，已獲得rewardd最大值。
 \section{為什麼選擇score function 算法}
-\qquad 多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調優後顯示Policy Gradients比Q 首選PG，因為它是端到端的：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過深度神經網絡使用ATARI遊戲（Pong），並在整個過程結合numpy，作為訓練工具。
+ 多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調優後顯示Policy Gradients比Q 首選PG，因為它是端到端的：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過深度神經網絡使用ATARI遊戲（Pong），並在整個過程結合numpy，作為訓練工具。
 
 
 \section{Pong from pixels}
-\qquad 左：乒乓球遊戲。右：Pong是Markov決策過程（MDP）的特例：圖，其中每個節點都是特定的遊戲狀態，每個邊緣都是可能的（通常是概率性的)改變，每條邊界都給與獎勵，目標是計算在任何狀態下發揮作用的最佳方式，以最大限度地提高獎勵。\\ 
+ 左：乒乓球遊戲。右：Pong是Markov決策過程（MDP）的特例：圖，其中每個節點都是特定的遊戲狀態，每個邊緣都是可能的（通常是概率性的)改變，每條邊界都給與獎勵，目標是計算在任何狀態下發揮作用的最佳方式，以最大限度地提高獎勵。\\ 
 Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本中，我們會控制右邊邊的操縱板(左邊由不錯的AI控制)。在較低級別上，遊戲的運行方式如下：我們收到一個圖像幀（一個210x160x3 byte數組（從0到255的整數給出像素值）)，然後決定是否要向上或向下移動操縱板（即二進制選擇）。每次選擇之後，遊戲模擬器就會執行動作並給予我們獎勵:如果球超過了對手，則為+1獎勵；如果我們錯過球，則為-1獎勵；否則為0。當然，我們的目標是移動球拍，以便獲得很多獎勵。\\
 
 \newpage
 \chapter{模擬環境}
+%\renewcommand{\baselinestretch}{10.0} %設定行距
 \section{模擬模型}
-\qquad 在模擬的模型上,延用了學長設計的冰球機,並進行了部分的設計變更,將原本的人機對打更改為機器對打,且因為搭配神經網路的訓練,所以將兩邊的擊球器都僅保留X軸向(左右)移動,而冰球則是使用原本設計。多虧了學長們所設計的冰球機模型,讓我們在運作上有問題時可以直接發問,設計變更的地方也可以快速完成。\\
+ 在模擬的模型上，延用了學長設計的冰球機，並進行了部分的設計變更，將原本的人機對打更改為機器對打，且因為搭配深度強化學習的訓練，所以將兩邊的擊球器都僅保留X軸向(左右)移動，而冰球則是使用原本設計。多虧了學長們所設計的冰球機模型，讓我們在運作上有問題時可以直接發問，設計變更的地方也可以快速完成。\\
 \section{CoppeliaSim模擬}
-\qquad CoppeliaSim是具有集成開發環境的機器人模擬器,基於分佈式控制體系架構,可以通過嵌入式腳本，插件，ROS或BlueZero節點，RemoteAPI客戶端或自定義解決方案進行模型控制。\\
+ CoppeliaSim是具有集成開發環境的機器人模擬器,基於分佈式控制體系架構,可以通過嵌入式腳本，插件，ROS或BlueZero節點，RemoteAPI客戶端或自定義解決方案進行模型控制。\\
 \subsection{使用原因}
-\qquad 本專題之最終目標是希望可以將訓練完成的AI可以在虛擬環境中進行模擬測試,通過虛擬環境中的模擬後,可以更直接地看到神經網路訓練的狀況,且因為在虛擬環境中不會有金費的支出,所以可以不斷的重複模擬直到模擬達到最佳的狀態,基於以上原因,所以使用了CoppeliaSim協助開發。\\
+ 本專題之最終目標是希望可以在虛擬環境中進行深度強化學習來訓練機器對打，通過虛擬環境中的模擬後，可以更直接地看到深度強化學習訓練的狀況，且因為在虛擬環境中不會有金費的支出，所以可以不斷的重複模擬直到模擬達到最佳的狀態，除此之外CoppeliaSim的虛擬環境更接近真實環境，基於以上原因，所以使用了CoppeliaSim協助開發。\\
 \subsection{模擬}
 \begin{enumerate}
 
 \item 功能說明\\
-
- 以下為簡易功能說明:\\
- 
+以下為簡易功能說明:
 \item 模擬執行\\
 
 \end{enumerate}
@@ -549,31 +590,31 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \qquad 透過CoppeliaSim中的Vision sensor接收場景影像並輸出後,便可以開始進行影像辨識的處裡\\
 \begin{enumerate}
 \item RGB與HSV的轉換\\
-
 RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模型中的點在圓柱坐標系中的表示法,HSV分別表示Hue(色相)、Saturation(飽和度)、Value(明度)\\
-
 \item 顏色過濾\\
-
 進行顏色過濾時,需要先定義出過濾顏色的上下限,在開始過濾後低於下限或高於上限的值會變成0(即黑色),而介於上下限範圍間的值會變成255(即白色)\\
-
 \item 雜訊去除\\
-
 為了避免環境因素干擾,使影像產生雜訊並影響了影像辨識度,所以在雜訊的去除也是很重要的,
 \end{enumerate}
 \newpage
 \chapter{伺服器}
-\qquad 因應在虛實整合需要用到虛擬環境去模擬的情況，我們使用 Ubuntu 當作我們的作業系統去建構虛擬環境，而在此之前要先安裝「虛擬機器工作站」— Oracle VM VirtualBox 。\\
+ 因應在虛實整合需要用到虛擬環境去模擬的情況，我們使用 Ubuntu 當作我們的作業系統去建構虛擬環境，而在此之前要先安裝「虛擬機器工作站」— Oracle VM VirtualBox 。\\
 \section{Ubuntu 環境配置}
-\qquad 在一開始會先使用套件管理系統 apt 指令去下載 Xorg , fluxbox , lxde 套件。Xorg 是 Ubuntu 操作系統的一個顯示服務器軟件包，它在被導入 Ubuntu 操作系統後會載入一系列的文件或軟件，這些都是跟顯示卡驅動，圖形環境庫相關的一些文件、軟件。Gnome ，kde，包括我們使用的 lxde 也需要 xorg 才能實現。而 Lxde  它的全名是 Lightweight X11 Desktop Environment ，是自由軟體桌面環境，其優點在於提供了輕量而快速的桌面環境，它比較重視實用、輕巧，除此之外它還可以在 Linux 平台執行。
-\qquad 之後需選擇 display manager ( 顯示管理器 )的種類 ，Display manager 是操作系統 Ubuntu 的組件，其中登錄的動作即為 Display manager 負責。該操作系統中常見的類型有 gdm ,gdm3 , lightdm , kdm ... 。各類型的 Display manager 功能其實大同小異，差別在於外觀、操作、格式、複雜度和使用者感受等，可依使用者需求變更 ( 有些較為輕量，適合比較低階的運行器 )**。**選擇其中一個後繼續，之後可以切換更動 。
-\qquad 再來是模組的導入，此處同樣用 apt 指令安裝 : Pip , uwsgi , Nginx  , 以及 Git 。如果要從 Ubuntu 系統上安裝軟體，其中一種方式是 " pip "。「pip 」是 " pip Installs Packages " 的縮寫，是一個用命令列作為基礎的套件管理系統，可以用它來安裝 python 的應用程式。而使用 Git 是因為在備份資料時， 可幫助使用者有效管理原始碼，而 github 就是由 Git 伺服器和網頁介面組成，用來當作放置原始碼的倉庫。
-\qquad 另外 Nginx 和 uwsgi 是為拿來配合把 python 程式應用在網路上實現，並且把想要的結果使其能在網路實時觀看操控結果之反饋。
+ 在一開始會先使用套件管理系統 apt 指令去下載 Xorg , fluxbox , lxde 套件。Xorg 是 Ubuntu 操作系統的一個顯示服務器軟件包，它在被導入 Ubuntu 操作系統後會載入一系列的文件或軟件，這些都是跟顯示卡驅動，圖形環境庫相關的一些文件、軟件。Gnome ，kde，包括我們使用的 lxde 也需要 xorg 才能實現。而 Lxde 它的全名是 Lightweight X11 Desktop Environment ，是自由軟體桌面環境，其優點在於提供了輕量而快速的桌面環境，它比較重視實用、輕巧，除此之外它還可以在 Linux 平台執行。\\
+ 
+之後需選擇 display manager ( 顯示管理器 )的種類 ，Display manager 是操作系統 Ubuntu 的組件，其中登錄的動作即為 Display manager 負責。該操作系統中常見的類型有 gdm ,gdm3 , lightdm ,kdm ...。各類型的 Display manager 功能其實大同小異，差別在於外觀、操作、格式、複雜度和使用者感受等，可依使用者需求變更 ( 有些較為輕量，適合比較低階的運行器 )**。**選擇其中一個後繼續，之後可以切換更動 。\\
+
+ 再來是模組的導入，此處同樣用 apt 指令安裝 : Pip , uwsgi , Nginx  , 以及 Git 。如果要從 Ubuntu 系統上安裝軟體，其中一種方式是 " pip "。「pip 」是 " pip Installs Packages " 的縮寫，是一個用命令列作為基礎的套件管理系統，可以用它來安裝 python 的應用程式。而使用 Git 是因為在備份資料時， 可幫助使用者有效管理原始碼，而 github 就是由 Git 伺服器和網頁介面組成，用來當作放置原始碼的倉庫。\\
+ 另外 Nginx 和 uwsgi 是為拿來配合把 python 程式應用在網路上實現，並且把想要的結果使其能在網路實時觀看操控結果之反饋。
 \section{Oracle VM VirtualBox 介紹}
-\qquad Ubuntu 作業系統是 Linux 系統的一個發行版，目前免費且開源，Ubuntu 基於 Debian發行版和 GNOME 桌面環境，其目標在於為一般使用者提供一個最新、穩定又主要以自由軟體建構而成的作業系統。\\
-\qquad 其開發目的是為了使個人電腦變得簡單易用，它與其他基於 Debian 所發行的 Linux 版本更加接近 Debian 的開發理念，它主要使用自由、開源的軟體，而其他則帶很多閉源的軟體。\\
-\qquad 此專題採用 Ubuntu 20.04 版本作為我們的架設所使用作業系統，由於 Ubuntu 功能尤為繁多，以下說明重點只著重在專題製作所用到功能上。\\
-假使建構虛擬環境時需要在同一主機使用不同電腦作業系統環境，則可使用「虛擬機器工作站」— Oracle VM VirtualBox 。
-\qquad 選擇 Oracle VM VirtualBox    是為了因應當要使用不同作業系統 ( 比如本機與虛擬環境不同作業系統  ) 且不想與其資料存放時共用一個硬碟 ( 無多餘硬碟 , 不想硬碟之間有資料重疊 ... ) 時，即可使用其軟體做練習，降低操作失誤帶來的成本，而此軟體目前為免費，並隨時會更新，另外其特色有 :\\  
+ Ubuntu 作業系統是 Linux 系統的一個發行版，目前免費且開源，Ubuntu 基於 Debian發行版和 GNOME 桌面環境，其目標在於為一般使用者提供一個最新、穩定又主要以自由軟體建構而成的作業系統。\\
+ 
+ 其開發目的是為了使個人電腦變得簡單易用，它與其他基於 Debian 所發行的 Linux 版本更加接近 Debian 的開發理念，它主要使用自由、開源的軟體，而其他則帶很多閉源的軟體。\\
+ 
+ 此專題採用 Ubuntu 20.04 版本作為我們的架設所使用作業系統，由於 Ubuntu 功能尤為繁多，以下說明重點只著重在專題製作所用到功能上。\\
+假使建構虛擬環境時需要在同一主機使用不同電腦作業系統環境，則可使用「虛擬機器工作站」— Oracle VM VirtualBox 。\\
+
+ 選擇 Oracle VM VirtualBox    是為了因應當要使用不同作業系統 ( 比如本機與虛擬環境不同作業系統  ) 且不想與其資料存放時共用一個硬碟 ( 無多餘硬碟 , 不想硬碟之間有資料重疊 ... ) 時，即可使用其軟體做練習，降低操作失誤帶來的成本，而此軟體目前為免費，並隨時會更新，另外其特色有 :\\  
 \begin{itemize}
 
 
@@ -590,14 +631,22 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
 \item Internal : 此種設定主要為虛擬主機彼此間的連線，它可向外部提供資料，但反之則不行。
 \item Bridged : 在與其宿主機的網卡設定橋接與設定好外部網路位址後，可被外部網路訪問。
 \end{itemize}
+\newpage
 \section{Nginx}
-\qquad 網路設定：\\[12pt]
-\qquad 首先要修改網路設定檔 ，而其設定檔放在 /etc / netplan 目錄下的 yaml 檔 。其中需更改的設定 :\\
+ 網路設定：\\
+ 首先要修改網路設定檔 ，而其設定檔放在 /etc / netplan 目錄下的 yaml 檔 。其中需更改的設定 :
 \begin{enumerate}
 \item addresses： 為靜態 IP，可以是IPV4或IPV6。
 \item gateway： 即為該電腦之閘道器。
 \item nameservers： 該電腦之CNS服務器。
 \end{enumerate}
+<<<<<<< HEAD
+\newpage
+\chapter{深度強化學習的訓練與模擬控制結果}
+%\renewcommand{\baselinestretch}{1.0} %設定行距
+程式訓練流程：\\
+ 擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
+=======
 \section{Web server}
 \qquad Nginx 是提供 web 相關服務的伺服器 ( Web server )，除了是高效能的 HTTP ( HTTPS ) 服務器外，還可處理靜態資源 , 負載平衡 , 代理等工作。代理工作為根據不同域名轉發到 Application Server 的不同 port 上去處理 ，其中又分正向和反向，正向代理為 clinet 端發送 request 經由 porxy server 再到目標網站，反向則反之。正向代理操作中 server 只知道 proxy server  給他 request , 不知道 client 是誰，而相同地反向代理則是 client 只知道 proxy server 給他 responses , 不知道 server 是誰。正向代理隐藏真實 Client，反向代理隱藏真實 Server。另外在高流量的狀況下，需要多個 Application Server 來分擔流量，負載平衡就是負責 request 的分發，決定 request 要被分到哪一個 Application Server 處理 。而關於處理靜態資源 ，Nginx 與 Apache 等 Web Server 處理靜態資源的能力是遠遠高於 Application Server 的。\\
 %======圖片 clientProxy======%
@@ -609,6 +658,7 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
 程式訓練流程：\\
 \qquad 擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
 
+>>>>>>> 7b27b15c8db347e4b6f8baeb50aafebf8c21b536
 \qquad 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、\\
 
 \newpage
@@ -622,7 +672,9 @@ A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
     tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
   };
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script id="MathJax-script" 
+  async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"> 
+  </script>
 \end{lstlisting}
 修正後將"("和")"換成"\$"，就解決誤換問題
 %=---------------------參考文獻----------------------=%
@@ -643,7 +695,7 @@ A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
 \LARGE\textbf 作者簡介\\
 \end{center}
 
-\framebox[8cm][r]{\vspace{1em}test}
+%\framebox[8cm][r]{\vspace{1em}test}
 
 
 \end{document}
