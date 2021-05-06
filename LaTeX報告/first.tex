@@ -546,8 +546,6 @@ $$V_t(S) = \mathbb{E}[G_t|s_t = s]$$
 \hspace{-4em}\makebox[\width][s]{$P(s_{s+1}=s'|s_t=s,a_t=a)$}
 \end{center}
 \end{itemize}
-=======
->>>>>>> 7b27b15c8db347e4b6f8baeb50aafebf8c21b536
 
 \newpage
 \chapter{訓練環境}
@@ -570,6 +568,11 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 %\renewcommand{\baselinestretch}{10.0} %設定行距
 \section{模擬模型}
  在模擬的模型上，延用了學長設計的冰球機，並進行了部分的設計變更，將原本的人機對打更改為機器對打，且因為搭配深度強化學習的訓練，所以將兩邊的擊球器都僅保留X軸向(左右)移動，而冰球則是使用原本設計。多虧了學長們所設計的冰球機模型，讓我們在運作上有問題時可以直接發問，設計變更的地方也可以快速完成。\\
+\begin{figure}[hbt!]
+\center
+\includegraphics[height=7cm]{model}
+\caption{regression line}
+\end{figure}
 \section{CoppeliaSim模擬}
  CoppeliaSim是具有集成開發環境的機器人模擬器,基於分佈式控制體系架構,可以通過嵌入式腳本，插件，ROS或BlueZero節點，RemoteAPI客戶端或自定義解決方案進行模型控制。\\
 \subsection{使用原因}
