@@ -11,39 +11,6 @@
 \BOOKMARK [2][-]{subsection.2.1.2}{優化器}{section.2.1}% 11
 \BOOKMARK [1][-]{section.2.2}{深度學習}{chapter.2}% 12
 \BOOKMARK [1][-]{section.2.3}{強化學習}{chapter.2}% 13
-<<<<<<< HEAD
-\BOOKMARK [1][-]{section.2.4}{深度強化學習}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.4.1}{Deep\040Reinforcement\040Learning}{section.2.4}% 15
-\BOOKMARK [2][-]{subsection.2.4.2}{Supervised\040Learning}{section.2.4}% 16
-\BOOKMARK [2][-]{subsection.2.4.3}{對數導數技巧}{section.2.4}% 17
-\BOOKMARK [2][-]{subsection.2.4.4}{Score\040Functions}{section.2.4}% 18
-\BOOKMARK [2][-]{subsection.2.4.5}{Score\040Function\040Estimators}{section.2.4}% 19
-\BOOKMARK [1][-]{section.2.5}{比較個方法的特色}{chapter.2}% 20
-\BOOKMARK [0][-]{chapter.3}{馬可夫決策}{}% 21
-\BOOKMARK [1][-]{section.3.1}{Markov\040Chain}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.2}{Markov\040Reward\040Process}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.3}{Markov\040Decision\040Process}{chapter.3}% 24
-\BOOKMARK [0][-]{chapter.4}{訓練環境}{}% 25
-\BOOKMARK [1][-]{section.4.1}{openAI\040Gym}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.2}{Pong}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.3}{為什麼選擇score function 算法}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.4}{Pong\040from\040pixels}{chapter.4}% 29
-\BOOKMARK [0][-]{chapter.5}{模擬環境}{}% 30
-\BOOKMARK [1][-]{section.5.1}{模擬模型}{chapter.5}% 31
-\BOOKMARK [1][-]{section.5.2}{CoppeliaSim模擬}{chapter.5}% 32
-\BOOKMARK [2][-]{subsection.5.2.1}{使用原因}{section.5.2}% 33
-\BOOKMARK [2][-]{subsection.5.2.2}{模擬}{section.5.2}% 34
-\BOOKMARK [2][-]{subsection.5.2.3}{CoppeliaSim中的Vision sensor}{section.5.2}% 35
-\BOOKMARK [1][-]{section.5.3}{影像處理}{chapter.5}% 36
-\BOOKMARK [2][-]{subsection.5.3.1}{影像辨識}{section.5.3}% 37
-\BOOKMARK [0][-]{chapter.6}{伺服器}{}% 38
-\BOOKMARK [1][-]{section.6.1}{Ubuntu 環境配置}{chapter.6}% 39
-\BOOKMARK [1][-]{section.6.2}{Oracle VM VirtualBox 介紹}{chapter.6}% 40
-\BOOKMARK [1][-]{section.6.3}{Nginx}{chapter.6}% 41
-\BOOKMARK [0][-]{chapter.7}{深度強化學習的訓練與模擬控制結果}{}% 42
-\BOOKMARK [0][-]{chapter.8}{問題與討論}{}% 43
-\BOOKMARK [0][-]{lstnumber.8.1.8}{參考文獻 }{}% 44
-=======
 \BOOKMARK [2][-]{subsection.2.3.1}{馬可夫決策}{section.2.3}% 14
 \BOOKMARK [1][-]{section.2.4}{深度強化學習}{chapter.2}% 15
 \BOOKMARK [2][-]{subsection.2.4.1}{Deep\040Reinforcement\040Learning}{section.2.4}% 16
@@ -72,5 +39,4 @@
 \BOOKMARK [1][-]{section.5.4}{Web\040server}{chapter.5}% 39
 \BOOKMARK [0][-]{chapter.6}{深度強化學習的訓練與模擬控制結果}{}% 40
 \BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 41
-\BOOKMARK [0][-]{lstnumber.7.1.6}{參考文獻 }{}% 42
->>>>>>> 7b27b15c8db347e4b6f8baeb50aafebf8c21b536
+\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 42
