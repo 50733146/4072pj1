@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  6 MAY 2021 19:58
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  6 MAY 2021 20:35
 entering extended mode
 **./first.tex
 (first.tex
@@ -809,40 +809,40 @@ Underfull \hbox (badness 10000) detected at line 59
 
 
 LaTeX Font Warning: Font shape `TU/標楷體(0)/b/n' undefined
-(Font)              using `TU/標楷體(0)/m/n' instead on input line 63.
+(Font)              using `TU/標楷體(0)/m/n' instead on input line 62.
 
 
-Overfull \hbox (116.6662pt too wide) detected at line 77
+Overfull \hbox (116.6662pt too wide) detected at line 76
 \TU/標楷體(0)/m/n/17.28 指 導 教 授：|  嚴 家 銘 老 師
  []
 
 
-Overfull \hbox (82.1062pt too wide) detected at line 79
+Overfull \hbox (82.1062pt too wide) detected at line 78
 \TU/標楷體(0)/m/n/17.28 班 級：|  四 設 三 甲
  []
 
 
-Overfull \hbox (144.8137pt too wide) detected at line 81
+Overfull \hbox (144.8137pt too wide) detected at line 80
 \TU/標楷體(0)/m/n/17.28 學 生：|  李 正 揚 \TU/TimesNewRoman(0)/m/n/17.28 (40723110)
  []
 
 
-Overfull \hbox (145.25627pt too wide) detected at line 84
+Overfull \hbox (145.25627pt too wide) detected at line 83
  \TU/標楷體(0)/m/n/17.28 林 于 哲 \TU/TimesNewRoman(0)/m/n/17.28 (40723115)
  []
 
 
-Overfull \hbox (145.89752pt too wide) detected at line 86
+Overfull \hbox (145.89752pt too wide) detected at line 85
  \TU/標楷體(0)/m/n/17.28 黃 奕 慶 \TU/TimesNewRoman(0)/m/n/17.28 (40723138)
  []
 
 
-Overfull \hbox (145.89752pt too wide) detected at line 88
+Overfull \hbox (145.89752pt too wide) detected at line 87
  \TU/標楷體(0)/m/n/17.28 鄭 博 鴻 \TU/TimesNewRoman(0)/m/n/17.28 (40723148)
  []
 
 
-Overfull \hbox (145.89752pt too wide) detected at line 90
+Overfull \hbox (145.89752pt too wide) detected at line 89
  \TU/標楷體(0)/m/n/17.28 簡 國 龍 \TU/TimesNewRoman(0)/m/n/17.28 (40723150)
  []
 
@@ -857,7 +857,7 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
-(hyperref)                replaced by space on input line 105.
+(hyperref)                replaced by space on input line 104.
 
 [1
 
@@ -865,7 +865,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 17.28pt
-(hyperref)                replaced by space on input line 117.
+(hyperref)                replaced by space on input line 116.
 
 [2] (first.toc
 Overfull \hbox (1.13872pt too wide) detected at line 13
@@ -1067,22 +1067,22 @@ Overfull \hbox (0.363pt too wide) detected at line 10
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
@@ -1091,184 +1091,184 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--160
 ] [2]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--180
+Underfull \hbox (badness 10000) in paragraph at lines 177--179
 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 180.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 179.
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--192
+Underfull \hbox (badness 10000) in paragraph at lines 179--191
 
  []
 
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 192--194
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--196
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--206
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--211
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
 File: ./圖片/MSE.png Graphic file (type bmp)
 <./圖片/MSE.png>
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 225--230
+Underfull \hbox (badness 10000) in paragraph at lines 224--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--232
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--274
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--276
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 276--278
+Underfull \hbox (badness 10000) in paragraph at lines 275--277
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--280
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 280--282
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--284
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--286
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
+Underfull \hbox (badness 10000) in paragraph at lines 285--287
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--290
+Underfull \hbox (badness 10000) in paragraph at lines 287--289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--292
+Underfull \hbox (badness 10000) in paragraph at lines 289--291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--294
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
+Underfull \hbox (badness 10000) in paragraph at lines 293--295
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--298
+Underfull \hbox (badness 10000) in paragraph at lines 295--297
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--300
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
+Underfull \hbox (badness 10000) in paragraph at lines 299--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--307
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
+Underfull \hbox (badness 10000) in paragraph at lines 310--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--317
+Underfull \hbox (badness 10000) in paragraph at lines 313--316
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 318--320
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 325--330
+Underfull \hbox (badness 10000) in paragraph at lines 324--329
 
  []
 
 File: ./圖片/Faces_of_Reinforcement_Learning.png Graphic file (type bmp)
 <./圖片/Faces_of_Reinforcement_Learning.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--342
+Underfull \hbox (badness 10000) in paragraph at lines 339--341
 
  []
 
@@ -1277,44 +1277,44 @@ File: ./圖片/The_Flow_of_Reinforcement_Learning.png Graphic file (type bmp)
 File: ./圖片/The_entire_interaction_process.png Graphic file (type bmp)
 <./圖片/The_entire_interaction_process.png>
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 358--369
+Underfull \hbox (badness 10000) in paragraph at lines 357--368
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--385
+Underfull \hbox (badness 10000) in paragraph at lines 369--384
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
 File: ./圖片/agent.png Graphic file (type bmp)
 <./圖片/agent.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--400
+Underfull \hbox (badness 10000) in paragraph at lines 387--399
 
  []
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 409--411
+Underfull \hbox (badness 10000) in paragraph at lines 408--410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 411--413
+Underfull \hbox (badness 10000) in paragraph at lines 410--412
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--421
+Underfull \hbox (badness 10000) in paragraph at lines 417--420
 
  []
 
@@ -1332,19 +1332,19 @@ Missing character: There is no 減 in font [lmroman12-regular]:mapping=tex-text;
 Missing character: There is no 總 in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no 和 in font [lmroman12-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--425
+Underfull \hbox (badness 10000) in paragraph at lines 422--424
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 430--432
+Underfull \hbox (badness 10000) in paragraph at lines 429--431
 
  []
 
 File: ./圖片/network.png Graphic file (type bmp)
 <./圖片/network.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--457
+Underfull \hbox (badness 10000) in paragraph at lines 454--456
 
  []
 
@@ -1352,53 +1352,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 455--457
 File: ./圖片/supervising_learning.png Graphic file (type bmp)
 <./圖片/supervising_learning.png>
 
-Overfull \hbox (17.78455pt too wide) in paragraph at lines 462--463
+Overfull \hbox (17.78455pt too wide) in paragraph at lines 461--462
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 467--468
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
+Underfull \hbox (badness 10000) in paragraph at lines 468--469
 
  []
 
 
-Overfull \hbox (11.89764pt too wide) in paragraph at lines 472--473
+Overfull \hbox (11.89764pt too wide) in paragraph at lines 471--472
 [] \TU/標楷體(0)/m/n/14 機 器 學 習 涉 及 操 縱 機 率。|  這 個 機 率 通 常 包 含 \TU/TimesNewRoman(0
 )/m/n/14 normalised-probabilities
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--473
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--475
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--477
+Underfull \hbox (badness 10000) in paragraph at lines 474--476
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 491--492
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
 
  []
 
@@ -1408,24 +1413,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 496--497
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
 
  []
 
 File: ./圖片/gradient_change.png Graphic file (type bmp)
 <./圖片/gradient_change.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--510
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
 
  []
 
@@ -1434,23 +1439,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 510--511
 
  []
 
-
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
-[20]
+
 Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 513--514
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--516
+Underfull \hbox (badness 10000) in paragraph at lines 513--515
 
  []
 
@@ -1461,19 +1461,19 @@ Missing character: There is no θ in font cmmi12!
 File: ./圖片/figure.png Graphic file (type bmp)
 <./圖片/figure.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--525
+Underfull \hbox (badness 10000) in paragraph at lines 516--524
 
  []
 
 [21] [22] [23]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--531
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--542
+Underfull \hbox (badness 10000) in paragraph at lines 539--541
 
  []
 
@@ -1482,153 +1482,153 @@ Underfull \hbox (badness 10000) in paragraph at lines 540--542
 ] [25]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--548
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--550
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--552
+Underfull \hbox (badness 10000) in paragraph at lines 550--551
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
+Underfull \hbox (badness 10000) in paragraph at lines 562--563
 
  []
 
 [26
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 565--566
+Underfull \hbox (badness 10000) in paragraph at lines 564--565
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 567--569
+Underfull \hbox (badness 10000) in paragraph at lines 566--568
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 569--571
+Underfull \hbox (badness 10000) in paragraph at lines 568--570
 
  []
 
 [27]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 576--577
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--579
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 580--581
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
 
  []
 
 [28
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 585--586
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 587--588
+Underfull \hbox (badness 10000) in paragraph at lines 586--587
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 589--591
+Underfull \hbox (badness 10000) in paragraph at lines 588--590
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--593
+Underfull \hbox (badness 10000) in paragraph at lines 591--592
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--597
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
 
  []
 
 [29]
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 597--598
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
-
- []
-
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 620--623
+Underfull \hbox (badness 10000) in paragraph at lines 619--622
 
  []
 
 [31]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--629
+Underfull \hbox (badness 10000) in paragraph at lines 626--628
 
  []
 
 [32
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 630--631
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
 
  []
 
 [33]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 634--635
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 636--637
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
 
  []
 
 [34
 
 ] [35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 669.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 668.
  [36]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 669.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 668.
  (first.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 669.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 669.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 668.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 668.
 Package rerunfilecheck Info: File `first.out' has not changed.
 (rerunfilecheck)             Checksum: 57B208760487FED6767F69416E25F53D;2637.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 669.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 668.
  ) 
 Here is how much of TeX's memory you used:
  19757 strings out of 414221
