@@ -19,6 +19,7 @@ left=3truecm,right=2.5truecm]{geometry}
 \usepackage{hyperref} %引用url連結
 \usepackage{graphicx} %插入圖片
 \usepackage{fontawesome5} %引用icon
+\usepackage{setspace}
 \lstset{language=Python, %設定語言
 		basicstyle=\footnotesize, 
 		frame=lines,
@@ -26,10 +27,9 @@ left=3truecm,right=2.5truecm]{geometry}
 		label={lst:example} %設定label
 }
 \graphicspath{{./圖片/}} %圖片預設讀取路徑
-\renewcommand{\baselinestretch}{1.0} %設定行距1.0
 \usepackage{indentfirst}%設定開頭縮排
 \captionsetup[figure]{name=圖} %更改圖片標題名稱
-\hoffset=-10mm %調整左右邊界
+\hoffset=-5mm %調整左右邊界
 \voffset=-10mm %調整上下邊界
  %=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
@@ -97,6 +97,7 @@ Application of reinforcement
 \end{titlepage}
 \newpage
 %=------------------------摘要-----------------------=%
+\renewcommand{\baselinestretch}{1.5} %設定行距
 \pagenumbering{roman} %設定頁數為羅馬數字
 \clearpage  %設定頁數開始編譯
 \addcontentsline{toc}{chapter}{摘\quad 要} %將摘要加入目錄
@@ -137,6 +138,7 @@ Application of reinforcement
 \end{center}
 %=-------------------------內容----------------------=%
 \chapter{前言}
+\renewcommand{\baselinestretch}{10} %設定行距
 \pagenumbering{arabic} %設定頁號阿拉伯數字
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
@@ -162,7 +164,7 @@ Application of reinforcement
 
 \chapter{機器學習的訓練方法}
 \section{類神經網絡}
- 類神經網路的概念來源是觀察人類的中樞神經系統而啟發的，類神經網路主要由多個節點組成，每個節點稱為神經元（neurons），神經元與神經元連結而形成的網路稱為神經網路。神經元主要又分成三層：輸入層（input layer）、隱藏層（hidden layer）和輸出層（output layer）。神經元會接收上一層的訊號，並經過啟動函數（activation function）計算並輸出至下一層神經元。神經網路輸入層的神經元負責接收訊號，透過隱藏層來運算，再傳遞到輸出層執行動作。由於每個神經元經過啟動函數的非線性計算，所以神經元傳出的數值也是非線性。神經元與神經元間連線在生物學稱為突觸（Synapse），在數學模型裡每個突觸都有權重（weights）。在既定框架下，調配權重值和啟動函數會使結果更接近預期。神經網路的架構指標為以下幾項：階層數、每層神經元個數、神經元連接方式、啟動函數的類型等。\\[12pt]
+ 類神經網路的概念來源是觀察人類的中樞神經系統而啟發的，類神經網路主要由多個節點組成，每個節點稱為神經元（neurons），神經元與神經元連結而形成的網路稱為神經網路。神經元主要又分成三層：輸入層（input layer）、隱藏層（hidden layer）和輸出層（output layer）。神經元會接收上一層的訊號，並經過啟動函數（activation function）計算並輸出至下一層神經元。神經網路輸入層的神經元負責接收訊號，透過隱藏層來運算，再傳遞到輸出層執行動作。由於每個神經元經過啟動函數的非線性計算，所以神經元傳出的數值也是非線性。神經元與神經元間連線在生物學稱為突觸（Synapse），在數學模型裡每個突觸都有權重（weights）。在既定框架下，調配權重值和啟動函數會使結果更接近預期。神經網路的架構指標為以下幾項：階層數、每層神經元個數、神經元連接方式、啟動函數的類型等。\\
 
  神經訊號傳遞分為前饋（feed-forward）和回饋（backpropagation）。前饋為傳遞經過啟動函數計算的數值。回饋則是修正權重和偏差（biases），以提高下次前饋計算的準確度。
 \subsection{啟動函數}
@@ -171,7 +173,7 @@ Application of reinforcement
 %=----------Sigmoid      Function----------=%
 \item Sigmoid Function：\\
 輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、並具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
-$$\sigma(x)=\frac{1}{1+e^{-x}}$$ \\[6pt]
+$$\sigma(x)=\frac{1}{1+e^{-x}}$$ 
 \iffalse
 \begin{figure}[hbt!]
 \begin{center}
@@ -198,14 +200,15 @@ $$else f(x)=x$$\\
 \item Adam Function\\
 結合了 Adagrad 和 RMSprop的優勢，有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程: \\[6pt]
 $$g_t=\delta_{\theta}f(\theta)$$\\
-一次矩指數移動均線 :\\[6pt]
+一次矩指數移動均線 :\\
  $$m_t =\beta(m_{t-1})+(1-\beta_1)(\nabla{w_t})$$\\
-$$\hat m_t=\frac{m_t}{1-\beta_1^t}$$\\[6pt]
-二次矩指數移動均線 :\\[6pt]
+$$\hat m_t=\frac{m_t}{1-\beta_1^t}$$\\
+二次矩指數移動均線 :\\
 $$v_t=\beta_2(v_t-1)+(1-\beta_2)(\nabla{w_t})^2$$\\
 $$\hat{v_t}=\frac{v_t}{1-\beta_2^t}$$\\
-因此,Adam Function:\\[6pt]
-\begin{Large}$$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$\end{Large}
+\renewcommand{\baselinestretch}{1} %設定行距
+因此,Adam Function:
+$$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
 %=----------Mean Squared Error----------=%
 \item Mean Squared Error\\
 他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。
@@ -316,8 +319,8 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \newpage
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
-強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\[6pt]
-強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。
+強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\
+\qquad 強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。
 由於強化學習是建立在環境上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
 %=----------Faces of Reinforcement Learning---------------=%
 \begin{itemize}
