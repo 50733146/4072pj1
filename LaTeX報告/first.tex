@@ -108,7 +108,7 @@ Application of reinforcement
 \addcontentsline{toc}{chapter}{誌\quad 謝}
 \centerline\LARGE\textbf{誌謝}\\
 \begin{flushleft}
-\fontsize{14pt}{2.5pt}\hspace{12pt}致謝內容
+\fontsize{14pt}{2.5pt}\hspace{12pt}在此鄭重感謝製作以及協助本專題完成的所有人員，首先向大四學長致謝，他們不辭辛勞解決我們所提問的任何問題，甚至從來沒有任何不耐煩，總是貼心的為我們找出最佳解答。再來是我們的指導教授嚴家銘教授，他給了我們全方位的支援，每次開會時也會向我們提出建議以及未來走向，同時也給了我們能自由摸索的空間及時間，最後是由本專題組員同心協力才得以完成本題目，特此感謝。
 \end{flushleft}
 \newpage
 %=------------------------目錄----------------------=%
@@ -283,28 +283,33 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \end{itemize}
 \section{深度學習}
 %=----------deep learning 會在此時崛起?----------------=%
-\begin{itemize}
-\item Deep learning 會在此時崛起?\\
-\qquad 電腦科學對於深度學習電的依賴越來越重要的四個主要趨勢。\\
 
-(1)\quad 支援張量運算程式語言與程式庫的崛起\\ 首先，自從1960年代開始，諸如APL、MATLAB、R和Julia
-等領域的特定語言的發展轉變為多為數組(通常稱為張量) 進入一組由全為數學語(或運算符)支援的第一類物件以對其進行操作\\
-此外，基於數組的編程能夠以通用語言(如 Python、Lisp、C++和Lua)高校運作，諸如NumPy、Torch、Eigen和Lush等\\
+\qquad 深度學習的崛起與電腦科學有著密切的關係，四個主要趨勢為:\\
+\begin{enumerate}
+\item 支援張量運算程式語言與程式庫的崛起\\[6pt]
+首先，自從1960年代開始，諸如APL、MATLAB、R和Julia等領域的特定語言的發展轉變為多為數組(通常稱為張量) 進入一組由全為數學語(或運算符)支援的第一類物件以對其進行操作此外，基於數組的編程能夠以通用語言(如 Python、Lisp、C++和Lua)高校運作，諸如NumPy、Torch、Eigen和Lush等。\\
 
-(2)\quad 自動求導數套件的開發\\ 其次，自動微分的發展使得完全自動化計算導數的艱鉅工作成為了可能， 這使的運用不同的機器學習方法進行實驗變得非常容易，同時仍然允許基於梯度的優化。 因為autograd軟件包的普及，並將該技術用於NumPy數組，並且類似的方法也用於框架中，例如: Chainer, DyNet, Lush, Torch, Jax and Flux.jl.\\
+\item 自動求導數套件的開發\\[6pt]
+其次，自動微分的發展使得完全自動化計算導數的艱鉅工作成為了可能， 這使的運用不同的機器學習方法進行實驗變得非常容易，同時仍然允許基於梯度的優化。 因為autograd軟件包的普及，並將該技術用於NumPy數組，並且類似的方法也用於框架中，例如: Chainer, DyNet, Lush, Torch, Jax and Flux.jl。\\
 
-(3)\quad 自由開源軟體的普及\\第三隨著自由軟件的到來，科學界從封閉的專用軟件(例如Matlab)轉向開源， Python的生態系統，帶有NumPy、SciPy和Pandas等軟件包，滿足了大多數研究人員對數值分析需求，同時讓他們能夠利用龐大的程式庫來處理數據集的預處理，例如:統計分析、繪圖等。\\
+\item 自由開源軟體的普及\\[6pt]
+第三隨著自由軟件的到來，科學界從封閉的專用軟件(例如Matlab)轉向開源， Python的生態系統，帶有NumPy、SciPy和Pandas等軟件包，滿足了大多數研究人員對數值分析需求，同時讓他們能夠利用龐大的程式庫來處理數據集的預處理，例如:統計分析、繪圖等。\\
 此外，自由軟體的開放性、互相操作性和靈活性，促進了充滿活力的社會發展，這樣社會可以通過擴展程式庫現有的功能，或著在需要時通過開發和發布全新的程式庫功能，來迅速滿足新的或不斷變化的需求。 儘管有豐富的非Python語言支持的神經網路開源軟件，從Lish中的Lush、C++中的Torch、Objective-C和Lua、C++中的EBLearn、C++中的Caffe開始，大型生態系統(諸如Python)的網路效應，促使研究快速發展成為一項必不可少的技能。因此，自2014年以來，大多數深度學習的框架都將Python介面作為一項基本功能進行融合。\\
 
-(4)\quad 多核 GPU 運算的發展 \\ 最後，利用大規模通用硬體(例如GPU)的可能性，提供深度學習方法所需的計算能力、專用的程式庫(例如:cuDNN)以及大量學術著作(例如Andrew Lavin、maxdnn:使用maxwell gpus進行深度學習的高效卷積內核、2015年1月以及Andrew Lavin和Scott Gray用於卷積神經網路的快速算法、2016年IEEE電腦視覺和圖形識別(CVPR)，第4013-4021頁，2016), 產生了一系列高性能可重用的深度學習內核，這些內核使諸如Caffe,Torch7, or TensorFlow 的框架能夠利用這些硬體加速器。\\
+\item 多核 GPU 運算的發展 \\[6pt]
+最後，利用大規模通用硬體(例如GPU)的可能性，提供深度學習方法所需的計算能力、專用的程式庫(例如:cuDNN)以及大量學術著作(例如Andrew Lavin、maxdnn:使用maxwell gpus進行深度學習的高效卷積內核、2015年1月以及Andrew Lavin和Scott Gray用於卷積神經網路的快速算法、2016年IEEE電腦視覺和圖形識別(CVPR)，第4013-4021頁，2016), 產生了一系列高性能可重用的深度學習內核，這些內核使諸如Caffe,Torch7, or TensorFlow 的框架能夠利用這些硬體加速器。\\
+\end{enumerate}
+
 \newpage
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
-強化學習是通過agent與已知或未知的環境持互動，不斷適應與學習，得到的回饋可能是正面，也就是reward，如果得到負面，那就是punishments。考慮到agent與環境互動，我們就能決定要執行哪個動作。簡而言之，強化學習是建立在reward與punishments上。\\[6pt]
-%====================須修改====================%
-與其他機器學習不同，因為我們不需要在意訓練數據集。互動不是發生在數據上，而是在環境下發生，通過互動描繪出真實的場景。由於強化學習是建立在環境的，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習的目的是達到目標。強化學習的獎勵是來自環境。
+強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\[6pt]
+強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\[6pt]
+由於強化學習是建立在環境上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
 %=----------Faces of Reinforcement Learning---------------=%
+\begin{itemize}
 \item 強化學習涵蓋範圍\\
+
 %======需文字補充========%
 \begin{figure}[hbt!]
 \begin{center}
@@ -312,35 +317,19 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \caption{Venn diagram; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
-%=--------The Flow of Reinforcement Learning------------=%
-\item  強化學習的流程\\
+%=--------The Flow of Reinforcement Learning------------=%.
+
+強化學習的流程：\\[6pt]
+透過agent與環境間互動而產生狀態和獎勵，由於狀態的轉移，agent會決定接下來執行動作。\\[12pt]
+
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=10cm]{The_Flow_of_Reinforcement_Learning}
 \caption{RL structur}
 \end{center}
 \end{figure}
-\begin{large}
-\textbf{需要考慮的重點:}
-\end{large}\\
-\begin{itemize}
-\item 強化學習的週期是互相聯繫的 
-\end{itemize}
-
-\begin{itemize}
-\item 分明的溝通是在考慮獎勵的情況下發生的
-\end{itemize}
-\begin{itemize}
-\item  agent與環境之間存在著獨特的溝通。
- 
-\end{itemize}
-\begin{itemize}
-\item 目標或機器人從一狀態移動到另一狀態。
- 
-\end{itemize}
-\begin{itemize}
-\item 從一狀態轉移到另一種狀態採取動作。
-\end{itemize}
+需要考慮的重點:\\[6pt]
+\qquad 強化學習的週期是互相聯繫的，分明的溝通是在考慮獎勵的情況下發生的，agent與環境之間存在著獨特的溝通。狀態和動作互相關聯著，並互相影響著彼此：目標或機器人會因動作而造成狀態轉移，狀態的移轉也會影響目標或機器人做出的決策。
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -348,60 +337,40 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
-agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。\\
-當agent開始與環境互動時，他可以選擇一個操作並做出相應的回應，從這時起，將會創建新的場景，當agent從一個環境變為另一個環境中，每項更改都會導致某種修改，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\
-
+\qquad agent是決策者，會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他會做出決策，決策所執行的動作會使場景進入下一個狀態，當環境轉變，環境裡的項目也會跟著變動，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\[12pt]
+\iffalse
 %------------------圖片可共用----------------------%
-%\begin{figure}[hbt!]
-%\begin{center}
-%\includegraphics[scale=0.74]{Scenario_of_state_changes}
-%\caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
-%\end{center}
-%\end{figure}
-
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[scale=0.74]{Scenario_of_state_changes}
+\caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\end{center}
+\end{figure}
+\fi
 %=----Different Terms in Reinforcement Learning----------=%
-\item 強化學習中各種術語\\
-在此情況下，有兩個很重要的常數-$\gamma$、$\lambda$\\[10pt]
-$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值， 
-$\gamma$ 會從你將在每個狀態獲得的獎勵類型中，告訴你訊息。$\gamma$又叫衰減因子，他決定了我們未來可獲得的獎勵類型:\\
-\begin{itemize}
-\item  $\gamma$值為0表示獎勵僅與當前狀態有關係。
-\end{itemize}
 
-\begin{itemize}
-\item$\gamma$值為1時，代表獎勵是長期的。
-\end{itemize}
-當我們處理時間問題時，通常使用$\lambda$，這是涉及更多的連續狀態的預測，
-每種狀態下的$\lambda$值增加，代表我們的算法學習速度很快，適用強化學習技術時，更快的算法會產生更好的結果。\\
-%=----Interactions with Reinforcement Learning------------=%
-\item 與強化學習的互動\\
+\qquad 強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值， 
+$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為時常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因得到的先後順序而有所衰減)。\\[6pt]
+\qquad 當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，
+每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\[12pt]
 %------------------圖片可共用----------------------%
-%\begin{figure}[hbt!]
-%\begin{center}
-%\includegraphics[scale=0.74]{ Reinforcement_Learning_interactions}
-%\caption{Reinforcement Learning interactions; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
-%\end{center}
-%\end{figure}
+\iffalse
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[scale=0.74]{ Reinforcement_Learning_interactions}
+\caption{Reinforcement Learning interactions; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\end{center}
+\end{figure}
+\fi
+%=----Interactions with Reinforcement Learning------------=%
+強化學習的互動：\\[6pt]
+\qquad agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
 
-agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態\\
-強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法
-，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
-%=----How Reward Works------------=%
-\item 獎勵如何運作\\
-獎勵是我們從一狀態過渡到另一狀態時所獲得的動力，它可以是分數，例如在遊戲中。我們訓練的次數越多，我們就變得越精準，且我們的回報越大。\\
-%=----Agents------------=%
-\item Agents\\
-在強化學習方面，agent是一個軟體程式，能做出明智的選擇，應能購感知到正在環境發生的事情，以下是agent基本步驟:\\
-\begin{itemize}
-\item 當agent可以感知環境時，它可以做出比以往更好的決定。
-\end{itemize}
-\begin{itemize}
-\item agent採取的決定就會產生行動。
-\end{itemize}
-\begin{itemize}
-\item agent執行的行動必須是最好最佳的。
-\end{itemize}
+獎勵的目的與運作：\\
 
+\qquad 以獎勵的方式誘導機器採取我們所期望的動作或是特定結果。機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\[6pt]
+Agents：\\[6pt]
+\qquad 在強化學習方面，agent可以感知環境時，它可以做出比以往更好的決定。採取的決定就會產生行動且執行的行動必須是最好最佳的。\\[12pt]
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{agent}
@@ -409,26 +378,9 @@ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀
 \end{center}
 \end{figure}
 %=----Agents------------=%
-\item 強化學習的環境\\
-強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應其各種因素，並做出最佳決策，這些環境可以是2D世界或是網格，甚至是3D世界。\\
-\begin{large}
-\textbf{以下是環境的一些重要功能:}\end{large}\\
-\begin{itemize}
-\item 具有確定性。
-\end{itemize}
-
-\begin{itemize}
-\item 可觀察性。
-\end{itemize}
-\begin{itemize}
-\item  是離散或是連續的狀態。
- 
-\end{itemize}
-\begin{itemize}
-\item 單個agent或是多個agent。
-\end{itemize}
-\end{itemize}
-\newpage
+強化學習的環境\\
+\qquad 強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應其各種因素，並做出最佳決策，這些環境可以是2D世界或是網格，甚至是3D世界。強化學習的環境具有確定性、可觀察性，可以是離散或是連續的狀態、單個agent或是多個agent\\
+\end{itemize}\newpage
 \section{深度強化學習}
 \subsection{Deep Reinforcement Learning}
 \begin{figure}[hbt!]
@@ -436,7 +388,7 @@ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀
 \includegraphics[scale=0.74]{ network}
 \caption{Our network is a 2-layer fully-connected net. }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
-\end{figure}\textbf{}
+\end{figure}
 
 \qquad 我們將定義一個可以執行我們的玩家(agent)的類神經網路，該網路將獲取遊戲狀態並決定我們應該做什麼(向上移動或向下移動
 ) 我們使用一個2層神經網路，該網路獲取原始圖像像素(100,800個數字(210*160*3))，並生成一個表示上升概率的數字。 使用隨機策略是標準做法，這意味著我們只會產生向上移動的可能性，每次迭代時，我們都會從該分布中採樣(即扔一枚有偏見的硬幣)已獲得實際移動。\\
@@ -448,9 +400,9 @@ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀
 \includegraphics[scale=0.74]{supervising_learning}
 \caption{supervising learning }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
-\end{figure}\textbf{}
+\end{figure}
 
-\qquad 在我們滲入探討 Score Function 解決方案之前，需要簡短介紹有關監督學習的知識，因為正如我們看到的，與我們架構類似，在普通通的監督學習中，我們會將圖像送到網路，並獲得伊些概率，例如對於兩個類別的上和下。 這裡顯示的是向上和向下對數概率(-1.2,-0.36)，而不是原始機率(在這個情況下，是30$\%$和70$\%$)，因為我們總是優化正確標籤的對數概率(這使我們的演算法更好，病等效於優化原始概率，因為對數是單調的)，而在監督學習中，我們將可以獲取標籤，例如:\\
+\qquad 在我們滲入探討 Score Function 解決方案之前，需要簡短介紹有關監督學習的知識，因為正如我們看到的，與我們架構類似，在普通通的監督學習中，我們會將圖像送到網路，並獲得伊些概率，例如對於兩個類別的上和下。 這裡顯示的是向上和向下對數概率(-1.2,-0.36)，而不是原始機率(在這個情況下，是30$\%$和70$\%$)，因為我們總是優化正確標籤的對數概率(這使我們的演算法更好，並等效於優化原始概率，因為對數是單調的)，而在監督學習中，我們將可以獲取標籤，例如:\\
 
 我們可能被告知現在正確的做法是向上運動(標籤0)，在執行過程中，我們將以上的對數機率輸入1.0的梯度，然後運行backprop來計算梯度向量$Wlogp(y=UP|x)$這個梯度將告訴我們應如何更改百萬個參數中的每個參數，使網路預測往上的可能性更高，例如:網路中的百萬個參數之一可能具有-2.1的梯度，這意味著如果我們將該參數增加一個小的正值(例如0.001)，則往上的對數機率將因2.1*0.001而降低(由於負號而減少)，如果我們隨後更新了參數，當之後遇到非常相似的圖像時(也就是環境狀況)，我們的網路現在更有可能預測往上。\\
 
@@ -616,9 +568,8 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
 \chapter{深度強化學習的訓練與控制}
 程式訓練流程：\\
 
-\qquad 擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
+\qquad 在python環境下，結合numpy和gym的模擬環境編寫程式，選擇numpy作為運算工具是因為它比Tensorflow之類的程式庫更具彈性，編寫公式較為方便，而gym的設計讓我們能方便的控制右邊的擊錘板，首先擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，讓agent判斷是要往上還是往下，經過Score Function計算出的對數機率當作輸入，第二透過前饋：計算W1權重與W2權重的互動結果及擊錘向下或上移動的機率，W1權重是來計算畫面差異下環境的狀態，W2權重則是經過啟動函數(activation function)得出擊錘向下或上的機率，第三得到機率後，agent會透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，也就是採取機率較大的方向移動。第四決定行動後會產生獎懲，獎懲機制是，如果agent碰到球並越過敵方就會得到好的獎勵，沒有打到球的agent會得到懲罰，最後產生的獎懲會送往反饋機制，取樣採取行動的機率，讓獎勵變為1，懲罰變為0，返回原來的輸入，達到學習的效果，隨著agent經驗的增加，會越打越聰明，贏的機率就越高，由此訓練出聰明的AI，經過數萬次的訓練，計算discount reward及獎勵的加總值，得出的數值會越來越大，我們小組的測試，往後不管狀況是如何，基本上都會贏過敵方拿下分數。\\
 
-\qquad 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、\\
 \newpage
 \chapter{問題與討論}
 Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
