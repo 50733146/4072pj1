@@ -305,15 +305,14 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 %=----------What is Reinforcement Learning?------------=%
 強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\[6pt]
 強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\[6pt]
-由於強化學習是建立在環境上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
+由於強化學習是建立在環境上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\[12pt]
 %=----------Faces of Reinforcement Learning---------------=%
-\begin{itemize}
-\item 強化學習涵蓋範圍\\
+強化學習涵蓋範圍：\\
 
 %======需文字補充========%
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.74]{Faces_of_Reinforcement_Learning}
+\includegraphics[width=8cm]{Faces_of_Reinforcement_Learning}
 \caption{Venn diagram; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
@@ -351,8 +350,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 
 \qquad 強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值， 
 $\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為時常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因得到的先後順序而有所衰減)。\\[6pt]
-\qquad 當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，
-每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\[12pt]
+\qquad 當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\[12pt]
 %------------------圖片可共用----------------------%
 \iffalse
 \begin{figure}[hbt!]
@@ -380,7 +378,7 @@ Agents：\\[6pt]
 %=----Agents------------=%
 強化學習的環境\\
 \qquad 強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應其各種因素，並做出最佳決策，這些環境可以是2D世界或是網格，甚至是3D世界。強化學習的環境具有確定性、可觀察性，可以是離散或是連續的狀態、單個agent或是多個agent\\
-\end{itemize}\newpage
+\newpage
 \section{深度強化學習}
 \subsection{Deep Reinforcement Learning}
 \begin{figure}[hbt!]
