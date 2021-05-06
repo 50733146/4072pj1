@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  6 MAY 2021 13:44
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  6 MAY 2021 14:41
 entering extended mode
 **./first.tex
 (first.tex
@@ -957,17 +957,27 @@ Overfull \hbox (0.363pt too wide) detected at line 39
 
 
 Overfull \hbox (0.363pt too wide) detected at line 40
- \TU/lmr/m/n/17.28 20
+ \TU/lmr/m/n/17.28 19
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 41
- \TU/lmr/m/n/17.28 21
+ \TU/lmr/m/n/17.28 20
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 42
+ \TU/lmr/m/n/17.28 21
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 43
  \TU/lmr/m/n/17.28 22
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 44
+ \TU/lmr/m/n/17.28 23
  []
 
 )
@@ -1904,41 +1914,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 547--548
 [18]
 Chapter 6.
 
-Overfull \hbox (9.92966pt too wide) in paragraph at lines 559--560
-[]\TU/標楷體(0)/m/n/14 除 了 作 業 系 統 裡 面 的 執 行，|  還 可 在 其 中 練 習 磁 碟 分 割、|  格 式 化 以 及
- \TU/TimesNewRoman(0)/m/n/14 BIOS
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
  []
 
 
-Overfull \hbox (3.75589pt too wide) in paragraph at lines 560--562
-\TU/標楷體(0)/m/n/14 記 憶 體 大 小 與 硬 碟 空 間 是 實 時 依 據 操 作 者 決 定，|  但 終 究 還 是 佔 掉 電 腦 
-效
+Overfull \hbox (2.33282pt too wide) in paragraph at lines 555--559
+\TU/標楷體(0)/m/n/14 件。| \TU/TimesNewRoman(0)/m/n/14 Xorg \TU/標楷體(0)/m/n/14 是 \TU/
+TimesNewRoman(0)/m/n/14 Ubuntu \TU/標楷體(0)/m/n/14 操 作 系 統 的 一 個 顯 示 服 務 器 軟 件 包，
+|  它 在 被 導 入 \TU/TimesNewRoman(0)/m/n/14 Ubuntu
+ []
+
+
+Overfull \hbox (6.59183pt too wide) in paragraph at lines 555--559
+\TU/標楷體(0)/m/n/14 同 小 異，|  差 別 在 於 外 觀、|  操 作、|  格 式、|  複 雜 度 和 使 用 者 感 受 等，|  
+可 依 使 用 者
+ []
+
+
+Overfull \hbox (0.25266pt too wide) in paragraph at lines 555--559
+\TU/標楷體(0)/m/n/14 繼 續，|  之 後 可 以 切 換 更 動。|  再 來 是 模 組 的 導 入，|  此 處 同 樣 用 \TU/Ti
+mesNewRoman(0)/m/n/14 apt \TU/標楷體(0)/m/n/14 指 令 安
+ []
+
+
+Overfull \hbox (5.19595pt too wide) in paragraph at lines 560--565
+ \TU/TimesNewRoman(0)/m/n/14 Ubuntu \TU/標楷體(0)/m/n/14 作 業 系 統 是 \TU/TimesNewRom
+an(0)/m/n/14 Linux \TU/標楷體(0)/m/n/14 系 統 的 一 個 發 行 版，|  目 前 免 費 且 開 源，| \TU/Tim
+esNewRoman(0)/m/n/14 Ubuntu
+ []
+
+
+Overfull \hbox (5.58673pt too wide) in paragraph at lines 560--565
+\TU/標楷體(0)/m/n/14 此 專 題 採 用 \TU/TimesNewRoman(0)/m/n/14 Ubuntu 20.04 \TU/標楷體(0)
+/m/n/14 版 本 作 為 我 們 的 架 設 所 使 用 作 業 系 統，|  由 於 \TU/TimesNewRoman(0)/m/n/14 Ubun
+tu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--565
+
  []
 
 [19
 
 ]
-Chapter 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 565--566
+Underfull \hbox (badness 10000) in paragraph at lines 568--569
 
  []
 
 
-Overfull \hbox (6.75589pt too wide) in paragraph at lines 567--568
-\TU/標楷體(0)/m/n/14 時 的 計 算 速 度，|  減 少 運 算 時 的 負 擔，|  過 濾 顏 色 只 保 留 球 與 擊 錘，|  並 
-把 取 到 的
- []
-
-
-Overfull \hbox (6.53714pt too wide) in paragraph at lines 567--568
-\TU/標楷體(0)/m/n/14 較，|  隨 機 值 若 落 在 決 策 向 上 移 動 的 區 間，|  擊 錘 就 會 向 上 移 動；|  落 在 
-決 策 向 下
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 567--568
-
+Overfull \hbox (9.92966pt too wide) in paragraph at lines 569--570
+[]\TU/標楷體(0)/m/n/14 除 了 作 業 系 統 裡 面 的 執 行，|  還 可 在 其 中 練 習 磁 碟 分 割、|  格 式 化 以 及
+ \TU/TimesNewRoman(0)/m/n/14 BIOS
  []
 
 
@@ -1946,50 +1974,113 @@ Underfull \hbox (badness 10000) in paragraph at lines 569--570
 
  []
 
-[20
 
-]
-Chapter 8.
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 570--571
+\TU/標楷體(0)/m/n/14 記 憶 體 大 小 與 硬 碟 空 間 是 實 時 依 據 操 作 者 決 定，|  但 終 究 還 是 佔 掉 電 腦 
+效
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 572--573
+
+Overfull \hbox (0.30032pt too wide) in paragraph at lines 570--571
+\TU/標楷體(0)/m/n/14 能，|  所 以 \TU/TimesNewRoman(0)/m/n/14 VirtualBox \TU/標楷體(0)/m/
+n/14 的 效 能 還 是 依 據 電 腦 本 身 的 硬 體 配 備。|  為 了 配 置 網
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--571
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--575
+Overfull \hbox (4.87102pt too wide) in paragraph at lines 573--574
+[]\TU/TimesNewRoman(0)/m/n/14 Settings / Network / Adapter 1 / Attached to : \T
+U/標楷體(0)/m/n/14 該 位 置 改 成 \TU/TimesNewRoman(0)/m/n/14 Bridged Adapter 
+ []
+
+
+Overfull \hbox (3.75589pt too wide) in paragraph at lines 576--577
+\TU/標楷體(0)/m/n/14 使 用 者 互 動 時 找 不 到 該 虛 擬 主 機 網 路 位 址，|  外 部 網 路 也 無 法 偵 測，|  虛
+ 擬
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 582--584
+
+ []
+
+[20]
+Chapter 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
 
  []
 
 
-Overfull \hbox (58.36111pt too wide) in paragraph at lines 581--582
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][] 
+Overfull \hbox (6.75589pt too wide) in paragraph at lines 594--595
+\TU/標楷體(0)/m/n/14 時 的 計 算 速 度，|  減 少 運 算 時 的 負 擔，|  過 濾 顏 色 只 保 留 球 與 擊 錘，|  並 
+把 取 到 的
+ []
+
+
+Overfull \hbox (6.53714pt too wide) in paragraph at lines 594--595
+\TU/標楷體(0)/m/n/14 較，|  隨 機 值 若 落 在 決 策 向 上 移 動 的 區 間，|  擊 錘 就 會 向 上 移 動；|  落 在 
+決 策 向 下
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 594--595
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
+
  []
 
 [21
 
-] [22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 605.
- [23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 605.
+]
+Chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--602
+
+ []
+
+
+Overfull \hbox (58.36111pt too wide) in paragraph at lines 608--609
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][] 
+ []
+
+[22
+
+] [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 632.
+ [24]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 632.
  (first.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 605.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 605.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 632.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 632.
 Package rerunfilecheck Info: File `first.out' has not changed.
-(rerunfilecheck)             Checksum: 4FD3C8648CF542F90FDC50B005B4F362;2641.
+(rerunfilecheck)             Checksum: 31F76AF44109D3F23F16380D3817CF20;2771.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 605.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 632.
  ) 
 Here is how much of TeX's memory you used:
- 19725 strings out of 414221
- 365062 string characters out of 2901377
+ 19734 strings out of 414221
+ 365598 string characters out of 2901377
  890323 words of memory out of 3000000
- 36953 multiletter control sequences out of 15000+200000
+ 36962 multiletter control sequences out of 15000+200000
  545699 words of font info for 133 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  48i,7n,81p,545b,1174s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on first.pdf (29 pages).
+Output written on first.pdf (30 pages).
