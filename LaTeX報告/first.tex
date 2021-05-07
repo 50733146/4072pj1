@@ -4,31 +4,32 @@
 \newfontfamily\sectionef{Times New Roman}%設定英文字體
 \usepackage{amsmath,amssymb}%數學公式、符號
 \usepackage{graphicx, subfig}%圖形
-\usepackage{graphicx, subfig}%圖片模組
+\usepackage{fontawesome5} %引用icon
 \usepackage{type1cm} %調整字體絕對大小
 \usepackage{textpos} %設定文字絕對位置
 \usepackage[top=2.5truecm,bottom=2.5truecm,
 left=3truecm,right=2.5truecm]{geometry}
 \usepackage{titlesec} %目錄標題設定模組
 \usepackage{titletoc} %目錄內容設定模組
+\usepackage{textcomp} %表格設定模組
+\usepackage{multirow} %合併行
+\usepackage{multicol} %合併欄
 \usepackage{CJK} %中文模組
 \usepackage{CJKnumb} %中文數字模組
 \usepackage{wallpaper} %浮水印
-\usepackage{listings} %能加入程式碼
-\lstset{language=python}
+\usepackage{listings} %引用程式碼
 \usepackage{hyperref} %引用url連結
-\usepackage{graphicx} %插入圖片
-\usepackage{fontawesome5} %引用icon
 \usepackage{setspace}
 \lstset{language=Python, %設定語言
 		basicstyle=\footnotesize, 
 		frame=lines,
 		caption={Python code}, %設定capion
-		label={lst:example} %設定label
+		label={code.} %設定label
 }
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
-\captionsetup[figure]{name=圖} %更改圖片標題名稱
+\captionsetup[figure]{name=圖.} %更改圖片標題名稱
+\renewcommand{\lstlistingname}{程式.} %設定程式標示名稱
 \hoffset=-5mm %調整左右邊界
 \voffset=-10mm %調整上下邊界
 \setlength{\parindent}{2em}%設定首行行距縮排
@@ -424,7 +425,7 @@ $$g = \sum_{i=t}^{H-1}\gamma^{1-t}r_i$$
 $$G_t \leftarrow G_t+g,  i \leftarrow i+1$$
 $$V_t(s) \leftarrow \frac{G_t}{N}$$
 \item Markov Decision Process\\
-\quad 在MRP中加入決策(decision)和動作(action)\\
+\quad 在MRP中加入決策(decision)和動作(action)
 \begin{itemize}
 \item S：state 狀態
 \item A：action 動作
@@ -434,11 +435,61 @@ $P(s_{s+1}=s'|s_t=s,a_t=a)$
 $$R(s_t=s, a_t=a) = \mathbb{E}[r_t|s_t, a_t=a]$$
 \item D：折扣因子(discount factor)
 $$\gamma \in [0,1]$$
-MDP 是 tuple的格式：(S, A, P, R, $\gamma$)
 \end{itemize}
+\end{itemize}
+馬可夫決策過程以程式方面會以tuple的資料格式表示[程式.\ref{code.MDP code}]：
+\label{code.MDP code}
+\begin{lstlisting}
+MDP(S, A, P, R, gamma)
+\end{lstlisting}
 
 
-\end{itemize}
+policy(決策)：可以是一個決策行為的機率或確定執行的行為，若以數學方程式表示：
+$$\pi (a|s) = P(a_t=a|s_t=s)$$
+MRP和MDP方程式互相轉換：\\
+\iffalse
+\begin{tabbing}
+MRP\hspace{2em}\= \begin{small}$\longleftrightarrow$\end{small} \hspace{0.5em}\= MDP\hspace{6em}\\
+$P^{\pi}(s's)$\> = \>$\sum_{a\in A}\pi (a|s)P(s'|s, a)$\\
+$P^{\pi}(s)$\> = \>$\sum_{a\in A}\pi (a|s)P(s, a)$\\
+itemA   \> itemB   \> itemC
+\end{tabbing}
+\fi
+\begin{center}
+\begin{tabular}[c]{ccc}    
+%\multicolumn{1}{r}{MRP}
+MRP & $\longleftrightarrow$ & MDP\\
+\hline
+$P^{\pi}(s's)$ & = & $\sum_{a\in A}\pi (a|s)P(s'|s, a)$\\
+$P^{\pi}(s)$ & = & $\sum_{a\in A}\pi (a|s)P(s, a)$\\
+\includegraphics[height=3cm]{MRP}&&\includegraphics[height=3cm]{MDP}\\
+\hline
+\end{tabular}
+\end{center}
+state value function(狀態值方程式)$v^{\pi}(s)$\\
+$$v^{\pi}(s) = \mathbb{E}[G_t|s_t=s]$$
+$$= \mathbb{E}[R_{t+1}+\gamma v^{\pi}(s_{t+1})|s_t=s]$$
+$$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=8cm]{s_to _s}
+\caption{Backup Diagram for $V^{\pi}$}
+\label{fig.s_to_s}
+\end{center}
+\end{figure}
+$$v^{\pi}(s) = \sum_{a\in A}\pi (a|s)(R(s, a)+\gamma \sum_{s'\in s}P(s'|s, a)v^{\pi}(s'))$$
+state value function(狀態值方程式)$v^{\pi}(s)$
+$$v^{\pi}(s) = \mathbb{E}[G_t|s_t=s]$$
+$$= \mathbb{E}[R_{t+1}+\gamma v^{\pi}(s_{t+1})|s_t=s]$$
+$$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=8cm]{Q_pi function}
+\caption{Backup Diagram for $Q^{\pi}$}
+\label{fig.s_to_s}
+\end{center}
+\end{figure}
+$$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$
 \section{深度強化學習}
 \subsection{Deep Reinforcement Learning}
 \begin{figure}[hbt!]
@@ -446,6 +497,7 @@ MDP 是 tuple的格式：(S, A, P, R, $\gamma$)
 \includegraphics[scale=0.74]{ network}
 \caption{Our network is a 2-layer fully-connected net. }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
+
 \end{figure}
 
 \qquad 我們將定義一個可以執行我們的玩家(agent)的類神經網路，該網路將獲取遊戲狀態並決定我們應該做什麼(向上移動或向下移動
