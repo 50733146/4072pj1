@@ -26,7 +26,7 @@ left=3truecm,right=2.5truecm]{geometry}
 		caption={Python code}, %設定capion
 		label={lst:example} %設定label
 }
-\graphicspath{{./../images}} %圖片預設讀取路徑
+\graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
 \captionsetup[figure]{name=圖} %更改圖片標題名稱
 \hoffset=-5mm %調整左右邊界
@@ -334,17 +334,19 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \end{figure}
 %=--------The Flow of Reinforcement Learning------------=%.
 
-強化學習的流程：\\[6pt]
-透過agent與環境間互動而產生狀態和獎勵，由於狀態的轉移，agent會決定接下來執行動作。\\[12pt]
+強化學習的流程：\\
+透過agent與環境間互動而產生狀態和獎勵，由於狀態的轉移，agent會決定接下來執行動作[圖.\ref{RL structur}]。\\[12pt]
 
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=10cm]{The_Flow_of_Reinforcement_Learning}
 \caption{RL structur}
+\label{RL structur}
 \end{center}
 \end{figure}
-需要考慮的重點:\\[6pt]
-\qquad 強化學習的週期是互相聯繫的，分明的溝通是在考慮獎勵的情況下發生的，agent與環境之間存在著獨特的溝通。狀態和動作互相關聯著，並互相影響著彼此：目標或機器人會因動作而造成狀態轉移，狀態的移轉也會影響目標或機器人做出的決策。
+
+需要考慮的重點：\\
+強化學習的週期是互相聯繫的，分明的溝通是在考慮獎勵的情況下發生的，agent與環境之間存在著獨特的溝通。狀態和動作互相關聯著，並互相影響著彼此：目標或機器人會因動作而造成狀態轉移，狀態的移轉也會影響目標或機器人做出的決策。\\
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -352,7 +354,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
-\qquad agent是決策者，會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他會做出決策，決策所執行的動作會使場景進入下一個狀態，當環境轉變，環境裡的項目也會跟著變動，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\[12pt]
+ agent是決策者，會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他會做出決策，決策所執行的動作會使場景進入下一個狀態，當環境轉變，環境裡的項目也會跟著變動，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\
 \iffalse
 %------------------圖片可共用----------------------%
 \begin{figure}[hbt!]
@@ -364,9 +366,8 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \fi
 %=----Different Terms in Reinforcement Learning----------=%
 
-\qquad 強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值， 
-$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為時常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因得到的先後順序而有所衰減)。\\[6pt]
-\qquad 當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\[12pt]
+ 強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值，$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為時常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因得到的先後順序而有所衰減)。\\
+ 當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\
 %------------------圖片可共用----------------------%
 \iffalse
 \begin{figure}[hbt!]
@@ -377,14 +378,12 @@ $\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\g
 \end{figure}
 \fi
 %=----Interactions with Reinforcement Learning------------=%
-強化學習的互動：\\[6pt]
-\qquad agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
-
+強化學習的互動：\\[1pt]
+ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\[1pt]
 獎勵的目的與運作：\\
-
-\qquad 以獎勵的方式誘導機器採取我們所期望的動作或是特定結果。機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\[6pt]
+ 以獎勵的方式誘導機器採取我們所期望的動作或是特定結果。機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\[6pt]
 Agents：\\[6pt]
-\qquad 在強化學習方面，agent可以感知環境時，它可以做出比以往更好的決定。採取的決定就會產生行動且執行的行動必須是最好最佳的。\\[12pt]
+ 在強化學習方面，agent可以感知環境時，它可以做出比以往更好的決定。採取的決定就會產生行動且執行的行動必須是最好最佳的。\\[12pt]
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{agent}
