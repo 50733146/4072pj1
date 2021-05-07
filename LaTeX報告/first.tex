@@ -26,7 +26,7 @@ left=3truecm,right=2.5truecm]{geometry}
 		caption={Python code}, %設定capion
 		label={lst:example} %設定label
 }
-\graphicspath{{./../images/}} %圖片預設讀取路徑
+\graphicspath{{./../images}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
 \captionsetup[figure]{name=圖} %更改圖片標題名稱
 \hoffset=-5mm %調整左右邊界
@@ -106,10 +106,10 @@ Application of reinforcement
 \LARGE\textbf{摘要}\\
 \begin{flushleft}
 \fontsize{14pt}{2.5pt}\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，但不能以實體一直測試不同方法，成本與時間不允許，便可以利用許多感測器觀測數值，以類神經網路運算，在虛擬環境架設結構，遠端控制、更改數值。\\
-\hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的  Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。
+\hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的 \sectionef Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。
 \end{flushleft}
 \begin{center}
-\fontsize{14pt}{2.5pt}關鍵字: Policy gradient、虛擬環境架設結構、Reinforcement Learning
+\fontsize{14pt}{2.5pt}關鍵字:\sectionef Policy gradient、虛擬環境架設結構、Reinforcement Learning
 \end{center}
 \newpage
 %=------------------------誌謝----------------------=%
@@ -137,14 +137,12 @@ Application of reinforcement
 \newpage
 \end{center}
 %=-------------------------內容----------------------=%
-
 \chapter{前言}
 \renewcommand{\baselinestretch}{10.0} %設定行距
 \pagenumbering{arabic} %設定頁號阿拉伯數字
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
 \section{研究動機}
-
 \qquad 機器學習與機電系統結合的運用越來廣泛，我們將其運用在桌球機上，使完成訓練的機電系統能獨自與玩家對打。\\
 \section{研究目的與方法}
 \qquad 本研究分兩大部分，第一運用Open AI Gym的Pong-v0來訓練機器學習，第二利用CoppilaSim模擬環境並訓練出能與人對打的機電系統。\\[12pt]
@@ -163,13 +161,13 @@ Application of reinforcement
 \item 擊錘只單一方向移動。
 \item 最快贏得21分者獲勝，並結束該局遊戲。
 \end{enumerate}
-\newpage
-\renewcommand{\baselinestretch}{0.5} %設定行距
-\chapter{機器學習的訓練方法}
 
+\chapter{機器學習的訓練方法}
+\renewcommand{\baselinestretch}{1.0} %設定行距
 \section{類神經網絡}
- 類神經網路的概念來源是觀察人類的中樞神經系統而啟發的，類神經網路主要由多個節點組成，每個節點稱為神經元（neurons），神經元與神經元連結而形成的網路稱為神經網路。神經元主要又分成三層：輸入層（input layer）、隱藏層（hidden layer）和輸出層（output layer）。神經元會接收上一層的訊號，並經過啟動函數（activation function）計算並輸出至下一層神經元。神經網路輸入層的神經元負責接收訊號，透過隱藏層來運算，再傳遞到輸出層執行動作。由於每個神經元經過啟動函數的非線性計算，所以神經元傳出的數值也是非線性。神經元與神經元間連線在生物學稱為突觸（Synapse），在數學模型裡每個突觸都有權重（weights）。在既定框架下，調配權重值和啟動函數會使結果更接近預期。神經網路的架構指標為以下幾項：階層數、每層神經元個數、神經元連接方式、啟動函數的類型等。\\
- 神經訊號傳遞分為前饋（feed-forward）和回饋（backpropagation）。前饋為傳遞經過啟動函數計算的數值。回饋則是修正權重和偏差（biases），以提高下次前饋計算的準確度。
+\qquad 類神經網路的概念來源是觀察人類的中樞神經系統而啟發的，類神經網路主要由多個節點組成，每個節點稱為神經元（neurons），神經元與神經元連結而形成的網路稱為神經網路。神經元主要又分成三層：輸入層（input layer）、隱藏層（hidden layer）和輸出層（output layer）。神經元會接收上一層的訊號，並經過啟動函數（activation function）計算並輸出至下一層神經元。神經網路輸入層的神經元負責接收訊號，透過隱藏層來運算，再傳遞到輸出層執行動作。由於每個神經元經過啟動函數的非線性計算，所以神經元傳出的數值也是非線性。神經元與神經元間連線在生物學稱為突觸（Synapse），在數學模型裡每個突觸都有權重（weights）。在既定框架下，調配權重值和啟動函數會使結果更接近預期。神經網路的架構指標為以下幾項：階層數、每層神經元個數、神經元連接方式、啟動函數的類型等。\\[12pt]
+
+\qquad 神經訊號傳遞分為前饋（feed-forward）和回饋（backpropagation）。前饋為傳遞經過啟動函數計算的數值。回饋則是修正權重和偏差（biases），以提高下次前饋計算的準確度。
 \subsection{啟動函數}
 以下介紹幾種較為常見的啟動函數及其特性：
 \begin{itemize}
@@ -523,7 +521,6 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 \qquad score function gradient estimator的可視化，左：高斯分佈及其中的一些樣本（藍點)，在每個藍點上，我們還繪製了相對於高斯平均參數的對數概率的梯度，箭頭指示應微調分佈平均值以增加該樣本概率的方向。中間：某些得分函數的疊加，在某些小區域中除了+1之外，其他所有地方都給出-1（請注意，這可以是任意的，不一定是可微分的標量值函數)，箭頭現在採用了顏色區別，因為由於更新中的乘法運算，我們將平均所有綠色箭頭和紅色箭頭的負數。右：更新參數後，綠色箭頭和反向紅色箭頭將我們向左移至底部。現在，根據需要，該分佈中的樣本將具有更高的預期分數。\\
 \newpage
 \section{比較個方法的特色}
-\newpage
 \chapter{訓練環境}
 \section{openAI Gym}
  Gym 是用於開發和比較強化學習算法的工具包，他不對agent的結構做任何假設，並且與任何數據計算庫兼容，而可以用來制定強化學習的算法。這個環境具有共享的介面，使我們能用來編寫常規算法，也就能教導agents如何步行到玩遊戲。\\[6pt]
@@ -544,6 +541,11 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 %\renewcommand{\baselinestretch}{10.0} %設定行距
 \section{模擬模型}
  在模擬的模型上，延用了學長設計的冰球機，並進行了部分的設計變更，將原本的人機對打更改為機器對打，且因為搭配深度強化學習的訓練，所以將兩邊的擊球器都僅保留X軸向(左右)移動，而冰球則是使用原本設計。多虧了學長們所設計的冰球機模型，讓我們在運作上有問題時可以直接發問，設計變更的地方也可以快速完成。\\
+\begin{figure}[hbt!]
+\center
+\includegraphics[height=7cm]{model}
+\caption{regression line}
+\end{figure}
 \section{CoppeliaSim模擬}
  CoppeliaSim是具有集成開發環境的機器人模擬器,基於分佈式控制體系架構,可以通過嵌入式腳本，插件，ROS或BlueZero節點，RemoteAPI客戶端或自定義解決方案進行模型控制。\\
 \subsection{使用原因}
@@ -576,10 +578,10 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
 \section{Ubuntu 環境配置}
  在一開始會先使用套件管理系統 apt 指令去下載 Xorg , fluxbox , lxde 套件。Xorg 是 Ubuntu 操作系統的一個顯示服務器軟件包，它在被導入 Ubuntu 操作系統後會載入一系列的文件或軟件，這些都是跟顯示卡驅動，圖形環境庫相關的一些文件、軟件。Gnome ，kde，包括我們使用的 lxde 也需要 xorg 才能實現。而 Lxde 它的全名是 Lightweight X11 Desktop Environment ，是自由軟體桌面環境，其優點在於提供了輕量而快速的桌面環境，它比較重視實用、輕巧，除此之外它還可以在 Linux 平台執行。\\
  
-之後需選擇 display manager ( 顯示管理器 )的種類 ，Display manager 是操作系統 Ubuntu 的組件，其中登錄的動作即為 Display manager 負責。該操作系統中常見的類型有 gdm ,gdm3 , lightdm ,kdm ...。各類型的 Display manager 功能其實大同小異，差別在於外觀、操作、格式、複雜度和使用者感受等，可依使用者需求變更 ( 有些較為輕量，適合比較低階的運行器 )**。**選擇其中一個後繼續，之後可以切換更動 。\\
+ 之後需選擇 display manager ( 顯示管理器 )的種類 ，Display manager 是操作系統 Ubuntu 的組件，其中登錄的動作即為 Display manager 負責。該操作系統中常見的類型有 gdm ,gdm3 , lightdm ,kdm ...。各類型的 Display manager 功能其實大同小異，差別在於外觀、操作、格式、複雜度和使用者感受等，可依使用者需求變更 ( 有些較為輕量，適合比較低階的運行器 )**。**選擇其中一個後繼續，之後可以切換更動 。\\
 
  再來是模組的導入，此處同樣用 apt 指令安裝 : Pip , uwsgi , Nginx  , 以及 Git 。如果要從 Ubuntu 系統上安裝軟體，其中一種方式是 " pip "。「pip 」是 " pip Installs Packages " 的縮寫，是一個用命令列作為基礎的套件管理系統，可以用它來安裝 python 的應用程式。而使用 Git 是因為在備份資料時， 可幫助使用者有效管理原始碼，而 github 就是由 Git 伺服器和網頁介面組成，用來當作放置原始碼的倉庫。\\
- 另外 Nginx 和 uwsgi 是為拿來配合把 python 程式應用在網路上實現，並且把想要的結果使其能在網路實時觀看操控結果之反饋。
+ 另外 Nginx 和 uwsgi 是為拿來配合把 python 程式應用在網路上實現，並且把想要的結果使其能在網路實時觀看操控結果之反饋。\\
 \section{Oracle VM VirtualBox 介紹}
  Ubuntu 作業系統是 Linux 系統的一個發行版，目前免費且開源，Ubuntu 基於 Debian發行版和 GNOME 桌面環境，其目標在於為一般使用者提供一個最新、穩定又主要以自由軟體建構而成的作業系統。\\
  
@@ -612,9 +614,13 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
 \begin{enumerate}
 \item addresses： 為靜態 IP，可以是IPV4或IPV6。
 \item gateway： 即為該電腦之閘道器。
-\item nameservers： 該電腦之CNS服務器。
+\item nameservers： 該電腦之DNS服務器。
 \end{enumerate}
-
+\newpage
+\chapter{深度強化學習的訓練與模擬控制結果}
+%\renewcommand{\baselinestretch}{1.0} %設定行距
+程式訓練流程：\\
+ 擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
 \section{Web server}
 \qquad Nginx 是提供 web 相關服務的伺服器 ( Web server )，除了是高效能的 HTTP ( HTTPS ) 服務器外，還可處理靜態資源 , 負載平衡 , 代理等工作。代理工作為根據不同域名轉發到 Application Server 的不同 port 上去處理 ，其中又分正向和反向，正向代理為 clinet 端發送 request 經由 porxy server 再到目標網站，反向則反之。正向代理操作中 server 只知道 proxy server  給他 request , 不知道 client 是誰，而相同地反向代理則是 client 只知道 proxy server 給他 responses , 不知道 server 是誰。正向代理隐藏真實 Client，反向代理隱藏真實 Server。另外在高流量的狀況下，需要多個 Application Server 來分擔流量，負載平衡就是負責 request 的分發，決定 request 要被分到哪一個 Application Server 處理 。而關於處理靜態資源 ，Nginx 與 Apache 等 Web Server 處理靜態資源的能力是遠遠高於 Application Server 的。\\
 %======圖片 clientProxy======%
