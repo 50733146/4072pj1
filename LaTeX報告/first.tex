@@ -543,13 +543,42 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
  在模擬的模型上，延用了學長設計的冰球機，並進行了部分的設計變更，將原本的人機對打更改為機器對打，且因為搭配深度強化學習的訓練，所以將兩邊的擊球器都僅保留X軸向(左右)移動，而冰球則是使用原本設計。多虧了學長們所設計的冰球機模型，讓我們在運作上有問題時可以直接發問，設計變更的地方也可以快速完成。\\
 \begin{figure}[hbt!]
 \center
-\includegraphics[height=7cm]{model}
+\includegraphics[width=13cm]{model}
 \caption{regression line}
 \end{figure}
+
+\qquad 將原本Y軸移動機構移除,並將其改為固定在特定位置上，此固定座設計是取代原本鎖在光軸固定坐上的(圖4.1 代號 1)Y軸皮帶固定座(圖4.2)，並使光軸固定座可以通過連結固定做鎖固於桌面，如圖4.3。\\
+
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=10cm]{axialseat}
+\caption{Y軸皮帶固定座}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=10cm]{connectSeat}
+\caption{連結固定座}
+\end{center}
+\end{figure}
+
+
+\newpage
+\qquad 分別在擊球器外側保留約冰球直徑1.5倍之區域作為得分判定區，如圖4.4中的紅色區域。\\
 \section{CoppeliaSim模擬}
  CoppeliaSim是具有集成開發環境的機器人模擬器,基於分佈式控制體系架構,可以通過嵌入式腳本，插件，ROS或BlueZero節點，RemoteAPI客戶端或自定義解決方案進行模型控制。\\
+ \begin{figure}[hbt!]
+\center
+\includegraphics[width=11cm]{CoppeliaSim}
+\caption{CoppeliaSim Logo}
+\end{figure}
+
+且CoppeliaSim中，控制器可以用C / C ++、Python、Java、Lua、Matlab或Octave編寫。\\
 \subsection{使用原因}
  本專題之最終目標是希望可以在虛擬環境中進行深度強化學習來訓練機器對打，通過虛擬環境中的模擬後，可以更直接地看到深度強化學習訓練的狀況，且因為在虛擬環境中不會有金費的支出，所以可以不斷的重複模擬直到模擬達到最佳的狀態，除此之外CoppeliaSim的虛擬環境更接近真實環境，基於以上原因，所以使用了CoppeliaSim協助開發。\\
+ 
 \subsection{模擬}
 \begin{enumerate}
 
@@ -569,8 +598,6 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模型中的點在圓柱坐標系中的表示法,HSV分別表示Hue(色相)、Saturation(飽和度)、Value(明度)\\
 \item 顏色過濾\\
 進行顏色過濾時,需要先定義出過濾顏色的上下限,在開始過濾後低於下限或高於上限的值會變成0(即黑色),而介於上下限範圍間的值會變成255(即白色)\\
-\item 雜訊去除\\
-為了避免環境因素干擾,使影像產生雜訊並影響了影像辨識度,所以在雜訊的去除也是很重要的,
 \end{enumerate}
 \newpage
 \chapter{伺服器}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.12 Portable) (preloaded format=xelatex 2021.1.18)  6 MAY 2021 22:50
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.12 Portable) (preloaded format=xelatex 2021.1.18)  7 MAY 2021 20:56
 entering extended mode
 **./first.tex
 (first.tex
@@ -916,77 +916,77 @@ Overfull \hbox (1.77997pt too wide) detected at line 28
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 29
- \TU/TimesNewRoman(0)/m/n/17.28 27
+ \TU/TimesNewRoman(0)/m/n/17.28 28
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 30
- \TU/TimesNewRoman(0)/m/n/17.28 27
+ \TU/TimesNewRoman(0)/m/n/17.28 29
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 31
- \TU/TimesNewRoman(0)/m/n/17.28 28
+ \TU/TimesNewRoman(0)/m/n/17.28 29
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 32
- \TU/TimesNewRoman(0)/m/n/17.28 28
+ \TU/TimesNewRoman(0)/m/n/17.28 29
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 33
- \TU/TimesNewRoman(0)/m/n/17.28 28
+ \TU/TimesNewRoman(0)/m/n/17.28 29
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 34
- \TU/TimesNewRoman(0)/m/n/17.28 28
+ \TU/TimesNewRoman(0)/m/n/17.28 30
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 35
- \TU/TimesNewRoman(0)/m/n/17.28 30
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 36
- \TU/TimesNewRoman(0)/m/n/17.28 30
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 37
  \TU/TimesNewRoman(0)/m/n/17.28 31
  []
 
 
+Overfull \hbox (1.77997pt too wide) detected at line 36
+ \TU/TimesNewRoman(0)/m/n/17.28 31
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 37
+ \TU/TimesNewRoman(0)/m/n/17.28 32
+ []
+
+
 Overfull \hbox (1.77997pt too wide) detected at line 38
- \TU/TimesNewRoman(0)/m/n/17.28 33
+ \TU/TimesNewRoman(0)/m/n/17.28 34
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 39
- \TU/TimesNewRoman(0)/m/n/17.28 34
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 40
- \TU/TimesNewRoman(0)/m/n/17.28 34
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 41
- \TU/TimesNewRoman(0)/m/n/17.28 36
+ \TU/TimesNewRoman(0)/m/n/17.28 37
  []
 
 [4]
 Overfull \hbox (1.77997pt too wide) detected at line 42
- \TU/TimesNewRoman(0)/m/n/17.28 38
+ \TU/TimesNewRoman(0)/m/n/17.28 39
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 43
- \TU/TimesNewRoman(0)/m/n/17.28 39
+ \TU/TimesNewRoman(0)/m/n/17.28 40
  []
 
 )
@@ -1031,6 +1031,21 @@ Overfull \hbox (0.363pt too wide) detected at line 10
 
 Overfull \hbox (0.363pt too wide) detected at line 13
  []\TU/lmr/m/n/17.28 27
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 14
+ []\TU/lmr/m/n/17.28 28
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 15
+ []\TU/lmr/m/n/17.28 28
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 16
+ []\TU/lmr/m/n/17.28 29
  []
 
 )
@@ -1470,74 +1485,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 550--551
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
-
- []
-
+File: ./../images/axialseat.png Graphic file (type bmp)
+<./../images/axialseat.png>
+File: ./../images/connectSeat.png Graphic file (type bmp)
+<./../images/connectSeat.png>
 [27
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 558--559
+Underfull \hbox (badness 10000) in paragraph at lines 569--570
+
+ []
+
+File: ./../images/CoppeliaSim.png Graphic file (type bmp)
+<./../images/CoppeliaSim.png>
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--565
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 568--570
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 570--572
-
- []
-
-[28] [29]
-Chapter 5.
-
-Underfull \hbox (badness 10000) in paragraph at lines 577--578
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 579--580
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 581--582
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 583--585
-
- []
-
-[30
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 586--587
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 588--589
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 590--592
+Underfull \hbox (badness 10000) in paragraph at lines 587--588
 
  []
 
@@ -1547,68 +1519,127 @@ Underfull \hbox (badness 10000) in paragraph at lines 593--594
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--598
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
 
  []
 
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
-
- []
-
-[32] [33]
-Chapter 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 622--624
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 597--599
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--628
+Underfull \hbox (badness 10000) in paragraph at lines 599--601
 
  []
 
-[34
+[30]
+Chapter 5.
 
-] [35]
-Chapter 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 630--631
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--634
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
 
  []
 
-[36
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--612
+
+ []
+
+[31
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
+Underfull \hbox (badness 10000) in paragraph at lines 613--614
 
  []
 
-[37]
+
+Underfull \hbox (badness 10000) in paragraph at lines 615--616
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--619
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--621
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
+
+ []
+
+[33] [34]
+Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--651
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--655
+
+ []
+
+[35
+
+] [36]
+Chapter 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--661
+
+ []
+
+[37
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 662--663
+
+ []
+
+[38]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 641--642
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
 
  []
 
-[38
+[39
 
-] [39] [40] (first.aux)
+] [40] [41] (first.aux)
 Package rerunfilecheck Info: File `first.out' has not changed.
 (rerunfilecheck)             Checksum: B4AEE6A2FAF970DE40012759750F1CFB;4177.
 
@@ -1617,12 +1648,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 19486 strings out of 412094
- 359945 string characters out of 2849291
+ 19519 strings out of 412094
+ 360634 string characters out of 2849291
  788838 words of memory out of 3000000
- 38831 multiletter control sequences out of 15000+200000
+ 38861 multiletter control sequences out of 15000+200000
  412961 words of font info for 111 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  79i,6n,85p,747b,1134s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on first.pdf (47 pages).
+Output written on first.pdf (48 pages).

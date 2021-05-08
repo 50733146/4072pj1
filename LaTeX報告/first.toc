@@ -26,19 +26,19 @@
 \contentsline {section}{\numberline {3.4}Pong from pixels}{25}{section.3.4}%
 \contentsline {chapter}{\numberline {4}模擬環境}{27}{chapter.4}%
 \contentsline {section}{\numberline {4.1}模擬模型}{27}{section.4.1}%
-\contentsline {section}{\numberline {4.2}CoppeliaSim模擬}{27}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}使用原因}{27}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}模擬}{28}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}CoppeliaSim中的Vision sensor}{28}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}影像處理}{28}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}影像辨識}{28}{subsection.4.3.1}%
-\contentsline {chapter}{\numberline {5}伺服器}{30}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Ubuntu 環境配置}{30}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Nginx}{33}{section.5.3}%
-\contentsline {chapter}{\numberline {6}深度強化學習的訓練與模擬控制結果}{34}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Web server}{34}{section.6.1}%
-\contentsline {chapter}{\numberline {7}深度強化學習的訓練與模擬控制結果}{36}{chapter.7}%
-\contentsline {chapter}{\numberline {8}問題與討論}{38}{chapter.8}%
-\contentsline {chapter}{參考文獻 }{39}{lstnumber.8.1.8}%
+\contentsline {section}{\numberline {4.2}CoppeliaSim模擬}{28}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}使用原因}{29}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}模擬}{29}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}CoppeliaSim中的Vision sensor}{29}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}影像處理}{29}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}影像辨識}{30}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}伺服器}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ubuntu 環境配置}{31}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{32}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Nginx}{34}{section.5.3}%
+\contentsline {chapter}{\numberline {6}深度強化學習的訓練與模擬控制結果}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Web server}{35}{section.6.1}%
+\contentsline {chapter}{\numberline {7}深度強化學習的訓練與模擬控制結果}{37}{chapter.7}%
+\contentsline {chapter}{\numberline {8}問題與討論}{39}{chapter.8}%
+\contentsline {chapter}{參考文獻 }{40}{lstnumber.8.1.8}%
 \contentsfinish 
