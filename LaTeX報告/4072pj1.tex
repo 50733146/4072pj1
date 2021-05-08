@@ -105,12 +105,36 @@ Application of reinforcement
 \addcontentsline{toc}{chapter}{摘\quad 要} %將摘要加入目錄
 \begin{center}
 \LARGE\textbf{摘要}\\
+<<<<<<< HEAD
+\end{center}
+\begin{flushleft}
+\fontsize{14pt}{2.5pt}\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，不能以實體一直測試不同方法，成本與時間不允許，便可以利用虛擬環境架設結構與觀測數值，結合類神神經網路的學習與數值分析的最佳化，大量減少時間與設備成本，獲得最佳解。\\
+\hspace{12pt} 此專題是利用現成裝置冰球台，在\sectionef CoppeliaSim設置對應虛擬模擬環境，減少現實模擬參數設置與設備損壞成本，並加入類神經網路與強化學習在OpenAI Gym應用，提升對打能力，使冰球達到對應最佳化。
+\end{flushleft}
+\begin{center}
+\fontsize{14pt}{2.5pt}關鍵字: 類神經網路、強化學習、\sectionef CoppeliaSim、OpenAI Gym
+\end{center}
+\newpage
+%=--------------------Abstract----------------------=%
+\renewcommand{\baselinestretch}{1.5} %設定行距
+\addcontentsline{toc}{chapter}{Abstract} %將摘要加入目錄
+\begin{center}
+\LARGE\textbf\sectionef{Abstract}\\
+\begin{flushleft}
+\fontsize{14pt}{2.5pt}\hspace{12pt} \sectionef The industry needs to accelerate the calculation of many manufacturing method to achieve optimization.It is not possible to constantly test different methods with physical entities. Cost and time do not allow. WE can use the virtual environment to set up the structure and observe the value, combine the learning of the god-like neural network and the optimization of the numerical analysis, greatly reduce the time and equipment cost, and get the best Good solution.\\
+
+{12pt} This project is to use the ready-made ice hockey table to set up a corresponding virtual simulation environment in CoppeliaSim to reduce the cost of realistic simulation parameter settings and equipment damage, and to add a neural network and reinforcement learning to the OpenAI Gym application to improve the ability to play ice hockey.
+\end{flushleft}
+\begin{center}
+\fontsize{14pt}{2.5pt}關鍵字: \sectionef nerual network、reinforcement learning、 CoppeliaSim、OpenAI Gym
+=======
 \begin{flushleft}
 \fontsize{14pt}{2.5pt}\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，但不能以實體一直測試不同方法，成本與時間不允許，便可以利用許多感測器觀測數值，以類神經網路運算，在虛擬環境架設結構，遠端控制、更改數值。\\
 \hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的 \sectionef Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。
 \end{flushleft}
 \begin{center}
 \fontsize{14pt}{2.5pt}關鍵字:\sectionef Policy gradient、虛擬環境架設結構、Reinforcement Learning
+>>>>>>> 34fa0eac5285752ade6b8f647f8509f256c48557
 \end{center}
 \newpage
 %=------------------------誌謝----------------------=%
@@ -163,6 +187,30 @@ Application of reinforcement
 \item 最快贏得21分者獲勝，並結束該局遊戲。
 \end{enumerate}
 
+<<<<<<< HEAD
+\renewcommand{\baselinestretch}{0.5} %設定行距
+\chapter{機器學習概論}
+\section{類神經網絡}
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[scale=0.74]{兩層神經網路}
+\caption{兩層神經網路}
+\end{center}
+\end{figure}
+
+ 圖1-1展示了兩層類神經網路的架構，如圖所示每一層每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
+
+ 神經元是AI系統中使用的軟件模型，其行為或多或少像實際的大腦神經元，模型會使用數字，使一個或另一個神經元對結果有重要的影響，這些數字又稱為權重。\\
+
+ 圖1-1也展示了輸入層、隱藏層和輸出層，這是最陽春的網路，真正的網路可以更複雜且有更多層次，事實上深度學習命名原則，就是由多層的隱藏層而來，從意義上來說就是增加了類神經網路的深度。\\
+
+ 此外，如圖1-1所示，是具有過濾層並在​​其中從左到右處理信息，數據輸入的方向只有一個，故被稱為前饋輸入(feed-forward input)。\\
+
+ 有了網路架構，就能進一步讓網路學習，神經元網路會接收一個例子並猜測答案，如果答案是錯誤的，它會回溯並修改對神經元施加權重和偏差，並嘗試通過更改某些值來修復錯誤，這樣的行為就被稱為反向傳播(backpropagation)。使用迭代方法進行反複試驗，模擬人們重複的行為，執行經過多時後，最終類神經網路學習會進步並給出更好的答案，訓練時間可以是一天，甚制是一個禮拜，才能完成學習複雜的項目，故每一次的迭代被稱為epoch。\\
+
+ 可以看到該神經網絡的輸出僅取決於互連的權重，還取決於神經元本身的偏差，雖然權重會影響啟動函數曲線的陡度，但是偏差會將發生變化的整個曲線，像右或向左，權重和偏差的選擇，決定了單個神經元的預測強度，而訓練神經
+網絡使用的輸入數據可以來微調權重和偏差。
+=======
 \chapter{機器學習的訓練方法}
 \renewcommand{\baselinestretch}{1.0} %設定行距
 \section{類神經網絡}
@@ -180,6 +228,7 @@ Application of reinforcement
 \qquad 有了網路架構，就能進一步讓網路學習，神經元網路會接收一個例子並猜測答案，如果答案是錯誤的，它會回溯並修改對神經元施加權重和偏差，並嘗試通過更改某些值來修復錯誤，這樣的行為就被稱為反向傳播(backpropagation)。使用迭代方法進行反複試驗，模擬人們重複的行為，執行經過多時後，最終類神經網路學習會進步並給出更好的答案，訓練時間可以是一天，甚制是一個禮拜，才能完成學習複雜的項目，故每一次的迭代被稱為epoch。\\
 \qquad 可以看到該神經網絡的輸出僅取決於互連的權重，還取決於神經元本身的偏差，雖然權重會影響啟動函數曲線的陡度，但是偏差會將發生變化的整個曲線，像右或向左，權重和偏差的選擇，決定了單個神經元的預測強度，而訓練神經
 網絡使用的輸入數據可以來微調權重和偏差。\\
+>>>>>>> 34fa0eac5285752ade6b8f647f8509f256c48557
 \subsection{啟動函數}
 啟動函數是設計類神經網路的關鍵部分，如果不使用啟動函數，每一層神經元連接到下一層神經元，只會有線性組合，作為輸出，類神經網路便失去了意義，也就是說啟動函數能讓神經元間的連線，產生非線姓的組合並作為該層的輸出。\\
 以下介紹幾種較為常見的啟動函數及其特性：
@@ -277,7 +326,11 @@ $$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}
 \end{itemize}
 \fi %整段註解(結尾)
 \subsection{損失函數}
+<<<<<<< HEAD
+損失函數是類神經網路的最後一塊拼圖，損失函數會將神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重以減少下次評估時的損失，以下將介紹幾種優化的方法：\\
+=======
 \quad 損失函數是類神經網路的最後一塊拼圖，損失函數會將神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重以減少下次評估時的損失，以下將介紹幾種優化的方法：\\
+>>>>>>> 34fa0eac5285752ade6b8f647f8509f256c48557
 
 \begin{itemize}
 \item Gradient Descent\\

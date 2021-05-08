@@ -1,4 +1,49 @@
 \BOOKMARK [0][-]{Doc-Start}{摘 要}{}% 1
+<<<<<<< HEAD
+\BOOKMARK [0][-]{Doc-Start}{Abstract}{}% 2
+\BOOKMARK [0][-]{Doc-Start}{誌 謝}{}% 3
+\BOOKMARK [0][-]{chapter.1}{前言}{}% 4
+\BOOKMARK [1][-]{section.1.1}{研究動機}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{研究目的與方法}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.3}{未來展望}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.4}{規則說明}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{機器學習概論}{}% 9
+\BOOKMARK [1][-]{section.2.1}{類神經網絡}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.1.1}{啟動函數}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.2}{損失函數}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.3}{優化算法}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{強化學習}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{馬可夫決策}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{Policy\040Gradient}{section.2.2}% 16
+\BOOKMARK [1][-]{section.2.3}{深度強化學習}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.3.1}{Supervised\040Learning}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.2}{對數導數技巧}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.3}{Score\040Functions}{section.2.3}% 20
+\BOOKMARK [2][-]{subsection.2.3.4}{Score\040Function\040Estimators}{section.2.3}% 21
+\BOOKMARK [1][-]{section.2.4}{比較個方法的特色}{chapter.2}% 22
+\BOOKMARK [0][-]{chapter.3}{訓練環境}{}% 23
+\BOOKMARK [1][-]{section.3.1}{openAI\040Gym}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.2}{Pong}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{為什麼選擇score function 算法}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.4}{Pong\040from\040pixels}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter.4}{模擬環境}{}% 28
+\BOOKMARK [1][-]{section.4.1}{模擬模型}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{CoppeliaSim模擬}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{使用原因}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{模擬}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.3}{CoppeliaSim中的Vision sensor}{section.4.2}% 33
+\BOOKMARK [1][-]{section.4.3}{影像處理}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.3.1}{影像辨識}{section.4.3}% 35
+\BOOKMARK [0][-]{chapter.5}{伺服器}{}% 36
+\BOOKMARK [1][-]{section.5.1}{Ubuntu 環境配置}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.2}{Oracle VM VirtualBox 介紹}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.3}{Nginx}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{深度強化學習的訓練與模擬控制結果}{}% 40
+\BOOKMARK [1][-]{section.6.1}{Web\040server}{chapter.6}% 41
+\BOOKMARK [0][-]{chapter.7}{深度強化學習的訓練與模擬控制結果}{}% 42
+\BOOKMARK [0][-]{chapter.8}{問題與討論}{}% 43
+\BOOKMARK [0][-]{lstnumber.8.1.8}{參考文獻 }{}% 44
+=======
 \BOOKMARK [0][-]{Doc-Start}{誌 謝}{}% 2
 \BOOKMARK [0][-]{chapter.1}{前言}{}% 3
 \BOOKMARK [1][-]{section.1.1}{研究動機}{chapter.1}% 4
@@ -41,3 +86,4 @@
 \BOOKMARK [0][-]{chapter.7}{深度強化學習的訓練與模擬控制結果}{}% 41
 \BOOKMARK [0][-]{chapter.8}{問題與討論}{}% 42
 \BOOKMARK [0][-]{lstnumber.8.1.8}{參考文獻 }{}% 43
+>>>>>>> 34fa0eac5285752ade6b8f647f8509f256c48557
