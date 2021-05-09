@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  9 MAY 2021 22:27
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  9 MAY 2021 22:53
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
@@ -1740,71 +1740,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 820--822
  []
 
 [37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 843--846
+
+ []
+
+[39]
 Chapter 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 843--845
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 846--849
-
- []
-
-[39
-
-] [40]
-Chapter 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 851--852
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 853--855
-
- []
-
-[41
+[40
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 856--857
+Underfull \hbox (badness 10000) in paragraph at lines 852--854
 
  []
 
-[42]
-Chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 855--856
+
+ []
+
+[41]
+Chapter 7.
 File: ./../images/Q_dll.png Graphic file (type bmp)
 <./../images/Q_dll.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 869--871
+Underfull \hbox (badness 10000) in paragraph at lines 868--870
 
  []
 
-[43
+[42
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 872--873
+Underfull \hbox (badness 10000) in paragraph at lines 871--872
 
  []
 
-[44] [45]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 906.
- [46]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 906.
+[43] [44]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 905.
+ [45]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 905.
  (4072pj1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 906.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 906.
-Package rerunfilecheck Info: File `4072pj1.out' has not changed.
-(rerunfilecheck)             Checksum: BC71711DEC05A5B1E3EFB690B0240EB3;3151.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 905.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 905.
 
+
+Package rerunfilecheck Warning: File `4072pj1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `4072pj1.out':
+(rerunfilecheck)             Before: BC71711DEC05A5B1E3EFB690B0240EB3;3151
+(rerunfilecheck)             After:  3398203E471C12621B50E5FD16A6A80E;3067.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 906.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 905.
  ) 
 Here is how much of TeX's memory you used:
  20129 strings out of 414221
@@ -1813,6 +1805,6 @@ Here is how much of TeX's memory you used:
  37331 multiletter control sequences out of 15000+200000
  553500 words of font info for 170 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 48i,8n,81p,737b,1081s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,8n,81p,736b,1081s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 4072pj1.pdf (55 pages).
+Output written on 4072pj1.pdf (54 pages).
