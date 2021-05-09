@@ -8,7 +8,6 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces agent\relax }}{13}{figure.caption.8}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Backup Diagram for $V^{\pi }$\relax }}{16}{figure.caption.9}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Backup Diagram for $Q^{\pi }$\relax }}{17}{figure.caption.10}%
-<<<<<<< HEAD
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Our network is a 2-layer fully-connected net. \relax }}{17}{figure.caption.11}%
 \contentsline {figure}{\numberline {2.10}{\ignorespaces supervising learning \relax }}{18}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.11}{\ignorespaces gradient change\relax }}{21}{figure.caption.13}%
@@ -16,22 +15,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces regression line\relax }}{26}{figure.caption.15}%
-=======
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Our network is a 2-layer fully-connected net. \relax }}{18}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces supervising learning \relax }}{18}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces gradient change\relax }}{21}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces gradient change\relax }}{23}{figure.caption.14}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces regression line\relax }}{27}{figure.caption.15}%
->>>>>>> 34fa0eac5285752ade6b8f647f8509f256c48557
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-<<<<<<< HEAD
-\contentsline {figure}{\numberline {8.1}{\ignorespaces 動態連結庫錯誤\relax }}{37}{figure.caption.16}%
-=======
-\contentsline {figure}{\numberline {8.1}{\ignorespaces 動態連結庫錯誤\relax }}{38}{figure.caption.16}%
->>>>>>> 34fa0eac5285752ade6b8f647f8509f256c48557
+\contentsline {figure}{\numberline {7.1}{\ignorespaces 動態連結庫錯誤\relax }}{36}{figure.caption.16}%
 \contentsfinish 
