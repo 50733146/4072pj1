@@ -317,7 +317,6 @@ $$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}
 \newpage
 \end{itemize}
 \fi %整段註解(結尾)
-
 \subsection{損失函數}
 損失函數是類神經網路的最後一塊拼圖，損失函數會將神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重以減少下次評估時的損失，以下將介紹幾種優化的方法：\\
 
@@ -652,7 +651,7 @@ How it work in a simple action-value actor-critic:
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{ network}
-\caption{Our network is a 2-layer fully-connected net. }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{Our network is a 2-layer fully-connected net. }
 \end{center}
 
 \end{figure}
@@ -665,7 +664,7 @@ How it work in a simple action-value actor-critic:
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{supervising_learning}
-\caption{supervising learning }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{supervising learning}
 \end{center}
 \end{figure}
 
@@ -678,9 +677,7 @@ How it work in a simple action-value actor-critic:
 \subsection{Score Functions}
  對數導數技巧的應用規則是基於參數$\theta$梯度的對數函數$p(x:\theta)$，如下:\\
 $$\nabla_\theta logp(x:\theta)=\frac{\nabla_\theta p(x:\theta)}{p(x:\theta)}$$\\
-$p(x:\theta)$是likelihood ; function參數$\theta$的函數，它提供隨機變量x的概率。在此特例中，$\nabla_\theta logp(x:\theta)$被稱為Score Function，而上述方程式右邊為score ratio(得分比)。\\[6pt]
-
-
+$p(x:\theta)$是likelihood ; function參數$\theta$的函數，它提供隨機變量x的概率。在此特例中，$\nabla_\theta logp(x:\theta)$被稱為Score Function，而上述方程式右邊為score ratio(得分比)。\\
 score function具有許多有用的屬性:\\
 
 \begin{itemize}
@@ -705,7 +702,7 @@ $$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] = \mathbb{E}_{p(z;\theta)}[f(z)\n
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.5]{gradient_change}
-\caption{gradient change}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{gradient change}
 \end{center}
 \end{figure}
  讓我們導出該表達式，並探討它對我們的優化問題的影響。\\
@@ -721,7 +718,7 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.4]{figure}
-\caption{gradient change}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{gradient change}
 \end{center}
 \end{figure}
 
@@ -784,7 +781,7 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
 \section{Ubuntu 環境配置}
  在一開始會先使用套件管理系統 apt 指令去下載 Xorg , fluxbox , lxde 套件。Xorg 是 Ubuntu 操作系統的一個顯示服務器軟件包，它在被導入 Ubuntu 操作系統後會載入一系列的文件或軟件，這些都是跟顯示卡驅動，圖形環境庫相關的一些文件、軟件。Gnome ，kde，包括我們使用的 lxde 也需要 xorg 才能實現。而 Lxde 它的全名是 Lightweight X11 Desktop Environment ，是自由軟體桌面環境，其優點在於提供了輕量而快速的桌面環境，它比較重視實用、輕巧，除此之外它還可以在 Linux 平台執行。\\
  
- 之後需選擇 display manager ( 顯示管理器 )的種類 ，Display manager 是操作系統 Ubuntu 的組件，其中登錄的動作即為 Display manager 負責。該操作系統中常見的類型有 gdm ,gdm3 , lightdm ,kdm ...。各類型的 Display manager 功能其實大同小異，差別在於外觀、操作、格式、複雜度和使用者感受等，可依使用者需求變更 ( 有些較為輕量，適合比較低階的運行器 )**。**選擇其中一個後繼續，之後可以切換更動 。\\
+ 之後需選擇 display manager ( 顯示管理器 )的種類 ，Display manager 是操作系統 Ubuntu 的組件，其中登錄的動作即為 Display manager 負責。該操作系統中常見的類型有 gdm ,gdm3 , lightdm ,kdm ...。各類型的 Display manager 功能其實大同小異，差別在於外觀、操作、格式、複雜度和使用者感受等，可依使用者需求變更 ( 有些較為輕量，適合比較低階的運行器 )。選擇其中一個後繼續，之後可以切換更動 。\\
 
  再來是模組的導入，此處同樣用 apt 指令安裝 : Pip , uwsgi , Nginx  , 以及 Git 。如果要從 Ubuntu 系統上安裝軟體，其中一種方式是 " pip "。「pip 」是 " pip Installs Packages " 的縮寫，是一個用命令列作為基礎的套件管理系統，可以用它來安裝 python 的應用程式。而使用 Git 是因為在備份資料時， 可幫助使用者有效管理原始碼，而 github 就是由 Git 伺服器和網頁介面組成，用來當作放置原始碼的倉庫。\\
  另外 Nginx 和 uwsgi 是為拿來配合把 python 程式應用在網路上實現，並且把想要的結果使其能在網路實時觀看操控結果之反饋。\\
@@ -885,6 +882,4 @@ A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
 \end{center}
 
 %\framebox[8cm][r]{\vspace{1em}test}
-
-
-\end{document}\textbf{•}
+\end{document}
