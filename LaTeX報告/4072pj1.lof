@@ -1,22 +1,30 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces 兩層神經網路\relax }}{3}{figure.caption.3}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces regression line\relax }}{7}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Venn diagram; \relax }}{11}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces RL structur\relax }}{11}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces The entire interaction process; \relax }}{12}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces agent\relax }}{13}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Backup Diagram for $v^{\pi }$\relax }}{16}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \Large 兩層神經網路\relax }}{3}{figure.caption.3}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \Large 線性回歸\relax }}{7}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \Large Venn diagram\relax }}{11}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \Large RL structur\relax }}{12}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \Large The entire interaction process \relax }}{12}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces \Large agent\relax }}{14}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Backup Diagram for $v^{\pi }$\relax }}{17}{figure.caption.9}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Backup Diagram for $q^{\pi }$\relax }}{17}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Our network is a 2-layer fully-connected net. \relax }}{23}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces supervising learning\relax }}{23}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces gradient change\relax }}{26}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces gradient change\relax }}{28}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Our network is a 2-layer fully-connected net. \relax }}{24}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces supervising learning\relax }}{24}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces gradient change\relax }}{27}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces gradient change\relax }}{29}{figure.caption.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+<<<<<<< HEAD
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 怪怪的喔\nobreakspace {}\relax }}{33}{figure.caption.15}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces 動態連結庫錯誤\relax }}{44}{figure.caption.16}%
+=======
 \contentsline {figure}{\numberline {4.1}{\ignorespaces 怪怪的喔\nobreakspace {}\relax }}{32}{figure.caption.15}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces 動態連結庫錯誤\relax }}{43}{figure.caption.16}%
+>>>>>>> fe740610b62036cad4f50fe778e22fe5064488bf
 \contentsfinish 

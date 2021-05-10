@@ -30,10 +30,10 @@ left=3truecm,right=2.5truecm]{geometry}
 }
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
-\captionsetup[figure]{name=圖.} %更改圖片標題名稱
+\captionsetup[figure]{name= \Large 圖.} %更改圖片標題名稱
 \renewcommand{\lstlistingname}{程式.} %設定程式標示名稱
 \hoffset=-5mm %調整左右邊界
-\voffset=-10mm %調整上下邊界
+\voffset=-8mm %調整上下邊界
 \setlength{\parindent}{2em}%設定首行行距縮排
  %=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
@@ -44,7 +44,7 @@ left=3truecm,right=2.5truecm]{geometry}
 {第\CJKnumber{\thecontentslabel}章}}{}{\titlerule*[0.7pc]{.}\contentspage}
 \titlecontents{section}[18mm]{}{\sectionef\LARGE\makebox[1.5em][l]
 {\thecontentslabel}}{}{\titlerule*[0.7pc]{.}\contentspage}
-\titlecontents{subsection}[4em]{}{\sectionef\Large\makebox[2em][l]{{\thecontentslabel}}}{}{\titlerule*[0.7pc]{.}\contentspage}
+\titlecontents{subsection}[4em]{}{\sectionef\Large\makebox[2.5em][l]{{\thecontentslabel}}}{}{\titlerule*[0.7pc]{.}\contentspage}
 %=----------------------章節間距----------------------=%
 \titlespacing*{\chapter} {0pt}{0pt}{18pt}
 \titlespacing*{\section} {0pt}{12pt}{6pt}
@@ -52,19 +52,20 @@ left=3truecm,right=2.5truecm]{geometry}
 %=----------------------標題-------------------------=%             
 \begin{document} %文件
 \sectionef %設定英文字體啟用
+\vspace{12em}
 \begin{titlepage}%開頭
 \begin{center}   %標題  
 \makebox[1.5\width][s]
 {\fontsize{24pt}{2.5pt}國立虎尾科技大學}\\[18pt]
 \makebox[1.5\width][s]
-{\fontsize{24pt}{2.5pt}機械設計工程系}\\[18pt]
+{\fontsize{24pt}{2.5pt}工程學院機械設計工程系}\\[18pt]
 \makebox[1.5\width][s]
 {\fontsize{24pt}{2.5pt}專題製作報告}\\[18pt]
 %設定文字盒子 [方框寬度的1.5倍寬][對其方式為文字平均分分布於方框中]\\距離下方18pt
-\vspace{3em} %下移
-\fontsize{30pt}{1pt}\textbf{強化學習在機電系統中之應用}\\
-\vspace{4em}
-\sectionef\fontsize{30pt}{1em}\textbf
+\vspace{6em} %下移
+\fontsize{30pt}{1pt}\selectfont\textbf{強化學習在機電系統中之應用}\\
+\vspace{1em}
+\sectionef\fontsize{30pt}{1em}\selectfont\textbf
 {
 \vspace{0.5em}
 Application of reinforcement
@@ -75,6 +76,7 @@ Application of reinforcement
 \end{center}
 \begin{flushleft}
 \begin{LARGE}
+
 \hspace{32mm}\makebox[5cm][s]
 {指導教授：\quad 嚴\quad 家\quad 銘\quad 老\quad 師}\\[6pt]
 \hspace{32mm}\makebox[5cm][s]
@@ -93,10 +95,10 @@ Application of reinforcement
 %設定文字盒子[寬度為5cm][對其方式為文字平均分分布於方框中]空白距離{36.5mm}\空白1em
 \end{LARGE}
 \end{flushleft}
-\vspace{3em}
-\fontsize{18pt}{2}\centerline{\makebox[\width][s]
+\vspace{6em}
+\fontsize{18pt}{2pt}\selectfont\centerline{\makebox[\width][s]
 {中華民國\hspace{3em} 
-１１０ \quad 年\quad ５\quad 月}}
+110 \quad 年\quad 6\quad 月}}
 \end{titlepage}
 \newpage
 %=---------------專題製作合可證明---------------------=%抄的
@@ -128,8 +130,8 @@ Application of reinforcement
     \fontsize{16pt}{16pt}\selectfont \makebox[6em][s]{指導老師}\enspace:\quad \underline{　　　　　　　　　　　　}\\[10pt]
     \fontsize{16pt}{16pt}\selectfont \makebox[6em][s]{系主任}\enspace:\quad \underline{　　　　　　　　　　　　}\\
     \hspace*{\fill} \\
-    \fontsize{16pt}{2.5pt}\selectfont \makebox[12em][s]{中華民國一一零年}
-    \fontsize{16pt}{3.5pt}\selectfont \makebox[9em][s]{八月七日}
+    \fontsize{16pt}{2.5pt}\selectfont \makebox[12em][s]{中華民國一一零年}\hspace{2pt}
+    \fontsize{16pt}{2.5pt}\selectfont\makebox[8em][s]{八月十七日}
     \end{flushleft}}
     \end{textblock}}
     \end{textblock}}
@@ -145,11 +147,11 @@ Application of reinforcement
 \LARGE\textbf{摘要}\\
 \end{center}
 \begin{flushleft}
-\fontsize{14pt}{7.5pt}\selectfont\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，不能以實體一直測試不同方法，成本與時間不允許，便可以利用虛擬環境架設結構與觀測數值，結合類神神經網路的學習與數值分析的最佳化，大量減少時間與設備成本，獲得最佳解。\\[12pt]
+\fontsize{14pt}{14pt}\selectfont\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，不能以實體一直測試不同方法，成本與時間不允許，便可以利用虛擬環境架設結構與觀測數值，結合類神神經網路的學習與數值分析的最佳化，大量減少時間與設備成本，獲得最佳解。\\[12pt]
 \hspace{12pt} 此專題是利用現成裝置冰球台，在\sectionef CoppeliaSim設置對應虛擬模擬環境，減少現實模擬參數設置與設備損壞成本，並加入類神經網路與強化學習在OpenAI Gym應用，提升對打能力，使冰球達到對應最佳化。
 \end{flushleft}
 \begin{center}
-\fontsize{14pt}{2.5pt}關鍵字: 類神經網路、強化學習、\sectionef CoppeliaSim、OpenAI Gym
+\fontsize{14pt}{14pt}\selectfont 關鍵字: 類神經網路、強化學習、\sectionef CoppeliaSim、OpenAI Gym
 \end{center}
 \newpage
 %=--------------------Abstract----------------------=%
@@ -158,11 +160,12 @@ Application of reinforcement
 \begin{center}
 \LARGE\textbf\sectionef{Abstract}\\
 \begin{flushleft}
-\fontsize{14pt}{4.5pt}\selectfont\hspace{12pt} \sectionef The industry needs to accelerate the calculation of many manufacturing method to achieve optimization.It is not possible to constantly test different methods with physical entities. Cost and time do not allow. We can use the virtual environment to set up the structure and observe the value, combine the learning of the god-like neural network and the optimization of the numerical analysis, greatly reduce the time and equipment cost, and get the best Good solution.\\[12pt] 
-This project is to use the ready-made ice hockey table to set up a corresponding virtual simulation environment in CoppeliaSim to reduce the cost of realistic simulation parameter settings and equipment damage, and to add a neural network and reinforcement learning to the OpenAI Gym application to improve the ability to play ice hockey.
+\fontsize{14pt}{14.5pt}\selectfont\hspace{12pt} \sectionef The industry needs to accelerate the calculation of many manufacturing method to achieve optimization.It is not possible to constantly test different methods with physical entities. Cost and time do not allow. We can use the virtual environment to set up the structure and observe the value, combine the learning of the god-like neural network and the optimization of the numerical analysis, greatly reduce the time and equipment cost, and get the best Good solution.\\
+
+\hspace{12pt} This project is to use the ready-made ice hockey table to set up a corresponding virtual simulation environment in CoppeliaSim to reduce the cost of realistic simulation parameter settings and equipment damage, and to add a neural network and reinforcement learning to the OpenAI Gym application to improve the ability to play ice hockey.
 \end{flushleft}
 \begin{center}
-\fontsize{14pt}{2.5pt}\selectfont\sectionef Keyword:  nerual network、reinforcement learning、 CoppeliaSim、OpenAI Gym
+\fontsize{14pt}{14.5pt}\selectfont\sectionef Keyword:  nerual network、reinforcement learning、 CoppeliaSim、OpenAI Gym
 \end{center}
 \newpage
 %=------------------------誌謝----------------------=%
@@ -221,17 +224,17 @@ This project is to use the ready-made ice hockey table to set up a corresponding
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{兩層神經網路}
-\caption{兩層神經網路}
+\caption{\Large 兩層神經網路}\label{兩層神經網路}
 \end{center}
 \end{figure}
 
- 圖1-1展示了兩層類神經網路的架構，如圖所示每一層每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
+ (圖.\ref{兩層神經網路})展示了兩層類神經網路的架構，如圖所示每一層每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
 
  神經元是AI系統中使用的軟件模型，其行為或多或少像實際的大腦神經元，模型會使用數字，使一個或另一個神經元對結果有重要的影響，這些數字又稱為權重。\\
 
- 圖1-1也展示了輸入層、隱藏層和輸出層，這是最陽春的網路，真正的網路可以更複雜且有更多層次，事實上深度學習命名原則，就是由多層的隱藏層而來，從意義上來說就是增加了類神經網路的深度。\\
+ (圖.\ref{兩層神經網路})也展示了輸入層、隱藏層和輸出層，這是最陽春的網路，真正的網路可以更複雜且有更多層次，事實上深度學習命名原則，就是由多層的隱藏層而來，從意義上來說就是增加了類神經網路的深度。\\
 
- 此外，如圖1-1所示，是具有過濾層並在​​其中從左到右處理信息，數據輸入的方向只有一個，故被稱為前饋輸入(feed-forward input)。\\
+ 此外，如(圖.\ref{兩層神經網路})所示，是具有過濾層並在​​其中從左到右處理信息，數據輸入的方向只有一個，故被稱為前饋輸入(feed-forward input)。\\
 
  有了網路架構，就能進一步讓網路學習，神經元網路會接收一個例子並猜測答案，如果答案是錯誤的，它會回溯並修改對神經元施加權重和偏差，並嘗試通過更改某些值來修復錯誤，這樣的行為就被稱為反向傳播(backpropagation)。使用迭代方法進行反複試驗，模擬人們重複的行為，執行經過多時後，最終類神經網路學習會進步並給出更好的答案，訓練時間可以是一天，甚制是一個禮拜，才能完成學習複雜的項目，故每一次的迭代被稱為epoch。\\
 
@@ -273,13 +276,15 @@ $$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
 %=----------Mean Squared Error----------=%
 \item Mean Squared Error\\
 他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。\\
-(\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\
+\vspace{8cm}
+%(\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\
 \begin{figure}
-\center
-\includegraphics[height=7cm]{MSE}
-\caption{regression line}
+\begin{center}
+\includegraphics[scale=0.6]{MSE}
+\caption{\Large 線性回歸}\label{線性回歸}
+\end{center}
 \end{figure}
-
+\\
 回歸線 :數據點間最小距離的一條線。 \\
 n : 數據點的數量\\
 $y_i$ :  觀測值\\
@@ -302,13 +307,6 @@ $$=-(1+e^{-x})^{-2}\frac{d}{dx}(1+e^{-x})=-(1+e^{-x})^{-2}[\frac{d}{dx}(1)+\frac
 $$=-(1+e^{-x})^{-2}[0+\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[e^{-x}\frac{d}{dx}(-x)]$$\\
 $$-(1+e^{-x})^{-2}[e^{-x}(-1)]=-(1+e^{-x})^{-2}(-e^{-x})=\frac{e^{-x}}{(1+e^{-x})^2}=\frac{1(e^{-x})}{(1+e^{-x})(1+e^{-x})}$$\\
 $$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}{1+e^{-x}}=\frac{1}{1+e^{-x}}(\frac{1+e^{-x}}{1+e^{-x}}-\frac{1}{1+e^{-x}})$$\\[6pt]
-\begin{figure}[hbt!]
-\begin{center}
-\includegraphics[scale=0.80]{sigmoidprime}
-\caption{SigmoidPrime; from: \href{https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e}{Toward Data Science}}
-\end{center}
-\end{figure}
-\begin{figure}[hbt!]
 \begin{center}
 \includegraphics[height=4.5cm]{relu}\\
 \caption{Relu; from : \href{https://www.kaggle.com/dansbecker/rectified-linear-units-relu-in-deep-learning}{\underline{kaggle}} }
@@ -365,19 +363,19 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 %======需文字補充========%
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=8cm]{Faces_of_Reinforcement_Learning}
-\caption{Venn diagram; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\includegraphics[scale=0.6]{Faces_of_Reinforcement_Learning}
+\caption{\Large Venn diagram}
+\label{Venn diagram}
 \end{center}
 \end{figure}
 %=--------The Flow of Reinforcement Learning------------=%.
-
 強化學習的流程：\\
-透過agent與環境間互動而產生狀態和獎勵，由於狀態的轉移，agent會決定接下來執行動作[圖.\ref{RL structur}]。\\[12pt]
+透過agent與環境間互動而產生狀態和獎勵，由於狀態的轉移，agent會決定接下來執行動作(圖.\ref{RL structur})。\\[12pt]
 
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=10cm]{The_Flow_of_Reinforcement_Learning}
-\caption{RL structur}
+\caption{\Large RL structur}
 \label{RL structur}
 \end{center}
 \end{figure}
@@ -387,22 +385,13 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{The_entire_interaction_process}
-\caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\includegraphics[height=6.3cm]{The_entire_interaction_process}
+\caption{\Large The entire interaction process }
+\label{The_entire_interaction_process}
 \end{center}
 \end{figure}
- agent是決策者，會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他會做出決策，決策所執行的動作會使場景進入下一個狀態，當環境轉變，環境裡的項目也會跟著變動，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\
-\iffalse
-%------------------圖片可共用----------------------%
-\begin{figure}[hbt!]
-\begin{center}
-\includegraphics[scale=0.74]{Scenario_of_state_changes}
-\caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
-\end{center}
-\end{figure}
-\fi
+ 如(圖.\ref{The_entire_interaction_process}) agent是決策者，會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他會做出決策，決策所執行的動作會使場景進入下一個狀態，當環境轉變，環境裡的項目也會跟著變動，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\
 %=----Different Terms in Reinforcement Learning----------=%
-
  強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值，$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為時常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因得到的先後順序而有所衰減)。\\
  當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\
 %------------------圖片可共用----------------------%
@@ -410,7 +399,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{ Reinforcement_Learning_interactions}
-\caption{Reinforcement Learning interactions; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{\Large Reinforcement Learning interactions}
 \end{center}
 \end{figure}
 \fi
@@ -424,7 +413,8 @@ Agents：\\[6pt]
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{agent}
-\caption{agent}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{\Large agent}
+\label{agent}
 \end{center}
 \end{figure}
 %=----Agents------------=%
@@ -523,7 +513,7 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$
 \newpage
 \section{Policy Gradient}
-$\pi$ : policy\\[5pt]
+\hspace{-1.5em}$\pi$ : policy\\[5pt]
 s : States\\[5pt]
 a : Actions\\[5pt]
 r : Rewards\\[5pt]
@@ -764,9 +754,9 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \subsection{CoppeliaSim中的Vision sensor}
 
 \section{影像處理}
-\qquad 在影像處理中我們主要使用了Python套件中的OpenCV(全稱:Open Source Computer Vision Library),並搭配其他套件或模組進行了影像處裡,藉此來取得訓練神經網路訓練時所需的資訊。\\
+ 在影像處理中我們主要使用了Python套件中的OpenCV(全稱:Open Source Computer Vision Library),並搭配其他套件或模組進行了影像處裡,藉此來取得訓練神經網路訓練時所需的資訊。\\
 \subsection{影像辨識}
-\qquad 透過CoppeliaSim中的Vision sensor接收場景影像並輸出後,便可以開始進行影像辨識的處裡\\
+ 透過CoppeliaSim中的Vision sensor接收場景影像並輸出後,便可以開始進行影像辨識的處裡\\
 \begin{enumerate}
 \item RGB與HSV的轉換\\
 RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模型中的點在圓柱坐標系中的表示法,HSV分別表示Hue(色相)、Saturation(飽和度)、Value(明度)\\
