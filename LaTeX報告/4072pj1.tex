@@ -26,7 +26,7 @@ left=3truecm,right=2.5truecm]{geometry}
 		basicstyle=\footnotesize, 
 		frame=lines,
 		caption={Python code}, %設定capion
-		label={code.} %設定label
+		%label={code.} %設定label
 }
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
@@ -761,7 +761,7 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \item RGB與HSV的轉換\\
 RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模型中的點在圓柱坐標系中的表示法,HSV分別表示Hue(色相)、Saturation(飽和度)、Value(明度)\\
 \item 顏色過濾\\
-進行顏色過濾時,需要先定義出過濾顏色的上下限,在開始過濾後低於下限或高於上限的值會變成0(即黑色),而介於上下限範圍間的值會變成255(即白色)\\
+進行顏色過濾時,需要先定義出過濾顏色的上下限,在開始過濾後低於下限或高於上限的值會變成0(即黑色),而介於上下限範圍間的值會變成255(即白色)
 \item 雜訊去除\\
 為了避免環境因素干擾,使影像產生雜訊並影響了影像辨識度,所以在雜訊的去除也是很重要的,
 \end{enumerate}
@@ -789,7 +789,7 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
 
 \item 只要自備作業系統 ( 光碟片 , ISO映像檔 ) ，即可在啟動 Oracle VM VirtualBox  後直接開啟要操作的執行檔 ( 作業系統 )，不必再把主機本身重新關機，當然開啟多個作業系統之間也有共通性，可直接從視窗A做網路、檔案分享、複製貼上等動作到視窗B。\\
 \item 除了作業系統裡面的執行，還可在其中練習磁碟分割、格式化以及 BIOS 啟動等 ( 但是未支援USB啟動 ) 。\\
-\item 空間的佔用上並不是真實佔用空間，而是依據使用者的操作而變化 ( 使用者用多少就是多少 )。相對的，使用者雖然一開始設定該虛擬電腦的記憶體大小與硬碟空間是實時依據操作者決定，但終究還是佔掉電腦效能，所以 VirtualBox 的效能還是依據電腦本身的硬體配備。為了配置網路，首先在 : \\
+\item 空間的佔用上並不是真實佔用空間，而是依據使用者的操作而變化 ( 使用者用多少就是多少 )。相對的，使用者雖然一開始設定該虛擬電腦的記憶體大小與硬碟空間是實時依據操作者決定，但終究還是佔掉電腦效能，所以 VirtualBox 的效能還是依據電腦本身的硬體配備。為了配置網路，首先在 : 
 \begin{enumerate}
 \item File / Preferences / Network  位置，新增一個或右鍵點擊現有的網路設定，填入該電腦網路設定 。
 \item Settings / Network / Adapter 1 / Attached to :  該位置改成  Bridged Adapter
