@@ -33,7 +33,7 @@
 \contentsline {chapter}{\numberline {4}模擬環境}{32}{chapter.4}%
 \contentsline {section}{\numberline {4.1}模擬模型}{32}{section.4.1}%
 \contentsline {section}{\numberline {4.2}CoppeliaSim模擬}{32}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}使用原因}{32}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.1}使用原因}{33}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}模擬}{33}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}CoppeliaSim中的Vision sensor}{33}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}影像處理}{33}{section.4.3}%
@@ -44,6 +44,8 @@
 \contentsline {section}{\numberline {5.3}Nginx}{38}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Web server}{39}{section.5.4}%
 \contentsline {chapter}{\numberline {6}深度強化學習的訓練與模擬控制結果}{40}{chapter.6}%
-\contentsline {chapter}{\numberline {7}問題與討論}{42}{chapter.7}%
-\contentsline {chapter}{參考文獻 }{44}{lstnumber.7.1.8}%
+\contentsline {section}{\numberline {6.1}訓練模型的選用}{40}{section.6.1}%
+\contentsline {section}{\numberline {6.2}訓練程式的運作}{40}{section.6.2}%
+\contentsline {chapter}{\numberline {7}問題與討論}{43}{chapter.7}%
+\contentsline {chapter}{參考文獻 }{45}{lstnumber.7.1.8}%
 \contentsfinish 
