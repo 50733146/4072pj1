@@ -44,5 +44,7 @@
 \BOOKMARK [1][-]{section.5.3}{Nginx}{chapter.5}% 44
 \BOOKMARK [1][-]{section.5.4}{Web\040server}{chapter.5}% 45
 \BOOKMARK [0][-]{chapter.6}{深度強化學習的訓練與模擬控制結果}{}% 46
-\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 47
-\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 48
+\BOOKMARK [1][-]{section.6.1}{訓練模型的選用}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.2}{訓練程式的運作}{chapter.6}% 48
+\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 49
+\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 50
