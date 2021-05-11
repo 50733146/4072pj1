@@ -22,6 +22,7 @@ left=3truecm,right=2.5truecm]{geometry}
 \usepackage{listings} %引用程式碼
 \usepackage{hyperref} %引用url連結
 \usepackage{setspace}
+\usepackage{lscape}%設定橫式
 \lstset{language=Python, %設定語言
 		basicstyle=\footnotesize, 
 		frame=lines,
@@ -35,6 +36,7 @@ left=3truecm,right=2.5truecm]{geometry}
 \hoffset=-5mm %調整左右邊界
 \voffset=-8mm %調整上下邊界
 \setlength{\parindent}{2em}%設定首行行距縮排
+
  %=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
 \titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{0.5em}{}[]
@@ -292,29 +294,6 @@ $\hat{y_i}$ : 預測值\\
 $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \end{itemize}
 
-\iffalse %整段註解(開頭)
-% 以下為 SigmoidPrime的證明
-%$$-------------skip-------------$$
-Tip: find $f^{'}(x)$ if $f(x)=\frac{A}{B+Ce^{x}}$\\
-Answer:\\
-$$\frac{d}{dx}[\frac{1}{g(x)}]=\frac{1^{'}g(x)-1g^{'}(x)}{g(x)^2}=\frac{g^{'}(x)}{[g(x)]^2}$$\\
-if $g(x)$=constant\\
-$$\frac{d}{dx}[\frac{g(x)}{h(x)}]=\frac{g^{'}(x)h(x)-g(x)h^{'}(x)}{h(x)^2}= \frac{-kh^{'}(x)}{[h(x)]^2}$$\\
-$$f^{'}(x)=\frac{-A[\frac{d}{dx}(B+Ce^x)]}{(B+Ce^x)^2}=\frac{-A(0+Ce^x)}{(B+Ce^x)^2}=\frac{-ACe^x}{(B+Ce^x)^2}$$\\[6pt]
-$$-------------skip-------------$$\\[6pt]
-Hence:\\
-$$=-(1+e^{-x})^{-2}\frac{d}{dx}(1+e^{-x})=-(1+e^{-x})^{-2}[\frac{d}{dx}(1)+\frac{d}{dx}(e^{-x})]$$\\
-$$=-(1+e^{-x})^{-2}[0+\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[e^{-x}\frac{d}{dx}(-x)]$$\\
-$$-(1+e^{-x})^{-2}[e^{-x}(-1)]=-(1+e^{-x})^{-2}(-e^{-x})=\frac{e^{-x}}{(1+e^{-x})^2}=\frac{1(e^{-x})}{(1+e^{-x})(1+e^{-x})}$$\\
-$$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}{1+e^{-x}}=\frac{1}{1+e^{-x}}(\frac{1+e^{-x}}{1+e^{-x}}-\frac{1}{1+e^{-x}})$$\\[6pt]
-\begin{center}
-\includegraphics[height=4.5cm]{relu}\\
-\caption{Relu; from : \href{https://www.kaggle.com/dansbecker/rectified-linear-units-relu-in-deep-learning}{\underline{kaggle}} }
-\end{center} 
-\end{figure}
-\newpage
-\end{itemize}
-\fi %整段註解(結尾)
 \subsection{損失函數}
 損失函數是類神經網路的最後一塊拼圖，損失函數會將神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重以減少下次評估時的損失，以下將介紹幾種優化的方法：\\
 
@@ -872,6 +851,44 @@ A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
 \begin{center}
 \LARGE\textbf 作者簡介\\
 \end{center}
+\newpage
+\begin{center}
+\fontsize{0.001pt}{1pt}\selectfont .\\
+\vspace{4em}
+\fontsize{30pt}{30pt}\selectfont 【14】 \\
+\fontsize{20pt}{40pt}\selectfont
+分\\
+類\\
+編\\
+號\\
+\hspace{-0.5em}：\\
+\rotatebox[origin=cc]{270}{\sectionef\LARGE \textbf{1-2-APP-8765}}\\ %旋轉
+強\\
+化\\
+學\\
+習\\
+在\\
+機\\
+電\\
+系\\
+統\\
+中\\
+之\\
+應\\
+用\\
+\vspace{2em}
+八\\
+七\\
+六\\
+級\\
 
-%\framebox[8cm][r]{\vspace{1em}test}
+\end{center}
+%\newpage
+%\begin{landscape}  %橫式環境
+%\begin{center}
+%\fontsize{0.001pt}{1pt}\selectfont .
+%\vspace{70mm}
+%\rotatebox[origin=cc]{90}{\LARGE 【14】}\rotatebox[origin=cc]%{180}{\LARGE 1-2-APP-8765} %旋轉
+%\end{center}
+%\end{landscape}
 \end{document}
