@@ -616,7 +616,7 @@ How it work in a simple action-value actor-critic:
        \item Update $a\leftarrow a^{'} and s \leftarrow s^{'}$ ; learning rate : $a_\theta$ and $a_w$
     \end{enumerate}   
 \end{itemize}\newpage
-\section{深度強化學習}
+\section{類神經網路中強化學習的應用}
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{ network}
@@ -824,7 +824,7 @@ server {
  reciveAPP 定義了將 request proxy 過去的應用，例子中 server localhost 語法代表可以請求 proxy 到分別監聽 5000 與 5001 port 的兩個應用，同時這個 block 可達到 load balancer 負載平衡的功能 。\\
  server 這個 block 則是定義了proxy server的相關設定，包括要監聽的port( listen 80 為監聽所有 IPV4位址， listen [::]80 則為監聽所有 IPV6位址 )、規定哪些 domain 或 ip 的 request 會被 nginx server 處理（server\_ name。
 
-\chapter{深度強化學習的訓練與模擬控制結果}
+\chapter{類神經網路中強化學習的訓練與模擬控制結果}
 \section{訓練模型的選用}
  利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用pygame模組來撰寫pong game的訓練環境，撰寫pong game的初期還算順利，但在基本功能編寫告一段落後，發現pygame缺少物理引擎，造成在對打的時候出現特定角度碰撞時，擊錘與球的碰撞沒有反應的情況。為了解決pygame碰撞問題，做了幾種嘗試：修改pygame的碰撞定義，但會因為擊球時球速過快而超出碰撞偵測、碰撞角度的問題而失效，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等偵測或設定。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。\\
  Open AI Gym裡面有十幾種訓練模型的環境，提供機器學習做訓練的環境。由於我們的訓練模型是pong game，在Gym模組裡面剛好有訓練模型，因此使用Gym模組相對於使用pygame和pymunk的搭配來的方便，而且後續要在CoppeliaSim模擬環境模擬時也有套件可搭配使用，可簡化功能和訓練時所需的環境模型和訓練功能的程式編寫。\\
