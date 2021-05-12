@@ -16,10 +16,10 @@
 \contentsline {section}{\numberline {2.3}Policy Gradient}{18}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Mokov chain}{19}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}為什麼不用value-base而是policy-base}{19}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Proof Policy Gradient Theorem}{20}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.3}Proof Policy Gradient Theorem}{19}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Policy Gradient Theorem}{21}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Actor Crtic}{22}{subsection.2.3.5}%
-\contentsline {section}{\numberline {2.4}深度強化學習}{24}{section.2.4}%
+\contentsline {section}{\numberline {2.4}類神經網路中強化學習的應用}{24}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Supervised Learning}{24}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}對數導數技巧}{25}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Score Functions}{25}{subsection.2.4.3}%
@@ -43,7 +43,7 @@
 \contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{37}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Web server}{39}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Nginx}{40}{section.5.4}%
-\contentsline {chapter}{\numberline {6}深度強化學習的訓練與模擬控制結果}{42}{chapter.6}%
+\contentsline {chapter}{\numberline {6}類神經網路中強化學習的訓練與模擬控制結果}{42}{chapter.6}%
 \contentsline {section}{\numberline {6.1}訓練模型的選用}{42}{section.6.1}%
 \contentsline {section}{\numberline {6.2}訓練程式的運作}{42}{section.6.2}%
 \contentsline {chapter}{\numberline {7}問題與討論}{45}{chapter.7}%
