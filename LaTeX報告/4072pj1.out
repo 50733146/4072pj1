@@ -41,8 +41,8 @@
 \BOOKMARK [0][-]{chapter.5}{伺服器}{}% 41
 \BOOKMARK [1][-]{section.5.1}{Ubuntu 環境配置}{chapter.5}% 42
 \BOOKMARK [1][-]{section.5.2}{Oracle VM VirtualBox 介紹}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.3}{Nginx}{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.4}{Web\040server}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.3}{Web\040server}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.4}{Nginx}{chapter.5}% 45
 \BOOKMARK [0][-]{chapter.6}{深度強化學習的訓練與模擬控制結果}{}% 46
 \BOOKMARK [1][-]{section.6.1}{訓練模型的選用}{chapter.6}% 47
 \BOOKMARK [1][-]{section.6.2}{訓練程式的運作}{chapter.6}% 48
