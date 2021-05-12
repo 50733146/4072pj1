@@ -343,8 +343,8 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.6]{Faces_of_Reinforcement_Learning}
-\caption{\Large Venn diagram}
-\label{Venn diagram}
+\caption{\Large 文氏圖}
+\label{文氏圖}
 \end{center}
 \end{figure}
 %=--------The Flow of Reinforcement Learning------------=%.
@@ -354,7 +354,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=10cm]{The_Flow_of_Reinforcement_Learning}
-\caption{\Large RL structur}
+\caption{\Large RL 架構}
 \label{RL structur}
 \end{center}
 \end{figure}
@@ -365,8 +365,8 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[height=6.3cm]{The_entire_interaction_process}
-\caption{\Large The entire interaction process }
-\label{The_entire_interaction_process}
+\caption{\Large 整個互動過程 }
+\label{整個互動過程 }
 \end{center}
 \end{figure}
  如(圖.\ref{The_entire_interaction_process}) agent是決策者，會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他會做出決策，決策所執行的動作會使場景進入下一個狀態，當環境轉變，環境裡的項目也會跟著變動，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\
@@ -473,7 +473,7 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=8cm]{s_to _s}
-\caption{Backup Diagram for $v^{\pi}$}
+\caption{$v^{\pi}$程序圖}
 \label{fig.s_to_s}
 \end{center}
 \end{figure}
@@ -485,7 +485,7 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=8cm]{Q_pi function}
-\caption{Backup Diagram for $q^{\pi}$}
+\caption{$q^{\pi}$程序圖}
 \label{fig.q_pi}
 \end{center}
 \end{figure}
@@ -496,13 +496,13 @@ $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\
 s : States\\[5pt]
 a : Actions\\[5pt]
 r : Rewards\\[5pt]
-$S_t,A_t,R_t$ : State,Action and Reward at time step 't' of one trajectory\\[5pt]
+$S_t,A_t,R_t$ : 一個軌跡時間步長't'的State,Action and Reward \\[5pt]
 $\gamma$ : Discount Factor;懲罰不確定的未來reward\\[5pt]
 $G_t$ : Return;Discounted future reward$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$\\[5pt]
 $P(s', r \vert s, a)$ : 伴隨著現在的a和r的state前往下一個state's'的轉移機率矩陣(單階)\\[5pt]
 $\pi(a \vert s)$ : 隨機策略(agent的行為策略)\\[5pt]
 $\pi_\theta(.)$ : 被$\theta$參數化的策略\\[5pt]
-$\mu(s)$ : 確定的策略;we also lable this as $\pi(s)$ using a different letter gives better distinction so thst we can easily tell when the policy is stochastic or deterministic\\[5pt]
+$\mu(s)$ : 確定的策略;我們還使用不同的字母將其標記為$ \ pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\[5pt]
 $V(s)$ : '狀態值函數'測量state的預期收益(報酬率)\\[5pt]
 $V^\pi(s)$ : 根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\[5pt]
 $Q(s, a)$ : '行為值函數'評估一對state and action 的預期收益\\[5pt]
@@ -510,9 +510,9 @@ $Q_w(.)$ : 被w參數化的行為值函數\\[5pt]
 $Q^\pi(s, a)$ : 根據policy的行為值函數$Q^\pi(s, a) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s, A_t = a]$\\[5pt]
 $A(s, a)$ : Advantage Function,$A(s, a) = Q(s, a) - V(s)$;像是另一種版本的Q-value;由狀態值為基準降低方差\\[5pt]
 參數化 : 待軟體建置於一給定環境時，再依該環境的實際需求填選參數，即可成為適合該環境的軟體。\\[5pt]
-The goal of reinforcement learning : Find an optimal behavior strategy for the agent to obtain optimal reward\\[5pt]
-The goal of policy gradient : Modeling and optimizing the policy directly\\[5pt]
-The value of reward function : 取決於策略，克應用各種算法optimize$\theta$，已獲得最佳reward\\[5pt]
+強化學習的目標：為agent找到最優的行為策略以獲得最優的報酬\\[5pt]
+Policy Gradient的目標：直接建模和優化策略\\[5pt]
+reward function的值 : 取決於策略，可應用各種算法optimize$\theta$，已獲得最佳reward\\[5pt]
 defined as:\\[5pt]
 $$J(\theta) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) V^\pi(s) 
@@ -590,37 +590,37 @@ $V^\pi(s_t) = \mathbb{E}_{s_{t}+1:\infty,a_{t}:\infty}[\sum_{l=0}^\infty r_t+l]$
 $Q^\pi(s_t,a_t) = \mathbb{E}_{s_{t}+1:\infty_,a_{t}+1:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $A^\pi(s_t,a_t) = Q^\pi(s_t,a_t)-V^\pi(s_t)(Advantage Function)$\\[5pt]
 \subsection{Actor Crtic}
-原始的policy gradient 沒有bias，但方差大;Many following algorithms were proposed to reduce variance while keeping thebias unchanged\\[5pt]
+原始的policy gradient 沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變\\[5pt]
 $$g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$$\\[5pt]
-Actor-Critic : reduce gradient variance in vanilla policy consist of two models\\[5pt]
-Critic : updates the value function parameter w and depending on the algorithm it could be action-value $Q_w(a \vert s) $or state-value $V_w(s)$\\[5pt]
-Actor : update the policy parameters $\theta$ for $\pi_\theta(a \vert s)$,in direction suggested by critic\\[5pt]
+Actor-Critic : 減少原始政策中的梯度方差包括兩個模型\\[5pt]
+Critic : 更新值函數參數w，根據算法，它可以是操作值$ Q_w（a \ vert s）$或狀態值$ V_w（s）$ \\[5pt]
+Actor : 按照Critic的建議，將策略參數$ \ theta $更新為$ \ pi\_ \ theta（a \ vert s）$\\[5pt]
 \begin{Large}
-How it work in a simple action-value actor-critic:
+它如何在簡單的行動價值參與者批評中發揮作用:
 \end{Large}
 \begin{itemize}
-\item Initialize s,$\theta$,w at random;sample a $\sim
+\item 隨機的初始化 s,$\theta$,w ;取樣 a $\sim
 \pi_\theta(a \vert s)$
 \end{itemize}
 \begin{itemize}
 \item For $t =1 \sim T:$ 
 \begin{enumerate}[1]
-      \item Sample reward $r_t$ $\sim$ $R(s,a)$ and next state $s^{'}$ $\sim$ $P(s^{'}\vert s,a)$ 
-      \item The sample the next action $a^{'}$ $\sim$ $\pi_\theta(a^{'}\vert s^{'})$
+      \item 取樣 reward $r_t$ $\sim$ $R(s,a)$ 隨後下一階段 $s^{'}$ $\sim$ $P(s^{'}\vert s,a)$ 
+      \item 樣本的下一個動作 $a^{'}$ $\sim$ $\pi_\theta(a^{'}\vert s^{'})$
     
-       \item Update the policy parameters $\theta$ :\\
+       \item 更新 policy 參數 $\theta$ :\\
        $$\theta\leftarrow\theta+\alpha_\theta Q_w(s,a)\nabla_\theta ln\pi_\theta(a\vert s)$$
-       \item Compute the correction (TD error) for action-value at time t:\\
-       $$\delta = r_t + \gamma Q_w(s^{'},a^{'})-Q_w(s,a)$$ and use it to update the parameters of action - value function:\\
+       \item 計算校正 (TD error)對於時間t的動作值:\\
+       $$\delta = r_t + \gamma Q_w(s^{'},a^{'})-Q_w(s,a)$$並使用它來更新操作action - value function:\\
        $$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
-       \item Update $a\leftarrow a^{'} and s \leftarrow s^{'}$ ; learning rate : $a_\theta$ and $a_w$
+       \item 更新 $a\leftarrow a^{'} and s \leftarrow s^{'}$ ; 學習率 : $a_\theta$ 和 $a_w$
     \end{enumerate}   
 \end{itemize}\newpage
-\section{深度強化學習}
+\section{類神經網路中強化學習的應用}
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{ network}
-\caption{Our network is a 2-layer fully-connected net. }
+\caption{實際兩層神經網路}
 \end{center}
 
 \end{figure}
@@ -629,11 +629,11 @@ How it work in a simple action-value actor-critic:
 ) 我們使用一個2層神經網路，該網路獲取原始圖像像素(100,800個數字(210*160*3))，並生成一個表示上升概率的數字。 使用隨機策略是標準做法，這意味著我們只會產生向上移動的可能性，每次迭代時，我們都會從該分布中採樣(即扔一枚有偏見的硬幣)已獲得實際移動。\\
 
 
-\subsection{Supervised Learning}
+\subsection{監督式學習}
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{supervising_learning}
-\caption{supervising learning}
+\caption{監督式學習}
 \end{center}
 \end{figure}
 
@@ -643,6 +643,8 @@ How it work in a simple action-value actor-critic:
 
 \subsection{對數導數技巧}
  機器學習涉及操縱機率。這個機率通常包含normalised-probabilities或 log-probabilities。能加強解決現代機器學習問題的關鍵點，是能夠巧妙的在這兩種型式間交替使用，而對數導數技巧就能夠幫助我們做到這點，也就是運用對數導數的性質。\\
+\subsection{為什麼選擇score function 算法}
+ 多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調優後顯示Policy Gradients比Q 首選PG，因為它是端到端的：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過深度神經網絡使用ATARI遊戲（Pong），並在整個過程結合numpy，作為訓練工具。\\ 
 \subsection{Score Functions}
  對數導數技巧的應用規則是基於參數$\theta$梯度的對數函數$p(x:\theta)$，如下:\\
 $$\nabla_\theta logp(x:\theta)=\frac{\nabla_\theta p(x:\theta)}{p(x:\theta)}$$\\
@@ -687,7 +689,7 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.4]{figure}
-\caption{gradient change}
+\caption{梯度變化}
 \end{center}
 \end{figure}
 
@@ -700,9 +702,6 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 
 \section{Pong}
  取自 1977年發行的一款家用遊戲機ATARI 2600中的遊戲，內建於Gym，這是一個橫向的乒乓遊戲，左方是遊玩者，右邊是馬可夫決策的特例，每個邊緣都會給予reward(figue1)，目標就是計算再任意階段動作最佳路徑，已獲得rewardd最大值。\\
-\section{為什麼選擇score function 算法}
- 多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調優後顯示Policy Gradients比Q 首選PG，因為它是端到端的：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過深度神經網絡使用ATARI遊戲（Pong），並在整個過程結合numpy，作為訓練工具。\\
-
 \section{Pong from pixels}
  左：乒乓球遊戲。右：Pong是Markov決策過程（MDP）的特例：圖，其中每個節點都是特定的遊戲狀態，每個邊緣都是可能的（通常是概率性的)改變，每條邊界都給與獎勵，目標是計算在任何狀態下發揮作用的最佳方式，以最大限度地提高獎勵。\\ 
 Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本中，我們會控制右邊邊的操縱板(左邊由不錯的AI控制)。在較低級別上，遊戲的運行方式如下：我們收到一個圖像幀（一個210x160x3 byte數組（從0到255的整數給出像素值）)，然後決定是否要向上或向下移動操縱板（即二進制選擇）。每次選擇之後，遊戲模擬器就會執行動作並給予我們獎勵:如果球超過了對手，則為+1獎勵；如果我們錯過球，則為-1獎勵；否則為0。當然，我們的目標是移動球拍，以便獲得很多獎勵。\\
@@ -784,8 +783,8 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模�
  Nginx 是提供 web 相關服務的伺服器 ( Web server )，除了是高效能的 HTTP ( HTTPS ) 服務器外，還可處理靜態資源 , 負載平衡 , 代理等工作。代理工作為根據不同域名轉發到 Application Server 的不同 port 上去處理 ，其中又分正向和反向，正向代理為 clinet 端發送 request 經由 porxy server 再到目標網站，反向則反之。正向代理操作中 server 只知道 proxy server  給他 request , 不知道 client 是誰，而相同地反向代理則是 client 只知道 proxy server 給他 responses , 不知道 server 是誰。正向代理隐藏真實 Client，反向代理隱藏真實 Server。另外在高流量的狀況下，需要多個 Application Server 來分擔流量，負載平衡就是負責 request 的分發，決定 request 要被分到哪一個 Application Server 處理 。而關於處理靜態資源 ，Nginx 與 Apache 等 Web Server 處理靜態資源的能力是遠遠高於 Application Server 的。\\
  \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.74]{clientToflask}
-\caption{\Large client端與browser端}\label{client端與browser端}
+\includegraphics[scale=0.74]{clientProxy}
+\caption{\Large clientProxy}\label{clientProxy}
 \end{center}
 \end{figure}
 
@@ -820,11 +819,109 @@ server {
             include uwsgi_params;
     }
 \end{lstlisting}
-\end{enumerate}
- reciveAPP 定義了將 request proxy 過去的應用，例子中 server localhost 語法代表可以請求 proxy 到分別監聽 5000 與 5001 port 的兩個應用，同時這個 block 可達到 load balancer 負載平衡的功能 。\\
- server 這個 block 則是定義了proxy server的相關設定，包括要監聽的port( listen 80 為監聽所有 IPV4位址， listen [::]80 則為監聽所有 IPV6位址 )、規定哪些 domain 或 ip 的 request 會被 nginx server 處理（server\_ name。
 
-\chapter{深度強化學習的訓練與模擬控制結果}
+\newpage
+\item 負載平衡LoadBalance：
+\begin{lstlisting}[caption=load balance設定]
+  reciveAPP {
+        ip_hash;
+        server localhost:5000;
+        server localhost:5001;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name SERVER_IP;
+    root /home/ryan;
+
+    location / {
+            uwsgi_pass 127.0.0.1:8000;
+            include uwsgi_params;
+    }
+}
+\end{lstlisting}
+\end{enumerate}
+
+ reciveAPP 定義了將 request proxy 過去的應用，例子中 server localhost 語法代表可以請求 proxy 到分別監聽 5000 與 5001 port 的兩個應用，同時這個 block 可達到 load balancer 負載平衡的功能 。\\
+ 
+ server 這個 block 則是定義了proxy server的相關設定，包括要監聽的port( listen 80 為監聽所有 IPV4位址， listen [::]80 則為監聽所有 IPV6位址 )、規定哪些 domain 或 ip 的 request 會被 nginx server 處理（server\_ name)。\\
+ location 像是 路由 (routing) 的概念，設定不同的 path 要對應到怎麼樣的設定。location 中則是指對不同路徑的處理。\\
+ 
+\begin{enumerate}
+\item location：
+\begin{lstlisting}[caption=location設定]
+  location / #匹配所有目錄
+
+  location /static #匹配所有 /static 的開頭目錄
+\end{lstlisting}
+\end{enumerate}
+
+ 要達到 load balancer 透過一開始介紹的 upstream block 就可以達成，在上面的例子中，來自某個 domain 80 port 會被分配到 port 5000 或 port 5001 兩個應用中，達成用兩個應用去分擔 request 的負載平衡器。\\
+ 
+ 負載平衡裡的負載規則  ( ip\_hash ) 某個 request 要被導倒哪個應用去處理有不同規則，每個規則都有各自適合使用時機，以下簡單介紹幾個常見的規則：\\
+ 
+\begin{enumerate}
+\item round-robin：(預設)輪詢方式： 也就是將請求輪流按照順序分配給每一個 server。假設所有伺服器的處理效能都相同，不關心每臺伺服器的當前連線數和響應速度。適合於伺服器組中的所有伺服器都有相同的軟硬體配置並且平均伺服器請求相對均衡的情況。
+不過也有另外一種可以設定權重的 Weight Round Robin （加權輪詢方式），可以設定不同 server 的權重，例如以下範例：
+\begin{lstlisting}[caption=設定不同 server 的權重]
+  upstream myweb {
+    server web1.dtask.idv.tw weight=3;
+    server web2.dtask.idv.tw weight=2;
+}
+\end{lstlisting}
+\item least-connected 最少連線： 顧名思義為連線進來時會把 Request 導向連線數較少的 Server。
+\item IP-hash 依據 Client IP 來分配到不同台 Server： 通過一個雜湊（Hash）函式將一個 IP 地址對映到一臺伺服器。先根據請求的目標 IP 地址，作為雜湊鍵（Hash Key）從靜態分配的散列表找出對應的伺服器。除非斷線或 IP變動，否則同個 IP 的請求都會導入到同一個 server。
+\end{enumerate}
+  uWSGI設定（uwsgi\_ini ）：\\
+ \begin{enumerate} 
+ \item wsgi-file : 主要運行的 py 檔案
+ \item http , socket , http-socket : 端口設定，假使有使用到 前端服務器 ( 如Nginx ) 時，不能用 http 設定，因 uwsgi 協議為 HTTP，而 Nginx 使用傳輸協議為 TCP，兩者不能互通。
+ \begin{lstlisting}[caption=簡易uwsgi指令啟動]
+  uwsgi --http : 9000 --wsgi-file APP.py 
+\end{lstlisting}
+ \item processes , threads : 工作序， processes 為進程 ，threads 為線程 , 下方設定為每條近程有兩條線程 。
+ \begin{lstlisting}[caption=加入工作程序uwsgi指令啟動]
+  uwsgi --http : 9000 --wsgi-file APP.py --processes 4 --threads 2
+\end{lstlisting}
+\item chdir : 此項是為了正確的加載模組 / 檔案 \\
+
+整體快速配置 ( 這裡儲存成一個  .ini 文件，其他還有YAML , JSON , XML 格式等 )  :
+\begin{lstlisting}[caption=將uwsgi指令啟動動作設定成一個啟動檔]
+  [uwsgi]
+socket = :9000
+processes = 4
+threads = 2
+chdir = location/to
+wsgi-file = location/to/file
+\end{lstlisting}
+此項還可加上 status :  此項為查看 uWSGI 內部的輸出數據\\
+\begin{lstlisting}[caption=status]
+  -- status 127.0.0.1:9001
+\end{lstlisting}
+實現之通訊流程 
+\begin{lstlisting}[caption=client端與Flask應用]
+  client server  < - > web server < - > ( socket ) < - > uWSGI < - > flask 
+\end{lstlisting}
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[scale=0.74]{clientToflask}
+\caption{\Large clientToflask}\label{clientToflask}
+\end{center}
+\end{figure}
+ \end{enumerate}
+\section{Flask}
+ 
+ 如同以上所述，建立 Flask 框架的同時需選擇反向代理伺服器 ( 這裡我們選擇了 Nginx ) 來負責網頁請求和結果的回覆，同時還需要一個實現  WSGI 通信協議的伺服器 ( 我們選擇了 uWSGI ) 來負責接收代理伺服器的請求後轉發 Flask 及 接收 Flask 訊息轉發回去 ( 代理伺服器 )。\\
+ 
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[scale=0.74]{total}
+\caption{\Large total}\label{total}
+\end{center}
+\end{figure}
+
+\chapter{類神經網路中強化學習的訓練與模擬控制結果}
 \section{訓練模型的選用}
  利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用pygame模組來撰寫pong game的訓練環境，撰寫pong game的初期還算順利，但在基本功能編寫告一段落後，發現pygame缺少物理引擎，造成在對打的時候出現特定角度碰撞時，擊錘與球的碰撞沒有反應的情況。為了解決pygame碰撞問題，做了幾種嘗試：修改pygame的碰撞定義，但會因為擊球時球速過快而超出碰撞偵測、碰撞角度的問題而失效，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等偵測或設定。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。\\
  Open AI Gym裡面有十幾種訓練模型的環境，提供機器學習做訓練的環境。由於我們的訓練模型是pong game，在Gym模組裡面剛好有訓練模型，因此使用Gym模組相對於使用pygame和pymunk的搭配來的方便，而且後續要在CoppeliaSim模擬環境模擬時也有套件可搭配使用，可簡化功能和訓練時所需的環境模型和訓練功能的程式編寫。\\
