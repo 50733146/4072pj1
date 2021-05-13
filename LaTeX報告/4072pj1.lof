@@ -8,27 +8,28 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces \Large agent\relax }}{14}{figure.caption.8}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces $v^{\pi }$程序圖\relax }}{17}{figure.caption.9}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces $q^{\pi }$程序圖\relax }}{17}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces 實際兩層神經網路\relax }}{24}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces 監督式學習\relax }}{24}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces gradient change\relax }}{28}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces 梯度變化\relax }}{29}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces \Large Policy Gradient原理\relax }}{18}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces 實際兩層神經網路\relax }}{24}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces 監督式學習\relax }}{24}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces gradient change\relax }}{28}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces 梯度變化\relax }}{29}{figure.caption.15}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \Large 組合圖\relax }}{31}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \Large Y軸皮帶固定座\relax }}{32}{figure.caption.16}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \Large 連結固定座\relax }}{32}{figure.caption.17}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces \Large CoppeliaSim Logo\relax }}{33}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces \Large CoppeliaSim 工具列\relax }}{34}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces \Large CoppeliaSim 工具列(續)\relax }}{34}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces \Large OpenCV 及Python logo\relax }}{34}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces \Large HSV色彩空間\relax }}{35}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖\relax }}{36}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景\relax }}{36}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \Large 組合圖\relax }}{31}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \Large Y軸皮帶固定座\relax }}{32}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \Large 連結固定座\relax }}{32}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \Large CoppeliaSim Logo\relax }}{33}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \Large CoppeliaSim 工具列\relax }}{34}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \Large CoppeliaSim 工具列(續)\relax }}{34}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \Large OpenCV 及Python logo\relax }}{34}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \Large HSV色彩空間\relax }}{35}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖\relax }}{36}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景\relax }}{36}{figure.caption.24}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy\relax }}{40}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large clientToflask\relax }}{44}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total\relax }}{45}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy\relax }}{40}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large clientToflask\relax }}{44}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total\relax }}{45}{figure.caption.27}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces 動態連結庫錯誤\relax }}{48}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces 動態連結庫錯誤\relax }}{48}{figure.caption.28}%
 \contentsfinish 
