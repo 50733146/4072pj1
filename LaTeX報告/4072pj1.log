@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.11) (preloaded format=xelatex 2020.12.16)  13 MAY 2021 16:05
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.11) (preloaded format=xelatex 2020.12.16)  13 MAY 2021 16:20
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
@@ -948,200 +948,205 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                replaced by space on input line 174.
 
 [3] (4072pj1.toc
-Overfull \hbox (1.13872pt too wide) detected at line 13
- \TU/TimesNewRoman(0)/m/n/17.28 11
+Overfull \hbox (1.77997pt too wide) detected at line 12
+ \TU/TimesNewRoman(0)/m/n/17.28 10
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 14
+Overfull \hbox (1.77997pt too wide) detected at line 13
  \TU/TimesNewRoman(0)/m/n/17.28 12
  []
 
 
+Overfull \hbox (1.77997pt too wide) detected at line 14
+ \TU/TimesNewRoman(0)/m/n/17.28 13
+ []
+
+
 Overfull \hbox (1.77997pt too wide) detected at line 15
- \TU/TimesNewRoman(0)/m/n/17.28 15
+ \TU/TimesNewRoman(0)/m/n/17.28 16
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 16
- \TU/TimesNewRoman(0)/m/n/17.28 19
+ \TU/TimesNewRoman(0)/m/n/17.28 20
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 17
- \TU/TimesNewRoman(0)/m/n/17.28 20
+ \TU/TimesNewRoman(0)/m/n/17.28 21
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 18
- \TU/TimesNewRoman(0)/m/n/17.28 20
+ \TU/TimesNewRoman(0)/m/n/17.28 21
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 19
- \TU/TimesNewRoman(0)/m/n/17.28 20
+ \TU/TimesNewRoman(0)/m/n/17.28 21
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 20
- \TU/TimesNewRoman(0)/m/n/17.28 22
+ \TU/TimesNewRoman(0)/m/n/17.28 23
  []
 
 [4
 
 ]
 Overfull \hbox (1.77997pt too wide) detected at line 21
- \TU/TimesNewRoman(0)/m/n/17.28 23
+ \TU/TimesNewRoman(0)/m/n/17.28 24
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 22
- \TU/TimesNewRoman(0)/m/n/17.28 25
+ \TU/TimesNewRoman(0)/m/n/17.28 26
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 23
- \TU/TimesNewRoman(0)/m/n/17.28 25
+ \TU/TimesNewRoman(0)/m/n/17.28 26
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 24
- \TU/TimesNewRoman(0)/m/n/17.28 26
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 25
- \TU/TimesNewRoman(0)/m/n/17.28 26
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 26
  \TU/TimesNewRoman(0)/m/n/17.28 27
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 27
+Overfull \hbox (1.77997pt too wide) detected at line 25
+ \TU/TimesNewRoman(0)/m/n/17.28 27
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 26
  \TU/TimesNewRoman(0)/m/n/17.28 28
  []
 
 
+Overfull \hbox (1.77997pt too wide) detected at line 27
+ \TU/TimesNewRoman(0)/m/n/17.28 29
+ []
+
+
 Overfull \hbox (1.77997pt too wide) detected at line 28
- \TU/TimesNewRoman(0)/m/n/17.28 31
+ \TU/TimesNewRoman(0)/m/n/17.28 32
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 29
- \TU/TimesNewRoman(0)/m/n/17.28 32
+ \TU/TimesNewRoman(0)/m/n/17.28 33
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 30
- \TU/TimesNewRoman(0)/m/n/17.28 32
+ \TU/TimesNewRoman(0)/m/n/17.28 33
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 31
- \TU/TimesNewRoman(0)/m/n/17.28 32
+ \TU/TimesNewRoman(0)/m/n/17.28 33
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 32
- \TU/TimesNewRoman(0)/m/n/17.28 32
+ \TU/TimesNewRoman(0)/m/n/17.28 33
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 33
- \TU/TimesNewRoman(0)/m/n/17.28 33
+ \TU/TimesNewRoman(0)/m/n/17.28 34
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 34
- \TU/TimesNewRoman(0)/m/n/17.28 33
+ \TU/TimesNewRoman(0)/m/n/17.28 34
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 35
- \TU/TimesNewRoman(0)/m/n/17.28 33
+ \TU/TimesNewRoman(0)/m/n/17.28 34
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 36
- \TU/TimesNewRoman(0)/m/n/17.28 34
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 37
- \TU/TimesNewRoman(0)/m/n/17.28 34
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 38
- \TU/TimesNewRoman(0)/m/n/17.28 34
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 39
- \TU/TimesNewRoman(0)/m/n/17.28 34
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 40
- \TU/TimesNewRoman(0)/m/n/17.28 34
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 41
- \TU/TimesNewRoman(0)/m/n/17.28 36
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 42
- \TU/TimesNewRoman(0)/m/n/17.28 36
- []
-
-[5]
-Overfull \hbox (1.77997pt too wide) detected at line 43
  \TU/TimesNewRoman(0)/m/n/17.28 37
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 44
- \TU/TimesNewRoman(0)/m/n/17.28 39
+Overfull \hbox (1.77997pt too wide) detected at line 42
+ \TU/TimesNewRoman(0)/m/n/17.28 37
+ []
+
+[5]
+Overfull \hbox (1.77997pt too wide) detected at line 43
+ \TU/TimesNewRoman(0)/m/n/17.28 38
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 45
+Overfull \hbox (1.77997pt too wide) detected at line 44
  \TU/TimesNewRoman(0)/m/n/17.28 40
  []
 
 
+Overfull \hbox (1.77997pt too wide) detected at line 45
+ \TU/TimesNewRoman(0)/m/n/17.28 41
+ []
+
+
 Overfull \hbox (1.77997pt too wide) detected at line 46
- \TU/TimesNewRoman(0)/m/n/17.28 44
+ \TU/TimesNewRoman(0)/m/n/17.28 45
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 47
- \TU/TimesNewRoman(0)/m/n/17.28 45
+ \TU/TimesNewRoman(0)/m/n/17.28 46
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 48
- \TU/TimesNewRoman(0)/m/n/17.28 45
+ \TU/TimesNewRoman(0)/m/n/17.28 46
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 49
- \TU/TimesNewRoman(0)/m/n/17.28 45
+ \TU/TimesNewRoman(0)/m/n/17.28 46
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 50
- \TU/TimesNewRoman(0)/m/n/17.28 47
+ \TU/TimesNewRoman(0)/m/n/17.28 48
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 51
- \TU/TimesNewRoman(0)/m/n/17.28 49
+ \TU/TimesNewRoman(0)/m/n/17.28 50
  []
 
 )
@@ -1150,77 +1155,77 @@ Overfull \hbox (1.77997pt too wide) detected at line 51
 
  [6] (4072pj1.lof
 Overfull \hbox (0.363pt too wide) detected at line 5
- []\TU/lmr/m/n/17.28 12
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 6
  []\TU/lmr/m/n/17.28 13
  []
 
 
-Overfull \hbox (0.363pt too wide) detected at line 7
+Overfull \hbox (0.363pt too wide) detected at line 6
  []\TU/lmr/m/n/17.28 14
  []
 
 
-Overfull \hbox (0.363pt too wide) detected at line 8
+Overfull \hbox (0.363pt too wide) detected at line 7
  []\TU/lmr/m/n/17.28 15
  []
 
 
+Overfull \hbox (0.363pt too wide) detected at line 8
+ []\TU/lmr/m/n/17.28 16
+ []
+
+
 Overfull \hbox (0.363pt too wide) detected at line 9
- []\TU/lmr/m/n/17.28 18
+ []\TU/lmr/m/n/17.28 19
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 10
- []\TU/lmr/m/n/17.28 18
+ []\TU/lmr/m/n/17.28 19
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 11
- []\TU/lmr/m/n/17.28 25
+ []\TU/lmr/m/n/17.28 26
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 12
- []\TU/lmr/m/n/17.28 25
+ []\TU/lmr/m/n/17.28 26
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 13
- []\TU/lmr/m/n/17.28 29
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 14
  []\TU/lmr/m/n/17.28 30
  []
 
 
+Overfull \hbox (0.363pt too wide) detected at line 14
+ []\TU/lmr/m/n/17.28 31
+ []
+
+
 Overfull \hbox (0.363pt too wide) detected at line 17
- []\TU/lmr/m/n/17.28 33
+ []\TU/lmr/m/n/17.28 34
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 19
- []\TU/lmr/m/n/17.28 39
+ []\TU/lmr/m/n/17.28 40
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 20
- []\TU/lmr/m/n/17.28 43
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 21
  []\TU/lmr/m/n/17.28 44
  []
 
 
+Overfull \hbox (0.363pt too wide) detected at line 21
+ []\TU/lmr/m/n/17.28 45
+ []
+
+
 Overfull \hbox (0.363pt too wide) detected at line 24
- []\TU/lmr/m/n/17.28 47
+ []\TU/lmr/m/n/17.28 48
  []
 
 )
@@ -1900,9 +1905,6 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:

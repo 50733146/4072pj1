@@ -249,7 +249,7 @@ Application of reinforcement
 %=----------Sigmoid      Function----------=%
 \item Sigmoid Function：\\
 輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、並具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
-$$\sigma(x)=\frac{1}{1+e^{-x}}$$\\[5pt]
+$$\sigma(x)=\frac{1}{1+e^{-x}}$$\\[4pt]
 %=----------SigmoidPrime Function----------=%
 SigmoidPrime Function是從Sigmoid Function微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\
 $$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$\\[5pt]
