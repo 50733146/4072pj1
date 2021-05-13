@@ -25,28 +25,27 @@
 \contentsline {subsection}{\numberline {2.4.3}為什麼選擇score function 算法}{25}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Score Functions}{26}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Score Function Estimators}{27}{subsection.2.4.5}%
-\contentsline {section}{\numberline {2.5}比較個方法的特色}{30}{section.2.5}%
-\contentsline {chapter}{\numberline {3}訓練環境}{31}{chapter.3}%
-\contentsline {section}{\numberline {3.1}openAI Gym}{31}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Pong}{31}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Pong from pixels}{31}{section.3.3}%
-\contentsline {chapter}{\numberline {4}模擬環境}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}模擬模型}{32}{section.4.1}%
-\contentsline {section}{\numberline {4.2}CoppeliaSim模擬}{32}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}使用原因}{33}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}模擬}{33}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}CoppeliaSim中的Vision sensor}{33}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}影像處理}{33}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}影像辨識}{33}{subsection.4.3.1}%
-\contentsline {chapter}{\numberline {5}伺服器}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Ubuntu 環境配置}{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{36}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Web server}{38}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Nginx}{39}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Flask}{43}{section.5.5}%
-\contentsline {chapter}{\numberline {6}機器學習的訓練與模擬控制結果}{44}{chapter.6}%
-\contentsline {section}{\numberline {6.1}訓練模型的選用}{44}{section.6.1}%
-\contentsline {section}{\numberline {6.2}訓練程式的運作}{44}{section.6.2}%
-\contentsline {chapter}{\numberline {7}問題與討論}{46}{chapter.7}%
-\contentsline {chapter}{參考文獻 }{48}{lstnumber.7.1.8}%
+\contentsline {chapter}{\numberline {3}訓練環境}{30}{chapter.3}%
+\contentsline {section}{\numberline {3.1}openAI Gym}{30}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Pong}{30}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Pong from pixels}{30}{section.3.3}%
+\contentsline {chapter}{\numberline {4}模擬環境}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}模擬模型}{31}{section.4.1}%
+\contentsline {section}{\numberline {4.2}CoppeliaSim模擬}{31}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}使用原因}{32}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}模擬}{32}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}CoppeliaSim中的Vision sensor}{32}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}影像處理}{32}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}影像辨識}{32}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}伺服器}{34}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ubuntu 環境配置}{34}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{35}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Web server}{37}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Nginx}{38}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Flask}{42}{section.5.5}%
+\contentsline {chapter}{\numberline {6}機器學習的訓練與模擬控制結果}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}訓練模型的選用}{43}{section.6.1}%
+\contentsline {section}{\numberline {6.2}訓練程式的運作}{43}{section.6.2}%
+\contentsline {chapter}{\numberline {7}問題與討論}{45}{chapter.7}%
+\contentsline {chapter}{參考文獻 }{47}{lstnumber.7.1.8}%
 \contentsfinish 
