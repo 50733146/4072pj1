@@ -201,18 +201,17 @@ Application of reinforcement
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
 \section{研究動機}
- 機器學習與機電系統結合的運用越來廣泛，我們將其運用在桌球機上，使完成訓練的機電系統能獨自與玩家對打。\\
+ 機器學習與機電系統結合的運用越來廣泛，我們將其運用在桌球機上，使完成訓練的機電系統能獨自與玩家對打。
 \section{研究目的與方法}
  本研究分兩大部分，第一運用Open AI Gym的Pong-v0來訓練機器學習，第二利用CoppilaSim模擬環境並訓練出能與人對打的機電系統。\\
- 利用Gym的訓練環境來側試不同的算法所得到的訓練結果，比較不同算法、參數間的差異，並找出較適合Pong game的算法、參數，循序漸進提高環境的真實程度，來減少一開始就是以實體的方式測試所帶來硬體、程式、時間和金錢等成本。\\[12pt]
+ 
+ 利用Gym的訓練環境來側試不同的算法所得到的訓練結果，比較不同算法、參數間的差異，並找出較適合Pong game的算法、參數，循序漸進提高環境的真實程度，來減少一開始就是以實體的方式測試所帶來硬體、程式、時間和金錢等成本。\\
 
- 將Gym的訓練環境轉換到CoppilaSim模擬環境，利用貼近真實的模擬環境來修正在純程式的架構與真實環境間的誤差，雖然CoppilaSim模擬環境與真實環境仍有些微的落差，但與Gym相比CoppilaSim的環境已非常貼近真實了，拉近了虛擬與現實間的距離，提高了實用性的價值。\\
-
+ 將Gym的訓練環境轉換到CoppilaSim模擬環境，利用貼近真實的模擬環境來修正在純程式的架構與真實環境間的誤差，雖然CoppilaSim模擬環境與真實環境仍有些微的落差，但與Gym相比CoppilaSim的環境已非常貼近真實了，拉近了虛擬與現實間的距離，提高了實用性的價值。
 \section{未來展望}
 \qquad 
 \section{規則說明}
- Pong game 的遊戲規則簡單，透過擊錘將球打入對方球門即得一分，只要其中一方得21分就結束該局。擊錘只能沿單方向來回移動來進行防守和進攻。\\[12pt]
-
+ Pong game 的遊戲規則簡單，透過擊錘將球打入對方球門即得一分，只要其中一方得21分就結束該局。擊錘只能沿單方向來回移動來進行防守和進攻。\\
 遊戲規則如下：
 \begin{enumerate}
 \item 球打入敵方即得一分。
@@ -701,7 +700,6 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 
  Score function gradient estimator的可視化，左：高斯分佈及其中的一些樣本（藍點)，在每個藍點上，我們還繪製了相對於高斯平均參數的對數概率的梯度，箭頭指示應微調分佈平均值以增加該樣本概率的方向。中間：某些得分函數的疊加，在某些小區域中除了+1之外，其他所有地方都給出-1（請注意，這可以是任意的，不一定是可微分的標量值函數)，箭頭現在採用了顏色區別，因為由於更新中的乘法運算，我們將平均所有綠色箭頭和紅色箭頭的負數。右：更新參數後，綠色箭頭和反向紅色箭頭將我們向左移至底部。現在，根據需要，該分佈中的樣本將具有更高的預期分數。\\
 \newpage
-\section{比較個方法的特色}
 \chapter{訓練環境}
 \section{openAI Gym}
  Gym 是用於開發和比較強化學習算法的工具包，他不對agent的結構做任何假設，並且與任何數據計算庫兼容，而可以用來制定強化學習的算法。這個環境具有共享的介面，使我們能用來編寫常規算法，也就能教導agents如何步行到玩遊戲。\\[6pt]
@@ -720,7 +718,7 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \begin{figure}[hbt!]
 \center
 \includegraphics[width=13cm]{model}
-\caption{組合圖}
+\caption{\Large 組合圖}
 \label{model}
 \end{figure}
 
@@ -729,14 +727,14 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \begin{figure}[hbt!]
 \center
 \includegraphics[width=8cm]{axialseat}
-\caption{Y軸皮帶固定座}
+\caption{\Large Y軸皮帶固定座}
 \label{axialseat}
 \end{figure}
 
 \begin{figure}[hbt!]
 \center
 \includegraphics[width=8cm]{connectSeat}
-\caption{連結固定座}
+\caption{\Large 連結固定座}
 \label{connectSeat}
 \end{figure}
 
@@ -747,7 +745,7 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
  \begin{figure}[hbt!]
 \center
 \includegraphics[width=11cm]{CoppeliaSim}
-\caption{CoppeliaSim Logo}
+\caption{\Large CoppeliaSim Logo}
 \end{figure}
 
 且CoppeliaSim中，控制器可以用C / C ++、Python、Java、Lua、Matlab或Octave編寫。\\
@@ -765,9 +763,9 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \begin{figure}[hbt!]
 \center
 \includegraphics[width=11cm]{toolBar}
-\caption{CoppeliaSim 工具列}
+\caption{\Large CoppeliaSim 工具列}
 \includegraphics[width=13cm]{toolBar2}
-\caption{CoppeliaSim 工具列(續)}
+\caption{\Large CoppeliaSim 工具列(續)}
 \end{figure}
 \begin{table}[hbt!]
 \center
@@ -797,7 +795,7 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \begin{figure}[hbt!]
 \center
 \includegraphics[width=10cm]{pythonCVlogo}
-\caption{OpenCV 及Python logo}
+\caption{\Large OpenCV 及Python logo}
 \end{figure}
 
 \subsection{CoppeliaSim中的Vision sensor(視覺傳感器)}
@@ -811,24 +809,23 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \begin{figure}[hbt!]
 \center
 \includegraphics[width=10cm]{HSV}
-\caption{HSV色彩空間}
+\caption{\Large HSV色彩空間}
 \end{figure}
 
 \item 顏色過濾\\
-
 進行顏色過濾時，需要先定義出過濾顏色的上下限，在開始過濾後僅會保留介於上下界線範圍的影像，而介於上下限範圍之外的影像則會被剃除，如圖.\ref{filter}所示以上限(77，255，255)及下限(35，43，46)為例。\\
 \begin{figure}[hbt!]
 \center
 \begin{minipage}[t]{0.48\textwidth}
 \center
 \includegraphics[width=6cm]{origin}
-\caption{場景原圖}
+\caption{\Large 場景原圖}
 \label{origin}
 \end{minipage}
 \begin{minipage}[t]{0.48\textwidth}
 \center
 \includegraphics[width=6cm]{filter}
-\caption{顏色過濾後的場景}
+\caption{\Large 顏色過濾後的場景}
 \label{filter}
 \end{minipage}
 \end{figure}
