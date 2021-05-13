@@ -19,17 +19,17 @@
 \BOOKMARK [2][-]{subsection.2.3.3}{Proof\040Policy\040Gradient\040Theorem}{section.2.3}% 19
 \BOOKMARK [2][-]{subsection.2.3.4}{Policy\040Gradient\040Theorem}{section.2.3}% 20
 \BOOKMARK [2][-]{subsection.2.3.5}{Actor\040Crtic}{section.2.3}% 21
-\BOOKMARK [1][-]{section.2.4}{深度強化學習}{chapter.2}% 22
-\BOOKMARK [2][-]{subsection.2.4.1}{Supervised\040Learning}{section.2.4}% 23
+\BOOKMARK [1][-]{section.2.4}{類神經網路中強化學習的應用}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.4.1}{監督式學習}{section.2.4}% 23
 \BOOKMARK [2][-]{subsection.2.4.2}{對數導數技巧}{section.2.4}% 24
-\BOOKMARK [2][-]{subsection.2.4.3}{Score\040Functions}{section.2.4}% 25
-\BOOKMARK [2][-]{subsection.2.4.4}{Score\040Function\040Estimators}{section.2.4}% 26
-\BOOKMARK [1][-]{section.2.5}{比較個方法的特色}{chapter.2}% 27
-\BOOKMARK [0][-]{chapter.3}{訓練環境}{}% 28
-\BOOKMARK [1][-]{section.3.1}{openAI\040Gym}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.2}{Pong}{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.3}{為什麼選擇score function 算法}{chapter.3}% 31
-\BOOKMARK [1][-]{section.3.4}{Pong\040from\040pixels}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.2.4.3}{為什麼選擇score function 算法}{section.2.4}% 25
+\BOOKMARK [2][-]{subsection.2.4.4}{Score\040Functions}{section.2.4}% 26
+\BOOKMARK [2][-]{subsection.2.4.5}{Score\040Function\040Estimators}{section.2.4}% 27
+\BOOKMARK [1][-]{section.2.5}{比較個方法的特色}{chapter.2}% 28
+\BOOKMARK [0][-]{chapter.3}{訓練環境}{}% 29
+\BOOKMARK [1][-]{section.3.1}{openAI\040Gym}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.2}{Pong}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.3}{Pong\040from\040pixels}{chapter.3}% 32
 \BOOKMARK [0][-]{chapter.4}{模擬環境}{}% 33
 \BOOKMARK [1][-]{section.4.1}{模擬模型}{chapter.4}% 34
 \BOOKMARK [1][-]{section.4.2}{CoppeliaSim模擬}{chapter.4}% 35
@@ -41,8 +41,11 @@
 \BOOKMARK [0][-]{chapter.5}{伺服器}{}% 41
 \BOOKMARK [1][-]{section.5.1}{Ubuntu 環境配置}{chapter.5}% 42
 \BOOKMARK [1][-]{section.5.2}{Oracle VM VirtualBox 介紹}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.3}{Nginx}{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.4}{Web\040server}{chapter.5}% 45
-\BOOKMARK [0][-]{chapter.6}{深度強化學習的訓練與模擬控制結果}{}% 46
-\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 47
-\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 48
+\BOOKMARK [1][-]{section.5.3}{Web\040server}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.4}{Nginx}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.5}{Flask}{chapter.5}% 46
+\BOOKMARK [0][-]{chapter.6}{機器學習的訓練與模擬控制結果}{}% 47
+\BOOKMARK [1][-]{section.6.1}{訓練模型的選用}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.2}{訓練程式的運作}{chapter.6}% 49
+\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 50
+\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 51
