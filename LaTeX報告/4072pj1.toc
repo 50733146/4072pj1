@@ -15,8 +15,8 @@
 \contentsline {subsection}{\numberline {2.2.1}馬可夫決策}{14}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}Policy Gradient}{18}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Mokov chain}{19}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}為什麼不用value-base而是policy-base}{19}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Proof Policy Gradient Theorem}{19}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.2}為什麼不用value-base而是policy-base}{20}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Proof Policy Gradient Theorem}{20}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Policy Gradient Theorem}{21}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Actor Crtic}{22}{subsection.2.3.5}%
 \contentsline {section}{\numberline {2.4}類神經網路中強化學習的應用}{24}{section.2.4}%
