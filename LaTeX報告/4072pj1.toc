@@ -9,46 +9,44 @@
 \contentsline {chapter}{\numberline {2}機器學習概論}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}類神經網絡}{3}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}啟動函數}{4}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}損失函數}{7}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}優化算法}{10}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}強化學習}{11}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}馬可夫決策}{14}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}Policy Gradient}{18}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Mokov chain}{19}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}為什麼不用value-base而是policy-base}{19}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Proof Policy Gradient Theorem}{19}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Policy Gradient Theorem}{21}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Actor Crtic}{22}{subsection.2.3.5}%
-\contentsline {section}{\numberline {2.4}類神經網路中強化學習的應用}{24}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}監督式學習}{24}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}對數導數技巧}{25}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}為什麼選擇score function 算法}{25}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Score Functions}{26}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Score Function Estimators}{27}{subsection.2.4.5}%
-\contentsline {section}{\numberline {2.5}比較個方法的特色}{30}{section.2.5}%
-\contentsline {chapter}{\numberline {3}訓練環境}{31}{chapter.3}%
-\contentsline {section}{\numberline {3.1}openAI Gym}{31}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Pong}{31}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Pong from pixels}{31}{section.3.3}%
-\contentsline {chapter}{\numberline {4}模擬環境}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}模擬模型}{32}{section.4.1}%
-\contentsline {section}{\numberline {4.2}CoppeliaSim模擬}{33}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}使用原因}{34}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}RemoteAPI}{34}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}PyRep}{34}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}模擬}{34}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {2.1.2}損失函數}{10}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}優化算法}{12}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}強化學習}{13}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}馬可夫決策}{16}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Policy Gradient}{20}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Mokov chain}{21}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}為什麼不用value-base而是policy-base}{21}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Proof Policy Gradient Theorem}{21}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Policy Gradient Theorem}{23}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Actor Crtic}{24}{subsection.2.3.5}%
+\contentsline {section}{\numberline {2.4}類神經網路中強化學習的應用}{26}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}監督式學習}{26}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}對數導數技巧}{27}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}為什麼選擇score function 算法}{27}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Score Functions}{28}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Score Function Estimators}{29}{subsection.2.4.5}%
+\contentsline {section}{\numberline {2.5}比較個方法的特色}{32}{section.2.5}%
+\contentsline {chapter}{\numberline {3}訓練環境}{33}{chapter.3}%
+\contentsline {section}{\numberline {3.1}openAI Gym}{33}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Pong}{33}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Pong from pixels}{33}{section.3.3}%
+\contentsline {chapter}{\numberline {4}模擬環境}{34}{chapter.4}%
+\contentsline {section}{\numberline {4.1}模擬模型}{34}{section.4.1}%
+\contentsline {section}{\numberline {4.2}CoppeliaSim模擬}{34}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}使用原因}{35}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}模擬}{35}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}CoppeliaSim中的Vision sensor}{35}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}影像處理}{35}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}CoppeliaSim中的Vision sensor(視覺傳感器)}{35}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}影像辨識}{36}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}伺服器}{38}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Ubuntu 環境配置}{38}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{39}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Web server}{41}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Nginx}{42}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Flask}{46}{section.5.5}%
-\contentsline {chapter}{\numberline {6}機器學習的訓練與模擬控制結果}{47}{chapter.6}%
-\contentsline {section}{\numberline {6.1}訓練模型的選用}{47}{section.6.1}%
-\contentsline {section}{\numberline {6.2}訓練程式的運作}{47}{section.6.2}%
-\contentsline {chapter}{\numberline {7}問題與討論}{49}{chapter.7}%
-\contentsline {chapter}{參考文獻 }{51}{lstnumber.7.1.8}%
+\contentsline {subsection}{\numberline {4.3.1}影像辨識}{35}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}伺服器}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ubuntu 環境配置}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{38}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Web server}{40}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Nginx}{41}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Flask}{45}{section.5.5}%
+\contentsline {chapter}{\numberline {6}機器學習的訓練與模擬控制結果}{46}{chapter.6}%
+\contentsline {section}{\numberline {6.1}訓練模型的選用}{46}{section.6.1}%
+\contentsline {section}{\numberline {6.2}訓練程式的運作}{46}{section.6.2}%
+\contentsline {chapter}{\numberline {7}問題與討論}{48}{chapter.7}%
+\contentsline {chapter}{參考文獻 }{50}{lstnumber.7.1.8}%
 \contentsfinish 
