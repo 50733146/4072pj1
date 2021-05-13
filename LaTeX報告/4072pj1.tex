@@ -249,10 +249,25 @@ Application of reinforcement
 %=----------Sigmoid      Function----------=%
 \item Sigmoid Function：\\
 輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、並具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
-$$\sigma(x)=\frac{1}{1+e^{-x}}$$
+$$\sigma(x)=\frac{1}{1+e^{-x}}$$\\[5pt]
 %=----------SigmoidPrime Function----------=%
 SigmoidPrime Function是從Sigmoid Function微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\
-$$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$
+$$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$\\[5pt]
+$$\sigma^{'}(x)=\frac{d}{dx}\sigma(x)=\frac{d}{dx}\frac{1}{1+e^{-x}}=\frac{d}{dx}(1+e^{-x})^{-1}$$\\[6pt]
+$$-------------skip-------------$$\\[6pt]
+Tip: 找出 $f^{'}(x)$ if $f(x)=\frac{A}{B+Ce^{x}}$\\
+答:\\
+$$\frac{d}{dx}[\frac{1}{g(x)}]=\frac{1^{'}g(x)-1g^{'}(x)}{g(x)^2}=\frac{g^{'}(x)}{[g(x)]^2}$$\\
+if $g(x)$=constant\\
+$$\frac{d}{dx}[\frac{g(x)}{h(x)}]=\frac{g^{'}(x)h(x)-g(x)h^{'}(x)}{h(x)^2}= \frac{-kh^{'}(x)}{[h(x)]^2}$$\\
+$$f^{'}(x)=\frac{-A[\frac{d}{dx}(B+Ce^x)]}{(B+Ce^x)^2}=\frac{-A(0+Ce^x)}{(B+Ce^x)^2}=\frac{-ACe^x}{(B+Ce^x)^2}$$\\[6pt]
+$$-------------skip-------------$$\\[6pt]
+因此:\\
+$$=-(1+e^{-x})^{-2}\frac{d}{dx}(1+e^{-x})=-(1+e^{-x})^{-2}[\frac{d}{dx}(1)+\frac{d}{dx}(e^{-x})]$$\\
+$$=-(1+e^{-x})^{-2}[0+\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[\frac{d}{dx}(e^{-x})]=-(1+e^{-x})^{-2}[e^{-x}\frac{d}{dx}(-x)]$$\\
+$$-(1+e^{-x})^{-2}[e^{-x}(-1)]=-(1+e^{-x})^{-2}(-e^{-x})=\frac{e^{-x}}{(1+e^{-x})^2}=\frac{1(e^{-x})}{(1+e^{-x})(1+e^{-x})}$$\\
+$$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}{1+e^{-x}}=\frac{1}{1+e^{-x}}(\frac{1+e^{-x}}{1+e^{-x}}-\frac{1}{1+e^{-x}})$$\\[6pt]
+$$=\sigma(x)[1-\sigma(x)]$$\\
 %=----------Softmax Function----------=%
 \item Softmax：\\
 Softmax會計算每個事件分布的機率，適用多項目分類、其機率總合為1。以此專案為例，假設擊錘移動有向上移動、向下移動及不移動這三個決策選項，則這三個決策機率值總和為1。\\
@@ -520,7 +535,6 @@ $$J(\theta)
 
 \subsection{Mokov chain}
 stochastic process : 將隨著時間變化的狀態，以數學模式表示\\[5pt]
-$+$\\[5pt]
 Mokov property : 在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關
 $d^\pi(s)$ : $\pi_\theta$的Mokov chain 的平穩分布(在$\pi$下的策略狀態分佈) $$d^\pi(s) = \lim_{t \to \infty} P(s_t = s \vert s_0, \pi_\theta)$$
 $\ast$ 當策略在其他函數的下標時，將省略 $\pi_\theta$的$\theta$  e.g. $d^\pi(s)$ and $Q^\pi$ should be 
