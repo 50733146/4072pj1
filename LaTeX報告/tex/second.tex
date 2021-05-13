@@ -166,16 +166,28 @@ Application of reinforcement
 \chapter{機器學習的訓練方法}
 \renewcommand{\baselinestretch}{1.0} %設定行距
 \section{類神經網絡}
-\qquad 類神經網路的概念來源是觀察人類的中樞神經系統而啟發的，類神經網路主要由多個節點組成，每個節點稱為神經元（neurons），神經元與神經元連結而形成的網路稱為神經網路。神經元主要又分成三層：輸入層（input layer）、隱藏層（hidden layer）和輸出層（output layer）。神經元會接收上一層的訊號，並經過啟動函數（activation function）計算並輸出至下一層神經元。神經網路輸入層的神經元負責接收訊號，透過隱藏層來運算，再傳遞到輸出層執行動作。由於每個神經元經過啟動函數的非線性計算，所以神經元傳出的數值也是非線性。神經元與神經元間連線在生物學稱為突觸（Synapse），在數學模型裡每個突觸都有權重（weights）。在既定框架下，調配權重值和啟動函數會使結果更接近預期。神經網路的架構指標為以下幾項：階層數、每層神經元個數、神經元連接方式、啟動函數的類型等。\\[12pt]
-
-\qquad 神經訊號傳遞分為前饋（feed-forward）和回饋（backpropagation）。前饋為傳遞經過啟動函數計算的數值。回饋則是修正權重和偏差（biases），以提高下次前饋計算的準確度。
+%======缺少圖片======%
+\begin{figure}[hbt!]
+\begin{center}
+%\includegraphics[scale=0.74]{兩層神經網路}
+\caption{兩層神經網路}
+\end{center}
+\end{figure}
+\qquad 圖1-1展示了兩層類神經網路的架構，如圖所示每一層每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
+\qquad 神經元是AI系統中使用的軟件模型，其行為或多或少像實際的大腦神經元，模型會使用數字，使一個或另一個神經元對結果有重要的影響，這些數字又稱為權重。\\
+\qquad 圖1-1也展示了輸入層、隱藏層和輸出層，這是最陽春的網路，真正的網路可以更複雜且有更多層次，事實上深度學習命名原則，就是由多層的隱藏層而來，從意義上來說就是增加了類神經網路的深度。\\
+\qquad 此外，如圖1-1所示，是具有過濾層並在​​其中從左到右處理信息，數據輸入的方向只有一個，故被稱為前饋輸入(feed-forward input)。\\
+\qquad 有了網路架構，就能進一步讓網路學習，神經元網路會接收一個例子並猜測答案，如果答案是錯誤的，它會回溯並修改對神經元施加權重和偏差，並嘗試通過更改某些值來修復錯誤，這樣的行為就被稱為反向傳播(backpropagation)。使用迭代方法進行反複試驗，模擬人們重複的行為，執行經過多時後，最終類神經網路學習會進步並給出更好的答案，訓練時間可以是一天，甚制是一個禮拜，才能完成學習複雜的項目，故每一次的迭代被稱為epoch。\\
+\qquad 可以看到該神經網絡的輸出僅取決於互連的權重，還取決於神經元本身的偏差，雖然權重會影響啟動函數曲線的陡度，但是偏差會將發生變化的整個曲線，像右或向左，權重和偏差的選擇，決定了單個神經元的預測強度，而訓練神經
+網絡使用的輸入數據可以來微調權重和偏差。\\
 \subsection{啟動函數}
+啟動函數是設計類神經網路的關鍵部分，如果不使用啟動函數，每一層神經元連接到下一層神經元，只會有線性組合，作為輸出，類神經網路便失去了意義，也就是說啟動函數能讓神經元間的連線，產生非線姓的組合並作為該層的輸出。\\
 以下介紹幾種較為常見的啟動函數及其特性：
 \begin{itemize}
 %=----------Sigmoid      Function----------=%
 \item Sigmoid Function：\\
 輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、並具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
-$$\sigma(x)=\frac{1}{1+e^{-x}}$$ \\[6pt]
+$$\sigma(x)=\frac{1}{1+e^{-x}}$$\\
 \iffalse
 \begin{figure}[hbt!]
 \begin{center}
@@ -200,15 +212,15 @@ $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$\\
 %=----------Adam Function----------=%
 \item Adam Function\\
-結合了 Adagrad 和 RMSprop的優勢，有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程: \\[6pt]
+結合了 Adagrad 和 RMSprop的優勢，有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程: \\
 $$g_t=\delta_{\theta}f(\theta)$$\\
-一次矩指數移動均線 :\\[6pt]
+一次矩指數移動均線 :\\
  $$m_t =\beta(m_{t-1})+(1-\beta_1)(\nabla{w_t})$$\\
-$$\hat m_t=\frac{m_t}{1-\beta_1^t}$$\\[6pt]
-二次矩指數移動均線 :\\[6pt]
+$$\hat m_t=\frac{m_t}{1-\beta_1^t}$$\\
+二次矩指數移動均線 :\\
 $$v_t=\beta_2(v_t-1)+(1-\beta_2)(\nabla{w_t})^2$$\\
 $$\hat{v_t}=\frac{v_t}{1-\beta_2^t}$$\\
-因此,Adam Function:\\[6pt]
+因此,Adam Function:\\
 \begin{Large}$$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$\end{Large}
 %=----------Mean Squared Error----------=%
 \item Mean Squared Error\\
@@ -254,75 +266,58 @@ $$=\frac{1}{1+e^{-x}}\frac{e^{-x}}{1+e^{-x}}=\frac{1}{1+e^{-x}}\frac{e^{-x}+1-1}
 \end{figure}
 
 
-%\begin{figure}[hbt!]
-%\begin{center}
-%\includegraphics[height=4.5cm]{relu}\\
-%\caption{Relu; from : \href{https://www.kaggle.com/dansbecker/rectified-linear-units-relu-in-deep-learning}{\underline{kaggle}} }
-%\end{center} 
-%\end{figure}
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[height=4.5cm]{relu}\\
+\caption{Relu; from : \href{https://www.kaggle.com/dansbecker/rectified-linear-units-relu-in-deep-learning}{\underline{kaggle}} }
+\end{center} 
+\end{figure}
 
 \newpage
 \end{itemize}
 \fi %整段註解(結尾)
-\subsection{優化器}
-\qquad 為了讓機器學習的錯誤率降低，因此利用優化器來降低loss function的值，在error surface上找到最小值，即是找到錯誤率最低的地方。也可以改善啟動函數梯度消失的問題，以下將介紹幾種優化的方法：
+\subsection{損失函數}
+\quad 損失函數是類神經網路的最後一塊拼圖，損失函數會將神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重以減少下次評估時的損失，以下將介紹幾種優化的方法：\\
+
 \begin{itemize}
-\item Gradient Descent\\[6pt]
+\item Gradient Descent\\
 利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。\\
-\item Batch gradient descent\\[6pt]
+\item Batch gradient descent\\
 用批次的方式計算訓練資料，整個資料集計算梯度只更新一次，因此計算和更新時會占用大量記憶體。整體效率較差、速度較緩慢。由 Gradient Descent 延伸出來的算法。其收斂行為與 Gradient Descent 相同。\\
-\item Stochastic gradient descent\\[6pt]
+\item Stochastic gradient descent\\
 每次執行時會更新並消除誤差，有頻繁更新和變化大的特性，較不容易困在特定區域。由 Gradient Descent 延伸出來的算法。其收斂行為與 Gradient Descent 相同。\\
-\item Mini-batch gradient descent\\[6pt]
+\item Mini-batch gradient descent\\
 結合 Batch gradient descent 和 Stochastic gradient descent 的特點：批量計算和頻繁更新，所衍伸的算法。利用小批量的方式頻繁更新，並使收斂更穩定。其缺點：學習率挑選不易、預定義 threshold 無法適應數據集的特徵、對很少發生的特徵無法執行較大的更新、非凸面error surface要避免被困在次優的局部最小值等。\\
-\item Gradient descent optimization algorithms\\[6pt]
+\item Gradient descent optimization algorithms\\
 為了改善前面幾種算法而發展出來的優化算法。以下將列出數種優化算法。\\
 \item Momentum\\[6pt]
 在梯度下降法加上動量的概念，會加速收斂到最小值並減少震盪。\\
-\item Nesterov accelerated gradient\\[6pt]
+\item Nesterov accelerated gradient\\
 NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最小值所造成的震盪(為了修正到最小值，來回修正而產生的震盪)\\
-\item Adagrad\\[6pt]
+\item Adagrad\\
 其學習率能適應參數：頻繁出現的特徵用較低的學習率，不經常出現的特徵則用較高的學習率，且無須手動調整學習率。其缺點是，學習率會急遽下降，最後會無限小，這算法就不再獲得知識。\\
-\item Adadelta\\[6pt]
+\item Adadelta\\
 為 Adagrad 的延伸，下降激進程度，學習率從更新規則中淘汰，不需設定預設學習率。\\
-\item RMSprop\\[6pt]
+\item RMSprop\\
 為了解決 Adagrad 學習率急劇下降的問題，學習率除以梯度平方的RMS，解決學習率無限小的情形。\\
-\item Adam\\[6pt]
+\item Adam\\
 類似 Momentum，更加穩定快速的收斂。\\
-\item AdaMax\\[6pt]
+\item AdaMax\\
 與 Adam 相似，依靠$(u_t)$ 最大運算。\\
-\item Nadam\\[6pt]
+\item Nadam\\
 結合 Adam 和 NAG ，應用先前參數執行兩次更新，一次更新參數一次更新梯度。\\
-\item AMSGrad\\[6pt]
+\item AMSGrad\\
 改善 Adam 算法所導致收斂較差的情況(用指數平均會減少其影響)，換用梯度平方最大值來做計算，並移除去偏差的步驟。是否有比 Adam 算法好仍有待觀察。\\
 \item Gradient noise\\[6pt]
 有助於訓練特別深且復雜的網絡，noise 可改善不良初始化的網路。\\
 \end{itemize}
-\section{深度學習}
-%=----------deep learning 會在此時崛起?----------------=%
-
-\qquad 深度學習的崛起與電腦科學有著密切的關係，四個主要趨勢為:\\
-\begin{enumerate}
-\item 支援張量運算程式語言與程式庫的崛起\\[6pt]
-首先，自從1960年代開始，諸如APL、MATLAB、R和Julia等領域的特定語言的發展轉變為多為數組(通常稱為張量) 進入一組由全為數學語(或運算符)支援的第一類物件以對其進行操作此外，基於數組的編程能夠以通用語言(如 Python、Lisp、C++和Lua)高校運作，諸如NumPy、Torch、Eigen和Lush等。\\
-
-\item 自動求導數套件的開發\\[6pt]
-其次，自動微分的發展使得完全自動化計算導數的艱鉅工作成為了可能， 這使的運用不同的機器學習方法進行實驗變得非常容易，同時仍然允許基於梯度的優化。 因為autograd軟件包的普及，並將該技術用於NumPy數組，並且類似的方法也用於框架中，例如: Chainer, DyNet, Lush, Torch, Jax and Flux.jl。\\
-
-\item 自由開源軟體的普及\\[6pt]
-第三隨著自由軟件的到來，科學界從封閉的專用軟件(例如Matlab)轉向開源， Python的生態系統，帶有NumPy、SciPy和Pandas等軟件包，滿足了大多數研究人員對數值分析需求，同時讓他們能夠利用龐大的程式庫來處理數據集的預處理，例如:統計分析、繪圖等。\\
-此外，自由軟體的開放性、互相操作性和靈活性，促進了充滿活力的社會發展，這樣社會可以通過擴展程式庫現有的功能，或著在需要時通過開發和發布全新的程式庫功能，來迅速滿足新的或不斷變化的需求。 儘管有豐富的非Python語言支持的神經網路開源軟件，從Lish中的Lush、C++中的Torch、Objective-C和Lua、C++中的EBLearn、C++中的Caffe開始，大型生態系統(諸如Python)的網路效應，促使研究快速發展成為一項必不可少的技能。因此，自2014年以來，大多數深度學習的框架都將Python介面作為一項基本功能進行融合。\\
-
-\item 多核 GPU 運算的發展 \\[6pt]
-最後，利用大規模通用硬體(例如GPU)的可能性，提供深度學習方法所需的計算能力、專用的程式庫(例如:cuDNN)以及大量學術著作(例如Andrew Lavin、maxdnn:使用maxwell gpus進行深度學習的高效卷積內核、2015年1月以及Andrew Lavin和Scott Gray用於卷積神經網路的快速算法、2016年IEEE電腦視覺和圖形識別(CVPR)，第4013-4021頁，2016), 產生了一系列高性能可重用的深度學習內核，這些內核使諸如Caffe,Torch7, or TensorFlow 的框架能夠利用這些硬體加速器。\\
-\end{enumerate}
-
+\subsection{優化算法}
 \newpage
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
-強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\[6pt]
-強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\[6pt]
-由於強化學習是建立在環境上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\[12pt]
+強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\
+強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
+由於強化學習是建立在環境上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
 %=----------Faces of Reinforcement Learning---------------=%
 強化學習涵蓋範圍：\\
 
@@ -447,14 +442,6 @@ MDP(S, A, P, R, gamma)
 policy(決策)：可以是一個決策行為的機率或確定執行的行為，若以數學方程式表示：
 $$\pi (a|s) = P(a_t=a|s_t=s)$$
 MRP和MDP方程式互相轉換：\\
-\iffalse
-\begin{tabbing}
-MRP\hspace{2em}\= \begin{small}$\longleftrightarrow$\end{small} \hspace{0.5em}\= MDP\hspace{6em}\\
-$P^{\pi}(s's)$\> = \>$\sum_{a\in A}\pi (a|s)P(s'|s, a)$\\
-$P^{\pi}(s)$\> = \>$\sum_{a\in A}\pi (a|s)P(s, a)$\\
-itemA   \> itemB   \> itemC
-\end{tabbing}
-\fi
 \begin{center}
 \begin{tabular}[c]{ccc}    
 %\multicolumn{1}{r}{MRP}
@@ -466,6 +453,7 @@ $P^{\pi}(s)$ & = & $\sum_{a\in A}\pi (a|s)P(s, a)$\\
 \hline
 \end{tabular}
 \end{center}
+
 state value function(狀態值方程式)$v^{\pi}(s)$\\
 $$v^{\pi}(s) = \mathbb{E}[G_t|s_t=s]$$
 $$= \mathbb{E}[R_{t+1}+\gamma v^{\pi}(s_{t+1})|s_t=s]$$
@@ -490,8 +478,9 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \end{center}
 \end{figure}
 $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$
+\subsection{Policy Gradient}
+\newpage
 \section{深度強化學習}
-\subsection{Deep Reinforcement Learning}
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{ network}
@@ -542,11 +531,9 @@ $$\mathbb{V}[\nabla_\theta \log p(\mathbf{x}; \theta)] = \mathcal{I}(\theta) =\m
 \end{itemize}
 \subsection{Score Function Estimators}
 我們的問題是計算函數f的期望值的梯度：\\
-$$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] =\nabla_\theta \int p(z; \theta)f(z) dz$$\\
-
+$$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] =\nabla_\theta \int p(z; \theta)f(z) dz$$
 \qquad 這是機器學習中的一項常態性任務，在變數推理中進行後驗計算，在強化學習中進行價值函數和策略學習，在計算金融中進行衍生產品定價以及在運籌學中進行庫存控制等。該梯度很難計算，因為積分通常是未知的，我們計算梯度所依據的參數θ的分佈為p（z;θ)，此外，當函數f不可微時，我們可能想計算該梯度，使用對數導數技巧和得分函數的屬性，我們可以更方便地計算此梯度：\\
-$$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$\\
-
+$$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.5]{gradient_change}
@@ -555,20 +542,21 @@ $$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] = \mathbb{E}_{p(z;\theta)}[f(z)\n
 \end{figure}
 \qquad 讓我們導出該表達式，並探討它對我們的優化問題的影響。\\
 \qquad 為此，我們將使用另一種普遍存在的技巧，一種概率恆等的技巧，在該技巧中，我們將表達式乘以1，該表達式由概率密度除以自身而形成。將特性技巧與對數導數技巧相結合，我們獲得了梯度的得分函數估計量:\\
-$$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)]=\int\nabla_\theta p(z;\theta)f(z) dz$$\\[6pt]
-$$= \int \frac{p(z;\theta)}{p(z;\theta)}\nabla_\theta p(z;\theta)f(z) dz$$\\[6pt]
-$$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$\\[6pt]
-$$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$\\[6pt]
-$$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\theta) \quad z^{(s)}\sim p(z)$$\\[6pt]
+$$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)]=\int\nabla_\theta p(z;\theta)f(z) dz$$
+$$= \int \frac{p(z;\theta)}{p(z;\theta)}\nabla_\theta p(z;\theta)f(z) dz$$
+$$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$
+$$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$
+$$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\theta) \quad z^{(s)}\sim p(z)$$\\
 在這四行中發生了很多事情。在第一行中，我們交換了導數和積分。在第二行中，我們應用了概率身份技巧，這使我們能夠形成得分比， 然後使用對數導數技巧，用第三行中對數概率的梯度替換該比率。這在第四行給出了我們所需的隨機估計量，這是由蒙特卡洛計算的，方法是首先從p（z）提取樣本，然後計算加權梯度項。.\\
 
 更簡單的描述，我們有一些分佈 $p(x;\theta)$（我使用了速記$ p（x）$來減少混亂），我們可以從中採樣（例如，這可能是高斯）。對於每個樣本，我們還可以評估分數函數f，該函數將樣本作為樣本並給出標量值。該方程式告訴我們，如果我們希望其樣本達到較高的分數（由f判斷），應該如何改變分佈（通過其參數θ)，特別是，它看起來像：畫出一些樣本x，評估其分數f（x），並且對於每個x也評估第二項 $\nabla_\theta logp(x;θ)$，那第二項是什麼，它是一個向量-漸變為我們提供了參數空間中的方向，這將導致分配給x的概率增加。換句話說，如果我們要在的方向上微移θ，$\nabla_\theta logp(x;θ)$，我們會看到分配給x的新概率略有增加。如果回顧一下公式，它告訴我們應該朝這個方向發展，並將標量值加到上面$f(x)$。這樣一來，得分較高的樣本將比那些得分較低的樣本“拖拉”更強的概率密度，因此，如果我們要根據p上的幾個樣本進行更新，則概率密度將朝著較高分數的方向移動，從而使得分較高的樣本更有可能出現。\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.4]{figure}
-%\caption{gradient change}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{gradient change}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
+
 \qquad score function gradient estimator的可視化，左：高斯分佈及其中的一些樣本（藍點)，在每個藍點上，我們還繪製了相對於高斯平均參數的對數概率的梯度，箭頭指示應微調分佈平均值以增加該樣本概率的方向。中間：某些得分函數的疊加，在某些小區域中除了+1之外，其他所有地方都給出-1（請注意，這可以是任意的，不一定是可微分的標量值函數)，箭頭現在採用了顏色區別，因為由於更新中的乘法運算，我們將平均所有綠色箭頭和紅色箭頭的負數。右：更新參數後，綠色箭頭和反向紅色箭頭將我們向左移至底部。現在，根據需要，該分佈中的樣本將具有更高的預期分數。\\
 \newpage
 \section{比較個方法的特色}
@@ -576,12 +564,10 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 \section{openAI Gym}
  Gym 是用於開發和比較強化學習算法的工具包，他不對agent的結構做任何假設，並且與任何數據計算庫兼容，而可以用來制定強化學習的算法。這個環境具有共享的介面，使我們能用來編寫常規算法，也就能教導agents如何步行到玩遊戲。\\[6pt]
 
-
 \section{Pong}
- 取自 1977年發行的一款家用遊戲機ATARI 2600中的遊戲，內建於Gym，這是一個橫向的乒乓遊戲，左方是遊玩者，右邊是馬可夫決策的特例，每個邊緣都會給予reward(figue1)，目標就是計算再任意階段動作最佳路徑，已獲得rewardd最大值。
+ 取自 1977年發行的一款家用遊戲機ATARI 2600中的遊戲，內建於Gym，這是一個橫向的乒乓遊戲，左方是遊玩者，右邊是馬可夫決策的特例，每個邊緣都會給予reward(figue1)，目標就是計算再任意階段動作最佳路徑，已獲得rewardd最大值。\\
 \section{為什麼選擇score function 算法}
- 多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調優後顯示Policy Gradients比Q 首選PG，因為它是端到端的：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過深度神經網絡使用ATARI遊戲（Pong），並在整個過程結合numpy，作為訓練工具。
-
+ 多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調優後顯示Policy Gradients比Q 首選PG，因為它是端到端的：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過深度神經網絡使用ATARI遊戲（Pong），並在整個過程結合numpy，作為訓練工具。\\
 
 \section{Pong from pixels}
  左：乒乓球遊戲。右：Pong是Markov決策過程（MDP）的特例：圖，其中每個節點都是特定的遊戲狀態，每個邊緣都是可能的（通常是概率性的)改變，每條邊界都給與獎勵，目標是計算在任何狀態下發揮作用的最佳方式，以最大限度地提高獎勵。\\ 
@@ -593,126 +579,37 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \section{模擬模型}
  在模擬的模型上，延用了學長設計的冰球機，並進行了部分的設計變更，將原本的人機對打更改為機器對打，且因為搭配深度強化學習的訓練，所以將兩邊的擊球器都僅保留X軸向(左右)移動，而冰球則是使用原本設計。多虧了學長們所設計的冰球機模型，讓我們在運作上有問題時可以直接發問，設計變更的地方也可以快速完成。\\
 \begin{figure}[hbt!]
-\center
-\includegraphics[width=13cm]{model}
-\caption{組合圖}
-\label{model}
+\begin{center}
+\includegraphics[height=7cm]{model}
+\caption{regression line}
+\end{center}
 \end{figure}
-
-\qquad 將原本Y軸移動機構移除,並將其改為固定在特定位置上，此固定座設計是取代原本鎖在光軸固定坐上的(圖.\ref{model} 代號 1)Y軸皮帶固定座(圖.\ref{axialseat})，並使光軸固定座可以通過連結固定做鎖固於桌面，如圖.\ref{connectSeat}。\\
-
-
-\begin{figure}[hbt!]
-\center
-\includegraphics[width=8cm]{axialseat}
-\caption{Y軸皮帶固定座}
-\label{axialseat}
-\end{figure}
-
-\begin{figure}[hbt!]
-\center
-\includegraphics[width=8cm]{connectSeat}
-\caption{連結固定座}
-\label{connectSeat}
-\end{figure}
-
-
-\newpage
-\qquad 分別在擊球器外側保留約冰球直徑1.5倍之區域作為得分判定區，如圖4.4中的紅色區域。\\
 \section{CoppeliaSim模擬}
  CoppeliaSim是具有集成開發環境的機器人模擬器,基於分佈式控制體系架構,可以通過嵌入式腳本，插件，ROS或BlueZero節點，RemoteAPI客戶端或自定義解決方案進行模型控制。\\
- \begin{figure}[hbt!]
-\center
-\includegraphics[width=11cm]{CoppeliaSim}
-\caption{CoppeliaSim Logo}
-\end{figure}
-
-且CoppeliaSim中，控制器可以用C / C ++、Python、Java、Lua、Matlab或Octave編寫。\\
 \subsection{使用原因}
- 本專題之最終目標是希望可以在虛擬環境中進行深度強化學習來訓練機器對打，通過虛擬環境中的模擬後，可以更直接地看到深度強化學習訓練的狀況，且因為在虛擬環境中不會有金費的支出，所以可以不斷的重複模擬直到模擬達到最佳的狀態，除此之外CoppeliaSim的虛擬環境更接近真實環境，基於以上原因，所以使用了CoppeliaSim開發。\\
-\subsection{RemoteAPI}
- RemoteAPI(Remote Application Programming Interface)是CoppeliaSim API框架的一部分。它允許CoppeliaSim與外部應用程序之間的通訊，是跨平台並支持服務調用和雙向數據流。有兩個不同的版本/框架分別為:Remote API 和The B0-based remote API。\\
-
+ 本專題之最終目標是希望可以在虛擬環境中進行深度強化學習來訓練機器對打，通過虛擬環境中的模擬後，可以更直接地看到深度強化學習訓練的狀況，且因為在虛擬環境中不會有金費的支出，所以可以不斷的重複模擬直到模擬達到最佳的狀態，除此之外CoppeliaSim的虛擬環境更接近真實環境，基於以上原因，所以使用了CoppeliaSim協助開發。\\
 \subsection{模擬}
 \begin{enumerate}
 
 \item 功能說明\\
 以下為簡易功能說明:
-\begin{figure}[hbt!]
-\center
-\includegraphics[width=11cm]{toolBar}
-\caption{CoppeliaSim 工具列}
-\includegraphics[width=13cm]{toolBar2}
-\caption{CoppeliaSim 工具列(續)}
-\end{figure}
-
-
-\begin{table}[hbt!]
-\center
-\large
-\setlength{\tabcolsep}{0.75cm}{
-\begin{tabular}{|c|c|c|c|}
-\hline  代號 & 功能說明 & 代號 & 功能說明\\
-\hline  1 &畫面平移& 10 &複製所有設定\\
-\hline  2 &畫面旋轉& 11 &回復/取消回復\\
-\hline  3 &畫面縮放&12&模擬設定\\
-\hline  4 &畫面視角&13&開始/暫停/停止 模擬\\
-\hline  5 &畫面縮放至適當大小&14&即時模擬切換\\
-\hline  6 &選取物件&15&模擬速度控制\\
-\hline  7 &移動物件&16&線程渲染/視覺化\\
-\hline  8 &旋轉物件&17&場景/頁面 選擇\\
-\hline  9 &加入/移出 樹狀結構&&\\
-\hline 
-\end{tabular}}
-\caption{功能說明}
-\end{table}
-
-
-\newpage
 \item 模擬執行\\
 
 \end{enumerate}
+\subsection{CoppeliaSim中的Vision sensor}
 
 \section{影像處理}
 \qquad 在影像處理中我們主要使用了Python套件中的OpenCV(全稱:Open Source Computer Vision Library),並搭配其他套件或模組進行了影像處裡,藉此來取得訓練神經網路訓練時所需的資訊。\\
-\begin{figure}[hbt!]
-\center
-\includegraphics[width=10cm]{pythonCVlogo}
-\caption{OpenCV 及Python logo}
-\end{figure}
-
-\subsection{CoppeliaSim中的Vision sensor(視覺傳感器)}
-\qquad CoppeliaSim的視覺傳感器輸出的影像是以每個像素中以RGB三個位元組所組成的，舉例來說:在CoppeliaSim中視覺傳感器取出畫面像素為512*256，則我們會接收到(512*256)像素*3=393,216個資料，是一筆相當大的資料，所以在影像處理上會消耗掉大量的資源。\\
 \subsection{影像辨識}
 \qquad 透過CoppeliaSim中的Vision sensor接收場景影像並輸出後,便可以開始進行影像辨識的處裡\\
 \begin{enumerate}
 \item RGB與HSV的轉換\\
-RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩模型中的點在圓柱坐標系中的表示法，HSV分別表示Hue(色相)、Saturation(飽和度)、Value(明度)，而會將RGB轉換為HSV是因為HSV相較於RGB可以更直接的判斷色彩、明暗和鮮豔度對於顏色過濾可以更方便定義出色彩範圍。\\
-\begin{figure}[hbt!]
-\center
-\includegraphics[width=10cm]{HSV}
-\caption{HSV色彩空間}
-\end{figure}
-
+RGB即光的三原色Red(紅)Green(綠)Blue(藍),HSV則是一種將RGB色彩模型中的點在圓柱坐標系中的表示法,HSV分別表示Hue(色相)、Saturation(飽和度)、Value(明度)\\
 \item 顏色過濾\\
-進行顏色過濾時，需要先定義出過濾顏色的上下限，在開始過濾後僅會保留介於上下界線範圍的影像，而介於上下限範圍之外的影像則會被剃除，如圖.\ref{filter}所示以上限(77，255，255)及下限(35，43，46)為例。\\
-\begin{figure}[hbt!]
-\center
-\begin{minipage}[t]{0.48\textwidth}
-\center
-\includegraphics[width=6cm]{origin}
-\caption{場景原圖}
-\label{origin}
-\end{minipage}
-\begin{minipage}[t]{0.48\textwidth}
-\center
-\includegraphics[width=6cm]{filter}
-\caption{顏色過濾後的場景}
-\label{filter}
-\end{minipage}
-\end{figure}
+進行顏色過濾時,需要先定義出過濾顏色的上下限,在開始過濾後低於下限或高於上限的值會變成0(即黑色),而介於上下限範圍間的值會變成255(即白色)\\
+\item 雜訊去除\\
+為了避免環境因素干擾,使影像產生雜訊並影響了影像辨識度,所以在雜訊的去除也是很重要的,
 \end{enumerate}
-
 \newpage
 \chapter{伺服器}
  因應在虛實整合需要用到虛擬環境去模擬的情況，我們使用 Ubuntu 當作我們的作業系統去建構虛擬環境，而在此之前要先安裝「虛擬機器工作站」— Oracle VM VirtualBox 。\\
@@ -766,34 +663,31 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \qquad Nginx 是提供 web 相關服務的伺服器 ( Web server )，除了是高效能的 HTTP ( HTTPS ) 服務器外，還可處理靜態資源 , 負載平衡 , 代理等工作。代理工作為根據不同域名轉發到 Application Server 的不同 port 上去處理 ，其中又分正向和反向，正向代理為 clinet 端發送 request 經由 porxy server 再到目標網站，反向則反之。正向代理操作中 server 只知道 proxy server  給他 request , 不知道 client 是誰，而相同地反向代理則是 client 只知道 proxy server 給他 responses , 不知道 server 是誰。正向代理隐藏真實 Client，反向代理隱藏真實 Server。另外在高流量的狀況下，需要多個 Application Server 來分擔流量，負載平衡就是負責 request 的分發，決定 request 要被分到哪一個 Application Server 處理 。而關於處理靜態資源 ，Nginx 與 Apache 等 Web Server 處理靜態資源的能力是遠遠高於 Application Server 的。\\
 %======圖片 clientProxy======%
 \qquad WSGI ( Python Web Server GateWay Interface ) 為一種用在 Python 語言上的規範，用來規範 Web Server 與 Web Application 之間如何溝通。而 uWSGI 同為實現了 WSGI ,uwsgi , http 協議等的 Web server , 通常用於接收前端伺服器轉發的動態請求並轉發給 Web Application 。前者可以使用 Nginx 提供的 https 協定，且同上表述中 Nginx 的靜態資源處理能力較佳所以也能將靜態資源轉給其處理。\\
-
-\section{CoppeliaSim RemoteAPI}
-\qquad 在訓練類神經網路時主要是透過CoppeliaSim中的Remote API 函數來取得模擬場景中所需要的資訊,在啟用RemoteAPI需要先準備以下三項模組和動態連結函示庫:
-\begin{itemize}
-\item sim.py
-\item simConst.py
-\item remoteApi.dll、remoteApi.dylib 或 remoteApi.so (依序適用於:Windows、MacOS、Ubuntu)
-\end{itemize}
-sim.py及simConst.py為Python模組，其位於:\\
-CoppeliaSim安裝目錄$\backslash$programming$\backslash$remoteApiBindings$\backslash$python$\backslash$python\\
-remoteApi.dll為RemoteAPI動態連結函示庫，其位於:\\
-CoppeliaSim安裝目錄$\backslash$programming$\backslash$remoteApiBindings$\backslash$lib$\backslash$lib$\backslash$作業系統\\
-
 \newpage
 \chapter{深度強化學習的訓練與模擬控制結果}
-\qquad 在python環境下，結合numpy和gym的模擬環境編寫程式，選擇numpy作為運算工具是因為它比Tensorflow之類的程式庫更具彈性，編寫公式較為方便，而gym的設計讓我們能方便的控制右邊的擊錘板。首先擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，讓agent判斷是要往上還是下，經過Score Function計算出的對數機率當作輸入，第二透過前饋：計算W1權重與W2權重的互動結果及擊錘移動的機率，W1權重是計算畫面差異下環境的狀態，W2權重則是經過啟動函數(activation function)得出擊錘移動向下或上的機率。第三得到機率後，agent會透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，也就是採取機率較大的方向移動。第四決定行動後會產生獎懲，獎懲機制是，如果agent碰到球並越過敵方就會得到好的獎勵，沒有打到球的agent會得到懲罰，最後產生的獎懲會送往反饋機制，取樣採取行動的機率，讓獎勵變為1，懲罰變為0，返回原輸入，達到學習效果，隨著agent經驗的增加，會越打越聰明，贏的機率就越高，由此訓練出聰明的AI，經過數萬次的訓練，計算discount reward及獎勵的加總，得出的數值會越來越大，我們小組的測試，往後不管狀況是如何，基本上都會贏過敵方拿下分數。\\[12pt]
+ 在python環境下，結合numpy和gym的模擬環境編寫程式，選擇numpy作為運算工具是因為它比Tensorflow之類的程式庫更具彈性，編寫公式較為方便，而gym的設計讓我們能方便的控制右邊的擊錘板。首先擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，讓agent判斷是要往上還是下，經過Score Function計算出的對數機率當作輸入，第二透過前饋：計算W1權重與W2權重的互動結果及擊錘移動的機率，W1權重是計算畫面差異下環境的狀態，W2權重則是經過啟動函數(activation function)得出擊錘移動向下或上的機率。第三得到機率後，agent會透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，也就是採取機率較大的方向移動。第四決定行動後會產生獎懲，獎懲機制是，如果agent碰到球並越過敵方就會得到好的獎勵，沒有打到球的agent會得到懲罰，最後產生的獎懲會送往反饋機制，取樣採取行動的機率，讓獎勵變為1，懲罰變為0，返回原輸入，達到學習效果，隨著agent經驗的增加，會越打越聰明，贏的機率就越高，由此訓練出聰明的AI，經過數萬次的訓練，計算discount reward及獎勵的加總，得出的數值會越來越大，我們小組的測試，往後不管狀況是如何，基本上都會贏過敵方拿下分數。\\
 
 程式訓練流程：\\
-\qquad 擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
+ 擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
 
-\qquad 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、\\
+ 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、\\
 
 \newpage
 \chapter{問題與討論}
+Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_dll}
+\caption{動態連結庫錯誤}
+\label{fig.動態連結庫錯誤}
+\end{center}
+\end{figure}
+
+A：此問題尚未找到解決方法。\\
 Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
 
 A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
-\begin{lstlisting}
+\begin{lstlisting}[caption=MathJax 程式碼]
 <script>
   MathJax = {
     tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
@@ -803,6 +697,7 @@ A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
   async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"> 
   </script>
 \end{lstlisting}
+
 修正後將"("和")"換成"\$"，就解決誤換問題
 %=---------------------參考文獻----------------------=%
 \newpage
@@ -825,4 +720,4 @@ A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
 %\framebox[8cm][r]{\vspace{1em}test}
 
 
-\end{document}
+\end{document}\textbf{•}

@@ -94,7 +94,7 @@ Application of reinforcement
 \vspace{3em}
 \fontsize{18pt}{2}\centerline{\makebox[\width][s]
 {中華民國\hspace{3em} 
-１１０ \quad 年\quad ５\quad 月}}
+１１０ \quad 年\quad 6\quad 月}}
 \end{titlepage}
 \newpage
 %=------------------------摘要-----------------------=%
@@ -106,11 +106,27 @@ Application of reinforcement
 \begin{center}
 \LARGE\textbf{摘要}\\
 \begin{flushleft}
-\fontsize{14pt}{2.5pt}\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，但不能以實體一直測試不同方法，成本與時間不允許，便可以利用許多感測器觀測數值，以類神經網路運算，在虛擬環境架設結構，遠端控制、更改數值。\\
-\hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的 \sectionef Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。
+\fontsize{14pt}{2.5pt}\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，不能以實體一直測試不同方法，成本與時間不允許，便可以利用虛擬環境架設結構與觀測數值，結合類神神經網路的學習與數值分析的最佳化，大量減少時間與設備成本，獲得最佳解。\\
+\hspace{12pt} 此專題是利用現成裝置冰球台，在\sectionef CoppeliaSim設置對應虛擬模擬環境，減少現實模擬參數設置與設備損壞成本，並加入類神經網路與強化學習在OpenAI Gym應用，提升對打能力，使冰球達到對應最佳化。
 \end{flushleft}
 \begin{center}
-\fontsize{14pt}{2.5pt}關鍵字:\sectionef Policy gradient、虛擬環境架設結構、Reinforcement Learning
+\fontsize{14pt}{2.5pt}關鍵字: 類神經網路、強化學習、\sectionef CoppeliaSim、OpenAI Gym
+\end{center}
+\newpage
+%=------------------------Abstract-----------------------=%
+\renewcommand{\baselinestretch}{1.5} %設定行距
+\pagenumbering{roman} %設定頁數為羅馬數字
+\clearpage  %設定頁數開始編譯
+\sectionef
+\addcontentsline{toc}{chapter}{Abstract} %將摘要加入目錄
+\begin{center}
+\LARGE\textbf{Abstract}\\
+\begin{flushleft}
+\fontsize{14pt}{2.5pt}\hspace{12pt} \sectionef The industry needs to accelerate the calculation of many manufacturing method to achieve optimization.It is not possible to constantly test different methods with physical entities. Cost and time do not allow. WE can use the virtual environment to set up the structure and observe the value, combine the learning of the god-like neural network and the optimization of the numerical analysis, greatly reduce the time and equipment cost, and get the best Good solution.\\
+\hspace{12pt} This project is to use the ready-made ice hockey table to set up a corresponding virtual simulation environment in CoppeliaSim to reduce the cost of realistic simulation parameter settings and equipment damage, and to add a neural network and reinforcement learning to the OpenAI Gym application to improve the ability to play ice hockey.
+\end{flushleft}
+\begin{center}
+\fontsize{14pt}{2.5pt}關鍵字: \sectionef nerual network、reinforcement learning、 CoppeliaSim、OpenAI Gym
 \end{center}
 \newpage
 %=------------------------誌謝----------------------=%
@@ -163,7 +179,7 @@ Application of reinforcement
 \item 最快贏得21分者獲勝，並結束該局遊戲。
 \end{enumerate}
 
-\chapter{機器學習的訓練方法}
+\chapter{機器學習概論}
 \renewcommand{\baselinestretch}{1.0} %設定行距
 \section{類神經網絡}
 \begin{figure}[hbt!]
@@ -324,7 +340,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=8cm]{Faces_of_Reinforcement_Learning}
-\caption{Venn diagram; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{文氏圖 }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
 %=--------The Flow of Reinforcement Learning------------=%.
@@ -335,7 +351,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=10cm]{The_Flow_of_Reinforcement_Learning}
-\caption{RL structur}
+\caption{強化學習架構}
 \label{RL structur}
 \end{center}
 \end{figure}
@@ -346,7 +362,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{The_entire_interaction_process}
-\caption{The entire interaction process; }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{整個互動過程}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
  agent是決策者，會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他會做出決策，決策所執行的動作會使場景進入下一個狀態，當環境轉變，環境裡的項目也會跟著變動，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\
@@ -460,30 +476,30 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=8cm]{s_to _s}
-\caption{Backup Diagram for $V^{\pi}$}
+\caption{$V^{\pi}$程序圖}
 \label{fig.s_to_s}
 \end{center}
 \end{figure}
 $$v^{\pi}(s) = \sum_{a\in A}\pi (a|s)(R(s, a)+\gamma \sum_{s'\in s}P(s'|s, a)v^{\pi}(s'))$$
-state value function(狀態值方程式)$v^{\pi}(s)$
+state value function(狀態值方程式)$Q^{\pi}(s)$
 $$v^{\pi}(s) = \mathbb{E}[G_t|s_t=s]$$
 $$= \mathbb{E}[R_{t+1}+\gamma v^{\pi}(s_{t+1})|s_t=s]$$
 $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=8cm]{Q_pi function}
-\caption{Backup Diagram for $Q^{\pi}$}
+\caption{$Q^{\pi}$程序圖}
 \label{fig.s_to_s}
 \end{center}
 \end{figure}
 $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$
 \subsection{Policy Gradient}
 \newpage
-\section{深度強化學習}
+\section{強化學習在類神經網路之應用}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.74]{ network}
-\caption{Our network is a 2-layer fully-connected net. }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\includegraphics[scale=0.74]{network}
+\caption{兩層神經網路}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 
 \end{figure}
@@ -496,7 +512,7 @@ $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{supervising_learning}
-\caption{supervising learning }%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{監督式學習}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
 \end{center}
 \end{figure}
 
@@ -538,7 +554,7 @@ $$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] = \mathbb{E}_{p(z;\theta)}[f(z)\n
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.5]{gradient_change}
-\caption{gradient change}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning}
+\caption{梯度變化}%from: \href{file:///H:/201906_fall/data/tmp/project2020-1/downloads/reinforcement_learning/2018_Book_ReinforcementLearning.pdf}{All the faces of Reinforcement Learning} 
 \end{center}
 \end{figure}
 \qquad 讓我們導出該表達式，並探討它對我們的優化問題的影響。\\
@@ -583,7 +599,7 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \begin{figure}[hbt!]
 \center
 \includegraphics[height=7cm]{model}
-\caption{regression line}
+\caption{回歸線}
 \end{figure}
 \section{CoppeliaSim模擬}
  CoppeliaSim是具有集成開發環境的機器人模擬器,基於分佈式控制體系架構,可以通過嵌入式腳本，插件，ROS或BlueZero節點，RemoteAPI客戶端或自定義解決方案進行模型控制。\\
