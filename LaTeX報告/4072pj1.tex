@@ -201,7 +201,8 @@ Application of reinforcement
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
 \section{研究動機}
- 機器學習與機電系統結合的運用越來廣泛，我們將其運用在桌球機上，使完成訓練的機電系統能獨自與玩家對打。
+ 機器學習與各領域結合的應用越來越廣泛，因此結合了機電系統，機器學習的算法採用強化學習演算法。由於強化學習是一種使自動化控制系統最優化的機器學習方法，並以實體的冰球機為範例，將冰球機的機電系統進行強化學習訓練，進而驗證強化學習對於自動化控制系統的優化程度。
+ 
 \section{研究目的與方法}
  本研究分兩大部分，第一運用Open AI Gym的Pong-v0來訓練機器學習，第二利用CoppilaSim模擬環境並訓練出能與人對打的機電系統。\\
  
@@ -258,6 +259,7 @@ $$S(x)=\frac{e^{x_i}}{\sum^k_{j=1}e^{x_i}}$$
 %=----------Relu Function----------=%
 \item ReLU Function：\\
 ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入值為正值，輸出則維持該輸入數值。ReLU計算方式簡單、收斂速度快，這是類神經網路最普遍拿來使用的啟動函數，因為可以解決梯度消散的問題，但須注意：起始值若設定到不易被激活範圍或是權重過度所導致權重梯度為0就會造成神經元難以被激活。\\
+\end{itemize}
 $$f(x)=max(0,x)$$
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$
@@ -317,9 +319,9 @@ $$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
 \end{figure}
 \\
 回歸線 :數據點間最小距離的一條線。 \\
-n : 數據點的數量\\
-$y_i$ :  觀測值\\
-$\hat{y_i}$ : 預測值\\
+n：數據點的數量\\
+$y_i$： 觀測值\\
+$\hat{y_i}$：預測值\\
 $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \end{itemize}
 
@@ -493,45 +495,43 @@ $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\
 \label{Policy Gradient原理}
 \end{center}
 \end{figure}
-\hspace{-1.5em}$\pi$ : policy\\[5pt]
-s : States\\[5pt]
-a : Actions\\[5pt]
-r : Rewards\\[5pt]
-$S_t,A_t,R_t$ : 一個軌跡時間步長't'的State,Action and Reward \\[5pt]
-$\gamma$ : Discount Factor;懲罰不確定的未來reward\\[5pt]
-$G_t$ : Return;Discounted future reward$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$\\[5pt]
-$P(s', r \vert s, a)$ : 伴隨著現在的a和r的state前往下一個state's'的轉移機率矩陣(單階)\\[5pt]
-$\pi(a \vert s)$ : 隨機策略(agent的行為策略)\\[5pt]
-$\pi_\theta(.)$ : 被$\theta$參數化的策略\\[5pt]
-$\mu(s)$ : 確定的策略;我們還使用不同的字母將其標記為$ \ pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\[5pt]
-$V(s)$ : '狀態值函數'測量state的預期收益(報酬率)\\[5pt]
-$V^\pi(s)$ : 根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\[5pt]
-$Q(s, a)$ : '行為值函數'評估一對state and action 的預期收益\\[5pt]
-$Q_w(.)$ : 被w參數化的行為值函數\\[5pt]
-$Q^\pi(s, a)$ : 根據policy的行為值函數$Q^\pi(s, a) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s, A_t = a]$\\[5pt]
-$A(s, a)$ : Advantage Function,$A(s, a) = Q(s, a) - V(s)$;像是另一種版本的Q-value;由狀態值為基準降低方差\\[5pt]
-參數化 : 待軟體建置於一給定環境時，再依該環境的實際需求填選參數，即可成為適合該環境的軟體。\\[5pt]
-強化學習的目標：為agent找到最優的行為策略以獲得最優的報酬\\[5pt]
-Policy Gradient的目標：直接建模和優化策略\\[5pt]
-reward function的值 : 取決於策略，可應用各種算法optimize$\theta$，已獲得最佳reward\\[5pt]
-defined as:\\[5pt]
+\hspace{-1.5em}$\pi$：policy\\
+s：States\\
+a：Actions\\
+r：Rewards\\
+$S_t,A_t,R_t$：一個軌跡時間步長't'的State,Action and Reward \\
+$\gamma$：Discount Factor;懲罰不確定的未來reward\\
+$G_t$：Return;Discounted future reward$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$\\
+$P(s', r \vert s, a)$：伴隨著現在的a和r的state前往下一個state's'的轉移機率矩陣(單階)\\
+$\pi(a \vert s)$：隨機策略(agent的行為策略)\\
+$\pi_\theta(.)$：被$\theta$參數化的策略\\
+$\mu(s)$：確定的策略;我們還使用不同的字母將其標記為$ \ pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\
+$V(s)$：'狀態值函數'測量state的預期收益(報酬率)\\
+$V^\pi(s)$：根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\
+$Q(s, a)$：'行為值函數'評估一對state and action 的預期收益\\
+$Q_w(.)$：被w參數化的行為值函數\\
+$Q^\pi(s, a)$：根據policy的行為值函數$Q^\pi(s, a) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s, A_t = a]$\\
+$A(s, a)$：Advantage Function,$A(s, a) = Q(s, a) - V(s)$;像是另一種版本的Q-value;由狀態值為基準降低方差\\
+參數化：待軟體建置於一給定環境時，再依該環境的實際需求填選參數，即可成為適合該環境的軟體。\\
+強化學習的目標：為agent找到最優的行為策略以獲得最優的報酬\\
+Policy Gradient的目標：直接建模和優化策略\\
+reward function的值：取決於策略，可應用各種算法optimize$\theta$，已獲得最佳reward\\[5pt]
 $$J(\theta) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) V^\pi(s) 
-= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a)$$
-
+= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a)$$\\
 \subsection{Mokov chain}
-stochastic process : 將隨著時間變化的狀態，以數學模式表示\\[5pt]
+stochastic process：將隨著時間變化的狀態，以數學模式表示\\[5pt]
 $+$\\[5pt]
-Mokov property : 在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關
-$d^\pi(s)$ : $\pi_\theta$的Mokov chain 的平穩分布(在$\pi$下的策略狀態分佈) $$d^\pi(s) = \lim_{t \to \infty} P(s_t = s \vert s_0, \pi_\theta)$$
+Mokov property：在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關
+$d^\pi(s)$：$\pi_\theta$的Mokov chain 的平穩分布(在$\pi$下的策略狀態分佈) $$d^\pi(s) = \lim_{t \to \infty} P(s_t = s \vert s_0, \pi_\theta)$$
 $\ast$ 當策略在其他函數的下標時，將省略 $\pi_\theta$的$\theta$  e.g. $d^\pi(s)$ and $Q^\pi$ should be 
 $d^\pi(s)$、$Q^\pi$\\[5pt]
-stationary probability for $\pi_\theta$ : 隨著時間進展，結束一個狀態保持不變的機率分布\\
+stationary probability for $\pi_\theta$：隨著時間進展，結束一個狀態保持不變的機率分布\\
 \subsection{為什麼不用value-base而是policy-base}
 因為要估計其值得動作和狀態數不勝數，因此在連續空間計算成本太高，$\theta$向$\nabla_\theta J(\theta)$建議方向移動，已找到$\pi\theta$的最佳$\theta$，從而產生最高回報。
 \subsection{Proof Policy Gradient Theorem}
 計算$\nabla_\theta J(\theta)$depends on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\[5pt]
-Policy gradient theorem : 為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\[5pt]
+Policy gradient theorem：為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\[5pt]
 $$\nabla_\theta J(\theta) 
 = \nabla_\theta \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \pi_\theta(a \vert s) $$
 $$\propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s)$$
@@ -578,12 +578,12 @@ Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
 $g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$\\[5pt]
 \begin{normalsize}{$\psi_t$ 可能方法為下列:}\end{normalsize}
 \begin{itemize}
-\item $\sum_{t=0}^\infty r$ : 軌跡的總reward
+\item $\sum_{t=0}^\infty r$：軌跡的總reward
 \item $\sum_{t^{'}=t}^\infty r^{'}$: 根據action的reward $a_t$
 \item $\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$: 先前公式的基準版本
-\item $Q^\pi(s_t,a_t)$ : state-action value function
-\item $A^\pi(s_t,a_t)$ : Advantage Function
-\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$ : TD residual
+\item $Q^\pi(s_t,a_t)$：state-action value function
+\item $A^\pi(s_t,a_t)$：Advantage Function
+\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$：TD residual
 \end{itemize}
 The letter formulas use the definitions\\[5pt]
 $V^\pi(s_t) = \mathbb{E}_{s_{t}+1:\infty,a_{t}:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
@@ -592,9 +592,9 @@ $A^\pi(s_t,a_t) = Q^\pi(s_t,a_t)-V^\pi(s_t)(Advantage Function)$\\[5pt]
 \subsection{Actor Crtic}
 原始的policy gradient 沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變\\[5pt]
 $$g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$$\\[5pt]
-Actor-Critic : 減少原始政策中的梯度方差包括兩個模型\\[5pt]
-Critic : 更新值函數參數w，根據算法，它可以是操作值$ Q_w$（$a \vert s$）或狀態值$V_w$（$s$） \\[5pt]
-Actor : 按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$（$a \vert s$）\\[5pt]
+Actor-Critic：減少原始政策中的梯度方差包括兩個模型\\[5pt]
+Critic：更新值函數參數w，根據算法，它可以是操作值$ Q_w$（$a \vert s$）或狀態值$V_w$（$s$） \\[5pt]
+Actor：按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$（$a \vert s$）\\[5pt]
 \begin{Large}
 它如何在簡單的行動價值參與者批評中發揮作用:
 \end{Large}
@@ -613,7 +613,7 @@ Actor : 按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
        \item 計算校正 (TD error)對於時間t的動作值:\\
        $$\delta = r_t + \gamma Q_w(s^{'},a^{'})-Q_w(s,a)$$並使用它來更新操作action - value function:\\
        $$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
-       \item 更新 $a\leftarrow a^{'}$ 和 $ s \leftarrow s^{'}$ ; 學習率 : $a_\theta$ 和 $a_w$
+       \item 更新 $a\leftarrow a^{'}$ 和 $ s \leftarrow s^{'}$ ; 學習率：$a_\theta$ 和 $a_w$
     \end{enumerate}   
 \end{itemize}\newpage
 \section{類神經網路中強化學習的應用}
@@ -683,7 +683,7 @@ $$= \int \frac{p(z;\theta)}{p(z;\theta)}\nabla_\theta p(z;\theta)f(z) dz$$
 $$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$
 $$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$
 $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\theta) \quad z^{(s)}\sim p(z)$$\\
-在這四行中發生了很多事情。在第一行中，我們交換了導數和積分。在第二行中，我們應用了概率身份技巧，這使我們能夠形成得分比， 然後使用對數導數技巧，用第三行中對數概率的梯度替換該比率。這在第四行給出了我們所需的隨機估計量，這是由蒙特卡洛計算的，方法是首先從p（z）提取樣本，然後計算加權梯度項。.\\
+在這四行中發生了很多事情。在第一行中，我們交換了導數和積分。在第二行中，我們應用了概率身份技巧，這使我們能夠形成得分比， 然後使用對數導數技巧，用第三行中對數概率的梯度替換該比率。這在第四行給出了我們所需的隨機估計量，這是由蒙特卡洛計算的，方法是首先從p（z）提取樣本，然後計算加權梯度項。\\
 
 更簡單的描述，我們有一些分佈 $p(x;\theta)$（我使用了速記$ p（x）$來減少混亂），我們可以從中採樣（例如，這可能是高斯）。對於每個樣本，我們還可以評估分數函數f，該函數將樣本作為樣本並給出標量值。該方程式告訴我們，如果我們希望其樣本達到較高的分數（由f判斷），應該如何改變分佈（通過其參數θ)，特別是，它看起來像：畫出一些樣本x，評估其分數f（x），並且對於每個x也評估第二項 $\nabla_\theta logp(x;θ)$，那第二項是什麼，它是一個向量-漸變為我們提供了參數空間中的方向，這將導致分配給x的概率增加。換句話說，如果我們要在的方向上微移θ，$\nabla_\theta logp(x;θ)$，我們會看到分配給x的新概率略有增加。如果回顧一下公式，它告訴我們應該朝這個方向發展，並將標量值加到上面$f(x)$。這樣一來，得分較高的樣本將比那些得分較低的樣本“拖拉”更強的概率密度，因此，如果我們要根據p上的幾個樣本進行更新，則概率密度將朝著較高分數的方向移動，從而使得分較高的樣本更有可能出現。\\
 \begin{figure}[hbt!]
@@ -843,7 +843,7 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
  
  之後需選擇 display manager ( 顯示管理器 )的種類 ，Display manager 是操作系統 Ubuntu 的組件，其中登錄的動作即為 Display manager 負責。該操作系統中常見的類型有 gdm ,gdm3 , lightdm ,kdm ...。各類型的 Display manager 功能其實大同小異，差別在於外觀、操作、格式、複雜度和使用者感受等，可依使用者需求變更 ( 有些較為輕量，適合比較低階的運行器 )。選擇其中一個後繼續，之後可以切換更動 。\\
 
- 再來是模組的導入，此處同樣用 apt 指令安裝 : Pip , uwsgi , Nginx  , 以及 Git 。如果要從 Ubuntu 系統上安裝軟體，其中一種方式是 " pip "。「pip 」是 " pip Installs Packages " 的縮寫，是一個用命令列作為基礎的套件管理系統，可以用它來安裝 python 的應用程式。而使用 Git 是因為在備份資料時， 可幫助使用者有效管理原始碼，而 github 就是由 Git 伺服器和網頁介面組成，用來當作放置原始碼的倉庫。\\
+ 再來是模組的導入，此處同樣用 apt 指令安裝：Pip , uwsgi , Nginx  , 以及 Git 。如果要從 Ubuntu 系統上安裝軟體，其中一種方式是 " pip "。「pip 」是 " pip Installs Packages " 的縮寫，是一個用命令列作為基礎的套件管理系統，可以用它來安裝 python 的應用程式。而使用 Git 是因為在備份資料時， 可幫助使用者有效管理原始碼，而 github 就是由 Git 伺服器和網頁介面組成，用來當作放置原始碼的倉庫。\\
  
  另外 Nginx 和 uwsgi 是為拿來配合把 python 程式應用在網路上實現，並且把想要的結果使其能在網路實時觀看操控結果之反饋。\\
 \section{Oracle VM VirtualBox 介紹}
@@ -855,16 +855,16 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 
 \item 只要自備作業系統 ( 光碟片 , ISO映像檔 ) ，即可在啟動 Oracle VM VirtualBox  後直接開啟要操作的執行檔 ( 作業系統 )，不必再把主機本身重新關機，當然開啟多個作業系統之間也有共通性，可直接從視窗A做網路、檔案分享、複製貼上等動作到視窗B。\\
 \item 除了作業系統裡面的執行，還可在其中練習磁碟分割、格式化以及 BIOS 啟動等 ( 但是未支援USB啟動 ) 。\\
-\item 空間的佔用上並不是真實佔用空間，而是依據使用者的操作而變化 ( 使用者用多少就是多少 )。相對的，使用者雖然一開始設定該虛擬電腦的記憶體大小與硬碟空間是實時依據操作者決定，但終究還是佔掉電腦效能，所以 VirtualBox 的效能還是依據電腦本身的硬體配備。為了配置網路，首先在 : 
+\item 空間的佔用上並不是真實佔用空間，而是依據使用者的操作而變化 ( 使用者用多少就是多少 )。相對的，使用者雖然一開始設定該虛擬電腦的記憶體大小與硬碟空間是實時依據操作者決定，但終究還是佔掉電腦效能，所以 VirtualBox 的效能還是依據電腦本身的硬體配備。為了配置網路，首先在：
 \begin{enumerate}
 \item File / Preferences / Network  位置，新增一個或右鍵點擊現有的網路設定，填入該電腦網路設定 。
-\item Settings / Network / Adapter 1 / Attached to :  該位置改成  Bridged Adapter
+\item Settings / Network / Adapter 1 / Attached to： 該位置改成  Bridged Adapter
 \end{enumerate}
 \qquad 此處配置之比較 ( 取常用例子 ):NAT , Bridged , Internal , Host-only
-\item NAT : 最為基本之設定，主要讓該虛擬主機可連上網，但在與其他網路使用者互動時找不到該虛擬主機網路位址，外部網路也無法偵測，虛擬主機所有的網路請求都會把該來源視為宿主機的。
-\item Host-only : 虛擬主機被分配到一個網址，但是還是只有虛擬主機運行的環境可訪問該網路位址
-\item Internal : 此種設定主要為虛擬主機彼此間的連線，它可向外部提供資料，但反之則不行。
-\item Bridged : 在與其宿主機的網卡設定橋接與設定好外部網路位址後，可被外部網路訪問。
+\item NAT：最為基本之設定，主要讓該虛擬主機可連上網，但在與其他網路使用者互動時找不到該虛擬主機網路位址，外部網路也無法偵測，虛擬主機所有的網路請求都會把該來源視為宿主機的。
+\item Host-only：虛擬主機被分配到一個網址，但是還是只有虛擬主機運行的環境可訪問該網路位址
+\item Internal：此種設定主要為虛擬主機彼此間的連線，它可向外部提供資料，但反之則不行。
+\item Bridged：在與其宿主機的網卡設定橋接與設定好外部網路位址後，可被外部網路訪問。
 \end{itemize}
 \newpage
 \section{Web server}
@@ -877,17 +877,17 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \end{figure}
 
 \section{Nginx}
- 網路設定：\\
- 首先要修改網路設定檔 ，而其設定檔放在 /etc / netplan 目錄下的 yaml 檔 。其中需更改的設定 :
+\hspace{-1.7em} 網路設定：\\
+ 首先要修改網路設定檔，而其設定檔放在/etc/netplan目錄下的yaml檔。其中需更改的設定：
 \begin{enumerate}
-\item addresses： 為靜態 IP，可以是IPV4或IPV6。
-\item gateway： 即為該電腦之閘道器。
-\item nameservers： 該電腦之DNS服務器。
+\item addresses：為靜態 IP，可以是IPV4或IPV6。
+\item gateway：即為該電腦之閘道器。
+\item nameservers：該電腦之DNS服務器。
 \end{enumerate}
 
- WSGI ( Python Web Server GateWay Interface ) 為一種用在 Python 語言上的規範，用來規範 Web Server 與 Web Application 之間如何溝通。而 uWSGI 同為實現了 WSGI ,uwsgi , http 協議等的 Web server , 通常用於接收前端伺服器轉發的動態請求並轉發給 Web Application 。前者可以使用 Nginx 提供的 https 協定，且同上表述中 Nginx 的靜態資源處理能力較佳所以也能將靜態資源轉給其處理。\\
+ WSGI（Python Web Server GateWay Interface）為一種用在Python語言上的規範，用來規範Web Server與Web Application之間如何溝通。而uWSGI同為實現了WSGI、uwsgi、http協議等的Web server，通常用於接收前端伺服器轉發的動態請求並轉發給Web Application。前者可以使用Nginx提供的https協定，且同上表述中Nginx的靜態資源處理能力較佳所以也能將靜態資源轉給其處理。\\
  
-Nginx 的主要設定檔 nginx.conf 可藉由 include 指令添加其他 nginx 設定檔的設定去擴增不同域名的設定，常見的設定有 :
+Nginx的主要設定檔nginx.conf可藉由include指令添加其他nginx設定檔的設定去擴增不同域名的設定，常見的設定有 :
 \begin{enumerate}
 \item 預設：
 \begin{lstlisting}[caption=nginx預設]
@@ -931,10 +931,11 @@ server {
 \end{lstlisting}
 \end{enumerate}
 
- reciveAPP 定義了將 request proxy 過去的應用，例子中 server localhost 語法代表可以請求 proxy 到分別監聽 5000 與 5001 port 的兩個應用，同時這個 block 可達到 load balancer 負載平衡的功能 。\\
+ reciveAPP定義了將request proxy過去的應用，例子中server localhost語法代表可以請求proxy到分別監聽5000與5001 port的兩個應用，同時這個block可達到load balancer負載平衡的功能。\\
  
- server 這個 block 則是定義了proxy server的相關設定，包括要監聽的port( listen 80 為監聽所有 IPV4位址， listen [::]80 則為監聽所有 IPV6位址 )、規定哪些 domain 或 ip 的 request 會被 nginx server 處理（server\_ name)。\\
- location 像是 路由 (routing) 的概念，設定不同的 path 要對應到怎麼樣的設定。location 中則是指對不同路徑的處理。\\
+ server這個block則是定義了proxy server的相關設定，包括要監聽的port（listen 80為監聽所有IPV4位址，listen [::]80則為監聽所有IPV6位址）、規定哪些domain或ip的request會被 nginx server 處理（server\_ name)。\\
+ 
+ location像是路由（routing）的概念，設定不同的path要對應到怎麼樣的設定。location中則是指對不同路徑的處理。\\
  
 \begin{enumerate}
 \item location：
@@ -945,36 +946,35 @@ server {
 \end{lstlisting}
 \end{enumerate}
 
- 要達到 load balancer 透過一開始介紹的 upstream block 就可以達成，在上面的例子中，來自某個 domain 80 port 會被分配到 port 5000 或 port 5001 兩個應用中，達成用兩個應用去分擔 request 的負載平衡器。\\
+ 要達到load balancer透過一開始介紹的upstream block就可以達成，在上面的例子中，來自某個domain 80 port會被分配到port 5000或port 5001兩個應用中，達成用兩個應用去分擔request的負載平衡器。\\
  
- 負載平衡裡的負載規則  ( ip\_hash ) 某個 request 要被導倒哪個應用去處理有不同規則，每個規則都有各自適合使用時機，以下簡單介紹幾個常見的規則：\\
- 
+ 負載平衡裡的負載規則（　ip\_hash ）某個request要被導倒哪個應用去處理有不同規則，每個規則都有各自適合使用時機，以下簡單介紹幾個常見的規則：\\
+
 \begin{enumerate}
-\item round-robin：(預設)輪詢方式： 也就是將請求輪流按照順序分配給每一個 server。假設所有伺服器的處理效能都相同，不關心每臺伺服器的當前連線數和響應速度。適合於伺服器組中的所有伺服器都有相同的軟硬體配置並且平均伺服器請求相對均衡的情況。
-不過也有另外一種可以設定權重的 Weight Round Robin （加權輪詢方式），可以設定不同 server 的權重，例如以下範例：
+\item round-robin（預設）輪詢方式：也就是將請求輪流按照順序分配給每一個 server。假設所有伺服器的處理效能都相同，不關心每臺伺服器的當前連線數和響應速度。適合於伺服器組中的所有伺服器都有相同的軟硬體配置並且平均伺服器請求相對均衡的情況。
+不過也有另外一種可以設定權重的Weight Round Robin（加權輪詢方式），可以設定不同server的權重，例如以下範例：
 \begin{lstlisting}[caption=設定不同 server 的權重]
   upstream myweb {
     server web1.dtask.idv.tw weight=3;
     server web2.dtask.idv.tw weight=2;
 }
 \end{lstlisting}
-\item least-connected 最少連線： 顧名思義為連線進來時會把 Request 導向連線數較少的 Server。
-\item IP-hash 依據 Client IP 來分配到不同台 Server： 通過一個雜湊（Hash）函式將一個 IP 地址對映到一臺伺服器。先根據請求的目標 IP 地址，作為雜湊鍵（Hash Key）從靜態分配的散列表找出對應的伺服器。除非斷線或 IP變動，否則同個 IP 的請求都會導入到同一個 server。
+\item least-connected 最少連線：顧名思義為連線進來時會把Request導向連線數較少的Server。
+\item IP-hash依據Client IP來分配到不同台Server：通過一個雜湊（Hash）函式將一個 IP 地址對映到一臺伺服器。先根據請求的目標IP地址，作為雜湊鍵（Hash Key）從靜態分配的散列表找出對應的伺服器。除非斷線或IP變動，否則同個IP的請求都會導入到同一個 server。
 \end{enumerate}
   uWSGI設定（uwsgi\_ini ）：\\
  \begin{enumerate} 
- \item wsgi-file : 主要運行的 py 檔案
- \item http , socket , http-socket : 端口設定，假使有使用到 前端服務器 ( 如Nginx ) 時，不能用 http 設定，因 uwsgi 協議為 HTTP，而 Nginx 使用傳輸協議為 TCP，兩者不能互通。
+ \item wsgi-file：主要運行的py檔案
+ \item http，socket，http-socket：端口設定，假使有使用到 前端服務器（如Nginx）時，不能用http設定，因uwsgi協議為HTTP，而Nginx使用傳輸協議為TCP，兩者不能互通。
  \begin{lstlisting}[caption=簡易uwsgi指令啟動]
-  uwsgi --http : 9000 --wsgi-file APP.py 
+  uwsgi --http：9000 --wsgi-file APP.py 
 \end{lstlisting}
- \item processes , threads : 工作序， processes 為進程 ，threads 為線程 , 下方設定為每條近程有兩條線程 。
+ \item processes、threads：工作序，processes為進程，threads為線程，下方設定為每條近程有兩條線程。
  \begin{lstlisting}[caption=加入工作程序uwsgi指令啟動]
-  uwsgi --http : 9000 --wsgi-file APP.py --processes 4 --threads 2
+  uwsgi --http：9000 --wsgi-file APP.py --processes 4 --threads 2
 \end{lstlisting}
-\item chdir : 此項是為了正確的加載模組 / 檔案 \\
-
-整體快速配置 ( 這裡儲存成一個  .ini 文件，其他還有YAML , JSON , XML 格式等 )  :
+\item chdir：此項是為了正確的加載模組/檔案 \\
+整體快速配置（這裡儲存成一個.ini文件，其他還有YAML、JSON、XML格式等）：
 \begin{lstlisting}[caption=將uwsgi指令啟動動作設定成一個啟動檔]
   [uwsgi]
 socket = :9000
@@ -983,7 +983,7 @@ threads = 2
 chdir = location/to
 wsgi-file = location/to/file
 \end{lstlisting}
-此項還可加上 status :  此項為查看 uWSGI 內部的輸出數據\\
+此項還可加上status：此項為查看uWSGI內部的輸出數據\\
 \begin{lstlisting}[caption=status]
   -- status 127.0.0.1:9001
 \end{lstlisting}
@@ -1000,7 +1000,7 @@ wsgi-file = location/to/file
  \end{enumerate}
 \section{Flask}
  
- 如同以上所述，建立 Flask 框架的同時需選擇反向代理伺服器 ( 這裡我們選擇了 Nginx ) 來負責網頁請求和結果的回覆，同時還需要一個實現  WSGI 通信協議的伺服器 ( 我們選擇了 uWSGI ) 來負責接收代理伺服器的請求後轉發 Flask 及 接收 Flask 訊息轉發回去 ( 代理伺服器 )。\\
+ 如同以上所述，建立Flask框架的同時需選擇反向代理伺服器（這裡我們選擇了Nginx）來負責網頁請求和結果的回覆，同時還需要一個實現WSGI通信協議的伺服器（我們選擇了 uWSGI）來負責接收代理伺服器的請求後Flask轉發及接收訊息，再轉發回去（代理伺服器）。\\
  
 \begin{figure}[hbt!]
 \begin{center}
@@ -1017,7 +1017,7 @@ wsgi-file = location/to/file
 \section{訓練程式的運作}
  由於機器學習和影像處理需要大量的運算矩陣運算，因此如果只單獨透過Python本身運算比編譯語言執行的速度來的慢，所以使用Numpy程式庫來解決在Python環境矩陣運算速度慢的問題，以提升訓練機器學習時的運算效率。pickle是Python內部的序列化方式，主要是當機器學習訓練時可能因為一些原因需要暫時停止訓練，但為了讓已經停下的訓練再次重啟就需要透過pickle序列化的方式，將暫停前的訓練權重值透過pickle將其記錄下來，當訓練再次重啟時就可透過pickle.load讀取先前紀錄的pickle檔案就可回到當時暫停的狀態下繼續進行訓練。\\
  
- 機器學習所運用的架構是強化學習並搭配神經網路來訓練機器學習，結合了強化學習不需要事先收集訓練資料、不需要特別教導，以及神經網路的非線性激活函數的計算。
+ 機器學習所運用的架構是強化學習並搭配神經網路來訓練機器學習，結合了強化學習不需要事先收集訓練資料、不需要特別教導，以及神經網路的非線性激活函數的計算和參數的記憶性。
  %在python環境下，結合numpy和gym的模擬環境編寫程式，選擇numpy作為運算工具是因為它比Tensorflow之類的程式庫更具彈性，編寫公式較為方便，而gym的設計讓我們能方便的控制右邊的擊錘板。首先擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，讓agent判斷是要往上還是下，經過Score Function計算出的對數機率當作輸入，第二透過前饋：計算W1權重與W2權重的互動結果及擊錘移動的機率，W1權重是計算畫面差異下環境的狀態，W2權重則是經過啟動函數(activation function)得出擊錘移動向下或上的機率。第三得到機率後，agent會透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，也就是採取機率較大的方向移動。第四決定行動後會產生獎懲，獎懲機制是，如果agent碰到球並越過敵方就會得到好的獎勵，沒有打到球的agent會得到懲罰，最後產生的獎懲會送往反饋機制，取樣採取行動的機率，讓獎勵變為1，懲罰變為0，返回原輸入，達到學習效果，隨著agent經驗的增加，會越打越聰明，贏的機率就越高，由此訓練出聰明的AI，經過數萬次的訓練，計算discount reward及獎勵的加總，得出的數值會越來越大，我們小組的測試，往後不管狀況是如何，基本上都會贏過敵方拿下分數。
 
 程式訓練流程：\\
