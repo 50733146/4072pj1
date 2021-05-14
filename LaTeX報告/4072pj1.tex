@@ -229,9 +229,9 @@ Application of reinforcement
 \end{center}
 \end{figure}
 
- (圖.\ref{兩層神經網路})展示了兩層類神經網路的架構，如圖所示每一層每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
+ (圖.\ref{兩層神經網路})展示了兩層類神經網路的架構，如圖所示每一層的每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
 
- 神經元是AI系統中使用的軟件模型，其行為或多或少像實際的大腦神經元，模型會使用數字，使一個或另一個神經元對結果有重要的影響，這些數字又稱為權重。\\
+ 神經元是AI系統中使用的軟件模型，其行為或多或少像實際的大腦神經元，模型會使用數字，使一個或另一個神經元對結果產生重要的影響，這些數字又稱為權重。\\
 
  (圖.\ref{兩層神經網路})也展示了輸入層、隱藏層和輸出層，這是最陽春的網路，真正的網路可以更複雜且有更多層次，事實上深度學習命名原則，就是由多層的隱藏層而來，從意義上來說就是增加了類神經網路的深度。\\
 
@@ -239,8 +239,7 @@ Application of reinforcement
 
  有了網路架構，就能進一步讓網路學習，神經元網路會接收一個例子並猜測答案，如果答案是錯誤的，它會回溯並修改對神經元施加權重和偏差，並嘗試通過更改某些值來修復錯誤，這樣的行為就被稱為反向傳播(backpropagation)。使用迭代方法進行反複試驗，模擬人們重複的行為，執行經過多時後，最終類神經網路學習會進步並給出更好的答案，訓練時間可以是一天，甚制是一個禮拜，才能完成學習複雜的項目，故每一次的迭代被稱為epoch。\\
 
- 可以看到該神經網絡的輸出僅取決於互連的權重，還取決於神經元本身的偏差，雖然權重會影響啟動函數曲線的陡度，但是偏差會將發生變化的整個曲線，像右或向左，權重和偏差的選擇，決定了單個神經元的預測強度，而訓練神經
-網絡使用的輸入數據可以來微調權重和偏差。\\
+ 可以看到該神經網絡的輸出僅取決於互連的權重，還取決於神經元本身的偏差，雖然權重會影響啟動函數曲線的陡度，但是偏差會將發生變化的整個曲線，向右或向左，權重和偏差的選擇，決定了單個神經元的預測強度，而訓練類神經網絡使用的輸入數據可以來微調權重和偏差。\\
 \subsection{啟動函數}
 啟動函數是設計類神經網路的關鍵部分，如果不使用啟動函數，每一層神經元連接到下一層神經元，只會有線性組合，作為輸出，類神經網路便失去了意義，也就是說啟動函數能讓神經元間的連線，產生非線性的組合並作為該層的輸出。\\
 以下介紹幾種較為常見的啟動函數及其特性：
@@ -262,36 +261,6 @@ ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入
 $$f(x)=max(0,x)$$
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$
-%=----------Adam Function----------=%
-\item Adam Function\\
-結合了 Adagrad 和 RMSprop的優勢，有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程:\\
-$$g_t=\delta_{\theta}f(\theta)$$
-一次矩指數移動均線 :\\
-$$m_t =\beta(m_{t-1})+(1-\beta_1)(\nabla{w_t})$$
-$$\hat m_t=\frac{m_t}{1-\beta_1^t}$$
-二次矩指數移動均線 :\\
-$$v_t=\beta_2(v_t-1)+(1-\beta_2)(\nabla{w_t})^2$$
-$$\hat{v_t}=\frac{v_t}{1-\beta_2^t}$$
-因此,Adam Function:\\
-$$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
-%=----------Mean Squared Error----------=%
-\item Mean Squared Error\\
-他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。\\
-\vspace{8cm}
-%(\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.6]{MSE}
-\caption{\Large 線性回歸}\label{線性回歸}
-\end{center}
-\end{figure}
-\\
-回歸線 :數據點間最小距離的一條線。 \\
-n : 數據點的數量\\
-$y_i$ :  觀測值\\
-$\hat{y_i}$ : 預測值\\
-$$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
-\end{itemize}
 
 \subsection{損失函數}
 損失函數是類神經網路的最後一塊拼圖，損失函數會將神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重以減少下次評估時的損失，以下將介紹幾種優化的方法：\\
@@ -317,8 +286,17 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 為 Adagrad 的延伸，下降激進程度，學習率從更新規則中淘汰，不需設定預設學習率。
 \item RMSprop\\
 為了解決 Adagrad 學習率急劇下降的問題，學習率除以梯度平方的RMS，解決學習率無限小的情形。
-\item Adam\\
-類似 Momentum，更加穩定快速的收斂。
+\item Adam Function\\
+結合了 Adagrad 和 RMSprop的優勢，有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程:\\
+$$g_t=\delta_{\theta}f(\theta)$$
+一次矩指數移動均線 :\\
+$$m_t =\beta(m_{t-1})+(1-\beta_1)(\nabla{w_t})$$
+$$\hat m_t=\frac{m_t}{1-\beta_1^t}$$
+二次矩指數移動均線 :\\
+$$v_t=\beta_2(v_t-1)+(1-\beta_2)(\nabla{w_t})^2$$
+$$\hat{v_t}=\frac{v_t}{1-\beta_2^t}$$
+因此,Adam Function:\\
+$$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
 \item AdaMax\\
 與 Adam 相似，依靠$(u_t)$ 最大運算。
 \item Nadam\\
@@ -327,7 +305,24 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 改善 Adam 算法所導致收斂較差的情況(用指數平均會減少其影響)，換用梯度平方最大值來做計算，並移除去偏差的步驟。是否有比 Adam 算法好仍有待觀察。
 \item Gradient noise\\[6pt]
 有助於訓練特別深且復雜的網絡，noise 可改善不良初始化的網路。
+\item Mean Squared Error\\
+他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。\\
+\vspace{8cm}
+%(\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.6]{MSE}
+\caption{\Large 線性回歸}\label{線性回歸}
+\end{center}
+\end{figure}
+\\
+回歸線 :數據點間最小距離的一條線。 \\
+n : 數據點的數量\\
+$y_i$ :  觀測值\\
+$\hat{y_i}$ : 預測值\\
+$$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \end{itemize}
+
 \subsection{優化算法}
 \newpage
 \section{強化學習}
