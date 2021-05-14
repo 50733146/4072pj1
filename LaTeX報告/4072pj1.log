@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.12) (preloaded format=xelatex 2021.4.30)  14 MAY 2021 20:42
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.12) (preloaded format=xelatex 2021.4.30)  14 MAY 2021 23:19
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
@@ -1410,8 +1410,7 @@ File: ./../images//The_entire_interaction_process.png Graphic file (type bmp)
 <./../images//The_entire_interaction_process.png>
 [10]
 
-LaTeX Warning: Reference `The_entire_interaction_process' on page 11 undefined 
-on input line 366.
+LaTeX Warning: Reference `整個互動過程' on page 11 undefined on input line 366.
 
 File: ./../images//agent.png Graphic file (type bmp)
 <./../images//agent.png>
@@ -1910,7 +1909,7 @@ LaTeX Warning: There were undefined references.
 ### bottom level 
 Here is how much of TeX's memory you used:
  20056 strings out of 412087
- 372745 string characters out of 2846810
+ 372721 string characters out of 2846810
  936070 words of memory out of 3000000
  39353 multiletter control sequences out of 15000+200000
  423095 words of font info for 173 fonts, out of 3000000 for 9000
