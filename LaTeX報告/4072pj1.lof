@@ -4,7 +4,7 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces \Large 線性回歸\relax }}{9}{figure.caption.4}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces \Large 文氏圖\relax }}{10}{figure.caption.5}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces \Large RL 架構\relax }}{11}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces \Large 整個互動過程 \relax }}{12}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \Large 整個互動過程\relax }}{12}{figure.caption.7}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces \Large agent\relax }}{13}{figure.caption.8}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces $v^{\pi }$程序圖\relax }}{16}{figure.caption.9}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces $q^{\pi }$程序圖\relax }}{16}{figure.caption.10}%
@@ -30,6 +30,7 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces \Large clientToflask\relax }}{43}{figure.caption.26}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total\relax }}{44}{figure.caption.27}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large 強化學習訓練流程\relax }}{46}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces 動態連結庫錯誤\relax }}{47}{figure.caption.28}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces 動態連結庫錯誤\relax }}{48}{figure.caption.29}%
 \contentsfinish 
