@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  17 MAY 2021 00:47
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  17 MAY 2021 01:05
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
@@ -1523,71 +1523,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 614--615
 File: ./../images/network.png Graphic file (type bmp)
 <./../images/network.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 628--630
+Underfull \hbox (badness 10000) in paragraph at lines 629--631
 
  []
 
 File: ./../images/supervising_learning.png Graphic file (type bmp)
 <./../images/supervising_learning.png>
 
-Overfull \hbox (17.78455pt too wide) in paragraph at lines 635--636
+Overfull \hbox (17.78455pt too wide) in paragraph at lines 636--637
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--642
+Underfull \hbox (badness 10000) in paragraph at lines 642--644
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 644--645
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
  []
 
-[24]
+
 Underfull \hbox (badness 10000) in paragraph at lines 648--649
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 649--652
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 663--664
+Underfull \hbox (badness 10000) in paragraph at lines 651--654
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 669--671
+Underfull \hbox (badness 10000) in paragraph at lines 671--673
 
  []
 
 File: ./../images/gradient_change.png Graphic file (type bmp)
 <./../images/gradient_change.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 671--680
+Underfull \hbox (badness 10000) in paragraph at lines 673--683
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 684--686
+Underfull \hbox (badness 10000) in paragraph at lines 687--689
 
  []
 
@@ -1600,24 +1600,24 @@ Missing character: There is no ） in font [lmroman12-regular]:mapping=tex-text;
 File: ./../images/figure.png Graphic file (type bmp)
 <./../images/figure.png>
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 695--696
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
 
  []
 
 [28]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--700
+Underfull \hbox (badness 10000) in paragraph at lines 703--704
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--703
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--706
+Underfull \hbox (badness 10000) in paragraph at lines 708--710
 
  []
 
@@ -1628,7 +1628,7 @@ Chapter 4.
 File: ./../images/model.png Graphic file (type bmp)
 <./../images/model.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
 
  []
 
@@ -1639,24 +1639,24 @@ File: ./../images/connectSeat.png Graphic file (type bmp)
 [30
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 736--737
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 
  []
 
 File: ./../images/CoppeliaSim.png Graphic file (type bmp)
 <./../images/CoppeliaSim.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--746
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 747--748
+Underfull \hbox (badness 10000) in paragraph at lines 751--752
 
  []
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 749--750
+Underfull \hbox (badness 10000) in paragraph at lines 753--754
 
  []
 
@@ -1668,12 +1668,12 @@ File: ./../images/toolBar2.png Graphic file (type bmp)
 File: ./../images/pythonCVlogo.png Graphic file (type bmp)
 <./../images/pythonCVlogo.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 796--797
+Underfull \hbox (badness 10000) in paragraph at lines 802--803
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 799--801
+Underfull \hbox (badness 10000) in paragraph at lines 805--807
 
  []
 
@@ -1686,49 +1686,24 @@ File: ./../images/filter.png Graphic file (type bmp)
 [34] [35]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 835--836
+Underfull \hbox (badness 10000) in paragraph at lines 842--845
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 837--838
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 839--840
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 841--842
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 843--844
+Underfull \hbox (badness 10000) in paragraph at lines 846--850
 
  []
 
 [36
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 845--846
+Underfull \hbox (badness 10000) in paragraph at lines 851--853
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--848
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--850
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 851--852
+Underfull \hbox (badness 10000) in paragraph at lines 854--855
 
  []
 
@@ -1737,101 +1712,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 855--856
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 856--857
-
- []
-
 [37] [38]
 File: ./../images/clientProxy.jpeg Graphic file (type bmp)
 <./../images/clientProxy.jpeg>
  [39]
-Underfull \hbox (badness 10000) in paragraph at lines 887--888
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
 
  []
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 933--934
+Underfull \hbox (badness 10000) in paragraph at lines 934--935
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 935--936
+Underfull \hbox (badness 10000) in paragraph at lines 936--937
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 937--938
+Underfull \hbox (badness 10000) in paragraph at lines 938--939
 
  []
 
 
 LaTeX Font Warning: Font shape `TU/標楷體(0)/m/it' undefined
-(Font)              using `TU/標楷體(0)/m/n' instead on input line 942.
+(Font)              using `TU/標楷體(0)/m/n' instead on input line 943.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 948--949
+Underfull \hbox (badness 10000) in paragraph at lines 949--950
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 950--951
+Underfull \hbox (badness 10000) in paragraph at lines 951--952
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 964--966
+Underfull \hbox (badness 10000) in paragraph at lines 965--967
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 985--986
+Underfull \hbox (badness 10000) in paragraph at lines 986--987
 
+ []
+
+
+Overfull \hbox (27.98679pt too wide) in paragraph at lines 992--993
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][] 
  []
 
 File: ./../images/clientToflask.jpeg Graphic file (type bmp)
 <./../images/clientToflask.jpeg>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1002--1003
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1005
 
  []
 
-[43]
 File: ./../images/total.jpeg Graphic file (type bmp)
 <./../images/total.jpeg>
- [44]
+[44]
 Chapter 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
-
- []
-
 File: ./../images/pong_pygame.png Graphic file (type bmp)
 <./../images/pong_pygame.png>
 File: ./../images/airhockey_pymunk.png Graphic file (type bmp)
 <./../images/airhockey_pymunk.png>
+[45
 
-Underfull \hbox (badness 10000) in paragraph at lines 1031--1032
-
- []
-
-
+]
 Underfull \hbox (badness 10000) in paragraph at lines 1033--1034
 
  []
 
-[45
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1036
 
-] [46]
+ []
+
 File: ./../images/強化學習訓練流程.png Graphic file (type bmp)
 <./../images/強化學習訓練流程.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1035--1046
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1052
 
  []
 
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1047--1048
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
 
  []
 
@@ -1840,40 +1809,45 @@ Chapter 7.
 File: ./../images/Q_dll.png Graphic file (type bmp)
 <./../images/Q_dll.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1060--1062
+Underfull \hbox (badness 10000) in paragraph at lines 1065--1066
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1068--1069
 
  []
 
 [49
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1064
+Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
 
  []
 
 [50] [51] [52]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1137.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1146.
  [53]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1137.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1146.
  (4072pj1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1137.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1137.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1146.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1146.
 
 Package rerunfilecheck Info: File `4072pj1.out' has not changed.
-(rerunfilecheck)             Checksum: 6222937973D3C30A4517F8CBA114F7FF;3340.
+(rerunfilecheck)             Checksum: 58ED6728EF95AB06ACAC75955B35E9EC;3340.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1137.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1146.
  ) 
 Here is how much of TeX's memory you used:
- 20331 strings out of 414221
- 378801 string characters out of 2901377
- 890653 words of memory out of 3000000
- 37524 multiletter control sequences out of 15000+200000
- 552011 words of font info for 171 fonts, out of 3000000 for 9000
+ 20342 strings out of 414221
+ 378922 string characters out of 2901377
+ 890631 words of memory out of 3000000
+ 37536 multiletter control sequences out of 15000+200000
+ 553548 words of font info for 176 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 48i,9n,81p,676b,1161s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,9n,81p,676b,1119s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on 4072pj1.pdf (63 pages).
