@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {2.4}類神經網路中強化學習的應用}{23}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}監督式學習}{23}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}對數導數技巧}{24}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}為什麼選擇score function 算法}{24}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.3}為什麼選擇Score function 算法}{24}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Score Functions}{25}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Score Function Estimators}{26}{subsection.2.4.5}%
 \contentsline {chapter}{\numberline {3}訓練環境}{29}{chapter.3}%
