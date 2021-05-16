@@ -24,18 +24,18 @@ left=3truecm,right=2.5truecm]{geometry}
 \usepackage{setspace}
 \usepackage{lscape}%設定橫式
 \lstset{language=Python, %設定語言
-		basicstyle=\footnotesize, 
-		frame=lines,
-		caption={Python code}, %設定capion
-		%label={code.} %設定label
+		basicstyle=\fontsize{10pt}{2pt}\selectfont, %設定程式內文字體大小
+		frame=lines,	%設定程式框架為線
 }
-\graphicspath{{./../images/}} %圖片預設讀取路徑
+\graphicspath{{./../images/}} %圖片讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
 \captionsetup[figure]{name= \Large 圖.} %更改圖片標題名稱
-\renewcommand{\lstlistingname}{程式.} %設定程式標示名稱
+\captionsetup[table]{name= \Large 表.} %更改表標題名稱
+\renewcommand{\lstlistingname}{\Large 程式.} %設定程式標示名稱
 \hoffset=-5mm %調整左右邊界
 \voffset=-8mm %調整上下邊界
 \setlength{\parindent}{2em}%設定首行行距縮排
+
 
  %=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
@@ -103,7 +103,7 @@ Application of reinforcement
 110 \quad 年\quad 6\quad 月}}
 \end{titlepage}
 \newpage
-%=---------------專題製作合可證明---------------------=%抄的
+%=---------------專題製作合可證明--------------------=%抄的
  {\renewcommand\baselinestretch{1.4}\selectfont %設定以下行距
  {\begin{center}
     {\fontsize{20pt}{2.5pt} {國立虎尾科技大學 \qquad 機械設計工程系}\\[8pt]{學生專題製作合格認可證明}\\
@@ -469,7 +469,7 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=8cm]{s_to _s}
-\caption{$v^{\pi}$程序圖}
+\caption{\Large $v^{\pi}$程序圖}
 \label{fig.s_to_s}
 \end{center}
 \end{figure}
@@ -481,7 +481,7 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=8cm]{Q_pi function}
-\caption{$q^{\pi}$程序圖}
+\caption{\Large $q^{\pi}$程序圖}
 \label{fig.q_pi}
 \end{center}
 \end{figure}
@@ -620,7 +620,8 @@ Actor：按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{ network}
-\caption{實際兩層神經網路}
+\caption{\Large 實際兩層神經網路}
+\label{實際兩層神經網路}
 \end{center}
 
 \end{figure}
@@ -633,7 +634,8 @@ Actor：按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{supervising_learning}
-\caption{監督式學習}
+\caption{\Large 監督式學習}
+\label{監督式學習}
 \end{center}
 \end{figure}
 
@@ -642,7 +644,7 @@ Actor：按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
 
 \subsection{對數導數技巧}
  機器學習涉及操縱機率。這個機率通常包含歸一化概率或對數概率。能加強解決現代機器學習問題的關鍵點，是能夠巧妙的在這兩種型式間交替使用，而對數導數技巧就能夠幫助我們做到這點，也就是運用對數導數的性質。\\
-\subsection{為什麼選擇score function 算法}
+\subsection{為什麼選擇Score function 算法}
  多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調整優化後，Policy Gradients比Q-Learning運作得更好，首選PG是因為它是點到點的方式：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過類神經網路加上強化學習結合ATARI遊戲（Pong），在整個過程使用numpy運算，作為訓練工具。\\ 
 \subsection{Score Functions}
  對數導數技巧的應用規則是基於參數$\theta$梯度的對數函數$p(x:\theta)$，如下:\\
@@ -654,7 +656,7 @@ score function具有許多有用的屬性:\\
 \item 最大概似估計的中央計算。最大概似是機器學習中使用的學習原理之一，用於廣義線性回歸、深度學習、kernel machines、降維和張量分解等，而score出現在這些所有問題中。
 \end{itemize}
 \begin{itemize}
-\item  score的期望值為零。對數導數技巧的第一個用途就是證明這一點。\\
+\item  Score的期望值為零。對數導數技巧的第一個用途就是證明這一點。\\
 $$\mathbb{E}_{p(x; \theta)}[\nabla_\theta \log p(\mathbf{x}; \theta)] =\mathbb{E}_{p(x; \theta)}\left[\frac{\nabla_\theta p(\mathbf {x}; \theta)}{p(\mathbf{x}; \theta)} \right]$$
 $$= \int p(\mathbf {x}; \theta) \frac{\nabla_\theta p(\mathbf {x}; \theta)}{p(\mathbf{x}; \theta)} dx= \nabla_\theta \int p(\mathbf{x}; \theta) dx=\nabla_\theta 1 = 0$$\\
 \qquad 在第一行中，我們應用了對數導數技巧，在第二行中，我們交換了差異化和積分的順序，這種特性是我們尋求概率靈活性的類型:  它允許我們從期望值為零的分數中減去任何一項，且此修改不會影響預期得分(控制變量)。
@@ -672,7 +674,8 @@ $$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] = \mathbb{E}_{p(z;\theta)}[f(z)\n
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.5]{gradient_change}
-\caption{gradient change}
+\caption{\Large Gradient change}
+\label{Gradient change}
 \end{center}
 \end{figure}
  讓我們導出該表達式，並探討它對我們的優化問題的影響。\\
@@ -688,7 +691,8 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.4]{figure}
-\caption{梯度變化}
+\caption{\Large 梯度變化}
+\label{梯度變化}
 \end{center}
 \end{figure}
 
@@ -778,22 +782,24 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \hline  9 &加入/移出 樹狀結構&&\\
 \hline 
 \end{tabular}}
-\caption{功能說明}
+\caption{\Large 功能說明}
+\label{功能說明}
 \end{table}
 \newpage
 %\item 模擬執行\\%
 \end{enumerate}
 \section{影像處理}
 
-\qquad 在影像處理中我們主要使用了Python套件中的OpenCV(全稱:Open Source Computer Vision Library),並搭配其他套件或模組進行了影像處裡,藉此來取得訓練神經網路訓練時所需的資訊。\\
+ 在影像處理中我們主要使用了Python套件中的OpenCV(全稱:Open Source Computer Vision Library),並搭配其他套件或模組進行了影像處裡,藉此來取得訓練神經網路訓練時所需的資訊。\\
 \begin{figure}[hbt!]
 \center
 \includegraphics[width=10cm]{pythonCVlogo}
 \caption{\Large OpenCV 及Python logo}
+\label{OpenCV 及Python logo}
 \end{figure}
 
 \subsection{CoppeliaSim中的Vision sensor(視覺傳感器)}
-\qquad CoppeliaSim的視覺傳感器輸出的影像是以每個像素中以RGB三個位元組所組成的，舉例來說:在CoppeliaSim中視覺傳感器取出畫面像素為512*256，則我們會接收到(512*256)像素*3=393,216個資料，是一筆相當大的資料，所以在影像處理上會消耗掉大量的資源。\\
+ CoppeliaSim的視覺傳感器輸出的影像是以每個像素中以RGB三個位元組所組成的，舉例來說:在CoppeliaSim中視覺傳感器取出畫面像素為512*256，則我們會接收到(512*256)像素*3=393,216個資料，是一筆相當大的資料，所以在影像處理上會消耗掉大量的資源。\\
 
 \subsection{影像辨識}
  透過CoppeliaSim中的Vision sensor接收場景影像並輸出後,便可以開始進行影像辨識的處裡\\
@@ -804,6 +810,7 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \center
 \includegraphics[width=10cm]{HSV}
 \caption{\Large HSV色彩空間}
+\label{HSV色彩空間}
 \end{figure}
 
 \item 顏色過濾\\
@@ -833,25 +840,17 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \newpage
 \chapter{伺服器}
  此專題採用 Ubuntu 20.04 版本作為我們的架設所使用作業系統，由於 Ubuntu 功能尤為繁多，以下說明重點只著重在專題製作所用到功能上。\\
- 
  Ubuntu 作業系統是 Linux 系統的一個發行版，目前免費且開源，Ubuntu 基於 Debian發行版和 GNOME 桌面環境，其目標在於為一般使用者提供一個最新、穩定又主要以自由軟體建構而成的作業系統。\\
- 
  其開發目的是為了使個人電腦變得簡單易用，它與其他基於 Debian 所發行的 Linux 版本更加接近 Debian 的開發理念，它主要使用自由、開源的軟體，而其他則帶很多閉源的軟體。\\
 \section{Ubuntu 環境配置}
  在一開始會先使用套件管理系統 apt 指令去下載 Xorg , fluxbox , lxde 套件。Xorg 是 Ubuntu 操作系統的一個顯示服務器軟件包，它在被導入 Ubuntu 操作系統後會載入一系列的文件或軟件，這些都是跟顯示卡驅動，圖形環境庫相關的一些文件、軟件。Gnome ，kde，包括我們使用的 lxde 也需要 xorg 才能實現。而 Lxde 它的全名是 Lightweight X11 Desktop Environment ，是自由軟體桌面環境，其優點在於提供了輕量而快速的桌面環境，它比較重視實用、輕巧，除此之外它還可以在 Linux 平台執行。\\
- 
  之後需選擇 display manager ( 顯示管理器 )的種類 ，Display manager 是操作系統 Ubuntu 的組件，其中登錄的動作即為 Display manager 負責。該操作系統中常見的類型有 gdm ,gdm3 , lightdm ,kdm ...。各類型的 Display manager 功能其實大同小異，差別在於外觀、操作、格式、複雜度和使用者感受等，可依使用者需求變更 ( 有些較為輕量，適合比較低階的運行器 )。選擇其中一個後繼續，之後可以切換更動 。\\
-
  再來是模組的導入，此處同樣用 apt 指令安裝：Pip , uwsgi , Nginx  , 以及 Git 。如果要從 Ubuntu 系統上安裝軟體，其中一種方式是 " pip "。「pip 」是 " pip Installs Packages " 的縮寫，是一個用命令列作為基礎的套件管理系統，可以用它來安裝 python 的應用程式。而使用 Git 是因為在備份資料時， 可幫助使用者有效管理原始碼，而 github 就是由 Git 伺服器和網頁介面組成，用來當作放置原始碼的倉庫。\\
- 
  另外 Nginx 和 uwsgi 是為拿來配合把 python 程式應用在網路上實現，並且把想要的結果使其能在網路實時觀看操控結果之反饋。\\
 \section{Oracle VM VirtualBox 介紹}
  假使建構虛擬環境時需要在同一主機使用不同電腦作業系統環境，則可使用「虛擬機器工作站」— Oracle VM VirtualBox 。\\
-
  選擇 Oracle VM VirtualBox    是為了因應當要使用不同作業系統 ( 比如本機與虛擬環境不同作業系統  ) 且不想與其資料存放時共用一個硬碟 ( 無多餘硬碟 , 不想硬碟之間有資料重疊 ... ) 時，即可使用其軟體做練習，降低操作失誤帶來的成本，而此軟體目前為免費，並隨時會更新，另外其特色有 :\\  
 \begin{itemize}
-
-
 \item 只要自備作業系統 ( 光碟片 , ISO映像檔 ) ，即可在啟動 Oracle VM VirtualBox  後直接開啟要操作的執行檔 ( 作業系統 )，不必再把主機本身重新關機，當然開啟多個作業系統之間也有共通性，可直接從視窗A做網路、檔案分享、複製貼上等動作到視窗B。\\
 \item 除了作業系統裡面的執行，還可在其中練習磁碟分割、格式化以及 BIOS 啟動等 ( 但是未支援USB啟動 ) 。\\
 \item 空間的佔用上並不是真實佔用空間，而是依據使用者的操作而變化 ( 使用者用多少就是多少 )。相對的，使用者雖然一開始設定該虛擬電腦的記憶體大小與硬碟空間是實時依據操作者決定，但終究還是佔掉電腦效能，所以 VirtualBox 的效能還是依據電腦本身的硬體配備。為了配置網路，首先在：
@@ -870,10 +869,12 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
  Nginx 是提供 web 相關服務的伺服器 ( Web server )，除了是高效能的 HTTP ( HTTPS ) 服務器外，還可處理靜態資源 , 負載平衡 , 代理等工作。代理工作為根據不同域名轉發到 Application Server 的不同 port 上去處理 ，其中又分正向和反向，正向代理為 clinet 端發送 request 經由 porxy server 再到目標網站，反向則反之。正向代理操作中 server 只知道 proxy server  給他 request , 不知道 client 是誰，而相同地反向代理則是 client 只知道 proxy server 給他 responses , 不知道 server 是誰。正向代理隐藏真實 Client，反向代理隱藏真實 Server。另外在高流量的狀況下，需要多個 Application Server 來分擔流量，負載平衡就是負責 request 的分發，決定 request 要被分到哪一個 Application Server 處理 。而關於處理靜態資源 ，Nginx 與 Apache 等 Web Server 處理靜態資源的能力是遠遠高於 Application Server 的。\\
  \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.74]{clientProxy}
-\caption{\Large clientProxy}\label{clientProxy}
+\includegraphics[scale=0.8]{clientProxy}
+\caption{\Large clientProxy}
+\label{clientProxy}
 \end{center}
 \end{figure}
+\newpage
 
 \section{Nginx}
 \hspace{-1.7em} 網路設定：\\
@@ -889,7 +890,8 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 Nginx的主要設定檔nginx.conf可藉由include指令添加其他nginx設定檔的設定去擴增不同域名的設定，常見的設定有 :
 \begin{enumerate}
 \item 預設：
-\begin{lstlisting}[caption=nginx預設]
+\begin{lstlisting} [caption=\Large\sectionef nginx預設 ]
+
   reciveAPP {
     server localhost:5000;
     server localhost:5001;
@@ -906,10 +908,9 @@ server {
             include uwsgi_params;
     }
 \end{lstlisting}
-
 \newpage
 \item 負載平衡LoadBalance：
-\begin{lstlisting}[caption=load balance設定]
+\begin{lstlisting}[caption=\Large\sectionef load ]
   reciveAPP {
         ip_hash;
         server localhost:5000;
@@ -938,7 +939,7 @@ server {
  
 \begin{enumerate}
 \item location：
-\begin{lstlisting}[caption=location設定]
+\begin{lstlisting}[caption=\Large\sectionef location設定]
   location / #匹配所有目錄
 
   location /static #匹配所有 /static 的開頭目錄
@@ -952,7 +953,7 @@ server {
 \begin{enumerate}
 \item round-robin（預設）輪詢方式：也就是將請求輪流按照順序分配給每一個 server。假設所有伺服器的處理效能都相同，不關心每臺伺服器的當前連線數和響應速度。適合於伺服器組中的所有伺服器都有相同的軟硬體配置並且平均伺服器請求相對均衡的情況。
 不過也有另外一種可以設定權重的Weight Round Robin（加權輪詢方式），可以設定不同server的權重，例如以下範例：
-\begin{lstlisting}[caption=設定不同 server 的權重]
+\begin{lstlisting}[caption=\Large\sectionef 設定不同 server 的權重]
   upstream myweb {
     server web1.dtask.idv.tw weight=3;
     server web2.dtask.idv.tw weight=2;
@@ -965,16 +966,16 @@ server {
  \begin{enumerate} 
  \item wsgi-file：主要運行的py檔案
  \item http，socket，http-socket：端口設定，假使有使用到 前端服務器（如Nginx）時，不能用http設定，因uwsgi協議為HTTP，而Nginx使用傳輸協議為TCP，兩者不能互通。
- \begin{lstlisting}[caption=簡易uwsgi指令啟動]
+ \begin{lstlisting}[caption=\Large\sectionef 簡易uwsgi指令啟動]
   uwsgi --http：9000 --wsgi-file APP.py 
 \end{lstlisting}
  \item processes、threads：工作序，processes為進程，threads為線程，下方設定為每條近程有兩條線程。
- \begin{lstlisting}[caption=加入工作程序uwsgi指令啟動]
+ \begin{lstlisting}[caption=\Large\sectionef 加入工作程序uwsgi指令啟動]
   uwsgi --http：9000 --wsgi-file APP.py --processes 4 --threads 2
 \end{lstlisting}
 \item chdir：此項是為了正確的加載模組/檔案 \\
 整體快速配置（這裡儲存成一個.ini文件，其他還有YAML、JSON、XML格式等）：
-\begin{lstlisting}[caption=將uwsgi指令啟動動作設定成一個啟動檔]
+\begin{lstlisting}[caption=\Large\sectionef 將uwsgi指令啟動動作設定成一個啟動檔]
   [uwsgi]
 socket = :9000
 processes = 4
@@ -987,24 +988,26 @@ wsgi-file = location/to/file
   -- status 127.0.0.1:9001
 \end{lstlisting}
 實現之通訊流程 
-\begin{lstlisting}[caption=client端與Flask應用]
+\begin{lstlisting}[caption=\Large\sectionef Client端與Flask應用]
   client server  < - > web server < - > ( socket ) < - > uWSGI < - > flask 
 \end{lstlisting}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.74]{clientToflask}
-\caption{\Large clientToflask}\label{clientToflask}
+\includegraphics[scale=0.8]{clientToflask}
+\caption{\Large ClientToflask}
+\label{ClientToflask}
 \end{center}
 \end{figure}
  \end{enumerate}
+ \newpage
 \section{Flask}
- 
  如同以上所述，建立Flask框架的同時需選擇反向代理伺服器（這裡我們選擇了Nginx）來負責網頁請求和結果的回覆，同時還需要一個實現WSGI通信協議的伺服器（我們選擇了 uWSGI）來負責接收代理伺服器的請求後Flask轉發及接收訊息，再轉發回去（代理伺服器）。\\
  
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.74]{total}
-\caption{\Large total}\label{total}
+\includegraphics[width=15cm]{total}
+\caption{\Large total}
+\label{total}
 \end{center}
 \end{figure}
 
@@ -1025,6 +1028,10 @@ wsgi-file = location/to/file
 \label{fig.強化學習程式流程}
 \end{center}
 \end{figure}
+%-----------------------------%
+
+%=---------圖片空隙誤刪--------=%
+%-----------------------------%
 程式訓練流程：\\
  擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
 
@@ -1036,7 +1043,7 @@ Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出�
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{Q_dll}
-\caption{動態連結庫錯誤}
+\caption{\Large 動態連結庫錯誤}
 \label{fig.動態連結庫錯誤}
 \end{center}
 \end{figure}
@@ -1045,7 +1052,7 @@ A：此問題尚未找到解決方法。\\
 Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
 
 A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
-\begin{lstlisting}[caption=MathJax 程式碼]
+\begin{lstlisting}[caption=\Large\sectionef MathJax 程式碼]
 <script>
   MathJax = {
     tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
@@ -1075,6 +1082,8 @@ A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
 \LARGE\textbf 作者簡介\\
 \end{center}
 \newpage
+%=----------------書背----------------------=%
+\pagestyle{empty}%設定沒有頁眉和頁腳
 \begin{center}
 \fontsize{0.001pt}{1pt}\selectfont .\\
 \vspace{4em}

@@ -22,11 +22,11 @@
 \BOOKMARK [1][-]{section.2.4}{類神經網路中強化學習的應用}{chapter.2}% 22
 \BOOKMARK [2][-]{subsection.2.4.1}{監督式學習}{section.2.4}% 23
 \BOOKMARK [2][-]{subsection.2.4.2}{對數導數技巧}{section.2.4}% 24
-\BOOKMARK [2][-]{subsection.2.4.3}{為什麼選擇score function 算法}{section.2.4}% 25
+\BOOKMARK [2][-]{subsection.2.4.3}{為什麼選擇Score function 算法}{section.2.4}% 25
 \BOOKMARK [2][-]{subsection.2.4.4}{Score\040Functions}{section.2.4}% 26
 \BOOKMARK [2][-]{subsection.2.4.5}{Score\040Function\040Estimators}{section.2.4}% 27
 \BOOKMARK [0][-]{chapter.3}{訓練環境}{}% 28
-\BOOKMARK [1][-]{section.3.1}{openAI\040Gym}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.1}{OpenAI\040Gym}{chapter.3}% 29
 \BOOKMARK [1][-]{section.3.2}{Pong}{chapter.3}% 30
 \BOOKMARK [1][-]{section.3.3}{Pong\040from\040pixels}{chapter.3}% 31
 \BOOKMARK [0][-]{chapter.4}{模擬環境}{}% 32
