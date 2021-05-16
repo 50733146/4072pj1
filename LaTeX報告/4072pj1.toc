@@ -45,9 +45,9 @@
 \contentsline {section}{\numberline {5.3}Web server}{39}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Nginx}{40}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Flask}{44}{section.5.5}%
-\contentsline {chapter}{\numberline {6}機器學習的訓練與模擬控制結果}{46}{chapter.6}%
-\contentsline {section}{\numberline {6.1}訓練模型的選用}{46}{section.6.1}%
+\contentsline {chapter}{\numberline {6}機器學習的訓練與模擬控制結果}{45}{chapter.6}%
+\contentsline {section}{\numberline {6.1}訓練模型的選用}{45}{section.6.1}%
 \contentsline {section}{\numberline {6.2}訓練程式的運作}{46}{section.6.2}%
-\contentsline {chapter}{\numberline {7}問題與討論}{49}{chapter.7}%
-\contentsline {chapter}{參考文獻 }{51}{lstnumber.7.1.8}%
+\contentsline {chapter}{\numberline {7}問題與討論}{48}{chapter.7}%
+\contentsline {chapter}{參考文獻 }{50}{lstnumber.7.1.8}%
 \contentsfinish 

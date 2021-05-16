@@ -993,7 +993,7 @@ wsgi-file = location/to/file
 \end{lstlisting}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.8]{clientToflask}
+\includegraphics[scale=0.65]{clientToflask}
 \caption{\Large ClientToflask}
 \label{ClientToflask}
 \end{center}
@@ -1013,9 +1013,25 @@ wsgi-file = location/to/file
 
 \chapter{機器學習的訓練與模擬控制結果}
 \section{訓練模型的選用}
- 利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用pygame模組來撰寫pong game的訓練環境，撰寫pong game的初期還算順利，但在基本功能編寫告一段落後，發現pygame缺少物理引擎，造成在對打的時候出現特定角度碰撞時，擊錘與球的碰撞沒有反應的情況。為了解決pygame碰撞問題，做了幾種嘗試：修改pygame的碰撞定義，但會因為擊球時球速過快而超出碰撞偵測、碰撞角度的問題而失效，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等偵測或設定。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。\\
- 
- Open AI Gym裡面有十幾種訓練模型的環境，提供機器學習做訓練的環境。由於我們的訓練模型是pong game，在Gym模組裡面剛好有訓練模型，因此使用Gym模組相對於使用pygame和pymunk的搭配來的方便，而且後續要在CoppeliaSim模擬環境模擬時也有套件可搭配使用，可簡化功能和訓練時所需的環境模型和訓練功能的程式編寫。\\
+ 利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用Pygame模組來撰寫pong game的訓練環境，開始學習並了解Pygame的一些運用，嘗試建構出pong game場景(圖.\ref{fig.pong_pygame})，在基本功能編寫告一段落後，測試程式漏洞，發現對打時特定角度碰撞，球會超過擊錘的碰撞感測，導致出現球擊穿擊錘的現象。為了解決Pygame碰撞問題，做了幾種嘗試：修改Pygame的碰撞定義，更換碰撞感測的感測方式，問題依舊沒有顯著的改善，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等偵測或設定。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=12cm]{pong_pygame}
+\caption{\Large Pygame模組編寫}
+\label{fig.pong_pygame}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=12cm]{pong_pymunk}
+\caption{\Large Pymunk模組編寫}
+\label{fig.pong_pymunk}
+\end{center}
+\end{figure}
+\newpage %圖片空隙勿刪
+
+ Open AI Gym裡面有十幾種訓練模型的環境，提供機器學習做訓練的環境。由於我們的訓練模型是pong game，在Gym模組裡面剛好有訓練模型，因此使用Gym模組相對於使用Pygame和pymunk的搭配來的方便，而且後續要在CoppeliaSim模擬環境模擬時也有套件可搭配使用，可簡化功能和訓練時所需的環境模型和訓練功能的程式編寫。\\
 \section{訓練程式的運作}
  由於機器學習和影像處理需要大量的運算矩陣運算，因此如果只單獨透過Python本身運算比編譯語言執行的速度來的慢，所以使用Numpy程式庫來解決在Python環境矩陣運算速度慢的問題，以提升訓練機器學習時的運算效率。pickle是Python內部的序列化方式，主要是當機器學習訓練時可能因為一些原因需要暫時停止訓練，但為了讓已經停下的訓練再次重啟就需要透過pickle序列化的方式，將暫停前的訓練權重值透過pickle將其記錄下來，當訓練再次重啟時就可透過pickle.load讀取先前紀錄的pickle檔案就可回到當時暫停的狀態下繼續進行訓練。\\
  
@@ -1030,13 +1046,11 @@ wsgi-file = location/to/file
 \end{figure}
 %-----------------------------%
 
-%=---------圖片空隙誤刪--------=%
+%=---------圖片空隙勿刪--------=%
 %-----------------------------%
 程式訓練流程：\\
  擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
-
- 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、RMSprop優化率減因子\\
-
+在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、RMSprop優化率減因子
 \newpage
 \chapter{問題與討論}
 Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll
@@ -1049,6 +1063,8 @@ Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出�
 \end{figure}
 
 A：此問題尚未找到解決方法。\\
+
+
 Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
 
 A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
