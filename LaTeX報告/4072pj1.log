@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  16 MAY 2021 16:42
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  17 MAY 2021 00:47
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
@@ -1103,17 +1103,17 @@ Overfull \hbox (1.77997pt too wide) detected at line 49
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 50
- \TU/TimesNewRoman(0)/m/n/17.28 46
+ \TU/TimesNewRoman(0)/m/n/17.28 47
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 51
- \TU/TimesNewRoman(0)/m/n/17.28 48
+ \TU/TimesNewRoman(0)/m/n/17.28 49
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 52
- \TU/TimesNewRoman(0)/m/n/17.28 50
+ \TU/TimesNewRoman(0)/m/n/17.28 51
  []
 
 )
@@ -1249,12 +1249,17 @@ Overfull \hbox (0.363pt too wide) detected at line 33
 
 
 Overfull \hbox (0.363pt too wide) detected at line 34
+ []\TU/lmr/m/n/17.28 46
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 35
  []\TU/lmr/m/n/17.28 47
  []
 
 
-Overfull \hbox (0.363pt too wide) detected at line 36
- []\TU/lmr/m/n/17.28 48
+Overfull \hbox (0.363pt too wide) detected at line 37
+ []\TU/lmr/m/n/17.28 49
  []
 
 )
@@ -1796,56 +1801,63 @@ File: ./../images/total.jpeg Graphic file (type bmp)
 <./../images/total.jpeg>
  [44]
 Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
+
+ []
+
 File: ./../images/pong_pygame.png Graphic file (type bmp)
 <./../images/pong_pygame.png>
+File: ./../images/airhockey_pymunk.png Graphic file (type bmp)
+<./../images/airhockey_pymunk.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1023
+Underfull \hbox (badness 10000) in paragraph at lines 1031--1032
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1024--1025
+Underfull \hbox (badness 10000) in paragraph at lines 1033--1034
 
  []
 
 [45
 
-]
+] [46]
 File: ./../images/強化學習訓練流程.png Graphic file (type bmp)
 <./../images/強化學習訓練流程.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1026--1037
-
- []
-
-[46]
-Underfull \hbox (badness 10000) in paragraph at lines 1038--1039
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1046
 
  []
 
 [47]
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1048
+
+ []
+
+[48]
 Chapter 7.
 File: ./../images/Q_dll.png Graphic file (type bmp)
 <./../images/Q_dll.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1051--1053
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1062
 
  []
 
-[48
+[49
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1055
+Underfull \hbox (badness 10000) in paragraph at lines 1063--1064
 
  []
 
-[49] [50] [51]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1128.
- [52]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1128.
+[50] [51] [52]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1137.
+ [53]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1137.
  (4072pj1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1128.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1128.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1137.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1137.
 
 Package rerunfilecheck Info: File `4072pj1.out' has not changed.
 (rerunfilecheck)             Checksum: 6222937973D3C30A4517F8CBA114F7FF;3340.
@@ -1853,15 +1865,15 @@ Package rerunfilecheck Info: File `4072pj1.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1128.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1137.
  ) 
 Here is how much of TeX's memory you used:
- 20320 strings out of 414221
- 378521 string characters out of 2901377
+ 20331 strings out of 414221
+ 378801 string characters out of 2901377
  890653 words of memory out of 3000000
- 37513 multiletter control sequences out of 15000+200000
+ 37524 multiletter control sequences out of 15000+200000
  552011 words of font info for 171 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 48i,9n,81p,677b,1161s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,9n,81p,676b,1161s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 4072pj1.pdf (62 pages).
+Output written on 4072pj1.pdf (63 pages).
