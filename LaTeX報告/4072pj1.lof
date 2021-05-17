@@ -35,7 +35,12 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程\relax }}{47}{figure.caption.30}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 動態連結庫錯誤\relax }}{49}{figure.caption.31}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces \Large 錄製後，影片無法開啟\relax }}{50}{figure.caption.32}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces \Large 原始設定\relax }}{50}{figure.caption.33}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces \Large 修正後設定\relax }}{51}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces \Large 程式讀不到ffmpeg\relax }}{50}{figure.caption.32}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces \Large 進階系統設定\relax }}{51}{figure.caption.33}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces \Large 環境變數\relax }}{52}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces \Large 編輯環境變數\relax }}{53}{figure.caption.35}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces \Large ffmpeg成功執行\relax }}{54}{figure.caption.36}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces \Large 錄製後，影片無法開啟\relax }}{54}{figure.caption.37}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces \Large 原始設定\relax }}{55}{figure.caption.38}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces \Large 修正後設定\relax }}{55}{figure.caption.39}%
 \contentsfinish 

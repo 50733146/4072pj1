@@ -46,7 +46,8 @@
 \BOOKMARK [1][-]{section.5.4}{Nginx}{chapter.5}% 46
 \BOOKMARK [1][-]{section.5.5}{Flask}{chapter.5}% 47
 \BOOKMARK [0][-]{chapter.6}{機器學習的訓練與模擬控制結果}{}% 48
-\BOOKMARK [1][-]{section.6.1}{訓練模型的選用}{chapter.6}% 49
-\BOOKMARK [1][-]{section.6.2}{訓練程式的運作}{chapter.6}% 50
-\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 51
-\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 52
+\BOOKMARK [1][-]{section.6.1}{訓練模型的基礎概念}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.2}{訓練模型的選用}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.3}{訓練程式的運作}{chapter.6}% 51
+\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 52
+\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 53

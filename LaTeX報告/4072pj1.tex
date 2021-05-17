@@ -201,7 +201,8 @@ Application of reinforcement
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
 \section{研究動機}
-電腦科學對於機器學習的依賴越來越重要，自動微分的發展使得完全自動化計算導數的艱鉅工作成為了可能，這使得運用不同的機器學習方法進行實驗變得非常容易，同時仍然允許基於梯度的優化，達到最佳化，利用冰球機的機電系統如圖(圖.\ref{兩層神經網路})，為了解決人機對打與實際硬體所遇到的困境，故作為模擬的目標如圖(圖.\ref{兩層神經網路})，結合類神經網路與強化學習訓練，迅速達到控制的最佳化，減少實際機體成本，進而驗證機器學習對於機電系統的優化能力。
+ 機器學習與各領域結合的應用越來越廣泛，因此結合了機電系統，機器學習的算法採用強化學習演算法。由於強化學習是一種使自動化控制系統最優化的機器學習方法，並以實體的冰球機為範例，將冰球機的機電系統進行強化學習訓練，進而驗證強化學習對於自動化控制系統的優化程度。
+% 電腦科學對於機器學習的依賴越來越重要，自動微分的發展使得完全自動化計算導數的艱鉅工作成為了可能，這使得運用不同的機器學習方法進行實驗變得非常容易，同時仍然允許基於梯度的優化，達到最佳化，利用冰球機的機電系統如圖(圖.\ref{兩層神經網路})，為了解決人機對打與實際硬體所遇到的困境，故作為模擬的目標如圖(圖.\ref{兩層神經網路})，結合類神經網路與強化學習訓練，迅速達到控制的最佳化，減少實際機體成本，進而驗證機器學習對於機電系統的優化能力。
  
 \section{研究目的與方法}
  本研究分兩大部分，第一運用OpenAI Gym裡內建編譯的ATARI 2600遊戲Pong-v0，來作為訓練環境，加上機器學習的理論，訓練出最佳AI，第二換為CoppilaSim模擬環境並套用訓練程式，成為能與人對打的機電系統。\\
@@ -1009,6 +1010,8 @@ wsgi-file = location/to/file
 \end{figure}
 
 \chapter{機器學習的訓練與模擬控制結果}
+\section{訓練模型的基礎概念}
+ 訓練模型是由實體的冰球機的機電系統簡化而來，
 \section{訓練模型的選用}
  利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用Pygame模組來撰寫pong game的訓練環境，開始學習並了解Pygame的一些運用，嘗試建構出pong game場景(圖.\ref{fig.pong_pygame})，在基本功能編寫告一段落後，測試程式漏洞，發現對打時特定角度碰撞，球會超過擊錘的碰撞感測，導致出現球擊穿擊錘的現象。為了解決Pygame碰撞問題，做了幾種嘗試：修改Pygame的碰撞定義，更換碰撞感測的感測方式，問題依舊沒有顯著的改善，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用(圖.\ref{fig.airhockey_pymunk})，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等可以個別設定和調用。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。\\
 \begin{figure}[hbt!]
@@ -1051,7 +1054,7 @@ wsgi-file = location/to/file
 
 \newpage
 \chapter{問題與討論}
-\hspace{-1.7em} Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll
+\hspace{-1.7em} Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{Q_dll}
@@ -1059,8 +1062,60 @@ wsgi-file = location/to/file
 \label{fig.動態連結庫錯誤}
 \end{center}
 \end{figure}
+A：此問題尚未找到解決方法。\\
 
-\hspace{-1.7em} A：此問題尚未找到解決方法。\\
+\hspace{-1.7em} Q：錄製訓練過程的程式讀不到ffmpeg(圖.\ref{fig.Q_ffmpeg})。\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_ffmpeg}
+\caption{\Large 程式讀不到ffmpeg}
+\label{fig.Q_ffmpeg}
+\end{center}
+\end{figure}
+
+\hspace{-1.7em}A：需要在作業系統中安裝ffmpeg：
+\begin{enumerate}
+\item 下載、解壓縮\\
+先到官網 \href{https://ffmpeg.org/download.html}{https://ffmpeg.org/download.html} 下載" \href{https://www.gyan.dev/ffmpeg/builds/}{Windows builds from gyan.dev} "，下載 \href{https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z}{https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z} ，解壓縮重新命名成"ffmpeg"並放到C槽目錄下(C:$\setminus$ffmpeg)。
+\item 環境設定(windows10 20H2 及 2004版本)\\
+開啟"設定"→"系統"→左方"關於"選項→右側"進階系統設定"→"環境變數"(圖.\ref{fig.Q_ffmpeg-2})→選取"Path"，編輯(圖.\ref{fig.Q_ffmpeg-3})→"新增"，增加一個環境變數，給定內容為："C:$\setminus$ffmpeg$\setminus$bin"，"確定"(圖.\ref{fig.Q_ffmpeg-4})→"確定"→"確定\\
+\end{enumerate}
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_ffmpeg-2}
+\caption{\Large 進階系統設定}
+\label{fig.Q_ffmpeg-2}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_ffmpeg-3}
+\caption{\Large 環境變數}
+\label{fig.Q_ffmpeg-3}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_ffmpeg-4}
+\caption{\Large 編輯環境變數}
+\label{fig.Q_ffmpeg-4}
+\end{center}
+\end{figure}
+
+\begin{itemize}
+\item 測試\\
+開啟命令字元(win+R，輸入"cmd")，執行"ffmpeg"(圖.\ref{fig.Q_ffmpeg-5})\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_ffmpeg-5}
+\caption{\Large ffmpeg成功執行}
+\label{fig.Q_ffmpeg-5}
+\end{center}
+\end{figure}
+\end{itemize}
 
 \hspace{-1.7em} Q：運用gym.wrappers.Monitor透過ffmpeg進行錄影，紀錄下訓練影像。但記錄後的影像資料皆為1KB，並且無法開啟。(圖.\ref{fig.ffmpeg_mp4})\\
 \begin{figure}[hbt!]
@@ -1070,7 +1125,6 @@ wsgi-file = location/to/file
 \label{fig.ffmpeg_mp4}
 \end{center}
 \end{figure}
-
 \hspace{-1.7em} A：修改gym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video_recorder})，將303行的縮排修正(從if階層上移到def的階層)即可(圖.)。\\
 \begin{figure}[hbt!]
 \begin{center}
@@ -1089,7 +1143,6 @@ wsgi-file = location/to/file
 \end{figure}
 
 \hspace{-1.7em} Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
-
 \hspace{-1.7em} A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
 \begin{lstlisting}[caption=\Large\sectionef MathJax 程式碼]
 <script>
