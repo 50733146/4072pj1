@@ -1,62 +1,70 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  15 MAY 2021 02:16
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 20.12) (preloaded format=xelatex 2021.4.30)  17 MAY 2021 13:02
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-03-06>
-(Y:\miktex-portable\texmfs\install\tex/latex/base\report.cls
-Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
-(Y:\miktex-portable\texmfs\install\tex/latex/base\size10.clo
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-12-07> xparse <2020-03-03>
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count163
-\c@chapter=\count164
-\c@section=\count165
-\c@subsection=\count166
-\c@subsubsection=\count167
-\c@paragraph=\count168
-\c@subparagraph=\count169
-\c@figure=\count170
-\c@table=\count171
+\c@part=\count173
+\c@chapter=\count174
+\c@section=\count175
+\c@subsection=\count176
+\c@subsubsection=\count177
+\c@paragraph=\count178
+\c@subparagraph=\count179
+\c@figure=\count180
+\c@table=\count181
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 )
-(Y:\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.sty
-(Y:\miktex-portable\texmfs\install\tex/latex/l3kernel\expl3.sty
-Package: expl3 2020-03-06 L3 programming layer (loader) 
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/xelatex/xecjk\xeCJK.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2020-12-07 L3 programming layer (loader) 
 
-(Y:\miktex-portable\texmfs\install\tex/latex/l3backend\l3backend-xdvipdfmx.def
-File: l3backend-xdvipdfmx.def 2020-03-12 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count172
-\l__pdf_internal_box=\box45
-\g__pdf_backend_object_int=\count173
-\g__pdf_backend_annotation_int=\count174
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xet
+ex.def
+File: l3backend-xetex.def 2020-09-24 L3 backend support: XeTeX
+\g__graphics_track_int=\count182
+\l__pdf_internal_box=\box47
+\g__pdf_backend_object_int=\count183
+\g__pdf_backend_annotation_int=\count184
 ))
-Package: xeCJK 2020/02/18 v3.8.2 Typesetting CJK scripts with XeLaTeX
- (Y:\miktex-portable\texmfs\install\tex/latex/l3packages/l3keys2e\l3keys2e.sty
-Package: l3keys2e 2020-03-06 LaTeX2e option processing using LaTeX3 keys
+Package: xeCJK 2020/10/19 v3.8.6 Typesetting CJK scripts with XeLaTeX
+
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3k
+eys2e.sty
+Package: l3keys2e 2020-10-27 LaTeX2e option processing using LaTeX3 keys
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/l3packages/xtemplate\xtemplate.sty
-Package: xtemplate 2020-03-06 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen135
-\l__xtemplate_tmp_int=\count175
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xtemplate\xt
+emplate.sty
+Package: xtemplate 2020-10-27 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen139
+\l__xtemplate_tmp_int=\count185
 \l__xtemplate_tmp_muskip=\muskip16
 \l__xtemplate_tmp_skip=\skip49
-) (Y:\miktex-portable\texmfs\install\tex/latex/l3packages/xparse\xparse.sty
-Package: xparse 2020-03-06 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count176
-\g__xparse_grabber_int=\count177
-\l__xparse_m_args_int=\count178
-\l__xparse_v_nesting_int=\count179
 )
-\l__xeCJK_tmp_int=\count180
-\l__xeCJK_tmp_box=\box46
-\l__xeCJK_tmp_dim=\dimen136
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+Package: xparse 2020-10-27 L3 Experimental document command parser
+
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e-generic.tex))
+\l__xeCJK_tmp_int=\count186
+\l__xeCJK_tmp_box=\box48
+\l__xeCJK_tmp_dim=\dimen140
 \l__xeCJK_tmp_skip=\skip50
-\g__xeCJK_space_factor_int=\count181
-\l__xeCJK_begin_int=\count182
-\l__xeCJK_end_int=\count183
+
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/ctex\ctexhook.sty
+Package: ctexhook 2021/03/14 v2.5.6 Document and package hooks (CTEX)
+)
+\g__xeCJK_space_factor_int=\count187
+\l__xeCJK_begin_int=\count188
+\l__xeCJK_end_int=\count189
 \c__xeCJK_CJK_class_int=\XeTeXcharclass1
 \c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
 \c__xeCJK_FullRight_class_int=\XeTeXcharclass3
@@ -66,76 +74,76 @@ Package: xparse 2020-03-06 L3 Experimental document command parser
 \c__xeCJK_CM_class_int=\XeTeXcharclass7
 \c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
 \l__xeCJK_last_skip=\skip51
-\g__xeCJK_node_int=\count184
-\c__xeCJK_CJK_node_dim=\dimen137
-\c__xeCJK_CJK-space_node_dim=\dimen138
-\c__xeCJK_default_node_dim=\dimen139
-\c__xeCJK_default-space_node_dim=\dimen140
-\c__xeCJK_CJK-widow_node_dim=\dimen141
-\c__xeCJK_normalspace_node_dim=\dimen142
+\g__xeCJK_node_int=\count190
+\c__xeCJK_CJK_node_dim=\dimen141
+\c__xeCJK_CJK-space_node_dim=\dimen142
+\c__xeCJK_default_node_dim=\dimen143
+\c__xeCJK_default-space_node_dim=\dimen144
+\c__xeCJK_CJK-widow_node_dim=\dimen145
+\c__xeCJK_normalspace_node_dim=\dimen146
 \l__xeCJK_ccglue_skip=\skip52
 \l__xeCJK_ecglue_skip=\skip53
 \l__xeCJK_punct_kern_skip=\skip54
-\l__xeCJK_last_penalty_int=\count185
-\l__xeCJK_last_bound_dim=\dimen143
-\l__xeCJK_last_kern_dim=\dimen144
-\l__xeCJK_widow_penalty_int=\count186
+\l__xeCJK_last_penalty_int=\count191
+\l__xeCJK_last_bound_dim=\dimen147
+\l__xeCJK_last_kern_dim=\dimen148
+\l__xeCJK_widow_penalty_int=\count192
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
-(xtemplate)             argument(s) on line 2302.
+(xtemplate)             argument(s) on line 2341.
 
-\l__xeCJK_fixed_punct_width_dim=\dimen145
-\l__xeCJK_mixed_punct_width_dim=\dimen146
-\l__xeCJK_middle_punct_width_dim=\dimen147
-\l__xeCJK_fixed_margin_width_dim=\dimen148
-\l__xeCJK_mixed_margin_width_dim=\dimen149
-\l__xeCJK_middle_margin_width_dim=\dimen150
-\l__xeCJK_bound_punct_width_dim=\dimen151
-\l__xeCJK_bound_margin_width_dim=\dimen152
-\l__xeCJK_margin_minimum_dim=\dimen153
-\l__xeCJK_kerning_total_width_dim=\dimen154
-\l__xeCJK_same_align_margin_dim=\dimen155
-\l__xeCJK_different_align_margin_dim=\dimen156
-\l__xeCJK_kerning_margin_width_dim=\dimen157
-\l__xeCJK_kerning_margin_minimum_dim=\dimen158
-\l__xeCJK_bound_dim=\dimen159
-\l__xeCJK_reverse_bound_dim=\dimen160
-\l__xeCJK_margin_dim=\dimen161
-\l__xeCJK_minimum_bound_dim=\dimen162
-\l__xeCJK_kerning_margin_dim=\dimen163
-\g__xeCJK_family_int=\count187
-\l__xeCJK_fam_int=\count188
-\g__xeCJK_fam_allocation_int=\count189
-\l__xeCJK_verb_case_int=\count190
+\l__xeCJK_fixed_punct_width_dim=\dimen149
+\l__xeCJK_mixed_punct_width_dim=\dimen150
+\l__xeCJK_middle_punct_width_dim=\dimen151
+\l__xeCJK_fixed_margin_width_dim=\dimen152
+\l__xeCJK_mixed_margin_width_dim=\dimen153
+\l__xeCJK_middle_margin_width_dim=\dimen154
+\l__xeCJK_bound_punct_width_dim=\dimen155
+\l__xeCJK_bound_margin_width_dim=\dimen156
+\l__xeCJK_margin_minimum_dim=\dimen157
+\l__xeCJK_kerning_total_width_dim=\dimen158
+\l__xeCJK_same_align_margin_dim=\dimen159
+\l__xeCJK_different_align_margin_dim=\dimen160
+\l__xeCJK_kerning_margin_width_dim=\dimen161
+\l__xeCJK_kerning_margin_minimum_dim=\dimen162
+\l__xeCJK_bound_dim=\dimen163
+\l__xeCJK_reverse_bound_dim=\dimen164
+\l__xeCJK_margin_dim=\dimen165
+\l__xeCJK_minimum_bound_dim=\dimen166
+\l__xeCJK_kerning_margin_dim=\dimen167
+\g__xeCJK_family_int=\count193
+\l__xeCJK_fam_int=\count194
+\g__xeCJK_fam_allocation_int=\count195
+\l__xeCJK_verb_case_int=\count196
 \l__xeCJK_verb_exspace_skip=\skip55
 
-(Y:\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 
-(Y:\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec-xetex.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex
+.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count191
-\l__fontspec_language_int=\count192
-\l__fontspec_strnum_int=\count193
-\l__fontspec_tmp_int=\count194
-\l__fontspec_tmpa_int=\count195
-\l__fontspec_tmpb_int=\count196
-\l__fontspec_tmpc_int=\count197
-\l__fontspec_em_int=\count198
-\l__fontspec_emdef_int=\count199
-\l__fontspec_strong_int=\count266
-\l__fontspec_strongdef_int=\count267
-\l__fontspec_tmpa_dim=\dimen164
-\l__fontspec_tmpb_dim=\dimen165
-\l__fontspec_tmpc_dim=\dimen166
-
-(Y:\miktex-portable\texmfs\install\tex/latex/base\fontenc.sty
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+\l__fontspec_script_int=\count197
+\l__fontspec_language_int=\count198
+\l__fontspec_strnum_int=\count199
+\l__fontspec_tmp_int=\count266
+\l__fontspec_tmpa_int=\count267
+\l__fontspec_tmpb_int=\count268
+\l__fontspec_tmpc_int=\count269
+\l__fontspec_em_int=\count270
+\l__fontspec_emdef_int=\count271
+\l__fontspec_strong_int=\count272
+\l__fontspec_strongdef_int=\count273
+\l__fontspec_tmpa_dim=\dimen168
+\l__fontspec_tmpb_dim=\dimen169
+\l__fontspec_tmpc_dim=\dimen170
+ (C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec.cfg)))
-(Y:\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.cfg
-File: xeCJK.cfg 2020/02/18 v3.8.2 Configuration file for xeCJK package
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))
+) (C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/xelatex/xecjk\xeCJK.cfg
+File: xeCJK.cfg 2020/10/19 v3.8.6 Configuration file for xeCJK package
 ))
 
 Package fontspec Info: Could not resolve font "標楷體/BI" (it probably doesn't
@@ -187,258 +195,253 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (fontspec)             Roman/BI/OT:script=latn;language=dflt;+smcp;"
 
 
-(Y:\miktex-portable\texmfs\install\tex/latex/tools\enumerate.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks15
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip56
 
 For additional information on amsmath, use the `?' option.
-(Y:\miktex-portable\texmfs\install\tex/latex/amsmath\amstext.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(Y:\miktex-portable\texmfs\install\tex/latex/amsmath\amsgen.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
-\ex@=\dimen167
+\ex@=\dimen171
 ))
-(Y:\miktex-portable\texmfs\install\tex/latex/amsmath\amsbsy.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen168
+\pmbraise@=\dimen172
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/amsmath\amsopn.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count268
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count269
-\leftroot@=\count270
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count271
-\DOTSCASE@=\count272
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box47
-\strutbox@=\box48
-\big@size=\dimen169
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count273
-\c@MaxMatrixCols=\count274
+\inf@bad=\count274
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count275
+\leftroot@=\count276
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count277
+\DOTSCASE@=\count278
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box49
+\strutbox@=\box50
+\big@size=\dimen173
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count279
+\c@MaxMatrixCols=\count280
 \dotsspace@=\muskip17
-\c@parentequation=\count275
-\dspbrk@lvl=\count276
+\c@parentequation=\count281
+\dspbrk@lvl=\count282
 \tag@help=\toks17
-\row@=\count277
-\column@=\count278
-\maxfields@=\count279
+\row@=\count283
+\column@=\count284
+\maxfields@=\count285
 \andhelp@=\toks18
-\eqnshift@=\dimen170
-\alignsep@=\dimen171
-\tagshift@=\dimen172
-\tagwidth@=\dimen173
-\totwidth@=\dimen174
-\lineht@=\dimen175
+\eqnshift@=\dimen174
+\alignsep@=\dimen175
+\tagshift@=\dimen176
+\tagwidth@=\dimen177
+\totwidth@=\dimen178
+\lineht@=\dimen179
 \@envbody=\toks19
 \multlinegap=\skip57
 \multlinetaggap=\skip58
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/amsfonts\amssymb.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(Y:\miktex-portable\texmfs\install\tex/latex/amsfonts\amsfonts.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(Y:\miktex-portable\texmfs\install\tex/latex/graphics\graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+)) (C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
+y
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(Y:\miktex-portable\texmfs\install\tex/latex/graphics\keyval.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/graphics\graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(Y:\miktex-portable\texmfs\install\tex/latex/graphics\trig.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/graphics-cfg\graphics.cfg
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 
-(Y:\miktex-portable\texmfs\install\tex/latex/graphics-def\xetex.def
-File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
+File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen176
-\Gin@req@width=\dimen177
-)
-(Y:\miktex-portable\texmfs\install\tex/latex/subfig\subfig.sty
+\Gin@req@height=\dimen180
+\Gin@req@width=\dimen181
+) (C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/subfig\subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-(Y:\miktex-portable\texmfs\install\tex/latex/caption\caption.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
-(Y:\miktex-portable\texmfs\install\tex/latex/caption\caption3.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen178
-\captionmargin@=\dimen179
-\captionwidth=\dimen180
-\caption@tempdima=\dimen181
-\caption@indent=\dimen182
-\caption@parindent=\dimen183
-\caption@hangindent=\dimen184
+\captionmargin=\dimen182
+\captionmargin@=\dimen183
+\captionwidth=\dimen184
+\caption@tempdima=\dimen185
+\caption@indent=\dimen186
+\caption@parindent=\dimen187
+\caption@hangindent=\dimen188
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count280
-\c@continuedfloat=\count281
+\c@caption@flags=\count286
+\c@continuedfloat=\count287
 )
-\c@KVtest=\count282
+\c@KVtest=\count288
 \sf@farskip=\skip59
-\sf@captopadj=\dimen185
+\sf@captopadj=\dimen189
 \sf@capskip=\skip60
 \sf@nearskip=\skip61
-\c@subfigure=\count283
-\c@subfigure@save=\count284
-\c@lofdepth=\count285
-\c@subtable=\count286
-\c@subtable@save=\count287
-\c@lotdepth=\count288
+\c@subfigure=\count289
+\c@subfigure@save=\count290
+\c@lofdepth=\count291
+\c@subtable=\count292
+\c@subtable@save=\count293
+\c@lotdepth=\count294
 \sf@top=\skip62
 \sf@bottom=\skip63
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/fontawesome5\fontawesome5.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\fontawesom
+e5.sty
 Package: fontawesome5 2020/03/24 v5.13.0 Font Awesome 5
 
-(Y:\miktex-portable\texmfs\install\tex/latex/fontawesome5\fontawesome5-utex-hel
-per.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\fontawesom
+e5-utex-helper.sty
 Package: fontawesome5-utex-helper 2020/03/24 v5.13.0 uTeX helper for fontawesom
 e5
 LaTeX Font Info:    Trying to load font information for TU+fontawesomefree on i
 nput line 69.
 
-(Y:\miktex-portable\texmfs\install\tex/latex/fontawesome5\tufontawesomefree.fd)
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\tufontawes
+omefree.fd)
 LaTeX Font Info:    Trying to load font information for TU+fontawesomebrands on
  input line 70.
 
-(Y:\miktex-portable\texmfs\install\tex/latex/fontawesome5\tufontawesomebrands.f
-d))) (Y:\miktex-portable\texmfs\install\tex/latex/type1cm\type1cm.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\tufontawes
+omebrands.fd)))
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty
 Package: type1cm 2002/09/05 v0.04 BlueSky/Y&Y Type1 CM font definitions (DPC, p
 atched RF)
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/textpos\textpos.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/textpos\textpos.sty
 Package: textpos 2020/09/26 v1.10
 
 Package: textpos 2020/09/26 1.10, absolute positioning of text on the page
-Package textpos Info: choosing support for LaTeX2e on input line 61.
-\TP@textbox=\box49
-\TPHorizModule=\dimen186
-\TPVertModule=\dimen187
-\TP@margin=\dimen188
-\TP@absmargin=\dimen189
+Package textpos Info: choosing support for LaTeX3 on input line 61.
+\TP@textbox=\box51
+\TPHorizModule=\dimen190
+\TPVertModule=\dimen191
+\TP@margin=\dimen192
+\TP@absmargin=\dimen193
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen190
+\TPboxrulesize=\dimen194
 \TP@tbargs=\toks22
-) (Y:\miktex-portable\texmfs\install\tex/latex/geometry\geometry.sty
+) (C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(Y:\miktex-portable\texmfs\install\tex/generic/iftex\ifvtex.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(Y:\miktex-portable\texmfs\install\tex/generic/iftex\iftex.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count289
-\Gm@cntv=\count290
-\c@Gm@tempcnt=\count291
-\Gm@bindingoffset=\dimen191
-\Gm@wd@mp=\dimen192
-\Gm@odd@mp=\dimen193
-\Gm@even@mp=\dimen194
-\Gm@layoutwidth=\dimen195
-\Gm@layoutheight=\dimen196
-\Gm@layouthoffset=\dimen197
-\Gm@layoutvoffset=\dimen198
+\Gm@cnth=\count295
+\Gm@cntv=\count296
+\c@Gm@tempcnt=\count297
+\Gm@bindingoffset=\dimen195
+\Gm@wd@mp=\dimen196
+\Gm@odd@mp=\dimen197
+\Gm@even@mp=\dimen198
+\Gm@layoutwidth=\dimen199
+\Gm@layoutheight=\dimen256
+\Gm@layouthoffset=\dimen257
+\Gm@layoutvoffset=\dimen258
 \Gm@dimlist=\toks23
 
-(Y:\miktex-portable\texmfs\install\tex/xelatex/xetexconfig\geometry.cfg))
-(Y:\miktex-portable\texmfs\install\tex/latex/titlesec\titlesec.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/xelatex/xetexconfig\geometry.
+cfg))
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box50
+\ttl@box=\box52
 \beforetitleunit=\skip64
 \aftertitleunit=\skip65
-\ttl@plus=\dimen199
-\ttl@minus=\dimen256
+\ttl@plus=\dimen259
+\ttl@minus=\dimen260
 \ttl@toksa=\toks24
-\titlewidth=\dimen257
-\titlewidthlast=\dimen258
-\titlewidthfirst=\dimen259
+\titlewidth=\dimen261
+\titlewidthlast=\dimen262
+\titlewidthfirst=\dimen263
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/titlesec\titletoc.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titletoc.sty
 Package: titletoc 2019/10/16 v2.13 TOC entries
-\ttl@leftsep=\dimen260
+\ttl@leftsep=\dimen264
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/base\textcomp.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/multirow\multirow.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip66
-\multirow@cntb=\count292
+\multirow@cntb=\count298
 \multirow@dima=\skip67
-\bigstrutjot=\dimen261
+\bigstrutjot=\dimen265
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/cjk\CJKnumb.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/cjk\CJKnumb.sty
 Package: CJKnumb 2015/04/18 4.8.4
-\CJK@q=\count293
-\CJK@r=\count294
+\CJK@q=\count299
+\CJK@r=\count300
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/wallpaper\wallpaper.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/wallpaper\wallpaper.sty
 Package: wallpaper 2005/01/18, v1.01 easy wallpaper formatting (MHFW)
-
-(Y:\miktex-portable\texmfs\install\tex/latex/base\ifthen.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/tools\calc.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count295
-\calc@Bcount=\count296
-\calc@Adimen=\dimen262
-\calc@Bdimen=\dimen263
+\calc@Acount=\count301
+\calc@Bcount=\count302
+\calc@Adimen=\dimen266
+\calc@Bdimen=\dimen267
 \calc@Askip=\skip68
 \calc@Bskip=\skip69
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count297
+\calc@Ccount=\count303
 \calc@Cskip=\skip70
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/eso-pic\eso-pic.sty
-Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen268
+\ESO@tempdimb=\dimen269
 
-(Y:\miktex-portable\texmfs\install\tex/generic/atbegshi\atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
-
-(Y:\miktex-portable\texmfs\install\tex/generic/infwarerr\infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(Y:\miktex-portable\texmfs\install\tex/generic/ltxcmds\ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-))
-(Y:\miktex-portable\texmfs\install\tex/latex/xcolor\xcolor.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(Y:\miktex-portable\texmfs\install\tex/latex/graphics-cfg\color.cfg
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 225.
@@ -460,163 +463,185 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 \tileX=\skip77
 \tileY=\skip78
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/listings\listings.sty
-\lst@mode=\count298
-\lst@gtempboxa=\box51
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count304
+\lst@gtempboxa=\box53
 \lst@token=\toks25
-\lst@length=\count299
-\lst@currlwidth=\dimen264
-\lst@column=\count300
-\lst@pos=\count301
-\lst@lostspace=\dimen265
-\lst@width=\dimen266
-\lst@newlines=\count302
-\lst@lineno=\count303
-\lst@maxwidth=\dimen267
+\lst@length=\count305
+\lst@currlwidth=\dimen270
+\lst@column=\count306
+\lst@pos=\count307
+\lst@lostspace=\dimen271
+\lst@width=\dimen272
+\lst@newlines=\count308
+\lst@lineno=\count309
+\lst@maxwidth=\dimen273
 
-(Y:\miktex-portable\texmfs\install\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count304
-\lst@skipnumbers=\count305
-\lst@framebox=\box52
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count310
+\lst@skipnumbers=\count311
+\lst@framebox=\box54
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/listings\listings.cfg
-File: listings.cfg 2019/09/10 1.8c listings configuration
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
-Package: listings 2019/09/10 1.8c (Carsten Heinz)
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
-(Y:\miktex-portable\texmfs\install\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/xelatex/xecjk\xeCJK-listings.
+sty
+Package: xeCJK-listings 2020/10/19 v3.8.6 xeCJK patch file for listings
+\l__xeCJK_listings_max_char_int=\count312
+\l__xeCJK_listings_flag_int=\count313
+)
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
-(Y:\miktex-portable\texmfs\install\tex/latex/pdftexcmds\pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 )
-(Y:\miktex-portable\texmfs\install\tex/generic/kvsetkeys\kvsetkeys.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
+ty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(Y:\miktex-portable\texmfs\install\tex/generic/kvdefinekeys\kvdefinekeys.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(Y:\miktex-portable\texmfs\install\tex/generic/pdfescape\pdfescape.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(Y:\miktex-portable\texmfs\install\tex/latex/hycolor\hycolor.sty
+) (C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/letltxmacro\letltxmacro.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
+.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/auxhook\auxhook.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/kvoptions\kvoptions.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen268
-\Hy@linkcounter=\count306
-\Hy@pagecounter=\count307
-
-(Y:\miktex-portable\texmfs\install\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+\@linkdim=\dimen274
+\Hy@linkcounter=\count314
+\Hy@pagecounter=\count315
+ (C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 )
-(Y:\miktex-portable\texmfs\install\tex/generic/intcalc\intcalc.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(Y:\miktex-portable\texmfs\install\tex/generic/etexcmds\etexcmds.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count308
-Package hyperref Info: Hyper figures OFF on input line 4547.
-Package hyperref Info: Link nesting OFF on input line 4552.
-Package hyperref Info: Hyper index ON on input line 4555.
-Package hyperref Info: Plain pages OFF on input line 4562.
-Package hyperref Info: Backreferencing OFF on input line 4567.
+\Hy@SavedSpaceFactor=\count316
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count309
-
-(Y:\miktex-portable\texmfs\install\tex/latex/url\url.sty
+Package hyperref Info: Bookmarks ON on input line 4717.
+\c@Hy@tempcnt=\count317
+ (C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen269
+LaTeX Info: Redefining \url on input line 5076.
+\XeTeXLinkMargin=\dimen275
 
-(Y:\miktex-portable\texmfs\install\tex/generic/bitset\bitset.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(Y:\miktex-portable\texmfs\install\tex/generic/bigintcalc\bigintcalc.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count310
-\Field@Width=\dimen270
-\Fld@charsize=\dimen271
-Package hyperref Info: Hyper figures OFF on input line 6430.
-Package hyperref Info: Link nesting OFF on input line 6435.
-Package hyperref Info: Hyper index ON on input line 6438.
-Package hyperref Info: backreferencing OFF on input line 6445.
-Package hyperref Info: Link coloring OFF on input line 6450.
-Package hyperref Info: Link coloring with OCG OFF on input line 6455.
-Package hyperref Info: PDF/A mode OFF on input line 6460.
-LaTeX Info: Redefining \ref on input line 6500.
-LaTeX Info: Redefining \pageref on input line 6504.
-\Hy@abspage=\count311
-\c@Item=\count312
-\c@Hfootnote=\count313
+\Fld@menulength=\count318
+\Field@Width=\dimen276
+\Fld@charsize=\dimen277
+Package hyperref Info: Hyper figures OFF on input line 6347.
+Package hyperref Info: Link nesting OFF on input line 6352.
+Package hyperref Info: Hyper index ON on input line 6355.
+Package hyperref Info: backreferencing OFF on input line 6362.
+Package hyperref Info: Link coloring OFF on input line 6367.
+Package hyperref Info: Link coloring with OCG OFF on input line 6372.
+Package hyperref Info: PDF/A mode OFF on input line 6377.
+LaTeX Info: Redefining \ref on input line 6417.
+LaTeX Info: Redefining \pageref on input line 6421.
+
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
+ge
+with kernel methods
+)
+\Hy@abspage=\count319
+\c@Item=\count320
+\c@Hfootnote=\count321
 )
 Package hyperref Info: Driver (autodetected): hxetex.
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2020-05-15 v7.00e Hyperref driver for XeTeX
 
-(Y:\miktex-portable\texmfs\install\tex/latex/hyperref\hxetex.def
-File: hxetex.def 2020/01/14 v7.00d Hyperref driver for XeTeX
-
-(Y:\miktex-portable\texmfs\install\tex/latex/hyperref\puenc.def
-File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
 )
-(Y:\miktex-portable\texmfs\install\tex/generic/stringenc\stringenc.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box53
-\c@Hy@AnnotLevel=\count314
-\HyField@AnnotCount=\count315
-\Fld@listcount=\count316
-\c@bookmark@seq@number=\count317
+\pdfm@box=\box55
+\c@Hy@AnnotLevel=\count322
+\HyField@AnnotCount=\count323
+\Fld@listcount=\count324
+\c@bookmark@seq@number=\count325
 
-(Y:\miktex-portable\texmfs\install\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(Y:\miktex-portable\texmfs\install\tex/latex/atveryend\atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
+with kernel methods
 )
-(Y:\miktex-portable\texmfs\install\tex/generic/uniquecounter\uniquecounter.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip79
-) (Y:\miktex-portable\texmfs\install\tex/latex/setspace\setspace.sty
+)
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/graphics\lscape.sty
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-(Y:\miktex-portable\texmfs\install\tex/latex/tools\indentfirst.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-)
-(Y:\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK-listings.sty
-Package: xeCJK-listings 2020/02/18 v3.8.2 xeCJK patch file for listings
-\l__xeCJK_listings_max_char_int=\count318
-\l__xeCJK_listings_flag_int=\count319
 )
 
 LaTeX Warning: Unused global option(s):
@@ -636,7 +661,8 @@ LaTeX Font Info:    ... okay on input line 55.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
 5.
- (Y:\miktex-portable\texmfs\install\tex/latex/base\ts1cmr.fd
+
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 55.
@@ -745,20 +771,19 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box54
-\c@lstlisting=\count320
+\c@lstlisting=\count326
 Package hyperref Info: Link coloring OFF on input line 55.
-(Y:\miktex-portable\texmfs\install\tex/latex/hyperref\nameref.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(Y:\miktex-portable\texmfs\install\tex/latex/refcount\refcount.sty
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(Y:\miktex-portable\texmfs\install\tex/generic/gettitlestring\gettitlestring.st
-y
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count321
+\c@section@level=\count327
 )
 LaTeX Info: Redefining \ref on input line 55.
 LaTeX Info: Redefining \pageref on input line 55.
@@ -821,11 +846,12 @@ Overfull \hbox (145.89752pt too wide) detected at line 96
  \TU/標楷體(0)/m/n/17.28 簡 國 龍 \TU/TimesNewRoman(0)/m/n/17.28 (40723150)
  []
 
-(Y:\miktex-portable\texmfs\install\tex/generic/stringenc\se-ascii-print.def
+
+(C:\Users\JOKER\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-ascii-pr
+int.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
-)
-[1
+) [1
 
 ]
 LaTeX Font Info:    Calculating math sizes for size <15> on input line 115.
@@ -941,12 +967,12 @@ Overfull \hbox (1.77997pt too wide) detected at line 17
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 18
- \TU/TimesNewRoman(0)/m/n/17.28 19
+ \TU/TimesNewRoman(0)/m/n/17.28 18
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 19
- \TU/TimesNewRoman(0)/m/n/17.28 19
+ \TU/TimesNewRoman(0)/m/n/17.28 18
  []
 
 
@@ -963,157 +989,157 @@ Overfull \hbox (1.77997pt too wide) detected at line 21
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 22
- \TU/TimesNewRoman(0)/m/n/17.28 23
+ \TU/TimesNewRoman(0)/m/n/17.28 22
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 23
- \TU/TimesNewRoman(0)/m/n/17.28 23
+ \TU/TimesNewRoman(0)/m/n/17.28 22
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 24
- \TU/TimesNewRoman(0)/m/n/17.28 24
+ \TU/TimesNewRoman(0)/m/n/17.28 23
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 25
- \TU/TimesNewRoman(0)/m/n/17.28 24
+ \TU/TimesNewRoman(0)/m/n/17.28 23
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 26
- \TU/TimesNewRoman(0)/m/n/17.28 25
+ \TU/TimesNewRoman(0)/m/n/17.28 24
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 27
- \TU/TimesNewRoman(0)/m/n/17.28 26
+ \TU/TimesNewRoman(0)/m/n/17.28 25
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 28
- \TU/TimesNewRoman(0)/m/n/17.28 29
+ \TU/TimesNewRoman(0)/m/n/17.28 28
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 29
- \TU/TimesNewRoman(0)/m/n/17.28 29
+ \TU/TimesNewRoman(0)/m/n/17.28 28
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 30
- \TU/TimesNewRoman(0)/m/n/17.28 29
+ \TU/TimesNewRoman(0)/m/n/17.28 28
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 31
- \TU/TimesNewRoman(0)/m/n/17.28 29
+ \TU/TimesNewRoman(0)/m/n/17.28 28
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 32
- \TU/TimesNewRoman(0)/m/n/17.28 30
+ \TU/TimesNewRoman(0)/m/n/17.28 29
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 33
- \TU/TimesNewRoman(0)/m/n/17.28 30
+ \TU/TimesNewRoman(0)/m/n/17.28 29
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 34
- \TU/TimesNewRoman(0)/m/n/17.28 31
+ \TU/TimesNewRoman(0)/m/n/17.28 30
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 35
- \TU/TimesNewRoman(0)/m/n/17.28 32
+ \TU/TimesNewRoman(0)/m/n/17.28 31
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 36
- \TU/TimesNewRoman(0)/m/n/17.28 32
+ \TU/TimesNewRoman(0)/m/n/17.28 31
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 37
- \TU/TimesNewRoman(0)/m/n/17.28 32
+ \TU/TimesNewRoman(0)/m/n/17.28 31
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 38
- \TU/TimesNewRoman(0)/m/n/17.28 32
+ \TU/TimesNewRoman(0)/m/n/17.28 31
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 39
- \TU/TimesNewRoman(0)/m/n/17.28 33
+ \TU/TimesNewRoman(0)/m/n/17.28 32
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 40
- \TU/TimesNewRoman(0)/m/n/17.28 33
+ \TU/TimesNewRoman(0)/m/n/17.28 32
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 41
- \TU/TimesNewRoman(0)/m/n/17.28 34
+ \TU/TimesNewRoman(0)/m/n/17.28 33
  []
 
 [5]
 Overfull \hbox (1.77997pt too wide) detected at line 42
- \TU/TimesNewRoman(0)/m/n/17.28 36
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 43
- \TU/TimesNewRoman(0)/m/n/17.28 36
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 44
- \TU/TimesNewRoman(0)/m/n/17.28 37
+ \TU/TimesNewRoman(0)/m/n/17.28 36
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 45
- \TU/TimesNewRoman(0)/m/n/17.28 39
+ \TU/TimesNewRoman(0)/m/n/17.28 38
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 46
- \TU/TimesNewRoman(0)/m/n/17.28 40
+ \TU/TimesNewRoman(0)/m/n/17.28 39
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 47
- \TU/TimesNewRoman(0)/m/n/17.28 44
+ \TU/TimesNewRoman(0)/m/n/17.28 43
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 48
- \TU/TimesNewRoman(0)/m/n/17.28 45
+ \TU/TimesNewRoman(0)/m/n/17.28 44
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 49
- \TU/TimesNewRoman(0)/m/n/17.28 45
+ \TU/TimesNewRoman(0)/m/n/17.28 44
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 50
- \TU/TimesNewRoman(0)/m/n/17.28 45
+ \TU/TimesNewRoman(0)/m/n/17.28 44
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 51
- \TU/TimesNewRoman(0)/m/n/17.28 47
+ \TU/TimesNewRoman(0)/m/n/17.28 46
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 52
- \TU/TimesNewRoman(0)/m/n/17.28 49
+ \TU/TimesNewRoman(0)/m/n/17.28 48
  []
 
 )
@@ -1157,94 +1183,94 @@ Overfull \hbox (0.363pt too wide) detected at line 11
 
 
 Overfull \hbox (0.363pt too wide) detected at line 12
- []\TU/lmr/m/n/17.28 23
+ []\TU/lmr/m/n/17.28 22
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 13
- []\TU/lmr/m/n/17.28 23
+ []\TU/lmr/m/n/17.28 22
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 14
- []\TU/lmr/m/n/17.28 27
+ []\TU/lmr/m/n/17.28 26
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 15
- []\TU/lmr/m/n/17.28 28
+ []\TU/lmr/m/n/17.28 27
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 18
- []\TU/lmr/m/n/17.28 30
+ []\TU/lmr/m/n/17.28 29
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 19
- []\TU/lmr/m/n/17.28 31
+ []\TU/lmr/m/n/17.28 30
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 20
- []\TU/lmr/m/n/17.28 31
+ []\TU/lmr/m/n/17.28 30
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 21
- []\TU/lmr/m/n/17.28 32
+ []\TU/lmr/m/n/17.28 31
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 22
- []\TU/lmr/m/n/17.28 33
+ []\TU/lmr/m/n/17.28 32
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 23
- []\TU/lmr/m/n/17.28 33
+ []\TU/lmr/m/n/17.28 32
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 24
- []\TU/lmr/m/n/17.28 33
+ []\TU/lmr/m/n/17.28 32
  []
 
 [7
 
 ]
 Overfull \hbox (0.363pt too wide) detected at line 25
- []\TU/lmr/m/n/17.28 34
+ []\TU/lmr/m/n/17.28 33
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 26
- []\TU/lmr/m/n/17.28 35
+ []\TU/lmr/m/n/17.28 34
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 27
- []\TU/lmr/m/n/17.28 35
+ []\TU/lmr/m/n/17.28 34
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 29
- []\TU/lmr/m/n/17.28 39
+ []\TU/lmr/m/n/17.28 38
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 30
- []\TU/lmr/m/n/17.28 43
+ []\TU/lmr/m/n/17.28 42
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 31
- []\TU/lmr/m/n/17.28 44
+ []\TU/lmr/m/n/17.28 43
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 34
- []\TU/lmr/m/n/17.28 47
+ []\TU/lmr/m/n/17.28 46
  []
 
 )
@@ -1267,8 +1293,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
 ] [2]
 Chapter 2.
-File: ./../images/兩層神經網路.png Graphic file (type bmp)
-<./../images/兩層神經網路.png>
+File: ./../images//兩層神經網路.png Graphic file (type bmp)
+<./../images//兩層神經網路.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
@@ -1348,8 +1374,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 299--301
 
  []
 
-File: ./../images/MSE.png Graphic file (type bmp)
-<./../images/MSE.png>
+File: ./../images//MSE.png Graphic file (type bmp)
+<./../images//MSE.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 310--325
 
@@ -1365,29 +1391,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 332--337
 
  []
 
-File: ./../images/Faces_of_Reinforcement_Learning.png Graphic file (type bmp)
-<./../images/Faces_of_Reinforcement_Learning.png>
+File: ./../images//Faces_of_Reinforcement_Learning.png Graphic file (type bmp)
+<./../images//Faces_of_Reinforcement_Learning.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
 [10]
-File: ./../images/The_Flow_of_Reinforcement_Learning.png Graphic file (type bmp
-)
-<./../images/The_Flow_of_Reinforcement_Learning.png>
+File: ./../images//The_Flow_of_Reinforcement_Learning.png Graphic file (type bm
+p)
+<./../images//The_Flow_of_Reinforcement_Learning.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 358--360
 
  []
 
-File: ./../images/The_entire_interaction_process.png Graphic file (type bmp)
-<./../images/The_entire_interaction_process.png>
+File: ./../images//The_entire_interaction_process.png Graphic file (type bmp)
+<./../images//The_entire_interaction_process.png>
 
 LaTeX Warning: Reference `整個互動過程' on page 11 undefined on input line 368.
 
-File: ./../images/agent.png Graphic file (type bmp)
-<./../images/agent.png>
+File: ./../images//agent.png Graphic file (type bmp)
+<./../images//agent.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 368--398
 
@@ -1403,23 +1429,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 450--453
 
  []
 
-File: ./../images/MRP.jpg Graphic file (type bmp)
-<./../images/MRP.jpg>
-File: ./../images/MDP.jpg Graphic file (type bmp)
-<./../images/MDP.jpg>
+File: ./../images//MRP.jpg Graphic file (type bmp)
+<./../images//MRP.jpg>
+File: ./../images//MDP.jpg Graphic file (type bmp)
+<./../images//MDP.jpg>
 
 Underfull \hbox (badness 10000) in paragraph at lines 465--466
 
  []
 
-File: ./../images/s_to _s.jpg Graphic file (type bmp)
-<./../images/s_to _s.jpg>
+File: ./../images//s_to _s.jpg Graphic file (type bmp)
+<./../images//s_to _s.jpg>
 [15]
-File: ./../images/Q_pi function.jpg Graphic file (type bmp)
-<./../images/Q_pi function.jpg>
+File: ./../images//Q_pi function.jpg Graphic file (type bmp)
+<./../images//Q_pi function.jpg>
  [16]
-File: ./../images/policy gradient原理 .png Graphic file (type bmp)
-<./../images/policy gradient原理 .png>
+
+! LaTeX Error: File `policy gradient原理 ' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.493 ...egraphics[width=15cm]{policy gradient原理 }
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS,.pz,.eps.Z,.ps.Z,.ps.gz,.eps.gz
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Missing character: There is no （ in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ） in font [lmroman12-regular]:mapping=tex-text;!
 
@@ -1437,21 +1476,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 526--530
 
  []
 
-[18]
+
 Underfull \hbox (badness 10000) in paragraph at lines 533--535
 
  []
 
-
-Overfull \hbox (119.48973pt too wide) in paragraph at lines 540--570
-\OT1/cmr/m/n/14 = [][] []\OMS/cmsy/m/n/14 r[]\OML/cmm/m/it/14 ^^Y[]\OT1/cmr/m/n
-/14 (\OML/cmm/m/it/14 a\OMS/cmsy/m/n/14 j\OML/cmm/m/it/14 s\OT1/cmr/m/n/14 )\OM
-L/cmm/m/it/14 Q[]\OT1/cmr/m/n/14 (\OML/cmm/m/it/14 s; a\OT1/cmr/m/n/14 ) + \OML
-/cmm/m/it/14 ^^Y[]\OT1/cmr/m/n/14 (\OML/cmm/m/it/14 a\OMS/cmsy/m/n/14 j\OML/cmm
-/m/it/14 s\OT1/cmr/m/n/14 )[][][]$ 
- []
-
-
+[18]
 Overfull \hbox (75.021pt too wide) in paragraph at lines 540--570
 \OT1/cmr/m/n/14 = [][] []\OMS/cmsy/m/n/14 r[]\OML/cmm/m/it/14 ^^Y[]\OT1/cmr/m/n
 /14 (\OML/cmm/m/it/14 a\OMS/cmsy/m/n/14 j\OML/cmm/m/it/14 s\OT1/cmr/m/n/14 )\OM
@@ -1482,7 +1512,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 571--576
 
  []
 
-[20]
+
 Underfull \hbox (badness 10000) in paragraph at lines 588--592
 
  []
@@ -1492,7 +1522,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 593--594
 
  []
 
-[21]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 611--612
 
  []
@@ -1507,80 +1537,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 614--615
 
  []
 
-[22]
-File: ./../images/network.png Graphic file (type bmp)
-<./../images/network.png>
+[21]
+File: ./../images//network.png Graphic file (type bmp)
+<./../images//network.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 628--630
 
  []
 
-File: ./../images/supervising_learning.png Graphic file (type bmp)
-<./../images/supervising_learning.png>
+File: ./../images//supervising_learning.png Graphic file (type bmp)
+<./../images//supervising_learning.png>
 
-Overfull \hbox (17.78455pt too wide) in paragraph at lines 635--636
+Overfull \hbox (18.08359pt too wide) in paragraph at lines 635--636
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--641
+Underfull \hbox (badness 10000) in paragraph at lines 640--642
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 644--645
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 642--643
+Underfull \hbox (badness 10000) in paragraph at lines 648--649
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--646
+Underfull \hbox (badness 10000) in paragraph at lines 649--652
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--648
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 649--650
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 650--653
+Underfull \hbox (badness 10000) in paragraph at lines 669--671
 
  []
 
+File: ./../images//gradient_change.png Graphic file (type bmp)
+<./../images//gradient_change.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 658--659
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+Underfull \hbox (badness 10000) in paragraph at lines 671--680
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 669--670
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 670--672
-
- []
-
-File: ./../images/gradient_change.png Graphic file (type bmp)
-<./../images/gradient_change.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 672--681
-
- []
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 685--687
+Underfull \hbox (badness 10000) in paragraph at lines 684--686
 
  []
 
@@ -1588,138 +1613,143 @@ Missing character: There is no （ in font [lmroman12-regular]:mapping=tex-text;
 Missing character: There is no ） in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no θ in font cmmi12!
 Missing character: There is no θ in font cmmi12!
-File: ./../images/figure.png Graphic file (type bmp)
-<./../images/figure.png>
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 696--697
+File: ./../images//figure.png Graphic file (type bmp)
+<./../images//figure.png>
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
 
  []
 
-[28]
+[27]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--701
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--704
+Underfull \hbox (badness 10000) in paragraph at lines 702--703
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--707
+Underfull \hbox (badness 10000) in paragraph at lines 704--706
 
  []
 
-[29
+[28
 
 ]
 Chapter 4.
-File: ./../images/model.png Graphic file (type bmp)
-<./../images/model.png>
+File: ./../images//model.png Graphic file (type bmp)
+<./../images//model.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--721
+Underfull \hbox (badness 10000) in paragraph at lines 719--720
 
  []
 
-File: ./../images/axialseat.png Graphic file (type bmp)
-<./../images/axialseat.png>
-File: ./../images/connectSeat.png Graphic file (type bmp)
-<./../images/connectSeat.png>
-[30
+File: ./../images//axialseat.png Graphic file (type bmp)
+<./../images//axialseat.png>
+File: ./../images//connectSeat.png Graphic file (type bmp)
+<./../images//connectSeat.png>
+[29
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
+Underfull \hbox (badness 10000) in paragraph at lines 736--737
 
  []
 
-File: ./../images/CoppeliaSim.png Graphic file (type bmp)
-<./../images/CoppeliaSim.png>
+File: ./../images//CoppeliaSim.png Graphic file (type bmp)
+<./../images//CoppeliaSim.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 746--747
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--749
+Underfull \hbox (badness 10000) in paragraph at lines 745--746
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
+
+ []
+
+File: ./../images//toolBar.png Graphic file (type bmp)
+<./../images//toolBar.png>
+File: ./../images//toolBar2.png Graphic file (type bmp)
+<./../images//toolBar2.png>
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 750--751
+File: ./../images//pythonCVlogo.png Graphic file (type bmp)
+<./../images//pythonCVlogo.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
 
  []
 
-File: ./../images/toolBar.png Graphic file (type bmp)
-<./../images/toolBar.png>
-File: ./../images/toolBar2.png Graphic file (type bmp)
-<./../images/toolBar2.png>
 [32]
-File: ./../images/pythonCVlogo.png Graphic file (type bmp)
-<./../images/pythonCVlogo.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 797--798
+Underfull \hbox (badness 10000) in paragraph at lines 799--801
 
  []
 
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 800--802
-
- []
-
-File: ./../images/HSV.png Graphic file (type bmp)
-<./../images/HSV.png>
-File: ./../images/origin.png Graphic file (type bmp)
-<./../images/origin.png>
-File: ./../images/filter.png Graphic file (type bmp)
-<./../images/filter.png>
-[34] [35]
+File: ./../images//HSV.png Graphic file (type bmp)
+<./../images//HSV.png>
+File: ./../images//origin.png Graphic file (type bmp)
+<./../images//origin.png>
+File: ./../images//filter.png Graphic file (type bmp)
+<./../images//filter.png>
+[33] [34]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 836--837
+Underfull \hbox (badness 10000) in paragraph at lines 835--836
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 838--839
+Underfull \hbox (badness 10000) in paragraph at lines 837--838
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 840--841
+Underfull \hbox (badness 10000) in paragraph at lines 839--840
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 842--843
+Underfull \hbox (badness 10000) in paragraph at lines 841--842
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 844--845
+Underfull \hbox (badness 10000) in paragraph at lines 843--844
 
  []
 
-[36
+[35
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 846--847
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 848--849
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 850--851
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 852--853
+Underfull \hbox (badness 10000) in paragraph at lines 851--852
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 855--856
 
  []
 
@@ -1728,123 +1758,111 @@ Underfull \hbox (badness 10000) in paragraph at lines 856--857
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 857--858
-
- []
-
-[37] [38]
-File: ./../images/clientProxy.jpeg Graphic file (type bmp)
-<./../images/clientProxy.jpeg>
- [39]
-Underfull \hbox (badness 10000) in paragraph at lines 888--889
+[36] [37]
+File: ./../images//clientProxy.jpeg Graphic file (type bmp)
+<./../images//clientProxy.jpeg>
+ [38]
+Underfull \hbox (badness 10000) in paragraph at lines 887--888
 
  []
 
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 934--935
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 933--934
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 936--937
+Underfull \hbox (badness 10000) in paragraph at lines 935--936
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 938--939
+Underfull \hbox (badness 10000) in paragraph at lines 937--938
 
  []
 
 
 LaTeX Font Warning: Font shape `TU/標楷體(0)/m/it' undefined
-(Font)              using `TU/標楷體(0)/m/n' instead on input line 943.
+(Font)              using `TU/標楷體(0)/m/n' instead on input line 942.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--950
+Underfull \hbox (badness 10000) in paragraph at lines 948--949
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 951--952
+Underfull \hbox (badness 10000) in paragraph at lines 950--951
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 964--966
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 965--967
+Underfull \hbox (badness 10000) in paragraph at lines 985--986
+
+ []
+
+File: ./../images//clientToflask.jpeg Graphic file (type bmp)
+<./../images//clientToflask.jpeg>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1002--1003
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 986--987
-
- []
-
-File: ./../images/clientToflask.jpeg Graphic file (type bmp)
-<./../images/clientToflask.jpeg>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1003--1004
-
- []
-
-[43]
-File: ./../images/total.jpeg Graphic file (type bmp)
-<./../images/total.jpeg>
- [44]
+File: ./../images//total.jpeg Graphic file (type bmp)
+<./../images//total.jpeg>
+ [43]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1014--1015
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
+Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
+Underfull \hbox (badness 10000) in paragraph at lines 1017--1018
 
  []
 
-[45
+[44
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1023--1025
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1024
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1026--1027
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
 
  []
 
-[46]
+[45]
 Chapter 7.
-File: ./../images/Q_dll.png Graphic file (type bmp)
-<./../images/Q_dll.png>
+File: ./../images//Q_dll.png Graphic file (type bmp)
+<./../images//Q_dll.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1039--1041
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1040
 
  []
 
-[47
+[46
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1042--1043
+Underfull \hbox (badness 10000) in paragraph at lines 1041--1042
 
  []
 
-[48] [49] [50]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1116.
- [51]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1116.
- (4072pj1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1116.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1116.
-
+[47] [48] [49] [50] (4072pj1.aux)
 Package rerunfilecheck Info: File `4072pj1.out' has not changed.
-(rerunfilecheck)             Checksum: BE62DCC671895E652011B27307AD76CC;3340.
+(rerunfilecheck)             Checksum: 7615C60C5229151315649409099614F0;4958.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1852,15 +1870,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1116.
  ) 
 Here is how much of TeX's memory you used:
- 20299 strings out of 414221
- 378113 string characters out of 2901377
- 890653 words of memory out of 3000000
- 37492 multiletter control sequences out of 15000+200000
- 552011 words of font info for 171 fonts, out of 3000000 for 9000
+ 20075 strings out of 412087
+ 373771 string characters out of 2846810
+ 936070 words of memory out of 3000000
+ 39372 multiletter control sequences out of 15000+200000
+ 423095 words of font info for 173 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 48i,9n,81p,677b,1161s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 79i,9n,85p,677b,1168s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 4072pj1.pdf (61 pages).
+Output written on 4072pj1.pdf (60 pages).
