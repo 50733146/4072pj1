@@ -4,15 +4,22 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces \Large 線性回歸\relax }}{9}{figure.caption.4}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces \Large 文氏圖\relax }}{10}{figure.caption.5}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces \Large RL 架構\relax }}{11}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces \Large 整個互動過程 \relax }}{12}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \Large 整個互動過程\relax }}{12}{figure.caption.7}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces \Large agent\relax }}{13}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces $v^{\pi }$程序圖\relax }}{16}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces $q^{\pi }$程序圖\relax }}{16}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \Large $v^{\pi }$程序圖\relax }}{16}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces \Large $q^{\pi }$程序圖\relax }}{16}{figure.caption.10}%
 \contentsline {figure}{\numberline {2.9}{\ignorespaces \Large Policy Gradient原理\relax }}{17}{figure.caption.11}%
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {2.10}{\ignorespaces 實際兩層神經網路\relax }}{22}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.11}{\ignorespaces 監督式學習\relax }}{22}{figure.caption.13}%
 \contentsline {figure}{\numberline {2.12}{\ignorespaces gradient change\relax }}{26}{figure.caption.14}%
 \contentsline {figure}{\numberline {2.13}{\ignorespaces 梯度變化\relax }}{27}{figure.caption.15}%
+=======
+\contentsline {figure}{\numberline {2.10}{\ignorespaces \Large 實際兩層神經網路\relax }}{23}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces \Large 監督式學習\relax }}{23}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces \Large Gradient change\relax }}{27}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces \Large 梯度變化\relax }}{28}{figure.caption.15}%
+>>>>>>> c4fd3095938824eefc63d4b482a68ce1494d3a61
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces \Large 組合圖\relax }}{29}{figure.caption.16}%
@@ -26,10 +33,23 @@
 \contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖\relax }}{34}{figure.caption.24}%
 \contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景\relax }}{34}{figure.caption.24}%
 \addvspace {10\p@ }
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy\relax }}{38}{figure.caption.25}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces \Large clientToflask\relax }}{42}{figure.caption.26}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total\relax }}{43}{figure.caption.27}%
+=======
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy\relax }}{39}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large ClientToflask\relax }}{43}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total\relax }}{44}{figure.caption.27}%
+>>>>>>> c4fd3095938824eefc63d4b482a68ce1494d3a61
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large Pygame模組編寫\relax }}{46}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \Large Pymunk模組編寫\relax }}{46}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程\relax }}{47}{figure.caption.30}%
 \addvspace {10\p@ }
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {7.1}{\ignorespaces 動態連結庫錯誤\relax }}{46}{figure.caption.28}%
+=======
+\contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 動態連結庫錯誤\relax }}{49}{figure.caption.31}%
+>>>>>>> c4fd3095938824eefc63d4b482a68ce1494d3a61
 \contentsfinish 

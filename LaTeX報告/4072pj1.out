@@ -19,6 +19,7 @@
 \BOOKMARK [2][-]{subsection.2.3.3}{Proof\040Policy\040Gradient\040Theorem}{section.2.3}% 19
 \BOOKMARK [2][-]{subsection.2.3.4}{Policy\040Gradient\040Theorem}{section.2.3}% 20
 \BOOKMARK [2][-]{subsection.2.3.5}{Actor\040Crtic}{section.2.3}% 21
+<<<<<<< HEAD
 \BOOKMARK [1][-]{section.2.4}{\376\377\230\136\171\136\175\223\175\262\215\357\116\055\137\067\123\026\133\170\177\322\166\204\141\311\165\050}{chapter.2}% 22
 \BOOKMARK [2][-]{subsection.2.4.1}{\376\377\166\343\167\143\137\017\133\170\177\322}{section.2.4}% 23
 \BOOKMARK [2][-]{subsection.2.4.2}{\376\377\134\015\145\170\134\016\145\170\142\200\135\347}{section.2.4}% 24
@@ -26,6 +27,15 @@
 \BOOKMARK [2][-]{subsection.2.4.4}{Score\040Functions}{section.2.4}% 26
 \BOOKMARK [2][-]{subsection.2.4.5}{Score\040Function\040Estimators}{section.2.4}% 27
 \BOOKMARK [0][-]{chapter.3}{\376\377\212\023\175\364\164\260\130\203}{}% 28
+=======
+\BOOKMARK [1][-]{section.2.4}{類神經網路中強化學習的應用}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.4.1}{監督式學習}{section.2.4}% 23
+\BOOKMARK [2][-]{subsection.2.4.2}{對數導數技巧}{section.2.4}% 24
+\BOOKMARK [2][-]{subsection.2.4.3}{為什麼選擇Score function 算法}{section.2.4}% 25
+\BOOKMARK [2][-]{subsection.2.4.4}{Score\040Functions}{section.2.4}% 26
+\BOOKMARK [2][-]{subsection.2.4.5}{Score\040Function\040Estimators}{section.2.4}% 27
+\BOOKMARK [0][-]{chapter.3}{訓練環境}{}% 28
+>>>>>>> c4fd3095938824eefc63d4b482a68ce1494d3a61
 \BOOKMARK [1][-]{section.3.1}{OpenAI\040Gym}{chapter.3}% 29
 \BOOKMARK [1][-]{section.3.2}{Pong}{chapter.3}% 30
 \BOOKMARK [1][-]{section.3.3}{Pong\040from\040pixels}{chapter.3}% 31
