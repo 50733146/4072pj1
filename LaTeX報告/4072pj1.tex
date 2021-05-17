@@ -1010,36 +1010,88 @@ wsgi-file = location/to/file
 
 \chapter{機器學習的訓練與模擬控制結果}
 \section{訓練模型的選用}
- 利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用pygame模組來撰寫pong game的訓練環境，撰寫pong game的初期還算順利，但在基本功能編寫告一段落後，發現pygame缺少物理引擎，造成在對打的時候出現特定角度碰撞時，擊錘與球的碰撞沒有反應的情況。為了解決pygame碰撞問題，做了幾種嘗試：修改pygame的碰撞定義，但會因為擊球時球速過快而超出碰撞偵測、碰撞角度的問題而失效，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等偵測或設定。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。\\
- 
- Open AI Gym裡面有十幾種訓練模型的環境，提供機器學習做訓練的環境。由於我們的訓練模型是pong game，在Gym模組裡面剛好有訓練模型，因此使用Gym模組相對於使用pygame和pymunk的搭配來的方便，而且後續要在CoppeliaSim模擬環境模擬時也有套件可搭配使用，可簡化功能和訓練時所需的環境模型和訓練功能的程式編寫。\\
+ 利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用Pygame模組來撰寫pong game的訓練環境，開始學習並了解Pygame的一些運用，嘗試建構出pong game場景(圖.\ref{fig.pong_pygame})，在基本功能編寫告一段落後，測試程式漏洞，發現對打時特定角度碰撞，球會超過擊錘的碰撞感測，導致出現球擊穿擊錘的現象。為了解決Pygame碰撞問題，做了幾種嘗試：修改Pygame的碰撞定義，更換碰撞感測的感測方式，問題依舊沒有顯著的改善，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用(圖.\ref{fig.airhockey_pymunk})，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等可以個別設定和調用。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=12cm]{pong_pygame}
+\caption{\Large Pygame模組編寫}
+\label{fig.pong_pygame}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=12cm]{airhockey_pymunk}
+\caption{\Large Pymunk模組編寫}
+\label{fig.airhockey_pymunk}
+\end{center}
+\end{figure}
+ \newpage %圖片空隙勿刪
+ Open AI Gym裡面有十幾種訓練模型的環境，提供機器學習做訓練的環境。由於我們的訓練模型是pong game，在Gym模組裡面剛好有訓練模型，因此使用Gym模組相對於使用Pygame和pymunk的搭配來的方便，而且後續要在CoppeliaSim模擬環境模擬時也有套件可搭配使用，可簡化功能和訓練時所需的環境模型和訓練功能的程式編寫，另一方面自寫場景需要測試場景的漏洞，使用Gym可以節省檢查場景漏洞和修正的時間。\\
 \section{訓練程式的運作}
  由於機器學習和影像處理需要大量的運算矩陣運算，因此如果只單獨透過Python本身運算比編譯語言執行的速度來的慢，所以使用Numpy程式庫來解決在Python環境矩陣運算速度慢的問題，以提升訓練機器學習時的運算效率。pickle是Python內部的序列化方式，主要是當機器學習訓練時可能因為一些原因需要暫時停止訓練，但為了讓已經停下的訓練再次重啟就需要透過pickle序列化的方式，將暫停前的訓練權重值透過pickle將其記錄下來，當訓練再次重啟時就可透過pickle.load讀取先前紀錄的pickle檔案就可回到當時暫停的狀態下繼續進行訓練。\\
  
- 機器學習所運用的架構是強化學習並搭配神經網路來訓練機器學習，結合了強化學習不需要事先收集訓練資料、不需要特別教導，以及神經網路的非線性激活函數的計算和參數的記憶性。
- %在python環境下，結合numpy和gym的模擬環境編寫程式，選擇numpy作為運算工具是因為它比Tensorflow之類的程式庫更具彈性，編寫公式較為方便，而gym的設計讓我們能方便的控制右邊的擊錘板。首先擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，讓agent判斷是要往上還是下，經過Score Function計算出的對數機率當作輸入，第二透過前饋：計算W1權重與W2權重的互動結果及擊錘移動的機率，W1權重是計算畫面差異下環境的狀態，W2權重則是經過啟動函數(activation function)得出擊錘移動向下或上的機率。第三得到機率後，agent會透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，也就是採取機率較大的方向移動。第四決定行動後會產生獎懲，獎懲機制是，如果agent碰到球並越過敵方就會得到好的獎勵，沒有打到球的agent會得到懲罰，最後產生的獎懲會送往反饋機制，取樣採取行動的機率，讓獎勵變為1，懲罰變為0，返回原輸入，達到學習效果，隨著agent經驗的增加，會越打越聰明，贏的機率就越高，由此訓練出聰明的AI，經過數萬次的訓練，計算discount reward及獎勵的加總，得出的數值會越來越大，我們小組的測試，往後不管狀況是如何，基本上都會贏過敵方拿下分數。
+ 機器學習所運用的架構是強化學習並搭配神經網路來訓練機器學習，結合了強化學習不需要事先收集訓練資料、不需要特別教導，以及神經網路的非線性激活函數的計算和參數的記憶性。\\
+%在python環境下，結合numpy和gym的模擬環境編寫程式，選擇numpy作為運算工具是因為它比Tensorflow之類的程式庫更具彈性，編寫公式較為方便，而gym的設計讓我們能方便的控制右邊的擊錘板。首先擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，讓agent判斷是要往上還是下，經過Score Function計算出的對數機率當作輸入，第二透過前饋：計算W1權重與W2權重的互動結果及擊錘移動的機率，W1權重是計算畫面差異下環境的狀態，W2權重則是經過啟動函數(activation function)得出擊錘移動向下或上的機率。第三得到機率後，agent會透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，也就是採取機率較大的方向移動。第四決定行動後會產生獎懲，獎懲機制是，如果agent碰到球並越過敵方就會得到好的獎勵，沒有打到球的agent會得到懲罰，最後產生的獎懲會送往反饋機制，取樣採取行動的機率，讓獎勵變為1，懲罰變為0，返回原輸入，達到學習效果，隨著agent經驗的增加，會越打越聰明，贏的機率就越高，由此訓練出聰明的AI，經過數萬次的訓練，計算discount reward及獎勵的加總，得出的數值會越來越大，我們小組的測試，往後不管狀況是如何，基本上都會贏過敵方拿下分數。
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{強化學習訓練流程}
+\caption{\Large 強化學習訓練流程}
+\label{fig.強化學習程式流程}
+\end{center}
+\end{figure}
+%-----------------------------%
 
-程式訓練流程：\\
+%=---------圖片空隙勿刪--------=%
+%-----------------------------%
+程式訓練流程(圖.\ref{fig.強化學習程式流程})：\\
  擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
 
- 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、\\
+ 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、RMSprop優化率減因子和反饋(back propagation)，當訓練次數到達指定次數會以pickle做紀錄，存下的數據可再次導入模型進行實際運用，或是當程式中斷後可重新匯入進行訓練。\\
 
 \newpage
 \chapter{問題與討論}
-Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll
+\hspace{-1.7em} Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{Q_dll}
-\caption{動態連結庫錯誤}
+\caption{\Large 動態連結庫錯誤}
 \label{fig.動態連結庫錯誤}
 \end{center}
 \end{figure}
 
-A：此問題尚未找到解決方法。\\
-Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
+\hspace{-1.7em} A：此問題尚未找到解決方法。\\
 
-A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
-\begin{lstlisting}[caption=MathJax 程式碼]
+\hspace{-1.7em} Q：運用gym.wrappers.Monitor透過ffmpeg進行錄影，紀錄下訓練影像。但記錄後的影像資料皆為1KB，並且無法開啟。(圖.\ref{fig.ffmpeg_mp4})\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{ffmpeg_mp4}
+\caption{\Large 錄製後，影片無法開啟}
+\label{fig.ffmpeg_mp4}
+\end{center}
+\end{figure}
+
+\hspace{-1.7em} A：修改gym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video_recorder})，將303行的縮排修正(從if階層上移到def的階層)即可(圖.)。\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{video_recorder}
+\caption{\Large 原始設定}
+\label{fig.video_recorder}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{修正video_recorder}
+\caption{\Large 修正後設定}
+\label{fig.修正video_recorder}
+\end{center}
+\end{figure}
+
+\hspace{-1.7em} Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
+
+\hspace{-1.7em} A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
+\begin{lstlisting}[caption=\Large\sectionef MathJax 程式碼]
 <script>
   MathJax = {
     tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
@@ -1069,6 +1121,8 @@ A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
 \LARGE\textbf 作者簡介\\
 \end{center}
 \newpage
+%=----------------書背----------------------=%
+\pagestyle{empty}%設定沒有頁眉和頁腳
 \begin{center}
 \fontsize{0.001pt}{1pt}\selectfont .\\
 \vspace{4em}

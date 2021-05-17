@@ -15,47 +15,14 @@
 \contentsline {subsection}{\numberline {2.2.1}馬可夫決策}{13}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}Policy Gradient}{17}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Mokov chain}{18}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}為什麼不用value-base而是policy-base}{18}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Proof Policy Gradient Theorem}{18}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.2}為什麼不用value-base而是policy-base}{19}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Proof Policy Gradient Theorem}{19}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Policy Gradient Theorem}{20}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Actor Crtic}{21}{subsection.2.3.5}%
-<<<<<<< HEAD
-\contentsline {section}{\numberline {2.4}類神經網路中強化學習的應用}{22}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}監督式學習}{22}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}對數導數技巧}{23}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}為什麼選擇score function 算法}{23}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Score Functions}{24}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Score Function Estimators}{25}{subsection.2.4.5}%
-\contentsline {chapter}{\numberline {3}訓練環境}{28}{chapter.3}%
-\contentsline {section}{\numberline {3.1}OpenAI Gym}{28}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Pong}{28}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Pong from pixels}{28}{section.3.3}%
-\contentsline {chapter}{\numberline {4}模擬環境}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}模擬模型}{29}{section.4.1}%
-\contentsline {section}{\numberline {4.2}CoppeliaSim模擬}{30}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}使用原因}{31}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}RemoteAPI}{31}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}PyRep}{31}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}模擬}{31}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}影像處理}{32}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}CoppeliaSim中的Vision sensor(視覺傳感器)}{32}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}影像辨識}{33}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}伺服器}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Ubuntu 環境配置}{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{36}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Web server}{38}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Nginx}{39}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Flask}{43}{section.5.5}%
-\contentsline {chapter}{\numberline {6}機器學習的訓練與模擬控制結果}{44}{chapter.6}%
-\contentsline {section}{\numberline {6.1}訓練模型的選用}{44}{section.6.1}%
-\contentsline {section}{\numberline {6.2}訓練程式的運作}{44}{section.6.2}%
-\contentsline {chapter}{\numberline {7}問題與討論}{46}{chapter.7}%
-\contentsline {chapter}{參考文獻 }{48}{lstnumber.7.1.8}%
-=======
+\contentsline {subsection}{\numberline {2.3.5}Actor Critic}{21}{subsection.2.3.5}%
 \contentsline {section}{\numberline {2.4}類神經網路中強化學習的應用}{23}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}監督式學習}{23}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}對數導數技巧}{24}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}為什麼選擇Score function 算法}{24}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.3}為什麼選擇score function 算法}{24}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Score Functions}{25}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Score Function Estimators}{26}{subsection.2.4.5}%
 \contentsline {chapter}{\numberline {3}訓練環境}{29}{chapter.3}%
@@ -82,6 +49,5 @@
 \contentsline {section}{\numberline {6.1}訓練模型的選用}{45}{section.6.1}%
 \contentsline {section}{\numberline {6.2}訓練程式的運作}{47}{section.6.2}%
 \contentsline {chapter}{\numberline {7}問題與討論}{49}{chapter.7}%
-\contentsline {chapter}{參考文獻 }{51}{lstnumber.7.1.8}%
->>>>>>> c4fd3095938824eefc63d4b482a68ce1494d3a61
+\contentsline {chapter}{參考文獻 }{52}{lstnumber.7.1.8}%
 \contentsfinish 
