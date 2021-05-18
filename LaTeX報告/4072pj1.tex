@@ -1011,7 +1011,7 @@ wsgi-file = location/to/file
 
 \chapter{機器學習的訓練與模擬控制結果}
 \section{訓練模型的基礎概念}
- 訓練模型是由實體的冰球機的機電系統簡化而來，
+ 訓練模型的原型是實體冰球機的機電系統，由於要訓練強化學習，所以需要將模型簡化至最簡潔的方式進行訓練，並取Open AI Gym的環境當作最簡化的訓練模型。由於強化學習是一種最佳化控制的方式，因此將Gym的Pong畫面當作輸入，輸出為擊錘移動方向，藉由調整當中的權重、偏差等參數，將參數調配到最優狀態。將可行的訓練方式套用到CoppeliaSim進行虛擬環境的訓練，並且可將訓練結果套用到實機進行運用。\\
 \section{訓練模型的選用}
  利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用Pygame模組來撰寫pong game的訓練環境，開始學習並了解Pygame的一些運用，嘗試建構出pong game場景(圖.\ref{fig.pong_pygame})，在基本功能編寫告一段落後，測試程式漏洞，發現對打時特定角度碰撞，球會超過擊錘的碰撞感測，導致出現球擊穿擊錘的現象。為了解決Pygame碰撞問題，做了幾種嘗試：修改Pygame的碰撞定義，更換碰撞感測的感測方式，問題依舊沒有顯著的改善，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用(圖.\ref{fig.airhockey_pymunk})，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等可以個別設定和調用。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。\\
 \begin{figure}[hbt!]
@@ -1072,7 +1072,6 @@ A：此問題尚未找到解決方法。\\
 \label{fig.Q_ffmpeg}
 \end{center}
 \end{figure}
-
 \hspace{-1.7em}A：需要在作業系統中安裝ffmpeg：
 \begin{enumerate}
 \item 下載、解壓縮\\
@@ -1082,7 +1081,7 @@ A：此問題尚未找到解決方法。\\
 \end{enumerate}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{Q_ffmpeg-2}
+\includegraphics[width=10cm]{Q_ffmpeg-2}
 \caption{\Large 進階系統設定}
 \label{fig.Q_ffmpeg-2}
 \end{center}
@@ -1090,7 +1089,7 @@ A：此問題尚未找到解決方法。\\
 
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{Q_ffmpeg-3}
+\includegraphics[width=10cm]{Q_ffmpeg-3}
 \caption{\Large 環境變數}
 \label{fig.Q_ffmpeg-3}
 \end{center}
@@ -1099,7 +1098,7 @@ A：此問題尚未找到解決方法。\\
 
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{Q_ffmpeg-4}
+\includegraphics[width=10cm]{Q_ffmpeg-4}
 \caption{\Large 編輯環境變數}
 \label{fig.Q_ffmpeg-4}
 \end{center}
@@ -1110,7 +1109,7 @@ A：此問題尚未找到解決方法。\\
 開啟命令字元(win+R，輸入"cmd")，執行"ffmpeg"(圖.\ref{fig.Q_ffmpeg-5})\\
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{Q_ffmpeg-5}
+\includegraphics[width=10cm]{Q_ffmpeg-5}
 \caption{\Large ffmpeg成功執行}
 \label{fig.Q_ffmpeg-5}
 \end{center}
@@ -1125,7 +1124,7 @@ A：此問題尚未找到解決方法。\\
 \label{fig.ffmpeg_mp4}
 \end{center}
 \end{figure}
-\hspace{-1.7em} A：修改gym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video_recorder})，將303行的縮排修正(從if階層上移到def的階層)即可(圖.)。\\
+A：修改gym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video_recorder})，將303行的縮排修正(從if階層上移到def的階層)即可(圖.)。\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{video_recorder}

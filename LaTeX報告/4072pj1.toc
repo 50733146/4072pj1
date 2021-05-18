@@ -50,5 +50,5 @@
 \contentsline {section}{\numberline {6.2}訓練模型的選用}{45}{section.6.2}%
 \contentsline {section}{\numberline {6.3}訓練程式的運作}{47}{section.6.3}%
 \contentsline {chapter}{\numberline {7}問題與討論}{49}{chapter.7}%
-\contentsline {chapter}{參考文獻 }{53}{lstnumber.7.1.8}%
+\contentsline {chapter}{參考文獻 }{55}{lstnumber.7.1.8}%
 \contentsfinish 
