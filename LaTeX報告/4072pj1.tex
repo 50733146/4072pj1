@@ -1,11 +1,11 @@
 \documentclass[14pt,a4paper]{report}  %紙張設定
 \usepackage{xeCJK}%中文字體模組
-\setCJKmainfont{標楷體} %中文字體
+\setCJKmainfont{標楷體} %設定中文字體
 \newfontfamily\sectionef{Times New Roman}%設定英文字體
 \usepackage{enumerate}
 \usepackage{amsmath,amssymb}%數學公式、符號
 \usepackage{amsfonts} %數學簍空的英文字
-\usepackage{graphicx, subfig}%圖形
+\usepackage{graphicx, subfigure}%圖形
 \usepackage{fontawesome5} %引用icon
 \usepackage{type1cm} %調整字體絕對大小
 \usepackage{textpos} %設定文字絕對位置
@@ -24,19 +24,16 @@ left=3truecm,right=2.5truecm]{geometry}
 \usepackage{setspace}
 \usepackage{lscape}%設定橫式
 \lstset{language=Python, %設定語言
-		basicstyle=\footnotesize, 
-		frame=lines,
-		caption={Python code}, %設定capion
-		%label={code.} %設定label
+		basicstyle=\fontsize{10pt}{2pt}\selectfont, %設定程式內文字體大小
+		frame=lines,	%設定程式框架為線
 }
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
-\captionsetup[figure]{name= \Large 圖.} %更改圖片標題名稱
-\renewcommand{\lstlistingname}{程式.} %設定程式標示名稱
+\renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
+\renewcommand{\lstlistingname}{\Large 程式.} %設定程式標示名稱
 \hoffset=-5mm %調整左右邊界
 \voffset=-8mm %調整上下邊界
 \setlength{\parindent}{2em}%設定首行行距縮排
-
  %=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
 \titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{0.5em}{}[]
@@ -190,8 +187,7 @@ Application of reinforcement
 %=------------------圖表目錄產生----------------------=%
 \renewcommand{\listfigurename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{圖\quad 表\quad 目\quad 錄 }}}
 \listoffigures
-%\renewcommand{\numberline}[1]{{\loflabel~#1\hspace*{1em}}}
-%\newcommand{\loflabel}{圖}
+\newcommand{\captioname}{圖}
 \newpage
 \end{center}
 %=-------------------------內容----------------------=%
@@ -205,22 +201,24 @@ Application of reinforcement
 
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=5cm]{冰球機}
+\subfigure{
+\begin{minipage}[t]{0.3\linewidth}  %設定圖片間距
+\includegraphics[width=4.5cm]{冰球機}
 \caption{\Large 實體的冰球機}\label{fig.冰球機}
-\end{center}
-\end{figure}
-
-\begin{figure}[hbt!]
-\begin{center}
-\includegraphics[width=5cm]{origin}
+\end{minipage}
+}
+\subfigure{
+\begin{minipage}[t]{0.3\linewidth}
+\includegraphics[width=4cm]{origin}
 \caption{\Large 虛擬環境簡化後的冰球機}\label{fig.模擬冰球機}
-\end{center}
-
-\end{figure}
- \begin{figure}[hbt!]
-\begin{center}
-\includegraphics[width=5cm]{pong_gym}
+\end{minipage}
+}
+\subfigure{
+\begin{minipage}[t]{0.3\linewidth} 
+\includegraphics[width=5.5cm]{pong_gym}
 \caption{\Large Gym的Pong game}\label{fig.pong_gym}
+\end{minipage}
+}
 \end{center}
 \end{figure}
 \newpage
@@ -1082,9 +1080,9 @@ wsgi-file = location/to/file
 \label{fig.動態連結庫錯誤}
 \end{center}
 \end{figure}
-A：此問題尚未找到解決方法。\\
-
-\hspace{-1.7em} Q：錄製訓練過程的程式讀不到ffmpeg(圖.\ref{fig.Q_ffmpeg})。\\
+\newpage
+\hspace{-1.4em}A：此問題尚未找到解決方法。\\
+Q：錄製訓練過程的程式讀不到ffmpeg(圖.\ref{fig.Q_ffmpeg})。\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{Q_ffmpeg}
@@ -1092,7 +1090,8 @@ A：此問題尚未找到解決方法。\\
 \label{fig.Q_ffmpeg}
 \end{center}
 \end{figure}
-\hspace{-1.7em}A：需要在作業系統中安裝ffmpeg：
+\\
+A：需要在作業系統中安裝ffmpeg：
 \begin{enumerate}
 \item 下載、解壓縮\\
 先到官網 \href{https://ffmpeg.org/download.html}{https://ffmpeg.org/download.html} 下載" \href{https://www.gyan.dev/ffmpeg/builds/}{Windows builds from gyan.dev} "，下載 \href{https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z}{https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z} ，解壓縮重新命名成"ffmpeg"並放到C槽目錄下(C:$\setminus$ffmpeg)。
@@ -1106,7 +1105,7 @@ A：此問題尚未找到解決方法。\\
 \label{fig.Q_ffmpeg-2}
 \end{center}
 \end{figure}
-
+\fontsize{0.001pt}{1pt}\selectfont .\\ %圖片間距勿刪
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=10cm]{Q_ffmpeg-3}
@@ -1114,28 +1113,33 @@ A：此問題尚未找到解決方法。\\
 \label{fig.Q_ffmpeg-3}
 \end{center}
 \end{figure}
-
-
+\fontsize{0.001pt}{1pt}\selectfont .\\ %圖片間距勿刪
+\newpage
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=10cm]{Q_ffmpeg-4}
+\includegraphics[width=15cm]{Q_ffmpeg-4}
 \caption{\Large 編輯環境變數}
 \label{fig.Q_ffmpeg-4}
 \end{center}
 \end{figure}
+\fontsize{0.001pt}{1pt}\selectfont .\\ %圖片間距勿刪
+
+\newpage %圖片間距勿刪
+\fontsize{14pt}{28pt}\selectfont
 
 \begin{itemize}
 \item 測試\\
 開啟命令字元(win+R，輸入"cmd")，執行"ffmpeg"(圖.\ref{fig.Q_ffmpeg-5})\\
+
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=10cm]{Q_ffmpeg-5}
+\includegraphics[width=15cm]{Q_ffmpeg-5}
 \caption{\Large ffmpeg成功執行}
 \label{fig.Q_ffmpeg-5}
 \end{center}
 \end{figure}
 \end{itemize}
-
+\newpage%圖片間距勿刪
 \hspace{-1.7em} Q：運用gym.wrappers.Monitor透過ffmpeg進行錄影，紀錄下訓練影像。但記錄後的影像資料皆為1KB，並且無法開啟。(圖.\ref{fig.ffmpeg_mp4})\\
 \begin{figure}[hbt!]
 \begin{center}
@@ -1144,7 +1148,10 @@ A：此問題尚未找到解決方法。\\
 \label{fig.ffmpeg_mp4}
 \end{center}
 \end{figure}
-A：修改gym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video_recorder})，將303行的縮排修正(從if階層上移到def的階層)即可(圖.)。\\
+\\%圖片間距勿刪
+
+%圖片間距勿刪
+A：修改g ym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video_recorder})，將303行的縮排修正(從if階層上移到def的階層)即可(圖.)。\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{video_recorder}
@@ -1160,6 +1167,7 @@ A：修改gym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video
 \label{fig.修正video_recorder}
 \end{center}
 \end{figure}
+\newpage %圖片間距勿刪
 
 \hspace{-1.7em} Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
 \hspace{-1.7em} A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
@@ -1189,9 +1197,116 @@ A：修改gym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video
 \end{Large}
 \end{flushleft}
 \newpage
-\begin{center}
-\LARGE\textbf 作者簡介\\
-\end{center}
+%=-------------作者簡介-----------------=%也是抄的
+    \begin{center}
+	\fontsize{20pt}{0em}\selectfont \bf{作者簡介}\\
+	\end{center}
+	
+	{\begin{textblock}{6}(0,0.5)
+	\begin{figure}
+	\includegraphics[width=1.15in]{40723110.jpg} 
+	\end{figure}
+	\end{textblock}}
+	{\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+	{\begin{textblock}{15}(3.5,0.7)%{寬度}(以左上角為原點之右移量,下移量)
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{李正揚}\\     \hspace*{\fill} \\
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723110} \\ %\makebox為文本盒子
+    \hspace*{\fill} \\
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+    \fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+    \hspace*{\fill} \\
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    \hspace*{\fill} \\
+
+	{\begin{textblock}{6}(0,2.3)
+	\begin{figure}
+	\includegraphics[width=1.15in]{40723115.jpg} 
+    \end{figure}
+    \end{textblock}}
+    {\renewcommand\baselinestretch{0.99}
+    \selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,2.5) %{寬度}(以左上角為原點之右移量,下移量)
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{林于哲}\\ 
+\hspace*{\fill} \\
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723115} \\ 
+\hspace*{\fill} \\
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+\hspace*{\fill} \\
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    \hspace*{\fill} \\
+
+
+    {\begin{textblock}{6}(0,4.1)
+    \begin{figure}
+        \includegraphics[width=1.15in]{40723138.jpg} 
+    \end{figure}
+    \end{textblock}}
+    {\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,4.3) %{寬度}(以左上角為原點之右移量,下移量)
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace%\noindent指定首行不進行縮排
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{黃奕慶}\\ 
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723138} \\ %\makebox為文本盒子
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    \hspace*{\fill} \\
+
+    {\begin{textblock}{6}(0,5.9)
+    \begin{figure}
+        \includegraphics[width=1.15in]{40723148.jpg} %{}內是圖片文件的相對路徑
+    \end{figure}
+    \end{textblock}}
+    {\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,6.1) %{寬度}(以左上角為原點之右移量,下移量)
+\noindent\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{鄭博鴻}\\ \hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723153} \\ \hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    \hspace*{\fill} \\
+
+    {\begin{textblock}{6}(0,7.7)
+    \begin{figure}
+        \includegraphics[width=1.15in]{40723150.jpg} %{}內是圖片文件的相對路徑
+    \end{figure}
+    \end{textblock}}
+    \renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,7.9) %{寬度}(以左上角為原點之右移量,下移量)
+	\noindent\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{簡國龍}\\ \hspace*{\fill} \\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723150} \\ \hspace*{\fill} \\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+	\hspace*{\fill} \\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}
 \newpage
 %=----------------書背----------------------=%
 \pagestyle{empty}%設定沒有頁眉和頁腳
@@ -1199,7 +1314,7 @@ A：修改gym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video
 \fontsize{0.001pt}{1pt}\selectfont .\\
 \vspace{4em}
 \fontsize{30pt}{30pt}\selectfont 【13】 \\
-\fontsize{20pt}{40pt}\selectfont
+\fontsize{20pt}{20pt}\selectfont
 \vspace{0.5em}
 分\\
 類\\
