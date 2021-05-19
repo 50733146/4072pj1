@@ -1,46 +1,49 @@
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces \Large 實體的冰球機\relax }}{1}{figure.caption.3}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces \Large 虛擬環境簡化後的冰球機\relax }}{2}{figure.caption.4}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces \Large Gym的Pong game\relax }}{2}{figure.caption.5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces \Large 兩層神經網路\relax }}{3}{figure.caption.3}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \Large 線性回歸\relax }}{9}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \Large 文氏圖\relax }}{10}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces \Large RL 架構\relax }}{11}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces \Large 整個互動過程 \relax }}{12}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces \Large agent\relax }}{13}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces $v^{\pi }$程序圖\relax }}{16}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces $q^{\pi }$程序圖\relax }}{16}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces \Large Policy Gradient原理\relax }}{17}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces 實際兩層神經網路\relax }}{23}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces 監督式學習\relax }}{23}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces 梯度變化\relax }}{27}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Score Function可視圖\relax }}{28}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \Large 兩層神經網路\relax }}{4}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \Large 線性回歸\relax }}{10}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \Large 文氏圖\relax }}{11}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \Large RL 架構\relax }}{12}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \Large 整個互動過程 \relax }}{13}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces \Large agent\relax }}{14}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces $v^{\pi }$程序圖\relax }}{17}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces $q^{\pi }$程序圖\relax }}{17}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces \Large Policy Gradient原理\relax }}{18}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces 實際兩層神經網路\relax }}{24}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces 監督式學習\relax }}{24}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces 梯度變化\relax }}{28}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Score Function可視圖\relax }}{29}{figure.caption.18}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \Large 組合圖\relax }}{30}{figure.caption.16}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \Large Y軸皮帶固定座\relax }}{31}{figure.caption.17}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \Large 連結固定座\relax }}{31}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces \Large CoppeliaSim Logo\relax }}{32}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces \Large CoppeliaSim 工具列\relax }}{33}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces \Large CoppeliaSim 工具列(續)\relax }}{33}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces \Large OpenCV 及Python logo\relax }}{33}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces \Large HSV色彩空間\relax }}{34}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖\relax }}{35}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景\relax }}{35}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \Large 組合圖\relax }}{31}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \Large Y軸皮帶固定座\relax }}{32}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \Large 連結固定座\relax }}{32}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \Large CoppeliaSim Logo\relax }}{33}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \Large CoppeliaSim 工具列\relax }}{34}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \Large CoppeliaSim 工具列(續)\relax }}{34}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \Large OpenCV 及Python logo\relax }}{34}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \Large HSV色彩空間\relax }}{35}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖\relax }}{36}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景\relax }}{36}{figure.caption.27}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy\relax }}{39}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large clientToflask\relax }}{43}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total\relax }}{44}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy\relax }}{40}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large clientToflask\relax }}{44}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total\relax }}{45}{figure.caption.30}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large Pygame模組編寫\relax }}{46}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces \Large Pymunk模組編寫\relax }}{46}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程\relax }}{48}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large Pygame模組編寫\relax }}{47}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \Large Pymunk模組編寫\relax }}{47}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程\relax }}{49}{figure.caption.33}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 動態連結庫錯誤\relax }}{49}{figure.caption.31}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces \Large 程式讀不到ffmpeg\relax }}{50}{figure.caption.32}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces \Large 進階系統設定\relax }}{51}{figure.caption.33}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces \Large 環境變數\relax }}{51}{figure.caption.34}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces \Large 編輯環境變數\relax }}{52}{figure.caption.35}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces \Large ffmpeg成功執行\relax }}{52}{figure.caption.36}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces \Large 錄製後，影片無法開啟\relax }}{53}{figure.caption.37}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces \Large 原始設定\relax }}{53}{figure.caption.38}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces \Large 修正後設定\relax }}{53}{figure.caption.39}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 動態連結庫錯誤\relax }}{50}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces \Large 程式讀不到ffmpeg\relax }}{51}{figure.caption.35}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces \Large 進階系統設定\relax }}{52}{figure.caption.36}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces \Large 環境變數\relax }}{52}{figure.caption.37}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces \Large 編輯環境變數\relax }}{53}{figure.caption.38}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces \Large ffmpeg成功執行\relax }}{53}{figure.caption.39}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces \Large 錄製後，影片無法開啟\relax }}{54}{figure.caption.40}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces \Large 原始設定\relax }}{54}{figure.caption.41}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces \Large 修正後設定\relax }}{54}{figure.caption.42}%
 \contentsfinish 

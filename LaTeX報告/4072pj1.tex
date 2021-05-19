@@ -201,9 +201,29 @@ Application of reinforcement
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
 \section{研究動機}
- 機器學習與各領域結合的應用越來越廣泛，因此結合了機電系統，機器學習的算法採用強化學習演算法。由於強化學習是一種使自動化控制系統最優化的機器學習方法，並以實體的冰球機為範例，將冰球機的機電系統進行強化學習訓練，進而驗證強化學習對於自動化控制系統的優化程度。
-% 電腦科學對於機器學習的依賴越來越重要，自動微分的發展使得完全自動化計算導數的艱鉅工作成為了可能，這使得運用不同的機器學習方法進行實驗變得非常容易，同時仍然允許基於梯度的優化，達到最佳化，利用冰球機的機電系統如圖(圖.\ref{兩層神經網路})，為了解決人機對打與實際硬體所遇到的困境，故作為模擬的目標如圖(圖.\ref{兩層神經網路})，結合類神經網路與強化學習訓練，迅速達到控制的最佳化，減少實際機體成本，進而驗證機器學習對於機電系統的優化能力。
- 
+ 機器學習與各領域結合的應用越來越廣泛，在機電系統採用強化學習是為了讓機電系統的控制達到最佳化。本專題以實體的冰球機(圖.\ref{fig.冰球機})之機電系統作為訓練模型，將實體機器轉移到虛擬環境(圖.\ref{fig.模擬冰球機})進行模擬，為了找到適合的演算方式，因此將模型簡化(圖.\ref{fig.pong_gym})後再進行測試各種算法的優劣，透過不斷的訓練來得到一個優化過的對打系統。\\
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=5cm]{冰球機}
+\caption{\Large 實體的冰球機}\label{fig.冰球機}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=5cm]{origin}
+\caption{\Large 虛擬環境簡化後的冰球機}\label{fig.模擬冰球機}
+\end{center}
+
+\end{figure}
+ \begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=5cm]{pong_gym}
+\caption{\Large Gym的Pong game}\label{fig.pong_gym}
+\end{center}
+\end{figure}
+\newpage
 \section{研究目的與方法}
  本研究分兩大部分，第一運用OpenAI Gym裡內建編譯的ATARI 2600遊戲Pong-v0，來作為訓練環境，加上機器學習的理論，訓練出最佳AI，第二換為CoppilaSim模擬環境並套用訓練程式，成為能與人對打的機電系統。\\
  
