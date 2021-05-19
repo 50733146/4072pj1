@@ -18,11 +18,11 @@
 \BOOKMARK [2][-]{subsection.2.3.2}{為什麼不用value-base而是policy-base}{section.2.3}% 18
 \BOOKMARK [2][-]{subsection.2.3.3}{Proof\040Policy\040Gradient\040Theorem}{section.2.3}% 19
 \BOOKMARK [2][-]{subsection.2.3.4}{Policy\040Gradient\040Theorem}{section.2.3}% 20
-\BOOKMARK [2][-]{subsection.2.3.5}{Actor\040Crtic}{section.2.3}% 21
+\BOOKMARK [2][-]{subsection.2.3.5}{Actor\040Critic}{section.2.3}% 21
 \BOOKMARK [1][-]{section.2.4}{類神經網路中強化學習的應用}{chapter.2}% 22
 \BOOKMARK [2][-]{subsection.2.4.1}{監督式學習}{section.2.4}% 23
 \BOOKMARK [2][-]{subsection.2.4.2}{對數導數技巧}{section.2.4}% 24
-\BOOKMARK [2][-]{subsection.2.4.3}{為什麼選擇Score function 算法}{section.2.4}% 25
+\BOOKMARK [2][-]{subsection.2.4.3}{為什麼選擇score function 算法}{section.2.4}% 25
 \BOOKMARK [2][-]{subsection.2.4.4}{Score\040Functions}{section.2.4}% 26
 \BOOKMARK [2][-]{subsection.2.4.5}{Score\040Function\040Estimators}{section.2.4}% 27
 \BOOKMARK [0][-]{chapter.3}{訓練環境}{}% 28
@@ -46,7 +46,8 @@
 \BOOKMARK [1][-]{section.5.4}{Nginx}{chapter.5}% 46
 \BOOKMARK [1][-]{section.5.5}{Flask}{chapter.5}% 47
 \BOOKMARK [0][-]{chapter.6}{機器學習的訓練與模擬控制結果}{}% 48
-\BOOKMARK [1][-]{section.6.1}{訓練模型的選用}{chapter.6}% 49
-\BOOKMARK [1][-]{section.6.2}{訓練程式的運作}{chapter.6}% 50
-\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 51
-\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 52
+\BOOKMARK [1][-]{section.6.1}{訓練模型的基礎概念}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.2}{訓練模型的選用}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.3}{訓練程式的運作}{chapter.6}% 51
+\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 52
+\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 53
