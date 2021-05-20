@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  20 MAY 2021 13:56
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  20 MAY 2021 15:32
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
@@ -1305,14 +1305,14 @@ File: ./../images/origin.png Graphic file (type bmp)
 <./../images/origin.png>
 File: ./../images/pong_gym.png Graphic file (type bmp)
 <./../images/pong_gym.png>
-[1
 
-]
 Underfull \hbox (badness 10000) in paragraph at lines 228--229
 
  []
 
+[1
 
+]
 Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
@@ -1358,9 +1358,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 270--272
 
  []
 
-[4]
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 272.
-
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 272--275
 
  []
@@ -2154,7 +2153,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1358.
 Here is how much of TeX's memory you used:
  19315 strings out of 414221
  359282 string characters out of 2901377
- 866045 words of memory out of 3000000
+ 865045 words of memory out of 3000000
  36502 multiletter control sequences out of 15000+200000
  553588 words of font info for 181 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
