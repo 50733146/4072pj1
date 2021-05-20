@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  20 MAY 2021 15:32
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  20 MAY 2021 20:04
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
@@ -1435,7 +1435,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 379--381
 File: ./../images/The_entire_interaction_process.png Graphic file (type bmp)
 <./../images/The_entire_interaction_process.png>
 
-LaTeX Warning: Reference `整個互動過程' on page 11 undefined on input line 389.
+LaTeX Warning: Reference `The_entire_interaction_process' on page 11 undefined 
+on input line 389.
 
 File: ./../images/agent.png Graphic file (type bmp)
 <./../images/agent.png>
@@ -1494,15 +1495,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 554--556
  []
 
 
-Overfull \hbox (92.18524pt too wide) in paragraph at lines 561--591
-\OT1/cmr/m/n/14 = [][] []\OMS/cmsy/m/n/14 r[]\OML/cmm/m/it/14 ^^Y[]\OT1/cmr/m/n
-/14 (\OML/cmm/m/it/14 a\OMS/cmsy/m/n/14 j\OML/cmm/m/it/14 s\OT1/cmr/m/n/14 )\OM
-L/cmm/m/it/14 Q[]\OT1/cmr/m/n/14 (\OML/cmm/m/it/14 s; a\OT1/cmr/m/n/14 ) + \OML
-/cmm/m/it/14 ^^Y[]\OT1/cmr/m/n/14 (\OML/cmm/m/it/14 a\OMS/cmsy/m/n/14 j\OML/cmm
-/m/it/14 s\OT1/cmr/m/n/14 )[][][]$ 
- []
-
-
 Overfull \hbox (55.9742pt too wide) in paragraph at lines 561--591
 \OT1/cmr/m/n/14 = [][] []\OMS/cmsy/m/n/14 r[]\OML/cmm/m/it/14 ^^Y[]\OT1/cmr/m/n
 /14 (\OML/cmm/m/it/14 a\OMS/cmsy/m/n/14 j\OML/cmm/m/it/14 s\OT1/cmr/m/n/14 )\OM
@@ -1526,12 +1518,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 614--615
 
  []
 
-[21]
+
 Underfull \hbox (badness 10000) in paragraph at lines 632--633
 
  []
 
-
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 634--635
 
  []
@@ -2152,7 +2144,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1358.
  ) 
 Here is how much of TeX's memory you used:
  19315 strings out of 414221
- 359282 string characters out of 2901377
+ 359306 string characters out of 2901377
  865045 words of memory out of 3000000
  36502 multiletter control sequences out of 15000+200000
  553588 words of font info for 181 fonts, out of 3000000 for 9000

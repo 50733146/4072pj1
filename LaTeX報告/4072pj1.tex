@@ -161,12 +161,12 @@ Application of reinforcement
 \begin{center}
 \LARGE\textbf\sectionef{Abstract}\\
 \begin{flushleft}
-\fontsize{14pt}{14.5pt}\selectfont\hspace{12pt} \sectionef The industry needs to accelerate the calculation of many manufacturing method to achieve optimization.It is not possible to constantly test different methods with physical entities. Cost and time do not allow. We can use the virtual environment to set up the structure and observe the value, combine the learning of the neural network and the optimization of the numerical analysis, greatly reduce the time and equipment cost, and get the best solution.\\
+\fontsize{14pt}{16pt}\sectionef\hspace{12pt} As the demand in the industry increases, the efficiency of production, manufacturing, research and development needs to be improved, and the optimization method can improve the efficiency. This topic will use the simplification of the electromechanical system of the physical ice hockey machine for reinforcement learning, combined with neural networks, test different algorithms to optimize the ice hockey machine sparring control system, and try to apply its algorithm to the physical electromechanical system.\\[12pt]
 
-\hspace{12pt} This project is to use the ready-made air hockey table to set up a corresponding virtual simulation environment in CoppeliaSim to reduce the cost of realistic simulation parameter settings and equipment damage, and to add a neural network and reinforcement learning to the OpenAI Gym application to improve the ability to play air hockey.
+\fontsize{14pt}{16pt}\sectionef\hspace{12pt} This project is to use the physical air hockey to play machine, introduce it into the CoppeliaSim simulation environment and give the corresponding settings, simplify its electromechanical system and use Open AI Gym for training, find an algorithm suitable for this system, and then perform it in the CoppeliaSim simulation environment Feasibility of testing algorithm in practical application.\\
 \end{flushleft}
 \begin{center}
-\fontsize{14pt}{14.5pt}\selectfont\sectionef Keyword:  nerual network、reinforcement learning、 CoppeliaSim、OpenAI Gym
+\fontsize{14pt}{16pt}\selectfont\sectionef Keyword:  nerual network、reinforcement learning、 CoppeliaSim、OpenAI Gym
 \end{center}
 \newpage
 %=------------------------誌謝----------------------=%
@@ -386,7 +386,7 @@ $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \label{整個互動過程 }
 \end{center}
 \end{figure}
- 如(圖.\ref{整個互動過程}) agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他可以選擇一個操作並做出相應的回應，從這時起，將會創建新的場景，當agent從一個環境變為另一個環境中，每項更改都會導致某種修改，這些變化被描述為場景，每個步驟中發生的過渡都有助於agent更有效地解決強化學習的問題。\\
+ 如(圖.\ref{The_entire_interaction_process}) agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他可以選擇一個操作並做出相應的回應，從這時起，將會創建新的場景，當agent從一個環境變為另一個環境中，每項更改都會導致某種修改，這些變化被描述為場景，每個步驟中發生的過渡都有助於agent更有效地解決強化學習的問題。\\
 %=----Different Terms in Reinforcement Learning----------=%
  強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值，$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因先後順序而有所衰減)。\\
  當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\
@@ -565,7 +565,7 @@ $ \nabla_\theta V^\pi(s) $\\[5pt]
 $= \nabla_\theta (\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a))$\\
 $= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta Q^\pi(s, a)} \Big)  \scriptstyle{\text{; 衍生規則}} $\\
 %$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta \sum_{s', r} P(s',r \vert s,a)(r + V^\pi(s'))} \Big)  \scriptstyle{\text{; Extend } Q^\pi \text{ with future state value.}}$ \\
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ 不是一個方程式的 }\theta}$\\[6pt]
+%$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ 不是一個方程式的 }\theta}$\\[6pt]
 $= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s){\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{\text{;因為 }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
 Let $\phi(s) = \sum_{a \in \mathcal{A}} \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)$ ; 當
 K = 1，我們把所有可能動作總結到目標狀態的轉移機率$\rho^\pi(s \to x, k+1) = \sum_{s'} \rho^\pi(s \to s', k) \rho^\pi(s' \to x, 1)$\\[5pt]
@@ -586,7 +586,7 @@ $= \sum_{s}{\sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)} \phi(s) \scriptstyle{\text
 $= \sum_{s}\eta(s) \phi(s) 
 = \Big( {\sum_s \eta(s)} \Big)\sum_{s}\frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  
 \scriptstyle{\text{; 歸一化} \eta(s), s\in\mathcal{S} \text{ 成為概率分佈}}$\\[5pt]
-$\propto \sum_s \frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  \scriptstyle{\sum_s \eta(s)\text{  is a constant}}$ \\[5pt]
+$\propto \sum_s \frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  \scriptstyle{\sum_s \eta(s)\text{是一個常數}}$ \\[5pt]
 $= \sum_s d^\pi(s) \sum_a \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)  \scriptstyle{d^\pi(s) = \frac{\eta(s)}{\sum_s \eta(s)}\text{ 是固定分佈}}$
 
 $\nabla_\theta J(\theta)

@@ -29,12 +29,53 @@
 <v t="leo.20210520151708.1"><vh>介紹</vh></v>
 </v>
 </v>
-<v t="leo.20210520161844.1"><vh>文獻探討</vh>
-<v t="leo.20210520161844.2"><vh> 議程</vh>
-<v t="leo.20210520161844.3"><vh>介紹</vh></v>
+<v t="leo.20210520201414.1"><vh>整體研究架構</vh>
+<v t="leo.20210520201414.2"><vh> 議程</vh>
+<v t="leo.20210520201414.3"><vh>介紹</vh></v>
 </v>
-<v t="leo.20210520161844.4"><vh>文獻探討</vh>
-<v t="leo.20210520161844.5"><vh>文獻探討</vh></v>
+<v t="leo.20210520201414.4"><vh>整體研究架構</vh>
+<v t="leo.20210520201414.5"><vh>整體研究架構</vh></v>
+</v>
+</v>
+<v t="leo.20210520201504.1"><vh>機器學習</vh>
+<v t="leo.20210520201504.2"><vh> 議程</vh>
+<v t="leo.20210520201504.3"><vh>介紹</vh></v>
+</v>
+<v t="leo.20210520201504.4"><vh>強化學習</vh>
+<v t="leo.20210520201504.5"><vh>強化學習</vh></v>
+</v>
+<v t="leo.20210520210514.1"><vh>類神經網路</vh>
+<v t="leo.20210520210514.2"><vh>類神經網路</vh></v>
+</v>
+</v>
+<v t="leo.20210520201505.1"><vh>模擬環境CoppeliaSim</vh>
+<v t="leo.20210520201505.2"><vh> 議程</vh>
+<v t="leo.20210520201505.3"><vh>介紹</vh></v>
+</v>
+<v t="leo.20210520201505.4"><vh>OpenCV</vh>
+<v t="leo.20210520201505.5"><vh>OpenCV</vh></v>
+</v>
+<v t="leo.20210520211420.1"><vh>RemoteAPI</vh>
+<v t="leo.20210520211420.2"><vh>RemoteAPI</vh></v>
+</v>
+</v>
+<v t="leo.20210520201530.1"><vh>伺服器架設</vh>
+<v t="leo.20210520201530.2"><vh> 議程</vh>
+<v t="leo.20210520201530.3"><vh>介紹</vh></v>
+</v>
+<v t="leo.20210520201530.4"><vh>Nginx</vh>
+<v t="leo.20210520201530.5"><vh>Nginx</vh></v>
+</v>
+<v t="leo.20210520211924.1"><vh>uWSGI</vh>
+<v t="leo.20210520211924.2"><vh>uWSGI</vh></v>
+</v>
+</v>
+<v t="leo.20210520201547.1"><vh>訓練結果</vh>
+<v t="leo.20210520201547.2"><vh> 議程</vh>
+<v t="leo.20210520201547.3"><vh>介紹</vh></v>
+</v>
+<v t="leo.20210520201547.4"><vh>訓練結果</vh>
+<v t="leo.20210520201547.5"><vh>訓練結果</vh></v>
 </v>
 </v>
 </v>
@@ -289,7 +330,6 @@ vertical: body pane on the botton</t>
 <t tx="leo.20210520152711.2"># 議程
 
 * &lt;span style="color:red"&gt;介紹&lt;/span&gt;
-* 文獻探討
 * 整體研究架構
 * 機器學習
 * 模擬環境CoppeliaSim
@@ -298,10 +338,11 @@ vertical: body pane on the botton</t>
 
 </t>
 <t tx="leo.20210520161630.1">&lt;!-- Any section element inside of this container is displayed as a slide --&gt;
+&lt;!--
 &lt;div class="slides"&gt;
 @others
 &lt;/div&gt;
-
+--&gt;
 </t>
 <t tx="leo.20210520161630.10">## 插入照片
 
@@ -428,10 +469,10 @@ make.start()
 @others
     &lt;/script&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210520161844.1">&lt;section&gt;
+<t tx="leo.20210520201414.1">&lt;section&gt;
 @others
 &lt;/section&gt;</t>
-<t tx="leo.20210520161844.2">&lt;section data-markdown&gt;
+<t tx="leo.20210520201414.2">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 &lt;!-- 請注意, @others 不可以內縮 --&gt;
 @others
@@ -442,18 +483,17 @@ make.start()
 
 						
 </t>
-<t tx="leo.20210520161844.3"># 議程
+<t tx="leo.20210520201414.3"># 議程
 
 * 介紹
-* &lt;span style="color:red"&gt;文獻探討&lt;/span&gt;
-* 整體研究架構
+* &lt;span style="color:red"&gt;整體研究架構&lt;/span&gt;
 * 機器學習
 * 模擬環境CoppeliaSim
 * 伺服器架設
 * 訓練結果
 
 </t>
-<t tx="leo.20210520161844.4">&lt;section data-markdown&gt;
+<t tx="leo.20210520201414.4">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 &lt;!-- 請注意, @others 不可以內縮 --&gt;
 @others
@@ -464,10 +504,211 @@ make.start()
 
 						
 </t>
-<t tx="leo.20210520161844.5">### 文獻探討
+<t tx="leo.20210520201414.5">### 整體研究架構
 
+&lt;img src="./../images/研究架構.png" alt="研究架構" height="550"&gt;
+
+</t>
+<t tx="leo.20210520201504.1">&lt;section&gt;
+@others
+&lt;/section&gt;</t>
+<t tx="leo.20210520201504.2">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520201504.3"># 議程
+
+* 介紹
+* 整體研究架構
+* &lt;span style="color:red"&gt;機器學習&lt;/span&gt;
+* 模擬環境CoppeliaSim
+* 伺服器架設
+* 訓練結果
+
+</t>
+<t tx="leo.20210520201504.4">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520201504.5">### 強化學習
+
+
+&lt;img src="./../images/The_Flow_of_Reinforcement_Learning.png" alt="強化學習" height="550"&gt;
 
 
 </t>
+<t tx="leo.20210520201505.1">&lt;section&gt;
+@others
+&lt;/section&gt;</t>
+<t tx="leo.20210520201505.2">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520201505.3"># 議程
+
+* 介紹
+* 整體研究架構
+* 機器學習
+* &lt;span style="color:red"&gt;模擬環境CoppeliaSim&lt;/span&gt;
+* 伺服器架設
+* 訓練結果
+
+</t>
+<t tx="leo.20210520201505.4">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520201505.5">### OpenCV
+
+&lt;img src="./../images/origin.png" alt="原始影像" height="550"&gt;
+&lt;img src="./../images/filter.png" alt="遮罩" height="550"&gt;
+
+</t>
+<t tx="leo.20210520201530.1">&lt;section&gt;
+@others
+&lt;/section&gt;</t>
+<t tx="leo.20210520201530.2">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520201530.3"># 議程
+
+* 介紹
+* 整體研究架構
+* 機器學習
+* 模擬環境CoppeliaSim
+* &lt;span style="color:red"&gt;伺服器架設&lt;/span&gt;
+* 訓練結果</t>
+<t tx="leo.20210520201530.4">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520201530.5">### Nginx
+
+&lt;img src="./../images/clientProxy.jpeg" alt="Nginx" height="550"&gt;</t>
+<t tx="leo.20210520201547.1">&lt;section&gt;
+@others
+&lt;/section&gt;</t>
+<t tx="leo.20210520201547.2">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520201547.3"># 議程
+
+* 介紹
+* 整體研究架構
+* 機器學習
+* 模擬環境CoppeliaSim
+* 伺服器架設
+* &lt;span style="color:red"&gt;訓練結果&lt;/span&gt;</t>
+<t tx="leo.20210520201547.4">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520201547.5">### 訓練結果
+
+&lt;img src="./../images/openaigym.video.0.1660.video000001.gif" alt="訓練結果" height="550"&gt;
+</t>
+<t tx="leo.20210520210514.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520210514.2">### 類神經網路
+
+&lt;img src="./../images/兩層神經網路.png" alt="兩層神經網路" height="550"&gt;</t>
+<t tx="leo.20210520211420.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520211420.2">### RemoteAPI
+
+補gif動畫
+
+</t>
+<t tx="leo.20210520211924.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210520211924.2">### uWSGI
+
+&lt;img src="./../images/clientToflask.jpeg" alt="Nginx" height="400"&gt;
+&lt;img src="./../images/total.jpeg" alt="Nginx" height="400"&gt;</t>
 </tnodes>
 </leo_file>
