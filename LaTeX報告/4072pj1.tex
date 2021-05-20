@@ -562,10 +562,10 @@ $\ast$ 當狀態和動作分布都遵循策略$\pi_{\theta}$時$\mathbb{E}_{\pi}
 Proof $\nabla_\theta J(\theta)= \nabla_\theta V^\pi(s_0)$ 
 $ \nabla_\theta V^\pi(s) $\\[5pt]
 $= \nabla_\theta (\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a))$\\
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta Q^\pi(s, a)} \Big)  \scriptstyle{\text{; Derivative product rule.}} $\\
+$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta Q^\pi(s, a)} \Big)  \scriptstyle{\text{; 衍生規則}} $\\
 %$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta \sum_{s', r} P(s',r \vert s,a)(r + V^\pi(s'))} \Big)  \scriptstyle{\text{; Extend } Q^\pi \text{ with future state value.}}$ \\
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ is not a func of }\theta}$\\[6pt]
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s){\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{\text{; Because }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
+$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ 不是一個方程式的 }\theta}$\\[6pt]
+$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s){\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{\text{;因為 }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
 Let $\phi(s) = \sum_{a \in \mathcal{A}} \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)$ ; 當
 K = 1，我們把所有可能動作總結到目標狀態的轉移機率$\rho^\pi(s \to x, k+1) = \sum_{s'} \rho^\pi(s \to s', k) \rho^\pi(s' \to x, 1)$\\[5pt]
 $ {\nabla_\theta V^\pi(s)} $\\[5pt]
@@ -575,23 +575,23 @@ $=\phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) {\nabla_\theta V^\pi(s')}$ \\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) {\nabla_\theta V^\pi(s')}$ \\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1){[ \phi(s') + \sum_{s''} \rho^\pi(s' \to s'', 1) \nabla_\theta V^\pi(s'')]}$ \\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2){\nabla_\theta V^\pi(s'')} \\
-\scriptstyle{\text{ ; Consider }s'\text{ as the middle point for }s \to s''}$\\[5pt]
+\scriptstyle{\text{ ; 考慮 }s'\text{作為中間點}s \to s''}$\\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2)\phi(s'') + \sum_{s'''} \rho^\pi(s \to s''', 3){\nabla_\theta V^\pi(s''')}$ \\[5pt]
-$= \dots \scriptstyle{\text{; Repeatedly unrolling the part of }\nabla_\theta V^\pi(.)}$ \\[5pt]
+$= \dots \scriptstyle{\text{;反覆展開的部分 }\nabla_\theta V^\pi(.)}$ \\[5pt]
 $= \sum_{x\in\mathcal{S}}\sum_{k=0}^\infty \rho^\pi(s \to x, k) \phi(x)$
 $\nabla_\theta J(\theta)
-= \nabla_\theta V^\pi(s_0)  \scriptstyle{\text{; Starting from a random state } s_0} $\\[5pt]
+= \nabla_\theta V^\pi(s_0)  \scriptstyle{\text{;從隨機狀態開始} s_0} $\\[5pt]
 $= \sum_{s}{\sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)} \phi(s) \scriptstyle{\text{; Let }{\eta(s) = \sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)}} $\\[5pt]
 $= \sum_{s}\eta(s) \phi(s) 
 = \Big( {\sum_s \eta(s)} \Big)\sum_{s}\frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  
-\scriptstyle{\text{; Normalize } \eta(s), s\in\mathcal{S} \text{ to be a probability distribution.}}$\\[5pt]
+\scriptstyle{\text{; 歸一化} \eta(s), s\in\mathcal{S} \text{ 成為概率分佈}}$\\[5pt]
 $\propto \sum_s \frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  \scriptstyle{\sum_s \eta(s)\text{  is a constant}}$ \\[5pt]
-$= \sum_s d^\pi(s) \sum_a \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)  \scriptstyle{d^\pi(s) = \frac{\eta(s)}{\sum_s \eta(s)}\text{ is stationary distribution.}}$
+$= \sum_s d^\pi(s) \sum_a \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)  \scriptstyle{d^\pi(s) = \frac{\eta(s)}{\sum_s \eta(s)}\text{ 是固定分佈}}$
 
 $\nabla_\theta J(\theta)
 \propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s) $\\[5pt]
 $= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a) \frac{\nabla_\theta \pi_\theta(a \vert s)}{\pi_\theta(a \vert s)} $\\[5pt]
-$= \mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  \scriptstyle{\text{; Because } (\ln x)' = 1/x}$
+$= \mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  \scriptstyle{\text{;因為} (\ln x)' = 1/x}$
 \\[5pt]
 \subsection{Policy Gradient Theorem}
 Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
