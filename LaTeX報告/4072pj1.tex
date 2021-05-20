@@ -30,7 +30,7 @@ left=3truecm,right=2.5truecm]{geometry}
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
 \renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
-%\captionsetup[table]{name= \Large 表.} %更改表標題名稱
+\renewcommand{\tablename}{\Large 表.}
 \renewcommand{\lstlistingname}{\Large 程式.} %設定程式標示名稱
 \hoffset=-5mm %調整左右邊界
 \voffset=-8mm %調整上下邊界
@@ -1009,7 +1009,7 @@ wsgi-file = location/to/file
 \end{lstlisting}
 實現之通訊流程 
 \begin{lstlisting}[caption=client端與Flask應用]
-  client server  < - > web server < - > ( socket ) < - > uWSGI < - > flask 
+client server< - > web server < - > ( socket )< - > uWSGI < - > flask 
 \end{lstlisting}
 \begin{figure}[hbt!]
 \begin{center}
