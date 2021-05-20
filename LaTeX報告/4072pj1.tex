@@ -1,11 +1,11 @@
 \documentclass[14pt,a4paper]{report}  %紙張設定
 \usepackage{xeCJK}%中文字體模組
-\setCJKmainfont{標楷體} %中文字體
+\setCJKmainfont{標楷體} %設定中文字體
 \newfontfamily\sectionef{Times New Roman}%設定英文字體
 \usepackage{enumerate}
 \usepackage{amsmath,amssymb}%數學公式、符號
 \usepackage{amsfonts} %數學簍空的英文字
-\usepackage{graphicx, subfig}%圖形
+\usepackage{graphicx, subfigure}%圖形
 \usepackage{fontawesome5} %引用icon
 \usepackage{type1cm} %調整字體絕對大小
 \usepackage{textpos} %設定文字絕對位置
@@ -24,19 +24,17 @@ left=3truecm,right=2.5truecm]{geometry}
 \usepackage{setspace}
 \usepackage{lscape}%設定橫式
 \lstset{language=Python, %設定語言
-		basicstyle=\footnotesize, 
-		frame=lines,
-		caption={Python code}, %設定capion
-		%label={code.} %設定label
+		basicstyle=\fontsize{10pt}{2pt}\selectfont, %設定程式內文字體大小
+		frame=lines,	%設定程式框架為線
 }
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
-\captionsetup[figure]{name= \Large 圖.} %更改圖片標題名稱
-\renewcommand{\lstlistingname}{程式.} %設定程式標示名稱
+\renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
+%\captionsetup[table]{name= \Large 表.} %更改表標題名稱
+\renewcommand{\lstlistingname}{\Large 程式.} %設定程式標示名稱
 \hoffset=-5mm %調整左右邊界
 \voffset=-8mm %調整上下邊界
 \setlength{\parindent}{2em}%設定首行行距縮排
-
  %=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
 \titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{0.5em}{}[]
@@ -149,11 +147,12 @@ Application of reinforcement
 \LARGE\textbf{摘要}\\
 \end{center}
 \begin{flushleft}
-\fontsize{14pt}{14pt}\selectfont\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，不能以實體一直測試不同方法，成本與時間不允許，便可以利用虛擬環境架設結構與觀測數值，結合類神神經網路的學習與數值分析的最佳化，大量減少時間與設備成本，獲得最佳解。\\[12pt]
-\hspace{12pt} 此專題是利用現成裝置冰球台，在\sectionef CoppeliaSim設置對應虛擬模擬環境，減少現實模擬參數設置與設備損壞成本，並加入類神經網路與強化學習在OpenAI Gym應用，提升對打能力，使冰球達到對應最佳化。
+\fontsize{14pt}{20pt}\sectionef\hspace{12pt} 產業中的需求提升因而生產、製造、研發等效率需要有所提升，最佳化的方式能有的提升效率。本專題將以實體冰球機的機電系統簡化進行強化學習，並結合類神經網路，測試不同演算法使冰球機對打控制系統最佳化，並嘗試將其算法應用到實體機電系統上。\\[12pt]
+
+\fontsize{14pt}{20pt}\sectionef\hspace{12pt} 此專題是運用實體冰球對打機，將其導入CoppeliaSim模擬環境並給予對應設置，將其機電系統簡化並運用Open AI Gym進行訓練，找到適合此系統的演算法後，再到CoppeliaSim模擬環境中進行測試演算法在實際運用上的可行性。\\[12pt]
 \end{flushleft}
 \begin{center}
-\fontsize{14pt}{14pt}\selectfont 關鍵字: 類神經網路、強化學習、\sectionef CoppeliaSim、OpenAI Gym
+\fontsize{14pt}{20pt}\selectfont 關鍵字: 類神經網路、強化學習、\sectionef CoppeliaSim、OpenAI Gym
 \end{center}
 \newpage
 %=--------------------Abstract----------------------=%
@@ -190,8 +189,7 @@ Application of reinforcement
 %=------------------圖表目錄產生----------------------=%
 \renewcommand{\listfigurename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{圖\quad 表\quad 目\quad 錄 }}}
 \listoffigures
-%\renewcommand{\numberline}[1]{{\loflabel~#1\hspace*{1em}}}
-%\newcommand{\loflabel}{圖}
+\newcommand{\captioname}{圖}
 \newpage
 \end{center}
 %=-------------------------內容----------------------=%
@@ -201,13 +199,37 @@ Application of reinforcement
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
 \section{研究動機}
- 機器學習與機電系統結合的運用越來廣泛，我們將其運用在桌球機上，使完成訓練的機電系統能獨自與玩家對打。
-\section{研究目的與方法}
- 本研究分兩大部分，第一運用Open AI Gym的Pong-v0來訓練機器學習，第二利用CoppilaSim模擬環境並訓練出能與人對打的機電系統。\\
- 
- 利用Gym的訓練環境來側試不同的算法所得到的訓練結果，比較不同算法、參數間的差異，並找出較適合Pong game的算法、參數，循序漸進提高環境的真實程度，來減少一開始就是以實體的方式測試所帶來硬體、程式、時間和金錢等成本。\\
+ 機器學習與各領域結合的應用越來越廣泛，在機電系統採用強化學習是為了讓機電系統的控制達到最佳化。本專題以實體的冰球機(圖.\ref{fig.冰球機})之機電系統作為訓練模型，將實體機器轉移到虛擬環境(圖.\ref{fig.模擬冰球機})進行模擬，為了找到適合的演算方式，因此將模型簡化(圖.\ref{fig.pong_gym})後再進行測試各種算法的優劣，透過不斷的訓練來得到一個優化過的對打系統。\\
 
- 將Gym的訓練環境轉換到CoppilaSim模擬環境，利用貼近真實的模擬環境來修正在純程式的架構與真實環境間的誤差，雖然CoppilaSim模擬環境與真實環境仍有些微的落差，但與Gym相比CoppilaSim的環境已非常貼近真實了，拉近了虛擬與現實間的距離，提高了實用性的價值。
+\begin{figure}[hbt!]
+\begin{center}
+\subfigure{
+\begin{minipage}[t]{0.3\linewidth}  %設定圖片間距
+\includegraphics[width=4cm]{冰球機}
+\caption{\Large 實體的冰球機}\label{fig.冰球機}
+\end{minipage}
+}
+\subfigure{
+\begin{minipage}[t]{0.3\linewidth}
+\includegraphics[width=4cm]{origin}
+\caption{\Large 虛擬環境簡化後的冰球機}\label{fig.模擬冰球機}
+\end{minipage}
+}
+\subfigure{
+\begin{minipage}[t]{0.3\linewidth} 
+\includegraphics[width=4cm]{pong_gym}
+\caption{\Large Gym的Pong game}\label{fig.pong_gym}
+\end{minipage}
+}
+\end{center}
+\end{figure}
+\newpage
+\section{研究目的與方法}
+ 本研究分兩大部分，第一運用OpenAI Gym裡內建編譯的ATARI 2600遊戲Pong-v0，來作為訓練環境，加上強化學習的理論，測試不同演算法以訓練出最佳化的對打系統，第二換為CoppilaSim模擬環境並套用訓練程式，成為優化的對打機電系統。\\
+ 
+ 利用Gym的訓練環境來測試不同的算法所得到的訓練結果，比較不同算法、參數間的差異，並找出較適合Pong game的算法、參數，循序漸進提高環境的真實程度，來減少一開始就是以實體的方式測試所帶來硬體、程式、時間和金錢等成本。\\
+
+ 將Gym的訓練環境轉換到CoppilaSim模擬環境，利用貼近真實的模擬環境來修正在純程式的架構（Gym）與真實環境間的誤差，雖然CoppilaSim模擬環境與真實環境仍有些微的落差，兩者相比CoppilaSim的環境已非常貼近真實了，拉近了虛擬與現實間的距離，提高了實用性的價值。
 \section{未來展望}
 \qquad 
 \section{規則說明}
@@ -229,9 +251,9 @@ Application of reinforcement
 \end{center}
 \end{figure}
 
- (圖.\ref{兩層神經網路})展示了兩層類神經網路的架構，如圖所示每一層每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
+ (圖.\ref{兩層神經網路})展示了兩層類神經網路的架構，如圖所示每一層的每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
 
- 神經元是AI系統中使用的軟件模型，其行為或多或少像實際的大腦神經元，模型會使用數字，使一個或另一個神經元對結果有重要的影響，這些數字又稱為權重。\\
+ 神經元是AI系統中使用的軟件模型，其行為或多或少像實際的大腦神經元，模型會使用數字，使一個或另一個神經元對結果產生重要的影響，這些數字又稱為權重。\\
 
  (圖.\ref{兩層神經網路})也展示了輸入層、隱藏層和輸出層，這是最陽春的網路，真正的網路可以更複雜且有更多層次，事實上深度學習命名原則，就是由多層的隱藏層而來，從意義上來說就是增加了類神經網路的深度。\\
 
@@ -239,15 +261,14 @@ Application of reinforcement
 
  有了網路架構，就能進一步讓網路學習，神經元網路會接收一個例子並猜測答案，如果答案是錯誤的，它會回溯並修改對神經元施加權重和偏差，並嘗試通過更改某些值來修復錯誤，這樣的行為就被稱為反向傳播(backpropagation)。使用迭代方法進行反複試驗，模擬人們重複的行為，執行經過多時後，最終類神經網路學習會進步並給出更好的答案，訓練時間可以是一天，甚制是一個禮拜，才能完成學習複雜的項目，故每一次的迭代被稱為epoch。\\
 
- 可以看到該神經網絡的輸出僅取決於互連的權重，還取決於神經元本身的偏差，雖然權重會影響啟動函數曲線的陡度，但是偏差會將發生變化的整個曲線，像右或向左，權重和偏差的選擇，決定了單個神經元的預測強度，而訓練神經
-網絡使用的輸入數據可以來微調權重和偏差。\\
+ 可以看到該神經網絡的輸出僅取決於互連的權重，還取決於神經元本身的偏差，雖然權重會影響啟動函數曲線的陡度，但是偏差會將發生變化的整個曲線，向右或向左，權重和偏差的選擇，決定了單個神經元的預測強度，而訓練類神經網絡使用的輸入數據可以來微調權重和偏差。\\
 \subsection{啟動函數}
 啟動函數是設計類神經網路的關鍵部分，如果不使用啟動函數，每一層神經元連接到下一層神經元，只會有線性組合，作為輸出，類神經網路便失去了意義，也就是說啟動函數能讓神經元間的連線，產生非線性的組合並作為該層的輸出。\\
 以下介紹幾種較為常見的啟動函數及其特性：
 \begin{itemize}
 %=----------Sigmoid      Function----------=%
 \item Sigmoid Function：\\
-輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、並具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
+輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、且具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
 $$\sigma(x)=\frac{1}{1+e^{-x}}$$
 %=----------SigmoidPrime Function----------=%
 SigmoidPrime Function是從Sigmoid Function微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\
@@ -258,43 +279,14 @@ Softmax會計算每個事件分布的機率，適用多項目分類、其機率�
 $$S(x)=\frac{e^{x_i}}{\sum^k_{j=1}e^{x_i}}$$
 %=----------Relu Function----------=%
 \item ReLU Function：\\
-ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入值為正值，輸出則維持該輸入數值。ReLU計算方式簡單、收斂速度快，這是類神經網路最普遍拿來使用的啟動函數，因為可以解決梯度消散的問題，但須注意：起始值若設定到不易被激活範圍或是權重過度所導致權重梯度為0就會造成神經元難以被激活。\\
+ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入值為正值，輸出則維持該輸入數值。ReLU計算方式簡單、收斂速度快，這是類神經網路最普遍拿來使用的啟動函數，因為可以解決梯度消散的問題，但須注意：起始值若設定到不易被激活範圍或是權重過渡所導致權重梯度為0就會造成神經元難以被激活。\\
+\end{itemize}
 $$f(x)=max(0,x)$$
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$
-%=----------Adam Function----------=%
-\item Adam Function\\
-結合了 Adagrad 和 RMSprop的優勢，有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程:\\
-$$g_t=\delta_{\theta}f(\theta)$$
-一次矩指數移動均線 :\\
-$$m_t =\beta(m_{t-1})+(1-\beta_1)(\nabla{w_t})$$
-$$\hat m_t=\frac{m_t}{1-\beta_1^t}$$
-二次矩指數移動均線 :\\
-$$v_t=\beta_2(v_t-1)+(1-\beta_2)(\nabla{w_t})^2$$
-$$\hat{v_t}=\frac{v_t}{1-\beta_2^t}$$
-因此,Adam Function:\\
-$$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
-%=----------Mean Squared Error----------=%
-\item Mean Squared Error\\
-他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。\\
-\vspace{8cm}
-%(\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.6]{MSE}
-\caption{\Large 線性回歸}\label{線性回歸}
-\end{center}
-\end{figure}
-\\
-回歸線 :數據點間最小距離的一條線。 \\
-n : 數據點的數量\\
-$y_i$ :  觀測值\\
-$\hat{y_i}$ : 預測值\\
-$$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
-\end{itemize}
 
 \subsection{損失函數}
-損失函數是類神經網路的最後一塊拼圖，損失函數會將神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重以減少下次評估時的損失，以下將介紹幾種優化的方法：\\
+損失函數是類神經網路的最後一塊拼圖，損失函數會將類神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，以下將介紹幾種優化的方法：\\
 
 \begin{itemize}
 \item Gradient Descent\\
@@ -317,8 +309,17 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 為 Adagrad 的延伸，下降激進程度，學習率從更新規則中淘汰，不需設定預設學習率。
 \item RMSprop\\
 為了解決 Adagrad 學習率急劇下降的問題，學習率除以梯度平方的RMS，解決學習率無限小的情形。
-\item Adam\\
-類似 Momentum，更加穩定快速的收斂。
+\item Adam Function\\
+結合了 Adagrad 和 RMSprop的優勢，有論文表示，在訓練速度方面有巨大性的提升，但在某些情況下，Adam實際上會找到比隨機梯度下降法更差的解決方法。以下是計算過程:\\
+$$g_t=\delta_{\theta}f(\theta)$$
+一次矩指數移動均線 :\\
+$$m_t =\beta(m_{t-1})+(1-\beta_1)(\nabla{w_t})$$
+$$\hat m_t=\frac{m_t}{1-\beta_1^t}$$
+二次矩指數移動均線 :\\
+$$v_t=\beta_2(v_t-1)+(1-\beta_2)(\nabla{w_t})^2$$
+$$\hat{v_t}=\frac{v_t}{1-\beta_2^t}$$
+因此,Adam Function:\\
+$$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
 \item AdaMax\\
 與 Adam 相似，依靠$(u_t)$ 最大運算。
 \item Nadam\\
@@ -327,14 +328,31 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 改善 Adam 算法所導致收斂較差的情況(用指數平均會減少其影響)，換用梯度平方最大值來做計算，並移除去偏差的步驟。是否有比 Adam 算法好仍有待觀察。
 \item Gradient noise\\[6pt]
 有助於訓練特別深且復雜的網絡，noise 可改善不良初始化的網路。
+\item Mean Squared Error\\
+他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。\\
+\vspace{8cm}
+%(\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.6]{MSE}
+\caption{\Large 線性回歸}\label{線性回歸}
+\end{center}
+\end{figure}
+\\
+回歸線 :數據點間最小距離的一條線。 \\
+n：數據點的數量\\
+$y_i$： 觀測值\\
+$\hat{y_i}$：預測值\\
+$$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \end{itemize}
+
 \subsection{優化算法}
 \newpage
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
 強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\
 強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
-由於強化學習是建立在環境上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境是真實世界，可能是2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，並且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
+由於強化學習是建立在agent與環境互動上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境可能是真實世界、2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
 %=----------Faces of Reinforcement Learning---------------=%
 強化學習涵蓋範圍：\\
 
@@ -368,9 +386,9 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 \label{整個互動過程 }
 \end{center}
 \end{figure}
- 如(圖.\ref{The_entire_interaction_process}) agent是決策者，會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他會做出決策，決策所執行的動作會使場景進入下一個狀態，當環境轉變，環境裡的項目也會跟著變動，這些變化被描述為場景，每個步驟中發生的過度都有助於agent更有效地解決強化學習的問題。\\
+ 如(圖.\ref{整個互動過程}) agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他可以選擇一個操作並做出相應的回應，從這時起，將會創建新的場景，當agent從一個環境變為另一個環境中，每項更改都會導致某種修改，這些變化被描述為場景，每個步驟中發生的過渡都有助於agent更有效地解決強化學習的問題。\\
 %=----Different Terms in Reinforcement Learning----------=%
- 強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值，$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為時常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因得到的先後順序而有所衰減)。\\
+ 強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值，$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因先後順序而有所衰減)。\\
  當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\
 %------------------圖片可共用----------------------%
 \iffalse
@@ -385,7 +403,7 @@ NAG，有感知能力的 Momentum：在坡度變陡時減速，避免衝過最�
 強化學習的互動：\\[1pt]
  agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\[1pt]
 獎勵的目的與運作：\\
- 以獎勵的方式誘導機器採取我們所期望的動作或是特定結果。機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\[6pt]
+ 以獎勵的方式誘導機器採取我們所期望的動作，機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\[6pt]
 Agents：\\[6pt]
  在強化學習方面，agent可以感知環境時，它可以做出比以往更好的決定。採取的決定就會產生行動且執行的行動必須是最好最佳的。\\[12pt]
 \begin{figure}[hbt!]
@@ -493,50 +511,48 @@ $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\
 \section{Policy Gradient}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{policy gradient原理 }
+\includegraphics[width=15cm]{policy gradient原理}
 \caption{\Large Policy Gradient原理}
 \label{Policy Gradient原理}
 \end{center}
 \end{figure}
-\hspace{-1.5em}$\pi$ : policy\\[5pt]
-s : States\\[5pt]
-a : Actions\\[5pt]
-r : Rewards\\[5pt]
-$S_t,A_t,R_t$ : 一個軌跡時間步長't'的State,Action and Reward \\[5pt]
-$\gamma$ : Discount Factor;懲罰不確定的未來reward\\[5pt]
-$G_t$ : Return;Discounted future reward$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$\\[5pt]
-$P(s', r \vert s, a)$ : 伴隨著現在的a和r的state前往下一個state's'的轉移機率矩陣(單階)\\[5pt]
-$\pi(a \vert s)$ : 隨機策略(agent的行為策略)\\[5pt]
-$\pi_\theta(.)$ : 被$\theta$參數化的策略\\[5pt]
-$\mu(s)$ : 確定的策略;我們還使用不同的字母將其標記為$ \ pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\[5pt]
-$V(s)$ : '狀態值函數'測量state的預期收益(報酬率)\\[5pt]
-$V^\pi(s)$ : 根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\[5pt]
-$Q(s, a)$ : '行為值函數'評估一對state and action 的預期收益\\[5pt]
-$Q_w(.)$ : 被w參數化的行為值函數\\[5pt]
-$Q^\pi(s, a)$ : 根據policy的行為值函數$Q^\pi(s, a) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s, A_t = a]$\\[5pt]
-$A(s, a)$ : Advantage Function,$A(s, a) = Q(s, a) - V(s)$;像是另一種版本的Q-value;由狀態值為基準降低方差\\[5pt]
-參數化 : 待軟體建置於一給定環境時，再依該環境的實際需求填選參數，即可成為適合該環境的軟體。\\[5pt]
-強化學習的目標：為agent找到最優的行為策略以獲得最優的報酬\\[5pt]
-Policy Gradient的目標：直接建模和優化策略\\[5pt]
-reward function的值 : 取決於策略，可應用各種算法optimize$\theta$，已獲得最佳reward\\[5pt]
-defined as:\\[5pt]
+\hspace{-1.5em}$\pi$：policy\\
+s：States\\
+a：Actions\\
+r：Rewards\\
+$S_t,A_t,R_t$：一個軌跡時間步長't'的State,Action and Reward \\
+$\gamma$：Discount Factor;懲罰不確定的未來reward\\
+$G_t$：Return;Discounted future reward$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$\\
+$P(s', r \vert s, a)$：伴隨著現在的a和r的state前往下一個state's'的轉移機率矩陣(單階)\\
+$\pi(a \vert s)$：隨機策略(agent的行為策略)\\
+$\pi_\theta(.)$：被$\theta$參數化的策略\\
+$\mu(s)$：確定的策略;我們還使用不同的字母將其標記為$ \ pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\
+$V(s)$：'狀態值函數'測量state的預期收益(報酬率)\\
+$V^\pi(s)$：根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\
+$Q(s, a)$：'行為值函數'評估一對state and action 的預期收益\\
+$Q_w(.)$：被w參數化的行為值函數\\
+$Q^\pi(s, a)$：根據policy的行為值函數$Q^\pi(s, a) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s, A_t = a]$\\
+$A(s, a)$：Advantage Function,$A(s, a) = Q(s, a) - V(s)$;像是另一種版本的Q-value;由狀態值為基準降低方差\\
+參數化：待軟體建置於一給定環境時，再依該環境的實際需求填選參數，即可成為適合該環境的軟體。\\
+強化學習的目標：為agent找到最優的行為策略以獲得最優的報酬\\
+Policy Gradient的目標：直接建模和優化策略\\
+reward function的值：取決於策略，可應用各種算法optimize$\theta$，已獲得最佳reward\\[5pt]
 $$J(\theta) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) V^\pi(s) 
-= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a)$$
-
+= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a)$$\\
 \subsection{Mokov chain}
-stochastic process : 將隨著時間變化的狀態，以數學模式表示\\[5pt]
+stochastic process：將隨著時間變化的狀態，以數學模式表示\\[5pt]
 $+$\\[5pt]
-Mokov property : 在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關
-$d^\pi(s)$ : $\pi_\theta$的Mokov chain 的平穩分布(在$\pi$下的策略狀態分佈) $$d^\pi(s) = \lim_{t \to \infty} P(s_t = s \vert s_0, \pi_\theta)$$
+Mokov property：在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關
+$d^\pi(s)$：$\pi_\theta$的Mokov chain 的平穩分布(在$\pi$下的策略狀態分佈) $$d^\pi(s) = \lim_{t \to \infty} P(s_t = s \vert s_0, \pi_\theta)$$
 $\ast$ 當策略在其他函數的下標時，將省略 $\pi_\theta$的$\theta$  e.g. $d^\pi(s)$ and $Q^\pi$ should be 
 $d^\pi(s)$、$Q^\pi$\\[5pt]
-stationary probability for $\pi_\theta$ : 隨著時間進展，結束一個狀態保持不變的機率分布\\
+stationary probability for $\pi_\theta$：隨著時間進展，結束一個狀態保持不變的機率分布\\
 \subsection{為什麼不用value-base而是policy-base}
 因為要估計其值得動作和狀態數不勝數，因此在連續空間計算成本太高，$\theta$向$\nabla_\theta J(\theta)$建議方向移動，已找到$\pi\theta$的最佳$\theta$，從而產生最高回報。
 \subsection{Proof Policy Gradient Theorem}
 計算$\nabla_\theta J(\theta)$depends on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\[5pt]
-Policy gradient theorem : 為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\[5pt]
+Policy gradient theorem：為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\[5pt]
 $$\nabla_\theta J(\theta) 
 = \nabla_\theta \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \pi_\theta(a \vert s) $$
 $$\propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s)$$
@@ -547,10 +563,10 @@ $\ast$ 當狀態和動作分布都遵循策略$\pi_{\theta}$時$\mathbb{E}_{\pi}
 Proof $\nabla_\theta J(\theta)= \nabla_\theta V^\pi(s_0)$ 
 $ \nabla_\theta V^\pi(s) $\\[5pt]
 $= \nabla_\theta (\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a))$\\
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta Q^\pi(s, a)} \Big)  \scriptstyle{\text{; Derivative product rule.}} $\\
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta \sum_{s', r} P(s',r \vert s,a)(r + V^\pi(s'))} \Big)  \scriptstyle{\text{; Extend } Q^\pi \text{ with future state value.}}$ \\
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ is not a func of }\theta}$\\[6pt]
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s){\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{\text{; Because }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
+$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta Q^\pi(s, a)} \Big)  \scriptstyle{\text{; 衍生規則}} $\\
+%$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta \sum_{s', r} P(s',r \vert s,a)(r + V^\pi(s'))} \Big)  \scriptstyle{\text{; Extend } Q^\pi \text{ with future state value.}}$ \\
+$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ 不是一個方程式的 }\theta}$\\[6pt]
+$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s){\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{\text{;因為 }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
 Let $\phi(s) = \sum_{a \in \mathcal{A}} \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)$ ; 當
 K = 1，我們把所有可能動作總結到目標狀態的轉移機率$\rho^\pi(s \to x, k+1) = \sum_{s'} \rho^\pi(s \to s', k) \rho^\pi(s' \to x, 1)$\\[5pt]
 $ {\nabla_\theta V^\pi(s)} $\\[5pt]
@@ -560,46 +576,46 @@ $=\phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) {\nabla_\theta V^\pi(s')}$ \\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) {\nabla_\theta V^\pi(s')}$ \\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1){[ \phi(s') + \sum_{s''} \rho^\pi(s' \to s'', 1) \nabla_\theta V^\pi(s'')]}$ \\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2){\nabla_\theta V^\pi(s'')} \\
-\scriptstyle{\text{ ; Consider }s'\text{ as the middle point for }s \to s''}$\\[5pt]
+\scriptstyle{\text{ ; 考慮 }s'\text{作為中間點}s \to s''}$\\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2)\phi(s'') + \sum_{s'''} \rho^\pi(s \to s''', 3){\nabla_\theta V^\pi(s''')}$ \\[5pt]
-$= \dots \scriptstyle{\text{; Repeatedly unrolling the part of }\nabla_\theta V^\pi(.)}$ \\[5pt]
+$= \dots \scriptstyle{\text{;反覆展開的部分 }\nabla_\theta V^\pi(.)}$ \\[5pt]
 $= \sum_{x\in\mathcal{S}}\sum_{k=0}^\infty \rho^\pi(s \to x, k) \phi(x)$
 $\nabla_\theta J(\theta)
-= \nabla_\theta V^\pi(s_0)  \scriptstyle{\text{; Starting from a random state } s_0} $\\[5pt]
+= \nabla_\theta V^\pi(s_0)  \scriptstyle{\text{;從隨機狀態開始} s_0} $\\[5pt]
 $= \sum_{s}{\sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)} \phi(s) \scriptstyle{\text{; Let }{\eta(s) = \sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)}} $\\[5pt]
 $= \sum_{s}\eta(s) \phi(s) 
 = \Big( {\sum_s \eta(s)} \Big)\sum_{s}\frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  
-\scriptstyle{\text{; Normalize } \eta(s), s\in\mathcal{S} \text{ to be a probability distribution.}}$\\[5pt]
+\scriptstyle{\text{; 歸一化} \eta(s), s\in\mathcal{S} \text{ 成為概率分佈}}$\\[5pt]
 $\propto \sum_s \frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  \scriptstyle{\sum_s \eta(s)\text{  is a constant}}$ \\[5pt]
-$= \sum_s d^\pi(s) \sum_a \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)  \scriptstyle{d^\pi(s) = \frac{\eta(s)}{\sum_s \eta(s)}\text{ is stationary distribution.}}$
+$= \sum_s d^\pi(s) \sum_a \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)  \scriptstyle{d^\pi(s) = \frac{\eta(s)}{\sum_s \eta(s)}\text{ 是固定分佈}}$
 
 $\nabla_\theta J(\theta)
 \propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s) $\\[5pt]
 $= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a) \frac{\nabla_\theta \pi_\theta(a \vert s)}{\pi_\theta(a \vert s)} $\\[5pt]
-$= \mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  \scriptstyle{\text{; Because } (\ln x)' = 1/x}$
+$= \mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  \scriptstyle{\text{;因為} (\ln x)' = 1/x}$
 \\[5pt]
 \subsection{Policy Gradient Theorem}
 Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
 $g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$\\[5pt]
 \begin{normalsize}{$\psi_t$ 可能方法為下列:}\end{normalsize}
 \begin{itemize}
-\item $\sum_{t=0}^\infty r$ : 軌跡的總reward
+\item $\sum_{t=0}^\infty r$：軌跡的總reward
 \item $\sum_{t^{'}=t}^\infty r^{'}$: 根據action的reward $a_t$
 \item $\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$: 先前公式的基準版本
-\item $Q^\pi(s_t,a_t)$ : state-action value function
-\item $A^\pi(s_t,a_t)$ : Advantage Function
-\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$ : TD residual
+\item $Q^\pi(s_t,a_t)$：state-action value function
+\item $A^\pi(s_t,a_t)$：Advantage Function
+\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$：TD residual
 \end{itemize}
 The letter formulas use the definitions\\[5pt]
 $V^\pi(s_t) = \mathbb{E}_{s_{t}+1:\infty,a_{t}:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $Q^\pi(s_t,a_t) = \mathbb{E}_{s_{t}+1:\infty_,a_{t}+1:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $A^\pi(s_t,a_t) = Q^\pi(s_t,a_t)-V^\pi(s_t)(Advantage Function)$\\[5pt]
-\subsection{Actor Crtic}
+\subsection{Actor Critic}
 原始的policy gradient 沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變\\[5pt]
 $$g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$$\\[5pt]
-Actor-Critic : 減少原始政策中的梯度方差包括兩個模型\\[5pt]
-Critic : 更新值函數參數w，根據算法，它可以是操作值$ Q_w$（$a \vert s$）或狀態值$V_w$（$s$） \\[5pt]
-Actor : 按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$（$a \vert s$）\\[5pt]
+Actor-Critic：減少原始政策中的梯度方差包括兩個模型\\[5pt]
+Critic：更新值函數參數w，根據算法，它可以是操作值$ Q_w$（$a \vert s$）或狀態值$V_w$（$s$） \\[5pt]
+Actor：按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$（$a \vert s$）\\[5pt]
 \begin{Large}
 它如何在簡單的行動價值參與者批評中發揮作用:
 \end{Large}
@@ -618,7 +634,7 @@ Actor : 按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
        \item 計算校正 (TD error)對於時間t的動作值:\\
        $$\delta = r_t + \gamma Q_w(s^{'},a^{'})-Q_w(s,a)$$並使用它來更新操作action - value function:\\
        $$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
-       \item 更新 $a\leftarrow a^{'}$ 和 $ s \leftarrow s^{'}$ ; 學習率 : $a_\theta$ 和 $a_w$
+       \item 更新 $a\leftarrow a^{'}$ 和 $ s \leftarrow s^{'}$ ; 學習率：$a_\theta$ 和 $a_w$
     \end{enumerate}   
 \end{itemize}\newpage
 \section{類神經網路中強化學習的應用}
@@ -642,14 +658,13 @@ Actor : 按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
 \end{center}
 \end{figure}
 
- 在我們深入探討 Score Function 解決方案之前，需要簡短介紹有關監督學習的知識，因為正如看到的，與我們架構類似，在普通的監督學習中，我們會將圖像傳送到網路，並獲得一概率值，例如對於兩個類別的上和下。 這裡顯示的是向上和向下對數概率(-1.2,-0.36)，而不是原始機率(在這個情況下，是30$\%$和70$\%$)，因為我們總是優化正確標籤的對數概率(這使我們的演算法更好，並等效於優化原始概率，因為對數是單調的)，而在監督學習中，我們將可以獲取標籤，例如:\\
-
-我們可能被告知現在正確的做法是向上運動(標籤0)，在執行過程中，我們將以上的對數機率輸入1.0的梯度，然後運行backprop來計算梯度向量$Wlogp(y=UP|x)$這個梯度將告訴我們應如何更改百萬個參數中的每個參數，使網路預測往上的可能性更高，例如:網路中的百萬個參數之一可能具有-2.1的梯度，這意味著如果我們將該參數增加一個小的正值(例如0.001)，則往上的對數機率將因2.1*0.001而降低(由於負號而減少)，如果我們隨後更新了參數，當之後遇到非常相似的圖像時(也就是環境狀況)，我們的網路現在更有可能預測往上。\\
+ 在我們深入探討 Score Function 解決方案之前，需要簡短介紹有關監督學習的知識，因為正如看到的，與我們架構類似，在普通的監督學習中，我們會將圖像傳送到網路，並獲得一概率值，例如對於兩個類別的上和下。 這裡顯示的是向上和向下對數概率(-1.2,-0.36)，而不是原始機率(在這個情況下，是30$\%$和70$\%$)，因為我們總是優化正確標籤的對數概率(這使我們的演算法更好，並等效於優化原始概率，因為對數是單調的)，而在監督學習中，我們將可以獲取標籤，例如:
+我們可能被告知現在正確的做法是向上運動(標籤0)，在執行過程中，我們將以上的對數機率輸入1.0的梯度，然後運行反向傳播來計算梯度向量$Wlogp(y=UP|x)$這個梯度將告訴我們應如何更改百萬個參數中的每個參數，使網路預測往上的可能性更高，例如:網路中的百萬個參數之一可能具有-2.1的梯度，這意味著如果我們將該參數增加一個小的正值(例如0.001)，則往上的對數機率將因2.1*0.001而降低(由於負號而減少)，如果我們隨後更新了參數，當之後遇到非常相似的圖像時(也就是環境狀況)，我們的網路現在更有可能預測往上。\\
 
 \subsection{對數導數技巧}
- 機器學習涉及操縱機率。這個機率通常包含normalised-probabilities或 log-probabilities。能加強解決現代機器學習問題的關鍵點，是能夠巧妙的在這兩種型式間交替使用，而對數導數技巧就能夠幫助我們做到這點，也就是運用對數導數的性質。\\
+ 機器學習涉及操縱機率。這個機率通常包含歸一化概率或對數概率。能加強解決現代機器學習問題的關鍵點，是能夠巧妙的在這兩種型式間交替使用，而對數導數技巧就能夠幫助我們做到這點，也就是運用對數導數的性質。\\
 \subsection{為什麼選擇score function 算法}
- 多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調優後顯示Policy Gradients比Q 首選PG，因為它是端到端的：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過深度神經網絡使用ATARI遊戲（Pong），並在整個過程結合numpy，作為訓練工具。\\ 
+ 多篇論文已經廣泛使用了ATARI遊戲並結合了DQN(它是一種在強化學習算法裡，知名度較高的)，事實證明，Q-Learning並不是一個很好的算法，實際上大多數人比較喜歡使用Policy Gradients，包括原始DQN論文的作者，他們在調優後顯示Policy Gradients比Q-Learning運作得更好，首選PG是因為它是端到端的：有一個明確的政策和一種有原則的方法可以直接優化預期的回報。但是礙於時間考量，而選擇了類似PG的算法，也就是score function gradient estimator(取用Andrej Karpathy)，從像素開始，通過類神經網路加上強化學習結合ATARI遊戲（Pong），在整個過程使用numpy運算，作為訓練工具。\\ 
 \subsection{Score Functions}
  對數導數技巧的應用規則是基於參數$\theta$梯度的對數函數$p(x:\theta)$，如下:\\
 $$\nabla_\theta logp(x:\theta)=\frac{\nabla_\theta p(x:\theta)}{p(x:\theta)}$$\\
@@ -678,7 +693,7 @@ $$\nabla_\theta \mathbb{E}_{p(z;\theta)}[f(z)] = \mathbb{E}_{p(z;\theta)}[f(z)\n
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.5]{gradient_change}
-\caption{gradient change}
+\caption{梯度變化}
 \end{center}
 \end{figure}
  讓我們導出該表達式，並探討它對我們的優化問題的影響。\\
@@ -688,20 +703,20 @@ $$= \int \frac{p(z;\theta)}{p(z;\theta)}\nabla_\theta p(z;\theta)f(z) dz$$
 $$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$
 $$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\theta)}[f(z)\nabla_\theta \log p(z;\theta)]$$
 $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\theta) \quad z^{(s)}\sim p(z)$$\\
-在這四行中發生了很多事情。在第一行中，我們交換了導數和積分。在第二行中，我們應用了概率身份技巧，這使我們能夠形成得分比， 然後使用對數導數技巧，用第三行中對數概率的梯度替換該比率。這在第四行給出了我們所需的隨機估計量，這是由蒙特卡洛計算的，方法是首先從p（z）提取樣本，然後計算加權梯度項。.\\
+在這四行中發生了很多事情。在第一行中，我們交換了導數和積分。在第二行中，我們應用了概率身份技巧，這使我們能夠形成得分比， 然後使用對數導數技巧，用第三行中對數概率的梯度替換該比率。這在第四行給出了我們所需的隨機估計量，這是由蒙特卡洛計算的，方法是首先從p（z）提取樣本，然後計算加權梯度項。\\
 
-更簡單的描述，我們有一些分佈 $p(x;\theta)$（我使用了速記$ p（x）$來減少混亂），我們可以從中採樣（例如，這可能是高斯）。對於每個樣本，我們還可以評估分數函數f，該函數將樣本作為樣本並給出標量值。該方程式告訴我們，如果我們希望其樣本達到較高的分數（由f判斷），應該如何改變分佈（通過其參數θ)，特別是，它看起來像：畫出一些樣本x，評估其分數f（x），並且對於每個x也評估第二項 $\nabla_\theta logp(x;θ)$，那第二項是什麼，它是一個向量-漸變為我們提供了參數空間中的方向，這將導致分配給x的概率增加。換句話說，如果我們要在的方向上微移θ，$\nabla_\theta logp(x;θ)$，我們會看到分配給x的新概率略有增加。如果回顧一下公式，它告訴我們應該朝這個方向發展，並將標量值加到上面$f(x)$。這樣一來，得分較高的樣本將比那些得分較低的樣本“拖拉”更強的概率密度，因此，如果我們要根據p上的幾個樣本進行更新，則概率密度將朝著較高分數的方向移動，從而使得分較高的樣本更有可能出現。\\
+更簡單的描述，我們有一些分佈 $p(x;\theta)$（我們使用了速記$ p（x）$來減少混亂），我們可以從中採樣（例如，這可能是高斯）。對於每個樣本，我們還可以評估分數函數f(x)，該函數將樣本作為樣本並給出標量值。該方程式告訴我們，如果我們希望其樣本達到較高的分數（由f判斷），應該如何改變分佈（通過其參數θ)，特別是，它看起來像：畫出一些樣本x，評估其分數f（x），並且對於每個x也評估第二項 $\nabla_\theta logp(x;θ)$，那第二項是什麼，它是一個向量-漸變為我們提供了參數空間中的方向，這將導致分配給x的概率增加。換句話說，如果我們要在的方向上微移θ，$\nabla_\theta logp(x;θ)$，我們會看到分配給x的新概率略有增加。如果回顧一下公式，它告訴我們應該朝這個方向發展，並將標量值加到上面$f(x)$。這樣一來，得分較高的樣本將比那些得分較低的樣本“拖拉”更強的概率密度，因此，如果我們要根據p(x)上的幾個樣本進行更新，則概率密度將朝著較高分數的方向移動，從而使得分較高的樣本更有可能出現。\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.4]{figure}
-\caption{梯度變化}
+\caption{Score Function可視圖}
 \end{center}
 \end{figure}
 
  Score function gradient estimator的可視化，左：高斯分佈及其中的一些樣本（藍點)，在每個藍點上，我們還繪製了相對於高斯平均參數的對數概率的梯度，箭頭指示應微調分佈平均值以增加該樣本概率的方向。中間：某些得分函數的疊加，在某些小區域中除了+1之外，其他所有地方都給出-1（請注意，這可以是任意的，不一定是可微分的標量值函數)，箭頭現在採用了顏色區別，因為由於更新中的乘法運算，我們將平均所有綠色箭頭和紅色箭頭的負數。右：更新參數後，綠色箭頭和反向紅色箭頭將我們向左移至底部。現在，根據需要，該分佈中的樣本將具有更高的預期分數。\\
 \newpage
 \chapter{訓練環境}
-\section{openAI Gym}
+\section{OpenAI Gym}
  Gym 是用於開發和比較強化學習算法的工具包，他不對agent的結構做任何假設，並且與任何數據計算庫兼容，而可以用來制定強化學習的算法。這個環境具有共享的介面，使我們能用來編寫常規算法，也就能教導agents如何步行到玩遊戲。\\[6pt]
 
 \section{Pong}
@@ -784,7 +799,7 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \hline  9 &加入/移出 樹狀結構&&\\
 \hline 
 \end{tabular}}
-\caption{功能說明}
+\caption{\Large 功能說明}
 \end{table}
 \newpage
 %\item 模擬執行\\%
@@ -848,7 +863,7 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
  
  之後需選擇 display manager ( 顯示管理器 )的種類 ，Display manager 是操作系統 Ubuntu 的組件，其中登錄的動作即為 Display manager 負責。該操作系統中常見的類型有 gdm ,gdm3 , lightdm ,kdm ...。各類型的 Display manager 功能其實大同小異，差別在於外觀、操作、格式、複雜度和使用者感受等，可依使用者需求變更 ( 有些較為輕量，適合比較低階的運行器 )。選擇其中一個後繼續，之後可以切換更動 。\\
 
- 再來是模組的導入，此處同樣用 apt 指令安裝 : Pip , uwsgi , Nginx  , 以及 Git 。如果要從 Ubuntu 系統上安裝軟體，其中一種方式是 " pip "。「pip 」是 " pip Installs Packages " 的縮寫，是一個用命令列作為基礎的套件管理系統，可以用它來安裝 python 的應用程式。而使用 Git 是因為在備份資料時， 可幫助使用者有效管理原始碼，而 github 就是由 Git 伺服器和網頁介面組成，用來當作放置原始碼的倉庫。\\
+ 再來是模組的導入，此處同樣用 apt 指令安裝：Pip , uwsgi , Nginx  , 以及 Git 。如果要從 Ubuntu 系統上安裝軟體，其中一種方式是 " pip "。「pip 」是 " pip Installs Packages " 的縮寫，是一個用命令列作為基礎的套件管理系統，可以用它來安裝 python 的應用程式。而使用 Git 是因為在備份資料時， 可幫助使用者有效管理原始碼，而 github 就是由 Git 伺服器和網頁介面組成，用來當作放置原始碼的倉庫。\\
  
  另外 Nginx 和 uwsgi 是為拿來配合把 python 程式應用在網路上實現，並且把想要的結果使其能在網路實時觀看操控結果之反饋。\\
 \section{Oracle VM VirtualBox 介紹}
@@ -860,16 +875,16 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 
 \item 只要自備作業系統 ( 光碟片 , ISO映像檔 ) ，即可在啟動 Oracle VM VirtualBox  後直接開啟要操作的執行檔 ( 作業系統 )，不必再把主機本身重新關機，當然開啟多個作業系統之間也有共通性，可直接從視窗A做網路、檔案分享、複製貼上等動作到視窗B。\\
 \item 除了作業系統裡面的執行，還可在其中練習磁碟分割、格式化以及 BIOS 啟動等 ( 但是未支援USB啟動 ) 。\\
-\item 空間的佔用上並不是真實佔用空間，而是依據使用者的操作而變化 ( 使用者用多少就是多少 )。相對的，使用者雖然一開始設定該虛擬電腦的記憶體大小與硬碟空間是實時依據操作者決定，但終究還是佔掉電腦效能，所以 VirtualBox 的效能還是依據電腦本身的硬體配備。為了配置網路，首先在 : 
+\item 空間的佔用上並不是真實佔用空間，而是依據使用者的操作而變化 ( 使用者用多少就是多少 )。相對的，使用者雖然一開始設定該虛擬電腦的記憶體大小與硬碟空間是實時依據操作者決定，但終究還是佔掉電腦效能，所以 VirtualBox 的效能還是依據電腦本身的硬體配備。為了配置網路，首先在：
 \begin{enumerate}
 \item File / Preferences / Network  位置，新增一個或右鍵點擊現有的網路設定，填入該電腦網路設定 。
-\item Settings / Network / Adapter 1 / Attached to :  該位置改成  Bridged Adapter
+\item Settings / Network / Adapter 1 / Attached to： 該位置改成  Bridged Adapter
 \end{enumerate}
 \qquad 此處配置之比較 ( 取常用例子 ):NAT , Bridged , Internal , Host-only
-\item NAT : 最為基本之設定，主要讓該虛擬主機可連上網，但在與其他網路使用者互動時找不到該虛擬主機網路位址，外部網路也無法偵測，虛擬主機所有的網路請求都會把該來源視為宿主機的。
-\item Host-only : 虛擬主機被分配到一個網址，但是還是只有虛擬主機運行的環境可訪問該網路位址
-\item Internal : 此種設定主要為虛擬主機彼此間的連線，它可向外部提供資料，但反之則不行。
-\item Bridged : 在與其宿主機的網卡設定橋接與設定好外部網路位址後，可被外部網路訪問。
+\item NAT：最為基本之設定，主要讓該虛擬主機可連上網，但在與其他網路使用者互動時找不到該虛擬主機網路位址，外部網路也無法偵測，虛擬主機所有的網路請求都會把該來源視為宿主機的。
+\item Host-only：虛擬主機被分配到一個網址，但是還是只有虛擬主機運行的環境可訪問該網路位址
+\item Internal：此種設定主要為虛擬主機彼此間的連線，它可向外部提供資料，但反之則不行。
+\item Bridged：在與其宿主機的網卡設定橋接與設定好外部網路位址後，可被外部網路訪問。
 \end{itemize}
 \newpage
 \section{Web server}
@@ -882,17 +897,17 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \end{figure}
 
 \section{Nginx}
- 網路設定：\\
- 首先要修改網路設定檔 ，而其設定檔放在 /etc / netplan 目錄下的 yaml 檔 。其中需更改的設定 :
+\hspace{-1.7em} 網路設定：\\
+ 首先要修改網路設定檔，而其設定檔放在/etc/netplan目錄下的yaml檔。其中需更改的設定：
 \begin{enumerate}
-\item addresses： 為靜態 IP，可以是IPV4或IPV6。
-\item gateway： 即為該電腦之閘道器。
-\item nameservers： 該電腦之DNS服務器。
+\item addresses：為靜態 IP，可以是IPV4或IPV6。
+\item gateway：即為該電腦之閘道器。
+\item nameservers：該電腦之DNS服務器。
 \end{enumerate}
 
- WSGI ( Python Web Server GateWay Interface ) 為一種用在 Python 語言上的規範，用來規範 Web Server 與 Web Application 之間如何溝通。而 uWSGI 同為實現了 WSGI ,uwsgi , http 協議等的 Web server , 通常用於接收前端伺服器轉發的動態請求並轉發給 Web Application 。前者可以使用 Nginx 提供的 https 協定，且同上表述中 Nginx 的靜態資源處理能力較佳所以也能將靜態資源轉給其處理。\\
+ WSGI（Python Web Server GateWay Interface）為一種用在Python語言上的規範，用來規範Web Server與Web Application之間如何溝通。而uWSGI同為實現了WSGI、uwsgi、http協議等的Web server，通常用於接收前端伺服器轉發的動態請求並轉發給Web Application。前者可以使用Nginx提供的https協定，且同上表述中Nginx的靜態資源處理能力較佳所以也能將靜態資源轉給其處理。\\
  
-Nginx 的主要設定檔 nginx.conf 可藉由 include 指令添加其他 nginx 設定檔的設定去擴增不同域名的設定，常見的設定有 :
+Nginx的主要設定檔nginx.conf可藉由include指令添加其他nginx設定檔的設定去擴增不同域名的設定，常見的設定有 :
 \begin{enumerate}
 \item 預設：
 \begin{lstlisting}[caption=nginx預設]
@@ -936,10 +951,11 @@ server {
 \end{lstlisting}
 \end{enumerate}
 
- reciveAPP 定義了將 request proxy 過去的應用，例子中 server localhost 語法代表可以請求 proxy 到分別監聽 5000 與 5001 port 的兩個應用，同時這個 block 可達到 load balancer 負載平衡的功能 。\\
+ reciveAPP定義了將request proxy過去的應用，例子中server localhost語法代表可以請求proxy到分別監聽5000與5001 port的兩個應用，同時這個block可達到load balancer負載平衡的功能。\\
  
- server 這個 block 則是定義了proxy server的相關設定，包括要監聽的port( listen 80 為監聽所有 IPV4位址， listen [::]80 則為監聽所有 IPV6位址 )、規定哪些 domain 或 ip 的 request 會被 nginx server 處理（server\_ name)。\\
- location 像是 路由 (routing) 的概念，設定不同的 path 要對應到怎麼樣的設定。location 中則是指對不同路徑的處理。\\
+ server這個block則是定義了proxy server的相關設定，包括要監聽的port（listen 80為監聽所有IPV4位址，listen [::]80則為監聽所有IPV6位址）、規定哪些domain或ip的request會被 nginx server 處理（server\_ name)。\\
+ 
+ location像是路由（routing）的概念，設定不同的path要對應到怎麼樣的設定。location中則是指對不同路徑的處理。\\
  
 \begin{enumerate}
 \item location：
@@ -950,36 +966,35 @@ server {
 \end{lstlisting}
 \end{enumerate}
 
- 要達到 load balancer 透過一開始介紹的 upstream block 就可以達成，在上面的例子中，來自某個 domain 80 port 會被分配到 port 5000 或 port 5001 兩個應用中，達成用兩個應用去分擔 request 的負載平衡器。\\
+ 要達到load balancer透過一開始介紹的upstream block就可以達成，在上面的例子中，來自某個domain 80 port會被分配到port 5000或port 5001兩個應用中，達成用兩個應用去分擔request的負載平衡器。\\
  
- 負載平衡裡的負載規則  ( ip\_hash ) 某個 request 要被導倒哪個應用去處理有不同規則，每個規則都有各自適合使用時機，以下簡單介紹幾個常見的規則：\\
- 
+ 負載平衡裡的負載規則（　ip\_hash ）某個request要被導倒哪個應用去處理有不同規則，每個規則都有各自適合使用時機，以下簡單介紹幾個常見的規則：\\
+
 \begin{enumerate}
-\item round-robin：(預設)輪詢方式： 也就是將請求輪流按照順序分配給每一個 server。假設所有伺服器的處理效能都相同，不關心每臺伺服器的當前連線數和響應速度。適合於伺服器組中的所有伺服器都有相同的軟硬體配置並且平均伺服器請求相對均衡的情況。
-不過也有另外一種可以設定權重的 Weight Round Robin （加權輪詢方式），可以設定不同 server 的權重，例如以下範例：
+\item round-robin（預設）輪詢方式：也就是將請求輪流按照順序分配給每一個 server。假設所有伺服器的處理效能都相同，不關心每臺伺服器的當前連線數和響應速度。適合於伺服器組中的所有伺服器都有相同的軟硬體配置並且平均伺服器請求相對均衡的情況。
+不過也有另外一種可以設定權重的Weight Round Robin（加權輪詢方式），可以設定不同server的權重，例如以下範例：
 \begin{lstlisting}[caption=設定不同 server 的權重]
   upstream myweb {
     server web1.dtask.idv.tw weight=3;
     server web2.dtask.idv.tw weight=2;
 }
 \end{lstlisting}
-\item least-connected 最少連線： 顧名思義為連線進來時會把 Request 導向連線數較少的 Server。
-\item IP-hash 依據 Client IP 來分配到不同台 Server： 通過一個雜湊（Hash）函式將一個 IP 地址對映到一臺伺服器。先根據請求的目標 IP 地址，作為雜湊鍵（Hash Key）從靜態分配的散列表找出對應的伺服器。除非斷線或 IP變動，否則同個 IP 的請求都會導入到同一個 server。
+\item least-connected 最少連線：顧名思義為連線進來時會把Request導向連線數較少的Server。
+\item IP-hash依據Client IP來分配到不同台Server：通過一個雜湊（Hash）函式將一個 IP 地址對映到一臺伺服器。先根據請求的目標IP地址，作為雜湊鍵（Hash Key）從靜態分配的散列表找出對應的伺服器。除非斷線或IP變動，否則同個IP的請求都會導入到同一個 server。
 \end{enumerate}
   uWSGI設定（uwsgi\_ini ）：\\
  \begin{enumerate} 
- \item wsgi-file : 主要運行的 py 檔案
- \item http , socket , http-socket : 端口設定，假使有使用到 前端服務器 ( 如Nginx ) 時，不能用 http 設定，因 uwsgi 協議為 HTTP，而 Nginx 使用傳輸協議為 TCP，兩者不能互通。
+ \item wsgi-file：主要運行的py檔案
+ \item http，socket，http-socket：端口設定，假使有使用到 前端服務器（如Nginx）時，不能用http設定，因uwsgi協議為HTTP，而Nginx使用傳輸協議為TCP，兩者不能互通。
  \begin{lstlisting}[caption=簡易uwsgi指令啟動]
-  uwsgi --http : 9000 --wsgi-file APP.py 
+  uwsgi --http：9000 --wsgi-file APP.py 
 \end{lstlisting}
- \item processes , threads : 工作序， processes 為進程 ，threads 為線程 , 下方設定為每條近程有兩條線程 。
+ \item processes、threads：工作序，processes為進程，threads為線程，下方設定為每條近程有兩條線程。
  \begin{lstlisting}[caption=加入工作程序uwsgi指令啟動]
-  uwsgi --http : 9000 --wsgi-file APP.py --processes 4 --threads 2
+  uwsgi --http：9000 --wsgi-file APP.py --processes 4 --threads 2
 \end{lstlisting}
-\item chdir : 此項是為了正確的加載模組 / 檔案 \\
-
-整體快速配置 ( 這裡儲存成一個  .ini 文件，其他還有YAML , JSON , XML 格式等 )  :
+\item chdir：此項是為了正確的加載模組/檔案 \\
+整體快速配置（這裡儲存成一個.ini文件，其他還有YAML、JSON、XML格式等）：
 \begin{lstlisting}[caption=將uwsgi指令啟動動作設定成一個啟動檔]
   [uwsgi]
 socket = :9000
@@ -988,7 +1003,7 @@ threads = 2
 chdir = location/to
 wsgi-file = location/to/file
 \end{lstlisting}
-此項還可加上 status :  此項為查看 uWSGI 內部的輸出數據\\
+此項還可加上status：此項為查看uWSGI內部的輸出數據\\
 \begin{lstlisting}[caption=status]
   -- status 127.0.0.1:9001
 \end{lstlisting}
@@ -1005,7 +1020,7 @@ wsgi-file = location/to/file
  \end{enumerate}
 \section{Flask}
  
- 如同以上所述，建立 Flask 框架的同時需選擇反向代理伺服器 ( 這裡我們選擇了 Nginx ) 來負責網頁請求和結果的回覆，同時還需要一個實現  WSGI 通信協議的伺服器 ( 我們選擇了 uWSGI ) 來負責接收代理伺服器的請求後轉發 Flask 及 接收 Flask 訊息轉發回去 ( 代理伺服器 )。\\
+ 如同以上所述，建立Flask框架的同時需選擇反向代理伺服器（這裡我們選擇了Nginx）來負責網頁請求和結果的回覆，同時還需要一個實現WSGI通信協議的伺服器（我們選擇了 uWSGI）來負責接收代理伺服器的請求後Flask轉發及接收訊息，再轉發回去（代理伺服器）。\\
  
 \begin{figure}[hbt!]
 \begin{center}
@@ -1015,37 +1030,150 @@ wsgi-file = location/to/file
 \end{figure}
 
 \chapter{機器學習的訓練與模擬控制結果}
+\section{訓練模型的基礎概念}
+ 訓練模型的原型是實體冰球機的機電系統，由於要訓練強化學習，所以需要將模型簡化至最簡潔的方式進行訓練，並取Open AI Gym的環境當作最簡化的訓練模型。由於強化學習是一種最佳化控制的方式，因此將Gym的Pong畫面當作輸入，輸出為擊錘移動方向，藉由調整當中的權重、偏差等參數，將參數調配到最優狀態。將可行的訓練方式套用到CoppeliaSim進行虛擬環境的訓練，並且可將訓練結果套用到實機進行運用。\\
 \section{訓練模型的選用}
- 利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用pygame模組來撰寫pong game的訓練環境，撰寫pong game的初期還算順利，但在基本功能編寫告一段落後，發現pygame缺少物理引擎，造成在對打的時候出現特定角度碰撞時，擊錘與球的碰撞沒有反應的情況。為了解決pygame碰撞問題，做了幾種嘗試：修改pygame的碰撞定義，但會因為擊球時球速過快而超出碰撞偵測、碰撞角度的問題而失效，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等偵測或設定。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。\\
- 
- Open AI Gym裡面有十幾種訓練模型的環境，提供機器學習做訓練的環境。由於我們的訓練模型是pong game，在Gym模組裡面剛好有訓練模型，因此使用Gym模組相對於使用pygame和pymunk的搭配來的方便，而且後續要在CoppeliaSim模擬環境模擬時也有套件可搭配使用，可簡化功能和訓練時所需的環境模型和訓練功能的程式編寫。\\
-\section{訓練程式的運作}
- 由於機器學習和影像處理需要大量的運算矩陣運算，因此如果只單獨透過Python本身運算比編譯語言執行的速度來的慢，所以使用Numpy程式庫來解決在Python環境矩陣運算速度慢的問題，以提升訓練機器學習時的運算效率。pickle是Python內部的序列化方式，主要是當機器學習訓練時可能因為一些原因需要暫時停止訓練，但為了讓已經停下的訓練再次重啟就需要透過pickle序列化的方式，將暫停前的訓練權重值透過pickle將其記錄下來，當訓練再次重啟時就可透過pickle.load讀取先前紀錄的pickle檔案就可回到當時暫停的狀態下繼續進行訓練。\\
- 
- 機器學習所運用的架構是強化學習並搭配神經網路來訓練機器學習，結合了強化學習不需要事先收集訓練資料、不需要特別教導，以及神經網路的非線性激活函數的計算。
- %在python環境下，結合numpy和gym的模擬環境編寫程式，選擇numpy作為運算工具是因為它比Tensorflow之類的程式庫更具彈性，編寫公式較為方便，而gym的設計讓我們能方便的控制右邊的擊錘板。首先擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，讓agent判斷是要往上還是下，經過Score Function計算出的對數機率當作輸入，第二透過前饋：計算W1權重與W2權重的互動結果及擊錘移動的機率，W1權重是計算畫面差異下環境的狀態，W2權重則是經過啟動函數(activation function)得出擊錘移動向下或上的機率。第三得到機率後，agent會透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，也就是採取機率較大的方向移動。第四決定行動後會產生獎懲，獎懲機制是，如果agent碰到球並越過敵方就會得到好的獎勵，沒有打到球的agent會得到懲罰，最後產生的獎懲會送往反饋機制，取樣採取行動的機率，讓獎勵變為1，懲罰變為0，返回原輸入，達到學習效果，隨著agent經驗的增加，會越打越聰明，贏的機率就越高，由此訓練出聰明的AI，經過數萬次的訓練，計算discount reward及獎勵的加總，得出的數值會越來越大，我們小組的測試，往後不管狀況是如何，基本上都會贏過敵方拿下分數。
-
-程式訓練流程：\\
- 擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
-
- 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、\\
-
-\newpage
-\chapter{問題與討論}
-Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll
+ 利用Gym的環境訓練機器學習，以測試學習率、神經網路隱藏層的神經元個數、機器學習的啟動函數類型、訓練時影像大小等幾項參數與訓結果之間的關聯性，選用pyhton語言進行配置。剛開始我們運用Pygame模組來撰寫pong game的訓練環境，開始學習並了解Pygame的一些運用，嘗試建構出pong game場景(圖.\ref{fig.pong_pygame})，在基本功能編寫告一段落後，測試程式漏洞，發現對打時特定角度碰撞，球會超過擊錘的碰撞感測，導致出現球擊穿擊錘的現象。為了解決Pygame碰撞問題，做了幾種嘗試：修改Pygame的碰撞定義，更換碰撞感測的感測方式，問題依舊沒有顯著的改善，若增加過多的碰撞偵測點則會造成後續機器學習訓練時的運算負荷；另一種方法則是搭配pymunk的物理引擎模組使用(圖.\ref{fig.airhockey_pymunk})，使環境更符合實際物理現象，可加入碰撞、摩擦、力量大小、速度大小等可以個別設定和調用。當環境有了物理接下來就需要加入訓練所需的功能，如：訓練時的場景的即時影像畫面、即時獎勵回傳、該局結束時的場景重設和分數重置等功能。此時找到了Open AI Gym模組。\\
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{Q_dll}
-\caption{動態連結庫錯誤}
-\label{fig.動態連結庫錯誤}
+\includegraphics[width=12cm]{pong_pygame}
+\caption{\Large Pygame模組編寫}
+\label{fig.pong_pygame}
 \end{center}
 \end{figure}
 
-A：此問題尚未找到解決方法。\\
-Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=12cm]{airhockey_pymunk}
+\caption{\Large Pymunk模組編寫}
+\label{fig.airhockey_pymunk}
+\end{center}
+\end{figure}
+ \newpage %圖片空隙勿刪
+ Open AI Gym裡面有十幾種訓練模型的環境，提供機器學習做訓練的環境。由於我們的訓練模型是pong game，在Gym模組裡面剛好有訓練模型，因此使用Gym模組相對於使用Pygame和pymunk的搭配來的方便，而且後續要在CoppeliaSim模擬環境模擬時也有套件可搭配使用，可簡化功能和訓練時所需的環境模型和訓練功能的程式編寫，另一方面自寫場景需要測試場景的漏洞，使用Gym可以節省檢查場景漏洞和修正的時間。\\
+\section{訓練程式的運作}
+ 由於機器學習和影像處理需要大量的運算矩陣運算，因此如果只單獨透過Python本身運算比編譯語言執行的速度來的慢，所以使用Numpy程式庫來解決在Python環境矩陣運算速度慢的問題，以提升訓練機器學習時的運算效率。pickle是Python內部的序列化方式，主要是當機器學習訓練時可能因為一些原因需要暫時停止訓練，但為了讓已經停下的訓練再次重啟就需要透過pickle序列化的方式，將暫停前的訓練權重值透過pickle將其記錄下來，當訓練再次重啟時就可透過pickle.load讀取先前紀錄的pickle檔案就可回到當時暫停的狀態下繼續進行訓練。\\
+ 
+ 機器學習所運用的架構是強化學習並搭配神經網路來訓練機器學習，結合了強化學習不需要事先收集訓練資料、不需要特別教導，以及神經網路的非線性激活函數的計算和參數的記憶性。\\
+%在python環境下，結合numpy和gym的模擬環境編寫程式，選擇numpy作為運算工具是因為它比Tensorflow之類的程式庫更具彈性，編寫公式較為方便，而gym的設計讓我們能方便的控制右邊的擊錘板。首先擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，讓agent判斷是要往上還是下，經過Score Function計算出的對數機率當作輸入，第二透過前饋：計算W1權重與W2權重的互動結果及擊錘移動的機率，W1權重是計算畫面差異下環境的狀態，W2權重則是經過啟動函數(activation function)得出擊錘移動向下或上的機率。第三得到機率後，agent會透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，也就是採取機率較大的方向移動。第四決定行動後會產生獎懲，獎懲機制是，如果agent碰到球並越過敵方就會得到好的獎勵，沒有打到球的agent會得到懲罰，最後產生的獎懲會送往反饋機制，取樣採取行動的機率，讓獎勵變為1，懲罰變為0，返回原輸入，達到學習效果，隨著agent經驗的增加，會越打越聰明，贏的機率就越高，由此訓練出聰明的AI，經過數萬次的訓練，計算discount reward及獎勵的加總，得出的數值會越來越大，我們小組的測試，往後不管狀況是如何，基本上都會贏過敵方拿下分數。
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{強化學習訓練流程}
+\caption{\Large 強化學習訓練流程}
+\label{fig.強化學習程式流程}
+\end{center}
+\end{figure}
+%-----------------------------%
 
-A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
-\begin{lstlisting}[caption=MathJax 程式碼]
+%=---------圖片空隙勿刪--------=%
+%-----------------------------%
+程式訓練流程(圖.\ref{fig.強化學習程式流程})：\\
+ 擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
+
+ 在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、RMSprop優化率減因子和反饋(back propagation)，當訓練次數到達指定次數會以pickle做紀錄，存下的數據可再次導入模型進行實際運用，或是當程式中斷後可重新匯入進行訓練。\\
+
+\newpage
+\chapter{問題與討論}
+\hspace{-1.7em} Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_dll}
+\caption{\Large 動態連結庫錯誤}
+\label{fig.動態連結庫錯誤}
+\end{center}
+\end{figure}
+\newpage
+\hspace{-1.4em}A：此問題尚未找到解決方法。\\
+Q：錄製訓練過程的程式讀不到ffmpeg(圖.\ref{fig.Q_ffmpeg})。\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_ffmpeg}
+\caption{\Large 程式讀不到ffmpeg}
+\label{fig.Q_ffmpeg}
+\end{center}
+\end{figure}
+\\
+A：需要在作業系統中安裝ffmpeg：
+\begin{enumerate}
+\item 下載、解壓縮\\
+先到官網 \href{https://ffmpeg.org/download.html}{https://ffmpeg.org/download.html} 下載" \href{https://www.gyan.dev/ffmpeg/builds/}{Windows builds from gyan.dev} "，下載 \href{https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z}{https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z} ，解壓縮重新命名成"ffmpeg"並放到C槽目錄下(C:$\setminus$ffmpeg)。
+\item 環境設定(windows10 20H2 及 2004版本)\\
+開啟"設定"→"系統"→左方"關於"選項→右側"進階系統設定"→"環境變數"(圖.\ref{fig.Q_ffmpeg-2})→選取"Path"，編輯(圖.\ref{fig.Q_ffmpeg-3})→"新增"，增加一個環境變數，給定內容為："C:$\setminus$ffmpeg$\setminus$bin"，"確定"(圖.\ref{fig.Q_ffmpeg-4})→"確定"→"確定\\
+\end{enumerate}
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=10cm]{Q_ffmpeg-2}
+\caption{\Large 進階系統設定}
+\label{fig.Q_ffmpeg-2}
+\end{center}
+\end{figure}
+\fontsize{0.001pt}{1pt}\selectfont .\\ %圖片間距勿刪
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=10cm]{Q_ffmpeg-3}
+\caption{\Large 環境變數}
+\label{fig.Q_ffmpeg-3}
+\end{center}
+\end{figure}
+\fontsize{0.001pt}{1pt}\selectfont .\\ %圖片間距勿刪
+\newpage
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_ffmpeg-4}
+\caption{\Large 編輯環境變數}
+\label{fig.Q_ffmpeg-4}
+\end{center}
+\end{figure}
+\fontsize{0.001pt}{1pt}\selectfont .\\ %圖片間距勿刪
+
+\newpage %圖片間距勿刪
+\fontsize{14pt}{28pt}\selectfont
+
+\begin{itemize}
+\item 測試\\
+開啟命令字元(win+R，輸入"cmd")，執行"ffmpeg"(圖.\ref{fig.Q_ffmpeg-5})\\
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{Q_ffmpeg-5}
+\caption{\Large ffmpeg成功執行}
+\label{fig.Q_ffmpeg-5}
+\end{center}
+\end{figure}
+\end{itemize}
+\newpage%圖片間距勿刪
+\hspace{-1.7em} Q：運用gym.wrappers.Monitor透過ffmpeg進行錄影，紀錄下訓練影像。但記錄後的影像資料皆為1KB，並且無法開啟。(圖.\ref{fig.ffmpeg_mp4})\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{ffmpeg_mp4}
+\caption{\Large 錄製後，影片無法開啟}
+\label{fig.ffmpeg_mp4}
+\end{center}
+\end{figure}
+\\%圖片間距勿刪
+
+%圖片間距勿刪
+A：修改g ym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.video_recorder})，將303行的縮排修正(從if階層上移到def的階層)即可(圖.)。\\
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{video_recorder}
+\caption{\Large 原始設定}
+\label{fig.video_recorder}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{修正video_recorder}
+\caption{\Large 修正後設定}
+\label{fig.修正video_recorder}
+\end{center}
+\end{figure}
+\newpage %圖片間距勿刪
+
+\hspace{-1.7em} Q：啟用cmsimde的MathJax的功能遇到文章使用括號補充說明的內容被誤當成latex的語法轉換。\\
+\hspace{-1.7em} A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
+\begin{lstlisting}[caption=\Large\sectionef MathJax 程式碼]
 <script>
   MathJax = {
     tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
@@ -1071,15 +1199,124 @@ A：格式轉換原始定義成"("和")"，所以出現誤換的問題。\\
 \end{Large}
 \end{flushleft}
 \newpage
-\begin{center}
-\LARGE\textbf 作者簡介\\
-\end{center}
+%=-------------作者簡介-----------------=%也是抄的
+    \begin{center}
+	\fontsize{20pt}{0em}\selectfont \bf{作者簡介}\\
+	\end{center}
+	
+	{\begin{textblock}{6}(0,0.5)
+	\begin{figure}
+	\includegraphics[width=1.15in]{40723110.jpg} 
+	\end{figure}
+	\end{textblock}}
+	{\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+	{\begin{textblock}{15}(3.5,0.7)%{寬度}(以左上角為原點之右移量,下移量)
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{李正揚}\\     \hspace*{\fill} \\
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723110} \\ %\makebox為文本盒子
+    \hspace*{\fill} \\
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+    \fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+    \hspace*{\fill} \\
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    \hspace*{\fill} \\
+
+	{\begin{textblock}{6}(0,2.3)
+	\begin{figure}
+	\includegraphics[width=1.15in]{40723115.jpg} 
+    \end{figure}
+    \end{textblock}}
+    {\renewcommand\baselinestretch{0.99}
+    \selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,2.5) %{寬度}(以左上角為原點之右移量,下移量)
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{林于哲}\\ 
+\hspace*{\fill} \\
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723115} \\ 
+\hspace*{\fill} \\
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+\hspace*{\fill} \\
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    \hspace*{\fill} \\
+
+
+    {\begin{textblock}{6}(0,4.1)
+    \begin{figure}
+        \includegraphics[width=1.15in]{40723138.jpg} 
+    \end{figure}
+    \end{textblock}}
+    {\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,4.3) %{寬度}(以左上角為原點之右移量,下移量)
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace%\noindent指定首行不進行縮排
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{黃奕慶}\\ 
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723138} \\ %\makebox為文本盒子
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    \hspace*{\fill} \\
+
+    {\begin{textblock}{6}(0,5.9)
+    \begin{figure}
+        \includegraphics[width=1.15in]{40723148.jpg} %{}內是圖片文件的相對路徑
+    \end{figure}
+    \end{textblock}}
+    {\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,6.1) %{寬度}(以左上角為原點之右移量,下移量)
+\noindent\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{鄭博鴻}\\ \hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723153} \\ \hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    \hspace*{\fill} \\
+
+    {\begin{textblock}{6}(0,7.7)
+    \begin{figure}
+        \includegraphics[width=1.15in]{40723150.jpg} %{}內是圖片文件的相對路徑
+    \end{figure}
+    \end{textblock}}
+    \renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,7.9) %{寬度}(以左上角為原點之右移量,下移量)
+	\noindent\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{簡國龍}\\ \hspace*{\fill} \\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{40723150} \\ \hspace*{\fill} \\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立虎尾科技大學}\\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械設計工程系}\\
+	\hspace*{\fill} \\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}
 \newpage
+%=----------------書背----------------------=%
+\pagestyle{empty}%設定沒有頁眉和頁腳
 \begin{center}
 \fontsize{0.001pt}{1pt}\selectfont .\\
 \vspace{4em}
 \fontsize{30pt}{30pt}\selectfont 【13】 \\
-\fontsize{20pt}{40pt}\selectfont
+\fontsize{20pt}{20pt}\selectfont
 \vspace{0.5em}
 分\\
 類\\

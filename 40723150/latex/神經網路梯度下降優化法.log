@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2020.3.25)  12 MAR 2021 14:33
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  19 MAY 2021 22:58
 entering extended mode
 **./神經網路梯度下降優化法.tex
 (神經網路梯度下降優化法.tex
@@ -700,7 +700,6 @@ File: ./Gradient descent optimizer/without_momentum.png Graphic file (type bmp)
 <./Gradient descent optimizer/without_momentum.png>
 File: ./Gradient descent optimizer/with_momentum.png Graphic file (type bmp)
 <./Gradient descent optimizer/with_momentum.png>
-Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text;!
 [7
 
 ]
@@ -717,9 +716,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 356.
  (神經網路梯度下降優化法.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 356.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 356.
-Package rerunfilecheck Info: File `神經網路梯度下降優化法.out' has not changed.
-(rerunfilecheck)             Checksum: FCB07138EA31A47BA838B6D26654F624;1152.
 
+
+Package rerunfilecheck Warning: File `神經網路梯度下降優化法.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `神經網路梯度下降優化法.out':
+(rerunfilecheck)             Before: 4FD7913B3FC8F50F8EDA361A4A73823E;1170
+(rerunfilecheck)             After:  FCB07138EA31A47BA838B6D26654F624;1152.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
