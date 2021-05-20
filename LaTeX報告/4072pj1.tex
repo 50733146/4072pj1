@@ -30,6 +30,7 @@ left=3truecm,right=2.5truecm]{geometry}
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
 \renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
+%\captionsetup[table]{name= \Large 表.} %更改表標題名稱
 \renewcommand{\lstlistingname}{\Large 程式.} %設定程式標示名稱
 \hoffset=-5mm %調整左右邊界
 \voffset=-8mm %調整上下邊界
@@ -510,7 +511,7 @@ $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\
 \section{Policy Gradient}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{policy gradient原理 }
+\includegraphics[width=15cm]{policy gradient原理}
 \caption{\Large Policy Gradient原理}
 \label{Policy Gradient原理}
 \end{center}
@@ -798,7 +799,7 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \hline  9 &加入/移出 樹狀結構&&\\
 \hline 
 \end{tabular}}
-\caption{功能說明}
+\caption{\Large 功能說明}
 \end{table}
 \newpage
 %\item 模擬執行\\%
