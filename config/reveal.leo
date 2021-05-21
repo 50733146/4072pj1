@@ -44,6 +44,9 @@
 <v t="leo.20210520210514.1"><vh>類神經網路</vh>
 <v t="leo.20210520210514.2"><vh>類神經網路</vh></v>
 </v>
+<v t="leo.20210521160444.1"><vh>類神經網路-2</vh>
+<v t="leo.20210521160444.2"><vh>類神經網路</vh></v>
+</v>
 <v t="leo.20210520201504.4"><vh>強化學習</vh>
 <v t="leo.20210520201504.5"><vh>強化學習</vh></v>
 </v>
@@ -665,7 +668,8 @@ make.start()
 </t>
 <t tx="leo.20210520201547.5">### 訓練結果
 
-&lt;img src="./../images/openaigym.video.0.1660.video000001.gif" alt="訓練結果" height="550"&gt;
+&lt;img src="./../images/pong2_500.gif" alt="訓練500次結果" height="550"&gt;
+&lt;img src="./../images/openaigym.video.0.1660.video000001.gif" alt="28.9K次訓練結果" height="550"&gt;
 </t>
 <t tx="leo.20210520210514.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
@@ -680,7 +684,7 @@ make.start()
 </t>
 <t tx="leo.20210520210514.2">### 類神經網路
 
-&lt;img src="./../images/兩層神經網路.png" alt="兩層神經網路" height="550"&gt;</t>
+&lt;img src="./../images/類神經網路架構.png" alt="神經網路" height="550"&gt;</t>
 <t tx="leo.20210520211420.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 &lt;!-- 請注意, @others 不可以內縮 --&gt;
@@ -726,5 +730,19 @@ make.start()
 <t tx="leo.20210521110239.2">### Nginx
 
 &lt;img src="./../images/clientProxy.jpeg" alt="Nginx" height="550"&gt;</t>
+<t tx="leo.20210521160444.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210521160444.2">### 類神經網路
+
+&lt;img src="./../images/類神經網路關係.png" alt="類神經網路關係" wight="500"&gt;</t>
 </tnodes>
 </leo_file>
