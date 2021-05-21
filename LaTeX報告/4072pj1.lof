@@ -26,24 +26,24 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces \Large CoppeliaSim 工具列(續)}}{33}{figure.4.6}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces \Large OpenCV 及Python logo}}{33}{figure.4.7}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces \Large HSV色彩空間}}{34}{figure.4.8}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖}}{35}{figure.4.9}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景}}{35}{figure.4.10}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖}}{36}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景}}{36}{figure.4.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy}}{39}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large clientToflask}}{44}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total}}{44}{figure.5.3}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy}}{40}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large clientToflask}}{45}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total}}{45}{figure.5.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large Pygame模組編寫}}{46}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces \Large Pymunk模組編寫}}{46}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程}}{48}{figure.6.3}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large Pygame模組編寫}}{47}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \Large Pymunk模組編寫}}{47}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程}}{49}{figure.6.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 動態連結庫錯誤}}{49}{figure.7.1}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces \Large 程式讀不到ffmpeg}}{50}{figure.7.2}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces \Large 進階系統設定}}{51}{figure.7.3}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces \Large 環境變數}}{51}{figure.7.4}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces \Large 編輯環境變數}}{52}{figure.7.5}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces \Large ffmpeg成功執行}}{53}{figure.7.6}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces \Large 錄製後，影片無法開啟}}{53}{figure.7.7}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces \Large 原始設定}}{54}{figure.7.8}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces \Large 修正後設定}}{54}{figure.7.9}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 動態連結庫錯誤}}{51}{figure.7.1}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces \Large 程式讀不到ffmpeg}}{52}{figure.7.2}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces \Large 進階系統設定}}{53}{figure.7.3}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces \Large 環境變數}}{53}{figure.7.4}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces \Large 編輯環境變數}}{54}{figure.7.5}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces \Large ffmpeg成功執行}}{55}{figure.7.6}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces \Large 錄製後，影片無法開啟}}{55}{figure.7.7}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces \Large 原始設定}}{56}{figure.7.8}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces \Large 修正後設定}}{56}{figure.7.9}%
 \contentsfinish 

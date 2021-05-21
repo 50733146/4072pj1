@@ -39,16 +39,19 @@
 \contentsline {section}{\numberline {4.3}影像處理}{33}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}CoppeliaSim中的Vision sensor(視覺傳感器)}{33}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}影像辨識}{34}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}伺服器}{36}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Ubuntu 環境配置}{36}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{37}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Web server}{39}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Nginx}{40}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Flask}{43}{section.5.5}%
-\contentsline {chapter}{\numberline {6}機器學習的訓練與模擬控制結果}{45}{chapter.6}%
-\contentsline {section}{\numberline {6.1}訓練模型的基礎概念}{45}{section.6.1}%
-\contentsline {section}{\numberline {6.2}訓練模型的選用}{45}{section.6.2}%
-\contentsline {section}{\numberline {6.3}訓練程式的運作}{47}{section.6.3}%
-\contentsline {chapter}{\numberline {7}問題與討論}{49}{chapter.7}%
-\contentsline {chapter}{參考文獻 }{55}{lstnumber.7.1.8}%
+\contentsline {chapter}{\numberline {5}伺服器}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ubuntu 環境配置}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Oracle VM VirtualBox 介紹}{38}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Web server}{40}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Nginx}{41}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Flask}{44}{section.5.5}%
+\contentsline {chapter}{\numberline {6}機器學習的訓練與模擬控制結果}{46}{chapter.6}%
+\contentsline {section}{\numberline {6.1}訓練模型的基礎概念}{46}{section.6.1}%
+\contentsline {section}{\numberline {6.2}訓練模型的選用}{46}{section.6.2}%
+\contentsline {section}{\numberline {6.3}訓練程式的運作}{48}{section.6.3}%
+\contentsline {section}{\numberline {6.4}CoppeliaSim RemoteAPI}{49}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Remote API模組及動態連結函示庫}{50}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Remote API埠使用}{50}{subsection.6.4.2}%
+\contentsline {chapter}{\numberline {7}問題與討論}{51}{chapter.7}%
+\contentsline {chapter}{參考文獻 }{57}{lstnumber.7.1.8}%
 \contentsfinish 

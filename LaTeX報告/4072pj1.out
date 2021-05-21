@@ -49,5 +49,8 @@
 \BOOKMARK [1][-]{section.6.1}{訓練模型的基礎概念}{chapter.6}% 49
 \BOOKMARK [1][-]{section.6.2}{訓練模型的選用}{chapter.6}% 50
 \BOOKMARK [1][-]{section.6.3}{訓練程式的運作}{chapter.6}% 51
-\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 52
-\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 53
+\BOOKMARK [1][-]{section.6.4}{CoppeliaSim\040RemoteAPI}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.6.4.1}{Remote API模組及動態連結函示庫}{section.6.4}% 53
+\BOOKMARK [2][-]{subsection.6.4.2}{Remote API埠使用}{section.6.4}% 54
+\BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 55
+\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 56

@@ -826,6 +826,53 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \includegraphics[width=10cm]{HSV}
 \caption{\Large HSV色彩空間}
 \end{figure}
+\newpage
+下列為RGB與HSV之間轉換的公式，首先是RGB轉為HSV，其中$max$及$min$分別為$(r,g,b)$中的最大與最小值:
+$$
+h=\left\{\begin{matrix}
+0^{\circ}, & \textrm{if}\ max=min\\ 
+ 60^{\circ}+\frac{
+g-b}{max-min}+0^{\circ},& \textrm{if}\ max=r\;and\;g\geq \;b\\ 
+60^{\circ}+\frac{
+g-b}{max-min}+360^{\circ}, & \textrm{if}\ max=r\;and\;g<  \;b\\ 
+60^{\circ}+\frac{
+g-b}{max-min}+120^{\circ}, & \textrm{if}\ max=g\\ 
+60^{\circ}+\frac{
+g-b}{max-min}+240^{\circ}, & \textrm{if}\ max=b
+\end{matrix}\right.\\$$
+
+$$
+s=\left\{\begin{matrix}
+0, & \textrm{if}\,max=0\\ 
+\frac{max-min}{max}=1-\frac{min}{max}, & \textrm{otherwise}
+\end{matrix}\right.\\$$
+
+$$
+v=max\\$$
+接著是HSV轉為RGB:
+$$
+\textrm{when}\,0\leq H< 360,0\leq S\leq 1,0\leq V\leq 1$$
+$$
+C=V\times S\\$$
+$$
+X=C\times (1-\left | (H/60^{\circ})\textrm{mod}2-1 \right |)\\$$
+$$
+m=V-C\\$$
+
+$$
+({R}',{G}',{B}')=\left\{\begin{matrix}
+(C,X,0)& ,0^{\circ}\leq H< 60^{\circ}\\ 
+ (X,C,0)& ,60^{\circ}\leq H< 120^{\circ}\\ 
+ (0,C,X)& ,120^{\circ}\leq H< 180^{\circ}\\ 
+ (0,X,C)& ,180^{\circ}\leq H< 240^{\circ}\\ 
+ (X,0,C)& ,240^{\circ}\leq H< 300^{\circ}\\ 
+ (C,0,X)& ,300^{\circ}\leq H< 360^{\circ}
+\end{matrix}\right.\\$$
+
+$$
+(R,G,B)=(({R}'+m)\times 255,({G}'+m)\times 255,({B}'+m)\times 255)\\$$
+
+
 
 \item 顏色過濾\\
 進行顏色過濾時，需要先定義出過濾顏色的上下限，在開始過濾後僅會保留介於上下界線範圍的影像，而介於上下限範圍之外的影像則會被剃除，如圖.\ref{filter}所示以上限(77，255，255)及下限(35，43，46)為例。\\
@@ -1071,7 +1118,20 @@ wsgi-file = location/to/file
  擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
 
  在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、RMSprop優化率減因子和反饋(back propagation)，當訓練次數到達指定次數會以pickle做紀錄，存下的數據可再次導入模型進行實際運用，或是當程式中斷後可重新匯入進行訓練。\\
-
+\section{CoppeliaSim RemoteAPI}
+在進行強化學習時主要是透過CoppeliaSim中的Remote API 函數來取得模擬場景中所需要的資訊，並在進行訓練後再回傳到CoppeloaSim做控制的動作。\\
+\subsection{Remote API模組及動態連結函示庫}
+在啟用RemoteAPI需要先準備以下三項模組和動態連結函示庫，並將此三項與預執行的程式放在同一目錄下:
+\begin{itemize}
+\item sim.py
+\item simConst.py
+\item remoteApi.dll、remoteApi.dylib 或 remoteApi.so (依序適用於:Windows、MacOS、Ubuntu)
+\end{itemize}
+sim.py及simConst.py為Python模組，其位於:\\
+CoppeliaSim安裝目錄$\backslash$programming$\backslash$remoteApiBindings$\backslash$python$\backslash$python\\
+remoteApi.dll為RemoteAPI動態連結函示庫，其位於:\\
+CoppeliaSim安裝目錄$\backslash$programming$\backslash$remoteApiBindings$\backslash$lib$\backslash$lib$\backslash$作業系統\\
+\subsection{Remote API埠使用}
 \newpage
 \chapter{問題與討論}
 \hspace{-1.7em} Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll\\
