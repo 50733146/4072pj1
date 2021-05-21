@@ -3,6 +3,7 @@
 import numpy as np
 import pickle
 import gym
+from gym import wrappers
 
 from chainer import cuda
 import cupy as cp
@@ -20,8 +21,8 @@ batch_size = 1000 # every how many episodes to do a param update?
 learning_rate = 1e-3
 gamma = 0.99 # discount factor for reward
 decay_rate = 0.99 # decay factor for RMSProp leaky sum of grad^2
-resume = 0 # resume from previous checkpoint?
-render = 0
+resume = 1 # resume from previous checkpoint?
+render = 1
 device = 1
 
 # model initialization
@@ -103,6 +104,7 @@ def policy_backward(eph, epdlogp):
 
 
 env = gym.make("Pong-v0")
+env = wrappers.Monitor(env, 'tmp/pong-base', force=True)
 observation = env.reset()
 prev_x = None # used in computing the difference frame
 xs,hs,dlogps,drs = [],[],[],[]
