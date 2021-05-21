@@ -22,7 +22,7 @@
 <v t="leo.20180902120523.10"><vh>封面投影片內容</vh></v>
 </v>
 <v t="leo.20180902120523.11"><vh>介紹</vh>
-<v t="leo.20210520152711.1"><vh> 議程</vh>
+<v t="leo.20210520152711.1"><vh>目錄</vh>
 <v t="leo.20210520152711.2"><vh>介紹</vh></v>
 </v>
 <v t="leo.20210520152553.1"><vh>介紹</vh>
@@ -30,7 +30,7 @@
 </v>
 </v>
 <v t="leo.20210520201414.1"><vh>整體研究架構</vh>
-<v t="leo.20210520201414.2"><vh> 議程</vh>
+<v t="leo.20210520201414.2"><vh>目錄</vh>
 <v t="leo.20210520201414.3"><vh>介紹</vh></v>
 </v>
 <v t="leo.20210520201414.4"><vh>整體研究架構</vh>
@@ -38,18 +38,18 @@
 </v>
 </v>
 <v t="leo.20210520201504.1"><vh>機器學習</vh>
-<v t="leo.20210520201504.2"><vh> 議程</vh>
+<v t="leo.20210520201504.2"><vh> 目錄</vh>
 <v t="leo.20210520201504.3"><vh>介紹</vh></v>
-</v>
-<v t="leo.20210520201504.4"><vh>強化學習</vh>
-<v t="leo.20210520201504.5"><vh>強化學習</vh></v>
 </v>
 <v t="leo.20210520210514.1"><vh>類神經網路</vh>
 <v t="leo.20210520210514.2"><vh>類神經網路</vh></v>
 </v>
+<v t="leo.20210520201504.4"><vh>強化學習</vh>
+<v t="leo.20210520201504.5"><vh>強化學習</vh></v>
+</v>
 </v>
 <v t="leo.20210520201505.1"><vh>模擬環境CoppeliaSim</vh>
-<v t="leo.20210520201505.2"><vh> 議程</vh>
+<v t="leo.20210520201505.2"><vh> 目錄</vh>
 <v t="leo.20210520201505.3"><vh>介紹</vh></v>
 </v>
 <v t="leo.20210520201505.4"><vh>OpenCV</vh>
@@ -60,18 +60,21 @@
 </v>
 </v>
 <v t="leo.20210520201530.1"><vh>伺服器架設</vh>
-<v t="leo.20210520201530.2"><vh> 議程</vh>
+<v t="leo.20210520201530.2"><vh> 目錄</vh>
 <v t="leo.20210520201530.3"><vh>介紹</vh></v>
 </v>
-<v t="leo.20210520201530.4"><vh>Nginx</vh>
-<v t="leo.20210520201530.5"><vh>Nginx</vh></v>
+<v t="leo.20210520201530.4"><vh>Ubuntu</vh>
+<v t="leo.20210520201530.5"><vh>Ubuntu</vh></v>
+</v>
+<v t="leo.20210521110239.1"><vh>Nginx</vh>
+<v t="leo.20210521110239.2"><vh>Nginx</vh></v>
 </v>
 <v t="leo.20210520211924.1"><vh>uWSGI</vh>
 <v t="leo.20210520211924.2"><vh>uWSGI</vh></v>
 </v>
 </v>
 <v t="leo.20210520201547.1"><vh>訓練結果</vh>
-<v t="leo.20210520201547.2"><vh> 議程</vh>
+<v t="leo.20210520201547.2"><vh> 目錄</vh>
 <v t="leo.20210520201547.3"><vh>介紹</vh></v>
 </v>
 <v t="leo.20210520201547.4"><vh>訓練結果</vh>
@@ -116,8 +119,7 @@
 <t tx="leo.20180902120523.10">## 強化學習在機電系統中之應用
 
 ### Application of reinforcement learning in mechatronic systems
-
-
+&lt;br&gt;&lt;/br&gt;
 專題組別：[第13組](http://mde.tw/4072pj1)
 
 &lt;small&gt;
@@ -327,7 +329,7 @@ vertical: body pane on the botton</t>
 
 						
 </t>
-<t tx="leo.20210520152711.2"># 議程
+<t tx="leo.20210520152711.2">## 目錄
 
 * &lt;span style="color:red"&gt;介紹&lt;/span&gt;
 * 整體研究架構
@@ -483,7 +485,7 @@ make.start()
 
 						
 </t>
-<t tx="leo.20210520201414.3"># 議程
+<t tx="leo.20210520201414.3">## 目錄
 
 * 介紹
 * &lt;span style="color:red"&gt;整體研究架構&lt;/span&gt;
@@ -523,7 +525,7 @@ make.start()
 
 						
 </t>
-<t tx="leo.20210520201504.3"># 議程
+<t tx="leo.20210520201504.3">## 目錄
 
 * 介紹
 * 整體研究架構
@@ -565,7 +567,7 @@ make.start()
 
 						
 </t>
-<t tx="leo.20210520201505.3"># 議程
+<t tx="leo.20210520201505.3">## 目錄
 
 * 介紹
 * 整體研究架構
@@ -606,7 +608,7 @@ make.start()
 
 						
 </t>
-<t tx="leo.20210520201530.3"># 議程
+<t tx="leo.20210520201530.3">## 目錄
 
 * 介紹
 * 整體研究架構
@@ -614,7 +616,7 @@ make.start()
 * 模擬環境CoppeliaSim
 * &lt;span style="color:red"&gt;伺服器架設&lt;/span&gt;
 * 訓練結果</t>
-<t tx="leo.20210520201530.4">&lt;section data-markdown&gt;
+<t tx="leo.20210520201530.4">&lt;section data-markdown data-background-image="./../images/ubuntu.png" data-background-opacity=1&gt;
     &lt;script type="text/template"&gt;
 &lt;!-- 請注意, @others 不可以內縮 --&gt;
 @others
@@ -625,9 +627,9 @@ make.start()
 
 						
 </t>
-<t tx="leo.20210520201530.5">### Nginx
-
-&lt;img src="./../images/clientProxy.jpeg" alt="Nginx" height="550"&gt;</t>
+<t tx="leo.20210520201530.5">### Ubuntu
+&lt;section data-background-image="./../images/Ubuntu2004LTS.png" data-background-opacity=1&gt;&lt;/section&gt;
+&lt;!--&lt;img src="./../images/Ubuntu2004LTS.png" alt="Ubuntu" height="550"&gt;--&gt;</t>
 <t tx="leo.20210520201547.1">&lt;section&gt;
 @others
 &lt;/section&gt;</t>
@@ -642,7 +644,7 @@ make.start()
 
 						
 </t>
-<t tx="leo.20210520201547.3"># 議程
+<t tx="leo.20210520201547.3">## 目錄
 
 * 介紹
 * 整體研究架構
@@ -710,5 +712,19 @@ make.start()
 
 &lt;img src="./../images/clientToflask.jpeg" alt="Nginx" height="400"&gt;
 &lt;img src="./../images/total.jpeg" alt="Nginx" height="400"&gt;</t>
+<t tx="leo.20210521110239.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+&lt;!-- 請注意, @others 不可以內縮 --&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+
+						
+</t>
+<t tx="leo.20210521110239.2">### Nginx
+
+&lt;img src="./../images/clientProxy.jpeg" alt="Nginx" height="550"&gt;</t>
 </tnodes>
 </leo_file>
