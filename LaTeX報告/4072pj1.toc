@@ -3,7 +3,7 @@
 \contentsline {chapter}{誌\hskip 1em\relax 謝}{iii}{Doc-Start}%
 \contentsline {chapter}{\numberline {1}前言}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}研究動機}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}研究目的與方法}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.2}研究目的與方法}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}未來展望}{2}{section.1.3}%
 \contentsline {section}{\numberline {1.4}規則說明}{2}{section.1.4}%
 \contentsline {chapter}{\numberline {2}機器學習概論}{3}{chapter.2}%
