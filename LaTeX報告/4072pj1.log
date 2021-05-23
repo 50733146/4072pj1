@@ -1,15 +1,12 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  22 MAY 2021 05:01
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  24 MAY 2021 00:21
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06>
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/base\report.cl
-s
+(D:\typora\miktex-portable\texmfs\install\tex/latex/base\report.cls
 Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
-
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/base\size10.cl
-o
+(D:\typora\miktex-portable\texmfs\install\tex/latex/base\size10.clo
 File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count163
@@ -25,14 +22,12 @@ File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.
-sty
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/l3kernel\expl3
-.sty
+(D:\typora\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/l3kernel\expl3.sty
 Package: expl3 2020-03-06 L3 programming layer (loader) 
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/l3backend\l3ba
-ckend-xdvipdfmx.def
+(D:\typora\miktex-portable\texmfs\install\tex/latex/l3backend\l3backend-xdvipdf
+mx.def
 File: l3backend-xdvipdfmx.def 2020-03-12 L3 backend support: xdvipdfmx
 \g__graphics_track_int=\count172
 \l__pdf_internal_box=\box45
@@ -41,20 +36,20 @@ File: l3backend-xdvipdfmx.def 2020-03-12 L3 backend support: xdvipdfmx
 ))
 Package: xeCJK 2020/02/18 v3.8.2 Typesetting CJK scripts with XeLaTeX
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/l3packages/l3k
-eys2e\l3keys2e.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/l3packages/l3keys2e\l3keys2
+e.sty
 Package: l3keys2e 2020-03-06 LaTeX2e option processing using LaTeX3 keys
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/l3packages/xte
-mplate\xtemplate.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/l3packages/xtemplate\xtempl
+ate.sty
 Package: xtemplate 2020-03-06 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen135
 \l__xtemplate_tmp_int=\count175
 \l__xtemplate_tmp_muskip=\muskip16
 \l__xtemplate_tmp_skip=\skip49
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/l3packages/xpa
-rse\xparse.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/l3packages/xparse\xparse.st
+y
 Package: xparse 2020-03-06 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count176
 \g__xparse_grabber_int=\count177
@@ -119,13 +114,10 @@ Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 \g__xeCJK_fam_allocation_int=\count189
 \l__xeCJK_verb_case_int=\count190
 \l__xeCJK_verb_exspace_skip=\skip55
-
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/fontspec\fonts
-pec.sty
+ (D:\typora\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/fontspec\fonts
-pec-xetex.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
 \l__fontspec_script_int=\count191
@@ -142,15 +134,11 @@ X
 \l__fontspec_tmpa_dim=\dimen164
 \l__fontspec_tmpb_dim=\dimen165
 \l__fontspec_tmpc_dim=\dimen166
-
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/base\fontenc.s
-ty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/base\fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/fontspec\fonts
-pec.cfg)))
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.
-cfg
+(D:\typora\miktex-portable\texmfs\install\tex/latex/fontspec\fontspec.cfg)))
+(D:\typora\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK.cfg
 File: xeCJK.cfg 2020/02/18 v3.8.2 Configuration file for xeCJK package
 ))
 
@@ -203,35 +191,28 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (fontspec)             Roman/BI/OT:script=latn;language=dflt;+smcp;"
 
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/tools\enumerat
-e.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/tools\enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks15
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/amsmath\amsmat
-h.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip56
 
 For additional information on amsmath, use the `?' option.
-
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/amsmath\amstex
-t.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/amsmath\amsgen
-.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen167
 ))
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/amsmath\amsbsy
-.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen168
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/amsmath\amsopn
-.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count268
@@ -272,12 +253,10 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/amsfonts\amssy
-mb.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/amsfonts\amsfo
-nts.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -285,38 +264,31 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/graphics\graph
-icx.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/graphics\graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/graphics\keyva
-l.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/graphics\graph
-ics.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/graphics\graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/graphics\trig.
-sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/graphics-cfg\g
-raphics.cfg
+(D:\typora\miktex-portable\texmfs\install\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/graphics-def\x
-etex.def
+(D:\typora\miktex-portable\texmfs\install\tex/latex/graphics-def\xetex.def
 File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen176
 \Gin@req@width=\dimen177
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/subfigure\subf
-igure.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/subfigure\subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip59
 \subfigcapskip=\skip60
@@ -332,37 +304,33 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/subfigure\subf
-igure.cfg)
+(D:\typora\miktex-portable\texmfs\install\tex/latex/subfigure\subfigure.cfg)
 \subfig@top=\skip63
 \subfig@bottom=\skip64
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/fontawesome5\f
-ontawesome5.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/fontawesome5\fontawesome5.s
+ty
 Package: fontawesome5 2020/03/24 v5.13.0 Font Awesome 5
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/fontawesome5\f
-ontawesome5-utex-helper.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/fontawesome5\fontawesome5-u
+tex-helper.sty
 Package: fontawesome5-utex-helper 2020/03/24 v5.13.0 uTeX helper for fontawesom
 e5
 LaTeX Font Info:    Trying to load font information for TU+fontawesomefree on i
 nput line 69.
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/fontawesome5\t
-ufontawesomefree.fd)
+(D:\typora\miktex-portable\texmfs\install\tex/latex/fontawesome5\tufontawesomef
+ree.fd)
 LaTeX Font Info:    Trying to load font information for TU+fontawesomebrands on
  input line 70.
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/fontawesome5\t
-ufontawesomebrands.fd)))
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/type1cm\type1c
-m.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/fontawesome5\tufontawesomeb
+rands.fd)))
+(D:\typora\miktex-portable\texmfs\install\tex/latex/type1cm\type1cm.sty
 Package: type1cm 2002/09/05 v0.04 BlueSky/Y&Y Type1 CM font definitions (DPC, p
 atched RF)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/textpos\textpo
-s.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/textpos\textpos.sty
 Package: textpos 2020/09/26 v1.10
 
 Package: textpos 2020/09/26 1.10, absolute positioning of text on the page
@@ -375,17 +343,13 @@ Package textpos Info: choosing support for LaTeX2e on input line 61.
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
 \TPboxrulesize=\dimen184
 \TP@tbargs=\toks22
-)
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/geometry\geome
-try.sty
+) (D:\typora\miktex-portable\texmfs\install\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/iftex\ifvtex
-.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/iftex\iftex.
-sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 \Gm@cnth=\count284
@@ -401,10 +365,8 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutvoffset=\dimen192
 \Gm@dimlist=\toks23
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/xelatex/xetexconfig\
-geometry.cfg))
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/titlesec\title
-sec.sty
+(D:\typora\miktex-portable\texmfs\install\tex/xelatex/xetexconfig\geometry.cfg)
+) (D:\typora\miktex-portable\texmfs\install\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box50
 \beforetitleunit=\skip65
@@ -416,38 +378,32 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidthlast=\dimen196
 \titlewidthfirst=\dimen197
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/titlesec\title
-toc.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/titlesec\titletoc.sty
 Package: titletoc 2019/10/16 v2.13 TOC entries
 \ttl@leftsep=\dimen198
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/base\textcomp.
-sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/multirow\multi
-row.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip67
 \multirow@cntb=\count287
 \multirow@dima=\skip68
 \bigstrutjot=\dimen199
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/cjk\CJKnumb.st
-y
+(D:\typora\miktex-portable\texmfs\install\tex/latex/cjk\CJKnumb.sty
 Package: CJKnumb 2015/04/18 4.8.4
 \CJK@q=\count288
 \CJK@r=\count289
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/wallpaper\wall
-paper.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/wallpaper\wallpaper.sty
 Package: wallpaper 2005/01/18, v1.01 easy wallpaper formatting (MHFW)
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/base\ifthen.st
-y
+(D:\typora\miktex-portable\texmfs\install\tex/latex/base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/tools\calc.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count290
 \calc@Bcount=\count291
@@ -460,28 +416,22 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count292
 \calc@Cskip=\skip71
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/eso-pic\eso-pi
-c.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/atbegshi\atb
-egshi.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/atbegshi\atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/infwarerr\in
-fwarerr.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/ltxcmds\ltxc
-mds.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ))
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/xcolor\xcolor.
-sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/graphics-cfg\c
-olor.cfg
+(D:\typora\miktex-portable\texmfs\install\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 225.
@@ -503,8 +453,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 \tileX=\skip78
 \tileY=\skip79
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/listings\listi
-ngs.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/listings\listings.sty
 \lst@mode=\count293
 \lst@gtempboxa=\box51
 \lst@token=\toks25
@@ -518,73 +467,59 @@ ngs.sty
 \lst@lineno=\count298
 \lst@maxwidth=\dimen261
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/listings\lstmi
-sc.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 \c@lstnumber=\count299
 \lst@skipnumbers=\count300
 \lst@framebox=\box52
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/listings\listi
-ngs.cfg
+(D:\typora\miktex-portable\texmfs\install\tex/latex/listings\listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
 Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/hyperref\hyper
-ref.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/pdftexcmds\pdf
-texcmds.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/kvsetkeys\kv
-setkeys.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/kvdefinekeys
-\kvdefinekeys.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/kvdefinekeys\kvdefinekeys
+.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/pdfescape\pd
-fescape.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/hycolor\hycolo
-r.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/letltxmacro\le
-tltxmacro.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/letltxmacro\letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/auxhook\auxhoo
-k.sty
+) (D:\typora\miktex-portable\texmfs\install\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/kvoptions\kvop
-tions.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen262
 \Hy@linkcounter=\count301
 \Hy@pagecounter=\count302
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/hyperref\pd1en
-c.def
+(D:\typora\miktex-portable\texmfs\install\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/intcalc\intc
-alc.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/etexcmds\ete
-xcmds.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count303
@@ -597,19 +532,17 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
 \c@Hy@tempcnt=\count304
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/url\url.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
 \XeTeXLinkMargin=\dimen263
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/bitset\bitse
-t.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/bigintcalc\b
-igintcalc.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -630,17 +563,13 @@ LaTeX Info: Redefining \pageref on input line 6504.
 \c@Hfootnote=\count308
 )
 Package hyperref Info: Driver (autodetected): hxetex.
-
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/hyperref\hxete
-x.def
+ (D:\typora\miktex-portable\texmfs\install\tex/latex/hyperref\hxetex.def
 File: hxetex.def 2020/01/14 v7.00d Hyperref driver for XeTeX
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/hyperref\puenc
-.def
+(D:\typora\miktex-portable\texmfs\install\tex/latex/hyperref\puenc.def
 File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/stringenc\st
-ringenc.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
@@ -650,17 +579,16 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 \Fld@listcount=\count311
 \c@bookmark@seq@number=\count312
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/rerunfilecheck
-\rerunfilecheck.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/rerunfilecheck\rerunfileche
+ck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/atveryend\atve
-ryend.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/atveryend\atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/uniquecounte
-r\uniquecounter.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/uniquecounter\uniquecount
+er.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -668,24 +596,19 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip80
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/setspace\setsp
-ace.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/graphics\lscap
-e.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/graphics\lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/listings\lstla
-ng1.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/tools\indentfi
-rst.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/tools\indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK-
-listings.sty
+(D:\typora\miktex-portable\texmfs\install\tex/xelatex/xecjk\xeCJK-listings.sty
 Package: xeCJK-listings 2020/02/18 v3.8.2 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count313
 \l__xeCJK_listings_flag_int=\count314
@@ -709,7 +632,7 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
 3.
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/base\ts1cmr.fd
+(D:\typora\miktex-portable\texmfs\install\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 53.
@@ -816,17 +739,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 \AtBeginShipoutBox=\box54
 \c@lstlisting=\count315
 Package hyperref Info: Link coloring OFF on input line 53.
-
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/hyperref\namer
-ef.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/latex/refcount\refco
-unt.sty
+(D:\typora\miktex-portable\texmfs\install\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/gettitlestri
-ng\gettitlestring.sty
+(D:\typora\miktex-portable\texmfs\install\tex/generic/gettitlestring\gettitlest
+ring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count316
@@ -893,8 +813,8 @@ Overfull \hbox (145.89752pt too wide) detected at line 94
  []
 
 
-(Y:\miktex-portable-new\miktex-portable\texmfs\install\tex/generic/stringenc\se
--ascii-print.def
+(D:\typora\miktex-portable\texmfs\install\tex/generic/stringenc\se-ascii-print.
+def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
 ) [1
@@ -993,219 +913,219 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [3] (4072pj1.toc
 Overfull \hbox (1.77997pt too wide) detected at line 14
- \TU/TimesNewRoman(0)/m/n/17.28 10
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 15
- \TU/TimesNewRoman(0)/m/n/17.28 13
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 16
  \TU/TimesNewRoman(0)/m/n/17.28 17
  []
 
 
+Overfull \hbox (1.77997pt too wide) detected at line 15
+ \TU/TimesNewRoman(0)/m/n/17.28 22
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 16
+ \TU/TimesNewRoman(0)/m/n/17.28 26
+ []
+
+
 Overfull \hbox (1.77997pt too wide) detected at line 17
- \TU/TimesNewRoman(0)/m/n/17.28 18
+ \TU/TimesNewRoman(0)/m/n/17.28 27
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 18
- \TU/TimesNewRoman(0)/m/n/17.28 19
+ \TU/TimesNewRoman(0)/m/n/17.28 28
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 19
- \TU/TimesNewRoman(0)/m/n/17.28 19
+ \TU/TimesNewRoman(0)/m/n/17.28 28
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 20
- \TU/TimesNewRoman(0)/m/n/17.28 20
+ \TU/TimesNewRoman(0)/m/n/17.28 29
  []
 
 [4
 
 ]
 Overfull \hbox (1.77997pt too wide) detected at line 21
- \TU/TimesNewRoman(0)/m/n/17.28 21
+ \TU/TimesNewRoman(0)/m/n/17.28 30
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 22
- \TU/TimesNewRoman(0)/m/n/17.28 23
+ \TU/TimesNewRoman(0)/m/n/17.28 32
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 23
- \TU/TimesNewRoman(0)/m/n/17.28 23
+ \TU/TimesNewRoman(0)/m/n/17.28 32
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 24
- \TU/TimesNewRoman(0)/m/n/17.28 24
+ \TU/TimesNewRoman(0)/m/n/17.28 33
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 25
- \TU/TimesNewRoman(0)/m/n/17.28 24
+ \TU/TimesNewRoman(0)/m/n/17.28 33
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 26
- \TU/TimesNewRoman(0)/m/n/17.28 25
+ \TU/TimesNewRoman(0)/m/n/17.28 34
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 27
- \TU/TimesNewRoman(0)/m/n/17.28 26
+ \TU/TimesNewRoman(0)/m/n/17.28 35
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 28
- \TU/TimesNewRoman(0)/m/n/17.28 29
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 29
- \TU/TimesNewRoman(0)/m/n/17.28 29
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 30
- \TU/TimesNewRoman(0)/m/n/17.28 29
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 31
- \TU/TimesNewRoman(0)/m/n/17.28 29
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 32
- \TU/TimesNewRoman(0)/m/n/17.28 30
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 33
- \TU/TimesNewRoman(0)/m/n/17.28 30
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 34
- \TU/TimesNewRoman(0)/m/n/17.28 31
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 35
- \TU/TimesNewRoman(0)/m/n/17.28 32
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 36
- \TU/TimesNewRoman(0)/m/n/17.28 32
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 37
- \TU/TimesNewRoman(0)/m/n/17.28 32
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 38
- \TU/TimesNewRoman(0)/m/n/17.28 32
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 39
- \TU/TimesNewRoman(0)/m/n/17.28 33
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 40
- \TU/TimesNewRoman(0)/m/n/17.28 33
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 41
- \TU/TimesNewRoman(0)/m/n/17.28 34
- []
-
-[5]
-Overfull \hbox (1.77997pt too wide) detected at line 42
- \TU/TimesNewRoman(0)/m/n/17.28 37
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 43
- \TU/TimesNewRoman(0)/m/n/17.28 37
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 44
  \TU/TimesNewRoman(0)/m/n/17.28 38
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 45
+Overfull \hbox (1.77997pt too wide) detected at line 29
+ \TU/TimesNewRoman(0)/m/n/17.28 38
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 30
+ \TU/TimesNewRoman(0)/m/n/17.28 38
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 31
+ \TU/TimesNewRoman(0)/m/n/17.28 38
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 32
+ \TU/TimesNewRoman(0)/m/n/17.28 39
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 33
+ \TU/TimesNewRoman(0)/m/n/17.28 39
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 34
  \TU/TimesNewRoman(0)/m/n/17.28 40
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 46
+Overfull \hbox (1.77997pt too wide) detected at line 35
  \TU/TimesNewRoman(0)/m/n/17.28 41
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 47
- \TU/TimesNewRoman(0)/m/n/17.28 44
+Overfull \hbox (1.77997pt too wide) detected at line 36
+ \TU/TimesNewRoman(0)/m/n/17.28 41
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 48
+Overfull \hbox (1.77997pt too wide) detected at line 37
+ \TU/TimesNewRoman(0)/m/n/17.28 41
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 38
+ \TU/TimesNewRoman(0)/m/n/17.28 41
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 39
+ \TU/TimesNewRoman(0)/m/n/17.28 42
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 40
+ \TU/TimesNewRoman(0)/m/n/17.28 42
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 41
+ \TU/TimesNewRoman(0)/m/n/17.28 43
+ []
+
+[5]
+Overfull \hbox (1.77997pt too wide) detected at line 42
  \TU/TimesNewRoman(0)/m/n/17.28 46
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 49
+Overfull \hbox (1.77997pt too wide) detected at line 43
  \TU/TimesNewRoman(0)/m/n/17.28 46
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 50
- \TU/TimesNewRoman(0)/m/n/17.28 46
+Overfull \hbox (1.77997pt too wide) detected at line 44
+ \TU/TimesNewRoman(0)/m/n/17.28 47
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 51
- \TU/TimesNewRoman(0)/m/n/17.28 48
- []
-
-
-Overfull \hbox (1.77997pt too wide) detected at line 52
+Overfull \hbox (1.77997pt too wide) detected at line 45
  \TU/TimesNewRoman(0)/m/n/17.28 49
  []
 
 
-Overfull \hbox (1.77997pt too wide) detected at line 53
+Overfull \hbox (1.77997pt too wide) detected at line 46
  \TU/TimesNewRoman(0)/m/n/17.28 50
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 47
+ \TU/TimesNewRoman(0)/m/n/17.28 53
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 48
+ \TU/TimesNewRoman(0)/m/n/17.28 55
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 49
+ \TU/TimesNewRoman(0)/m/n/17.28 55
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 50
+ \TU/TimesNewRoman(0)/m/n/17.28 55
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 51
+ \TU/TimesNewRoman(0)/m/n/17.28 57
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 52
+ \TU/TimesNewRoman(0)/m/n/17.28 58
+ []
+
+
+Overfull \hbox (1.77997pt too wide) detected at line 53
+ \TU/TimesNewRoman(0)/m/n/17.28 59
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 54
- \TU/TimesNewRoman(0)/m/n/17.28 50
+ \TU/TimesNewRoman(0)/m/n/17.28 59
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 55
- \TU/TimesNewRoman(0)/m/n/17.28 51
+ \TU/TimesNewRoman(0)/m/n/17.28 60
  []
 
 
 Overfull \hbox (1.77997pt too wide) detected at line 56
- \TU/TimesNewRoman(0)/m/n/17.28 57
+ \TU/TimesNewRoman(0)/m/n/17.28 67
  []
 
 )
@@ -1224,104 +1144,109 @@ Overfull \hbox (0.363pt too wide) detected at line 9
 
 
 Overfull \hbox (0.363pt too wide) detected at line 10
- []\TU/lmr/m/n/17.28 11
+ []\TU/lmr/m/n/17.28 14
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 11
- []\TU/lmr/m/n/17.28 13
+ []\TU/lmr/m/n/17.28 18
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 12
- []\TU/lmr/m/n/17.28 16
+ []\TU/lmr/m/n/17.28 19
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 13
- []\TU/lmr/m/n/17.28 16
+ []\TU/lmr/m/n/17.28 20
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 14
- []\TU/lmr/m/n/17.28 17
+ []\TU/lmr/m/n/17.28 21
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 15
- []\TU/lmr/m/n/17.28 23
+ []\TU/lmr/m/n/17.28 24
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 16
- []\TU/lmr/m/n/17.28 23
+ []\TU/lmr/m/n/17.28 25
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 17
- []\TU/lmr/m/n/17.28 27
+ []\TU/lmr/m/n/17.28 26
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 18
- []\TU/lmr/m/n/17.28 28
+ []\TU/lmr/m/n/17.28 32
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 19
+ []\TU/lmr/m/n/17.28 32
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 20
+ []\TU/lmr/m/n/17.28 36
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 21
- []\TU/lmr/m/n/17.28 30
+ []\TU/lmr/m/n/17.28 37
  []
 
 
-Overfull \hbox (0.363pt too wide) detected at line 22
- []\TU/lmr/m/n/17.28 31
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 23
- []\TU/lmr/m/n/17.28 31
+Overfull \hbox (0.363pt too wide) detected at line 24
+ []\TU/lmr/m/n/17.28 39
  []
 
 [7
 
 ]
-Overfull \hbox (0.363pt too wide) detected at line 24
- []\TU/lmr/m/n/17.28 32
- []
-
-
 Overfull \hbox (0.363pt too wide) detected at line 25
- []\TU/lmr/m/n/17.28 33
+ []\TU/lmr/m/n/17.28 40
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 26
- []\TU/lmr/m/n/17.28 33
+ []\TU/lmr/m/n/17.28 40
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 27
- []\TU/lmr/m/n/17.28 33
+ []\TU/lmr/m/n/17.28 41
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 28
- []\TU/lmr/m/n/17.28 34
+ []\TU/lmr/m/n/17.28 42
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 29
- []\TU/lmr/m/n/17.28 36
+ []\TU/lmr/m/n/17.28 42
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 30
- []\TU/lmr/m/n/17.28 36
+ []\TU/lmr/m/n/17.28 42
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 31
+ []\TU/lmr/m/n/17.28 43
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 32
- []\TU/lmr/m/n/17.28 40
+ []\TU/lmr/m/n/17.28 45
  []
 
 
@@ -1330,68 +1255,78 @@ Overfull \hbox (0.363pt too wide) detected at line 33
  []
 
 
-Overfull \hbox (0.363pt too wide) detected at line 34
- []\TU/lmr/m/n/17.28 45
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 36
- []\TU/lmr/m/n/17.28 47
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 37
- []\TU/lmr/m/n/17.28 47
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 38
+Overfull \hbox (0.363pt too wide) detected at line 35
  []\TU/lmr/m/n/17.28 49
  []
 
 
-Overfull \hbox (0.363pt too wide) detected at line 40
- []\TU/lmr/m/n/17.28 51
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 41
- []\TU/lmr/m/n/17.28 52
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 42
- []\TU/lmr/m/n/17.28 53
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 43
- []\TU/lmr/m/n/17.28 53
- []
-
-
-Overfull \hbox (0.363pt too wide) detected at line 44
+Overfull \hbox (0.363pt too wide) detected at line 36
  []\TU/lmr/m/n/17.28 54
  []
 
 
+Overfull \hbox (0.363pt too wide) detected at line 37
+ []\TU/lmr/m/n/17.28 54
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 39
+ []\TU/lmr/m/n/17.28 56
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 40
+ []\TU/lmr/m/n/17.28 56
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 41
+ []\TU/lmr/m/n/17.28 58
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 43
+ []\TU/lmr/m/n/17.28 60
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 44
+ []\TU/lmr/m/n/17.28 61
+ []
+
+
 Overfull \hbox (0.363pt too wide) detected at line 45
- []\TU/lmr/m/n/17.28 55
+ []\TU/lmr/m/n/17.28 62
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 46
- []\TU/lmr/m/n/17.28 55
+ []\TU/lmr/m/n/17.28 62
  []
 
 
 Overfull \hbox (0.363pt too wide) detected at line 47
- []\TU/lmr/m/n/17.28 56
+ []\TU/lmr/m/n/17.28 63
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 48
+ []\TU/lmr/m/n/17.28 64
  []
 
 [8]
-Overfull \hbox (0.363pt too wide) detected at line 48
- []\TU/lmr/m/n/17.28 56
+Overfull \hbox (0.363pt too wide) detected at line 49
+ []\TU/lmr/m/n/17.28 64
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 50
+ []\TU/lmr/m/n/17.28 65
+ []
+
+
+Overfull \hbox (0.363pt too wide) detected at line 51
+ []\TU/lmr/m/n/17.28 65
  []
 
 )
@@ -1517,91 +1452,168 @@ Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
 
+File: ./../images/Error_surface-2.png Graphic file (type bmp)
+<./../images/Error_surface-2.png>
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 353--358
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
-File: ./../images/Faces_of_Reinforcement_Learning.png Graphic file (type bmp)
-<./../images/Faces_of_Reinforcement_Learning.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--370
-
- []
-
+File: ./../images/theta_vector.png Graphic file (type bmp)
+<./../images/theta_vector.png>
 [10]
-File: ./../images/The_Flow_of_Reinforcement_Learning.png Graphic file (type bmp
-)
-<./../images/The_Flow_of_Reinforcement_Learning.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 379--381
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
-File: ./../images/The_entire_interaction_process.png Graphic file (type bmp)
-<./../images/The_entire_interaction_process.png>
 
-LaTeX Warning: Reference `The_entire_interaction_process' on page 11 undefined 
-on input line 389.
-
-File: ./../images/agent.png Graphic file (type bmp)
-<./../images/agent.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--419
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
-[11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 437--440
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
+
+ []
+
+Missing character: There is no ∗ in font Times New Roman/OT:script=latn;languag
+e=dflt;!
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 414--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
+
+ []
+
+[13]
+File: ./../images/sgd_fluctuation.png Graphic file (type bmp)
+<./../images/sgd_fluctuation.png>
+Missing character: There is no ∗ in font Times New Roman/OT:script=latn;languag
+e=dflt;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 471--474
+Missing character: There is no ∗ in font Times New Roman/OT:script=latn;languag
+e=dflt;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 462--466
+
+ []
+
+[17]
+File: ./../images/Faces_of_Reinforcement_Learning.png Graphic file (type bmp)
+<./../images/Faces_of_Reinforcement_Learning.png>
+ [18]
+Underfull \hbox (badness 10000) in paragraph at lines 479--481
+
+ []
+
+File: ./../images/The_Flow_of_Reinforcement_Learning.png Graphic file (type bmp
+)
+<./../images/The_Flow_of_Reinforcement_Learning.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--491
+
+ []
+
+[19]
+File: ./../images/The_entire_interaction_process.png Graphic file (type bmp)
+<./../images/The_entire_interaction_process.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--502
+
+ []
+
+File: ./../images/agent.png Graphic file (type bmp)
+<./../images/agent.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--530
+
+ []
+
+[20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 548--551
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 582--585
+
+ []
+
+[23]
 File: ./../images/MRP.jpg Graphic file (type bmp)
 <./../images/MRP.jpg>
 File: ./../images/MDP.jpg Graphic file (type bmp)
 <./../images/MDP.jpg>
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--487
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
 
  []
 
 File: ./../images/s_to _s.jpg Graphic file (type bmp)
 <./../images/s_to _s.jpg>
-[15]
+[24]
 File: ./../images/Q_pi function.jpg Graphic file (type bmp)
 <./../images/Q_pi function.jpg>
- [16]
+ [25]
 File: ./../images/policy gradient原理.png Graphic file (type bmp)
 <./../images/policy gradient原理.png>
 Missing character: There is no （ in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ） in font [lmroman12-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--540
+Underfull \hbox (badness 10000) in paragraph at lines 630--651
 
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 547--551
-
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 554--556
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
 
  []
 
 
-Overfull \hbox (55.9742pt too wide) in paragraph at lines 561--591
+Underfull \hbox (badness 10000) in paragraph at lines 658--662
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 665--667
+
+ []
+
+
+Overfull \hbox (55.9742pt too wide) in paragraph at lines 672--702
 \OT1/cmr/m/n/14 = [][] []\OMS/cmsy/m/n/14 r[]\OML/cmm/m/it/14 ^^Y[]\OT1/cmr/m/n
 /14 (\OML/cmm/m/it/14 a\OMS/cmsy/m/n/14 j\OML/cmm/m/it/14 s\OT1/cmr/m/n/14 )\OM
 L/cmm/m/it/14 Q[]\OT1/cmr/m/n/14 (\OML/cmm/m/it/14 s; a\OT1/cmr/m/n/14 ) + \OML
@@ -1609,105 +1621,105 @@ L/cmm/m/it/14 Q[]\OT1/cmr/m/n/14 (\OML/cmm/m/it/14 s; a\OT1/cmr/m/n/14 ) + \OML
 /m/it/14 s\OT1/cmr/m/n/14 )[][][]$
  []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 592--597
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 703--708
 
  []
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 609--613
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 614--615
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 720--724
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--633
+Underfull \hbox (badness 10000) in paragraph at lines 725--726
 
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 634--635
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
+Underfull \hbox (badness 10000) in paragraph at lines 745--746
 
  []
 
-[22]
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
+
+ []
+
+[31]
 File: ./../images/network.png Graphic file (type bmp)
 <./../images/network.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 649--651
+Underfull \hbox (badness 10000) in paragraph at lines 760--762
 
  []
 
 File: ./../images/supervising_learning.png Graphic file (type bmp)
 <./../images/supervising_learning.png>
 
-Overfull \hbox (17.78455pt too wide) in paragraph at lines 656--657
+Overfull \hbox (17.78455pt too wide) in paragraph at lines 767--768
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--663
+Underfull \hbox (badness 10000) in paragraph at lines 772--774
 
  []
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 665--666
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 667--668
-
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 669--670
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--673
+Underfull \hbox (badness 10000) in paragraph at lines 778--779
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 780--781
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--679
+Underfull \hbox (badness 10000) in paragraph at lines 781--784
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--685
-
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 689--690
+Underfull \hbox (badness 10000) in paragraph at lines 789--790
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--692
+Underfull \hbox (badness 10000) in paragraph at lines 795--796
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--803
 
  []
 
 File: ./../images/gradient_change.png Graphic file (type bmp)
 <./../images/gradient_change.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--701
+Underfull \hbox (badness 10000) in paragraph at lines 803--812
 
  []
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 705--707
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 816--818
 
  []
 
@@ -1717,36 +1729,36 @@ Missing character: There is no θ in font cmmi12!
 Missing character: There is no θ in font cmmi12!
 File: ./../images/figure.png Graphic file (type bmp)
 <./../images/figure.png>
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 716--717
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 827--828
 
  []
 
-[28]
+[37]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--721
+Underfull \hbox (badness 10000) in paragraph at lines 831--832
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 723--724
+Underfull \hbox (badness 10000) in paragraph at lines 834--835
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 725--727
+Underfull \hbox (badness 10000) in paragraph at lines 836--838
 
  []
 
-[29
+[38
 
 ]
 Chapter 4.
 File: ./../images/model.png Graphic file (type bmp)
 <./../images/model.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--741
+Underfull \hbox (badness 10000) in paragraph at lines 851--852
 
  []
 
@@ -1754,27 +1766,27 @@ File: ./../images/axialseat.png Graphic file (type bmp)
 <./../images/axialseat.png>
 File: ./../images/connectSeat.png Graphic file (type bmp)
 <./../images/connectSeat.png>
-[30
+[39
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+Underfull \hbox (badness 10000) in paragraph at lines 868--869
 
  []
 
 File: ./../images/CoppeliaSim.png Graphic file (type bmp)
 <./../images/CoppeliaSim.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 766--767
+Underfull \hbox (badness 10000) in paragraph at lines 877--878
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 768--769
+Underfull \hbox (badness 10000) in paragraph at lines 879--880
 
  []
 
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 770--771
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 881--882
 
  []
 
@@ -1782,111 +1794,32 @@ File: ./../images/toolBar.png Graphic file (type bmp)
 <./../images/toolBar.png>
 File: ./../images/toolBar2.png Graphic file (type bmp)
 <./../images/toolBar2.png>
-[32]
+[41]
 File: ./../images/pythonCVlogo.png Graphic file (type bmp)
 <./../images/pythonCVlogo.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 817--818
+Underfull \hbox (badness 10000) in paragraph at lines 928--929
 
  []
 
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 820--822
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 931--933
 
  []
 
 File: ./../images/HSV.png Graphic file (type bmp)
 <./../images/HSV.png>
-[34]
+[43]
 File: ./../images/origin.png Graphic file (type bmp)
 <./../images/origin.png>
 File: ./../images/filter.png Graphic file (type bmp)
 <./../images/filter.png>
- [35] [36]
+ [44] [45]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 901--902
+Underfull \hbox (badness 10000) in paragraph at lines 1012--1013
 
  []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 903--904
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 905--906
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 907--908
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 909--910
-
- []
-
-[37
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 911--912
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 913--914
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 915--916
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 917--918
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 921--922
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 922--923
-
- []
-
-[38] [39]
-File: ./../images/clientProxy.jpeg Graphic file (type bmp)
-<./../images/clientProxy.jpeg>
- [40]
-Underfull \hbox (badness 10000) in paragraph at lines 953--954
-
- []
-
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 999--1000
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1001--1002
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1003--1004
-
- []
-
-
-LaTeX Font Warning: Font shape `TU/標楷體(0)/m/it' undefined
-(Font)              using `TU/標楷體(0)/m/n' instead on input line 1008.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1014--1015
@@ -1898,74 +1831,147 @@ Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
 
  []
 
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 1030--1032
 
- []
-
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 1051--1052
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
 
  []
 
 
-Overfull \hbox (27.98679pt too wide) in paragraph at lines 1057--1058
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][] 
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1021
+
+ []
+
+[46
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1023
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1025
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1027
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1029
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1032--1033
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1033--1034
+
+ []
+
+[47] [48]
+File: ./../images/clientProxy.jpeg Graphic file (type bmp)
+<./../images/clientProxy.jpeg>
+ [49]
+Underfull \hbox (badness 10000) in paragraph at lines 1064--1065
+
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1112--1113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1114--1115
+
+ []
+
+
+LaTeX Font Warning: Font shape `TU/標楷體(0)/m/it' undefined
+(Font)              using `TU/標楷體(0)/m/n' instead on input line 1119.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1125--1126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1127--1128
+
+ []
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 1141--1143
+
+ []
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 1162--1163
+
  []
 
 File: ./../images/clientToflask.jpeg Graphic file (type bmp)
 <./../images/clientToflask.jpeg>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1068--1069
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1180
 
  []
 
 File: ./../images/total.jpeg Graphic file (type bmp)
 <./../images/total.jpeg>
-[44] [45]
+[53] [54]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1079--1080
+Underfull \hbox (badness 10000) in paragraph at lines 1190--1191
 
  []
 
 File: ./../images/pong_pygame.png Graphic file (type bmp)
 <./../images/pong_pygame.png>
-[46
+[55
 
 ]
 File: ./../images/airhockey_pymunk.png Graphic file (type bmp)
 <./../images/airhockey_pymunk.png>
- [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1098--1099
+ [56]
+Underfull \hbox (badness 10000) in paragraph at lines 1209--1210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1100--1101
+Underfull \hbox (badness 10000) in paragraph at lines 1211--1212
 
  []
 
 File: ./../images/強化學習訓練流程.png Graphic file (type bmp)
 <./../images/強化學習訓練流程.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1115--1117
+Underfull \hbox (badness 10000) in paragraph at lines 1226--1228
 
  []
 
-[48]
-Underfull \hbox (badness 10000) in paragraph at lines 1118--1119
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1121
+Underfull \hbox (badness 10000) in paragraph at lines 1231--1232
 
  []
 
-[49]
-Overfull \hbox (5.28113pt too wide) in paragraph at lines 1126--1127
+[58]
+Overfull \hbox (5.28113pt too wide) in paragraph at lines 1237--1238
 []\TU/TimesNewRoman(0)/m/n/14 remoteApi.dll\TU/標楷體(0)/m/n/14 、| \TU/TimesNewRom
 an(0)/m/n/14 remoteApi.dylib \TU/標楷體(0)/m/n/14 或 \TU/TimesNewRoman(0)/m/n/14 re
 moteApi.so (\TU/標楷體(0)/m/n/14 依 序 適 用 於\TU/TimesNewRoman(0)/m/n/14 :Windows\TU/
@@ -1973,21 +1979,21 @@ moteApi.so (\TU/標楷體(0)/m/n/14 依 序 適 用 於\TU/TimesNewRoman(0)/m/n/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1128--1132
+Underfull \hbox (badness 10000) in paragraph at lines 1239--1243
 
  []
 
-[50]
+[59]
 Chapter 7.
 File: ./../images/Q_dll.png Graphic file (type bmp)
 <./../images/Q_dll.png>
-[51
+[60
 
 ]
 File: ./../images/Q_ffmpeg.png Graphic file (type bmp)
 <./../images/Q_ffmpeg.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1158--1160
+Underfull \hbox (badness 10000) in paragraph at lines 1269--1271
 
  []
 
@@ -1996,265 +2002,266 @@ File: ./../images/Q_ffmpeg-2.png Graphic file (type bmp)
 File: ./../images/Q_ffmpeg-3.png Graphic file (type bmp)
 <./../images/Q_ffmpeg-3.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1168--1177
+Underfull \hbox (badness 10000) in paragraph at lines 1279--1288
 
  []
 
-[52]
+[61]
 File: ./../images/Q_ffmpeg-4.png Graphic file (type bmp)
 <./../images/Q_ffmpeg-4.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1185--1186
+Underfull \hbox (badness 10000) in paragraph at lines 1296--1297
 
  []
 
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 1191--1193
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 1302--1304
 
  []
 
 File: ./../images/Q_ffmpeg-5.png Graphic file (type bmp)
 <./../images/Q_ffmpeg-5.png>
-[54]
+[63]
 File: ./../images/ffmpeg_mp4.png Graphic file (type bmp)
 <./../images/ffmpeg_mp4.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1203--1212
+Underfull \hbox (badness 10000) in paragraph at lines 1314--1323
 
  []
 
 File: ./../images/video_recorder.png Graphic file (type bmp)
 <./../images/video_recorder.png>
+[64]
 File: ./../images/修正video_recorder.png Graphic file (type bmp)
 <./../images/修正video_recorder.png>
-[55]
-Underfull \hbox (badness 10000) in paragraph at lines 1232--1234
+ [65]
+Underfull \hbox (badness 10000) in paragraph at lines 1343--1345
 
  []
 
-[56] [57]
+[66] [67]
 File: ./../images/40723110.jpg Graphic file (type bmp)
 <./../images/40723110.jpg>
 
-Underfull \hbox (badness 10000) detected at line 1272
+Underfull \hbox (badness 10000) detected at line 1383
 \TU/標楷體(0)/m/n/14 姓 名
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1273
+Underfull \hbox (badness 10000) detected at line 1384
 \TU/標楷體(0)/m/n/14 李 正 揚
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1274
+Underfull \hbox (badness 10000) detected at line 1385
 \TU/標楷體(0)/m/n/14 學 號
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1275
+Underfull \hbox (badness 10000) detected at line 1386
 \TU/TimesNewRoman(0)/m/n/14 40723110
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1278
+Underfull \hbox (badness 10000) detected at line 1389
 \TU/標楷體(0)/m/n/14 國 立 虎 尾 科 技 大 學
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1279
+Underfull \hbox (badness 10000) detected at line 1390
  
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1280
+Underfull \hbox (badness 10000) detected at line 1391
 \TU/標楷體(0)/m/n/14 機 械 設 計 工 程 系
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1282
+Underfull \hbox (badness 10000) detected at line 1393
 \TU/標楷體(0)/m/n/14 經 歷
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1284--1285
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1396
 
  []
 
 File: ./../images/40723115.jpg Graphic file (type bmp)
 <./../images/40723115.jpg>
 
-Underfull \hbox (badness 10000) detected at line 1294
+Underfull \hbox (badness 10000) detected at line 1405
 \TU/標楷體(0)/m/n/14 姓 名
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1295
+Underfull \hbox (badness 10000) detected at line 1406
 \TU/標楷體(0)/m/n/14 林 于 哲
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1297
+Underfull \hbox (badness 10000) detected at line 1408
 \TU/標楷體(0)/m/n/14 學 號
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1298
+Underfull \hbox (badness 10000) detected at line 1409
 \TU/TimesNewRoman(0)/m/n/14 40723115
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1301
+Underfull \hbox (badness 10000) detected at line 1412
 \TU/標楷體(0)/m/n/14 國 立 虎 尾 科 技 大 學
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1302
+Underfull \hbox (badness 10000) detected at line 1413
  
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1303
+Underfull \hbox (badness 10000) detected at line 1414
 \TU/標楷體(0)/m/n/14 機 械 設 計 工 程 系
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1305
+Underfull \hbox (badness 10000) detected at line 1416
 \TU/標楷體(0)/m/n/14 經 歷
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1307--1308
+Underfull \hbox (badness 10000) in paragraph at lines 1418--1419
 
  []
 
 File: ./../images/40723138.jpg Graphic file (type bmp)
 <./../images/40723138.jpg>
 
-Underfull \hbox (badness 10000) detected at line 1317
+Underfull \hbox (badness 10000) detected at line 1428
 \TU/標楷體(0)/m/n/14 姓 名
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1318
+Underfull \hbox (badness 10000) detected at line 1429
 \TU/標楷體(0)/m/n/14 黃 奕 慶
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1320
+Underfull \hbox (badness 10000) detected at line 1431
 \TU/標楷體(0)/m/n/14 學 號
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1324
+Underfull \hbox (badness 10000) detected at line 1435
 \TU/標楷體(0)/m/n/14 國 立 虎 尾 科 技 大 學
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1325
+Underfull \hbox (badness 10000) detected at line 1436
  
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1326
+Underfull \hbox (badness 10000) detected at line 1437
 \TU/標楷體(0)/m/n/14 機 械 設 計 工 程 系
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1328
+Underfull \hbox (badness 10000) detected at line 1439
 \TU/標楷體(0)/m/n/14 經 歷
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1331
+Underfull \hbox (badness 10000) in paragraph at lines 1441--1442
 
  []
 
 File: ./../images/40723148.jpg Graphic file (type bmp)
 <./../images/40723148.jpg>
 
-Underfull \hbox (badness 10000) detected at line 1339
+Underfull \hbox (badness 10000) detected at line 1450
 \TU/標楷體(0)/m/n/14 姓 名
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1340
+Underfull \hbox (badness 10000) detected at line 1451
 \TU/標楷體(0)/m/n/14 鄭 博 鴻
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1341
+Underfull \hbox (badness 10000) detected at line 1452
 \TU/標楷體(0)/m/n/14 學 號
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1344
+Underfull \hbox (badness 10000) detected at line 1455
 \TU/標楷體(0)/m/n/14 國 立 虎 尾 科 技 大 學
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1345
+Underfull \hbox (badness 10000) detected at line 1456
  
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1346
+Underfull \hbox (badness 10000) detected at line 1457
 \TU/標楷體(0)/m/n/14 機 械 設 計 工 程 系
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1348
+Underfull \hbox (badness 10000) detected at line 1459
 \TU/標楷體(0)/m/n/14 經 歷
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1350--1351
+Underfull \hbox (badness 10000) in paragraph at lines 1461--1462
 
  []
 
 File: ./../images/40723150.jpg Graphic file (type bmp)
 <./../images/40723150.jpg>
 
-Underfull \hbox (badness 10000) detected at line 1359
+Underfull \hbox (badness 10000) detected at line 1470
 \TU/標楷體(0)/m/n/14 姓 名
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1360
+Underfull \hbox (badness 10000) detected at line 1471
 \TU/標楷體(0)/m/n/14 簡 國 龍
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1361
+Underfull \hbox (badness 10000) detected at line 1472
 \TU/標楷體(0)/m/n/14 學 號
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1364
+Underfull \hbox (badness 10000) detected at line 1475
 \TU/標楷體(0)/m/n/14 國 立 虎 尾 科 技 大 學
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1365
+Underfull \hbox (badness 10000) detected at line 1476
  
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1366
+Underfull \hbox (badness 10000) detected at line 1477
 \TU/標楷體(0)/m/n/14 機 械 設 計 工 程 系
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1368
+Underfull \hbox (badness 10000) detected at line 1479
 \TU/標楷體(0)/m/n/14 經 歷
  []
 
-[58]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1416.
- [59]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1416.
+[68]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1527.
+ [69]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1527.
  (4072pj1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1416.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1416.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1527.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1527.
 
 Package rerunfilecheck Info: File `4072pj1.out' has not changed.
 (rerunfilecheck)             Checksum: 17E643D9DF20E55322C37CEDC1BBBFFE;3653.
@@ -2262,18 +2269,15 @@ Package rerunfilecheck Info: File `4072pj1.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1416.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1527.
  ) 
 Here is how much of TeX's memory you used:
- 19316 strings out of 414221
- 361059 string characters out of 2901377
+ 19353 strings out of 414221
+ 360725 string characters out of 2901377
  865045 words of memory out of 3000000
- 36503 multiletter control sequences out of 15000+200000
+ 36537 multiletter control sequences out of 15000+200000
  553588 words of font info for 181 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 44i,10n,81p,676b,1127s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,10n,81p,676b,1238s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 4072pj1.pdf (70 pages).
+Output written on 4072pj1.pdf (80 pages).
