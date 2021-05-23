@@ -161,12 +161,12 @@ Application of reinforcement
 \begin{center}
 \LARGE\textbf\sectionef{Abstract}\\
 \begin{flushleft}
-\fontsize{14pt}{14.5pt}\selectfont\hspace{12pt} \sectionef The industry needs to accelerate the calculation of many manufacturing method to achieve optimization.It is not possible to constantly test different methods with physical entities. Cost and time do not allow. We can use the virtual environment to set up the structure and observe the value, combine the learning of the neural network and the optimization of the numerical analysis, greatly reduce the time and equipment cost, and get the best solution.\\
+\fontsize{14pt}{16pt}\sectionef\hspace{12pt} As the demand in the industry increases, the efficiency of production, manufacturing, research and development needs to be improved, and the optimization method can improve the efficiency. This topic will use the simplification of the electromechanical system of the physical ice hockey machine for reinforcement learning, combined with neural networks, test different algorithms to optimize the ice hockey machine sparring control system, and try to apply its algorithm to the physical electromechanical system.\\[12pt]
 
-\hspace{12pt} This project is to use the ready-made air hockey table to set up a corresponding virtual simulation environment in CoppeliaSim to reduce the cost of realistic simulation parameter settings and equipment damage, and to add a neural network and reinforcement learning to the OpenAI Gym application to improve the ability to play air hockey.
+\fontsize{14pt}{16pt}\sectionef\hspace{12pt} This project is to use the physical air hockey to play machine, introduce it into the CoppeliaSim simulation environment and give the corresponding settings, simplify its electromechanical system and use Open AI Gym for training, find an algorithm suitable for this system, and then perform it in the CoppeliaSim simulation environment Feasibility of testing algorithm in practical application.\\
 \end{flushleft}
 \begin{center}
-\fontsize{14pt}{14.5pt}\selectfont\sectionef Keyword:  nerual network、reinforcement learning、 CoppeliaSim、OpenAI Gym
+\fontsize{14pt}{16pt}\selectfont\sectionef Keyword:  nerual network、reinforcement learning、 CoppeliaSim、OpenAI Gym
 \end{center}
 \newpage
 %=------------------------誌謝----------------------=%
@@ -223,7 +223,7 @@ Application of reinforcement
 }
 \end{center}
 \end{figure}
-\newpage
+%\newpage
 \section{研究目的與方法}
  本研究分兩大部分，第一運用OpenAI Gym裡內建編譯的ATARI 2600遊戲Pong-v0，來作為訓練環境，加上強化學習的理論，測試不同演算法以訓練出最佳化的對打系統，第二換為CoppilaSim模擬環境並套用訓練程式，成為優化的對打機電系統。\\
  
@@ -251,7 +251,7 @@ Application of reinforcement
 \end{center}
 \end{figure}
 
- (圖.\ref{兩層神經網路})展示了兩層類神經網路的架構，如圖所示每一層的每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
+ 兩層類神經網路的架構，如(圖.\ref{兩層神經網路})所示每一層的每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
 
  神經元是AI系統中使用的軟件模型，其行為或多或少像實際的大腦神經元，模型會使用數字，使一個或另一個神經元對結果產生重要的影響，這些數字又稱為權重。\\
 
@@ -345,8 +345,117 @@ $y_i$： 觀測值\\
 $\hat{y_i}$：預測值\\
 $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \end{itemize}
-
 \subsection{優化算法}
+\renewcommand{\baselinestretch}{1}
+\begin{itemize}
+\item Gradient Descent Optimizer
+\begin{figure}
+\begin{center}
+\includegraphics[width=12cm]{Error_surface-2.png}
+\caption{\Large Error surface}
+\label{Error_surface-2.png}
+\end{center}
+\end{figure}
+\newpage
+\fontsize{14pt}{28pt}\selectfont
+藉由梯度下降將目標函數值最小化，目標函數以loss function L($\theta$)為例，$\theta$為weight(w)和bias(b)的向量函數，為了找到(圖.\ref{Error_surface-2.png})上的最小值，因此加上$\Delta\theta$將$\theta$ 的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數$\eta$(學習率)縮放$\Delta\theta$的修正量(圖.\ref{theta_vector.png})，修正後方程式為：\\
+\begin{center}
+$\theta=\theta+\eta\cdot\Delta\theta$\\
+\end{center}
+\begin{figure}
+\begin{center}
+\includegraphics[width=10cm]{theta_vector.png}
+\caption{\Large theta vector.png}
+\label{theta_vector.png}
+\end{center}
+\end{figure}
+\newpage
+將$\theta$以泰勒展開式表示，假設並$\Delta\theta$為u:
+\begin{center}
+$L_{(\theta+\eta u)}=L_{(\theta)}+\eta u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}+\frac{\eta^2}{2!}u^T\cdot\bigtriangledown^2 L_{(\theta)}u+\frac{\eta^3}{3!}...+\frac{\eta^4}{4!}...+\frac{\eta^n}{n!}...$\\
+\end{center}
+以泰勒展開式的型式表示的好處是：$\theta$些微的更動產生新值。$\eta$值通常小於一，當$\eta^2 << 1$，因此可以忽略高階項 
+\begin{center}
+$L_{(\theta+\eta u)}=L_{(\theta)}+\eta u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)} [\eta\ is\ typically\ small, so\ \eta^2, \eta^3,\cdots \rightarrow 0]$\\
+\end{center}
+新的$L(\theta + \eta u)$輸出的值會小於$L(\theta) L(\theta+\eta u) − L(\theta) < 0$，同理可證$u^T\cdot\bigtriangledown\theta L(\theta)$，符合u這條件：當新的值小於舊的值，u就是一個好的值。假設u和$\bigtriangledown\theta L(\theta)$的夾角為$\beta$\\
+\begin{center}
+$\cos(\beta)=\frac{u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}}{\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert}$\\
+\end{center}
+因為$\cos(\theta)$的值介於1和-1之間\\
+\begin{center}
+$-1<\cos(\beta)=\frac{u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}}{\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert}\leq 1$\\
+$k=\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert$\\
+$-k \leq k\cos(\beta)=u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}\leq k$
+\end{center}
+\newpage
+所以盡可能的讓新值小於舊值$(L(\theta+\eta u) − L(\theta) < 0)$，loss 值就會減少得越多。因此$u T \cdot \bigtriangledown\theta L(\theta)$應該為負，在這情況下$\cos(\beta)$於−1，$\beta$的角度為 $180^{\circ}$這就是$\theta$移動的方向與梯度方向相反的原因。 梯度下降法告訴我們：當$\theta$在特定值，並想減少新的$\theta$值，使 loss 值逐漸減少就應該與梯度相反的方向找 (若梯度為正值，找最小值就需往負的方向找)\\
+\begin{center}
+$w_{t=1}=w_t-\eta\bigtriangledown w_t$\\
+$b_{t=1}=b_t-\eta\bigtriangledown b_t$\\
+$where\ at\ w=w_t,b=b_t$\\
+$\begin{cases}
+ \bigtriangledown w_t=\frac{\partial L_{_{(\theta)}}}{\partial w}\\
+ \bigtriangledown b_t=\frac{\partial L_{_{(\theta)}}}{\partial b}
+ \end{cases}$
+\end{center}
+\item Stochastic gradient descent\\
+Vanilla gradient descent 又稱 Batch gradient descent(批次梯度下降法)，計算目標函數的梯度，參數$\theta$對於整個 訓練資料：
+\begin{center}
+$\theta=\theta-\eta\cdot\bigtriangledown_{\theta}L_{(\theta)}$
+\end{center}
+目標函數以為例 loss function L($\theta$)，參數$\theta$為 weight (w) 和 bias (b) 的函數，$\eta$為學習率。由於計算整個資料集計算梯度只更新一次，Bath gradient descent 可能非常慢並且對於資料集無法符合及記憶體來說棘手 (一次需要儲存整個資料集的資料，當更新和計算時會占用大量記憶體)。\\
+\begin{lstlisting}[caption=\Large Batch gradient descrnt]
+ for i in range(nb_epochs) :
+params_grad = evaluate_gradient (loss_function, data, params)
+params = params − learning_rate ∗ params_grad
+\end{lstlisting}
+\newpage
+預定義每次 epoch，先計算 loss function 梯度向量對於整個資料集參數向量。如果梯度值來自於先前計算出的梯度值，就會檢查梯度，並以梯度相反的方向更新參數$\theta$，學習率$\eta$決定多大的更新量。Batch gradient descent 對於凸面誤差可以保證收斂到廣域最小值，對於非面凸誤差可以收斂到局部最小值。
+Stochastic gradient descent(SGD) 隨機梯度下降法，這裡的目標函數為$J(\theta, x^i, y^i)$(變數$\theta$為 w(weight) 和 b(bias) 的函數，也可以寫成$J(w,b,\theta, x^i, y^i)$)。\\
+\begin{center}
+$\theta=\theta-\eta\cdot\bigtriangledown_{\theta}J_{(\theta, x^i, y^i)}$
+\end{center}
+批量梯度下降他會在每個參數更新前重新計算相似梯度。SGD 每次次執行會更新來消除多餘 (誤差)，因此通常速度 很快。SGD 頻繁更新並變化很大，因為目標方程式波動很大(圖.\ref{sgd_fluctuation.png})。\\
+\newpage
+\begin{figure}
+\begin{center}
+\includegraphics[width=10cm]{sgd_fluctuation.png}
+\caption{\Large sgd fluctuation}
+\label{sgd_fluctuation.png}
+\end{center}
+\end{figure}
+SGD 的方程式一方面會跳到新的值和潛在局部最小值，另一方面 SGD 會持續超調 (誤差超過預期) 最後收斂到廣域最小值。無論如何他被顯示當學習率下降緩慢，SGD 顯示與 Batch gradient descent 同樣收斂行為，幾乎可以肯定地，對於凸面或非凸面優化，會收斂到絕對或是局部最小值。這程式碼片段[程式.2.2] 在訓練樣本上加入一個迴圈來對每個樣本評估梯度。每個 epoch(訓練循環) 會打亂訓練數據。
+\label{code Stochastic gradient descrnt code}
+\begin{lstlisting}[caption=\Large Stochastic gradient descrnt ]
+for i in range(nb_epochs) :
+np.random.shuffle(data)
+for example in data :
+params_grad = evaluate_gradient (loss_function, example, params)
+params = params − learning_rate ∗ params_grad
+\end{lstlisting}
+Mini-batch gradient descent(小批量梯度下降) 各取前兩者的優點，將資料集分割成小區塊，每個小區塊大小稱作 batch size，每次跑完 batch size 算迭代 (iteration)一次，算完一次資料集即完成一次 epoch。舉例: 資料集大小為1000，若 batch size 為50，iteration 為 datasets 的batch size  = 1000÷50 = 20，當 iteration 跑完 20 次算完成一次 epoch。\\
+這方式可以減少參數更新的方差，並且可以穩定收斂；可利用深度學習庫所共有的高度優化的矩陣優化，從而由一個小批量計算出梯度非常有效。通常 batch sizes 的範圍介於 50 ~256，會因為應用而有所差異。訓練神經網絡時，通常選擇 Mini-batch gradient descent 算法，而當使用這算法時，通常也用 SGD 稱呼。\\
+\begin{center}
+$\theta=\theta-\eta\cdot\bigtriangledown_{\theta}J_{(\theta, x^{(i:i+n)}, y^{(i:i+n)})}$
+\end{center}
+下面[程式.2.3] 為迭代範例，batch size 大小為 50：\\
+\label{Mini-batch gradient descrnt}
+\begin{lstlisting}[caption=\Large Mini-batch gradient descrnt]
+for i in range(nb_epochs ) :
+np.random.shuffle(data)
+for batch in get_batches (data, batch_size = 50):
+params_grad = evaluate_gradient (loss_function, batch, params)
+params = params − learning_rate ∗ params_grad
+\end{lstlisting}
+Mini-batch gradient descent 無論如何還是無法確保收斂的很好，存在一些需要解決的挑戰：
+\begin{enumerate}[1]
+\item 選擇適當的學習率是有難度的。如果學習率太小會導致收斂困難或緩慢，學習率太大則會阻礙收斂導致 loss function 來回波動或發生偏離。\\
+\item 學習率清單嘗試在訓練的時候調整學習率，即根據預定義清單或當目標下降於閾值 (threshold) 時降低學習率。 但清單和閾值須預先定義，因此無法適應數據集的特徵。\\
+\item 另外相同學習率適用全部參數更新。如果資料稀疏而且外型有很特別的頻率，我們可能不希望將所有特徵更新 到相同的程度，而是對很少發生的特徵執行較大的更新。\\
+\item 最小化神經網路常見的高度非凸面誤差方程式 (error function) 的另一關鍵挑戰則是要避免被困在大量次優的局 部最小值區域中。認為困難實際上不是由局部最小值引起的，而是由鞍點引起的，即一維向上傾斜而另一維向下 傾斜的點。這些鞍點通常被相同誤差的平穩段包圍，這使得 SGD 很難逃脫，因為在所有維度上梯度都接近於零。\\
+ \end{enumerate}
+\end{itemize}
 \newpage
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
@@ -354,42 +463,44 @@ $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
 由於強化學習是建立在agent與環境互動上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境可能是真實世界、2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
 %=----------Faces of Reinforcement Learning---------------=%
-強化學習涵蓋範圍：\\
 
+\newpage
+強化學習涵蓋範圍：\\
 %======需文字補充========%
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.6]{Faces_of_Reinforcement_Learning}
+\includegraphics[width=15cm]{Faces_of_Reinforcement_Learning}
 \caption{\Large 文氏圖}
 \label{文氏圖}
 \end{center}
 \end{figure}
 %=--------The Flow of Reinforcement Learning------------=%.
+\newpage
 強化學習的流程：\\
 透過agent與環境間互動而產生狀態和獎勵，由於狀態的轉移，agent會決定接下來執行動作(圖.\ref{RL structur})。\\[12pt]
 
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=10cm]{The_Flow_of_Reinforcement_Learning}
+\includegraphics[width=15cm]{The_Flow_of_Reinforcement_Learning}
 \caption{\Large RL 架構}
 \label{RL structur}
 \end{center}
 \end{figure}
-
 需要考慮的重點：\\
 強化學習的週期是互相聯繫的，分明的溝通是在考慮獎勵的情況下發生的，agent與環境之間存在著獨特的溝通。狀態和動作互相關聯著，並互相影響著彼此：目標或機器人會因動作而造成狀態轉移，狀態的移轉也會影響目標或機器人做出的決策。\\
-
+\newpage
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[height=6.3cm]{The_entire_interaction_process}
+\includegraphics[width=15cm]{The_entire_interaction_process}
 \caption{\Large 整個互動過程 }
 \label{整個互動過程 }
 \end{center}
 \end{figure}
- 如(圖.\ref{整個互動過程}) agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他可以選擇一個操作並做出相應的回應，從這時起，將會創建新的場景，當agent從一個環境變為另一個環境中，每項更改都會導致某種修改，這些變化被描述為場景，每個步驟中發生的過渡都有助於agent更有效地解決強化學習的問題。\\
+ 如(圖.\ref{整個互動過程 }) agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他可以選擇一個操作並做出相應的回應，從這時起，將會創建新的場景，當agent從一個環境變為另一個環境中，每項更改都會導致某種修改，這些變化被描述為場景，每個步驟中發生的過渡都有助於agent更有效地解決強化學習的問題。\\
 %=----Different Terms in Reinforcement Learning----------=%
- 強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值，$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因先後順序而有所衰減)。\\
- 當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\
+強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值，$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因先後順序而有所衰減)。\\
+
+當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\
 %------------------圖片可共用----------------------%
 \iffalse
 \begin{figure}[hbt!]
@@ -565,7 +676,7 @@ $ \nabla_\theta V^\pi(s) $\\[5pt]
 $= \nabla_\theta (\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a))$\\
 $= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta Q^\pi(s, a)} \Big)  \scriptstyle{\text{; 衍生規則}} $\\
 %$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta \sum_{s', r} P(s',r \vert s,a)(r + V^\pi(s'))} \Big)  \scriptstyle{\text{; Extend } Q^\pi \text{ with future state value.}}$ \\
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ 不是一個方程式的 }\theta}$\\[6pt]
+%$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ 不是一個方程式的 }\theta}$\\[6pt]
 $= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s){\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{\text{;因為 }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
 Let $\phi(s) = \sum_{a \in \mathcal{A}} \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)$ ; 當
 K = 1，我們把所有可能動作總結到目標狀態的轉移機率$\rho^\pi(s \to x, k+1) = \sum_{s'} \rho^\pi(s \to s', k) \rho^\pi(s' \to x, 1)$\\[5pt]
@@ -586,7 +697,7 @@ $= \sum_{s}{\sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)} \phi(s) \scriptstyle{\text
 $= \sum_{s}\eta(s) \phi(s) 
 = \Big( {\sum_s \eta(s)} \Big)\sum_{s}\frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  
 \scriptstyle{\text{; 歸一化} \eta(s), s\in\mathcal{S} \text{ 成為概率分佈}}$\\[5pt]
-$\propto \sum_s \frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  \scriptstyle{\sum_s \eta(s)\text{  is a constant}}$ \\[5pt]
+$\propto \sum_s \frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  \scriptstyle{\sum_s \eta(s)\text{是一個常數}}$ \\[5pt]
 $= \sum_s d^\pi(s) \sum_a \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)  \scriptstyle{d^\pi(s) = \frac{\eta(s)}{\sum_s \eta(s)}\text{ 是固定分佈}}$
 
 $\nabla_\theta J(\theta)
@@ -826,6 +937,51 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \includegraphics[width=10cm]{HSV}
 \caption{\Large HSV色彩空間}
 \end{figure}
+\newpage
+下列為RGB與HSV之間轉換的公式，首先是RGB轉為HSV，其中$max$及$min$分別為$(r,g,b)$中的最大與最小值:
+$$
+h=\left\{\begin{matrix}
+0^{\circ}, & \textrm{if}\ max=min\\ 
+ 60^{\circ}+\frac{
+g-b}{max-min}+0^{\circ},& \textrm{if}\ max=r\;and\;g\geq \;b\\ 
+60^{\circ}+\frac{
+g-b}{max-min}+360^{\circ}, & \textrm{if}\ max=r\;and\;g<  \;b\\ 
+60^{\circ}+\frac{
+g-b}{max-min}+120^{\circ}, & \textrm{if}\ max=g\\ 
+60^{\circ}+\frac{
+g-b}{max-min}+240^{\circ}, & \textrm{if}\ max=b
+\end{matrix}\right.\\$$
+
+$$
+s=\left\{\begin{matrix}
+0, & \textrm{if}\,max=0\\ 
+\frac{max-min}{max}=1-\frac{min}{max}, & \textrm{otherwise}
+\end{matrix}\right.\\$$
+
+$$
+v=max\\$$
+接著是HSV轉為RGB:
+$$
+\textrm{when}\,0\leq H< 360,0\leq S\leq 1,0\leq V\leq 1$$
+$$
+C=V\times S\\$$
+$$
+X=C\times (1-\left | (H/60^{\circ})\textrm{mod}2-1 \right |)\\$$
+$$
+m=V-C\\$$
+
+$$
+({R}',{G}',{B}')=\left\{\begin{matrix}
+(C,X,0)& ,0^{\circ}\leq H< 60^{\circ}\\ 
+ (X,C,0)& ,60^{\circ}\leq H< 120^{\circ}\\ 
+ (0,C,X)& ,120^{\circ}\leq H< 180^{\circ}\\ 
+ (0,X,C)& ,180^{\circ}\leq H< 240^{\circ}\\ 
+ (X,0,C)& ,240^{\circ}\leq H< 300^{\circ}\\ 
+ (C,0,X)& ,300^{\circ}\leq H< 360^{\circ}
+\end{matrix}\right.\\$$
+
+$$
+(R,G,B)=(({R}'+m)\times 255,({G}'+m)\times 255,({B}'+m)\times 255)\\$$
 
 \item 顏色過濾\\
 進行顏色過濾時，需要先定義出過濾顏色的上下限，在開始過濾後僅會保留介於上下界線範圍的影像，而介於上下限範圍之外的影像則會被剃除，如圖.\ref{filter}所示以上限(77，255，255)及下限(35，43，46)為例。\\
@@ -1071,7 +1227,20 @@ client server< - > web server < - > ( socket )< - > uWSGI < - > flask
  擷取影像，將影像裁剪至實際遊戲範圍，並簡化像素以利提高訓練時的計算速度，減少運算時的負擔，過濾顏色只保留球與擊錘，並把取到的影像二元化，取兩幀畫面進行比較，掌握球與擊錘間的相對位置(畫面差)，透過前饋：計算球在環境的狀態及擊錘移動的決策，畫面差透過W1權重來計算球在環境的狀態，透過W2權重並經過啟動函數(activation function)得出擊錘移動的決策。透過產生隨機值的方式來與擊錘移動決策值進行比較，隨機值若落在決策向上移動的區間，擊錘就會向上移動；落在決策向下移動的區間，就會進行該動作。計算discount reward及獎勵的加總。\\
 
  在單局結束時，紀錄下該局累積下來的經驗，亦是紀錄該局所修正出來的參數而進行獎勵計算、log probability、RMSprop優化率減因子和反饋(back propagation)，當訓練次數到達指定次數會以pickle做紀錄，存下的數據可再次導入模型進行實際運用，或是當程式中斷後可重新匯入進行訓練。\\
-
+\section{CoppeliaSim RemoteAPI}
+在進行強化學習時主要是透過CoppeliaSim中的Remote API 函數來取得模擬場景中所需要的資訊，並在進行訓練後再回傳到CoppeloaSim做控制的動作。\\
+\subsection{Remote API模組及動態連結函示庫}
+在啟用RemoteAPI需要先準備以下三項模組和動態連結函示庫，並將此三項與預執行的程式放在同一目錄下:
+\begin{itemize}
+\item sim.py
+\item simConst.py
+\item remoteApi.dll、remoteApi.dylib 或 remoteApi.so (依序適用於:Windows、MacOS、Ubuntu)
+\end{itemize}
+sim.py及simConst.py為Python模組，其位於:\\
+CoppeliaSim安裝目錄$\backslash$programming$\backslash$remoteApiBindings$\backslash$python$\backslash$python\\
+remoteApi.dll為RemoteAPI動態連結函示庫，其位於:\\
+CoppeliaSim安裝目錄$\backslash$programming$\backslash$remoteApiBindings$\backslash$lib$\backslash$lib$\backslash$作業系統\\
+\subsection{Remote API埠使用}
 \newpage
 \chapter{問題與討論}
 \hspace{-1.7em} Q：gym用到的atari動態連結庫在讀取目錄下但在執行的時候出現缺少 ale\_ c.cp38-win\_ amd64.dll\\
