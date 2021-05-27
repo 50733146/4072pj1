@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<title>
+Application of reinforcement learning in mechatronic systems
+</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section data-markdown>
+    <script type="text/template">
+## 強化學習在機電系統中之應用
+專題組別：[第13組](http://mde.tw/4072pj1)
+
+<small>40723110 李正揚 
+40723115 林于哲
+
+40723138 黃奕慶
+
+40723148 鄭博鴻
+40723150 簡國龍</small>
+
+<small>
+[書面報告](./../downloads/4072pj1.pdf)
+</small>
+
+    </script>
+</section>
+
+
+						
+<section>
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+## 目錄
+
+* <span style="color:red">介紹</span>
+* 整體研究架構
+* 機器學習
+* 模擬環境CoppeliaSim
+* 伺服器架設
+* 訓練結果
+
+    </script>
+</section>
+
+
+
+						
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+### 介紹
+
+<img src="./../images/冰球機.jpg" alt="冰球機" height="400">
+<img src="./../images/origin.png" alt="CoppeliaSim 冰球機" height="400">
+<img src="./../images/pong_gym.png" alt="Gym 冰球機" height="400">
+
+    </script>
+</section>
+
+
+
+						
+</section>
+<section>
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+## 目錄
+
+* 介紹
+* <span style="color:red">整體研究架構</span>
+* 機器學習
+* 模擬環境CoppeliaSim
+* 伺服器架設
+* 訓練結果
+
+    </script>
+</section>
+
+
+
+						
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+### 整體研究架構
+
+<img src="./../images/研究架構.png" alt="研究架構" height="550">
+
+    </script>
+</section>
+
+
+
+						
+</section>
+<section>
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+## 目錄
+
+* 介紹
+* 整體研究架構
+* <span style="color:red">機器學習</span>
+* 模擬環境CoppeliaSim
+* 伺服器架設
+* 訓練結果
+
+    </script>
+</section>
+
+
+
+						
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+### 類神經網路
+
+<img src="./../images/類神經網路架構.png" alt="神經網路" height="550">
+    </script>
+</section>
+
+
+
+						
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+### 類神經網路
+
+<img src="./../images/類神經網路關係.png" alt="類神經網路關係" wight="500">
+    </script>
+</section>
+
+
+
+						
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+### 強化學習
+
+
+<img src="./../images/The_Flow_of_Reinforcement_Learning.png" alt="強化學習" height="550">
+
+
+    </script>
+</section>
+
+
+
+						
+</section>
+<section>
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+## 目錄
+
+* 介紹
+* 整體研究架構
+* 機器學習
+* <span style="color:red">模擬環境CoppeliaSim</span>
+* 伺服器架設
+* 訓練結果
+
+    </script>
+</section>
+
+
+
+						
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+### OpenCV
+
+<img src="./../images/origin.png" alt="原始影像" height="550">
+<img src="./../images/filter.png" alt="遮罩" height="550">
+
+    </script>
+</section>
+
+
+
+						
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+### RemoteAPI
+
+補gif動畫
+
+    </script>
+</section>
+
+
+
+						
+</section>
+<section>
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+## 目錄
+
+* 介紹
+* 整體研究架構
+* 機器學習
+* 模擬環境CoppeliaSim
+* <span style="color:red">伺服器架設</span>
+* 訓練結果
+    </script>
+</section>
+
+
+
+						
+<section data-markdown >
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+### uWSGI
+
+<img src="./../images/clientToflask.jpeg" alt="Nginx" height="400">
+<img src="./../images/total.jpeg" alt="Nginx" height="400">
+    </script>
+</section>
+
+
+
+						
+</section>
+<section>
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+## 目錄
+
+* 介紹
+* 整體研究架構
+* 機器學習
+* 模擬環境CoppeliaSim
+* 伺服器架設
+* <span style="color:red">訓練結果</span>
+    </script>
+</section>
+
+
+
+						
+<section data-markdown>
+    <script type="text/template">
+<!-- 請注意, @others 不可以內縮 -->
+### 訓練結果
+
+<img src="./../images/pong2_500.gif" alt="訓練500次結果" height="550">
+<img src="./../images/openaigym.video.0.1660.video000001.gif" alt="28.9K次訓練結果" height="550">
+    </script>
+</section>
+
+
+
+						
+</section>
+</div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<!--
+<div class="slides">
+<section data-markdown>
+    <script type="text/template">
+<!--
+## 標題
+
+### 副標
+
+<small>
+Created by [連結](網址)
+</small>
+
+ -->
+    </script>
+</section>
+
+
+						
+<!--
+<section>
+<!--
+<section data-markdown>
+    <script type="text/template">
+#請注意, @others 不可以內縮#
+# 數學符號與方程式
+
+Inline math equations go in like so: $\omega = d\phi / dt$. Display
+math should get its own line and be put in in double-dollarsigns:
+
+$$I = \int \rho R^{2} dV$$
+   </script>
+</section>
+
+
+						
+<!--<section data-markdown>
+    <script type="text/template">
+## 利用 Markdown 寫投影片
+以下利用 Markdown 格式展示 Python 程式碼:
+```
+# use threading and subprocess to threading the make process
+import os
+import subprocess
+import threading
+
+def domake():
+    
+    path = "../exposed/api/exposed"
+    ubuntu = "../Ubuntu"
+    
+    # create obj path
+    
+    if not os.path.exists(path+"/../obj"):
+        os.makedirs(path+"/../obj")
+    
+    subprocess.call(["make", "clean"], cwd=path)
+    subprocess.call("make", cwd=path)
+    subprocess.call(["cp", "{libslvs.so, _slvs.so, slvs.py}", ubuntu], cwd=path)
+    subprocess.call(["python3", "circle_ex.py"], cwd=path+"/"+ubuntu)
+    
+make = threading.Thread(target=domake)
+make.start()
+```
+    </script>
+</section>
+<!--<section data-markdown>
+    <script type="text/template">
+## 插入照片
+
+<img src="./../images/40723150.png" width="450">
+    </script>
+</section>
+<!--<section data-markdown>
+    <script type="text/template">
+ ## 網路設定
+ 
+### IPv4
+
+* 安裝 net-tools 
+```
+sudo apt install net-tools
+```
+* ``ifconfig`` 查詢 client ID
+    </script>
+</section>
+<!--<section data-markdown>
+    <script type="text/template">
+ ## Youtube
+<iframe width="1263" height="480" src="https://www.youtube.com/embed/ZoKaG6D-Rgc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </script>
+</section>
+<!--<section data-markdown>
+    <script type="text/template">
+
+ ## 使用 iframe 導入影片
+
+### 導入影片 template
+
+<iframe src="https://player.vimeo.com/video/183950627" width="640" height="492" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ 
+-->
+    </script>
+</section>
+
+
+						
+</section>
+</div>
+-->
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/math/math.js', async: true }
+            ]
+        });
+</script>
+</body>
+
+</html>
+
