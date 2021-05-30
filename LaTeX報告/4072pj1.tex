@@ -35,6 +35,7 @@ left=3truecm,right=2.5truecm]{geometry}
 \hoffset=-5mm %調整左右邊界
 \voffset=-8mm %調整上下邊界
 \setlength{\parindent}{2em}%設定首行行距縮排
+\usepackage{appendix} %附錄
  %=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
 \titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{0.5em}{}[]
@@ -142,9 +143,9 @@ Application of reinforcement
 \pagenumbering{roman} %設定頁數為羅馬數字
 \clearpage  %設定頁數開始編譯
 \sectionef
-\addcontentsline{toc}{chapter}{摘\quad 要} %將摘要加入目錄
+\addcontentsline{toc}{chapter}{摘~~~要} %將摘要加入目錄
 \begin{center}
-\LARGE\textbf{摘要}\\
+\LARGE\textbf{摘~~要}\\
 \end{center}
 \begin{flushleft}
 \fontsize{14pt}{20pt}\sectionef\hspace{12pt} 產業中的需求提升因而生產、製造、研發等效率需要有所提升，最佳化的方式能有的提升效率。本專題將以實體冰球機的機電系統簡化進行強化學習，並結合類神經網路，測試不同演算法使冰球機對打控制系統最佳化，並嘗試將其算法應用到實體機電系統上。\\[12pt]
@@ -170,8 +171,8 @@ Application of reinforcement
 \end{center}
 \newpage
 %=------------------------誌謝----------------------=%
-\addcontentsline{toc}{chapter}{誌\quad 謝}
-\centerline\LARGE\textbf{誌謝}\\
+\addcontentsline{toc}{chapter}{誌~~~謝}
+\centerline\LARGE\textbf{誌~~謝}\\
 \begin{flushleft}
 \fontsize{14pt}{2.5pt}\hspace{12pt}在此鄭重感謝製作以及協助本專題完成的所有人員，首先向大
 四學長致謝，他們不辭辛勞解決我們的提問，甚至從來
@@ -199,7 +200,7 @@ Application of reinforcement
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
 \section{研究動機}
- 機器學習與各領域結合的應用越來越廣泛，在機電系統採用強化學習是為了讓機電系統的控制達到最佳化。本專題以實體的冰球機(圖.\ref{fig.冰球機})之機電系統作為訓練模型，將實體機器轉移到虛擬環境(圖.\ref{fig.模擬冰球機})進行模擬，為了找到適合的演算方式，因此將模型簡化(圖.\ref{fig.pong_gym})後再進行測試各種算法的優劣，透過不斷的訓練來得到一個優化過的對打系統。\\
+機器學習與各領域結合的應用越來越廣泛，在機電系統採用強化學習是為了讓機電系統的控制達到最佳化。本專題以實體的冰球機(圖.\ref{fig.冰球機})之機電系統作為訓練模型，將實體機器轉移到虛擬環境(圖.\ref{fig.模擬冰球機})進行模擬，為了找到適合的演算方式，因此將模型簡化(圖.\ref{fig.pong_gym})後再進行測試各種算法的優劣，透過不斷的訓練來得到一個優化過的對打系統。\\
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -223,7 +224,6 @@ Application of reinforcement
 }
 \end{center}
 \end{figure}
-%\newpage
 \section{研究目的與方法}
  本研究分兩大部分，第一運用OpenAI Gym裡內建編譯的ATARI 2600遊戲Pong-v0，來作為訓練環境，加上強化學習的理論，測試不同演算法以訓練出最佳化的對打系統，第二換為CoppilaSim模擬環境並套用訓練程式，成為優化的對打機電系統。\\
  
@@ -284,10 +284,10 @@ ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入
 $$f(x)=max(0,x)$$
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$
-
+\newpage
 \subsection{損失函數}
-損失函數是類神經網路的最後一塊拼圖，損失函數會將類神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，以下將介紹幾種優化的方法：\\
 
+損失函數是類神經網路的最後一塊拼圖，損失函數會將類神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，以下將介紹幾種優化的方法：\\
 \begin{itemize}
 \item Gradient Descent\\
 利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。
@@ -345,6 +345,14 @@ $y_i$： 觀測值\\
 $\hat{y_i}$：預測值\\
 $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \end{itemize}
+\newpage
+\begin{figure}
+\begin{center}
+\includegraphics[width=16cm,height=15cm]{類神經網路關係.png}
+\caption{\Large 類神經網路關係}
+\label{類神經網路關係}
+\end{center}
+\end{figure}
 \subsection{優化算法}
 \renewcommand{\baselinestretch}{1}
 \begin{itemize}
@@ -461,15 +469,15 @@ SGD 難以在陡峭的往正確的方向，那就是說在一個維度上，曲�
 \begin{figure}[hbt!]
 \begin{center}
 \subfigure{
-\begin{minipage}[t]{0.45\linewidth}  %設定圖片間距
-\includegraphics[width=6cm]{without_momentum.png}
+\begin{minipage}[t]{0.5\linewidth}  %設定圖片間距
+\includegraphics[width=6cm]{without.png}
 \caption{\Large SGD without momentum}
 \label{fig.without_momentum.png}
 \end{minipage}
 }
 \subfigure{
 \begin{minipage}[t]{0.5\linewidth}
-\includegraphics[width=6.5cm]{with_momentum.png}
+\includegraphics[width=6cm]{with.png}
 \caption{\Large SGD with momentum}
 \label{fig.with_momentum.png}
 \end{minipage}
@@ -802,7 +810,7 @@ $\ast$ 當策略在其他函數的下標時，將省略 $\pi_\theta$的$\theta$ 
 $d^\pi(s)$、$Q^\pi$\\[5pt]
 stationary probability for $\pi_\theta$：隨著時間進展，結束一個狀態保持不變的機率分布\\
 \subsection{為什麼不用value-base而是policy-base}
-因為要估計其值得動作和狀態數不勝數，因此在連續空間計算成本太高，$\theta$向$\nabla_\theta J(\theta)$建議方向移動，已找到$\pi\theta$的最佳$\theta$，從而產生最高回報。
+因為要估計其值得動作和狀態數不勝數，因此在連續空間計算成本太高，$\theta$向$\nabla_\theta J(\theta)$建議方向移動，已找到$\pi\theta$的最佳$\theta$，從而產生最高回報。\\
 \subsection{Proof Policy Gradient Theorem}
 計算$\nabla_\theta J(\theta)$depends on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\[5pt]
 Policy gradient theorem：為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\[5pt]
@@ -828,9 +836,12 @@ $= \phi(s) + \sum_{s'} \sum_a \pi_\theta(a \vert s) P(s' \vert s,a) {\nabla_\the
 $=\phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) {\nabla_\theta V^\pi(s')}$ \\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) {\nabla_\theta V^\pi(s')}$ \\[5pt]
 $= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1){[ \phi(s') + \sum_{s''} \rho^\pi(s' \to s'', 1) \nabla_\theta V^\pi(s'')]}$ \\[5pt]
-$= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2){\nabla_\theta V^\pi(s'')} \\
-\scriptstyle{\text{ ; 考慮 }s'\text{作為中間點}s \to s''}$\\[5pt]
-$= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2)\phi(s'') + \sum_{s'''} \rho^\pi(s \to s''', 3){\nabla_\theta V^\pi(s''')}$ \\[5pt]
+$= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2){\nabla_\theta V^\pi(s'')} $
+\\
+$\scriptstyle{\text{ ; 考慮 }s'\text{作為中間點}s \to s''}$\\[5pt]
+$= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2)\phi(s'') $
+\\
+$+ \sum_{s'''} \rho^\pi(s \to s''', 3){\nabla_\theta V^\pi(s''')}$ \\[5pt]
 $= \dots \scriptstyle{\text{;反覆展開的部分 }\nabla_\theta V^\pi(.)}$ \\[5pt]
 $= \sum_{x\in\mathcal{S}}\sum_{k=0}^\infty \rho^\pi(s \to x, k) \phi(x)$
 $\nabla_\theta J(\theta)
@@ -850,7 +861,7 @@ $= \mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  \script
 \subsection{Policy Gradient Theorem}
 Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
 $g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$\\[5pt]
-\begin{normalsize}{$\psi_t$ 可能方法為下列:}\end{normalsize}
+\begin{Large}{$\psi_t$ 可能方法為下列:}\end{Large}
 \begin{itemize}
 \item $\sum_{t=0}^\infty r$：軌跡的總reward
 \item $\sum_{t^{'}=t}^\infty r^{'}$: 根據action的reward $a_t$
@@ -1070,7 +1081,7 @@ Pong的遊戲是簡單的強化學習中，很好的例子，在ATARI 2600版本
 \qquad CoppeliaSim的視覺傳感器輸出的影像是以每個像素中以RGB三個位元組所組成的，舉例來說:在CoppeliaSim中視覺傳感器取出畫面像素為512*256，則我們會接收到(512*256)像素*3=393,216個資料，是一筆相當大的資料，所以在影像處理上會消耗掉大量的資源。\\
 
 \subsection{影像辨識}
- 透過CoppeliaSim中的Vision sensor接收場景影像並輸出後,便可以開始進行影像辨識的處裡\\
+ 透過CoppeliaSim中的Vision sensor接收場景影像並輸出後,便可以開始進行影像辨識的處理。\\
 \begin{enumerate}
 \item RGB與HSV的轉換\\
 RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩模型中的點在圓柱坐標系中的表示法，HSV分別表示Hue(色相)、Saturation(飽和度)、Value(明度)，而會將RGB轉換為HSV是因為HSV相較於RGB可以更直接的判斷色彩、明暗和鮮豔度對於顏色過濾可以更方便定義出色彩範圍。\\
@@ -1498,23 +1509,40 @@ A：修改g ym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.vide
 修正後將"("和")"換成"\$"，就解決誤換問題
 %=---------------------參考文獻----------------------=%
 \newpage
-\begin{center}
-\addcontentsline{toc}{chapter}{參考文獻 }
-\LARGE\textbf 參考文獻\\
-\end{center}
-\begin{flushleft}
-\begin{Large}
-[1]\quad https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e\\
-
-[2]\quad https://towardsdatascience.com/adam-latest-trends-in-deep-learning-optimization-6be9a291375c\\
-\end{Large}
-\end{flushleft}
+\renewcommand\bibname{參~考~文~獻}
+\begin{thebibliography}{99}  % 參考文獻印出之編號最寬為兩個字母寬
+\bibitem 1\href{https://towardsdatascience.com/adam-latest-trends-in-deep-learning-optimization-6be9a291375c}{https://towardsdatascience.com/adam-latest-trends-in-deep-learning-optimization-6be9a291375c}
+\bibitem 2\href{https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e}{https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e}
+\bibitem 3\href{http://www.incompleteideas.net/book/RLbook2020.pdf}{http://www.incompleteideas.net/book/RLbook2020.pdf}
+\bibitem 4\href{https://medium.com/change-the-world-with-technology/policy-gradient-181d43a24cf5}{https://medium.com/change-the-world-with-technology/policy-gradient-181d43a24cf5}
+\bibitem 5\href{https://livebook.manning.com/book/grokking-deep-reinforcement-learning/chapter-11/v-11/38}{https://livebook.manning.com/book/grokking-deep-reinforcement-learning/chapter-11/v-11/38}
+\bibitem 6\href{http://ukko.life.nctu.edu.tw/~u0517047/usage.html}{http://ukko.life.nctu.edu.tw/~u0517047/usage.html}
+\bibitem 7\href{https://blog.csdn.net/qq_35027690/article/details/103859400}{https://blog.csdn.net/qq35027690/article/details/103859400}
+\bibitem 8\href{https://uupgrade.medium.com/python-那些年我們一起玩過的遊戲-三-打磚塊-d89b648896ca}{https://uupgrade.medium.com/python-那些年我們一起玩過的遊戲-三-打磚塊-d89b648896ca}
+\bibitem 9\href{https://cvfiasd.pixnet.net/blog/post/275774124-深度學習激勵函數介紹}{https://cvfiasd.pixnet.net/blog/post/275774124-深度學習激勵函數介紹}
+\bibitem 0\href{https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e}{https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e}
+\bibitem 1\href{https://www.coppeliarobotics.com/helpFiles/}{https://www.coppeliarobotics.com/helpFiles/}
+\bibitem 2\href{https://towardsdatascience.com/adam-latest-trends-in-deep-learning-optimization-6be9a291375c}{https://towardsdatascience.com/adam-latest-trends-in-deep-learning-optimization-6be9a291375c}
+\bibitem 3\href{https://blog.csdn.net/Csdn_Darry/article/details/107142216}{https://blog.csdn.net/CsdnDarry/article/details/107142216}
+\end{thebibliography}
+\newpage
+%=---------------附錄-----------------=%
+\addcontentsline{toc}{chapter}{\bibname} %新增目錄名稱
+%\renewcommand{\bibname}{TTTTTT}
+\titleformat{\chapter}[display]{\normalfont\LARGE\bfseries\makebox[3.5em][l]}{附~錄~}{1em}{\Large}[]
+%\titlecontents{chapter}[11mm]{}{\sectionef\fontsize{18pt}{2.5pt}\bfseries\makebox[3.5em][l]
+%\titleformat{\subsection}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesubsection}}{1em}{}[]
+\renewcommand\appendixname{\makebox[3.5em][l] {附~錄}} %設定標題名稱
+\begin{appendix}
+\renewcommand{\thechapter}{\Alph{chapter}\bf 附錄}%設定標題名稱
+\section{T}
+\end{appendix}
 \newpage
 %=-------------作者簡介-----------------=%也是抄的
+    \addcontentsline{toc}{chapter}{作者簡介}
     \begin{center}
 	\fontsize{20pt}{0em}\selectfont \bf{作者簡介}\\
-	\end{center}
-	
+	\end{center}	
 	{\begin{textblock}{6}(0,0.5)
 	\begin{figure}
 	\includegraphics[width=1.15in]{40723110.jpg} 
@@ -1558,8 +1586,7 @@ A：修改g ym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.vide
 \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
     \end{textblock}}}
     \hspace*{\fill} \\
-
-
+    
     {\begin{textblock}{6}(0,4.1)
     \begin{figure}
         \includegraphics[width=1.15in]{40723138.jpg} 
@@ -1581,7 +1608,6 @@ A：修改g ym.wrappers.Monitor的video\_ recorder.py的設定(圖.\ref{fig.vide
 \noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
     \end{textblock}}}
     \hspace*{\fill} \\
-
     {\begin{textblock}{6}(0,5.9)
     \begin{figure}
         \includegraphics[width=1.15in]{40723148.jpg} %{}內是圖片文件的相對路徑
