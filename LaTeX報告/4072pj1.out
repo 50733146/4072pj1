@@ -1,6 +1,6 @@
-\BOOKMARK [0][-]{Doc-Start}{摘 要}{}% 1
+\BOOKMARK [0][-]{Doc-Start}{摘   要}{}% 1
 \BOOKMARK [0][-]{Doc-Start}{Abstract}{}% 2
-\BOOKMARK [0][-]{Doc-Start}{誌 謝}{}% 3
+\BOOKMARK [0][-]{Doc-Start}{誌   謝}{}% 3
 \BOOKMARK [0][-]{chapter.1}{前言}{}% 4
 \BOOKMARK [1][-]{section.1.1}{研究動機}{chapter.1}% 5
 \BOOKMARK [1][-]{section.1.2}{研究目的與方法}{chapter.1}% 6
@@ -53,4 +53,6 @@
 \BOOKMARK [2][-]{subsection.6.4.1}{Remote API模組及動態連結函示庫}{section.6.4}% 53
 \BOOKMARK [2][-]{subsection.6.4.2}{Remote API埠使用}{section.6.4}% 54
 \BOOKMARK [0][-]{chapter.7}{問題與討論}{}% 55
-\BOOKMARK [0][-]{lstnumber.7.1.8}{參考文獻 }{}% 56
+\BOOKMARK [0][-]{chapter*.3}{參 考 文 獻}{}% 56
+\BOOKMARK [1][-]{section.Alph0.1}{T}{chapter*.3}% 57
+\BOOKMARK [0][-]{section.Alph0.1}{作者簡介}{}% 58
