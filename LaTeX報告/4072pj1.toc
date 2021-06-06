@@ -53,7 +53,7 @@
 \contentsline {subsection}{\numberline {6.4.1}Remote API模組及動態連結函示庫}{66}{subsection.6.4.1}%
 \contentsline {subsection}{\numberline {6.4.2}Remote API埠使用}{66}{subsection.6.4.2}%
 \contentsline {chapter}{\numberline {7}問題與討論}{67}{chapter.7}%
-\contentsline {chapter}{參\nobreakspace {}考\nobreakspace {}文\nobreakspace {}獻}{75}{chapter*.3}%
-\contentsline {section}{\numberline {\bf 附錄.1}T}{75}{section.Alph0.1}%
-\contentsline {chapter}{作者簡介}{76}{section.Alph0.1}%
+\contentsline {chapter}{附錄}{75}{chapter*.3}%
+\contentsline {section}{\numberline {\bf 附錄 A}LaTeX}{75}{section.Alph0.1}%
+\contentsline {chapter}{作者簡介}{77}{figure.Alph0.10}%
 \contentsfinish 
