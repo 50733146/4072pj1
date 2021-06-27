@@ -1,0 +1,240 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>Reinforcement Learning in Mechatroinc Systems</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>強化學習在機電系統中之應用</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">強化學習在機電系統中之應用</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='專題定位.html'>專題定位</a><li><a href='LaTeX.html'>LaTeX</a><li><a href='參考資料.html'>參考資料</a><li><a href='研究生考試.html'>研究生考試</a></li></ul><li class='has-children'><a href='動態網站.html'>動態網站</a><ul class='dropdown'><li><a href='數位簽章.html'>數位簽章</a><li><a href='機電控制.html'>機電控制</a><li><a href='iRobot Create.html'>iRobot Create</a></li></ul><li class='has-children'><a href='深度學習.html'>深度學習</a><ul class='dropdown'><li><a href='電腦.html'>電腦</a><li><a href='Flask.html'>Flask</a></li></ul><li class='has-children'><a href='強化學習.html'>強化學習</a><ul class='dropdown'><li><a href='2021.html'>2021</a><li><a href='Reference.html'>Reference</a><li class='has-children'><a href='類神經網路學習.html'>類神經網路學習</a><ul class='dropdown'><li><a href='neural_network_in_python.pdf.html'>neural_network_in_python.pdf</a></li></ul><li><a href='參考範例.html'>參考範例</a><li class='has-children'><a href='Markov.html'>Markov</a><ul class='dropdown'><li><a href='Markov Decision Process.html'>Markov Decision Process</a></li></ul><li><a href='Reinforcement Learning Basics.html'>Reinforcement Learning Basics</a></li></ul><li class='has-children'><a href='優化器.html'>優化器</a><ul class='dropdown'><li><a href='Gradient Descent Optimizer.html'>Gradient Descent Optimizer</a><li><a href='Stochastic gradient descent.html'>Stochastic gradient descent</a><li><a href='Gradient descent optimization algorithms.html'>Gradient descent optimization algorithms</a></li></ul><li class='has-children'><a href='程式.html'>程式</a><ul class='dropdown'><li><a href='RL-Pong Game.html'>RL-Pong Game</a><li><a href='Pong control.html'>Pong control</a></li></ul><li class='has-children'><a href='Ref.html'>Ref</a><ul class='dropdown'><li><a href='Flutter.html'>Flutter</a><li><a href='CMSiMDE.html'>CMSiMDE</a></li></ul><li class='has-children'><a href='Q&A.html'>Q&A</a><ul class='dropdown'><li><a href='MathJax.html'>MathJax</a><li><a href='ffmpeg.html'>ffmpeg</a><li><a href='動態連結庫.html'>動態連結庫</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Markov << <a href='Markov.html'>Previous</a> <a href='Reinforcement Learning Basics.html'>Next</a> >> Reinforcement Learning Basics<br /><h1>Markov Decision Process</h1>
+<p>在MRP中加入決策(decision)和動作(action)</p>
+<ul>
+<li>S：state 狀態</li>
+<li>A：action 動作</li>
+<li>P：狀態轉換<br/>$$P(s_{s+1}=s'|s_t=s,a_t=a)$$</li>
+<li>R：獎勵，取決於當前狀態和動作會得到相對應的講勵<br/>$$ R(s_t=s, a_t=a) = \mathbb{E}[r_t|s_t, a_t=a] $$</li>
+<li>D：折扣因子(discount factor)<br/>$$\gamma \in [0,1]$$</li>
+</ul>
+<p>MDP is a tuple：(S, A, P, R, $\gamma$)</p>
+<p>policy (決策)：可以是一個決策行為機率或確定行為</p>
+<p>$$\pi (a|s) = P(a_t=a|s_t=s)$$</p>
+<p>MRP 和 MDP 轉換</p>
+<table style="margin-left: auto; margin-right: auto; width: 477px;">
+<tbody>
+<tr style="height: 42px;">
+<td style="width: 202.667px; text-align: center; height: 42px;">MRP</td>
+<td style="width: 29.3333px; text-align: center; height: 42px;">↔</td>
+<td style="width: 223.333px; text-align: center; height: 42px;">MDP</td>
+</tr>
+<tr style="height: 40px;">
+<td colspan="3" style="width: 467.333px; text-align: center; height: 40px;">$P^{\pi}(s's) = \sum_{a\in A}\pi (a|s)P(s'|s, a)$</td>
+</tr>
+<tr style="height: 43px;">
+<td colspan="3" style="width: 467.333px; text-align: center; height: 43px;">$P^{\pi}(s) = \sum_{a\in A}\pi (a|s)P(s, a)$</td>
+</tr>
+<tr style="height: 98.7292px;">
+<td style="width: 202.667px; text-align: center; height: 98.7292px;">
+<p><img caption="false" height="150" src="./../images/MRP.jpg" width="251"/></p>
+<p>圖1.MRP</p>
+</td>
+<td style="width: 29.3333px; text-align: center; height: 98.7292px;"></td>
+<td style="width: 223.333px; text-align: center; height: 98.7292px;">
+<p><img alt="" height="150" src="./../images/MDP.jpg" width="218"/></p>
+<p>圖2.MDP</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4>state value function(狀態值方程式) $v^{\pi}(s)$</h4>
+<p>$$v^{\pi}(s) = \mathbb{E}[G_t|s_t=s]$$</p>
+<p>$$= \mathbb{E}[R_{t+1}+\gamma v^{\pi}(s_{t+1})|s_t=s]$$</p>
+<p>$$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$</p>
+<p style="text-align: center;"><img alt="" height="200" src="./../images/s_to _s.jpg" width="315"/></p>
+<p style="text-align: center;">圖3.Backup Diagram for $V^{\pi}$</p>
+<p style="text-align: left;"><span>$$v^{\pi}(s) = \sum_{a\in A}\pi (a|s)(R(s, a)+\gamma \sum_{s'\in s}P(s'|s, a)v^{\pi}(s'))$$</span></p>
+<h4>action value function(行為方程式)$q^{\pi}(s, a)$</h4>
+<p>$$q^{\pi}(s, a) = \mathbb{E}[G_t|s_t=s, A_t=a]$$</p>
+<p>$$= \mathbb{E}[R_{t+1}+\gamma q^{\pi}(s_{t+1}, A_{t+1})|s_t=s, A_t=a]$$</p>
+<p>$$= R^a_s+\gamma \sum_{s'\in s}P(s'|s)v^{\pi}(s')$$</p>
+<p><span>$$= R(s, a)+\gamma \sum_{s'\in s}P(s'|s) \sum_{a'\in A}\pi (a'|s')q^{\pi}(s', a')$$</span></p>
+<p style="text-align: center;"><span><img alt="" height="200" src="./../images/Q_pi function.jpg" width="291"/></span></p>
+<p style="text-align: center;"><span>圖4.Backup Diagram For $Q^{\pi}$</span></p>
+<p><span>$$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$</span></p>
+<br />Markov << <a href='Markov.html'>Previous</a> <a href='Reinforcement Learning Basics.html'>Next</a> >> Reinforcement Learning Basics</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+<script>
+  MathJax = {
+    tex: {inlineMath : [ ['$','$'], ["\$","\$"] ]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>    
+    </body></html>
+        

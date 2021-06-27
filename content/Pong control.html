@@ -1,0 +1,272 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>Reinforcement Learning in Mechatroinc Systems</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>強化學習在機電系統中之應用</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">強化學習在機電系統中之應用</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='專題定位.html'>專題定位</a><li><a href='LaTeX.html'>LaTeX</a><li><a href='參考資料.html'>參考資料</a><li><a href='研究生考試.html'>研究生考試</a></li></ul><li class='has-children'><a href='動態網站.html'>動態網站</a><ul class='dropdown'><li><a href='數位簽章.html'>數位簽章</a><li><a href='機電控制.html'>機電控制</a><li><a href='iRobot Create.html'>iRobot Create</a></li></ul><li class='has-children'><a href='深度學習.html'>深度學習</a><ul class='dropdown'><li><a href='電腦.html'>電腦</a><li><a href='Flask.html'>Flask</a></li></ul><li class='has-children'><a href='強化學習.html'>強化學習</a><ul class='dropdown'><li><a href='2021.html'>2021</a><li><a href='Reference.html'>Reference</a><li class='has-children'><a href='類神經網路學習.html'>類神經網路學習</a><ul class='dropdown'><li><a href='neural_network_in_python.pdf.html'>neural_network_in_python.pdf</a></li></ul><li><a href='參考範例.html'>參考範例</a><li class='has-children'><a href='Markov.html'>Markov</a><ul class='dropdown'><li><a href='Markov Decision Process.html'>Markov Decision Process</a></li></ul><li><a href='Reinforcement Learning Basics.html'>Reinforcement Learning Basics</a></li></ul><li class='has-children'><a href='優化器.html'>優化器</a><ul class='dropdown'><li><a href='Gradient Descent Optimizer.html'>Gradient Descent Optimizer</a><li><a href='Stochastic gradient descent.html'>Stochastic gradient descent</a><li><a href='Gradient descent optimization algorithms.html'>Gradient descent optimization algorithms</a></li></ul><li class='has-children'><a href='程式.html'>程式</a><ul class='dropdown'><li><a href='RL-Pong Game.html'>RL-Pong Game</a><li><a href='Pong control.html'>Pong control</a></li></ul><li class='has-children'><a href='Ref.html'>Ref</a><ul class='dropdown'><li><a href='Flutter.html'>Flutter</a><li><a href='CMSiMDE.html'>CMSiMDE</a></li></ul><li class='has-children'><a href='Q&A.html'>Q&A</a><ul class='dropdown'><li><a href='MathJax.html'>MathJax</a><li><a href='ffmpeg.html'>ffmpeg</a><li><a href='動態連結庫.html'>動態連結庫</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">RL-Pong Game << <a href='RL-Pong Game.html'>Previous</a> <a href='Ref.html'>Next</a> >> Ref<br /><h1>Pong control</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">""" Majority of this code was copied directly from Andrej Karpathy's gist:
+https://gist.github.com/karpathy/a4166c7fe253700972fcbc77e4ea32c5
+# https://raw.githubusercontent.com/omkarv/pong-from-pixels/master/pong-from-pixels.py
+
+ Trains an agent with (stochastic) Policy Gradients on Pong. Uses OpenAI Gym. """
+import numpy as np
+import pickle
+import gym
+import time as t
+from gym import wrappers
+
+H = 200 # number of hidden layer neurons
+batch_size = 10 # used to perform a RMS prop param update every batch_size steps
+learning_rate = 1e-3 # learning rate used in RMS prop
+gamma = 0.99 # discount factor for reward
+decay_rate = 0.99 # decay factor for RMSProp leaky sum of grad^2
+
+resume = 1
+render = 1 # render video output
+
+# model initialization
+D = 75 * 80 # input dimensionality: 75x80 grid
+if resume:
+  model = pickle.load(open('pong1.2_save.p', 'rb'))
+else:
+  print("Resume Error!!")
+
+def sigmoid(x):
+  return 1.0 / (1.0 + np.exp(-x)) # sigmoid "squashing" function to interval [0,1]
+
+def prepro(I):
+  """ prepro 210x160x3 uint8 frame into 6000 (75x80) 1D float vector """
+  I = I[35:185] # crop - remove 35px from start &amp; 25px from end of image in x, to reduce redundant parts of image (i.e. after ball passes paddle)
+  I = I[::2,::2,0] # downsample by factor of 2.
+  I[I == 144] = 0 # erase background (background type 1)
+  I[I == 109] = 0 # erase background (background type 2)
+  I[I != 0] = 1 # everything else (paddles, ball) just set to 1. this makes the image grayscale effectively
+  return I.astype(np.float).ravel() # ravel flattens an array and collapses it into a column vector
+
+def policy_forward(x):
+  """This is a manual implementation of a forward prop"""
+  h = np.dot(model['W1'], x) # (H x D) . (D x 1) = (H x 1) (200 x 1)
+  h[h&lt;0] = 0 # ReLU introduces non-linearity
+  logp = np.dot(model['W2'], h) # This is a logits function and outputs a decimal.   (1 x H) . (H x 1) = 1 (scalar)
+  p = sigmoid(logp)  # squashes output to  between 0 &amp; 1 range
+  return p, h # return probability of taking action 2 (UP), and hidden state
+
+env = gym.make("Pong-v0")
+
+observation = env.reset()
+
+prev_x = None # used in computing the difference frame
+xs,hs,dlogps,drs = [],[],[],[]
+running_reward = None
+reward_sum = 0
+episode_number = 0
+while True:
+  if render: env.render()
+  cur_x = prepro(observation) #丟入畫面
+  x = cur_x - prev_x if prev_x is not None else np.zeros(D)#兩張畫面相減
+  prev_x = cur_x
+  aprob, h = policy_forward(x)
+  action = 2 if 0.5 &lt; aprob else 3
+  xs.append(x) # observation
+  hs.append(h) # hidden state
+  y = 1 if action == 2 else 0
+  dlogps.append(y - aprob)
+  observation, reward, done, info = env.step(action)
+  reward_sum += reward
+  drs.append(reward)
+
+  if done:
+    episode_number += 1
+
+    running_reward = reward_sum if running_reward is None else running_reward * 0.99 + reward_sum * 0.01
+    print ('resetting env. episode reward total was ' + str(reward_sum) + ' running mean: '+ str(running_reward))
+
+    reward_sum = 0
+    observation = env.reset() # reset env
+    prev_x = None
+
+  if reward != 0:
+    print (('round %d game finished, reward: %f' % (episode_number, reward)) + ('' if reward == -1 else ' !!!!!!!!'))</pre>
+<p></p>
+<p></p>
+<br />RL-Pong Game << <a href='RL-Pong Game.html'>Previous</a> <a href='Ref.html'>Next</a> >> Ref</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+<script>
+  MathJax = {
+    tex: {inlineMath : [ ['$','$'], ["\$","\$"] ]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>    
+    </body></html>
+        

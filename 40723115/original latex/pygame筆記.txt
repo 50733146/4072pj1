@@ -1,0 +1,7 @@
+1.
+image = pygame.image.load(image)
+
+image = pygame.image.load(image).convert 
+顯示效果是一樣的
+但是 使用 convert 可以轉換格式，提高 blit 的速度
+Convert()所指的“格式”並非指文件格式工（如 png，jpeg，gif），它是所謂的“像素格式”。它代表了一個surface記錄一個特定像素的顏色的方法。

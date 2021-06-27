@@ -1,0 +1,18 @@
+\contentsline {chapter}{\numberline {1}Gradient Descent Optimizer}{2}{chapter.1}%
+\contentsline {chapter}{\numberline {2}\href {https://ruder.io/optimizing-gradient-descent/}{Stochastic gradient descent}}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Batch gradient descent}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Stochastic gradient descent}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Mini-batch gradient descent}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Challenges}{6}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Gradient descent optimization algorithms}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Momentum}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Nesterov accelerated gradient}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Adagrad}{8}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Adadelta}{9}{section.3.4}%
+\contentsline {section}{\numberline {3.5}RMSprop}{9}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Adam}{10}{section.3.6}%
+\contentsline {section}{\numberline {3.7}AdaMax}{10}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Nadam}{11}{section.3.8}%
+\contentsline {section}{\numberline {3.9}AMSGrad}{12}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Gradient noise}{12}{section.3.10}%
+\contentsline {section}{\numberline {3.11}其他最近的優化器}{12}{section.3.11}%

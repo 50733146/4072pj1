@@ -1,0 +1,387 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>Reinforcement Learning in Mechatroinc Systems</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>強化學習在機電系統中之應用</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">強化學習在機電系統中之應用</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='專題定位.html'>專題定位</a><li><a href='LaTeX.html'>LaTeX</a><li><a href='參考資料.html'>參考資料</a><li><a href='研究生考試.html'>研究生考試</a></li></ul><li class='has-children'><a href='動態網站.html'>動態網站</a><ul class='dropdown'><li><a href='數位簽章.html'>數位簽章</a><li><a href='機電控制.html'>機電控制</a><li><a href='iRobot Create.html'>iRobot Create</a></li></ul><li class='has-children'><a href='深度學習.html'>深度學習</a><ul class='dropdown'><li><a href='電腦.html'>電腦</a><li><a href='Flask.html'>Flask</a></li></ul><li class='has-children'><a href='強化學習.html'>強化學習</a><ul class='dropdown'><li><a href='2021.html'>2021</a><li><a href='Reference.html'>Reference</a><li class='has-children'><a href='類神經網路學習.html'>類神經網路學習</a><ul class='dropdown'><li><a href='neural_network_in_python.pdf.html'>neural_network_in_python.pdf</a></li></ul><li><a href='參考範例.html'>參考範例</a><li class='has-children'><a href='Markov.html'>Markov</a><ul class='dropdown'><li><a href='Markov Decision Process.html'>Markov Decision Process</a></li></ul><li><a href='Reinforcement Learning Basics.html'>Reinforcement Learning Basics</a></li></ul><li class='has-children'><a href='優化器.html'>優化器</a><ul class='dropdown'><li><a href='Gradient Descent Optimizer.html'>Gradient Descent Optimizer</a><li><a href='Stochastic gradient descent.html'>Stochastic gradient descent</a><li><a href='Gradient descent optimization algorithms.html'>Gradient descent optimization algorithms</a></li></ul><li class='has-children'><a href='程式.html'>程式</a><ul class='dropdown'><li><a href='RL-Pong Game.html'>RL-Pong Game</a><li><a href='Pong control.html'>Pong control</a></li></ul><li class='has-children'><a href='Ref.html'>Ref</a><ul class='dropdown'><li><a href='Flutter.html'>Flutter</a><li><a href='CMSiMDE.html'>CMSiMDE</a></li></ul><li class='has-children'><a href='Q&A.html'>Q&A</a><ul class='dropdown'><li><a href='MathJax.html'>MathJax</a><li><a href='ffmpeg.html'>ffmpeg</a><li><a href='動態連結庫.html'>動態連結庫</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">neural_network_in_python.pdf << <a href='neural_network_in_python.pdf.html'>Previous</a> <a href='Markov.html'>Next</a> >> Markov<br /><h1>參考範例</h1>
+<p>參考範例 <br/><a href="https://github.com/mdecourse/4072pj1/blob/master/40723150/example/pong2.py">https://github.com/mdecourse/4072pj1/blob/master/40723150/example/pong2.py</a></p>
+<h4>GPU運算</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with cp.cuda.Device(0):#用GPU0做計算
+    if resume:
+        model = pickle.load(open('save.p', 'rb'))
+        '''以 Binary 的方式讀取 save.p'''
+        print('resuming')
+    else:
+        model = {}
+        model['W1'] = np.random.randn(D,H) / np.sqrt(D) 
+	'''W1檢測遊戲場景'''
+        model['W2'] = np.random.randn(H,A) / np.sqrt(H)
+	'''W2決定擊錘向上或向下移動'''
+    grad_buffer = { k : np.zeros_like(v) for k, v in model.items() }
+    # update buffers that add up gradients over a batch
+    rmsprop_cache = { k : np.zeros_like(v) for k, v in model.items() }
+    # rmsprop memory
+</pre>
+<p></p>
+<p><span> python open()[來源：<a href="https://www.w3schools.com/python/ref_func_open.asp">w3schools</a>]</span></p>
+<h4><span>sigmoid </span></h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def sigmoid(x): 
+    return 1.0 / (1.0 + np.exp(-x))</pre>
+<p>$$\sigma(x) = \frac{1}{1+e^{-x}}$$</p>
+<h4>softmax</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def softmax(x):
+    probs = np.exp(x - np.max(x, axis=1, keepdims=True))
+    probs /= np.sum(probs, axis=1, keepdims=True)
+    return probs</pre>
+<p>$$\sigma(\overrightarrow{z})_i = \frac{e^{z_i}}{\sum^K_{j=1}e^{z_j}}$$</p>
+<p style="text-align: right;">[來源：<a href="https://deepai.org/machine-learning-glossary-and-terms/softmax-layer">softmax</a>資料]</p>
+<h4>prepro</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def prepro(I):
+    """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
+    I = I[35:195] # 裁掉頂部的計分和底部空白，剩下160x160
+    I = I[::2,::2,0] # 從160x160縮減到80x80，取出第一個顏色channel
+    I[I == 144] = 0 # 將背景顏色變成黑色
+    I[I == 109] = 0 # 將背景顏色變成黑色
+    I[I != 0] = 1 # 球和擊錘變成白色
+    return I.astype(np.float).ravel()</pre>
+<h4>discount rewards</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def discount_rewards(r):
+    """ take 1D float array of rewards and compute discounted reward """
+    discounted_r = np.zeros_like(r) #和r矩陣相同維度大小的0矩陣
+    running_add = 0
+    for t in reversed(range(0, r.size)):
+        if r[t] != 0: running_add = 0 
+        # 當球到邊界的時候重設總和
+        running_add = running_add * gamma + r[t]
+        discounted_r[t] = running_add
+		    '''加入第t項折扣'''
+    return discounted_r</pre>
+<h4>policy forward</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def policy_forward(x):
+    if(len(x.shape)==1):
+        x = x[np.newaxis,...]
+
+    h = x.dot(model['W1'])
+    h[h&lt;0] = 0 # ReLU nonlinearity
+    logp = h.dot(model['W2'])
+    #p = sigmoid(logp)
+    p = softmax(logp)
+
+    return p, h 
+    # return probability of taking action 2, and hidden state
+    # h 是球在環境上的狀態，p 是移動的決策
+</pre>
+<h4>policy backward</h4>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">def policy_backward(eph, epdlogp):
+    """ backward pass. (eph is array of intermediate hidden states) """
+    dW2 = eph.T.dot(epdlogp)  
+    dh = epdlogp.dot(model['W2'].T)
+    dh[eph &lt;= 0] = 0 # backpro prelu
+
+    t = time.time()
+    # problem: https://github.com/chainer/chainer/issues/8582
+    if(be == cp): #將參數複製到GPU或CPU
+        dh_gpu = cuda.to_gpu(dh, device=0)
+        epx_gpu = cuda.to_gpu(epx.T, device=0)
+        dW1 = cuda.to_cpu( epx_gpu.dot(dh_gpu) )
+        # 將GPU的矩陣複製到CPU
+    else:
+        dW1 = epx.T.dot(dh) 
+    
+
+    print((time.time()-t0)*1000, ' ms, @final bprop')
+
+    return {'W1':dW1, 'W2':dW2}</pre>
+<h4>訓練過程</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">while True:
+    t0  = time.time()
+    #render = True
+    if render: 
+        t  = time.time()
+        env.render()# 顯示訓練中狀況(影像)
+        print((time.time()-t)*1000, ' ms, @rendering')
+        # 計算每幀時間差
+
+    t  = time.time()
+    # preprocess the observation, set input to network to be difference image
+    cur_x = prepro(observation)
+    x = cur_x - prev_x if prev_x is not None else np.zeros(D)
+    prev_x = cur_x
+  
+    # forward the policy network and sample an action from the returned probability
+    t  = time.time()
+    aprob, h = policy_forward(x)
+
+    # roll the dice, in the softmax loss
+    u = np.random.uniform() # 隨機取出一個數(擲骰子)
+    aprob_cum = np.cumsum(aprob) # 三個動作的機率
+    a = np.where(u &lt;= aprob_cum)[0][0]
+    '''
+    骰子的點數落在哪個行為的區間，舉例:
+    u = 0.5826051448555892
+    aprob_cum  = [0.99999548 0.99999872 1. ]
+    u &lt;  aprob_cum[0]，則執行aprob_cum[0]的行為
+    '''
+    action = a+2
+    #print(u, a, aprob_cum)
+  
+    # record various intermediates (needed later for backprop)
+    t = time.time()
+    xs.append(x) # observation
+    hs.append(h) # hidden state
+
+    #softmax loss gradient
+    dlogsoftmax = aprob.copy()
+    dlogsoftmax[0,a] -= 1 #-discounted reward 
+    dlogps.append(dlogsoftmax)
+
+
+    # step the environment and get new measurements
+    t  = time.time()
+    observation, reward, done, info = env.step(action)
+    reward_sum += reward 
+
+    drs.append(reward) # record reward (has to be done after we call step() to get reward for previous action)
+
+
+    if done: # an episode finished
+        episode_number += 1
+
+        t  = time.time()
+
+        # stack together all inputs, hidden states, action gradients, and rewards for this episode
+        epx = np.vstack(xs)
+        eph = np.vstack(hs)
+        epdlogp = np.vstack(dlogps)
+        epr = np.vstack(drs)
+        xs,hs,dlogps,drs = [],[],[],[] # reset array memory
+
+        print(epdlogp.shape)
+
+        # compute the discounted reward backwards through time
+        discounted_epr = discount_rewards(epr)
+        # standardize the rewards to be unit normal (helps control the gradient estimator variance)
+        discounted_epr -= np.mean(discounted_epr)
+        discounted_epr /= np.std(discounted_epr)
+
+        epdlogp *= discounted_epr # modulate the gradient with advantage (PG magic happens right here.)
+        grad = policy_backward(eph, epdlogp)
+        for k in model: grad_buffer[k] += grad[k] # accumulate grad over batch
+
+        # perform rmsprop parameter update every batch_size episodes
+        if episode_number % update_freq == 0: #update_freq used to be batch_size
+            for k,v in model.items():
+                g = grad_buffer[k] # gradient
+                rmsprop_cache[k] = decay_rate * rmsprop_cache[k] + (1 - decay_rate) * g**2
+                model[k] -= learning_rate * g / (np.sqrt(rmsprop_cache[k]) + 1e-5)
+                grad_buffer[k] = np.zeros_like(v) # reset batch gradient buffer
+
+        # boring book-keeping
+        running_reward = reward_sum if running_reward is None else running_reward * 0.99 + reward_sum * 0.01
+        print('resetting env. episode reward total was %f. running mean: %f' % (reward_sum, running_reward))
+        if episode_number % 100 == 0: pickle.dump(model, open('save.p', 'wb'))
+        reward_sum = 0
+        observation = env.reset() # reset env
+        prev_x = None
+        
+        print((time.time()-t)*1000, ' ms, @backprop')
+
+
+    outstring =""
+
+    if reward != 0: # Pong has either +1 or -1 reward exactly when game ends.
+        if reward == -1:
+            outstring = ''
+        else:
+            outstring = '!!!!!!!'
+        
+        print ('ep '+ str(episode_number) + ': game finished, reward:' +str(reward)+ outstring )</pre>
+<h4>訓練結果</h4>
+<p>點是每局的獎勵總和，曲線是累積獎勵平均值。橫軸：訓練局數；縱軸獎勵分數。紅點是pong1.2，綠點是pong2。(圖1.)pong2的activation function為softmax，<span>pong1.2則是sigmoid。</span></p>
+<p style="text-align: center;"><img alt="" height="500" src="./../images/pong2_vs_pong1.2_reward.png" width="667"/></p>
+<p style="text-align: center;">圖1. pong2 v.s. pong1.2</p>
+<p style="text-align: right;">[<a href="./../downloads/pong2_vs_pong1.2.pdf">pong2_vs_pong1.2.pdf</a>]</p>
+<p style="text-align: left;"><img caption="false" height="500" src="./../images/pong1_vs_pong1.2_reward.png" width="667"/></p>
+<p style="text-align: left;"></p>
+<p></p>
+<br />neural_network_in_python.pdf << <a href='neural_network_in_python.pdf.html'>Previous</a> <a href='Markov.html'>Next</a> >> Markov</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+<script>
+  MathJax = {
+    tex: {inlineMath : [ ['$','$'], ["\$","\$"] ]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>    
+    </body></html>
+        

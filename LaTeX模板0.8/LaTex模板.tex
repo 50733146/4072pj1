@@ -1,0 +1,139 @@
+\documentclass[14pt,a4paper]{report}  %紙張設定
+\usepackage{xeCJK}%中文字體模組
+\setCJKmainfont{標楷體} %中文字體
+\usepackage{amsmath,amssymb}%數學公式、符號
+\usepackage{graphicx, subfig}%圖形
+\usepackage{graphicx, subfig}%圖片模組
+\usepackage{type1cm} %調整字體絕對大小
+\usepackage{textpos} %設定文字絕對位置
+\usepackage[top=2.5truecm,bottom=2.5truecm,
+left=3truecm,right=2.5truecm]{geometry}
+\usepackage{titlesec} %目錄標題設定模組
+\usepackage{titletoc} %目錄內容設定模組
+\usepackage{CJK} %中文模組
+\usepackage{CJKnumb} %中文數字模組
+\usepackage{wallpaper} %浮水印
+ %=------------------更改標題內容----------------------=%
+\titleformat{\chapter}[hang]{\fontsize{20pt}{2.5pt}\bfseries}{\Large 第\CJKnumber{\thechapter}章}{1em}{}[]
+\titleformat{\section}[hang]{\fontsize{18pt}{2.5pt}\bfseries}{第{\thesection}節}{1em}{}[]
+\titleformat{\subsection}[hang]{\fontsize{18pt}{2.5pt}\bfseries}{{\thesubsection}}{1em}{}[]
+%=------------------更改目錄內容-----------------------=%
+\titlecontents{chapter}[11mm]{}{\normalfont\fontsize{18pt}{2.5pt}\bfseries\makebox[3.5em][l]
+{第\CJKnumber{\thecontentslabel}章}}{}{\titlerule*[0.7pc]{.}\contentspage}
+\titlecontents{section}[18mm]{}{\normalfont\fontsize{14pt}{2.5pt}\makebox[1.5em][l]
+{\thecontentslabel}}{}{\titlerule*[0.7pc]{.}\contentspage}
+\titlecontents{subsection}[4em]{}{\normalfont\fontsize{14pt}{2.5pt}\makebox[2em][l]{{\thecontentslabel}}}{}{\titlerule*[0.7pc]{.}\contentspage}
+%=----------------------標題-------------------------=%             
+\begin{document} %文件
+\begin{titlepage}%開頭
+\begin{center}   %標題  
+\makebox[1.5\width][s]
+{\fontsize{24pt}{2.5pt}國立虎尾科技大學}\\[18pt]
+\makebox[1.5\width][s]
+{\fontsize{24pt}{2.5pt}機械設計工程系}\\[18pt]
+\makebox[1.5\width][s]
+{\fontsize{24pt}{2.5pt}專題製作報告}\\[18pt]
+%設定文字盒子 [方框寬度的1.5倍寬][對其方式為文字平均分分布於方框中]\\距離下方18pt
+\vspace{3em} %下移
+\fontsize{30pt}{1pt}\textbf{強化學習在機電系統設計與控制\\
+\vspace{1em}中之應用}\\
+\vspace{4em}
+\fontsize{30pt}{1em}\textbf
+{
+\vspace{0.5em}
+Application of reinforcement
+ \vspace{0.5em} 
+ learning in design and control of mechatronic systems}
+ \vspace{2em}
+%=---------------------參與人員-----------------------=%             
+\end{center}
+\begin{flushleft}
+\begin{LARGE}
+\hspace{32mm}\makebox[5cm][s]
+{指導教授：\quad 嚴\quad 家\quad 銘\quad 老\quad 師}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{班\qquad 級：\quad 四\quad 設\quad 三\quad 甲}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{學\qquad 生：\quad 李\quad 正\quad 揚\quad(40723110)}
+\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{\hspace{36.5mm}林\quad 于\quad 哲\quad(40723115)}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{\hspace{36.5mm}黃\quad 奕\quad 慶\quad(40723138)}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{\hspace{36.5mm}鄭\quad 博\quad 鴻\quad(40723148)}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{\hspace{36.5mm}簡\quad 國\quad 龍\quad(40723150)}\\[6pt]
+%設定文字盒子[寬度為5cm][對其方式為文字平均分分布於方框中]空白距離{36.5mm}\空白1em
+\end{LARGE}
+\end{flushleft}
+\vspace{3em}
+\fontsize{18pt}{2}\centerline{\makebox[\width][s]
+{中華民國\hspace{3em} 
+１１０ \quad 年\quad ３\quad 月}}
+\end{titlepage}
+\newpage
+%=------------------------摘要-----------------------=%
+\pagenumbering{roman}
+\clearpage
+\addcontentsline{toc}{chapter}{摘\quad 要} %將摘要加入目錄
+\begin{center}
+\LARGE\textbf{摘要}\\
+\begin{flushleft}
+\fontsize{14pt}{2.5pt}\hspace{12pt} 產業中需要加速許多工法的演算，以達到最佳化，但不能以實體一直測試不同方法，成本與時間不允許，便可以利用許多感測器觀測數值，以類神經網路運算，在虛擬環境架設結構，遠端控制、更改數值。\\
+\vspace{1em}
+\hspace{12pt} 此專題是利用現成裝置冰球台，設置對應虛擬模擬環境，減少現實模擬參數設置、成本，再加入類神經網路之中的Policy gradient與Reinforcement Learning，訓練冰球達到對應最佳化。
+\end{flushleft}
+\begin{center}
+\fontsize{14pt}{2.5pt}關鍵字:Policy gradient、虛擬環境架設結構、Reinforcement Learning
+\end{center}
+\newpage
+%=------------------------誌謝----------------------=%
+\addcontentsline{toc}{chapter}{誌\quad 謝}
+\centerline\LARGE\textbf{誌謝}\\
+\begin{flushleft}
+\fontsize{14pt}{2.5pt}\hspace{12pt}齁齁齁謝謝你齁
+\end{flushleft}
+\newpage
+%=------------------------目錄----------------------=%
+\renewcommand{\contentsname}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{目\quad 錄}}}
+\tableofcontents　　%目錄產生
+\newpage
+%=------------------圖表目錄產生----------------------=%
+\renewcommand{\listfigurename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{圖\quad 表\quad 目\quad 錄 }}}
+\listoffigures
+\newpage
+\end{center}
+%=-------------------------內容----------------------=%
+\chapter{測試章節}
+%=------------------------加入圖片測試---------------------=%
+\pagenumbering{arabic} %設定頁號阿拉伯數字
+\begin{figure}     % 進入浮動環境
+\includegraphics[scale=0.08]{cat.jpg}
+\caption{cat}           % 圖號會自動編號
+\label{fig:scale} % 一定要在 caption 之後
+\end{figure}
+%\setcounter{page}{1}  %設定頁數
+\newpage
+\section{測試小章節}
+
+
+
+
+\newpage
+\subsection{測試小節}
+\newpage
+\begin{center}
+%=---------------------參考文獻----------------------=%
+\addcontentsline{toc}{chapter}{參考文獻 }
+\LARGE\textbf 參考文獻\\
+\end{center}
+\begin{flushleft}
+\begin{Large}
+[1]\quad https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e\\
+
+[2]\quad https://towardsdatascience.com/adam-latest-trends-in-deep-learning-optimization-6be9a291375c\\
+\end{Large}
+\end{flushleft}
+
+\end{document}
