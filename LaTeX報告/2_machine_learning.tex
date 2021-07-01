@@ -1,4 +1,4 @@
-\chapter{機器學習概論}
+\chapter{機器學習}
 \section{類神經網絡}
 \begin{figure}[hbt!]
 \begin{center}
@@ -26,9 +26,17 @@
 \item Sigmoid Function：\\
 輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、且具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
 $$\sigma(x)=\frac{1}{1+e^{-x}}$$
+
 %=----------SigmoidPrime Function----------=%
 SigmoidPrime Function是從Sigmoid Function微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\
 $$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$
+\begin{figure}
+\begin{center}
+\includegraphics[width=10cm]{SigmoidFunction}
+\caption{\Large SigmoidFunction}\label{SigmoidFunction}
+\end{center}
+\end{figure}
+\\
 %=----------Softmax Function----------=%
 \item Softmax：\\
 Softmax會計算每個事件分布的機率，適用多項目分類、其機率總合為1。以此專案為例，假設擊錘移動有向上移動、向下移動及不移動這三個決策選項，則這三個決策機率值總和為1。\\
@@ -43,7 +51,7 @@ $$else f(x)=x$$
 \newpage
 \subsection{損失函數}
 
-損失函數是類神經網路的最後一塊拼圖，損失函數會將類神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，以下將介紹幾種優化的方法：\\
+損失函數是類神經網路的另一個重要的部分，損失函數會將類神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，下一節會有詳細說明，以下簡述幾種優化的方法：\\
 \begin{itemize}
 \item Gradient Descent\\
 利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。
@@ -87,7 +95,6 @@ $$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
 \item Mean Squared Error\\
 他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。\\
 \vspace{8cm}
-%(\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.6]{MSE}
@@ -365,8 +372,8 @@ $\theta_{t+1} = \theta_{t} - \dfrac{\eta}{u_t} \hat{m}_t$
 \newpage
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
-強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\
-強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
+強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，會得到正向或負面的回饋，對應到獎賞(reward)和懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\
+強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的資料來源，透過不斷嘗試使所得到的獎勵最大化。其他類型的機器學習大都需要給予特定資料且有明確的答案。\\
 由於強化學習是建立在agent與環境互動上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境可能是真實世界、2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
 %=----------Faces of Reinforcement Learning---------------=%
 
