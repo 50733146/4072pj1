@@ -454,7 +454,7 @@ Agents：\\
 \subsection{馬可夫決策}
 \begin{itemize}
 \item Markov Chain\\
-當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。
+ 馬可夫鏈(Markov Chain)主要是狀態變化的隨機過程(stochastic process)和馬可夫屬性(Markov property)結合。隨機過程(stochastic process)狀態隨著時間變化，而狀態的變化存在著雖機性，並以數學模式表示。馬可夫屬性(Markov property)指在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關。當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率會有所差異。\\
 \item Markov Reward Process\\
 action 到指定狀態會獲得獎勵。
 $$R(s_t=s) = \mathbb{E}[r_t|s_t = s]$$
@@ -561,7 +561,7 @@ $G_t$：Return;Discounted future reward$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+
 $P(s', r \vert s, a)$：伴隨著現在的a和r的state前往下一個state's'的轉移機率矩陣(單階)\\
 $\pi(a \vert s)$：隨機策略(agent的行為策略)\\
 $\pi_\theta(.)$：被$\theta$參數化的策略\\
-$\mu(s)$：確定的策略;我們還使用不同的字母將其標記為$ \ pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\
+$\mu(s)$：確定的策略;我們還使用不同的字母將其標記為$ \pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\
 $V(s)$：'狀態值函數'測量state的預期收益(報酬率)\\
 $V^\pi(s)$：根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\
 $Q(s, a)$：'行為值函數'評估一對state and action 的預期收益\\
@@ -575,19 +575,10 @@ reward function的值：取決於策略，可應用各種算法optimize$\theta$�
 $$J(\theta) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) V^\pi(s) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a)$$\\
-\subsection{Mokov chain}
-stochastic process：將隨著時間變化的狀態，以數學模式表示\\[5pt]
-$+$\\[5pt]
-Mokov property：在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關
-$d^\pi(s)$：$\pi_\theta$的Mokov chain 的平穩分布(在$\pi$下的策略狀態分佈) $$d^\pi(s) = \lim_{t \to \infty} P(s_t = s \vert s_0, \pi_\theta)$$
-$\ast$ 當策略在其他函數的下標時，將省略 $\pi_\theta$的$\theta$  e.g. $d^\pi(s)$ and $Q^\pi$ should be 
-$d^\pi(s)$、$Q^\pi$\\[5pt]
-stationary probability for $\pi_\theta$：隨著時間進展，結束一個狀態保持不變的機率分布\\
-\subsection{為什麼不用value-base而是policy-base}
-因為要估計其值得動作和狀態數不勝數，因此在連續空間計算成本太高，$\theta$向$\nabla_\theta J(\theta)$建議方向移動，已找到$\pi\theta$的最佳$\theta$，從而產生最高回報。\\
 \subsection{Proof Policy Gradient Theorem}
-計算$\nabla_\theta J(\theta)$depends on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\[5pt]
-Policy gradient theorem：為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\[5pt]
+計算$\nabla_\theta J(\theta)$ on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\
+ Policy gradient theorem：為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\
+ 
 $$\nabla_\theta J(\theta) 
 = \nabla_\theta \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \pi_\theta(a \vert s) $$
 $$\propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s)$$
@@ -597,10 +588,8 @@ $$=\mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  {\text{
 $\ast$ 當狀態和動作分布都遵循策略$\pi_{\theta}$時$\mathbb{E}_{\pi}$表示$\mathbb{E}_{s\sim d\pi,a\sim\pi\theta}$\\[5pt]
 Proof $\nabla_\theta J(\theta)= \nabla_\theta V^\pi(s_0)$ 
 $ \nabla_\theta V^\pi(s) $\\[5pt]
-$= \nabla_\theta (\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a))$\\
+$= \nabla_\theta (\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a))$\\[5pt]
 $= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta Q^\pi(s, a)} \Big)  \scriptstyle{\text{; 衍生規則}} $\\
-%$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta \sum_{s', r} P(s',r \vert s,a)(r + V^\pi(s'))} \Big)  \scriptstyle{\text{; Extend } Q^\pi \text{ with future state value.}}$ \\
-%$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ 不是一個方程式的 }\theta}$\\[6pt]
 $= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s){\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{\text{;因為 }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
 Let $\phi(s) = \sum_{a \in \mathcal{A}} \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)$ ; 當
 K = 1，我們把所有可能動作總結到目標狀態的轉移機率$\rho^\pi(s \to x, k+1) = \sum_{s'} \rho^\pi(s \to s', k) \rho^\pi(s' \to x, 1)$\\[5pt]
@@ -637,19 +626,18 @@ Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
 $g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$\\[5pt]
 \begin{Large}{$\psi_t$ 可能方法為下列:}\end{Large}
 \begin{itemize}
-\item $\sum_{t=0}^\infty r$：軌跡的總reward
-\item $\sum_{t^{'}=t}^\infty r^{'}$: 根據action的reward $a_t$
-\item $\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$: 先前公式的基準版本
-\item $Q^\pi(s_t,a_t)$：state-action value function
-\item $A^\pi(s_t,a_t)$：Advantage Function
-\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$：TD residual
+\item $\sum_{t=0}^\infty r$：決策軌跡的獎勵總和。
+\item $\sum_{t^{'}=t}^\infty r^{'}$: 根據動作(action)的獎勵(reward) $a_t$。標準表示式：$\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$
+\item $Q^\pi(s_t,a_t)$：state-action value function。
+\item $A^\pi(s_t,a_t)$：Advantage Function。
+\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$：TD residual。
 \end{itemize}
-The letter formulas use the definitions\\[5pt]
+公式使用定義：\\[5pt]
 $V^\pi(s_t) = \mathbb{E}_{s_{t}+1:\infty,a_{t}:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $Q^\pi(s_t,a_t) = \mathbb{E}_{s_{t}+1:\infty_,a_{t}+1:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $A^\pi(s_t,a_t) = Q^\pi(s_t,a_t)-V^\pi(s_t)(Advantage Function)$\\[5pt]
 \subsection{Actor Critic}
-原始的policy gradient 沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變\\[5pt]
+原始的policy gradient沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變\\[5pt]
 $$g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$$\\[5pt]
 Actor-Critic：減少原始政策中的梯度方差包括兩個模型\\[5pt]
 Critic：更新值函數參數w，根據算法，它可以是操作值$ Q_w$（$a \vert s$）或狀態值$V_w$（$s$） \\[5pt]
@@ -664,16 +652,16 @@ Actor：按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
 \begin{itemize}
 \item For $t =1 \sim T:$ 
 \begin{enumerate}[1]
-      \item 取樣 reward $r_t$ $\sim$ $R(s,a)$ 隨後下一階段 $s^{'}$ $\sim$ $P(s^{'}\vert s,a)$ 
-      \item 樣本的下一個動作 $a^{'}$ $\sim$ $\pi_\theta(a^{'}\vert s^{'})$
-    
-       \item 更新 policy 參數 $\theta$ :\\
-       $$\theta\leftarrow\theta+\alpha_\theta Q_w(s,a)\nabla_\theta ln\pi_\theta(a\vert s)$$
-       \item 計算校正 (TD error)對於時間t的動作值:\\
-       $$\delta = r_t + \gamma Q_w(s^{'},a^{'})-Q_w(s,a)$$並使用它來更新操作action - value function:\\
-       $$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
-       \item 更新 $a\leftarrow a^{'}$ 和 $ s \leftarrow s^{'}$ ; 學習率：$a_\theta$ 和 $a_w$
-    \end{enumerate}   
+\item 取樣 reward $r_t$ $\sim$ $R(s,a)$ 隨後下一階段 $s'$ $\sim$ $P(s'\vert s,a)$ 
+\item 樣本的下一個動作 $a' \sim$ $\pi_\theta(a'\vert s')$
+\item 更新 policy 參數 $\theta$ :\\
+$$\theta\leftarrow\theta+\alpha_\theta Q_w(s,a)\nabla_\theta ln\pi_\theta(a\vert s)$$
+\item 計算校正 (TD error)對於時間t的動作值:\\
+$$\delta = r_t + \gamma Q_w(s',a')-Q_w(s,a)$$
+並使用它來更新操作action - value function:\\
+$$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
+\item 更新 $a\leftarrow a'$ 和 $ s \leftarrow s'$ ; 學習率：$a_\theta$ 和 $a_w$。
+\end{enumerate}   
 \end{itemize}\newpage
 \section{類神經網路中強化學習的應用}
 \begin{figure}[hbt!]
@@ -681,12 +669,10 @@ Actor：按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
 \includegraphics[scale=0.74]{ network}
 \caption{實際兩層神經網路}
 \end{center}
-
 \end{figure}
 
  我們將定義一個可以執行玩家(agent)的類神經網路，該網路將獲取遊戲狀態並決定我們應該做什麼(向上移動或向下移動
 ) 我們使用一個2層神經網路，該網路獲取原始圖像像素(100,800個數字(210*160*3))，並生成一個表示上升概率的數字。 使用隨機策略是標準做法，這意味著我們只會產生向上移動的可能性，每次迭代時，我們都會從該分布中採樣(即扔一枚有偏見的硬幣)已獲得實際移動。\\
-
 
 \subsection{監督式學習}
 \begin{figure}[hbt!]
