@@ -1,6 +1,6 @@
 <h1>About</h1>
 <p>專題題目: </p>
-<p>強化學習在機電系統設計中之應用</p>
+<p>強化學習在機電系統中之應用</p>
 <p>Application of reinforcement learning in mechatronic systems</p>
 <p>討論區: <a href="https://github.com/mdecourse/4072pj1/discussions">https://github.com/mdecourse/4072pj1/discussions</a></p>
 <p>PDF:<a href="/downloads/4072pj1.pdf">4072pj1.pdf</a></p>
@@ -9,7 +9,10 @@
 <p style="padding-left: 30px;">40723115</p>
 <p style="padding-left: 30px;">40723138</p>
 <p style="padding-left: 30px;">40723148</p>
-<p style="padding-left: 30px;">40723150</p><h2>專題定位</h2>
+<p style="padding-left: 30px;">40723150</p>
+<div id="gtx-trans" style="position: absolute; left: 116px; top: 54.4792px;">
+<div class="gtx-trans-icon"></div>
+</div><h2>專題定位</h2>
 <p>2021/01/08</p>
 <p style="padding-left: 30px;">Adagrad: <a href="/downloads/2011_Adaptive Subgradient Methods for Online Learning and Stochastic Optimization.pdf">2011_Adaptive Subgradient Methods for Online Learning and Stochastic Optimization.pdf</a></p>
 <p style="padding-left: 30px;"><a href="/downloads/2012_ADADELTA AN ADAPTIVE LEARNING RATE METHOD.pdf">2012_ADADELTA AN ADAPTIVE LEARNING RATE METHOD.pdf</a></p>
@@ -1309,8 +1312,8 @@ params = params − learning_rate ∗ params_grad
 <table style="width: 250.667px; margin-left: auto; margin-right: auto;">
 <tbody>
 <tr>
-<td style="width: 236px;"><img alt="without_momentum" caption="false" height="100" src="/images/without_momentum.png" width="236"/></td>
-<td style="width: 10px;"><img alt="with_momentum" caption="false" height="100" src="/images/with_momentum.png" width="236"/></td>
+<td style="width: 236px;"><img caption="false" height="106" src="/images/with.png" width="250"/></td>
+<td style="width: 10px;"><img caption="false" height="106" src="/images/with.png" width="250"/></td>
 </tr>
 <tr>
 <td style="width: 236px; text-align: center;"><span> 圖.1.</span>a <br/>SGD without momentum</td>
@@ -1388,7 +1391,7 @@ params = params − learning_rate ∗ params_grad
 <p>$$ = \max(\beta_2 \cdot v_{t-1}, |g_t|) $$</p>
 <p>替換為 Adam 更新公式$\sqrt{\hat{v}_t} + \epsilon$ <span> </span>和 $u_t$ 得出 AdaMax 更新規則：</p>
 <p>$$\theta_{t+1} = \theta_{t} - \dfrac{\eta}{u_t} \hat{m}_t$$</p>
-<p>注意 $u_t$ 依靠最大運算，不建議 Adam 中的 <span>$m_t$</span><span><span> </span></span>和 <span>$v_t$</span><span><span> </span></span>偏向零，這就是為什麼不需要針對 <span>$u_t$</span> 計算偏差。好的預設值 $\eta = 0.002$，<span>$\beta_1</span><sub> </sub>= 0.9$ 和 <span>$\beta_2</span> = 0.999$。</p>
+<p>注意 $u_t$ 依靠最大運算，不建議 Adam 中的 <span>$m_t$</span><span><span> </span></span>和 <span>$v_t$</span><span><span> </span></span>偏向零，這就是為什麼不需要針對 <span>$u_t$</span> 計算偏差。好的預設值 $\eta = 0.002$，$\beta _1 = 0.9 $ 和 $ \beta_2 = 0.999 $。</p>
 <h4>Nadam</h4>
 <p>Nadam (Nesterov-accelerated Adaptive Moment Estimation，Nesterov 加速的自適應矩估計)，結合 Adam 和 NAG。為了將 NAG 納入 Adam，需要修改動量項 <span>$m_t$</span>。使用先前符號回顧動量更新規則：</p>
 <p>$$g_t = \nabla_{\theta_t}J(\theta_t)$$</p>
@@ -1431,8 +1434,7 @@ params = params − learning_rate ∗ params_grad
 <p>$$g_{t, i} = g_{t, i} + N(0, \sigma^2_t)$$</p>
 <p>根據排定時間對差異計算：</p>
 <p>$$\sigma^2_t = \frac{\eta}{(1 + t)^\gamma}$$</p>
-<p>添加這種 noise 對不良初始化的網絡可使其強化，並有助於訓練特別深且復雜的網絡。他們懷疑增加的噪聲使模型 有更多的機會逃脫並找到新的局部極小值，這對於更深的模型而言更常見。</p>
-<h1>程式</h1>
+<p>添加這種 noise 對不良初始化的網絡可使其強化，並有助於訓練特別深且復雜的網絡。他們懷疑增加的噪聲使模型 有更多的機會逃脫並找到新的局部極小值，這對於更深的模型而言更常見。</p><h1>程式</h1>
 <h4>pygame</h4>
 <p>訓練用的Pygame程式：</p>
 <p><a href="https://github.com/s40723150/pygame_airhockey">https://github.com/s40723150/pygame_airhockey</a></p>
