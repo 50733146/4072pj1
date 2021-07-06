@@ -41,7 +41,7 @@ SigmoidPrime Function是從Sigmoid Function微分得來，以梯度運算的方�
 $$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$
 \begin{figure}
 \begin{center}
-\includegraphics[width=10cm]{SigmoidFunction}
+\includegraphics[width=16cm]{SigmoidFunction}
 \caption{\Large SigmoidFunction}\label{SigmoidFunction}
 \end{center}
 \end{figure}
@@ -57,9 +57,7 @@ ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入
 $$f(x)=max(0,x)$$
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$
-\newpage
 \subsection{損失函數}
-
 損失函數是類神經網路的另一個重要的部分，損失函數會將類神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，下一節會有詳細說明，以下簡述幾種優化的方法：\\
 \begin{itemize}
 \item Gradient Descent\\
@@ -110,13 +108,13 @@ $$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
 \caption{\Large 線性回歸}\label{線性回歸}
 \end{center}
 \end{figure}
-\\
+\qquad \\
 回歸線 :數據點間最小距離的一條線。 \\
 n：數據點的數量\\
 $y_i$： 觀測值\\
 $\hat{y_i}$：預測值\\
 $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
-
+\end{itemize}
 \subsection{優化算法}
 \renewcommand{\baselinestretch}{1}
 \begin{itemize}
