@@ -100,20 +100,22 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \end{figure}
 \newpage
 下列為RGB與HSV之間轉換的公式，首先是RGB轉為HSV，其中$max$及$min$分別為$(r,g,b)$中的最大與最小值:
-$$
-h=\left\{\begin{matrix}0^{\circ}, & \textrm{if} max=min\\ 
-60^{\circ}+\frac{g-b}{max-min}+0^{\circ},& \textrm{if} max=r\;and\;g\geq \;b\\ 
-60^{\circ}+\frac{g-b}{max-min}+360^{\circ}, & \textrm{if} max=r ;and ;g< ;b\\ 
-60^{\circ}+\frac{g-b}{max-min}+120^{\circ}, & \textrm{if} max=g\\ 
-60^{\circ}+\frac{g-b}{max-min}+240^{\circ}, & \textrm{if} max=b\end{matrix}\right.$$
+$$h=\left\{\begin{matrix}
+0^{\circ}, & \textrm{if}\ max=min\\ 
+60^{\circ}+\frac{g-b}{max-min}+0^{\circ},& \textrm{if}\ max=r\;and\;g\geq \;b\\ 
+60^{\circ}+\frac{g-b}{max-min}+360^{\circ}, & \textrm{if}\ max=r\;and\;g<  \;b\\ 
+60^{\circ}+\frac{g-b}{max-min}+120^{\circ}, & \textrm{if}\ max=g\\ 
+60^{\circ}+\frac{g-b}{max-min}+240^{\circ}, & \textrm{if}\ max=b
+\end{matrix}\right.$$
 
-$$s=\left\{\begin{matrix}0, & \textrm{if} ,max=0\\ 
-\frac{max-min}{max}=1-\frac{min}{max}, & \textrm{otherwise}\end{matrix}\right.$$
+$$s=\left\{\begin{matrix}
+0, & \textrm{if}\,max=0\\ 
+\frac{max-min}{max}=1-\frac{min}{max}, & \textrm{otherwise}
+\end{matrix}\right.$$
 
 $$v=max$$
-
 接著是HSV轉為RGB:
-$$\textrm{when} ,0\leq H< 360,0\leq S\leq 1,0\leq V\leq 1$$
+$$\textrm{when}\,0\leq H< 360,0\leq S\leq 1,0\leq V\leq 1$$
 $$C=V\times S$$
 $$X=C\times (1-\left | (H/60^{\circ})\textrm{mod}2-1 \right |)$$
 $$m=V-C$$
@@ -124,7 +126,9 @@ $$({R}',{G}',{B}')=\left\{\begin{matrix}
  (0,C,X)& ,120^{\circ}\leq H< 180^{\circ}\\ 
  (0,X,C)& ,180^{\circ}\leq H< 240^{\circ}\\ 
  (X,0,C)& ,240^{\circ}\leq H< 300^{\circ}\\ 
- (C,0,X)& ,300^{\circ}\leq H< 360^{\circ}\end{matrix}\right.$$
+ (C,0,X)& ,300^{\circ}\leq H< 360^{\circ}
+\end{matrix}\right.$$
+
 
 $$(R,G,B)=(({R}'+m)\times 255,({G}'+m)\times 255,({B}'+m)\times 255)$$
 

@@ -165,7 +165,7 @@ Application of reinforcement
 \listoffigures
 \newcommand{\captioname}{圖}
 \newpage
-
+\end{center}
 %=-------------------------內容----------------------=%
 \input{1_introduction.tex}
 \input{2_machine_learning.tex}
@@ -179,6 +179,7 @@ Application of reinforcement
 %=---------------附錄-----------------=%
 \addcontentsline{toc}{chapter}{附錄} %新增目錄名稱
 \input{9_appendix.tex}
+\newpage
 %=-------------作者簡介-----------------=%
     \addcontentsline{toc}{chapter}{作者簡介}
     \begin{center}
@@ -227,7 +228,11 @@ Application of reinforcement
 \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
     \end{textblock}}}
     \hspace*{\fill} \\
-    
+    {\begin{textblock}{6}(0,5.9)
+    \begin{figure}
+        \includegraphics[width=1.15in]{40723138} %{}內是圖片文件的相對路徑
+    \end{figure}
+    \end{textblock}}
     {\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
     {\begin{textblock}{15}(3.5,4.3) %{寬度}(以左上角為原點之右移量,下移量)
 \noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace%\noindent指定首行不進行縮排
