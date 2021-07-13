@@ -29,8 +29,8 @@
 %}
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
-\renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
-\renewcommand{\tablename}{\Large 表.}
+%\renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
+%\renewcommand{\tablename}{\Large 表.}
 \renewcommand{\lstlistingname}{\Large 程式.} %設定程式標示名稱
 \hoffset=-5mm %調整左右邊界
 \voffset=-8mm %調整上下邊界
@@ -44,13 +44,13 @@
 left=2truecm,right=2truecm]{geometry}
 \setlength\columnsep{23.7pt}%調整雙欄位的中間間隔距離
 
-
 \begin{document}
-
-
+%{\let\clearpage\relax }
 %=-------------------------內容----------------------=%
 \input{0_Abstract.tex}
 \input{1_Introduction.tex}
+
 \input{2_LiteratureReview.tex}
 \input{3_DesignProcess.tex}
+
 \end{document}
