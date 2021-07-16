@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper,twocolumn]{report}  %紙張設定
+\documentclass[10pt,a4paper]{report}  %紙張設定
 \usepackage{xeCJK}%中文字體模組
 \setCJKmainfont{標楷體} %設定中文字體
 %\setCJKmainfont{MoeStandardKai.ttf}
@@ -32,20 +32,34 @@
 %\renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
 %\renewcommand{\tablename}{\Large 表.}
 \renewcommand{\lstlistingname}{\Large 程式.} %設定程式標示名稱
-\hoffset=-5mm %調整左右邊界
-\voffset=-8mm %調整上下邊界
+%\hoffset=-5mm %調整左右邊界
+%\voffset=-8mm %調整上下邊界
 \setlength{\parindent}{2em}%設定首行行距縮排
 \usepackage{appendix} %附錄
 \usepackage{diagbox}%引用表格
 \usepackage{multirow}%表格置中
+\usepackage{fancyhdr}%頁首頁尾
+\pagestyle{fancy}
 %======== 版 面 設 定 ========%
 
-\usepackage[top=3truecm,bottom=3truecm,
-left=2truecm,right=2truecm]{geometry}
-\setlength\columnsep{1cm}%調整雙欄位的中間間隔距離
+\usepackage[top=2.5truecm,bottom=2.5truecm,
+left=2.5truecm,right=2.5truecm]{geometry}
+%\setlength\columnsep{1cm}%調整雙欄位的中間間隔距離
 
 \begin{document}
+\hspace{-3em}
+\rhead{Proceedings of 2021 International Conference on Mechatronic, Automobile, and Environment Engineering\\
+October 22-24, 2021, Hualien, Taiwan\\
+Paper ID：xxxx}
+%=-------------------------標題----------------------=%
+\begin{center}
+\fontsize{22pt}{22pt}\selectfont\textbf{Application of reinforcement
+ \vspace{0.5em} 
+ learning in mechatronic systems}\\
+\end{center}
+
 %=-------------------------內容----------------------=%
+\fontsize{10pt}{10pt}\selectfont
 \input{0_Abstract.tex}
 \input{1_Introduction.tex}
 \input{2_LiteratureReview.tex}
