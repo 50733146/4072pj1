@@ -35,24 +35,25 @@
 %\hoffset=-5mm %調整左右邊界
 %\voffset=-8mm %調整上下邊界
 \setlength{\parindent}{2em}%設定首行行距縮排
-\usepackage{appendix} %附錄
+%\usepackage{appendix} %附錄
 \usepackage{diagbox}%引用表格
 \usepackage{multirow}%表格置中
 %======== 版 面 設 定 ========%
 \usepackage[margin=2.5cm]{geometry}
 %\setlength\columnsep{1cm}%調整雙欄位的中間間隔距離
 %=------------------更改標題內容----------------------=%
-\titleformat{\chapter}{\sectionef\fontsize{12pt}{0pt}\bfseries}{\thesection}{0em}{}
-\titleformat{\section}[hang]{\sectionef\fontsize{12pt}{2.5pt}\bfseries}{{\thesection}}{0em}{}[]
-\titleformat{\subsection}[hang]{\sectionef\fontsize{12pt}{2.5pt}\bfseries}{{\thesubsection}}{0em}{}[]
+
 %=------------------頁首----------------------=%
 \usepackage{fancyhdr}%頁首頁尾
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}%去除頁首橫線
-\fontsize{9pt}{9pt}\selectfont
-\fancyhead[R]{\vspace{-1.5em} Proceedings of 2021 International Conference on Mechatronic, Automobile, and Environment Engineering\\
+
+\fancyhead[R]{
+\fontsize{9pt}{0pt}\selectfont 
+\vspace{-5pt}\hspace{-5pt} 
+\textbf{Proceedings of 2021 International Conference on Mechatronic, Automobile, and Environment Engineering\\
 October 22-24, 2021, Hualien, Taiwan\\
-Paper ID：xxxx}
+Paper ID：xxxx}}
 
 \begin{document}
 
@@ -60,7 +61,6 @@ Paper ID：xxxx}
 %=-------------------------標題----------------------=%
 \begin{center}
 \fontsize{22pt}{22pt}\selectfont\textbf{Application of reinforcement
- \vspace{0.5em} 
  learning in mechatronic systems}\\
 \end{center}
 
