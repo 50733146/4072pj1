@@ -41,6 +41,9 @@
 %======== 版 面 設 定 ========%
 \usepackage[margin=2.5cm]{geometry}
 %\setlength\columnsep{1cm}%調整雙欄位的中間間隔距離
+%=------------------字型設定----------------------=%
+\newfontfamily{\barial}{arialbd}
+[Extension = .ttf]
 %=------------------更改標題內容----------------------=%
 
 %=------------------頁首----------------------=%
@@ -48,21 +51,32 @@
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}%去除頁首橫線
 \fancyhead[R]{
-\fontsize{9pt}{0pt}\selectfont 
-\vspace{-5pt}\hspace{-5pt} 
-\textbf{Proceedings of 2021 International Conference on Mechatronic, Automobile, and Environment Engineering\\
-October 22-24, 2021, Hualien, Taiwan\\
-Paper ID：xxxx}}
+\vspace{-5pt}\hspace{-1.3em} 
+\fontsize{9pt}{2pt}\barial
+Proceedings of 2021 International Conference on Mechatronic, Automobile, and Environment Engineering\\
+October 22-24, 2021, Hualien, Taiwan\\[5pt]
+Paper ID：xxxx}
 %=-------------------------本文----------------------=%
 \begin{document}
 
 
 %=-------------------------標題----------------------=%
 \begin{center}
-\fontsize{22pt}{25pt}\selectfont\textbf{Application of reinforcement
- learning in mechatronic systems}\\
+\quad \\[1pt]
+\fontsize{22pt}{3pt}\selectfont\hspace{0.35cm}\textbf{\sectionef Application of reinforcement
+ learning in \\[12pt]
+ mechatronic systems}\\[12pt]
 \end{center}
-
+%=-------------------------標題----------------------=%
+\begin{center}
+\qquad \\[27pt]
+First-Name Last-Name1, First-Name Last-Name2, First-Name Last-Name3\\[12pt]
+1Affiliation, E-mail:\\[12pt]
+2 Affiliation, E-mail:\\[12pt]
+3 Affiliation, E-mail:\\[12pt]
+*Corresponding E-mail: \\
+\qquad \\
+\end{center}
 %=-------------------------內容----------------------=%
 \fontsize{10pt}{13pt}\selectfont
 \input{0_Abstract.tex}
