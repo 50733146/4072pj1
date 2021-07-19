@@ -24,8 +24,8 @@
 \usepackage{setspace}
 \usepackage{lscape}%設定橫式
 %\lstset{language=Python, %設定語言
-%		basicstyle=\fontsize{10pt}{2pt}\selectfont, %設定程式內文字體大小
-%		frame=lines,	%設定程式框架為線
+%basicstyle=\fontsize{10pt}{2pt}\selectfont, %設定程式內文字體大小
+%frame=lines,	%設定程式框架為線
 %}
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
@@ -42,10 +42,12 @@
 \usepackage[margin=2.5cm]{geometry}
 %\setlength\columnsep{1cm}%調整雙欄位的中間間隔距離
 %=------------------字型設定----------------------=%
-\newfontfamily{\barial}{arialbd}
+\newfontfamily{\barial}{arialbd}%設定粗體Arial字體
 [Extension = .ttf]
-%=------------------更改標題內容----------------------=%
-
+\newfontfamily{\timesbi}{timesbi}%設定粗斜體Times New Roman字體
+[Extension = .ttf]
+\newfontfamily{\timesbd}{timesbd}%設定粗體Times New Roman字體
+[Extension = .ttf]
 %=------------------頁首----------------------=%
 \usepackage{fancyhdr}%頁首頁尾
 \pagestyle{fancy}
@@ -63,17 +65,16 @@ Paper ID：xxxx}
 %=-------------------------標題----------------------=%
 \begin{center}
 \quad \\[1pt]
-\fontsize{22pt}{3pt}\selectfont\hspace{0.35cm}\textbf{\sectionef Application of reinforcement
- learning in \\[12pt]
+\fontsize{22pt}{3pt}\selectfont\hspace{0.35cm}\textbf{\sectionef Application of reinforcement learning in \\[12pt]
  mechatronic systems}\\[12pt]
 \end{center}
 %=-------------------------標題----------------------=%
 \begin{center}
 \qquad \\[27pt]
 First-Name Last-Name1, First-Name Last-Name2, First-Name Last-Name3\\[12pt]
-1Affiliation, E-mail:\\[12pt]
-2 Affiliation, E-mail:\\[12pt]
-3 Affiliation, E-mail:\\[12pt]
+1 Affiliation, E-mail:\\[6pt]
+2 Affiliation, E-mail:\\[6pt]
+3 Affiliation, E-mail:\\[6pt]
 *Corresponding E-mail: \\
 \qquad \\
 \end{center}
