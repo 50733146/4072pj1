@@ -1,0 +1,12 @@
+\begin{flushleft}
+{\large \textbf{設計流程}}\\
+\end{flushleft}
+設計流程分為簡化模、型機器學習訓練、模擬環境訓練。\\
+\textbf{簡化模型}
+將冰球機簡化成一個自由度，簡化後與Pong的操控相同，並分別透過2D遊戲Pong-v0與3D模擬環境CoppilaSim供強化學習訓練。\\
+
+\textbf{機器學習訓練}
+透過影像處理，過濾出擊錘與球，並將兩幀影像進行比較，透過調整環境參數與決策參數的權重，環境參數使用ReLU Function進行優化，決策參數則是透過Log probability和Softmax進行運算並在每局結束後透過back-propgation修正與更新偏差，藉由不斷的學習持續進步。\\
+
+\textbf{模擬環境訓練}
+在CoppilaSim中，抓取場景中的攝影機，

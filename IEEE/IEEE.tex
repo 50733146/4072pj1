@@ -1,0 +1,87 @@
+\documentclass[10pt,a4paper]{report}  %紙張設定
+\usepackage{xeCJK}%中文字體模組
+\setCJKmainfont{標楷體} %設定中文字體
+%\setCJKmainfont{MoeStandardKai.ttf}
+\newfontfamily\sectionef{Times New Roman}%設定英文字體
+%\newfontfamily\sectionef{Nimbus Roman}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb}%數學公式、符號
+\usepackage{amsfonts} %數學簍空的英文字
+\usepackage{graphicx, subfigure}%圖形
+\usepackage{fontawesome5} %引用icon
+\usepackage{type1cm} %調整字體絕對大小
+\usepackage{textpos} %設定文字絕對位置
+\usepackage{titlesec} %目錄標題設定模組
+\usepackage{titletoc} %目錄內容設定模組
+\usepackage{textcomp} %表格設定模組
+\usepackage{multirow} %合併行
+%\usepackage{multicol} %合併欄
+\usepackage{CJK} %中文模組
+\usepackage{CJKnumb} %中文數字模組
+\usepackage{wallpaper} %浮水印
+\usepackage{listings} %引用程式碼
+\usepackage{hyperref} %引用url連結
+\usepackage{setspace}
+\usepackage{lscape}%設定橫式
+%\lstset{language=Python, %設定語言
+%		basicstyle=\fontsize{10pt}{2pt}\selectfont, %設定程式內文字體大小
+%		frame=lines,	%設定程式框架為線
+%}
+\graphicspath{{./../images/}} %圖片預設讀取路徑
+\usepackage{indentfirst} %設定開頭縮排模組
+%\renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
+%\renewcommand{\tablename}{\Large 表.}
+\renewcommand{\lstlistingname}{\Large 程式.} %設定程式標示名稱
+%\hoffset=-5mm %調整左右邊界
+%\voffset=-8mm %調整上下邊界
+\setlength{\parindent}{2em}%設定首行行距縮排
+%\usepackage{appendix} %附錄
+\usepackage{diagbox}%引用表格
+\usepackage{multirow}%表格置中
+%======== 版 面 設 定 ========%
+\usepackage[margin=2.5cm]{geometry}
+%\setlength\columnsep{1cm}%調整雙欄位的中間間隔距離
+%=------------------字型設定----------------------=%
+\newfontfamily{\barial}{arialbd}
+[Extension = .ttf]
+%=------------------更改標題內容----------------------=%
+
+%=------------------頁首----------------------=%
+\usepackage{fancyhdr}%頁首頁尾
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}%去除頁首橫線
+\fancyhead[R]{
+\vspace{-5pt}\hspace{-1.3em} 
+\fontsize{9pt}{2pt}\barial
+Proceedings of 2021 International Conference on Mechatronic, Automobile, and Environment Engineering\\
+October 22-24, 2021, Hualien, Taiwan\\[5pt]
+Paper ID：xxxx}
+%=-------------------------本文----------------------=%
+\begin{document}
+
+
+%=-------------------------標題----------------------=%
+\begin{center}
+\quad \\[1pt]
+\fontsize{22pt}{3pt}\selectfont\hspace{0.35cm}\textbf{\sectionef Application of reinforcement
+ learning in \\[12pt]
+ mechatronic systems}\\[12pt]
+\end{center}
+%=-------------------------標題----------------------=%
+\begin{center}
+\qquad \\[27pt]
+First-Name Last-Name1, First-Name Last-Name2, First-Name Last-Name3\\[12pt]
+1Affiliation, E-mail:\\[12pt]
+2 Affiliation, E-mail:\\[12pt]
+3 Affiliation, E-mail:\\[12pt]
+*Corresponding E-mail: \\
+\qquad \\
+\end{center}
+%=-------------------------內容----------------------=%
+\fontsize{10pt}{13pt}\selectfont
+\input{0_Abstract.tex}
+\input{1_Introduction.tex}
+\input{2_LiteratureReview.tex}
+\input{3_DesignProcess.tex}
+
+\end{document}
