@@ -8,6 +8,7 @@
 \usepackage{amsmath,amssymb}%數學公式、符號
 \usepackage{amsfonts} %數學簍空的英文字
 \usepackage{graphicx, subfigure}%圖形
+\usepackage{caption}
 \usepackage{fontawesome5} %引用icon
 \usepackage{type1cm} %調整字體絕對大小
 \usepackage{textpos} %設定文字絕對位置
@@ -49,9 +50,10 @@
 \newfontfamily{\timesbd}{timesbd}%設定粗體Times New Roman字體
 [Extension = .ttf]
 %=------------------圖標----------------------=%
-
-\renewcommand{\thefigure}{\arabic{figure}}
-\renewcommand{\thesubfigure}{\alph{subfigure}}
+%\usepackage{caption}
+%\usepackage{subcaption}
+%\renewcommand{\figure}{\arabic{figure}}
+%\renewcommand{\subfigure}{\alph{subfigure}}
 %=------------------頁首----------------------=%
 \usepackage{fancyhdr}%頁首頁尾
 \pagestyle{fancy}
