@@ -1,8 +1,8 @@
 import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt
-file1_name = "pong2_rlist.txt"
-file1_sum_name = "pong2_Srlist.txt"
+file1_name = "pong2_rlist_10K.txt"
+file1_sum_name = "pong2_Srlist_10K.txt"
 file2_name = "pong2_r_rlist.txt"
 file2_sum_name = "pong2_r_Srlist.txt"
 reward1_data = np.loadtxt(file1_name)

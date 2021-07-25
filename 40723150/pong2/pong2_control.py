@@ -23,14 +23,14 @@ decay_rate = 0.99  # decay factor for RMSProp leaky sum of grad^2
 
 
 device = 1
-pickle_name = "pong2_save.p"
+pickle_name = "pong2_r_save.p"
 running_reward = None
 reward_sum = 0
 episode_number = 0
 resume = 1  # resume from previous checkpoint?
 render = 1
 # model initialization
-D = 75 * 80  # input dimensionality: 80x80 grid
+D = 80 * 80  # input dimensionality: 80x80 grid
 with cp.cuda.Device(0):
     if resume:
         model = pickle.load(open(pickle_name, 'rb'))
@@ -53,7 +53,7 @@ def softmax(x):
 
 def prepro(I):
     """ prepro 210x160x3 uint8 frame into 6400 (80x80) 1D float vector """
-    I = I[35:185]  # crop
+    I = I[35:195]  # crop
     I = I[::2, ::2, 0]  # downsample by factor of 2
     I[I == 144] = 0  # erase background (background type 1)
     I[I == 109] = 0  # erase background (background type 2)

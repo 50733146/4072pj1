@@ -8,6 +8,6 @@ RAM：8GB
 GPU：NVIDIA GeForce GTX 1050 Ti
 ## Training
 ### pong2
-training 10K times no resume.
+training 10.7K times no resume.
 ### pong2_r
 training 10K times resume once.
