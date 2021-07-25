@@ -1,0 +1,1 @@
+2r is r training 5900 times will be resume. In order to check resume affect training result
