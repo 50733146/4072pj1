@@ -1,34 +1,51 @@
-\chapter{機器學習概論}
+\chapter{機器學習}
 \section{類神經網絡}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.74]{兩層神經網路}
-\caption{\Large 兩層神經網路}\label{兩層神經網路}
+\includegraphics[width=16cm]{類神經網路架構}
+\caption{\Large 類神經網路架構}\label{類神經網路架構}
 \end{center}
 \end{figure}
 
- 兩層類神經網路的架構，如(圖.\ref{兩層神經網路})所示每一層的每一個神經元都會連接到下一層全部的神經元，對於每個神經元的連線會給出權重。\\
+ 典型的類神經網路架構，如(圖.\ref{類神經網路架構})所示每一層的每一個神經元都會連接到下一層全部的神經元，對於每個神經元輸出會有不同的權重。\\
 
- 神經元是AI系統中使用的軟件模型，其行為或多或少像實際的大腦神經元，模型會使用數字，使一個或另一個神經元對結果產生重要的影響，這些數字又稱為權重。\\
+ 神經元是AI系統中使用的數學模型，其行為與實際的大腦神經元運作方式相仿，模型以數字的方式表達，神經元間傳遞會有不同強度，而以數值的大小代表不同強度，這個數值我們稱為權重，對結果產生重要的影響。\\
 
- (圖.\ref{兩層神經網路})也展示了輸入層、隱藏層和輸出層，這是最陽春的網路，真正的網路可以更複雜且有更多層次，事實上深度學習命名原則，就是由多層的隱藏層而來，從意義上來說就是增加了類神經網路的深度。\\
+ (圖.\ref{類神經網路架構})基礎的類神經網路架構主要由輸入層、隱藏層和輸出層這三部分組成，實際運用上還有更多樣更複雜的類神經網路架構，深度學習則是有更多的隱藏層，從意義上來說就是增加了類神經網路的深度。\\
 
- 此外，如(圖.\ref{兩層神經網路})所示，是具有過濾層並在​​其中從左到右處理信息，數據輸入的方向只有一個，故被稱為前饋輸入(feed-forward input)。\\
+ 此外，如(圖.\ref{類神經網路架構})所示，資料由輸入層傳入，經過隱藏層運算和記憶，再由輸出層進行輸出，這種資料被傳遞的方式被稱為前饋輸入(feed-forward)。\\
 
- 有了網路架構，就能進一步讓網路學習，神經元網路會接收一個例子並猜測答案，如果答案是錯誤的，它會回溯並修改對神經元施加權重和偏差，並嘗試通過更改某些值來修復錯誤，這樣的行為就被稱為反向傳播(backpropagation)。使用迭代方法進行反複試驗，模擬人們重複的行為，執行經過多時後，最終類神經網路學習會進步並給出更好的答案，訓練時間可以是一天，甚制是一個禮拜，才能完成學習複雜的項目，故每一次的迭代被稱為epoch。\\
+ 類神經網路架構有了記憶，就能進一步讓網路學習。當類神經網路接收資料並猜測答案，如果答案與實際答案不符、有落差或有錯誤的情況，它會回授並修改對每個神經元權重和偏差修正的程度，並嘗試調配各項數值來修正輸出的結果，讓結果的正確性提高，這樣的修正行為就被稱為反向傳播(back-propagation)。透過迭代方法進行反複試驗，模擬人們學習的行為，而每一次的迭代被稱為epoch，經過一定的迭帶次數後會透過反向傳播修正輸出的誤差，經過不斷執行的修正，最終類神經網路的學習會不斷進步並給出更好的答案，訓練時間長短取決於訓練項目的複雜程度。\\
 
- 可以看到該神經網絡的輸出僅取決於互連的權重，還取決於神經元本身的偏差，雖然權重會影響啟動函數曲線的陡度，但是偏差會將發生變化的整個曲線，向右或向左，權重和偏差的選擇，決定了單個神經元的預測強度，而訓練類神經網絡使用的輸入數據可以來微調權重和偏差。\\
+ 可以看到該神經網絡的輸出僅取決於互連的權重，還取決於神經元本身的偏差，雖然權重會影響啟動函數曲線的陡度，但是偏差會將發生變化的整個曲線，向右或向左，權重和偏差的選擇，決定了單個神經元的預測強度，而訓練類神經網絡使用的輸入數據可以來微調權重和偏差。(圖.\ref{類神經網路關係})\\
+
+\newpage
+\begin{figure}
+\begin{center}
+\includegraphics[width=16cm]{類神經網路關係}
+\caption{\Large 類神經網路關係}
+\label{類神經網路關係}
+\end{center}
+\end{figure}
 \subsection{啟動函數}
-啟動函數是設計類神經網路的關鍵部分，如果不使用啟動函數，每一層神經元連接到下一層神經元，只會有線性組合，作為輸出，類神經網路便失去了意義，也就是說啟動函數能讓神經元間的連線，產生非線性的組合並作為該層的輸出。\\
+啟動函數是設計類神經網路的關鍵部分，如果不使用啟動函數，神經元的計算只會有線性組合，這樣的類神經網路缺乏活性而且記憶性差；啟動函數能讓神經元計算呈現非線性，讓類神經網路因為計算的非線性而提高整個網路的活性和記憶性。\\
 以下介紹幾種較為常見的啟動函數及其特性：
 \begin{itemize}
 %=----------Sigmoid      Function----------=%
 \item Sigmoid Function：\\
 輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、且具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
 $$\sigma(x)=\frac{1}{1+e^{-x}}$$
+
 %=----------SigmoidPrime Function----------=%
 SigmoidPrime Function是從Sigmoid Function微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\
 $$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$
+\begin{figure}
+\begin{center}
+\includegraphics[width=16cm]{SigmoidFunction}
+\caption{\Large SigmoidFunction}\label{SigmoidFunction}
+\end{center}
+\end{figure}
+\\
 %=----------Softmax Function----------=%
 \item Softmax：\\
 Softmax會計算每個事件分布的機率，適用多項目分類、其機率總合為1。以此專案為例，假設擊錘移動有向上移動、向下移動及不移動這三個決策選項，則這三個決策機率值總和為1。\\
@@ -40,10 +57,8 @@ ReLU Function方程式特性：若輸入值為負值，輸出值為0；若輸入
 $$f(x)=max(0,x)$$
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$
-\newpage
 \subsection{損失函數}
-
-損失函數是類神經網路的最後一塊拼圖，損失函數會將類神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，以下將介紹幾種優化的方法：\\
+損失函數是類神經網路的另一個重要的部分，損失函數會將類神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，下一節會有詳細說明，以下簡述幾種優化的方法：\\
 \begin{itemize}
 \item Gradient Descent\\
 利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。
@@ -87,28 +102,20 @@ $$\omega_{t-1}=\omega_t-\frac{\eta}{\sqrt{\hat{v_t}-\epsilon}}\hat{m_t}$$
 \item Mean Squared Error\\
 他能告訴你一組點與回歸線接近的程度，透過獲取點與回歸線之距離(這些距離就是誤差)並對它們進行平方來做到這點，而平方是為了消除所有負號，也能讓更大的差異賦予更大的權重。\\
 \vspace{8cm}
-%(\href{https://www.statisticshowto.com/mean-squared-error/}{\underline{Extracted from here)}}.\\
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.6]{MSE}
 \caption{\Large 線性回歸}\label{線性回歸}
 \end{center}
 \end{figure}
-\\
+\qquad \\
+
 回歸線 :數據點間最小距離的一條線。 \\
 n：數據點的數量\\
 $y_i$： 觀測值\\
 $\hat{y_i}$：預測值\\
 $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \end{itemize}
-\newpage
-\begin{figure}
-\begin{center}
-\includegraphics[width=16cm,height=15cm]{類神經網路關係}
-\caption{\Large 類神經網路關係}
-\label{類神經網路關係}
-\end{center}
-\end{figure}
 \subsection{優化算法}
 \renewcommand{\baselinestretch}{1}
 \begin{itemize}
@@ -122,7 +129,7 @@ $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \end{figure}
 \newpage
 \fontsize{14pt}{28pt}\selectfont
-藉由梯度下降將目標函數值最小化，目標函數以loss function L($\theta$)為例，$\theta$為weight(w)和bias(b)的向量函數，為了找到(圖.\ref{Error_surface-2})上的最小值，因此加上$\Delta\theta$將$\theta$ 的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數$\eta$(學習率)縮放$\Delta\theta$的修正量(圖.\ref{theta_vector})，修正後方程式為：\\
+ 藉由梯度下降將目標函數值最小化，目標函數以loss function L($\theta$)為例，$\theta$為weight(w)和bias(b)的向量函數，為了找到(圖.\ref{Error_surface-2})上的最小值，因此加上$\Delta\theta$將$\theta$ 的方向修正並引導到正確方向，避免每次修正的過多導致錯過最小值，利用係數$\eta$(學習率)縮放$\Delta\theta$的修正量(圖.\ref{theta_vector})，修正後方程式為：\\
 \begin{center}
 $\theta=\theta+\eta\cdot\Delta\theta$\\
 \end{center}
@@ -153,7 +160,7 @@ $k=\vert u^{T}\vert\vert \bigtriangledown_{\theta} L_{(\theta)}\vert$\\
 $-k \leq k\cos(\beta)=u^{T}\cdot\bigtriangledown_{\theta} L_{(\theta)}\leq k$
 \end{center}
 \newpage
-所以盡可能的讓新值小於舊值$(L(\theta+\eta u) − L(\theta) < 0)$，loss 值就會減少得越多。因此$u T \cdot \bigtriangledown\theta L(\theta)$應該為負，在這情況下$\cos(\beta)$於−1，$\beta$的角度為 $180^{\circ}$這就是$\theta$移動的方向與梯度方向相反的原因。 梯度下降法告訴我們：當$\theta$在特定值，並想減少新的$\theta$值，使 loss 值逐漸減少就應該與梯度相反的方向找 (若梯度為正值，找最小值就需往負的方向找)
+ 所以盡可能的讓新值小於舊值$(L(\theta+\eta u) − L(\theta) < 0)$，loss 值就會減少得越多。因此$u T \cdot \bigtriangledown\theta L(\theta)$應該為負，在這情況下$\cos(\beta)$於−1，$\beta$的角度為 $180^{\circ}$這就是$\theta$移動的方向與梯度方向相反的原因。 梯度下降法告訴我們：當$\theta$在特定值，並想減少新的$\theta$值，使 loss 值逐漸減少就應該與梯度相反的方向找 (若梯度為正值，找最小值就需往負的方向找):
 \begin{center}
 $w_{t=1}=w_t-\eta\bigtriangledown w_t$\\
 $b_{t=1}=b_t-\eta\bigtriangledown b_t$\\
@@ -163,20 +170,20 @@ $\begin{cases}
  \bigtriangledown b_t=\frac{\partial L_{_{(\theta)}}}{\partial b}
  \end{cases}$
 \end{center}
-\item Stochastic gradient descent\\
-Vanilla gradient descent 又稱 Batch gradient descent(批次梯度下降法)，計算目標函數的梯度，參數$\theta$對於整個 訓練資料：
+\item Batch gradient descrnt\\
+ Vanilla gradient descent 又稱 Batch gradient descent(批次梯度下降法)，計算目標函數的梯度，參數$\theta$對於整個 訓練資料：
 \begin{center}
 $\theta=\theta-\eta\cdot\bigtriangledown_{\theta}L_{(\theta)}$
 \end{center}
-目標函數以為例 loss function L($\theta$)，參數$\theta$為 weight (w) 和 bias (b) 的函數，$\eta$為學習率。由於計算整個資料集計算梯度只更新一次，Bath gradient descent 可能非常慢並且對於資料集無法符合及記憶體來說棘手 (一次需要儲存整個資料集的資料，當更新和計算時會占用大量記憶體)。\\
+ 目標函數以為例 loss function L($\theta$)，參數$\theta$為 weight(w)和 bias(b)的函數，$\eta$為學習率。由於計算整個資料集計算梯度只更新一次，Bath gradient descent 可能非常慢並且對於資料集無法符合及記憶體來說棘手(一次需要儲存整個資料集的資料，當更新和計算時會占用大量記憶體)。\\
 \begin{lstlisting}[caption=\Large Batch gradient descrnt]
  for i in range(nb_epochs) :
 params_grad = evaluate_gradient (loss_function, data, params)
 params = params − learning_rate * params_grad
 \end{lstlisting}
 \newpage
-預定義每次 epoch，先計算 loss function 梯度向量對於整個資料集參數向量。如果梯度值來自於先前計算出的梯度值，就會檢查梯度，並以梯度相反的方向更新參數$\theta$，學習率$\eta$決定多大的更新量。Batch gradient descent 對於凸面誤差可以保證收斂到廣域最小值，對於非面凸誤差可以收斂到局部最小值。
-Stochastic gradient descent(SGD) 隨機梯度下降法，這裡的目標函數為$J(\theta, x^i, y^i)$(變數$\theta$為 w(weight) 和 b(bias) 的函數，也可以寫成$J(w,b,\theta, x^i, y^i)$)。\\
+ 預定義每次epoch，先計算loss function梯度向量對於整個資料集參數向量。如果梯度值來自於先前計算出的梯度值，就會檢查梯度，並以梯度相反的方向更新參數$\theta$，學習率$\eta$決定多大的更新量。Batch gradient descent對於凸面誤差可以保證收斂到廣域最小值，對於非面凸誤差可以收斂到局部最小值。
+\item Stochastic gradient descent(SGD)隨機梯度下降法，這裡的目標函數為$J(\theta, x^i, y^i)$(變數$\theta$為 w(weight) 和 b(bias) 的函數，也可以寫成$J(w,b,\theta, x^i, y^i)$)。\\
 \begin{center}
 $\theta=\theta-\eta\cdot\bigtriangledown_{\theta}J_{(\theta, x^i, y^i)}$
 \end{center}
@@ -189,7 +196,7 @@ $\theta=\theta-\eta\cdot\bigtriangledown_{\theta}J_{(\theta, x^i, y^i)}$
 \label{sgd_fluctuation}
 \end{center}
 \end{figure}
-SGD 的方程式一方面會跳到新的值和潛在局部最小值，另一方面 SGD 會持續超調 (誤差超過預期) 最後收斂到廣域最小值。無論如何他被顯示當學習率下降緩慢，SGD 顯示與 Batch gradient descent 同樣收斂行為，幾乎可以肯定地，對於凸面或非凸面優化，會收斂到絕對或是局部最小值。這程式碼片段[程式.2.2] 在訓練樣本上加入一個迴圈來對每個樣本評估梯度。每個 epoch(訓練循環) 會打亂訓練數據。
+ SGD 的方程式一方面會跳到新的值和潛在局部最小值，另一方面 SGD 會持續超調 (誤差超過預期) 最後收斂到廣域最小值。無論如何他被顯示當學習率下降緩慢，SGD 顯示與 Batch gradient descent 同樣收斂行為，幾乎可以肯定地，對於凸面或非凸面優化，會收斂到絕對或是局部最小值。這程式碼片段[程式.2.2] 在訓練樣本上加入一個迴圈來對每個樣本評估梯度。每個 epoch(訓練循環) 會打亂訓練數據。
 \label{code Stochastic gradient descrnt code}
 \begin{lstlisting}[caption=\Large Stochastic gradient descrnt ]
 for i in range(nb_epochs) :
@@ -198,7 +205,8 @@ for example in data :
 params_grad = evaluate_gradient (loss_function, example, params)
 params = params − learning_rate * params_grad
 \end{lstlisting}
-Mini-batch gradient descent(小批量梯度下降) 各取前兩者的優點，將資料集分割成小區塊，每個小區塊大小稱作 batch size，每次跑完 batch size 算迭代 (iteration)一次，算完一次資料集即完成一次 epoch。舉例: 資料集大小為1000，若 batch size 為50，iteration 為 datasets 的batch size  = 1000÷50 = 20，當 iteration 跑完 20 次算完成一次 epoch。\\
+\item Mini-batch gradient descent
+ Mini-batch gradient descent(小批量梯度下降) 各取前兩者的優點，將資料集分割成小區塊，每個小區塊大小稱作 batch size，每次跑完 batch size 算迭代 (iteration)一次，算完一次資料集即完成一次 epoch。舉例: 資料集大小為1000，若 batch size 為50，iteration 為 datasets 的batch size  = 1000÷50 = 20，當 iteration 跑完 20 次算完成一次 epoch。\\
 這方式可以減少參數更新的方差，並且可以穩定收斂；可利用深度學習庫所共有的高度優化的矩陣優化，從而由一個小批量計算出梯度非常有效。通常 batch sizes 的範圍介於 50 ~256，會因為應用而有所差異。訓練神經網絡時，通常選擇 Mini-batch gradient descent 算法，而當使用這算法時，通常也用 SGD 稱呼。\\
 \begin{center}
 $\theta=\theta-\eta\cdot\bigtriangledown_{\theta}J_{(\theta, x^{(i:i+n)}, y^{(i:i+n)})}$
@@ -246,12 +254,14 @@ SGD 難以在陡峭的往正確的方向，那就是說在一個維度上，曲�
 $v_t = \gamma v_{t-1}+\eta\cdot\bigtriangledown_{\theta}J_{(\theta)}$
 $\theta = \theta-v_t$
 \end{center}
-實際上，使用動量的時候，就像將球推下山坡。球在下坡時滾動時會累積動量，在途中速度會越來越快（如果存在空氣阻力，直到達到極限速度，也就是$\gamma < 1$) 參數更新也發生了同樣的事情：動量 (momentum) 對於梯度指向相同方向的維度增加，而對於梯度改變方向的維減少動量。結果，我們獲得了更快的收斂並減少了振盪。\\
-Nesterov accelerated gradient（NAG）是一種使動量具有一個去向的概念，以便在山坡再次變高之前知道它會減速。我們知道使用動量$\gamma v_{t-1}$來移動參數。計算$\theta - \gamma v_{t-1}$這樣就給了參數的下一個位置的近似值（完整更新缺少的梯度），這是參數將要存在的大致概念。現在，通過計算與當前參數無關的梯度來有效地看到目前的參數$theta$將會移動到的位置：
+ 實際上，使用動量的時候，就像將球推下山坡。球在下坡時滾動時會累積動量，在途中速度會越來越快（如果存在空氣阻力，直到達到極限速度，也就是$\gamma < 1$) 參數更新也發生了同樣的事情：動量 (momentum) 對於梯度指向相同方向的維度增加，而對於梯度改變方向的維減少動量。結果，我們獲得了更快的收斂並減少了振盪。\\
+
+ Nesterov accelerated gradient（NAG）是一種使動量具有一個去向的概念，以便在山坡再次變高之前知道它會減速。我們知道使用動量$\gamma v_{t-1}$來移動參數。計算$\theta - \gamma v_{t-1}$這樣就給了參數的下一個位置的近似值（完整更新缺少的梯度），這是參數將要存在的大致概念。現在，通過計算與當前參數無關的梯度來有效地看到目前的參數$theta$將會移動到的位置：
 \begin{center}
 $v_t = \gamma v_{t-1}+\eta\cdot\bigtriangledown_{\theta}J_{(\theta-\gamma v_{t-1})}$
 $\theta = \theta - v_t$
 \end{center}
+
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=13cm]{NAG}
@@ -259,11 +269,11 @@ $\theta = \theta - v_t$
 \label{NAG}
 \end{center}
 \end{figure}
-\newpage
-同樣，我們設置動量$\gamma$約為 0.9。動量首先計算當前梯度（(圖.\ref{NAG})中的藍色小向量），然後在更新的累積梯度（藍 色向量）的方向上發生較大的跳躍，而 NAG 首先在先前的累積梯度的方向上進行較大的跳躍（棕色向量），測量梯度，然後進行校正（紅色向量），從而完成 NAG 更新（綠色向量）。這種預期的更新可防止我們過快地進行，並導致響應速度增加，從而顯著提高了 RNN 在許多任務上的性能。\\
-
-Adagrad 是一個梯度優化的算法，它可以做到：學習率適應參數，對於頻繁出現的特徵相關參數執行較小的更新(較低的學習率)，以及對不經常出現的特徵相關參數進行較大更新（即學習率較高）。Adagrad 可以提高 SGD 的強度，用於訓練大型神經網絡。\\
-先前，在同一次$theta$參數(更新後就算另一次)，每個$theta$都使用相同的$\eta$(學習率)。Adagrad 則是對每個$theta$參數使用 不同的$\eta$，t 代表 time step。先將 Adagrad 的更新參數向量化。用$g_t$表示目標函數 (參數$theta$在 time step t) 對參數做偏微分計算。
+同樣，我們設置動量$\gamma$約為0.9。動量首先計算當前梯度（(圖.\ref{NAG})中的藍色小向量），然後在更新的累積梯度（藍 色向量）的方向上發生較大的跳躍，而 NAG 首先在先前的累積梯度的方向上進行較大的跳躍（棕色向量），測量梯度，然後進行校正（紅色向量），從而完成 NAG 更新（綠色向量）。這種預期的更新可防止我們過快地進行，並導致響應速度增加，從而顯著提高了 RNN 在許多任務上的性能。\\
+Adagrad：\\
+ Adagrad 是一個梯度優化的算法，它可以做到：學習率適應參數，對於頻繁出現的特徵相關參數執行較小的更新(較低的學習率)，以及對不經常出現的特徵相關參數進行較大更新（即學習率較高）。Adagrad可以提高SGD的強度，用於訓練大型神經網絡。\\
+ 
+ 先前，在同一次$theta$參數(更新後就算另一次)，每個$theta$都使用相同的$\eta$(學習率)。Adagrad 則是對每個$theta$參數使用 不同的$\eta$，t 代表 time step。先將 Adagrad 的更新參數向量化。用$g_t$表示目標函數 (參數$theta$在 time step t) 對參數做偏微分計算。
 \begin{center}
 $g_{t,i}=\bigtriangledown_{\theta}J_{(\theta_{t,i})}$
 \end{center}
@@ -279,8 +289,9 @@ $G_t \in \mathbb{R}^{d\times d}$這是一個對角矩陣每個對角元素 i，i
 \begin{center}
 $\theta_{t+1}=\theta_{t}-\frac{\eta}{\sqrt{G_{t}+\epsilon}}\cdot g_t$
 \end{center}
-Adagrad 主要好處之一是，無需手動調整學習率。大多數實現使用預設值 0.01 並將其保留為預設值。Adagrad 主 要弱點是會累積分母的平方梯度：由於每項都是正的，累積和會在訓練中不斷增長。反過來，學習率下降，並最終變 得無限小，這算法就不再獲得知識。\\
-Adadelta 是 Adagrad 的延伸，下降其激進的程度，單調的降低學習率。Adadelta 會限制過去累積的梯度，並將其 限制在某個特定大小 w，並代替 Adagrad 過去累積的梯度平方，以梯度總和是遞迴定義為所有過去衰減梯度平方平均值。流動平均$E[g^2]_t$ 在 time step t 然後取決於 (像 Momentum 的$\gamma$)先前平均和最近梯度：
+ Adagrad 主要好處之一是，無需手動調整學習率。大多數實現使用預設值 0.01 並將其保留為預設值。Adagrad主要弱點是會累積分母的平方梯度：由於每項都是正的，累積和會在訓練中不斷增長。反過來，學習率下降，並最終變得無限小，這算法就不再獲得知識。\\
+Adadelta：\\
+ Adadelta是Adagrad的延伸，下降其激進的程度，單調的降低學習率。Adadelta會限制過去累積的梯度，並將其限制在某個特定大小 w，並代替Adagrad過去累積的梯度平方，以梯度總和是遞迴定義為所有過去衰減梯度平方平均值。流動平均$E[g^2]_t$ 在time stept然後取決於(像Momentum的$\gamma$)先前平均和最近梯度：
 \begin{center}
 $E[g^2]_t=\gamma E[g^2]_{t-1}+(1-\gamma)g^2 _t$
 \end{center}
@@ -298,7 +309,7 @@ $replace\ G_t\ with\ E[g^2]_t\Rightarrow\bigtriangleup\theta_t=-\frac{\eta}{\sqr
 \begin{center}
 $\bigtriangleup\theta_t=-\frac{\eta}{RMS[g]_t}\cdot g_t$
 \end{center}
-這個更新單位和 SGD、Momentum 以及 Adagrad 的單位不符合，因此更新需有相同的參數。為了實現這一點，首先定義另一個指數衰減平均值，這次不是梯度平方更新而是參數平方更新：
+ 這個更新單位和 SGD、Momentum 以及 Adagrad 的單位不符合，因此更新需有相同的參數。為了實現這一點，首先定義另一個指數衰減平均值，這次不是梯度平方更新而是參數平方更新：
 \begin{center}
 $E[\bigtriangleup\theta^2]_t=\gamma E[\bigtriangleup\theta^2]_{t-1}+(1-\gamma)\bigtriangleup\theta^2 _t$
 \end{center}
@@ -313,17 +324,19 @@ $\bigtriangleup\theta_t=-\frac{RMS[\bigtriangleup\theta]_{t-1}}{RMS[g]_t}g_t$
 $\theta_{t+1}=\theta_t+\bigtriangleup\theta_t$
 \end{center}
 使用 Adadelta，甚至不需要設定預設學習率，因為它已從更新規則淘汰。\\
+RMSprop：\\
+ RMSprop 是 Geoffrey Hinton 在他的課程中提出的未公開自適應學習率的方法。\\
 
-RMSprop 是 Geoffrey Hinton 在他的課程中提出的未公開自適應學習率的方法。
-
-RMSprop 和 Adadelta 都是為了解決 Adagrad 的學習率急劇下降的問題個別獨立開發出來的解決方式。RMSprop 實際上與 Adadelta 得出的第一個更新向量相同：
+ RMSprop 和 Adadelta 都是為了解決 Adagrad 的學習率急劇下降的問題個別獨立開發出來的解決方式。RMSprop 實際上與 Adadelta 得出的第一個更新向量相同：
 \begin{center}
 $E[g^2]_t=0.9E[g^2]_t+0.1g^2 _t$
 \\
 $\theta_{t+1}=\theta_t-\frac{\eta}{\sqrt{E[g^2]_t+\epsilon}}g_t$
 \end{center}
-RMSprop 也將學習率除以梯度平方的指數衰減平均值。Hinton 建議$\gamma$設為 0.9，好的預設學習率$\gamma$數值為 0.001。
-Adaptive Moment Estimation 自適應矩評估 (Adam) 是另一種計算每個評估學習率的方法。出了儲存過去梯度平 方的指數衰減平均值$v_t$，就像 Adadelta 和 RMSprop 一樣，Adam 還保留過去梯度的指數衰減平均值$m_t$，類似動量 (Momentum)。如果 Momentum 被視為順著斜坡下滑的球，而 Adam 則是像一個帶有摩擦的沉重的球，因此更適合待在 error face 平坦的最小值區域。計算過去梯度平方的衰減平均值$m_t$和$v_t$分別如下：
+
+ RMSprop 也將學習率除以梯度平方的指數衰減平均值。Hinton 建議$\gamma$設為 0.9，好的預設學習率$\gamma$數值為 0.001。\\
+Adaptive Moment Estimation：\\
+ Adaptive Moment Estimation 自適應矩評估 (Adam) 是另一種計算每個評估學習率的方法。出了儲存過去梯度平 方的指數衰減平均值$v_t$，就像 Adadelta 和 RMSprop 一樣，Adam 還保留過去梯度的指數衰減平均值$m_t$，類似動量 (Momentum)。如果 Momentum 被視為順著斜坡下滑的球，而 Adam 則是像一個帶有摩擦的沉重的球，因此更適合待在 error face 平坦的最小值區域。計算過去梯度平方的衰減平均值$m_t$和$v_t$分別如下：
 \begin{center}
 $m_t=\beta_1 m_{t-1}+(1-\beta_1)g_t$\\
 $v_t=\beta_2 v_{t-1}+(1-\beta_2)g^2 _t$
@@ -351,33 +364,35 @@ $v_t = \beta_2^p v_{t-1} + (1 - \beta_2^p) |g_t|^p$
 $u_t = \beta_2^\infty v_{t-1} + (1 - \beta_2^\infty) |g_t|^\infty$\\
 $= \max(\beta_2 \cdot v_{t-1}, |g_t|)$
 \end{center}
-替換為 Adam 更新公式$\sqrt{\hat{v}_t} + \epsilon$和$u_t$得出 AdaMax 更新規則：
+替換為Adam更新公式$\sqrt{\hat{v}_t} + \epsilon$和$u_t$得出AdaMax更新規則：
 \begin{center}
 $\theta_{t+1} = \theta_{t} - \dfrac{\eta}{u_t} \hat{m}_t$
 \end{center}
-替換為 Adam 更新公式$\sqrt{\hat{v}_t} + \epsilon$和$u_t$得出 AdaMax 更新規則：
+替換為Adam更新公式$\sqrt{\hat{v}_t} + \epsilon$和$u_t$得出AdaMax更新規則：
 \begin{center}
 $\theta_{t+1} = \theta_{t} - \dfrac{\eta}{u_t} \hat{m}_t$
 \end{center}
-注意$u_t$依靠最大運算，不建議 Adam 中的$m_t$和$v_t$偏向零，這就是為什麼不需要針對$u_t$計算偏差。好的預設值$\eta = 0.002$ $\beta_1 = 0.9$ 和 $\beta_2 = 0.999$。
-
+注意$u_t$依靠最大運算，不建議 Adam 中的$m_t$和$v_t$偏向零，這就是為什麼不需要針對$u_t$計算偏差。好的預設值$\eta = 0.002$ $\beta_1 = 0.9$ 和 $\beta_2 = 0.999$。\\
 \end{itemize}
-\newpage
+
+
 \section{強化學習}
 %=----------What is Reinforcement Learning?------------=%
-強化學習是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，得到的回饋可能是正面，也就是獎賞(reward)，如果得到負面，那就是懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\
-強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的來源。不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
-由於強化學習是建立在agent與環境互動上，因此許多參數進行運算，需要大量信息來學習，並根據此採取行動。強化學習的環境可能是真實世界、2D或3D模擬世界的場景，也可能是建立於遊戲的場景。從某種意義上來說，強化學習的範圍很廣，因為環境的規模可能很大，且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
+強化學習(Reinforcement Learning，簡稱為RL)是通過agent(代理)與已知或未知的環境持續互動，不斷適應與學習，會得到正向或負面的回饋，對應到獎賞(reward)和懲罰(punishments)。考慮到agent與環境(environment)互動，進而決定要執行哪個動作，強化學習的學習模式是建立在獎賞與懲罰上。\\
+
+強化學習與其他學習法不一樣的地方在於：不需要事先收集大量數據提供當作學習樣本，而是透過與環境互動，在環境下發生的狀態當作學習的資料來源，透過不斷嘗試使所得到的獎勵最大化。其他類型的機器學習大都需要給予特定資料且有明確的答案。\\
+
+由於強化學習是建立在agent與環境互動上，因此許多參數進行運算，需要大量資訊來學習，並根據資訊採取行動。強化學習的環境可以是真實世界、2D或3D模擬世界的場景。強化學習的範圍很廣，因為環境的規模可能很大，且在環境中有多相關因素，影響著彼此。強化學習以獎勵的方式，促使學習結果趨近或達到目標結果。\\
 %=----------Faces of Reinforcement Learning---------------=%
 
-\newpage
-強化學習涵蓋範圍：\\
+強化學習涵蓋範圍(圖.\ref{各領域與機器學習應用範圍})：\\
+ 強化學習可以運用在計算機科學、神經科學、心理學、經濟學、數學、工程等領域，涵蓋領域相當廣泛。
 %======需文字補充========%
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{Faces_of_Reinforcement_Learning}
-\caption{\Large 文氏圖}
-\label{文氏圖}
+\caption{\Large 各領域與機器學習應用範圍}
+\label{各領域與機器學習應用範圍}
 \end{center}
 \end{figure}
 %=--------The Flow of Reinforcement Learning------------=%.
@@ -388,25 +403,27 @@ $\theta_{t+1} = \theta_{t} - \dfrac{\eta}{u_t} \hat{m}_t$
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{The_Flow_of_Reinforcement_Learning}
-\caption{\Large RL 架構}
+\caption{\Large 強化學習架構}
 \label{RL structur}
 \end{center}
 \end{figure}
 需要考慮的重點：\\
-強化學習的週期是互相聯繫的，分明的溝通是在考慮獎勵的情況下發生的，agent與環境之間存在著獨特的溝通。狀態和動作互相關聯著，並互相影響著彼此：目標或機器人會因動作而造成狀態轉移，狀態的移轉也會影響目標或機器人做出的決策。\\
+強化學習的狀態、獎勵和動作是互相關聯，agent與環境之間存在著關聯，兩者都影響著狀態和動作並互相影響著彼此：機器人會因動作而造成狀態轉移，狀態的移轉也會影響機器人做出的決策。\\
 \newpage
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{The_entire_interaction_process}
-\caption{\Large 整個互動過程 }
-\label{整個互動過程 }
+\caption{\Large 整個互動過程}
+\label{整個互動過程}
 \end{center}
 \end{figure}
- 如(圖.\ref{整個互動過程 }) agent是決策者，因為他會試圖採取獲得最高大獎勵的行動。當agent開始與環境互動時，他可以選擇一個操作並做出相應的回應，從這時起，將會創建新的場景，當agent從一個環境變為另一個環境中，每項更改都會導致某種修改，這些變化被描述為場景，每個步驟中發生的過渡都有助於agent更有效地解決強化學習的問題。\\
+ 如(圖.\ref{整個互動過程}) agent會透過輸入的狀態來決定採取何種行為(動作)，並試圖採取獲得最高獎勵的行動。當agent開始與環境互動時，agent會透過當前狀態來決定將採取的行動，在agent採取行動後，環境的狀態也因此而改變，若agent採取行動後所到達我們所要的狀態就會得到獎勵，反之則會給予懲罰。在場景裡透過反覆的訓練，讓強化學習的行為漸漸趨近預期的目標。\\
 %=----Different Terms in Reinforcement Learning----------=%
-強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。$\gamma$用於每個狀態轉換，且在每次狀態變化時，都是一個恆定值，$\gamma$會從你將在每個狀態獲得的獎勵類型中，得到資訊。$\gamma$又叫衰減因子，決定未來可獲得的獎勵類型。當狀態改變時為常數，gamma允許使用者在每個狀態給予不同形式的獎勵(這種狀況下為0，僅與當前狀態有關係)，如果注意到長期獎勵值(則為1，獎勵不因先後順序而有所衰減)。\\
+ 強化學習中有兩個很重要的常數：$\gamma$和$\lambda$。\\
+ 
+$\gamma$會影響所獲得的獎勵。$\gamma$又稱為衰減因子，正常狀態下為小於1的常數用於每個狀態改變，當狀態改變時為時常數。$\gamma$允許使用者在每個狀態給予不同形式的獎勵(這種狀況下$\gamma$為0)，如果著重在長期的決策時，獎勵就不受決策順序所影響(此時$\gamma$為1)\\
 
-當我們處理時間問題時，通常使用$\lambda$，涉及更多的連續狀態的預測，每種狀態下的$\lambda$值增加，代表算法學習速度很快，適用強化學習時，更快的算法會產生更好的結果。\\
+$\lambda$一般在我們處理時間差異問題時使用。 這是涉及更多地連續狀態的預測。在每個狀態中$\lambda$值的增加代表演算法正在快速學習。\\
 %------------------圖片可共用----------------------%
 \iffalse
 \begin{figure}[hbt!]
@@ -417,12 +434,19 @@ $\theta_{t+1} = \theta_{t} - \dfrac{\eta}{u_t} \hat{m}_t$
 \end{figure}
 \fi
 %=----Interactions with Reinforcement Learning------------=%
-強化學習的互動：\\[1pt]
- agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\[1pt]
+強化學習的互動：\\
+
+ agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
+ 
 獎勵的目的與運作：\\
- 以獎勵的方式誘導機器採取我們所期望的動作，機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\[6pt]
-Agents：\\[6pt]
- 在強化學習方面，agent可以感知環境時，它可以做出比以往更好的決定。採取的決定就會產生行動且執行的行動必須是最好最佳的。\\[12pt]
+ 以獎勵的方式誘導機器採取我們所期望的動作，機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\
+
+\begin{flushleft}
+Agents：\\
+
+在強化學習方面，agent可以感知環境時，它可以做出比以往更好的決定。採取的決定就會產生行動且執行的行動必須是最好最佳的。\\[12pt]
+\end{flushleft}
+ 
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{agent}
@@ -431,12 +455,12 @@ Agents：\\[6pt]
 \end{center}
 \end{figure}
 %=----Agents------------=%
-強化學習的環境\\
-\qquad 強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應其各種因素，並做出最佳決策，這些環境可以是2D世界或是網格，甚至是3D世界。強化學習的環境具有確定性、可觀察性，可以是離散或是連續的狀態、單個agent或是多個agent\\
+強化學習的環境：\\
+ 強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應各種因素，並做出最佳決策，這些環境可以是各種形式，其中包括2D、3D或是真實世界。強化學習的環境具有確定性、可觀察性，可以是離散或是連續的狀態，則agent可以是單一或多個所組成。\\
 \subsection{馬可夫決策}
 \begin{itemize}
 \item Markov Chain\\
-當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率有所差異。
+ 馬可夫鏈(Markov Chain)主要是狀態變化的隨機過程(stochastic process)和馬可夫屬性(Markov property)結合。隨機過程(stochastic process)狀態隨著時間變化，而狀態的變化存在著雖機性，並以數學模式表示。馬可夫屬性(Markov property)指在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關。當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率會有所差異。\\
 \item Markov Reward Process\\
 action 到指定狀態會獲得獎勵。
 $$R(s_t=s) = \mathbb{E}[r_t|s_t = s]$$
@@ -452,7 +476,7 @@ $$V_t(S) = \mathbb{E}[G_t|s_t = s]$$
 $$P(s_{s+1}=s'|s_t=s,a_t=a)$$
 \end{itemize}
 \item Discount Factor ($\gamma$)
-獎勵衰減有幾種作法：第一種，越早做出有獎勵的決策，獎勵越高：第二種，做出有價值的決策$\gamma = 1$，不分決策順序先後；第三種，無用的決策$C = 0$，不會得到獎勵。\\
+獎勵衰減有幾種作法：第一種，越早做出有獎勵的決策，獎勵越高：第二種，做出有價值的決策$\gamma = 1$，不分決策順序先後；第三種，無用的決策$\gamma = 0$，不會得到獎勵。\\
 以Bellman equation的方式描述互動關係狀態：\\
 $$V(s) = R(s)+\gamma\sum_{s'\in S}P(s'|s)V(s')$$
 \begin{center}
@@ -465,8 +489,7 @@ Bellman equation及Anaytic solution的方式只適合小的MRP(個數比較少�
 $$g = \sum_{i=t}^{H-1}\gamma^{1-t}r_i$$
 $$G_t \leftarrow G_t+g,  i \leftarrow i+1$$
 $$V_t(s) \leftarrow \frac{G_t}{N}$$
-\item Markov Decision Process
-\quad 在MRP中加入決策(decision)和動作(action)
+\item Markov Decision Process在MRP中加入決策(decision)和動作(action)
 \begin{itemize}
 \item S：state 狀態
 \item A：action 動作
@@ -478,11 +501,6 @@ $$R(s_t=s, a_t=a) = \mathbb{E}[r_t|s_t, a_t=a]$$
 $$\gamma \in [0,1]$$
 \end{itemize}
 \end{itemize}
-馬可夫決策過程以程式方面會以tuple的資料格式表示[程式.\ref{code.MDP code}]：
-\label{code.MDP code}
-\begin{lstlisting}
- MDP(S, A, P, R, gamma)
-\end{lstlisting}
 
 policy(決策)：可以是一個決策行為的機率或確定執行的行為，若以數學方程式表示：
 $$\pi (a|s) = P(a_t=a|s_t=s)$$
@@ -543,7 +561,7 @@ $G_t$：Return;Discounted future reward$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+
 $P(s', r \vert s, a)$：伴隨著現在的a和r的state前往下一個state's'的轉移機率矩陣(單階)\\
 $\pi(a \vert s)$：隨機策略(agent的行為策略)\\
 $\pi_\theta(.)$：被$\theta$參數化的策略\\
-$\mu(s)$：確定的策略;我們還使用不同的字母將其標記為$ \ pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\
+$\mu(s)$：確定的策略;我們還使用不同的字母將其標記為$ \pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\
 $V(s)$：'狀態值函數'測量state的預期收益(報酬率)\\
 $V^\pi(s)$：根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\
 $Q(s, a)$：'行為值函數'評估一對state and action 的預期收益\\
@@ -557,19 +575,10 @@ reward function的值：取決於策略，可應用各種算法optimize$\theta$�
 $$J(\theta) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) V^\pi(s) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a)$$\\
-\subsection{Mokov chain}
-stochastic process：將隨著時間變化的狀態，以數學模式表示\\[5pt]
-$+$\\[5pt]
-Mokov property：在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關
-$d^\pi(s)$：$\pi_\theta$的Mokov chain 的平穩分布(在$\pi$下的策略狀態分佈) $$d^\pi(s) = \lim_{t \to \infty} P(s_t = s \vert s_0, \pi_\theta)$$
-$\ast$ 當策略在其他函數的下標時，將省略 $\pi_\theta$的$\theta$  e.g. $d^\pi(s)$ and $Q^\pi$ should be 
-$d^\pi(s)$、$Q^\pi$\\[5pt]
-stationary probability for $\pi_\theta$：隨著時間進展，結束一個狀態保持不變的機率分布\\
-\subsection{為什麼不用value-base而是policy-base}
-因為要估計其值得動作和狀態數不勝數，因此在連續空間計算成本太高，$\theta$向$\nabla_\theta J(\theta)$建議方向移動，已找到$\pi\theta$的最佳$\theta$，從而產生最高回報。\\
 \subsection{Proof Policy Gradient Theorem}
-計算$\nabla_\theta J(\theta)$depends on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\[5pt]
-Policy gradient theorem：為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\[5pt]
+計算$\nabla_\theta J(\theta)$ on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\
+ Policy gradient theorem：為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\
+ 
 $$\nabla_\theta J(\theta) 
 = \nabla_\theta \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \pi_\theta(a \vert s) $$
 $$\propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s)$$
@@ -579,10 +588,8 @@ $$=\mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  {\text{
 $\ast$ 當狀態和動作分布都遵循策略$\pi_{\theta}$時$\mathbb{E}_{\pi}$表示$\mathbb{E}_{s\sim d\pi,a\sim\pi\theta}$\\[5pt]
 Proof $\nabla_\theta J(\theta)= \nabla_\theta V^\pi(s_0)$ 
 $ \nabla_\theta V^\pi(s) $\\[5pt]
-$= \nabla_\theta (\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a))$\\
+$= \nabla_\theta (\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a))$\\[5pt]
 $= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta Q^\pi(s, a)} \Big)  \scriptstyle{\text{; 衍生規則}} $\\
-%$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta \sum_{s', r} P(s',r \vert s,a)(r + V^\pi(s'))} \Big)  \scriptstyle{\text{; Extend } Q^\pi \text{ with future state value.}}$ \\
-%$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\sum_{s', r} P(s',r \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{P(s',r \vert s,a) \text{ or } r \text{ 不是一個方程式的 }\theta}$\\[6pt]
 $= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s){\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{\text{;因為 }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
 Let $\phi(s) = \sum_{a \in \mathcal{A}} \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)$ ; 當
 K = 1，我們把所有可能動作總結到目標狀態的轉移機率$\rho^\pi(s \to x, k+1) = \sum_{s'} \rho^\pi(s \to s', k) \rho^\pi(s' \to x, 1)$\\[5pt]
@@ -619,19 +626,18 @@ Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
 $g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$\\[5pt]
 \begin{Large}{$\psi_t$ 可能方法為下列:}\end{Large}
 \begin{itemize}
-\item $\sum_{t=0}^\infty r$：軌跡的總reward
-\item $\sum_{t^{'}=t}^\infty r^{'}$: 根據action的reward $a_t$
-\item $\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$: 先前公式的基準版本
-\item $Q^\pi(s_t,a_t)$：state-action value function
-\item $A^\pi(s_t,a_t)$：Advantage Function
-\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$：TD residual
+\item $\sum_{t=0}^\infty r$：決策軌跡的獎勵總和。
+\item $\sum_{t^{'}=t}^\infty r^{'}$: 根據動作(action)的獎勵(reward) $a_t$。標準表示式：$\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$
+\item $Q^\pi(s_t,a_t)$：state-action value function。
+\item $A^\pi(s_t,a_t)$：Advantage Function。
+\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$：TD residual。
 \end{itemize}
-The letter formulas use the definitions\\[5pt]
+公式使用定義：\\[5pt]
 $V^\pi(s_t) = \mathbb{E}_{s_{t}+1:\infty,a_{t}:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $Q^\pi(s_t,a_t) = \mathbb{E}_{s_{t}+1:\infty_,a_{t}+1:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $A^\pi(s_t,a_t) = Q^\pi(s_t,a_t)-V^\pi(s_t)(Advantage Function)$\\[5pt]
 \subsection{Actor Critic}
-原始的policy gradient 沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變\\[5pt]
+原始的policy gradient沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變\\[5pt]
 $$g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$$\\[5pt]
 Actor-Critic：減少原始政策中的梯度方差包括兩個模型\\[5pt]
 Critic：更新值函數參數w，根據算法，它可以是操作值$ Q_w$（$a \vert s$）或狀態值$V_w$（$s$） \\[5pt]
@@ -646,16 +652,16 @@ Actor：按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
 \begin{itemize}
 \item For $t =1 \sim T:$ 
 \begin{enumerate}[1]
-      \item 取樣 reward $r_t$ $\sim$ $R(s,a)$ 隨後下一階段 $s^{'}$ $\sim$ $P(s^{'}\vert s,a)$ 
-      \item 樣本的下一個動作 $a^{'}$ $\sim$ $\pi_\theta(a^{'}\vert s^{'})$
-    
-       \item 更新 policy 參數 $\theta$ :\\
-       $$\theta\leftarrow\theta+\alpha_\theta Q_w(s,a)\nabla_\theta ln\pi_\theta(a\vert s)$$
-       \item 計算校正 (TD error)對於時間t的動作值:\\
-       $$\delta = r_t + \gamma Q_w(s^{'},a^{'})-Q_w(s,a)$$並使用它來更新操作action - value function:\\
-       $$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
-       \item 更新 $a\leftarrow a^{'}$ 和 $ s \leftarrow s^{'}$ ; 學習率：$a_\theta$ 和 $a_w$
-    \end{enumerate}   
+\item 取樣 reward $r_t$ $\sim$ $R(s,a)$ 隨後下一階段 $s'$ $\sim$ $P(s'\vert s,a)$ 
+\item 樣本的下一個動作 $a' \sim$ $\pi_\theta(a'\vert s')$
+\item 更新 policy 參數 $\theta$ :\\
+$$\theta\leftarrow\theta+\alpha_\theta Q_w(s,a)\nabla_\theta ln\pi_\theta(a\vert s)$$
+\item 計算校正 (TD error)對於時間t的動作值:\\
+$$\delta = r_t + \gamma Q_w(s',a')-Q_w(s,a)$$
+並使用它來更新操作action - value function:\\
+$$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
+\item 更新 $a\leftarrow a'$ 和 $ s \leftarrow s'$ ; 學習率：$a_\theta$ 和 $a_w$。
+\end{enumerate}   
 \end{itemize}\newpage
 \section{類神經網路中強化學習的應用}
 \begin{figure}[hbt!]
@@ -663,12 +669,9 @@ Actor：按照Critic的建議，將策略參數 $\theta$ 更新為 $\pi_\theta$�
 \includegraphics[scale=0.74]{ network}
 \caption{實際兩層神經網路}
 \end{center}
-
 \end{figure}
 
- 我們將定義一個可以執行玩家(agent)的類神經網路，該網路將獲取遊戲狀態並決定我們應該做什麼(向上移動或向下移動
-) 我們使用一個2層神經網路，該網路獲取原始圖像像素(100,800個數字(210*160*3))，並生成一個表示上升概率的數字。 使用隨機策略是標準做法，這意味著我們只會產生向上移動的可能性，每次迭代時，我們都會從該分布中採樣(即扔一枚有偏見的硬幣)已獲得實際移動。\\
-
+ 我們將定義一個可以執行玩家(agent)的類神經網路，該網路將獲取遊戲狀態並決定我們應該做什麼(向上移動或向下移動我們使用一個2層神經網路，該網路獲取原始圖像像素(100,800個數字(210*160*3))，並生成一個表示上升概率的數字。 使用隨機策略是標準做法，這意味著我們只會產生向上移動的可能性，每次迭代時，我們都會從該分布中採樣(即扔一枚有偏見的硬幣)已獲得實際移動。\\
 
 \subsection{監督式學習}
 \begin{figure}[hbt!]

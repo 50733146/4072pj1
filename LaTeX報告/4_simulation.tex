@@ -100,49 +100,37 @@ RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩�
 \end{figure}
 \newpage
 下列為RGB與HSV之間轉換的公式，首先是RGB轉為HSV，其中$max$及$min$分別為$(r,g,b)$中的最大與最小值:
-$$
-h=\left\{\begin{matrix}
+$$h=\left\{\begin{matrix}
 0^{\circ}, & \textrm{if}\ max=min\\ 
- 60^{\circ}+\frac{
-g-b}{max-min}+0^{\circ},& \textrm{if}\ max=r\;and\;g\geq \;b\\ 
-60^{\circ}+\frac{
-g-b}{max-min}+360^{\circ}, & \textrm{if}\ max=r\;and\;g<  \;b\\ 
-60^{\circ}+\frac{
-g-b}{max-min}+120^{\circ}, & \textrm{if}\ max=g\\ 
-60^{\circ}+\frac{
-g-b}{max-min}+240^{\circ}, & \textrm{if}\ max=b
-\end{matrix}\right.\\$$
+60^{\circ}+\frac{g-b}{max-min}+0^{\circ},& \textrm{if}\ max=r\;and\;g\geq \;b\\ 
+60^{\circ}+\frac{g-b}{max-min}+360^{\circ}, & \textrm{if}\ max=r\;and\;g<  \;b\\ 
+60^{\circ}+\frac{g-b}{max-min}+120^{\circ}, & \textrm{if}\ max=g\\ 
+60^{\circ}+\frac{g-b}{max-min}+240^{\circ}, & \textrm{if}\ max=b
+\end{matrix}\right.$$
 
-$$
-s=\left\{\begin{matrix}
+$$s=\left\{\begin{matrix}
 0, & \textrm{if}\,max=0\\ 
 \frac{max-min}{max}=1-\frac{min}{max}, & \textrm{otherwise}
-\end{matrix}\right.\\$$
+\end{matrix}\right.$$
 
-$$
-v=max\\$$
+$$v=max$$
 接著是HSV轉為RGB:
-$$
-\textrm{when}\,0\leq H< 360,0\leq S\leq 1,0\leq V\leq 1$$
-$$
-C=V\times S\\$$
-$$
-X=C\times (1-\left | (H/60^{\circ})\textrm{mod}2-1 \right |)\\$$
-$$
-m=V-C\\$$
+$$\textrm{when}\,0\leq H< 360,0\leq S\leq 1,0\leq V\leq 1$$
+$$C=V\times S$$
+$$X=C\times (1-\left | (H/60^{\circ})\textrm{mod}2-1 \right |)$$
+$$m=V-C$$
 
-$$
-({R}',{G}',{B}')=\left\{\begin{matrix}
+$$({R}',{G}',{B}')=\left\{\begin{matrix}
 (C,X,0)& ,0^{\circ}\leq H< 60^{\circ}\\ 
  (X,C,0)& ,60^{\circ}\leq H< 120^{\circ}\\ 
  (0,C,X)& ,120^{\circ}\leq H< 180^{\circ}\\ 
  (0,X,C)& ,180^{\circ}\leq H< 240^{\circ}\\ 
  (X,0,C)& ,240^{\circ}\leq H< 300^{\circ}\\ 
  (C,0,X)& ,300^{\circ}\leq H< 360^{\circ}
-\end{matrix}\right.\\$$
+\end{matrix}\right.$$
 
-$$
-(R,G,B)=(({R}'+m)\times 255,({G}'+m)\times 255,({B}'+m)\times 255)\\$$
+
+$$(R,G,B)=(({R}'+m)\times 255,({G}'+m)\times 255,({B}'+m)\times 255)$$
 
 \item 顏色過濾\\
 進行顏色過濾時，需要先定義出過濾顏色的上下限，在開始過濾後僅會保留介於上下界線範圍的影像，而介於上下限範圍之外的影像則會被剃除，如圖.\ref{filter}所示以上限(77，255，255)及下限(35，43，46)為例。\\
