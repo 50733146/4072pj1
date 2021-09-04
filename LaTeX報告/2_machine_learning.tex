@@ -192,7 +192,7 @@ $\theta=\theta-\eta\cdot\bigtriangledown_{\theta}J_{(\theta, x^i, y^i)}$
 \begin{figure}
 \begin{center}
 \includegraphics[width=10cm]{sgd_fluctuation}
-\caption{\Large sgd fluctuation}
+\caption{\Large SGD fluctuation}
 \label{sgd_fluctuation}
 \end{center}
 \end{figure}
@@ -390,7 +390,7 @@ $\theta_{t+1} = \theta_{t} - \dfrac{\eta}{u_t} \hat{m}_t$
 %======需文字補充========%
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{Faces_of_Reinforcement_Learning}
+\includegraphics[width=11cm]{Faces_of_Reinforcement_Learning}
 \caption{\Large 各領域與機器學習應用範圍}
 \label{各領域與機器學習應用範圍}
 \end{center}
@@ -402,7 +402,7 @@ $\theta_{t+1} = \theta_{t} - \dfrac{\eta}{u_t} \hat{m}_t$
 
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=15cm]{The_Flow_of_Reinforcement_Learning}
+\includegraphics[width=12cm]{The_Flow_of_Reinforcement_Learning}
 \caption{\Large 強化學習架構}
 \label{RL structur}
 \end{center}
@@ -434,38 +434,32 @@ $\lambda$一般在我們處理時間差異問題時使用。 這是涉及更多�
 \end{figure}
 \fi
 %=----Interactions with Reinforcement Learning------------=%
-強化學習的互動：\\
 
- agent和環境之間的互動會產生獎勵，我們採取行動，從一種狀態轉移到另一種狀態強化學習是一種實現如何將情況映設為行動的方法，從而最大化並找到獲得最高獎勵的方法，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動，但機器必須發現哪些動作會產生最大的獎勵。\\
- 
-獎勵的目的與運作：\\
- 以獎勵的方式誘導機器採取我們所期望的動作，機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\
+強化學習的互動是透過agent和環境之間的互動會產生獎勵，agent採取行動，導致狀態改變是一種強化學習實現如何將情況映設為行動的方法，從而找到最大化獎勵的方法，機器或機器人不會像其他機器學習形式的機器人那樣被告知要採取哪些行動。\\
 
-\begin{flushleft}
-Agents：\\
+獎勵的目的與運作以獎勵的方式誘導機器採取我們所期望的動作，機器會採取最大化獎勵的方式，因此可將目的定為最大獎勵，以吸引機器執行期望做的行為。\\
 
-在強化學習方面，agent可以感知環境時，它可以做出比以往更好的決定。採取的決定就會產生行動且執行的行動必須是最好最佳的。\\[12pt]
-\end{flushleft}
- 
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.74]{agent}
+\includegraphics[width=15cm]{agent}
 \caption{\Large agent}
 \label{agent}
 \end{center}
 \end{figure}
 %=----Agents------------=%
+\begin{flushleft}
 強化學習的環境：\\
- 強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應各種因素，並做出最佳決策，這些環境可以是各種形式，其中包括2D、3D或是真實世界。強化學習的環境具有確定性、可觀察性，可以是離散或是連續的狀態，則agent可以是單一或多個所組成。\\
+\end{flushleft}
+強化學習中的環境由某些因素組成，會對agent產生影響，agent必須根據環境適應各種因素，並做出最佳決策，這些環境可以是各種形式，其中包括2D、3D或是真實世界。強化學習的環境具有確定性、可觀察性，可以是離散或是連續的狀態，則agent可以是單一或多個所組成。\\
 \subsection{馬可夫決策}
 \begin{itemize}
 \item Markov Chain\\
  馬可夫鏈(Markov Chain)主要是狀態變化的隨機過程(stochastic process)和馬可夫屬性(Markov property)結合。隨機過程(stochastic process)狀態隨著時間變化，而狀態的變化存在著雖機性，並以數學模式表示。馬可夫屬性(Markov property)指在目前以及所有過去事件的條件下，任何未來事件發生的機率，和過去的事件不相關僅和目前狀態相關。當前決策只會影響下個狀態，當前狀態轉移(action)到其他狀態的機率會有所差異。\\
 \item Markov Reward Process\\
-action 到指定狀態會獲得獎勵。
+\begin{itemize}
+\item action 到指定狀態會獲得獎勵。
 $$R(s_t=s) = \mathbb{E}[r_t|s_t = s]$$
 $$\gamma \in [0, 1]$$
-\begin{itemize}
 \item Horizon：
 在無限的狀態以有限的狀態表示。
 \item Return：
@@ -502,9 +496,13 @@ $$\gamma \in [0,1]$$
 \end{itemize}
 \end{itemize}
 
+\begin{flushleft}
 policy(決策)：可以是一個決策行為的機率或確定執行的行為，若以數學方程式表示：
 $$\pi (a|s) = P(a_t=a|s_t=s)$$
+\newpage
+
 MRP和MDP方程式互相轉換：\\
+\end{flushleft}
 %=========表格=========%
 \begin{center}
 \begin{tabular}[c]{ccc}    
@@ -517,7 +515,8 @@ $P^{\pi}(s)$ & = & $\sum_{a\in A}\pi (a|s)P(s, a)$\\
 \hline
 \end{tabular}
 \end{center}
-
+\hspace{15pt}
+ 
 state value function(狀態值方程式)$v^{\pi}(s)$\\
 $$v^{\pi}(s) = \mathbb{E}[G_t|s_t=s]$$
 $$= \mathbb{E}[R_{t+1}+\gamma v^{\pi}(s_{t+1})|s_t=s]$$
@@ -530,6 +529,7 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \end{center}
 \end{figure}
 $$v^{\pi}(s) = \sum_{a\in A}\pi (a|s)(R(s, a)+\gamma \sum_{s'\in s}P(s'|s, a)v^{\pi}(s'))$$
+\newpage
 state value function(狀態值方程式)$q^{\pi}(s)$
 $$v^{\pi}(s) = \mathbb{E}[G_t|s_t=s]$$
 $$= \mathbb{E}[R_{t+1}+\gamma v^{\pi}(s_{t+1})|s_t=s]$$
@@ -627,7 +627,8 @@ $g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0
 \begin{Large}{$\psi_t$ 可能方法為下列:}\end{Large}
 \begin{itemize}
 \item $\sum_{t=0}^\infty r$：決策軌跡的獎勵總和。
-\item $\sum_{t^{'}=t}^\infty r^{'}$: 根據動作(action)的獎勵(reward) $a_t$。標準表示式：$\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$
+\item $\sum_{t^{'}=t}^\infty r^{'}$: 根據動作(action)的獎勵(reward) $a_t$。\\
+標準表示式：$\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$
 \item $Q^\pi(s_t,a_t)$：state-action value function。
 \item $A^\pi(s_t,a_t)$：Advantage Function。
 \item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$：TD residual。
@@ -728,7 +729,7 @@ $$=\int p(z;\theta)\nabla_\theta \log p(z;\theta)f(z) dz = \mathbb{E}_{p(z;\thet
 $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\theta) \quad z^{(s)}\sim p(z)$$\\
 在這四行中發生了很多事情。在第一行中，我們交換了導數和積分。在第二行中，我們應用了概率身份技巧，這使我們能夠形成得分比， 然後使用對數導數技巧，用第三行中對數概率的梯度替換該比率。這在第四行給出了我們所需的隨機估計量，這是由蒙特卡洛計算的，方法是首先從p（z）提取樣本，然後計算加權梯度項。\\
 
-更簡單的描述，我們有一些分佈 $p(x;\theta)$（我們使用了速記$ p（x）$來減少混亂），我們可以從中採樣（例如，這可能是高斯）。對於每個樣本，我們還可以評估分數函數f(x)，該函數將樣本作為樣本並給出標量值。該方程式告訴我們，如果我們希望其樣本達到較高的分數（由f判斷），應該如何改變分佈（通過其參數θ)，特別是，它看起來像：畫出一些樣本x，評估其分數f（x），並且對於每個x也評估第二項 $\nabla_\theta logp(x;θ)$，那第二項是什麼，它是一個向量-漸變為我們提供了參數空間中的方向，這將導致分配給x的概率增加。換句話說，如果我們要在的方向上微移θ，$\nabla_\theta logp(x;θ)$，我們會看到分配給x的新概率略有增加。如果回顧一下公式，它告訴我們應該朝這個方向發展，並將標量值加到上面$f(x)$。這樣一來，得分較高的樣本將比那些得分較低的樣本“拖拉”更強的概率密度，因此，如果我們要根據p(x)上的幾個樣本進行更新，則概率密度將朝著較高分數的方向移動，從而使得分較高的樣本更有可能出現。\\
+更簡單的描述，我們有一些分佈 $p(x;\theta)$（我們使用了速記$ p \left( x \right)$ 來減少混亂），我們可以從中採樣（例如，這可能是高斯）。對於每個樣本，我們還可以評估score function f(x)，該函數將樣本作為樣本並給出標量值。該方程式告訴我們，如果我們希望其樣本達到較高的分數（由f判斷），應該如何改變分佈（通過其參數θ)，特別是，它看起來像：畫出一些樣本x，評估其分數f（x），並且對於每個x也評估第二項 $\nabla_\theta logp(x;θ)$，第二項是一個漸變向量為我們提供了參數空間中的方向，使分配給x的概率增加。換句話說，如果我們要在的方向上微移θ，$\nabla_\theta logp(x;θ)$，分配給x的新概率略有增加，朝這個方向移動，並將標量值加到上面$f(x)$。根據p(x)上的幾個樣本進行更新，則概率密度將朝著較高分數的方向移動，從而使得分較高的樣本更有可能出現。\\
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.4]{figure}
@@ -736,5 +737,5 @@ $$\approx \frac{1}{S} \sum_{s=1}^{S}f(z^{(s)})\nabla_\theta \log p(z^{(s)};\thet
 \end{center}
 \end{figure}
 
- Score function gradient estimator的可視化，左：高斯分佈及其中的一些樣本（藍點)，在每個藍點上，我們還繪製了相對於高斯平均參數的對數概率的梯度，箭頭指示應微調分佈平均值以增加該樣本概率的方向。中間：某些得分函數的疊加，在某些小區域中除了+1之外，其他所有地方都給出-1（請注意，這可以是任意的，不一定是可微分的標量值函數)，箭頭現在採用了顏色區別，因為由於更新中的乘法運算，我們將平均所有綠色箭頭和紅色箭頭的負數。右：更新參數後，綠色箭頭和反向紅色箭頭將我們向左移至底部。現在，根據需要，該分佈中的樣本將具有更高的預期分數。\\
+ Score function gradient estimator的可視化，左：高斯分佈及其中的一些樣本（藍點)，在每個藍點上，我們還繪製了相對於高斯平均參數的對數概率的梯度，箭頭指示應微調分佈平均值以增加該樣本概率的方向。中間：某些得分函數的疊加，在某些小區域中除了+1之外，其他所有地方都給出-1，箭頭採用顏色區別，更新運用乘法運算，我們將平均所有綠色箭頭和紅色箭頭。右：更新參數後，綠色箭頭和反向紅色箭頭將向左移至底部。現在，根據需要，該分佈中的樣本將具有更高的預期分數。\\
 \newpage
