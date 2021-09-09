@@ -58,7 +58,7 @@ $$f(x)=max(0,x)$$
 $$if , x<0 , f(x)=0$$
 $$else f(x)=x$$
 \subsection{損失函數}
-損失函數是類神經網路的另一個重要的部分，損失函數會將類神經網絡的結果與期望的結果進行比較，且必須重複估算模型當前狀態的誤差，就是說該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，下一節會有詳細說明，以下簡述幾種優化的方法：\\
+損失函數是類神經網路的另一個重要的部分，損失函數會將類神經網絡的結果與期望結果進行比較，且必須重複估算模型當前狀態的誤差；該函數可用於估計模型的損失，以便可以更新權重減少下次評估時的損失，下一節會有詳細說明，以下簡述幾種優化的方法：\\
 \begin{itemize}
 \item Gradient Descent\\
 利用梯度的方式尋找最小值的位置，其特色可找到凸面error surface的絕對最小值，在非凸面error surface上找到相對最小值。其缺點是在非凸面error surface要避免被困在次優的局部最小值。
@@ -116,13 +116,15 @@ $y_i$： 觀測值\\
 $\hat{y_i}$：預測值\\
 $$MSE=\frac{1}{n} \sum_{i=1}^n(y_i-\overline{y} _i)^2$$\\
 \end{itemize}
-\subsection{優化算法}
+\newpage
+\subsection{優化算法[\ref{OGD}][\ref{OGD2}]}
 \renewcommand{\baselinestretch}{1}
+
 \begin{itemize}
 \item Gradient Descent Optimizer
 \begin{figure}
 \begin{center}
-\includegraphics[width=12cm]{Error_surface-2}
+\includegraphics[width=10cm]{Error_surface-2}
 \caption{\Large Error surface}
 \label{Error_surface-2}
 \end{center}
