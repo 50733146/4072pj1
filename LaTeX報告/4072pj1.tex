@@ -1,9 +1,9 @@
 \documentclass[14pt,a4paper]{report}  %紙張設定
 \usepackage{xeCJK}%中文字體模組
-%\setCJKmainfont{標楷體} %設定中文字體
-\setCJKmainfont{MoeStandardKai.ttf}
-%\newfontfamily\sectionef{Times New Roman}%設定英文字體
-\newfontfamily\sectionef{Nimbus Roman}
+\setCJKmainfont{標楷體} %設定中文字體
+%\setCJKmainfont{MoeStandardKai.ttf}
+\newfontfamily\sectionef{Times New Roman}%設定英文字體
+%\newfontfamily\sectionef{Nimbus Roman}
 \usepackage{enumerate}
 \usepackage{amsmath,amssymb}%數學公式、符號
 \usepackage{amsfonts} %數學簍空的英文字
@@ -29,6 +29,7 @@ left=3truecm,right=2.5truecm]{geometry}
 		basicstyle=\fontsize{10pt}{2pt}\selectfont, %設定程式內文字體大小
 		frame=lines,	%設定程式框架為線
 }
+%\usepackage{subcaption}%副圖標
 \graphicspath{{./../images/}} %圖片預設讀取路徑
 \usepackage{indentfirst} %設定開頭縮排模組
 \renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
@@ -40,7 +41,7 @@ left=3truecm,right=2.5truecm]{geometry}
 \usepackage{appendix} %附錄
 \usepackage{diagbox}%引用表格
 \usepackage{multirow}%表格置中
- %=------------------更改標題內容----------------------=%
+%=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
 \titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{0.5em}{}[]
 \titleformat{\subsection}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesubsection}}{1em}{}[]

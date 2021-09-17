@@ -124,20 +124,21 @@ while True:
 
     t  = time.time()
     # preprocess the observation, set input to network to be difference image
-    cur_x = prepro(observation)
-    x = cur_x - prev_x if prev_x is not None else np.zeros(D)
-    prev_x = cur_x
+    cur_x = prepro(observation)#處理畫面
+    x = cur_x - prev_x if prev_x is not None else np.zeros(D)#比較兩張畫面
+    prev_x = cur_x# 更新比較畫面
     #print((time.time()-t)*1000, ' ms, @prepo')
   
   
     # forward the policy network and sample an action from the returned probability
-    t  = time.time()
-    aprob, h = policy_forward(x)
+    #t  = time.time()
+    aprob, h = policy_forward(x)#比較畫面套入前饋計算
     #print(aprob)
     #action = 2 if np.random.uniform() < aprob else 3 # roll the dice!
     #print((time.time()-t)*1000, ' ms, @forward')
 
     # roll the dice, in the softmax loss
+    #決定擊錘移動
     u = np.random.uniform()
     aprob_cum = np.cumsum(aprob)
     a = np.where(u <= aprob_cum)[0][0]
@@ -151,15 +152,12 @@ while True:
     t = time.time()
     xs.append(x) # observation
     hs.append(h) # hidden state
-
-
+    #用softmax優化梯度
     #softmax loss gradient
-    dlogsoftmax = aprob.copy()
-    dlogsoftmax[0,a] -= 1 #-discounted reward
-    dlogps.append(dlogsoftmax)
-
-
-
+    dlogsoftmax = aprob.copy()#導入3個行為的個別機率
+    dlogsoftmax[0,a] -= 1 #修改特定項(特定行為)機率
+    dlogps.append(dlogsoftmax)#紀錄每次計算的機率
+    #加總得分
     # step the environment and get new measurements
     t  = time.time()
     observation, reward, done, info = env.step(action)
@@ -167,11 +165,12 @@ while True:
     reward_sum += reward 
     #print((time.time()-t)*1000, ' ms, @env.step')
 
-
+    #紀錄獎賞
     drs.append(reward) # record reward (has to be done after we call step() to get reward for previous action)
     #print((time.time()-t0)*1000, ' ms, @whole.step')
 
     if done: # an episode finished
+        #紀錄得分趨勢
         #紀錄單局結算獎勵
         reward_list = np.append(reward_list,reward_sum)
         #計算累積局數獎勵平均
@@ -183,10 +182,29 @@ while True:
 
 
         # stack together all inputs, hidden states, action gradients, and rewards for this episode
+        #xs, hs, dlogps, drs 都是ndarray
+        '''
+        epx: (1114, 6400)
+        eph: (1114, 200)
+        epdlogp: (1114, 3)
+        epr: (1114, 1)
+        '''
+        #當局環境(影像):當局幀數, 畫面大小(D)
         epx = np.vstack(xs)
+        #print("epx:", epx.shape)
+
+        # 當局行為(神經元個數):當局幀數, 神經元個數
         eph = np.vstack(hs)
+        #print("eph:", eph.shape)
+
+        # 當局動作機率:當局幀數, 動作個數(3格動作個別機率)
         epdlogp = np.vstack(dlogps)
+        #print("epdlogp:", epdlogp.shape)
+
+        # 當局獎賞(每幀獎賞):當局幀數, 獎賞
         epr = np.vstack(drs)
+        print("epr:", epr.shape)
+
         xs,hs,dlogps,drs = [],[],[],[] # reset array memory
 
         print(epdlogp.shape)
