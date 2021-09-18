@@ -54,6 +54,19 @@ CoppeliaSim安裝目錄$\backslash$programming$\backslash$remoteApiBindings$\bac
 remoteApi.dll為RemoteAPI動態連結函示庫，其位於:\\
 CoppeliaSim安裝目錄$\backslash$programming$\backslash$remoteApiBindings$\backslash$lib$\backslash$lib$\backslash$作業系統\\
 \subsection{Remote API埠使用}
-Remote API\\
+Remote API是通過通訊埠取得環境資訊，在CoppeliaSim中預設埠號為19997，只有預設埠不需開啟特定場景就可進行通訊並控制所有功能，且在大量影像資料處理時可啟用多埠，使其中一個通訊埠用於影像處理，另一個則用於控制，新增的通訊埠需在安裝資料夾中的remoteApiConnections.txt加入需要的埠號。\\
+\section{Open AI Gym自定義環境}
+Open AI Gym可以支持我們以自己搭建的環境進行訓練，因此我們透過Gym並以CoppeliaSim虛擬環境中搭建的冰球機模型來完成訓練，而Gym所使用的環境參數就是由前述的Remote API來取得。Gym將環境抽象為一個類別(class)在該類別(class)中需分別定義以下參數來達成自定義環境的訓練。\\
+
+\begin{enumerate}
+\item init：初始化CoppeliaSim中的環境參數。
+\item seed：用於設置環境變數。
+\item make observation ：用於設置環境場景中需觀察的值，如：擊錘位置、冰球位置...等。
+\item make action：設置擊錘的移動速度。
+\item step：訓練的主要邏輯，如：遊戲是否結束、reward函數返回值、環境觀察值...等。
+\item reset：將環境重置。
+\item render：可搭配OpenCV進行數據渲染。
+\item close：釋放環境數據。
+\end{enumerate}
 
 \newpage
