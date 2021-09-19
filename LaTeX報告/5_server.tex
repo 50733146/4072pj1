@@ -35,7 +35,7 @@
 \newpage
 \section{Web server}
  Nginx 是提供 web 相關服務的伺服器 ( Web server )，除了是高效能的 HTTP ( HTTPS ) 服務器外，還可處理靜態資源 , 負載平衡 , 代理等工作。代理工作為根據不同域名轉發到 Application Server 的不同 port 上去處理 ，其中又分正向和反向，正向代理為 clinet 端發送 request 經由 porxy server 再到目標網站，反向則反之。正向代理操作中 server 只知道 proxy server  給他 request , 不知道 client 是誰，而相同地反向代理則是 client 只知道 proxy server 給他 responses , 不知道 server 是誰。正向代理隐藏真實 Client，反向代理隱藏真實 Server。另外在高流量的狀況下，需要多個 Application Server 來分擔流量，負載平衡就是負責 request 的分發，決定 request 要被分到哪一個 Application Server 處理 。而關於處理靜態資源 ，Nginx 與 Apache 等 Web Server 處理靜態資源的能力是遠遠高於 Application Server 的。\\
- \begin{figure}[hbt!]
+\begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{clientProxy}
 \caption{\Large clientProxy}\label{clientProxy}
@@ -56,7 +56,7 @@
 Nginx的主要設定檔nginx.conf可藉由include指令添加其他nginx設定檔的設定去擴增不同域名的設定，常見的設定有 :
 \begin{enumerate}
 \item 預設：
-\begin{lstlisting}[caption=nginx預設]
+\begin{lstlisting}[caption=\Large nginx預設]
   reciveAPP {
     server localhost:5000;
     server localhost:5001;
@@ -76,7 +76,7 @@ server {
 
 \newpage
 \item 負載平衡LoadBalance：
-\begin{lstlisting}[caption=load balance設定]
+\begin{lstlisting}[caption=\Large load balance設定]
   reciveAPP {
         ip_hash;
         server localhost:5000;
@@ -105,7 +105,7 @@ server {
  
 \begin{enumerate}
 \item location：
-\begin{lstlisting}[caption=location設定]
+\begin{lstlisting}[caption=\Large location設定]
   location / #匹配所有目錄
 
   location /static #匹配所有 /static 的開頭目錄
@@ -114,12 +114,12 @@ server {
 
  要達到load balancer透過一開始介紹的upstream block就可以達成，在上面的例子中，來自某個domain 80 port會被分配到port 5000或port 5001兩個應用中，達成用兩個應用去分擔request的負載平衡器。\\
  
- 負載平衡裡的負載規則（　ip\_hash ）某個request要被導倒哪個應用去處理有不同規則，每個規則都有各自適合使用時機，以下簡單介紹幾個常見的規則：\\
+ 負載平衡裡的負載規則（ip\_hash ）某個request要被導倒哪個應用去處理有不同規則，每個規則都有各自適合使用時機，以下簡單介紹幾個常見的規則：\\
 
 \begin{enumerate}
 \item round-robin（預設）輪詢方式：也就是將請求輪流按照順序分配給每一個 server。假設所有伺服器的處理效能都相同，不關心每臺伺服器的當前連線數和響應速度。適合於伺服器組中的所有伺服器都有相同的軟硬體配置並且平均伺服器請求相對均衡的情況。
 不過也有另外一種可以設定權重的Weight Round Robin（加權輪詢方式），可以設定不同server的權重，例如以下範例：
-\begin{lstlisting}[caption=設定不同 server 的權重]
+\begin{lstlisting}[caption=\Large 設定不同 server 的權重]
   upstream myweb {
     server web1.dtask.idv.tw weight=3;
     server web2.dtask.idv.tw weight=2;
@@ -132,16 +132,16 @@ server {
  \begin{enumerate} 
  \item wsgi-file：主要運行的py檔案
  \item http，socket，http-socket：端口設定，假使有使用到 前端服務器（如Nginx）時，不能用http設定，因uwsgi協議為HTTP，而Nginx使用傳輸協議為TCP，兩者不能互通。
- \begin{lstlisting}[caption=簡易uwsgi指令啟動]
+ \begin{lstlisting}[caption=\Large 簡易uwsgi指令啟動]
   uwsgi --http：9000 --wsgi-file APP.py 
 \end{lstlisting}
  \item processes、threads：工作序，processes為進程，threads為線程，下方設定為每條近程有兩條線程。
- \begin{lstlisting}[caption=加入工作程序uwsgi指令啟動]
+ \begin{lstlisting}[caption=\Large 加入工作程序uwsgi指令啟動]
   uwsgi --http：9000 --wsgi-file APP.py --processes 4 --threads 2
 \end{lstlisting}
 \item chdir：此項是為了正確的加載模組/檔案 \\
 整體快速配置（這裡儲存成一個.ini文件，其他還有YAML、JSON、XML格式等）：
-\begin{lstlisting}[caption=將uwsgi指令啟動動作設定成一個啟動檔]
+\begin{lstlisting}[caption=\Large 將uwsgi指令啟動動作設定成一個啟動檔]
   [uwsgi]
 socket = :9000
 processes = 4
@@ -150,17 +150,15 @@ chdir = location/to
 wsgi-file = location/to/file
 \end{lstlisting}
 此項還可加上status：此項為查看uWSGI內部的輸出數據\\
-\begin{lstlisting}[caption=status]
+\begin{lstlisting}[caption=\Large status]
   -- status 127.0.0.1:9001
 \end{lstlisting}
 實現之通訊流程 
-\begin{lstlisting}[caption=client端與Flask應用]
-client server< - > web server < - > ( socket )< - > uWSGI < - > flask 
-\end{lstlisting}
+
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[scale=0.74]{clientToflask}
-\caption{\Large clientToflask}\label{clientToflask}
+\caption{\Large client To flask}\label{clientToflask}
 \end{center}
 \end{figure}
  \end{enumerate}
