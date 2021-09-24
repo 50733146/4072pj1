@@ -199,6 +199,102 @@ Application of reinforcement
 \pagenumbering{arabic} %設定頁號阿拉伯數字
 \setcounter{page}{1}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
+\section{計算}
+施一外力於手把F = 100N\\
+扭矩為 T=F$\cdot$r = 100 $\cdot$ (230/2)=11500 N$\cdot$mm\\
+力矩為M=Fxr=100x(230/2)=11500 N$\cdot$mm\\
+依S45C材質，可知 抗拉強度$\sigma \geq$ 568 $N/mm^2$\\
+降伏強度 $\sigma_y \geq 343 N/mm^2$\\
+抗檢強度 $\tau=\sigma /2 \geq 284 N/mm^2$\\
+$\tau = T\cdot r/J = 16T/\pi d^3 \rightharpoonup d = 6.79mm$\\
+$\sigma=M\cdot y/I = 32M/\pi d^3 \rightharpoonup d = 6.35 mm$\\
+把手直徑為$13mm > d = 6.35mm \rightharpoonup $把手不會被破壞\\
+
+
+齒數$T =$ 23齒\\
+節圓直徑 $D =$24\\
+齒頂圓直徑 $D_0 = $28mm\\
+壓力角 $\alpha$ = 20\\
+
+$D_0 = D+2 x m$\\
+$28 = 24+2 x m$\\
+\rightharpoonup 模數$ m = 2 $(mm)\\
+
+設軸轉數 $N = 10$ rpm\\
+齒條質量 $m = 0.5$kg\\
+齒輪圓周速度 $V = \pi \cdot D \cdot N/ 1000\cdot60 = \pi \cdot 24 \cdot 10/ 1000\cdot 60=0.0126(m/s)\rightharpoonup V = 0.0126(m/s)$\\
+
+施一外力於把手 F = 100N
+力矩為$T = F\cdotr = 100 \cdot (230/2) = 11500$\\
+依S45C材質，可知 抗拉強度$\sigma \geq$ 568 $N/mm^2$\\
+降伏強度 $\sigma_y \geq 343 N/mm^2$\\
+抗檢強度 $\tau=\sigma /2 \geq 284 N/mm^2$\\
+$\tau = T\cdotr/J = 16T/\pi d^3 \rightharpoonup d = 6.79mm$\\
+$D_0 = 28mm > d =6.79mm \rightharpoonup$ 齒輪不會被破壞 \\
+
+
+$F = f_v\cdot k \cdot D_1 \cdot b\cdot 2\cdot t/t_1+t_2$\\
+F = 821.4 N\\
+速度係數:f_v  \\
+接觸面應力係數 \\
+齒輪軸節圓直徑:D_1 \\
+接觸齒寬:b\\
+齒條:t_1 \\
+齒輪軸齒數:t_2\\
+
+$F = f_v\cdot k\cdot D_1\cdot b\cdot 2\cdot t/t_1+t_2$
+$b = 44\rightharpoonup b = 45$
+
+$F = 0.996 \cdot 0.519\cdot 28\cdot 45\cdot 2\cdot 23/12+23 =856.03 N$\\
+$F = 856.03 N > 821.4N \rightharpoonup$
+
+
+
+
+
+設b = 6 mm ， $F = f_w\cdot f_v\cdot  \sigma_b \cdot  \pi \cdot  m \cdot  y$\\
+821.4 =0.74$\cdot 0.996 \cdot 294 \cdot 6m \cdot \pi \cdot m\cdot 0.078\rightharpoonupm = 1.605mm \rightharpoonupm m = 2mm$\\
+
+假設之模數相符，以m = 2mm 求接觸齒寬b\\
+$821.4=0.74\cdot 0.996\cdot 294\cdot b\cdot \pi\cdot 2\cdot 0.078 \rightharpoonupm b = 7.734mm \rightharpoonupm b = 8mm$\\
+以m =2 mm 、b = 8mm ，計算齒輪傳動力\\
+$F = f_w \cdot  f_v \cdot \sigma_b\cdot b\cdot \pi\cdot m\cdot y$\\
+$=0.74\cdot 0.996\cdot 294\cdot 8\cdot \pi\cdot 2\cdot 0.078 = 849.577N \rightharpoonupm F = 849.577N>821.4N$\\
+本實體之齒輪軸為32mm > 計算結算結果b = 8mm$\rightharpoonupm$ 合理之設計\\
+
+
+
+
+
+$F = f_w \cdot f_v \cdot \sigma_b \cdot b\cdot \pi\cdot m\cdot y$\\
+F = 2T/D = 821.4\\
+$F_w :$ 動力負載係數(負載變動時為0.74)\\
+$F_v:$ 速度係數\\
+$\sigma_b:$容許抗彎應力\\
+b:接觸齒寬(mm)\\
+m:模數(mm) \\
+y:齒廓係數\\
+
+
+設b = 5 mm ， $F = f_w\cdot f_v\cdot \sigma_b \cdot \pi\cdot m \cdot 0.106$\\
+821.4 =0.74$\cdot 0.996 \cdot 294 \cdot 6m \cdot \pi \cdot m \cdot 0.106\rightharpoonup m = 1.509mm \rightharpoonupm m = 2mm$\\
+
+假設之模數相符，以m = 2mm 求接觸齒寬b\\
+$821.4=0.74\cdot 0.996\cdot 294\cdot b\cdot \pi\cdot 2\cdot 0.106 \rightharpoonupm b = 7.734mm \rightharpoonupm b = 8mm$\\
+以m =2 mm 、b = 6mm ，計算齒輪傳動力\\
+$F = f_w \cdot f_v \cdot  \sigma_b \cdot b\cdot \pi\cdot m\cdot y$\\
+$=0.74\cdot 0.996\cdot 294\cdot 6\cdot \pi\cdot 2\cdot 0.106 = 865.91N \rightharpoonupm F = 865.915N>821.4N$\\
+本實體之齒輪軸為32mm > 計算結算結果b = 8mm$\rightharpoonupm$ 合理之設計\\
+
+$F = f_v \cdot k \cdot D_1 \cdot b  \cdot 2 \cdot t_2/t_1+t_2$\\
+$F = 2T/D = 821.4 $\\
+$F_w :$ 動力負載係數(負載變動時為0.74)\\
+$F_v:$ 速度係數\\
+$\sigma_b:$容許抗彎應力\\
+b:接觸齒寬(mm)\\
+m:模數(mm) \\
+y:齒廓係數\\
+
 \section{研究動機}
 機器學習與各領域結合的應用越來越廣泛，在機電系統採用強化學習是為了讓機電系統的控制達到最佳化。本專題以實體的冰球機(圖.\ref{fig.冰球機})之機電系統作為訓練模型，將實體機器轉移到虛擬環境(圖.\ref{fig.模擬冰球機})進行模擬，為了找到適合的演算方式，因此將模型簡化(圖.\ref{fig.pong_gym})後再進行測試各種算法的優劣，透過不斷的訓練來得到一個優化過的對打系統。\\
 
