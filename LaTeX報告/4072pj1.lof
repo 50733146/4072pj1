@@ -1,0 +1,59 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces \Large 實體的冰球機}}{1}{figure.1.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces \Large 虛擬環境簡化後的冰球機}}{1}{figure.1.2}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces \Large Gym的Pong game}}{2}{figure.1.3}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces \Large 研究架構 }}{3}{figure.1.4}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \Large 類神經網路架構}}{5}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \Large 類神經網路關係}}{7}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \Large SigmoidFunction}}{8}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \Large 線性回歸}}{12}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \Large Error surface [\ref {OGD}]}}{13}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces \Large theta vector[\ref {OGD}]}}{14}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \Large SGD fluctuation[\ref {OGD2}]}}{16}{figure.2.7}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces \Large SGD without momentum[\ref {OGD2}]}}{19}{figure.2.9}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces \Large SGD with momentum[\ref {OGD2}]}}{19}{figure.2.10}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces \Large NAG[\ref {OGD2}]}}{20}{figure.2.10}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces \Large 各領域與機器學習應用範圍}}{25}{figure.2.11}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces \Large 強化學習架構}}{26}{figure.2.12}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces \Large 整個互動過程}}{27}{figure.2.13}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces \Large agent}}{28}{figure.2.14}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces $v^{\pi }$程序圖}}{31}{figure.2.15}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces $q^{\pi }$程序圖}}{32}{figure.2.16}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces \Large Policy Gradient原理}}{33}{figure.2.17}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \Large ATARI Pong}}{38}{figure.3.1}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \Large 組合圖}}{39}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \Large Y軸皮帶固定座}}{40}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \Large 連結固定座}}{40}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \Large CoppeliaSim Logo}}{41}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \Large CoppeliaSim 工具列}}{41}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \Large CoppeliaSim 工具列(續)}}{41}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \Large OpenCV 及Python logo}}{42}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \Large HSV色彩空間}}{43}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖}}{45}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景}}{45}{figure.4.10}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy}}{49}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large client To flask}}{53}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total}}{54}{figure.5.3}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large Pygame模組編寫}}{56}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \Large Pymunk模組編寫}}{56}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程}}{58}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces \Large 比較中斷後訓練差異}}{59}{figure.6.4}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 現有研究流程與未來展望}}{62}{figure.7.1}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces \Large 動態連結庫錯誤}}{63}{figure.8.1}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces \Large 程式讀不到ffmpeg}}{64}{figure.8.2}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces \Large 進階系統設定}}{65}{figure.8.3}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces \Large 環境變數}}{65}{figure.8.4}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces \Large 編輯環境變數}}{66}{figure.8.5}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces \Large ffmpeg成功執行}}{67}{figure.8.6}%
+\contentsline {figure}{\numberline {8.7}{\ignorespaces \Large 錄製後，影片無法開啟}}{67}{figure.8.7}%
+\contentsline {figure}{\numberline {8.8}{\ignorespaces \Large 原始設定}}{68}{figure.8.8}%
+\contentsline {figure}{\numberline {8.9}{\ignorespaces \Large 修正後設定}}{68}{figure.8.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces \Large 編譯流程}}{73}{figure.Alph0.10}%
+\contentsfinish 
