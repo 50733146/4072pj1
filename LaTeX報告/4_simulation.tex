@@ -9,7 +9,7 @@
 \label{model}
 \end{figure}
 
-\qquad 將原本Y軸移動機構移除,並將其改為固定在特定位置上，此固定座設計是取代原本鎖在光軸固定坐上的(圖.\ref{model} 代號 1)Y軸皮帶固定座(圖.\ref{axialseat})，並使光軸固定座可以通過連結固定做鎖固於桌面，如圖.\ref{connectSeat}。\\
+\qquad 將原本Y軸移動機構移除,並將其改為固定在特定位置上，此固定座設計是取代原本鎖在光軸固定坐上的(圖.\ref{model} 代號 1)Y軸皮帶固定座(圖.\ref{axialseat})，並使光軸固定座可以通過連結固定做鎖固於桌面，如(圖.\ref{connectSeat})。\\
 
 \begin{figure}[hbt!]
 \center
@@ -84,12 +84,12 @@
 \end{figure}
 
 \subsection{CoppeliaSim中的Vision sensor(視覺傳感器)}
-\qquad CoppeliaSim的視覺傳感器輸出的影像是以每個像素中以RGB三個位元組所組成的，舉例來說:在CoppeliaSim中視覺傳感器取出畫面像素為512*256，則我們會接收到(512*256)像素*3=393,216個資料，是一筆相當大的資料，所以在影像處理上會消耗掉大量的資源。\\
+ CoppeliaSim的視覺傳感器輸出的影像是以每個像素中以RGB三個位元組所組成的，舉例來說:在CoppeliaSim中視覺傳感器取出畫面像素為512*256，則我們會接收到(512*256)像素*3=393,216個資料，是一筆相當大的資料，所以在影像處理上會消耗掉大量的資源。\\
 
 \subsection{影像辨識}
  透過CoppeliaSim中的Vision sensor接收場景影像並輸出後,便可以開始進行影像辨識的處理。\\
 \begin{enumerate}
-\item RGB與HSV的轉換\\
+\item RGB與HSV的轉換[\ref{RGBtoHSV}]\\
 RGB即光的三原色Red(紅)Green(綠)Blue(藍)，HSV則是一種將RGB色彩模型中的點在圓柱坐標系中的表示法，HSV分別表示Hue(色相)、Saturation(飽和度)、Value(明度)，而會將RGB轉換為HSV是因為HSV相較於RGB可以更直接的判斷色彩、明暗和鮮豔度對於顏色過濾可以更方便定義出色彩範圍。\\
 \begin{figure}[hbt!]
 \center

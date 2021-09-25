@@ -128,7 +128,7 @@ server {
 \item least-connected 最少連線：顧名思義為連線進來時會把Request導向連線數較少的Server。
 \item IP-hash依據Client IP來分配到不同台Server：通過一個雜湊（Hash）函式將一個 IP 地址對映到一臺伺服器。先根據請求的目標IP地址，作為雜湊鍵（Hash Key）從靜態分配的散列表找出對應的伺服器。除非斷線或IP變動，否則同個IP的請求都會導入到同一個 server。
 \end{enumerate}
-  uWSGI設定（uwsgi\_ini ）：\\
+  uWSGI設定（uwsgi\_ini ）：
  \begin{enumerate} 
  \item wsgi-file：主要運行的py檔案
  \item http，socket，http-socket：端口設定，假使有使用到 前端服務器（如Nginx）時，不能用http設定，因uwsgi協議為HTTP，而Nginx使用傳輸協議為TCP，兩者不能互通。
