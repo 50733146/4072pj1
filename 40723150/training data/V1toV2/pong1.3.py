@@ -142,7 +142,7 @@ if __name__ == '__main__':
     n_policies = 12
     n_steps = 30
     env = gym.make('Pong-v0')
-    env = gym.wrappers.Monitor(env, '/tmp/pong-v0', force=True, video_callable=lambda episode_id: episode_id%1000==0)
+    #env = gym.wrappers.Monitor(env, '/tmp/pong-v0', force=True, video_callable=lambda episode_id: episode_id%1000==0)
     random.seed(123456)  
     obs = env.reset()
     start = time.time()
