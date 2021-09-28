@@ -44,7 +44,7 @@
 \contentsline {subsection}{\numberline {6.4.1}Remote API模組及動態連結函示庫}{59}{subsection.6.4.1}%
 \contentsline {subsection}{\numberline {6.4.2}Remote API埠使用}{60}{subsection.6.4.2}%
 \contentsline {section}{\numberline {6.5}Open AI Gym自定義環境}{60}{section.6.5}%
-\contentsline {section}{\numberline {6.6}總結論}{61}{section.6.6}%
+\contentsline {section}{\numberline {6.6}總結}{61}{section.6.6}%
 \contentsline {chapter}{\numberline {7}未來研究建議}{62}{chapter.7}%
 \contentsline {chapter}{\numberline {8}問題與討論}{63}{chapter.8}%
 \contentsline {chapter}{參考文獻}{69}{lstnumber.8.1.8}%
