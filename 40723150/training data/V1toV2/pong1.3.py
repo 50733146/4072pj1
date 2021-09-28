@@ -21,7 +21,6 @@ genes_per_column=40
 chromosone_len = genes_per_column * chromosone_colums
 chromosone_max_val = 80
 ball_colour = 236
-
 # ball colour = (236,236,236)
 # enenmy colour = (213,130,74)
 # own colour = (92,186,92)
@@ -122,7 +121,9 @@ def evaluate_policy(env, policy, n_episodes=20,progress=1):
   
 def process_image(full_image):
     processed_image = full_image[34:194] #crop image
-    processed_image = np.delete(processed_image,list(range(0,16))+list(range(144,170)), axis=1) #remove sides
+    processed_image = np.delete(processed_image, slice(144,170), axis=1) #remove sides
+    processed_image = np.delete(processed_image, slice(0, 16), axis=1)  # remove sides
+    #processed_image = np.delete(processed_image, list(range(0, 16)) + list(range(144, 170)), axis=1)  # remove sides
     processed_image = processed_image[:,:,0]   # remove the second and third RGB value
     mask = binary_dilation(processed_image==236,[np.ones(255)])
     mask[:,[0,1,2,3]]=0 # don't overwrite opponents line
