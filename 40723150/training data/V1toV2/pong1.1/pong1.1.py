@@ -165,7 +165,7 @@ while True:
     running_reward = reward_sum if running_reward is None else running_reward * 0.99 + reward_sum * 0.01
     # 紀錄得分趨勢
     # 紀錄單局結算獎勵
-    reward_list = np.append(reward_list, reward)
+    reward_list = np.append(reward_list, reward_sum)
     #print(reward_list)
     # 計算累積局數獎勵平均
     sum_reward = reward_sum if running_reward is None else running_reward
@@ -180,6 +180,6 @@ while True:
         pickle.dump((model,model_target), open(pickle_name, 'wb'))
         np.savetxt(reward_list_name, reward_list, fmt="%s")
         np.savetxt(sum_reward_list_name, sum_reward_list, fmt="%s")
-        print("%d saving......!!!!" %(times))
+        #print("%d saving......!!!!" %(times))
   if times >= training_times + 1:
     break

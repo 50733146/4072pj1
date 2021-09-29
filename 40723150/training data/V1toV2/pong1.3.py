@@ -184,6 +184,6 @@ if __name__ == '__main__':
     #end of learning
 
     # run best policy ~100 times to get best score average from gym
-    for _ in range(120):
+    for _ in range(200):
         run_episode(env, best_policy)
     env.close()
