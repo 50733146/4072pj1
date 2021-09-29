@@ -24,7 +24,7 @@ ax.plot(p2rd, "g,", label = "pong2")
 ax.plot(p2sd, "g", label = "pong2 MSE")
 
 ax.set(xlabel='episode time', ylabel='episode reward',
-       title='Pong1 ' + 'Reward trend graph')
+       title='Pong ' + 'Reward trend')
 ax.legend(loc = 2)
 plt.grid()
 fig.savefig('pong.png', dpi=100)

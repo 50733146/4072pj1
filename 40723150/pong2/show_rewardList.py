@@ -16,7 +16,7 @@ ax.plot(reward1_sum_data, "r", label = "pong2 MSE")
 ax.plot(reward2_data, "c,", label = "pong2_r")
 ax.plot(reward2_sum_data, "c", label = "pong2_r MSE")
 ax.set(xlabel='episode time', ylabel='episode reward',
-       title='Pong2 ' + 'Reward trend graph')
+       title='Pong2 ' + 'Reward trend')
 ax.legend()
 plt.grid()
 fig.savefig('pong2.png', dpi=100)

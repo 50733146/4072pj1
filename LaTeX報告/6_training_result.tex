@@ -47,6 +47,30 @@
 \label{fig.比較中斷數據}
 \end{center}
 \end{figure}
+
+\section{訓練算法比較}
+pong1是參考
+\begin{table}[hbt!]
+\center\large
+\setlength{\tabcolsep}{0.75cm}{
+\begin{tabular}{|c|c|c|}
+\hline  版本名稱 & 標示顏色 & 參考來源\\
+\hline  pong1 &  紅色 & [\ref{R.pong1}]\\
+\hline  pong1.1 &  藍色 & 回復/取消回復\\
+\hline  pong1.2 &  橘色 & 模擬設定\\
+\hline  pong2 & 綠色 & 開始/暫停/停止 模擬\\
+\hline 
+\end{tabular}}
+\caption{\Large 算法標示}
+\end{table}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{pong}
+\caption{\Large 各算法差異}
+\label{fig.比較中斷數據}
+\end{center}
+\end{figure}
  
 \section{CoppeliaSim RemoteAPI}
 在進行強化學習時主要是透過CoppeliaSim中的Remote API 函數來取得模擬場景中所需要的資訊，並在進行訓練後再回傳到CoppeloaSim做控制的動作。\\
