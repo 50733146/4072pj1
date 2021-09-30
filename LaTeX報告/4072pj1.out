@@ -14,7 +14,7 @@
 \BOOKMARK [1][-]{section.2.2}{強化學習}{chapter.2}% 14
 \BOOKMARK [2][-]{subsection.2.2.1}{馬可夫決策}{section.2.2}% 15
 \BOOKMARK [1][-]{section.2.3}{Policy\040Gradient}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.3.1}{Proof\040Policy\040Gradient\040Theorem}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.1}{Policy Gradient理論與證明}{section.2.3}% 17
 \BOOKMARK [2][-]{subsection.2.3.2}{Policy\040Gradient\040Theorem}{section.2.3}% 18
 \BOOKMARK [2][-]{subsection.2.3.3}{Actor\040Critic}{section.2.3}% 19
 \BOOKMARK [0][-]{chapter.3}{訓練環境}{}% 20
@@ -25,29 +25,28 @@
 \BOOKMARK [1][-]{section.4.2}{CoppeliaSim模擬}{chapter.4}% 25
 \BOOKMARK [2][-]{subsection.4.2.1}{使用原因}{section.4.2}% 26
 \BOOKMARK [2][-]{subsection.4.2.2}{RemoteAPI}{section.4.2}% 27
-\BOOKMARK [2][-]{subsection.4.2.3}{PyRep}{section.4.2}% 28
-\BOOKMARK [2][-]{subsection.4.2.4}{常用功能}{section.4.2}% 29
-\BOOKMARK [1][-]{section.4.3}{影像處理}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.3.1}{CoppeliaSim中的Vision sensor\(視覺傳感器\)}{section.4.3}% 31
-\BOOKMARK [2][-]{subsection.4.3.2}{影像辨識}{section.4.3}% 32
-\BOOKMARK [0][-]{chapter.5}{伺服器}{}% 33
-\BOOKMARK [1][-]{section.5.1}{Ubuntu 環境配置}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.2}{Oracle VM VirtualBox 介紹}{chapter.5}% 35
-\BOOKMARK [1][-]{section.5.3}{Web\040server}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.4}{Nginx}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.5}{Flask}{chapter.5}% 38
-\BOOKMARK [0][-]{chapter.6}{機器學習的訓練與模擬控制結果}{}% 39
-\BOOKMARK [1][-]{section.6.1}{訓練模型的基礎概念}{chapter.6}% 40
-\BOOKMARK [1][-]{section.6.2}{訓練模型的選用}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.3}{訓練程式的運作}{chapter.6}% 42
-\BOOKMARK [1][-]{section.6.4}{訓練算法比較}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.5}{CoppeliaSim\040RemoteAPI}{chapter.6}% 44
-\BOOKMARK [2][-]{subsection.6.5.1}{Remote API模組及動態連結函示庫}{section.6.5}% 45
-\BOOKMARK [2][-]{subsection.6.5.2}{Remote API埠使用}{section.6.5}% 46
-\BOOKMARK [1][-]{section.6.6}{Open AI Gym自定義環境}{chapter.6}% 47
-\BOOKMARK [1][-]{section.6.7}{總結}{chapter.6}% 48
-\BOOKMARK [0][-]{chapter.7}{未來研究建議}{}% 49
-\BOOKMARK [0][-]{chapter.8}{問題與討論}{}% 50
-\BOOKMARK [0][-]{lstnumber.8.1.8}{參考文獻}{}% 51
-\BOOKMARK [0][-]{chapter*.3}{附錄}{}% 52
-\BOOKMARK [0][-]{figure.Alph0.10}{作者簡介}{}% 53
+\BOOKMARK [2][-]{subsection.4.2.3}{常用功能}{section.4.2}% 28
+\BOOKMARK [1][-]{section.4.3}{影像處理}{chapter.4}% 29
+\BOOKMARK [2][-]{subsection.4.3.1}{CoppeliaSim中的Vision sensor\(視覺傳感器\)}{section.4.3}% 30
+\BOOKMARK [2][-]{subsection.4.3.2}{影像辨識}{section.4.3}% 31
+\BOOKMARK [0][-]{chapter.5}{伺服器}{}% 32
+\BOOKMARK [1][-]{section.5.1}{Ubuntu 環境配置}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.2}{Oracle VM VirtualBox 介紹}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.3}{Web\040server}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.4}{Nginx}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.5}{Flask}{chapter.5}% 37
+\BOOKMARK [0][-]{chapter.6}{機器學習的訓練與模擬控制結果}{}% 38
+\BOOKMARK [1][-]{section.6.1}{訓練模型的基礎概念}{chapter.6}% 39
+\BOOKMARK [1][-]{section.6.2}{訓練模型的選用}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.3}{訓練程式的運作}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.4}{訓練算法與參數比較}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.5}{CoppeliaSim\040RemoteAPI}{chapter.6}% 43
+\BOOKMARK [2][-]{subsection.6.5.1}{Remote API模組及動態連結函示庫}{section.6.5}% 44
+\BOOKMARK [2][-]{subsection.6.5.2}{Remote API埠使用}{section.6.5}% 45
+\BOOKMARK [1][-]{section.6.6}{Open AI Gym自定義環境}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.7}{總結}{chapter.6}% 47
+\BOOKMARK [0][-]{chapter.7}{未來研究建議}{}% 48
+\BOOKMARK [0][-]{chapter.8}{問題與討論}{}% 49
+\BOOKMARK [0][-]{lstnumber.8.1.8}{參考文獻}{}% 50
+\BOOKMARK [0][-]{chapter*.3}{附錄}{}% 51
+\BOOKMARK [0][-]{figure.Alph0.10}{作者簡介}{}% 52

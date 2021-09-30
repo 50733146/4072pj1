@@ -48,18 +48,18 @@
 \end{center}
 \end{figure}
 
-\section{訓練算法比較}
-pong1是參考
+\section{訓練算法與參數比較}
+ pong1版本是karpathy的pg\- pong.py的原始碼[\ref{R.pong1}]，pong1.1原始碼則是schinger的pong\_ actor\- critic/pg\- pong\- ac.py[\ref{R.pong1.1}]，pong1.2的是修改pong1的學習率參數從0.001調整到0.0001，並且將裁切後80*80的影像改成75*80。pong2將pong1的學習率保留不變，將啟動函數從sigmoid替換成softmax，並且將CPU運算換成GPU運算。下圖(圖.\ref{fig.比較中斷數據})為這幾個版本的訓練趨勢的紀錄提供做比較，訓練次數(圖.\ref{fig.比較中斷數據}之水平軸)為3000局做比較，小點為每局積分總和(圖.\ref{fig.比較中斷數據}之垂直軸)，線條為累積積分的均方誤差值，積分計算-21分代表對面得21分，即機器訓練所得分數-對面所得分數。訓練存在隨機性(Stochastic)，因此每次訓練所得趨勢會有所差異。
 \begin{table}[hbt!]
 \center\large
 \setlength{\tabcolsep}{0.75cm}{
 \begin{tabular}{|c|c|c|}
 \hline  版本名稱 & 標示顏色 & 參考來源\\
 \hline  pong1 &  紅色 & [\ref{R.pong1}]\\
-\hline  pong1.1 &  藍色 & 回復/取消回復\\
-\hline  pong1.2 &  橘色 & 模擬設定\\
-\hline  pong2 & 綠色 & 開始/暫停/停止 模擬\\
-\hline 
+\hline  pong1.1 &  藍色 & [\ref{R.pong1.1}]\\
+\hline  pong1.2 &  橘色 & [\ref{R.pong1}]\\
+\hline  pong2 & 綠色 & [\ref{R.pong1}] \\
+\hline
 \end{tabular}}
 \caption{\Large 算法標示}
 \end{table}
@@ -71,6 +71,7 @@ pong1是參考
 \label{fig.比較中斷數據}
 \end{center}
 \end{figure}
+觀察後得到，
  
 \section{CoppeliaSim RemoteAPI}
 在進行強化學習時主要是透過CoppeliaSim中的Remote API 函數來取得模擬場景中所需要的資訊，並在進行訓練後再回傳到CoppeloaSim做控制的動作。\\
@@ -102,5 +103,5 @@ Open AI Gym可以支持我們以自己搭建的環境進行訓練，因此我們
 \end{enumerate}
 
 \section{總結}
-訓練的時間越長，學習對打的成效越好，但訓練後期進步的幅度趨緩，因此得評估訓練的時間長度以符合整體效益。在模擬環境中利用RemoteAPI建置了跨平台控制，並運用OpenCV處理影像輔助玩家進行對打。
+選擇適合的演算法，並找到適合的參數，透過訓練提升機器對打的能力，訓練的時間越長，學習對打的成效越好，但訓練後期進步的幅度趨緩，因此得評估訓練的時間長度以符合整體效益。在模擬環境中利用RemoteAPI建置了跨平台控制，並運用OpenCV處理影像輔助玩家進行對打。
 \newpage

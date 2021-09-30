@@ -32,14 +32,14 @@
 以下介紹幾種較為常見的啟動函數及其特性：
 \begin{itemize}
 %=----------Sigmoid      Function----------=%
-\item Sigmoid Function：\\
-輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、且具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。\\
+\item Sigmoid Function(圖.\ref{SigmoidFunction})：\\
+輸出介於0到1之間，適用於二元分類，方程式具有非線性、可連續微分、且具有固定輸出範圍等特性，並可以讓類神經網路呈現非線性。
 $$\sigma(x)=\frac{1}{1+e^{-x}}$$
 
 %=----------SigmoidPrime Function----------=%
-SigmoidPrime Function是從Sigmoid Function微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\
+SigmoidPrime Function(圖.\ref{SigmoidFunction}，紅色的)是從Sigmoid Function(圖.\ref{SigmoidFunction}，藍色)微分得來，以梯度運算的方式，可以減少梯度誤差，但也是造成梯度消失的主要原因，若要改善梯度消失需要搭配優化器使用，方程式如下:\\
 $$\sigma^{'}(x)=\sigma(x)[1-\sigma(x)]$$
-\begin{figure}
+\begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=16cm]{SigmoidFunction}
 \caption{\Large SigmoidFunction}\label{SigmoidFunction}
@@ -576,7 +576,7 @@ reward function的值：取決於策略，可應用各種算法optimize$\theta$�
 $$J(\theta) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) V^\pi(s) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a)$$\\
-\subsection{Proof Policy Gradient Theorem}
+\subsection{Policy Gradient理論與證明}
 計算$\nabla_\theta J(\theta)$ on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\
  Policy gradient theorem：為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\
  
