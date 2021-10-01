@@ -622,7 +622,6 @@ $\nabla_\theta J(\theta)
 $= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a) \frac{\nabla_\theta \pi_\theta(a \vert s)}{\pi_\theta(a \vert s)} $\\[5pt]
 $= \mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  \scriptstyle{\text{;因為} (\ln x)' = 1/x}$
 \\[5pt]
-\subsection{Policy Gradient Theorem}
 Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
 $g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$\\[5pt]
 \begin{Large}{$\psi_t$ 可能方法為下列:}\end{Large}
