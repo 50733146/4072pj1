@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  30 SEP 2021 23:34
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  1 OCT 2021 22:47
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
@@ -1997,16 +1997,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--41
 [57]
 File: ./../images/pong2_RvsNR.png Graphic file (type bmp)
 <./../images/pong2_RvsNR.png>
- [58]
-File: ./../images/pong.png Graphic file (type bmp)
-<./../images/pong.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
-[59] [60]
-Overfull \hbox (5.28113pt too wide) in paragraph at lines 83--84
+[58]
+File: ./../images/pong.png Graphic file (type bmp)
+<./../images/pong.png>
+ [59]
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+[60]
+Overfull \hbox (5.28113pt too wide) in paragraph at lines 85--86
 []\TU/TimesNewRoman(0)/m/n/14 remoteApi.dll\TU/標楷體(0)/m/n/14 、| \TU/TimesNewRom
 an(0)/m/n/14 remoteApi.dylib \TU/標楷體(0)/m/n/14 或 \TU/TimesNewRoman(0)/m/n/14 re
 moteApi.so (\TU/標楷體(0)/m/n/14 依 序 適 用 於\TU/TimesNewRoman(0)/m/n/14 :Windows\TU/
@@ -2014,17 +2019,17 @@ moteApi.so (\TU/標楷體(0)/m/n/14 依 序 適 用 於\TU/TimesNewRoman(0)/m/n/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
