@@ -41,7 +41,7 @@
 \contentsline {section}{\numberline {6.3}訓練程式的運作}{57}{section.6.3}%
 \contentsline {section}{\numberline {6.4}訓練算法與參數比較}{59}{section.6.4}%
 \contentsline {section}{\numberline {6.5}CoppeliaSim RemoteAPI}{60}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Remote API模組及動態連結函示庫}{60}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.1}Remote API模組及動態連結函示庫}{61}{subsection.6.5.1}%
 \contentsline {subsection}{\numberline {6.5.2}Remote API埠使用}{61}{subsection.6.5.2}%
 \contentsline {section}{\numberline {6.6}Open AI Gym自定義環境}{61}{section.6.6}%
 \contentsline {section}{\numberline {6.7}總結}{62}{section.6.7}%
