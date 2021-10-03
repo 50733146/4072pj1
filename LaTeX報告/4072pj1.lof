@@ -44,17 +44,18 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程}}{58}{figure.6.3}%
 \contentsline {figure}{\numberline {6.4}{\ignorespaces \Large 比較中斷後訓練差異}}{59}{figure.6.4}%
 \contentsline {figure}{\numberline {6.5}{\ignorespaces \Large 各版本差異}}{60}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces \Large pong1與1.2調整後}}{61}{figure.6.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 現有研究流程與未來展望}}{63}{figure.7.1}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 現有研究流程與未來展望}}{64}{figure.7.1}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces \Large 動態連結庫錯誤}}{64}{figure.8.1}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces \Large 程式讀不到ffmpeg}}{65}{figure.8.2}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces \Large 進階系統設定}}{66}{figure.8.3}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces \Large 環境變數}}{66}{figure.8.4}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces \Large 編輯環境變數}}{67}{figure.8.5}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces \Large ffmpeg成功執行}}{68}{figure.8.6}%
-\contentsline {figure}{\numberline {8.7}{\ignorespaces \Large 錄製後，影片無法開啟}}{68}{figure.8.7}%
-\contentsline {figure}{\numberline {8.8}{\ignorespaces \Large 原始設定}}{69}{figure.8.8}%
-\contentsline {figure}{\numberline {8.9}{\ignorespaces \Large 修正後設定}}{69}{figure.8.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces \Large 編譯流程}}{74}{figure.Alph0.10}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces \Large 動態連結庫錯誤}}{65}{figure.8.1}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces \Large 程式讀不到ffmpeg}}{66}{figure.8.2}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces \Large 進階系統設定}}{67}{figure.8.3}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces \Large 環境變數}}{67}{figure.8.4}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces \Large 編輯環境變數}}{68}{figure.8.5}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces \Large ffmpeg成功執行}}{69}{figure.8.6}%
+\contentsline {figure}{\numberline {8.7}{\ignorespaces \Large 錄製後，影片無法開啟}}{69}{figure.8.7}%
+\contentsline {figure}{\numberline {8.8}{\ignorespaces \Large 原始設定}}{70}{figure.8.8}%
+\contentsline {figure}{\numberline {8.9}{\ignorespaces \Large 修正後設定}}{70}{figure.8.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces \Large 編譯流程}}{75}{figure.Alph0.10}%
 \contentsfinish 
