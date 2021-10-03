@@ -544,7 +544,7 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \end{figure}
 $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$
 \newpage
-\section{Policy Gradient}
+\section{Policy Gradient理論與證明}
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{policy gradient原理}
@@ -552,78 +552,30 @@ $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\
 \label{Policy Gradient原理}
 \end{center}
 \end{figure}
-\hspace{-1.5em}$\pi$：policy\\
-s：States\\
-a：Actions\\
-r：Rewards\\
-$S_t,A_t,R_t$：一個軌跡時間步長't'的State,Action and Reward \\
-$\gamma$：Discount Factor;懲罰不確定的未來reward\\
-$G_t$：Return;Discounted future reward$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$\\
-$P(s', r \vert s, a)$：伴隨著現在的a和r的state前往下一個state's'的轉移機率矩陣(單階)\\
-$\pi(a \vert s)$：隨機策略(agent的行為策略)\\
-$\pi_\theta(.)$：被$\theta$參數化的策略\\
+
+Policy Gradient主要目的是直接對決策進行建模與優化。該決策(policy)通常使用參數化函數建模，獎勵（目標）函數的值取決於此決策，可以應用各種算法來優化，以獲得最佳獎勵。(參數化：當軟體建置於一給定環境時，再依該環境的實際需求填選參數，即可成為適合該環境。)\\
+參數介紹[\ref{R.Policy Gradient}]:
+$\pi$：policy\\
+s：狀態(States)。\\
+a：動作(Actions)。\\
+r：獎勵(Rewards)。\\
+$S_t,A_t,R_t$：一個軌跡時間步長't'的State,Action and Reward。 \\
+$\gamma$：衰減因子(Discount Factor);懲罰未來的不確定獎勵(reward)。\\
+$G_t$：回傳衰減後的未來獎勵(Discounted future reward)$G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$\\
+$P(s', r \vert s, a)$：伴隨著現在狀態(state)的a和r，前往下一個狀態s'的轉移機率矩陣(單階)。\\
+$\pi(a \vert s)$：隨機策略(agent的行為策略)。\\
 $\mu(s)$：確定的策略;我們還使用不同的字母將其標記為$ \pi（s）$，以提供更好的區分，以便我們可以輕鬆判斷策略是隨機的還是具有確定性的\\
-$V(s)$：'狀態值函數'測量state的預期收益(報酬率)\\
+$V(s)$：'狀態值函數'測量狀態的預期收益(報酬率)\\
 $V^\pi(s)$：根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\
-$Q(s, a)$：'行為值函數'評估一對state and action 的預期收益\\
-$Q_w(.)$：被w參數化的行為值函數\\
+$Q(s, a)$：行為值函數，評估一對狀態和動作的預期收益。\\
 $Q^\pi(s, a)$：根據policy的行為值函數$Q^\pi(s, a) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s, A_t = a]$\\
-$A(s, a)$：Advantage Function,$A(s, a) = Q(s, a) - V(s)$;像是另一種版本的Q-value;由狀態值為基準降低方差\\
-參數化：待軟體建置於一給定環境時，再依該環境的實際需求填選參數，即可成為適合該環境的軟體。\\
-強化學習的目標：為agent找到最優的行為策略以獲得最優的報酬\\
-Policy Gradient的目標：直接建模和優化策略\\
-reward function的值：取決於策略，可應用各種算法optimize$\theta$，已獲得最佳reward\\[5pt]
+$A(s, a)$：Advantage Function,$A(s, a) = Q(s, a) - V(s)$：像是另一種版本的Q-value，由狀態值為基準降低方差。\\
+reward function的值：取決於策略，可應用各種算法優化$\theta$，獲得最佳獎勵。\\[5pt]
 $$J(\theta) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) V^\pi(s) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a)$$\\
-\subsection{Policy Gradient理論與證明}
-計算$\nabla_\theta J(\theta)$ on 動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\
- Policy gradient theorem：為目標函式的導數重新建構，使它不涉及$d^\pi(.)$的導數。\\
- 
-$$\nabla_\theta J(\theta) 
-= \nabla_\theta \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \pi_\theta(a \vert s) $$
-$$\propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s)$$
-$$\nabla_\theta J(\theta)
-= \nabla_\theta V^\pi(s_0)= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a) \frac{\nabla_\theta \pi_\theta(a \vert s)}{\pi_\theta(a \vert s)}$$
-$$=\mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  {\text{; Because } (\ln x)' = 1/x}$$
-$\ast$ 當狀態和動作分布都遵循策略$\pi_{\theta}$時$\mathbb{E}_{\pi}$表示$\mathbb{E}_{s\sim d\pi,a\sim\pi\theta}$\\[5pt]
-Proof $\nabla_\theta J(\theta)= \nabla_\theta V^\pi(s_0)$ 
-$ \nabla_\theta V^\pi(s) $\\[5pt]
-$= \nabla_\theta (\sum_{a \in \mathcal{A}} \pi_\theta(a \vert s)Q^\pi(s, a))$\\[5pt]
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s) {\nabla_\theta Q^\pi(s, a)} \Big)  \scriptstyle{\text{; 衍生規則}} $\\
-$= \sum_{a \in \mathcal{A}} \Big( \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a) + \pi_\theta(a \vert s){\sum_{s'} P(s' \vert s,a) \nabla_\theta V^\pi(s')} \Big)  \scriptstyle{\text{;因為 }  P(s' \vert s, a) = \sum_r P(s', r \vert s, a)}$
-Let $\phi(s) = \sum_{a \in \mathcal{A}} \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)$ ; 當
-K = 1，我們把所有可能動作總結到目標狀態的轉移機率$\rho^\pi(s \to x, k+1) = \sum_{s'} \rho^\pi(s \to s', k) \rho^\pi(s' \to x, 1)$\\[5pt]
-$ {\nabla_\theta V^\pi(s)} $\\[5pt]
-$= \phi(s) + \sum_a \pi_\theta(a \vert s) \sum_{s'} P(s' \vert s,a) {\nabla_\theta V^\pi(s')}$ \\[5pt]
-$= \phi(s) + \sum_{s'} \sum_a \pi_\theta(a \vert s) P(s' \vert s,a) {\nabla_\theta V^\pi(s')}$ \\[5pt]
-$=\phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) {\nabla_\theta V^\pi(s')}$ \\[5pt]
-$= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) {\nabla_\theta V^\pi(s')}$ \\[5pt]
-$= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1){[ \phi(s') + \sum_{s''} \rho^\pi(s' \to s'', 1) \nabla_\theta V^\pi(s'')]}$ \\[5pt]
-$= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2){\nabla_\theta V^\pi(s'')} $
-\\
-$\scriptstyle{\text{ ; 考慮 }s'\text{作為中間點}s \to s''}$\\[5pt]
-$= \phi(s) + \sum_{s'} \rho^\pi(s \to s', 1) \phi(s') + \sum_{s''} \rho^\pi(s \to s'', 2)\phi(s'') $
-\\
-$+ \sum_{s'''} \rho^\pi(s \to s''', 3){\nabla_\theta V^\pi(s''')}$ \\[5pt]
-$= \dots \scriptstyle{\text{;反覆展開的部分 }\nabla_\theta V^\pi(.)}$ \\[5pt]
-$= \sum_{x\in\mathcal{S}}\sum_{k=0}^\infty \rho^\pi(s \to x, k) \phi(x)$
-$\nabla_\theta J(\theta)
-= \nabla_\theta V^\pi(s_0)  \scriptstyle{\text{;從隨機狀態開始} s_0} $\\[5pt]
-$= \sum_{s}{\sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)} \phi(s) \scriptstyle{\text{; Let }{\eta(s) = \sum_{k=0}^\infty \rho^\pi(s_0 \to s, k)}} $\\[5pt]
-$= \sum_{s}\eta(s) \phi(s) 
-= \Big( {\sum_s \eta(s)} \Big)\sum_{s}\frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  
-\scriptstyle{\text{; 歸一化} \eta(s), s\in\mathcal{S} \text{ 成為概率分佈}}$\\[5pt]
-$\propto \sum_s \frac{\eta(s)}{\sum_s \eta(s)} \phi(s)  \scriptstyle{\sum_s \eta(s)\text{是一個常數}}$ \\[5pt]
-$= \sum_s d^\pi(s) \sum_a \nabla_\theta \pi_\theta(a \vert s)Q^\pi(s, a)  \scriptstyle{d^\pi(s) = \frac{\eta(s)}{\sum_s \eta(s)}\text{ 是固定分佈}}$
 
-$\nabla_\theta J(\theta)
-\propto \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} Q^\pi(s, a) \nabla_\theta \pi_\theta(a \vert s) $\\[5pt]
-$= \sum_{s \in \mathcal{S}} d^\pi(s) \sum_{a \in \mathcal{A}} \pi_\theta(a \vert s) Q^\pi(s, a) \frac{\nabla_\theta \pi_\theta(a \vert s)}{\pi_\theta(a \vert s)} $\\[5pt]
-$= \mathbb{E}_\pi [Q^\pi(s, a) \nabla_\theta \ln \pi_\theta(a \vert s)]  \scriptstyle{\text{;因為} (\ln x)' = 1/x}$
-\\[5pt]
-\subsection{Policy Gradient Theorem}
-Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
+Policy Gradient 通過反覆評估梯度來最大化預期的總獎勵(reward)\\[5pt]
 $g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$\\[5pt]
 \begin{Large}{$\psi_t$ 可能方法為下列:}\end{Large}
 \begin{itemize}
@@ -634,10 +586,14 @@ $g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0
 \item $A^\pi(s_t,a_t)$：Advantage Function。
 \item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$：TD residual。
 \end{itemize}
-公式使用定義：\\[5pt]
+公式使用定義[\ref{R.Policy Gradient}]：\\[5pt]
 $V^\pi(s_t) = \mathbb{E}_{s_{t}+1:\infty,a_{t}:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $Q^\pi(s_t,a_t) = \mathbb{E}_{s_{t}+1:\infty_,a_{t}+1:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $A^\pi(s_t,a_t) = Q^\pi(s_t,a_t)-V^\pi(s_t)(Advantage Function)$\\[5pt]
+
+計算$\nabla_\theta J(\theta)$ 當動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\
+
+
 \subsection{Actor Critic}
 原始的policy gradient沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變\\[5pt]
 $$g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$$\\[5pt]
@@ -669,7 +625,7 @@ $$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
 \section{類神經網路中強化學習的應用}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[scale=0.74]{ network}
+\includegraphics[scale=0.74]{network}
 \caption{實際兩層神經網路}
 \end{center}
 \end{figure}
