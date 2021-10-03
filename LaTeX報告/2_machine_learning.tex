@@ -544,7 +544,7 @@ $$= \sum_{a\in A}\pi (a|s)q^{\pi}(s, a)$$
 \end{figure}
 $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\pi}(s', a')$$
 \newpage
-\section{Policy Gradient理論與證明}
+\section{Policy Gradient理論}
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{policy gradient原理}
@@ -554,7 +554,7 @@ $$q^\pi(s, a)=R(s, a)+\gamma\sum_{s'\in S}P(s'|s, a)\sum_{a'\in A}\pi(a'|s')q^{\
 \end{figure}
 
 Policy Gradient主要目的是直接對決策進行建模與優化。該決策(policy)通常使用參數化函數建模，獎勵（目標）函數的值取決於此決策，可以應用各種算法來優化，以獲得最佳獎勵。(參數化：當軟體建置於一給定環境時，再依該環境的實際需求填選參數，即可成為適合該環境。)\\
-參數介紹[\ref{R.Policy Gradient}]:
+參數介紹[\ref{R.Policy Gradient}]:\\
 $\pi$：policy\\
 s：狀態(States)。\\
 a：動作(Actions)。\\
@@ -568,8 +568,8 @@ $\mu(s)$：確定的策略;我們還使用不同的字母將其標記為$ \pi（
 $V(s)$：'狀態值函數'測量狀態的預期收益(報酬率)\\
 $V^\pi(s)$：根據policy的狀態值函數$V^\pi (s) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s]$\\
 $Q(s, a)$：行為值函數，評估一對狀態和動作的預期收益。\\
-$Q^\pi(s, a)$：根據policy的行為值函數$Q^\pi(s, a) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s, A_t = a]$\\
-$A(s, a)$：Advantage Function,$A(s, a) = Q(s, a) - V(s)$：像是另一種版本的Q-value，由狀態值為基準降低方差。\\
+$Q^\pi(s, a)$：根據policy的行為值函數$Q^\pi(s, a) = \mathbb{E}_{a\sim \pi} [G_t \vert S_t = s, A_t = a]$。\\
+$A(s, a)$：Advantage Function，$A(s, a) = Q(s, a) - V(s)$：像是另一種版本的Q-value，由狀態值為基準降低方差。\\
 reward function的值：取決於策略，可應用各種算法優化$\theta$，獲得最佳獎勵。\\[5pt]
 $$J(\theta) 
 = \sum_{s \in \mathcal{S}} d^\pi(s) V^\pi(s) 
@@ -591,11 +591,8 @@ $V^\pi(s_t) = \mathbb{E}_{s_{t}+1:\infty,a_{t}:\infty}[\sum_{l=0}^\infty r_t+l]$
 $Q^\pi(s_t,a_t) = \mathbb{E}_{s_{t}+1:\infty_,a_{t}+1:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
 $A^\pi(s_t,a_t) = Q^\pi(s_t,a_t)-V^\pi(s_t)(Advantage Function)$\\[5pt]
 
-計算$\nabla_\theta J(\theta)$ 當動作選擇和目標選擇行為之後狀態的靜態分布，而導致計算困難。\\
-
-
 \subsection{Actor Critic}
-原始的policy gradient沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變\\[5pt]
+原始的policy gradient沒有偏差，但方差大;所以提出了許多以下算法來減少方差，同時保持偏差不變：\\[5pt]
 $$g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$$\\[5pt]
 Actor-Critic：減少原始政策中的梯度方差包括兩個模型\\[5pt]
 Critic：更新值函數參數w，根據算法，它可以是操作值$ Q_w$（$a \vert s$）或狀態值$V_w$（$s$） \\[5pt]
@@ -621,7 +618,24 @@ $$w\leftarrow w+\alpha_w \delta \nabla_w Q_w(s,a) $$
 \item 更新 $a\leftarrow a'$ 和 $ s \leftarrow s'$ ; 學習率：$a_\theta$ 和 $a_w$。
 \end{enumerate}   
 \end{itemize}\newpage
+
 \iffalse
+\subsection{Policy Gradient Theorem}
+Policy Gradient 通過反覆估計梯度來最大化預期的總reward\\[5pt]
+$g = \nabla_\theta\mathbb{E}[\sum_{t=0}^\infty r_t]$ ; $g = \mathbb{E}[\sum_{t=0}^\infty\psi_t\nabla_\theta log\pi_\theta(a_t \vert s_t)]$\\[5pt]
+\begin{Large}{$\psi_t$ 可能方法為下列:}\end{Large}
+\begin{itemize}
+\item $\sum_{t=0}^\infty r$：決策軌跡的獎勵總和。
+\item $\sum_{t^{'}=t}^\infty r^{'}$: 根據動作(action)的獎勵(reward) $a_t$。\\
+標準表示式：$\sum_{t^{'}=t}^\infty r_t^{'}-b(s_t)$
+\item $Q^\pi(s_t,a_t)$：state-action value function。
+\item $A^\pi(s_t,a_t)$：Advantage Function。
+\item $r_t+V^\pi(s_t+1)-V^\pi(s_t)$：TD residual。
+\end{itemize}
+公式使用定義：\\[5pt]
+$V^\pi(s_t) = \mathbb{E}_{s_{t}+1:\infty,a_{t}:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
+$Q^\pi(s_t,a_t) = \mathbb{E}_{s_{t}+1:\infty_,a_{t}+1:\infty}[\sum_{l=0}^\infty r_t+l]$\\[5pt]
+$A^\pi(s_t,a_t) = Q^\pi(s_t,a_t)-V^\pi(s_t)(Advantage Function)$\\[5pt]
 \section{類神經網路中強化學習的應用}
 \begin{figure}[hbt!]
 \begin{center}

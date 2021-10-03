@@ -22,29 +22,30 @@
 \contentsline {figure}{\numberline {2.16}{\ignorespaces $q^{\pi }$程序圖}}{32}{figure.2.16}%
 \contentsline {figure}{\numberline {2.17}{\ignorespaces \Large Policy Gradient原理}}{33}{figure.2.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \Large ATARI Pong}}{38}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \Large ATARI Pong}}{37}{figure.3.1}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \Large 組合圖}}{39}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \Large Y軸皮帶固定座}}{40}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \Large 連結固定座}}{40}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces \Large CoppeliaSim Logo}}{41}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces \Large CoppeliaSim 工具列}}{41}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces \Large CoppeliaSim 工具列(續)}}{41}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces \Large OpenCV 及Python logo}}{42}{figure.4.7}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces \Large HSV色彩空間}}{43}{figure.4.8}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖}}{45}{figure.4.9}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景}}{45}{figure.4.10}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \Large 組合圖}}{38}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \Large Y軸皮帶固定座}}{39}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \Large 連結固定座}}{39}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \Large CoppeliaSim Logo}}{40}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \Large CoppeliaSim 工具列}}{40}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \Large CoppeliaSim 工具列(續)}}{40}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \Large OpenCV 及Python logo}}{41}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \Large HSV色彩空間}}{42}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \Large 場景原圖}}{44}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \Large 顏色過濾後的場景}}{44}{figure.4.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy}}{49}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large client To flask}}{53}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total}}{54}{figure.5.3}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \Large clientProxy}}{48}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \Large client To flask}}{52}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \Large total}}{53}{figure.5.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large Pygame模組編寫}}{56}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces \Large Pymunk模組編寫}}{56}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程}}{58}{figure.6.3}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces \Large 比較中斷後訓練差異}}{59}{figure.6.4}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces \Large 各版本差異}}{60}{figure.6.5}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces \Large pong1與1.2調整後}}{61}{figure.6.6}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \Large Pygame模組編寫}}{55}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \Large Pymunk模組編寫}}{55}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \Large 強化學習訓練流程}}{57}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces \Large 比較中斷後訓練差異}}{58}{figure.6.4}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces \Large 各版本差異}}{59}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces \Large pong1與1.2調整後數據比較}}{60}{figure.6.6}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces \Large pong2與pong1.2長時間訓練數據}}{61}{figure.6.7}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces \Large 現有研究流程與未來展望}}{64}{figure.7.1}%
 \addvspace {10\p@ }

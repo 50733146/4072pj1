@@ -55,12 +55,12 @@
 \begin{table}[hbt!]
 \center\large
 \setlength{\tabcolsep}{0.75cm}{
-\begin{tabular}{|c|c|c|}
-\hline  版本名稱 & 標示顏色 & 參考來源\\
-\hline  pong1 &  紅色 & [\ref{R.pong1}]\\
-\hline  pong1.1 &  藍色 & [\ref{R.pong1.1}]\\
-\hline  pong1.2 &  橘色 & [\ref{R.pong1}]\\
-\hline  pong2 & 綠色 & [\ref{R.pong2}] \\
+\begin{tabular}{|c|c|c|c|}
+\hline  版本名稱 & 標示顏色 & 啟動函數 & 參考來源\\
+\hline  pong1 &  紅色 & sigmoid & [\ref{R.pong1}]\\
+\hline  pong1.1 &  藍色 & sigmoid & [\ref{R.pong1.1}]\\
+\hline  pong1.2 &  橘色 & sigmoid & [\ref{R.pong1}]\\
+\hline  pong2 & 綠色 & softmax & [\ref{R.pong2}] \\
 \hline
 \end{tabular}}
 \caption{\Large 版本標示}
@@ -70,18 +70,45 @@
 \begin{center}
 \includegraphics[width=15cm]{pong}
 \caption{\Large 各版本差異}
-\label{fig.比較中斷數據}
+\label{fig.各版本差異}
 \end{center}
 \end{figure}
-觀察後發現，pong2版本的訓練結果得分較高，pong1.2的訓練結果為次高，pong1及pong1.1的版本沒有收斂，訓練對打的表現沒有進步的跡象，參數還需做調整及測試，pong2及pong1.2為主要選擇訓練演算法。接下來測試pong1的學習率調整成0.0001，pong1.2的學習率上調到0.001，以pong2版本當作對照(圖.\ref{fig.比較中斷數據})，
+觀察後發現，pong2版本的訓練結果得分最高，pong1.2的訓練結果為次高，pong1及pong1.1的版本沒有收斂，訓練對打的表現沒有進步的跡象，參數還需做調整及測試，pong2及pong1.2為主要選擇訓練演算法。接下來測試pong1的學習率調整成0.0001，pong1.2的學習率上調到0.001，以pong2版本當作對照(圖.\ref{fig.比較中斷數據})，同樣以3000次訓練當作參考依據，測試結果三者相當接近。因為訓練時間及設備限制，修正後的pong1與pong1.2版本所以擇一與pong2進行長時間訓練比較，因此選用pong1.2版本。
 
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=15cm]{pong_test}
-\caption{\Large pong1與1.2調整後}
-\label{fig.比較中斷數據}
+\caption{\Large pong1與1.2調整後數據比較}
+\label{fig.調整後數據比較}
 \end{center}
 \end{figure}
+
+\begin{flushleft}
+電腦規格:\\
+\end{flushleft}
+\begin{enumerate}[1.]
+\item 研究室桌上型電腦(長時間訓練所使用):\\
+Windows10 專業版 2004\\
+CPU：Intel i7-7700 3.60GHZ\\
+RAM：16GB\\
+GPU：NVDIA GTX1050
+\item 個人筆記型電腦(3000次訓練數據為此設備訓練，短時間測試用):
+Windows10 家用版 2004\\
+CPU：Intel i7-8750H 2.20GHZ\\
+RAM：8GB\\
+GPU：NVDIA GTX1050 Ti\\
+
+總訓練時數約336\textasciitilde 350小時(圖.\ref{fig.pong2與pong1.2長時間訓練比較})，pong2的數據均方誤差(MSE)數據較穩定，由於訓練中無法得知當下是處於數據波動的較優或較差的狀態，若要中斷訓練則有可能剛好處於波動的較差的狀態，因此選擇pong2的版本當作訓練算法較為穩定。
+\end{enumerate}
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[width=15cm]{pong2_vs_pong1.2_reward}
+\caption{\Large pong2與pong1.2長時間訓練數據}
+\label{fig.pong2與pong1.2長時間訓練比較}
+\end{center}
+\end{figure}
+
+
 
 \section{CoppeliaSim RemoteAPI}
 在進行強化學習時主要是透過CoppeliaSim中的Remote API 函數來取得模擬場景中所需要的資訊，並在進行訓練後再回傳到CoppeloaSim做控制的動作。\\
