@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  4 OCT 2021 01:38
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2021.4.30)  7 OCT 2021 00:01
 entering extended mode
 **./4072pj1.tex
 (4072pj1.tex
@@ -659,26 +659,7 @@ Package: xeCJK-listings 2020/02/18 v3.8.2 xeCJK patch file for listings
 LaTeX Warning: Unused global option(s):
     [14pt].
 
-(4072pj1.aux
-
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `2' multiply defined.
-
-
-LaTeX Warning: Label `3' multiply defined.
-
-
-LaTeX Warning: Label `4' multiply defined.
-
-
-LaTeX Warning: Label `5' multiply defined.
-
-
-LaTeX Warning: Label `6' multiply defined.
-
-)
+(4072pj1.aux)
 \openout1 = `4072pj1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -1160,9 +1141,15 @@ Overfull \hbox (0.363pt too wide) detected at line 10
  []
 
 
+LaTeX Warning: Reference `OGD' on page vii undefined on input line 11.
+
+
 Overfull \hbox (0.363pt too wide) detected at line 11
  []\TU/lmr/m/n/17.28 13
  []
+
+
+LaTeX Warning: Reference `OGD' on page vii undefined on input line 12.
 
 
 Overfull \hbox (0.363pt too wide) detected at line 12
@@ -1170,9 +1157,15 @@ Overfull \hbox (0.363pt too wide) detected at line 12
  []
 
 
+LaTeX Warning: Reference `OGD2' on page vii undefined on input line 13.
+
+
 Overfull \hbox (0.363pt too wide) detected at line 13
  []\TU/lmr/m/n/17.28 16
  []
+
+
+LaTeX Warning: Reference `OGD2' on page vii undefined on input line 14.
 
 
 Overfull \hbox (0.363pt too wide) detected at line 14
@@ -1180,9 +1173,15 @@ Overfull \hbox (0.363pt too wide) detected at line 14
  []
 
 
+LaTeX Warning: Reference `OGD2' on page vii undefined on input line 15.
+
+
 Overfull \hbox (0.363pt too wide) detected at line 15
  []\TU/lmr/m/n/17.28 19
  []
+
+
+LaTeX Warning: Reference `OGD2' on page vii undefined on input line 16.
 
 
 Overfull \hbox (0.363pt too wide) detected at line 16
@@ -1393,6 +1392,15 @@ Overfull \hbox (0.363pt too wide) detected at line 61
  [9] (1_introduction.tex
 Chapter 1.
 
+LaTeX Warning: Reference `fig.冰球機' on page 1 undefined on input line 7.
+
+
+LaTeX Warning: Reference `fig.模擬冰球機' on page 1 undefined on input line 7.
+
+
+LaTeX Warning: Reference `fig.pong_gym' on page 1 undefined on input line 7.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
@@ -1432,6 +1440,9 @@ Overfull \hbox (14.22635pt too wide) in paragraph at lines 5--6
  []
 
 
+LaTeX Warning: Reference `類神經網路架構' on page 5 undefined on input line 10.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
@@ -1442,6 +1453,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
  []
 
 
+LaTeX Warning: Reference `類神經網路架構' on page 5 undefined on input line 14.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
@@ -1449,6 +1463,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 [5
 
 ]
+
+LaTeX Warning: Reference `類神經網路架構' on page 6 undefined on input line 16.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
@@ -1457,6 +1475,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
+
+
+LaTeX Warning: Reference `類神經網路關係' on page 6 undefined on input line 20.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
@@ -1471,7 +1492,19 @@ Overfull \hbox (14.22635pt too wide) in paragraph at lines 25--26
  [] 
  []
 
+
+LaTeX Warning: Reference `SigmoidFunction' on page 7 undefined on input line 35
+.
+
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 37.
+
+LaTeX Warning: Reference `SigmoidFunction' on page 7 undefined on input line 40
+.
+
+
+LaTeX Warning: Reference `SigmoidFunction' on page 7 undefined on input line 40
+.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
@@ -1542,14 +1575,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
  []
 
 [12]
+
+LaTeX Warning: Reference `OGD' on page 13 undefined on input line 124.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
 File: ./../images/Error_surface-2.png Graphic file (type bmp)
 <./../images/Error_surface-2.png>
+
+LaTeX Warning: Reference `OGD' on page 13 undefined on input line 129.
+
+
+LaTeX Warning: Reference `Error_surface-2' on page 13 undefined on input line 1
+34.
+
+
+LaTeX Warning: Reference `theta_vector' on page 13 undefined on input line 134.
+
+
 File: ./../images/theta_vector.png Graphic file (type bmp)
 <./../images/theta_vector.png>
+
+LaTeX Warning: Reference `OGD' on page 13 undefined on input line 139.
+
 [13]
 Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
@@ -1561,14 +1612,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--157
  []
 
 [14]
+
+LaTeX Warning: Reference `OGD2' on page 15 undefined on input line 173.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 [15]
+
+LaTeX Warning: Reference `OGD2' on page 16 undefined on input line 186.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
+
+
+LaTeX Warning: Reference `sgd_fluctuation' on page 16 undefined on input line 1
+91.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 191--192
@@ -1577,7 +1640,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
 File: ./../images/sgd_fluctuation.png Graphic file (type bmp)
 <./../images/sgd_fluctuation.png>
+
+LaTeX Warning: Reference `OGD2' on page 16 undefined on input line 196.
+
 [16]
+
+LaTeX Warning: Reference `OGD2' on page 17 undefined on input line 209.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
@@ -1585,6 +1655,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--213
 Missing character: There is no ∗ in font Times New Roman/OT:script=latn;languag
 e=dflt;!
 [17]
+
+LaTeX Warning: Reference `OGD2' on page 18 undefined on input line 232.
+
+
+LaTeX Warning: Reference `fig.without_momentum' on page 18 undefined on input l
+ine 233.
+
+
+LaTeX Warning: Reference `fig.with_momentum' on page 18 undefined on input line
+ 233.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 232--234
 
  []
@@ -1592,12 +1674,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 232--234
 File: ./../images/without.png Graphic file (type bmp)
 <./../images/without.png>
 
-Underfull \hbox (badness 2237) in paragraph at lines 243--243
-[]\TU/標楷體(0)/m/n/14.4 圖\TU/lmr/m/n/14.4 . 2.9: []SGD without momen-
+LaTeX Warning: Reference `OGD2' on page 18 undefined on input line 243.
+
+
+LaTeX Warning: Reference `OGD2' on page 18 undefined on input line 243.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]\TU/標楷體(0)/m/n/14.4 圖\TU/lmr/m/n/14.4 . 2.9: []SGD without
  []
 
 File: ./../images/with.png Graphic file (type bmp)
 <./../images/with.png>
+
+LaTeX Warning: Reference `OGD2' on page 18 undefined on input line 250.
+
 [18]
 Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
@@ -1605,10 +1696,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
 File: ./../images/NAG.jpg Graphic file (type bmp)
 <./../images/NAG.jpg>
-[19] [20] [21]
+
+LaTeX Warning: Reference `OGD2' on page 19 undefined on input line 270.
+
+
+LaTeX Warning: Reference `NAG' on page 19 undefined on input line 274.
+
+
+LaTeX Warning: Reference `OGD2' on page 19 undefined on input line 275.
+
+[19] [20]
+
+LaTeX Warning: Reference `OGD2' on page 21 undefined on input line 294.
+
+[21]
+
+LaTeX Warning: Reference `OGD2' on page 22 undefined on input line 328.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 327--330
 
  []
+
+
+LaTeX Warning: Reference `OGD2' on page 22 undefined on input line 339.
 
 [22] [23]
 Underfull \hbox (badness 10000) in paragraph at lines 376--377
@@ -1630,9 +1741,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 386--388
 
  []
 
+
+LaTeX Warning: Reference `各領域與機器學習應用範圍' on page 25 undefined on input line 389.
+
+
 File: ./../images/Faces_of_Reinforcement_Learning.png Graphic file (type bmp)
 <./../images/Faces_of_Reinforcement_Learning.png>
 [25]
+
+LaTeX Warning: Reference `RL structur' on page 26 undefined on input line 402.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 401--403
 
  []
@@ -1648,6 +1767,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 411--413
 [26]
 File: ./../images/The_entire_interaction_process.png Graphic file (type bmp)
 <./../images/The_entire_interaction_process.png>
+
+
+LaTeX Warning: Reference `整個互動過程' on page 27 undefined on input line 421.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 421--424
 
@@ -1713,6 +1836,11 @@ File: ./../images/Q_pi function.jpg Graphic file (type bmp)
  [32]
 File: ./../images/policy gradient原理.png Graphic file (type bmp)
 <./../images/policy gradient原理.png>
+
+
+LaTeX Warning: Reference `R.Policy Gradient' on page 33 undefined on input line
+ 557.
+
 Missing character: There is no （ in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ） in font [lmroman12-regular]:mapping=tex-text;!
 
@@ -1731,6 +1859,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 556--574
 Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
+
+
+LaTeX Warning: Reference `R.Policy Gradient' on page 34 undefined on input line
+ 589.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 589--593
@@ -1764,6 +1896,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
+
+LaTeX Warning: Reference `fig.pong' on page 37 undefined on input line 6.
+
 File: ./../images/pong_gym.png Graphic file (type bmp)
 <./../images/pong_gym.png>
 [37
@@ -1772,6 +1907,15 @@ File: ./../images/pong_gym.png Graphic file (type bmp)
 Chapter 4.
 File: ./../images/model.png Graphic file (type bmp)
 <./../images/model.png>
+
+LaTeX Warning: Reference `model' on page 38 undefined on input line 12.
+
+
+LaTeX Warning: Reference `axialseat' on page 38 undefined on input line 12.
+
+
+LaTeX Warning: Reference `connectSeat' on page 38 undefined on input line 12.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
@@ -1822,14 +1966,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
 
+
+LaTeX Warning: Reference `RGBtoHSV' on page 41 undefined on input line 90.
+
 File: ./../images/HSV.png Graphic file (type bmp)
 <./../images/HSV.png>
 [41] [42]
+
+LaTeX Warning: Reference `filter' on page 43 undefined on input line 132.
+
 File: ./../images/origin.png Graphic file (type bmp)
 <./../images/origin.png>
 File: ./../images/filter.png Graphic file (type bmp)
 <./../images/filter.png>
- [43] [44]) (5_server.tex
+[43] [44]) (5_server.tex
 Chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
@@ -1947,6 +2097,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
+
+LaTeX Warning: Reference `fig.pong_pygame' on page 54 undefined on input line 5
+.
+
+
+LaTeX Warning: Reference `fig.airhockey_pymunk' on page 54 undefined on input l
+ine 5.
+
 File: ./../images/pong_pygame.png Graphic file (type bmp)
 <./../images/pong_pygame.png>
 [54
@@ -1972,27 +2130,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 File: ./../images/強化學習訓練流程.png Graphic file (type bmp)
 <./../images/強化學習訓練流程.png>
 
+LaTeX Warning: Reference `fig.強化學習程式流程' on page 56 undefined on input line 39.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 39--41
 
  []
 
 [56]
+
+LaTeX Warning: Reference `fig.比較中斷數據' on page 57 undefined on input line 42.
+
 File: ./../images/pong2_RvsNR.png Graphic file (type bmp)
 <./../images/pong2_RvsNR.png>
+
+LaTeX Warning: Reference `R.pong1' on page 57 undefined on input line 52.
+
+
+LaTeX Warning: Reference `R.pong1.1' on page 57 undefined on input line 52.
+
+
+LaTeX Warning: Reference `R.pong2' on page 57 undefined on input line 52.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
-[57] [58]
+[57]
+
+LaTeX Warning: Reference `fig.比較中斷數據' on page 58 undefined on input line 54.
+
+
+LaTeX Warning: Reference `fig.比較中斷數據' on page 58 undefined on input line 54.
+
+
+LaTeX Warning: Reference `fig.比較中斷數據' on page 58 undefined on input line 54.
+
+
+LaTeX Warning: Reference `R.pong1' on page 58 undefined on input line 60.
+
+
+LaTeX Warning: Reference `R.pong1.1' on page 58 undefined on input line 61.
+
+
+LaTeX Warning: Reference `R.pong1' on page 58 undefined on input line 62.
+
+
+LaTeX Warning: Reference `R.pong2' on page 58 undefined on input line 63.
+
+[58]
 File: ./../images/pong.png Graphic file (type bmp)
 <./../images/pong.png>
+
+
+LaTeX Warning: Reference `fig.比較中斷數據' on page 59 undefined on input line 76.
+
 File: ./../images/pong_test.png Graphic file (type bmp)
 <./../images/pong_test.png>
- [59]
+[59]
 Underfull \hbox (badness 10000) in paragraph at lines 95--100
 
  []
+
+
+LaTeX Warning: Reference `fig.pong2與pong1.2長時間訓練比較' on page 60 undefined on inp
+ut line 101.
 
 [60]
 File: ./../images/pong2_vs_pong1.2_reward.png Graphic file (type bmp)
@@ -2048,8 +2251,23 @@ File: ./../images/Q_dll.png Graphic file (type bmp)
 [65
 
 ]
+
+LaTeX Warning: Reference `fig.Q_ffmpeg' on page 66 undefined on input line 12.
+
 File: ./../images/Q_ffmpeg.png Graphic file (type bmp)
 <./../images/Q_ffmpeg.png>
+
+LaTeX Warning: Reference `fig.Q_ffmpeg-2' on page 66 undefined on input line 26
+.
+
+
+LaTeX Warning: Reference `fig.Q_ffmpeg-3' on page 66 undefined on input line 26
+.
+
+
+LaTeX Warning: Reference `fig.Q_ffmpeg-4' on page 66 undefined on input line 26
+.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 25--27
 
@@ -2073,6 +2291,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--53
  []
 
 [67]
+
+LaTeX Warning: Reference `fig.Q_ffmpeg-5' on page 68 undefined on input line 59
+.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
@@ -2080,11 +2303,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--60
 File: ./../images/Q_ffmpeg-5.png Graphic file (type bmp)
 <./../images/Q_ffmpeg-5.png>
 [68]
+
+LaTeX Warning: Reference `fig.ffmpeg_mp4' on page 69 undefined on input line 70
+.
+
 File: ./../images/ffmpeg_mp4.png Graphic file (type bmp)
 <./../images/ffmpeg_mp4.png>
+
+LaTeX Warning: Reference `fig.video_recorder' on page 69 undefined on input lin
+e 80.
+
 File: ./../images/video_recorder.png Graphic file (type bmp)
 <./../images/video_recorder.png>
- [69]
+[69]
 File: ./../images/修正video_recorder.png Graphic file (type bmp)
 <./../images/修正video_recorder.png>
  [70]
@@ -2342,23 +2573,32 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 340.
  (4072pj1.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 340.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 340.
-Package rerunfilecheck Info: File `4072pj1.out' has not changed.
-(rerunfilecheck)             Checksum: 6B52DD6EF79132D9B8A901658C1D2FA9;3069.
 
+
+Package rerunfilecheck Warning: File `4072pj1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `4072pj1.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  6B52DD6EF79132D9B8A901658C1D2FA9;3069.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 340.
  ) 
 Here is how much of TeX's memory you used:
- 19900 strings out of 414221
- 366360 string characters out of 2901377
+ 19891 strings out of 414221
+ 366312 string characters out of 2901377
  868045 words of memory out of 3000000
- 37053 multiletter control sequences out of 15000+200000
- 553516 words of font info for 172 fonts, out of 3000000 for 9000
+ 37042 multiletter control sequences out of 15000+200000
+ 553532 words of font info for 174 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,17n,81p,637b,1233s stack positions out of 5000i,500n,10000p,200000b,50000s
 
