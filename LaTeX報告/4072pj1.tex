@@ -39,8 +39,9 @@ left=3truecm,right=2.5truecm]{geometry}
 \voffset=-8mm %調整上下邊界
 \setlength{\parindent}{3em}%設定首行行距縮排
 \usepackage{appendix} %附錄
- \usepackage{diagbox}%引用表格
+\usepackage{diagbox}%引用表格
 \usepackage{multirow}%表格置中
+%\usepackage{number line}
 %=------------------更改標題內容----------------------=%
 \titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
 \titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{0.5em}{}[]
@@ -160,12 +161,14 @@ Application of reinforcement
 \newpage
 %=------------------圖表目錄產生----------------------=%
 \renewcommand{\listfigurename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{圖\quad 目\quad 錄 }}}
-\renewcommand{\numberline}[1]{圖. \loflabel~#1}
+\newcommand{\loflabel}{圖} %定義\loflabel 文字為圖
+\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{0.5em}}
 \listoffigures
 %\newcommand{\captioname}{圖}
 \newpage
 \renewcommand{\listtablename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{表\quad 目\quad 錄 }}}
-\renewcommand{\numberline}[1]{表. \latlabel~#1}
+\newcommand{\lotlabel}{表} %定義\lotlabel 文字為表
+\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{0.5em}}
 \listoftables
 
 \end{center}
