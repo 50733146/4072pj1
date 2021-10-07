@@ -107,7 +107,7 @@ Application of reinforcement
 110 \quad 年\quad 6\quad 月}}
 \end{titlepage}
 \newpage
-%=---------------專題製作合可證明---------------------=%抄的
+%=---------------專題製作合可證明---------------------=%
  {\renewcommand\baselinestretch{1.4}\selectfont %設定以下行距
  {\begin{center}
     {\fontsize{20pt}{2.5pt} {國立虎尾科技大學 \qquad 機械設計工程系}\\[8pt]{學生專題製作合格認可證明}\\
@@ -146,9 +146,6 @@ Application of reinforcement
 
 %=------------------------摘要-----------------------=%
 \input{abstract.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-
 \newpage
 %=------------------------誌謝----------------------=%
 \addcontentsline{toc}{chapter}{誌~~~謝}
@@ -162,10 +159,15 @@ Application of reinforcement
 \tableofcontents　　%目錄產生
 \newpage
 %=------------------圖表目錄產生----------------------=%
-\renewcommand{\listfigurename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{圖\quad 表\quad 目\quad 錄 }}}
+\renewcommand{\listfigurename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{圖\quad 目\quad 錄 }}}
+\renewcommand{\numberline}[1]{圖. \loflabel~#1}
 \listoffigures
-\newcommand{\captioname}{圖}
+%\newcommand{\captioname}{圖}
 \newpage
+\renewcommand{\listtablename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{表\quad 目\quad 錄 }}}
+\renewcommand{\numberline}[1]{表. \latlabel~#1}
+\listoftables
+
 \end{center}
 %=-------------------------內容----------------------=%
 \input{1_introduction.tex}
@@ -189,7 +191,7 @@ Application of reinforcement
 	\end{center}	
 	{\begin{textblock}{6}(0,0.5)
 	\begin{figure}
-	\includegraphics[width=1.15in,height=1in]{test10} 
+	\includegraphics[width=1.25in]{test10} 
 	\end{figure}
 	\end{textblock}}
 	{\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
@@ -210,7 +212,7 @@ Application of reinforcement
    \vspace{2em}
 	{\begin{textblock}{6}(0,2.3)
 	\begin{figure}
-	\includegraphics[width=1.15in,height=1in]{test15} 
+	\includegraphics[width=1.15in]{test15} 
     \end{figure}
     \end{textblock}}
     {\renewcommand\baselinestretch{0.99}
