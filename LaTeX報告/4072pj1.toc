@@ -46,6 +46,6 @@
 \contentsline {chapter}{\numberline {7}未來研究建議}{64}{chapter.7}%
 \contentsline {chapter}{\numberline {8}問題與討論}{65}{chapter.8}%
 \contentsline {chapter}{參考文獻}{71}{lstnumber.8.1.8}%
-\contentsline {chapter}{附錄}{74}{chapter*.3}%
+\contentsline {chapter}{附錄}{74}{chapter*.4}%
 \contentsline {chapter}{作者簡介}{76}{figure.Alph0.10}%
 \contentsfinish 
